@@ -50,7 +50,7 @@ menu:
   about: /about/
   archives: /archives/
   tags: /tags/
-  search: /search
+  # search: /search
   # sitemap: /sitemap.xml
   #commonweal: /404/
 
@@ -311,7 +311,7 @@ mathjax:
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
 # Han Support docs: https://hanzi.pro/
-han: true
+han: flase
 
 # Swiftype Search API Key
 #swiftype_key:
@@ -669,7 +669,7 @@ vendors:
 
   # Internal version: 3.3.0
   # https://github.com/ethantw/Han
-  han: //cdn.bootcss.com/Han/3.3.0/han.min.css
+  # han: //cdn.bootcss.com/Han/3.3.0/han.min.css
 
 
 # Assets

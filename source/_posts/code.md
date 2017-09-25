@@ -1,6 +1,7 @@
 ---
 title: Code
-tags: code
+tags: "code"
+abbrlink: 806683c5
 ---
 
 Code test.
