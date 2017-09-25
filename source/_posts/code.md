@@ -1,5 +1,6 @@
 ---
 title: Code
+tags: code
 ---
 
 Code test.
