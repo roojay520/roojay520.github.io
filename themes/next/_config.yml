@@ -70,7 +70,7 @@ menu_icons:
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
-  search: search
+
 
 
 # ---------------------------------------------------------------
@@ -323,10 +323,10 @@ han: true
 #duoshuo_shortname:
 
 # Disqus
-disqus:
-  enable: false
-  shortname:
-  count: true
+# disqus:
+#   enable: false
+#   shortname:
+#   count: true
 
 # Hypercomments
 #hypercomments_id:
@@ -633,20 +633,20 @@ vendors:
 
   # Internal version: 1
   # https://www.algolia.com
-  algolia_instant_js:
-  algolia_instant_css:
+  # algolia_instant_js:
+  # algolia_instant_css:
 
   # Internal version: 1.0.2
   # See: https://github.com/HubSpot/pace
   # Or use direct links below:
-  # pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
-  # pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
-  pace:
-  pace_css:
+  pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
+  pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
+  # pace:
+  # pace_css:
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
-  canvas_nest:
+  canvas_nest: //cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js
 
   # three
   three:
@@ -669,7 +669,7 @@ vendors:
 
   # Internal version: 3.3.0
   # https://github.com/ethantw/Han
-  han:
+  han: //cdn.bootcss.com/Han/3.3.0/han.min.css
 
 
 # Assets
