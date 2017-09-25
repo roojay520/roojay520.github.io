@@ -265,7 +265,7 @@ font:
   enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
-  host: https://cdn.baomitu.com/index/fonts
+  host: //cdn.baomitu.com/index/fonts
 
   # Global font settings used on <body> element.
   global:
