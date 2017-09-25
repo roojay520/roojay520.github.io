@@ -1,6 +1,5 @@
 ---
 title: Code
-abbrlink: 808883c5
 ---
 
 Code test.
