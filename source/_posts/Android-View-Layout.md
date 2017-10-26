@@ -1,7 +1,7 @@
 ---
 title: Android View&Layout
 date: 2017-06-16 14:24:12
-tags:
+tags: Android
 ---
 ## View 视图
 
@@ -11,7 +11,7 @@ tags:
 
 - 或者采用另一种字体大小定义方式：
 
-    **android:textAppearance="?android:textAppearanceLarge"** 
+    **android:textAppearance="?android:textAppearanceLarge"**
 
     As of API 19 (KitKat):
 
@@ -37,7 +37,7 @@ tags:
 
     ​
     ```xml
-    <TextView  
+    <TextView
               android:text="Hello Android!"
               android:background="@android:color/darker_gray"
               android:layout_width="150dp"
@@ -187,7 +187,7 @@ tags:
 
 - android:id="@+id/viewname_text_view"
 - 符号“@”表示Android应用中的资源。
-- 位于center上边：android:layout_above="@id/center"  
+- 位于center上边：android:layout_above="@id/center"
 - 位于center下边：android:layout_below="@id/center"
 - 位于center左边：android:layout_toLeftOf="@id/center"
 - 位于center右边：android:layout_toRightOf="@id/center"
@@ -243,7 +243,7 @@ tags:
   - android:paddingRight="8dp"
   - android:paddingTop="8dp"
   - android:paddingBottom="8dp"
-  - 默认值为0 
+  - 默认值为0
 
 #### 外边距(magin)
 
