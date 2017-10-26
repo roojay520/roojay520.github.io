@@ -1,5 +1,5 @@
 ---
-title: Win10配置免安装MySQL.md
+title: Win10配置免安装MySQL
 date: 2017-06-20 22:36:45
 tags: MySQL
 ---
