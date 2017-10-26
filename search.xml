@@ -6,6 +6,11 @@
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
   <entry>
+    <title><![CDATA[Readme]]></title>
+    <url>%2Fpages%2F809983c5%2F</url>
+    <content type="text"><![CDATA[山中荆溪白石出，天寒红叶稀。 山路元无雨，空翠湿人衣。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Code]]></title>
     <url>%2Fpages%2F806683c5%2F</url>
     <content type="text"><![CDATA[Code test. 123((name) =&gt; &#123; console.log(`Hello $&#123;name&#125;!`);&#125;)('JavaScript');]]></content>
@@ -14,9 +19,12 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Readme]]></title>
-    <url>%2Fpages%2F809983c5%2F</url>
-    <content type="text"><![CDATA[山中荆溪白石出，天寒红叶稀。 山路元无雨，空翠湿人衣。]]></content>
+    <title><![CDATA[VSCode 配置 ESLint + Airbnb]]></title>
+    <url>%2Fpages%2F3bcc390e%2F</url>
+    <content type="text"><![CDATA[VSCode 配置 ESLint + Airbnb基本环境Win 10 v1709Nodejs v8.70VScode v1.17.2 VSCode 安装 ESLint 扩展打开 VSCode 搜索 ESLint 扩展安装 NPM 安装 ESLint 全局安装（推荐）: npm install eslint -g 项目根目录本地安装： npm install eslint --save-dev 1. 自定义配置规则 全局配置在当前用户根目录下执行 eslint --init,根据个人爱好选择生成配置文件 .eslintrc.json例如：windows\user\username 项目根目录配置：在当前用户根目录下执行 eslint --init，根据个人爱好选择生成配置文件 ps：具体配置参考：http://eslint.cn/docs/user-guide/configuring 2. 使用 eslint-config-airbnb 标准规则 查看 Airbnb 标准依赖插件版本： npm info &quot;eslint-config-airbnb@latest&quot; peerDependencies 例如：本次的 plugins 的版本要求: 12345&#123; eslint: &apos;^4.9.0&apos;, &apos;eslint-plugin-import&apos;: &apos;^2.7.0&apos;, &apos;eslint-plugin-jsx-a11y&apos;: &apos;^6.0.2&apos;, &apos;eslint-plugin-react&apos;: &apos;^7.4.0&apos;&#125; 安装对应版本的插件: npm install eslint-config-airbnb eslint@^#.#.# eslint-plugin-jsx-a11y@^#.#.# eslint-plugin-import@^#.#.# eslint-plugin-react@^#.#.# -g 更改配置文件 .eslintrc.json 如下： 12345678910111213141516171819202122&#123; // 要启用的环境 "env": &#123; "browser": true, "node": true, "commonjs": true, "es6": true, "jquery": true &#125;, // 启用 airbnb 规则 "extends": "airbnb", // 使用语言及版本 "parserOptions": &#123; "ecmaVersion": 6, "sourceType": "module" &#125;, // 个人自定义规则 "rules": &#123; "no-console":"off", "no-plusplus":"off" &#125;&#125; ESLint 支持 Vue 单文件组件 安装 eslint-plugin-html 插件 npm install eslint-plugin-html -g 在 VSCode 设置设置中添加如下配置：1234567891011121314151617181920 // ESLint 配置"eslint.enable": true,// nodejs 路径， windows 路径使用双 \\ 进行转义"eslint.nodePath": "C:\\Dev\\nodejs",// 启用 eslint-plugin-html 插件"eslint.options": &#123; "plugins": ["html"]&#125;,"eslint.validate": [ "javascript", "javascriptreact", // 启用 html 和 vue 中 ESLint 验证和自动修复 &#123; "language": "html", "autoFix": true &#125;, &#123; "language": "vue", "autoFix": true &#125;]]></content>
+      <tags>
+        <tag>VSCode ESLint</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Win10配置免安装MySQL.md]]></title>
@@ -64,6 +72,22 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[进制转换]]></title>
+    <url>%2Fpages%2F7dc91154%2F</url>
+    <content type="text"><![CDATA[十进制转换二进制 将一个十进制数转换为二进制，就是将这个数不断取余的过程，将这个数除以 2，得到了商和余数，然后将商不断除以 2，直到商为 0，然后将余数倒过来排列，所得到的数就是转换的二进制结果。 二进制转八进制将二进制数自右向左每三位分成一段，然后将每三位数转换为一位八进制数。 例如：111000101 = 111 000 101 = 0 7 0 5 八进制以 0 开头。 二进制转十六进制 将二进制数自右向左每四位分成一段，然后将每四位转换为一位十六进制数。 例如：111010100110=1110 1010 0110=0x E A 6 十六进制以 0x 或者 0X 开头。]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java中的数组]]></title>
+    <url>%2Fpages%2Fe7882660%2F</url>
+    <content type="text"><![CDATA[数组是用来存储固定大小的同类型元素。 数组的定义方法静态定义法1int arr [] = &#123;1,5,6,4,&#125;; arr：整型数组。 arr[n]：n为下标，从第0位开始。arr[0]=1, arr[1]=5, arr[2]=6. 数组长度：arr.length. 动态定义法1int arr [] = new int[10]; 数组的长度为10. 二维数组的定义方法123456静态定义法：int arr[] [] = &#123;&#123;5,3,6&#125;,&#123;5,8,7&#125;,&#123;6,3,2&#125;&#125;;动态定义法：int arr[] [] = new int[][];例：int[1][2] = 7;]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java中的异常]]></title>
     <url>%2Fpages%2Ff029d2bb%2F</url>
     <content type="text"><![CDATA[什么是异常 异常的分类 try…catch…finally结构的使用方法 1. 什么是异常？ 异常(Exception)：中断了正常指令流的事件。 异常是一个对象； 异常产生于程序运行时； 指令流：程序执行时一系列的连续指令称为指令流。 示例：12345class Test&#123; public static void main(String args[])&#123; int i = 1 / 0; &#125;&#125; 抛出异常： Exception in thread “main” java.lang.ArithmeticException: / by zero at Test3.main(Test3.java:6) Exception in thread “main” ：在主线程中出现异常； ArithmeticException：异常的名称，算术异常； / by zero：被0除； at Test.main(Test.java:3)：异常位置； 2. 异常的分类JDK提供的类： Throwable：所有异常的父类； Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭； Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption RuntimeException + Error 和其子类都是属于uncheckexceptionException类中除了 RuntimeException之外的类，都是属于checkexception ExceptioncheckException checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。示例：123456class TestCheck&#123; public static void main(String args[])&#123; //CheckException Thread.sleep(1000); //让当前线程休眠1000ms &#125;&#125; 运行结果： uncheckException（ RuntimeException） 运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成示例：123456class Test&#123; public static void main(String args[])&#123; //UncheckException int i = 1 / 0; &#125;&#125; 运行结果： 3. try…catch…finally结构 12345678910111213try&#123; //代码A //有可能出现异常的代码B //代码C&#125;catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //处理异常的代码D //代码E&#125;finally&#123; //异常的出口 //执行扫尾工作的代码F&#125; 如果try中代码B没有异常：执行代码A-B-C-F如果try中代码B出现异常：执行代码A-B-D-E-FuncheckException 1234567891011121314151617181920//uncheckExceptionclass TestCheck&#123; public static void main(String args[])&#123; System.out.println(1); try&#123; System.out.println(2); //有可能出现异常的代码 int i = 1/0; System.out.println(3); &#125; catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); &#125; finally&#123; //异常的出口 System.out.println("finally"); &#125; &#125;&#125; 运行结果： checkException 1234567891011121314151617181920//checkExceptionclass TestCheck&#123; public static void main(String args[])&#123; System.out.println(1); try&#123; System.out.println(2); //有可能出现异常的代码 Thread.sleep(1000); //让当前线程休眠1000ms System.out.println(3); &#125; catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); &#125; finally&#123; //异常的出口 System.out.println("finally"); &#125; &#125;&#125; 运行结果：屏幕首先显示1，2，然后停顿1000ms，再显示3和finally]]></content>
@@ -80,81 +104,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[throw和throws]]></title>
-    <url>%2Fpages%2F29cc0096%2F</url>
-    <content type="text"><![CDATA[throwthrow的作用 如果Java虚拟机不能判断异常e，可以生成异常对象e，用throw加上这个异常对象抛出这个异常。 示例： 123456789101112131415161718package src;class People&#123; private int age; public void setAge(int age)&#123; if(age &lt; 0)&#123; RuntimeException e = new RuntimeException("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); people.setAge(-20); &#125;&#125; 运行结果： throwsthrows 声明一个函数可能产生异常，函数不对异常进行处理，在调用函数的地方对异常进行处理。 示例： 1234567891011121314151617181920212223package src1;class People&#123; private int age; public void setAge(int age) throws Exception&#123; if(age &lt; 0)&#123; Exception e = new Exception("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); try&#123; people.setAge(-20); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 运行结果：]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java中的数组]]></title>
-    <url>%2Fpages%2Fe7882660%2F</url>
-    <content type="text"><![CDATA[数组是用来存储固定大小的同类型元素。 数组的定义方法静态定义法1int arr [] = &#123;1,5,6,4,&#125;; arr：整型数组。 arr[n]：n为下标，从第0位开始。arr[0]=1, arr[1]=5, arr[2]=6. 数组长度：arr.length. 动态定义法1int arr [] = new int[10]; 数组的长度为10. 二维数组的定义方法123456静态定义法：int arr[] [] = &#123;&#123;5,3,6&#125;,&#123;5,8,7&#125;,&#123;6,3,2&#125;&#125;;动态定义法：int arr[] [] = new int[][];例：int[1][2] = 7;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Java中的变量]]></title>
     <url>%2Fpages%2Fc075d141%2F</url>
     <content type="text"><![CDATA[变量的定义 在程序的运行过程中，会产生一些临时数据储存在内存单元中，这每一个内存单元都用一个标识符来标识，这些内存单元被称为变量。 变量的数据类型变量的数据类型分为两种，即基本数据类型和引用数据类型。 1. 基本数据类型 数值型分为两种： 1.1 整数类型（byte 1字节，short 2字节，int 4字节，long 8字节） 1.2 浮点类型（float 4字节，double 8字节） 字符型（char）2字节 布尔型（boolean）1字节 2. 引用数据类型 类（class) 接口（interface） 数组 枚举（enum） 注解（annotation） 变量类型转换 在程序中，当把一种数据类型的值赋值给另一种数据类型时，需要进行数据类型的转换。数据类型转换分为两种：自动类型转换和强制类型转换。 1. 自动类型转换 两种数据类型转换不需要显式声明，自动转换类型必须满足两个条件：两种数据类型彼此兼容和转换目标类型的取值范围必须大于原来类型的取值范围。 byte→short，int，long short，char→int，long int→long byte，char，short，int→float byte，char，short，int，long，float→double boolean类型无法转换为其他类型。 2. 强制类型转换 自动转换类型无法进行转换时，进行强制类型转换。取值范围较大的数据类型转换为取值范围较小的类型，可能会造成精度丢失。 例如：12int num;byte b =(byte)num;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java中的I/O流]]></title>
-    <url>%2Fpages%2F649b2029%2F</url>
-    <content type="text"><![CDATA[流的概念和作用&gt; 流是数据源到Java程序，Java程序到输出位置之间的管道。 IO流的分类 根据数据处理类的不同分为：字符流和字节流。 根据数据流向不同分为：输入流和输出流。 输入输出是以Java程序为参照物的，相对于Java程序本身 输入流：从数据源中读取数据到Java程序中，这个过程称之为输入。 输出流：Java程序将数据写入到其他地方，这个过程称之为输出。 节点流和处理流。 节点流：普通的管道； 处理流：功能性管道，对数据进一步加工。 字节流字节流中的核心类 InputStream int read(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 读取数据的量；返回值为这次调用read方法读取数据的长度。 OutputStream void write(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 写入数据的量； 程序步骤 导入类 java.io.*； 定义主函数； 声明输入流的引用； 声明输出流的引用；123456789101112131415161718192021try&#123; 1.生成代表输入流的对象； 2.生成代表输出流的对象； 3. 生成一个byte字节数组； 4.调用输入流的read方法读取数据； 5.定义临时变量接受数据的量； 6.调用输出流的write方法写入数据；&#125;catch(Exception e)&#123; Systen.out.println(e);&#125;//finally进行结尾处理finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125;&#125; 示例 1：12345678910111213141516171819202122232425262728293031323334import java.io.*;public class Test&#123; public static void main(String args[])&#123; //声明输入流引用 FileInputStream fis = null; //声明输出流引用 FileOutputStream fos = null; try&#123; //生成代表输入流的对象 fis = new FileInputStream("D:/java/8.8/from.txt"); //生成代表输入流的对象 fos = new FileOutputStream("D:/java/8.8/to.txt"); //生成一个字节型buffer数组 byte[] buffer = new byte[100]; //定义一个临时变量，用于接受调用输入流read方法读取数据的量 int temp = fis.read(buffer,0,b.length); //调用输出流的write方法写入数据 fos.write(buffer,0,temp); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; //finally进行结尾处理 finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 大文件的读写 调节buffer数组的大小； 对read，write方法采取while循环； 示例 2：1234567while(true)&#123; int temp = fis.read(buffer,0,buffer.length); if(temp == -1)&#123; break; &#125; fos.write(buffer,0,temp);&#125; 字符流 字符流：是以对写文件时，以字符为基础 字节输入流：Reader &lt;–FileReader int read(char [] c, int off, int length ) 字节输出流：Writer &lt;–FileWriter void writer(char [] c, int off, int length) 示例 3：12345678910111213141516171819202122232425262728293031import java.io.*;public class TestChar&#123; public static void main(String args[])&#123; FileReader fr = null; FileWriter fw = null; try&#123; fr = new FileReader("d:/java/9.5/read.txt"); fw = new FileWriter("d:/java/9.5/write.txt"); char [] buffer = new char[1024]; while(true)&#123; int temp = fr.read(buffer, 0, buffer.length); if(temp == -1)&#123; break; &#125; fw.write(buffer, 0, temp); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; fr.close(); fw.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[进制转换]]></title>
-    <url>%2Fpages%2F7dc91154%2F</url>
-    <content type="text"><![CDATA[十进制转换二进制 将一个十进制数转换为二进制，就是将这个数不断取余的过程，将这个数除以 2，得到了商和余数，然后将商不断除以 2，直到商为 0，然后将余数倒过来排列，所得到的数就是转换的二进制结果。 二进制转八进制将二进制数自右向左每三位分成一段，然后将每三位数转换为一位八进制数。 例如：111000101 = 111 000 101 = 0 7 0 5 八进制以 0 开头。 二进制转十六进制 将二进制数自右向左每四位分成一段，然后将每四位转换为一位十六进制数。 例如：111010100110=1110 1010 0110=0x E A 6 十六进制以 0x 或者 0X 开头。]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java中的运算符]]></title>
-    <url>%2Fpages%2F83e4d5ed%2F</url>
-    <content type="text"><![CDATA[Java中的运算符 Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。 算术运算符 进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。例如：16600/1000*1000 最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。 进行除法运算时如果有小数参与，得到的结果为小数。例如：16.6/10 结果为0.66。 进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。例如：1(-6)/2 结果为-3。16/(-3) 结果为2。 赋值运算符 可以通过一条赋值语句对多个变量进行赋值。例如： 12int x, y, z;x = y = z = 5; //为三个变量同时赋值。 使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。 位运算符左移：&lt;&lt; 00000100&lt;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[方法]]></title>
-    <url>%2Fpages%2Fad01bc3e%2F</url>
-    <content type="text"><![CDATA[为解决代码重复编写的问题所设计的特定功能代码块。方法不能嵌套。main（）方法的作用：调用方法的实例化对象。 方法结构一般为：123456修饰符 返回值类型 方法名（参数类型 参数1，参数类型 参数2，...）&#123; 执行语句 ... ... return 返回值； &#125; 方法的重载 Java 允许在一个程序中定义多个名称相同的方法]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[结构语句]]></title>
-    <url>%2Fpages%2F1c7ee7be%2F</url>
-    <content type="text"><![CDATA[选择结构语句if条件语句 当判断条件1结果为true时，执行语句1，为false时，执行语句2。当判断条件1,2都不满足true时，执行语句3。 例如：123456789if (判断条件1)&#123; 执行语句1&#125;else if(判断条件2)&#123; 执行语句2&#125;else&#123; 执行语句3&#125; 三元运算 一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。当判断条件成立时结果为表达式1的值，否则表达式2的值。1判断条件 ? 表达式 1 : 表达式 2 例如：求取两个数x，y中较大的值。123456789101112//if-else实现方法int x, y, max;if(x&gt;y)&#123; max = x;&#125;else&#123; max = y;&#125;//三元运算实现int x, y, max;max = x &gt; y ? x : y; switch语句 在switch语句中使用switch关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，当表达式的值和某个目标值匹配时，会执行对应case下的语句。 例如：1234567891011121314switch(表达式)&#123; case 1: 执行语句1; break; //break终止case并跳出switch循环 case 2: 执行语句2; break; case 3: 执行语句3； break; default: //default处理和前面的case都不匹配的值 执行语句4; break; &#125; 循环结构语句while循环语句 循环条件判断为true时，执行语句循环执行，直到循环条件为false。 例如：123while(循环条件)&#123; 执行语句&#125; do…while循环语句 循环体会无条件执行一次，然后根据循环条件决定是否继续执行。 例如：1234do&#123; 执行语句&#125;while(循环条件); for循环语句 一般用在循环次数已知的情况下，循环条件判断为true执行顺序①→②→④→③ 例如：123for(初始化表达式①;循环条件②;操作表达式③)&#123; 执行语句④&#125; 1234567891011121314151617181920/** * Created by Roojay on 2017/4/7. * 利用嵌套循环打印一个正三角形。 */public class Test1 &#123; public static void main(String args[])&#123; int i, j, k; for(i = 1; i &lt;= 5; i++)&#123; for(k = 0; k &lt; 5 - i; k++)&#123; System.out.print(" "); &#125; for(j = 1; j &lt;= i; j++)&#123; System.out.print("* "); &#125; System.out.println(); &#125; &#125;&#125; 跳转语句break语句 当它出现在switch条件语句中时，作用是终止某个case并跳出switch结构。当它出现在循环语句中，作用是跳出循环语句，执行后面的代码。当它出现在嵌套循环内层循环中时，只能跳出内层循环，如果想跳出外层循环，需要对外层前面添加标记 itcast： ，在后面使用 break itcast 跳出外层循环。 continue语句 continue语句用在循环语句中，它的作用是终止本次循环，执行下一次循环。也可以使用标记结束外循环。]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[处理流Decorator模式]]></title>
-    <url>%2Fpages%2Fbbf344f6%2F</url>
-    <content type="text"><![CDATA[处理流BufferedReader readeLine：每次读取一行数据 示例：1234567891011121314151617181920212223242526272829303132import java.io.*;public class Test&#123; public static void main(String args[])&#123; FileReader filereader = null; BufferedReader bufferedreader = null; try&#123; filereader = new FileReader("C:/Users/Jay/Desktop/9.6/src1/read.txt"); bufferedreader = new BufferedReader(filereader); String line = null; while(true)&#123; line = bufferedreader.readLine(); if(line == null)&#123; break; &#125; System.out.println(line); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; filereader.close(); bufferedreader.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125; Decorator（装饰者）模式 示例：123456789101112131415161718192021222324252627282930313233343536373839interface Teacher&#123; public void teaching();&#125;class MathTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名数学老师"); &#125;&#125;class ChineseTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名语文老师"); &#125;&#125;class ATeacher implements Teacher&#123; private Teacher teacher; public ATeacher(Teacher teacher)&#123; this.teacher = teacher; &#125; public void teaching()&#123; System.out.println("你好，我来自ASchool"); teacher.teaching(); &#125;&#125;public class Test&#123; public static void main(String args[])&#123; MathTeacher mathTeacher = new MathTeacher(); ATeacher aTeacher1 = new ATeacher(mathTeacher); aTeacher1.teaching(); ChineseTeacher chineseTeacher = new ChineseTeacher(); ATeacher aTeacher2 = new ATeacher(chineseTeacher); aTeacher2.teaching(); &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[类集框架]]></title>
-    <url>%2Fpages%2F85b5073b%2F</url>
-    <content type="text"><![CDATA[类集框架是一组类和接口； 位于java.until包当中； 主要用于存储盒管理对象； 主要分为三大类：集合(Set)、列表(List)和映射(Map)。 类集框架的主体结构 Collection为单列集合，Map为双列集合。 Collection接口中的方法 方法 功能 boolean add（Object o） 向集合中加入一个对象。 void clear（） 删除集合当中的所有对象。 boolean isEmpty（） 判断集合是否为空，如果为空返回true。 remove（Object o） 从集合中删除一个对象的引用。 int size（） 返回集合中元素的数目。 Iterator接口 主要用于迭代访问（即遍历）整个Collection中的元素，因此Iterator对象也被称为迭代器。 方法 作用 hasNet() 判断当前迭代器中是否还有下一个元素，返回值为boolean值。 next() 返回当前迭代器下一个元素。 示例：12345678910111213141516171819202122import java.util.Set;import java.util.HashSet;import java.util.Iterator;public class TestIterator&#123; public static void main(String args[])&#123; Set&lt;String&gt; set = new HashSet&lt;String&gt;(); set.add("a"); set.add("b"); set.add("c"); set.add("d"); set.add("e"); //调用Set对象的Iterator方法生成一个迭代器对象，该对象遍历整个Set Iterator&lt;String&gt; it = set.iterator(); //判断Set集合中是否存在下一个元素 while(it.hasNext())&#123; //取出Set集合中的元素 String s = it.next(); System.out.println(s); &#125; &#125;&#125; ListIterator接口 可以按任一方向遍历列表、迭代期间修改列表，并获得迭代器在列表中的当前位置。 方法 功能 void add(Object o) 将指定的元素插入列表。 boolean hasPrevious() 如果以逆向遍历列表，列表迭代器有多个元素，则返回true。 Object previous() 返回列表中的前一个元素。 void remove() 从列表中移除由next或previous返回的最后一个元素。 示例：12345678910111213141516171819import java.util.*;public class Test&#123; public static void main(String args[]) &#123; ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;(); list.add("Monday"); list.add("Tuesday"); list.add("Wednesday"); list.add("Thursday"); System.out.println(list); //生成一个ListIterator对象 ListIterator it = list.listIterator(list.size()); //调用hasPrevious()方法判断是否存在元素 while(it.hasPrevious())&#123; //调用previous()方法返回元素 Object obj = it.previous(); System.out.println(obj); &#125; &#125;&#125; 集合（Set） 集合中的对象不按特定方式排序，并且没有重复对象。 HashSet集合 HashSet是Set接口的一个实现类，它所储存的元素时不可重复且无序的。根据对象的哈希值来确定元素在集合中的储存位置，因此具有良好的存取和查找性能。 示例：123456789101112131415161718192021222324252627282930import java.util.Set;import java.util.HashSet;public class TestSet&#123; public static void main(String args[])&#123; //生成HashSet对象并向上转型为Set Set&lt;String&gt; set =new HashSet&lt;String&gt;(); //定义一个boolean型变量b1接受 isEmpty（）方法返回值 boolean b1 = set.isEmpty(); System.out.println(b1); set.add("a"); set.add("b"); set.add("c"); set.add("d"); set.add("e"); set.add("f"); boolean b2 =set.isEmpty(); System.out.println(b2); //调用size（）方法获取集合长度 int i =set.size(); System.out.println("初始状态set集合中元素的数目" + i); //调用remove（）方法移除对象d set.remove("d"); int j = set.size(); System.out.println("处理之后set集合中元素的数目" + j); &#125;&#125; TreeSet集合 它内部采用自平衡点排序二叉树来储存元素，这样的结构保证TreeSet集合没有重复的元素，并且可以对元素进行排序。 二叉树 二叉树是指每个节点最多有两个子节点的有序树，每个节点及其子节点组成的树称为子树，通常左侧的节点称为“左子树”，右侧的的子节点称为“右子树”。 示例：1234567891011121314151617import java.util.*;public class Test01&#123; public static void main(String args[])&#123; //创建TreeSet集合 TreeSet&lt;String&gt; ts = new TreeSet&lt;String&gt;(); ts.add("10"); ts.add("50"); ts.add("20"); ts.add("40"); ts.add("30"); //获取Iterator对象 Iterator it = ts.iterator(); while(it.hasNext())&#123; System.out.println(it.next()); &#125; &#125;&#125; 结果： 列表（List） 集合中对象按照索引位置排序，即元素的存入和取出顺序一致，可以有重复对象。 ArrayList ArrayList的底层是使用一个数组来保存元素，当增加或删除指定位置的元素时，会创建新的数组，效率较低，因此不适合做大量的增删操作。但是这种数组的结构允许程序通过索引的方式来访问元素，因此使用ArryList集合查找元素很便捷。 示例：123456789101112131415161718192021import java.util.List;import java.util.ArrayList;public class Test&#123; public static void main(String args[])&#123; ArrayList&lt;String&gt; arrayList = new ArrayList&lt;String&gt;(); //向ArrayList中存入数据 arrayList.add("a"); arrayList.add("b"); arrayList.add("c"); arrayList.add("d"); //移除这个对象 arrayList.remove(2); //从ArrayList中取数据 for(int i = 0; i &lt; arrayList.size(); i++)&#123; String s = arrayList.get(i); System.out.println(s); &#125; &#125;&#125; LinkedList 内部维护了一个双向循环链表，链表中的每一个元素都使用引用的方式来记住它的前一个元素和后一个元素，插入一个新元素，只需修改元素之间的这种引用关系即可。 示例：123456789101112131415161718192021import java.util.List;import java.util.LinkedList;public class Test01&#123; public static void main(String args[])&#123; //创建LinkedList集合 LinkedList&lt;String&gt; link = new LinkedList&lt;String&gt;(); //向集合中添加元素 link.add("One"); link.add("Two"); link.add("Three"); link.add("Four"); //取出并打印该集合中的所有元素 System.out.println(link.toString()); //向指定位置插入元素 link.add(2,"插个队"); System.out.println(link); //移除指定位置的元素 link.remove(2); System.out.println(link); &#125;&#125; 映射（Map） 集合中的每一个元素包含一个键对象和一个值对象，键不可重复，值可以重复。 键对象 值对象 key1 value1 key2 value2 key3 value3 Map接口中的方法 方法 作用 void clear() 从此映射中移除所有映射关系（可选操作）。 boolean containsKey（Object Key） 如果此映射包含指定键的映射关系，则返回 true。 boolean equals（Object o） 比较指定的对象与此映射是否相等。 get（Object key） 返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回null。 boolean isEmpty（） 如果此映射未包含键-值映射关系，则返回 true。 put（） 将指定的值与此映射中的指定键关联。 remove（Object key） 如果存在一个键的映射关系，则将其从此映射中移除。 int size（） 返回此Map中的键值对数目。 Map与HashMap示例：12345678910111213141516import java.util.Map;import java.util.HashMap;public class Test&#123; public static void main(String args[])&#123; //生成HashMap对象并向上转型为Map Map&lt;String,String&gt; map = new HashMap&lt;String,String&gt;(); //向map中添加键值对 map.put("1","One"); map.put("2","Two"); map.put("3","Three"); //调用get（Object key）方法，返回指定键所映射的值； //如果对于该键来说，此映射不包含任何映射关系，则返回 null。 String s = map.get("2"); System.out.println(s); &#125;&#125;]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
@@ -168,9 +120,65 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[throw和throws]]></title>
+    <url>%2Fpages%2F29cc0096%2F</url>
+    <content type="text"><![CDATA[throwthrow的作用 如果Java虚拟机不能判断异常e，可以生成异常对象e，用throw加上这个异常对象抛出这个异常。 示例： 123456789101112131415161718package src;class People&#123; private int age; public void setAge(int age)&#123; if(age &lt; 0)&#123; RuntimeException e = new RuntimeException("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); people.setAge(-20); &#125;&#125; 运行结果： throwsthrows 声明一个函数可能产生异常，函数不对异常进行处理，在调用函数的地方对异常进行处理。 示例： 1234567891011121314151617181920212223package src1;class People&#123; private int age; public void setAge(int age) throws Exception&#123; if(age &lt; 0)&#123; Exception e = new Exception("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); try&#123; people.setAge(-20); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 运行结果：]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java中的运算符]]></title>
+    <url>%2Fpages%2F83e4d5ed%2F</url>
+    <content type="text"><![CDATA[Java中的运算符 Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。 算术运算符 进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。例如：16600/1000*1000 最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。 进行除法运算时如果有小数参与，得到的结果为小数。例如：16.6/10 结果为0.66。 进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。例如：1(-6)/2 结果为-3。16/(-3) 结果为2。 赋值运算符 可以通过一条赋值语句对多个变量进行赋值。例如： 12int x, y, z;x = y = z = 5; //为三个变量同时赋值。 使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。 位运算符左移：&lt;&lt; 00000100&lt;]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java中的I/O流]]></title>
+    <url>%2Fpages%2F649b2029%2F</url>
+    <content type="text"><![CDATA[流的概念和作用&gt; 流是数据源到Java程序，Java程序到输出位置之间的管道。 IO流的分类 根据数据处理类的不同分为：字符流和字节流。 根据数据流向不同分为：输入流和输出流。 输入输出是以Java程序为参照物的，相对于Java程序本身 输入流：从数据源中读取数据到Java程序中，这个过程称之为输入。 输出流：Java程序将数据写入到其他地方，这个过程称之为输出。 节点流和处理流。 节点流：普通的管道； 处理流：功能性管道，对数据进一步加工。 字节流字节流中的核心类 InputStream int read(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 读取数据的量；返回值为这次调用read方法读取数据的长度。 OutputStream void write(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 写入数据的量； 程序步骤 导入类 java.io.*； 定义主函数； 声明输入流的引用； 声明输出流的引用；123456789101112131415161718192021try&#123; 1.生成代表输入流的对象； 2.生成代表输出流的对象； 3. 生成一个byte字节数组； 4.调用输入流的read方法读取数据； 5.定义临时变量接受数据的量； 6.调用输出流的write方法写入数据；&#125;catch(Exception e)&#123; Systen.out.println(e);&#125;//finally进行结尾处理finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125;&#125; 示例 1：12345678910111213141516171819202122232425262728293031323334import java.io.*;public class Test&#123; public static void main(String args[])&#123; //声明输入流引用 FileInputStream fis = null; //声明输出流引用 FileOutputStream fos = null; try&#123; //生成代表输入流的对象 fis = new FileInputStream("D:/java/8.8/from.txt"); //生成代表输入流的对象 fos = new FileOutputStream("D:/java/8.8/to.txt"); //生成一个字节型buffer数组 byte[] buffer = new byte[100]; //定义一个临时变量，用于接受调用输入流read方法读取数据的量 int temp = fis.read(buffer,0,b.length); //调用输出流的write方法写入数据 fos.write(buffer,0,temp); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; //finally进行结尾处理 finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 大文件的读写 调节buffer数组的大小； 对read，write方法采取while循环； 示例 2：1234567while(true)&#123; int temp = fis.read(buffer,0,buffer.length); if(temp == -1)&#123; break; &#125; fos.write(buffer,0,temp);&#125; 字符流 字符流：是以对写文件时，以字符为基础 字节输入流：Reader &lt;–FileReader int read(char [] c, int off, int length ) 字节输出流：Writer &lt;–FileWriter void writer(char [] c, int off, int length) 示例 3：12345678910111213141516171819202122232425262728293031import java.io.*;public class TestChar&#123; public static void main(String args[])&#123; FileReader fr = null; FileWriter fw = null; try&#123; fr = new FileReader("d:/java/9.5/read.txt"); fw = new FileWriter("d:/java/9.5/write.txt"); char [] buffer = new char[1024]; while(true)&#123; int temp = fr.read(buffer, 0, buffer.length); if(temp == -1)&#123; break; &#125; fw.write(buffer, 0, temp); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; fr.close(); fw.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125;]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[结构语句]]></title>
+    <url>%2Fpages%2F1c7ee7be%2F</url>
+    <content type="text"><![CDATA[选择结构语句if条件语句 当判断条件1结果为true时，执行语句1，为false时，执行语句2。当判断条件1,2都不满足true时，执行语句3。 例如：123456789if (判断条件1)&#123; 执行语句1&#125;else if(判断条件2)&#123; 执行语句2&#125;else&#123; 执行语句3&#125; 三元运算 一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。当判断条件成立时结果为表达式1的值，否则表达式2的值。1判断条件 ? 表达式 1 : 表达式 2 例如：求取两个数x，y中较大的值。123456789101112//if-else实现方法int x, y, max;if(x&gt;y)&#123; max = x;&#125;else&#123; max = y;&#125;//三元运算实现int x, y, max;max = x &gt; y ? x : y; switch语句 在switch语句中使用switch关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，当表达式的值和某个目标值匹配时，会执行对应case下的语句。 例如：1234567891011121314switch(表达式)&#123; case 1: 执行语句1; break; //break终止case并跳出switch循环 case 2: 执行语句2; break; case 3: 执行语句3； break; default: //default处理和前面的case都不匹配的值 执行语句4; break; &#125; 循环结构语句while循环语句 循环条件判断为true时，执行语句循环执行，直到循环条件为false。 例如：123while(循环条件)&#123; 执行语句&#125; do…while循环语句 循环体会无条件执行一次，然后根据循环条件决定是否继续执行。 例如：1234do&#123; 执行语句&#125;while(循环条件); for循环语句 一般用在循环次数已知的情况下，循环条件判断为true执行顺序①→②→④→③ 例如：123for(初始化表达式①;循环条件②;操作表达式③)&#123; 执行语句④&#125; 1234567891011121314151617181920/** * Created by Roojay on 2017/4/7. * 利用嵌套循环打印一个正三角形。 */public class Test1 &#123; public static void main(String args[])&#123; int i, j, k; for(i = 1; i &lt;= 5; i++)&#123; for(k = 0; k &lt; 5 - i; k++)&#123; System.out.print(" "); &#125; for(j = 1; j &lt;= i; j++)&#123; System.out.print("* "); &#125; System.out.println(); &#125; &#125;&#125; 跳转语句break语句 当它出现在switch条件语句中时，作用是终止某个case并跳出switch结构。当它出现在循环语句中，作用是跳出循环语句，执行后面的代码。当它出现在嵌套循环内层循环中时，只能跳出内层循环，如果想跳出外层循环，需要对外层前面添加标记 itcast： ，在后面使用 break itcast 跳出外层循环。 continue语句 continue语句用在循环语句中，它的作用是终止本次循环，执行下一次循环。也可以使用标记结束外循环。]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[接口应用]]></title>
     <url>%2Fpages%2F75336bdc%2F</url>
     <content type="text"><![CDATA[接口定义一种标准： 通过interface定义； 函数都是抽象函数（只有函数没有函数体）； 子类通过implements实现；对接口里面的抽象函数进行override；123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566/***定义一个Printer接口，通过HPPrinter，CanonPrinter两个子类去实现*/package printer; //定义一个Printer接口interface Printer&#123; public void open(); public void print(String s); public void close();&#125;//定义HPPrinter去implements Printer接口class HPPrinter implements Printer&#123; @Override public void open()&#123; System.out.println("HPPrinter open"); &#125; public void print(String s)&#123; System.out.println("HPPrinter print:" + s); &#125; public void close()&#123; System.out.println("HPPrinter close"); &#125;&#125;//定义CanonPrinter去implements Printer接口class CanonPrinter implements Printer&#123; @Override private void clean()&#123; System.out.println("clean"); &#125; public void open()&#123; System.out.println("CanonPrinter open"); &#125; public void print(String s)&#123; System.out.println("CanonPrinter print:" + s); &#125; public void close()&#123; this.clean(); System.out.println("CanonPrinter close"); &#125;&#125;//静态工厂方法模式class PrinterFactory&#123;//定义一个静态函数getPrinter(int flag)，返回值类型为Printer public static Printer getPrinter(int flag)&#123; Printer printer = null;//根据用户选择生成新的对象，并向上转型为Printer类型 if (flag == 0)&#123; printer = new HPPrinter(); &#125; else if(flag == 1)&#123; printer = new CanonPrinter(); &#125; return printer; &#125;&#125;//定义一个主函数，对函数进行调用class Test&#123; public static void main(String args[])&#123; int flag = 1; //工厂方法模式调用 类名+函数 Printer printer = PrinterFactory.getPrinter(flag); printer.open(); printer.print("Test"); printer.close(); &#125;&#125; 工厂方法简单工厂模式 Java 简单工厂模式（Simple Factory Pattern）又叫静态工厂方法模式（Static FactoryMethod Pattern），通过专门定义一个类来负责创建其他类的实例（将生成对象的代码封装在工厂类中），被创建的实例通常都具有共同的父类。]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[方法]]></title>
+    <url>%2Fpages%2Fad01bc3e%2F</url>
+    <content type="text"><![CDATA[为解决代码重复编写的问题所设计的特定功能代码块。方法不能嵌套。main（）方法的作用：调用方法的实例化对象。 方法结构一般为：123456修饰符 返回值类型 方法名（参数类型 参数1，参数类型 参数2，...）&#123; 执行语句 ... ... return 返回值； &#125; 方法的重载 Java 允许在一个程序中定义多个名称相同的方法]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[类集框架]]></title>
+    <url>%2Fpages%2F85b5073b%2F</url>
+    <content type="text"><![CDATA[类集框架是一组类和接口； 位于java.until包当中； 主要用于存储盒管理对象； 主要分为三大类：集合(Set)、列表(List)和映射(Map)。 类集框架的主体结构 Collection为单列集合，Map为双列集合。 Collection接口中的方法 方法 功能 boolean add（Object o） 向集合中加入一个对象。 void clear（） 删除集合当中的所有对象。 boolean isEmpty（） 判断集合是否为空，如果为空返回true。 remove（Object o） 从集合中删除一个对象的引用。 int size（） 返回集合中元素的数目。 Iterator接口 主要用于迭代访问（即遍历）整个Collection中的元素，因此Iterator对象也被称为迭代器。 方法 作用 hasNet() 判断当前迭代器中是否还有下一个元素，返回值为boolean值。 next() 返回当前迭代器下一个元素。 示例：12345678910111213141516171819202122import java.util.Set;import java.util.HashSet;import java.util.Iterator;public class TestIterator&#123; public static void main(String args[])&#123; Set&lt;String&gt; set = new HashSet&lt;String&gt;(); set.add("a"); set.add("b"); set.add("c"); set.add("d"); set.add("e"); //调用Set对象的Iterator方法生成一个迭代器对象，该对象遍历整个Set Iterator&lt;String&gt; it = set.iterator(); //判断Set集合中是否存在下一个元素 while(it.hasNext())&#123; //取出Set集合中的元素 String s = it.next(); System.out.println(s); &#125; &#125;&#125; ListIterator接口 可以按任一方向遍历列表、迭代期间修改列表，并获得迭代器在列表中的当前位置。 方法 功能 void add(Object o) 将指定的元素插入列表。 boolean hasPrevious() 如果以逆向遍历列表，列表迭代器有多个元素，则返回true。 Object previous() 返回列表中的前一个元素。 void remove() 从列表中移除由next或previous返回的最后一个元素。 示例：12345678910111213141516171819import java.util.*;public class Test&#123; public static void main(String args[]) &#123; ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;(); list.add("Monday"); list.add("Tuesday"); list.add("Wednesday"); list.add("Thursday"); System.out.println(list); //生成一个ListIterator对象 ListIterator it = list.listIterator(list.size()); //调用hasPrevious()方法判断是否存在元素 while(it.hasPrevious())&#123; //调用previous()方法返回元素 Object obj = it.previous(); System.out.println(obj); &#125; &#125;&#125; 集合（Set） 集合中的对象不按特定方式排序，并且没有重复对象。 HashSet集合 HashSet是Set接口的一个实现类，它所储存的元素时不可重复且无序的。根据对象的哈希值来确定元素在集合中的储存位置，因此具有良好的存取和查找性能。 示例：123456789101112131415161718192021222324252627282930import java.util.Set;import java.util.HashSet;public class TestSet&#123; public static void main(String args[])&#123; //生成HashSet对象并向上转型为Set Set&lt;String&gt; set =new HashSet&lt;String&gt;(); //定义一个boolean型变量b1接受 isEmpty（）方法返回值 boolean b1 = set.isEmpty(); System.out.println(b1); set.add("a"); set.add("b"); set.add("c"); set.add("d"); set.add("e"); set.add("f"); boolean b2 =set.isEmpty(); System.out.println(b2); //调用size（）方法获取集合长度 int i =set.size(); System.out.println("初始状态set集合中元素的数目" + i); //调用remove（）方法移除对象d set.remove("d"); int j = set.size(); System.out.println("处理之后set集合中元素的数目" + j); &#125;&#125; TreeSet集合 它内部采用自平衡点排序二叉树来储存元素，这样的结构保证TreeSet集合没有重复的元素，并且可以对元素进行排序。 二叉树 二叉树是指每个节点最多有两个子节点的有序树，每个节点及其子节点组成的树称为子树，通常左侧的节点称为“左子树”，右侧的的子节点称为“右子树”。 示例：1234567891011121314151617import java.util.*;public class Test01&#123; public static void main(String args[])&#123; //创建TreeSet集合 TreeSet&lt;String&gt; ts = new TreeSet&lt;String&gt;(); ts.add("10"); ts.add("50"); ts.add("20"); ts.add("40"); ts.add("30"); //获取Iterator对象 Iterator it = ts.iterator(); while(it.hasNext())&#123; System.out.println(it.next()); &#125; &#125;&#125; 结果： 列表（List） 集合中对象按照索引位置排序，即元素的存入和取出顺序一致，可以有重复对象。 ArrayList ArrayList的底层是使用一个数组来保存元素，当增加或删除指定位置的元素时，会创建新的数组，效率较低，因此不适合做大量的增删操作。但是这种数组的结构允许程序通过索引的方式来访问元素，因此使用ArryList集合查找元素很便捷。 示例：123456789101112131415161718192021import java.util.List;import java.util.ArrayList;public class Test&#123; public static void main(String args[])&#123; ArrayList&lt;String&gt; arrayList = new ArrayList&lt;String&gt;(); //向ArrayList中存入数据 arrayList.add("a"); arrayList.add("b"); arrayList.add("c"); arrayList.add("d"); //移除这个对象 arrayList.remove(2); //从ArrayList中取数据 for(int i = 0; i &lt; arrayList.size(); i++)&#123; String s = arrayList.get(i); System.out.println(s); &#125; &#125;&#125; LinkedList 内部维护了一个双向循环链表，链表中的每一个元素都使用引用的方式来记住它的前一个元素和后一个元素，插入一个新元素，只需修改元素之间的这种引用关系即可。 示例：123456789101112131415161718192021import java.util.List;import java.util.LinkedList;public class Test01&#123; public static void main(String args[])&#123; //创建LinkedList集合 LinkedList&lt;String&gt; link = new LinkedList&lt;String&gt;(); //向集合中添加元素 link.add("One"); link.add("Two"); link.add("Three"); link.add("Four"); //取出并打印该集合中的所有元素 System.out.println(link.toString()); //向指定位置插入元素 link.add(2,"插个队"); System.out.println(link); //移除指定位置的元素 link.remove(2); System.out.println(link); &#125;&#125; 映射（Map） 集合中的每一个元素包含一个键对象和一个值对象，键不可重复，值可以重复。 键对象 值对象 key1 value1 key2 value2 key3 value3 Map接口中的方法 方法 作用 void clear() 从此映射中移除所有映射关系（可选操作）。 boolean containsKey（Object Key） 如果此映射包含指定键的映射关系，则返回 true。 boolean equals（Object o） 比较指定的对象与此映射是否相等。 get（Object key） 返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回null。 boolean isEmpty（） 如果此映射未包含键-值映射关系，则返回 true。 put（） 将指定的值与此映射中的指定键关联。 remove（Object key） 如果存在一个键的映射关系，则将其从此映射中移除。 int size（） 返回此Map中的键值对数目。 Map与HashMap示例：12345678910111213141516import java.util.Map;import java.util.HashMap;public class Test&#123; public static void main(String args[])&#123; //生成HashMap对象并向上转型为Map Map&lt;String,String&gt; map = new HashMap&lt;String,String&gt;(); //向map中添加键值对 map.put("1","One"); map.put("2","Two"); map.put("3","Three"); //调用get（Object key）方法，返回指定键所映射的值； //如果对于该键来说，此映射不包含任何映射关系，则返回 null。 String s = map.get("2"); System.out.println(s); &#125;&#125;]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[处理流Decorator模式]]></title>
+    <url>%2Fpages%2Fbbf344f6%2F</url>
+    <content type="text"><![CDATA[处理流BufferedReader readeLine：每次读取一行数据 示例：1234567891011121314151617181920212223242526272829303132import java.io.*;public class Test&#123; public static void main(String args[])&#123; FileReader filereader = null; BufferedReader bufferedreader = null; try&#123; filereader = new FileReader("C:/Users/Jay/Desktop/9.6/src1/read.txt"); bufferedreader = new BufferedReader(filereader); String line = null; while(true)&#123; line = bufferedreader.readLine(); if(line == null)&#123; break; &#125; System.out.println(line); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; filereader.close(); bufferedreader.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125; Decorator（装饰者）模式 示例：123456789101112131415161718192021222324252627282930313233343536373839interface Teacher&#123; public void teaching();&#125;class MathTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名数学老师"); &#125;&#125;class ChineseTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名语文老师"); &#125;&#125;class ATeacher implements Teacher&#123; private Teacher teacher; public ATeacher(Teacher teacher)&#123; this.teacher = teacher; &#125; public void teaching()&#123; System.out.println("你好，我来自ASchool"); teacher.teaching(); &#125;&#125;public class Test&#123; public static void main(String args[])&#123; MathTeacher mathTeacher = new MathTeacher(); ATeacher aTeacher1 = new ATeacher(mathTeacher); aTeacher1.teaching(); ChineseTeacher chineseTeacher = new ChineseTeacher(); ATeacher aTeacher2 = new ATeacher(chineseTeacher); aTeacher2.teaching(); &#125;&#125;]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
