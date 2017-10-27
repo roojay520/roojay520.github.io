@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/343902f6/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/5a252ba9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -330,7 +330,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/343902f6/" itemprop="url">css和响应式</a></h2>
+                <a class="post-title-link" href="/pages/5a252ba9/" itemprop="url">css布局</a></h2>
         
 
         <div class="post-meta">
@@ -342,8 +342,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T16:17:26+00:00">
-                2017-10-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T02:23:51+00:00">
+                2017-10-27
               </time>
             
 
@@ -360,7 +360,7 @@
 
           
           
-             <span id="/pages/343902f6/" class="leancloud_visitors" data-flag-title="css和响应式">
+             <span id="/pages/5a252ba9/" class="leancloud_visitors" data-flag-title="css布局">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -393,13 +393,13 @@
       
         
           
-          css框架##Bootstrap 框架
-
-Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。http://www.runoob.com/bootstrap/bootstr
+          CSS 基础布局清除浮动简单的 Micro clearfix 方法清除浮动，原文链接:http://nicolasgallagher.com/micro-clearfix-hack/123456789@mixin clearfix &#123;    &amp;::before, &amp;::after&#123;        content: " ";        display: flex;    &#125;    &amp;::after &#123;        clear: both;    &#125;&#125;
+三栏式布局
+两边侧栏固定宽度，中间栏宽度自适应，并且中间
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/343902f6/#more" rel="contents">
+            <a class="btn" href="/pages/5a252ba9/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -536,7 +536,9 @@ Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap �
 
 官网下载 MongoDB: https://www.mongodb.com/download-center#community
 选择 Custom 安装
-创建数据目录，数据目录应该放在根目录下(如: C:\ )。data├── db│   ├── mongo.config
+创建数据目录，数据目录应该放在根目录下(如: C:\ )。data├── db│   ├── mongo.config└── log └── MongoDB.log
+启动服务：mongod --dbpath c:\data\db， 由于windows power shell 限制，使用 .\mongod --dbpath c:\data\db命令。
+将 MongoDB 设为 windows 服务开机自启动：mong
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -676,7 +678,8 @@ Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap �
           Map 键值对
 一组键值对结构，查找速度快。储存具有映射关系的数据，例如身份证上面的姓名和身份证号码。
 
-Map 函数123456var map = new Map(); // 初始化 Mapmap.set('XiaoMing', 22); // 添加键值对 key-valuemap.set('Ha
+Map 函数123456var map = new Map(); // 初始化 Mapmap.set('XiaoMing', 22); // 添加键值对 key-valuemap.set('HaHa', 66);map.has('HaHa'); // 是否存在 'HaHa', 返回值为 truemap.get('XiaoMing'); // 22  获得对应的 valuemap.delete('HaHa'); // 删除 key: 'HaHa'
+一个 key 只能对应一个 value，对同
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -816,7 +819,8 @@ Map 函数123456var map = new Map(); // 初始化 Mapmap.set('XiaoMing', 22); //
           
 下载文件：到 MySQL 官网https://dev.mysql.com/downloads/mysql/下载免安装版本: DOWNLOADS → MySQL Community Server → Windows (x86, 64-bit), ZIP Archive
 
-创建配置文件：将下载的 ZI
+创建配置文件：将下载的 ZIP 文件解压至想要安装 MySQL 的文件夹，创建 mysql.ini 配置文件，保存退出。
+12345678910111213141516[mysql]#设置mysql客户端默认字符集default-character-set = utf8[mysqld]#设置3306端口port = 3306#
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -958,7 +962,7 @@ Map 函数123456var map = new Map(); // 初始化 Mapmap.set('XiaoMing', 22); //
 ​
 
 
-文件内容如下：123456789101112131415161718192021222324252627282930313233343
+文件内容如下：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152// 声明是Android程序apply plugin: 'com.android.application'android &#123;    // 编译SDK的版本    compileSdkVersion 21    // b
           ...
           <!--noindex-->
           <div class="post-button text-center">

@@ -403,7 +403,14 @@ Button： 7个
 
 二、Layout布局
 采用 RelativeLayout 作为整体布局父容器。
-将其分为上下两个部分，下面部分只有一个 Button ，直接设置好其相对于父视图的位置参数以
+将其分为上下两个部分，下面部分只有一个 Button ，直接设置好其相对于父视图的位置参数以及自身属性即可。
+上面部分又可以横向分为三个部分：
+1.TeamA 团队的加分 Button 及显示的 TextView；
+对于 TeamA， 其中各组件纵向排列，可采用Vertical LinearLayout作为其视图容器。
+
+
+2.空白 View 做中间隔离；
+3.TeamB 团队的加分 Bu
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -544,7 +551,14 @@ Button： 7个
 在程序的运行过程中，会产生一些临时数据储存在内存单元中，这每一个内存单元都用一个标识符来标识，这些内存单元被称为变量。
 变量的数据类型变量的数据类型分为两种，即基本数据类型和引用数据类型。
 1. 基本数据类型
-数值型分为两种： 1.1  整数类型（byte 1字节，short 2字节，i
+数值型分为两种： 1.1  整数类型（byte 1字节，short 2字节，int 4字节，long 8字节） 1.2 浮点类型（float 4字节，double 8字节）
+字符型（char）2字节
+布尔型（boolean）1字节2. 引用数据类型
+类（class)
+接口（interface）
+数组
+枚举（enum）
+注解（annotation）变量类型转换在程序中，当把一种
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -688,7 +702,12 @@ Button： 7个
   android:textAppearance=”?android:textAppearanceLarge”
   As of API 19 (KitKat):
 
-?an
+?android:textAppearanceSmall is currently 14sp
+?android:textAppearanceMedium is currently 18sp
+?android:textAppearanceLarge is currently 22sp
+
+
+文字颜色属性：an
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -830,7 +849,7 @@ Button： 7个
 
 示例：&gt;1234class A&#123;	class B&#123;	&#125;&#125;
 B这个类被称之为A的内部类。编译之后生成A.class和A$B.class。内部类可以随意使用外部类的成员变量。
-内部类的使用方法示例：123456789
+内部类的使用方法示例：1234567891011121314151617181920212223class A&#123;	int i;	class B&#123;		int j;		int funB()&#123;			int result = i + j;			System.out.println(result);			return 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -971,8 +990,13 @@ B这个类被称之为A的内部类。编译之后生成A.class和A$B.class。�
 将一个十进制数转换为二进制，就是将这个数不断取余的过程，将这个数除以 2，得到了商和余数，然后将商不断除以 2，直到商为 0，然后将余数倒过来排列，所得到的数就是转换的二进制结果。
 二进制转八进制将二进制数自右向左每三位分成一段，然后将每三位数转换为一位八进制数。
 
- 例如：111
-          ...
+ 例如：111000101 = 111 000 101 = 0 7 0 5 八进制以 0 开头。
+二进制转十六进制
+将二进制数自右向左每四位分成一段，然后将每四位转换为一位十六进制数。
+
+例如：111010100110=1110 1010 0110=0x E A 6 十六进制以 0x 或者 0X 开头。
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/pages/7dc91154/#more" rel="contents">

@@ -415,7 +415,23 @@ Collection接口中的方法
 
 
 
+boolean add（Object o）
+向集合中加入一个对象。
 
+
+void clear（）
+删除集合当中的所有对象。
+
+
+boolean  isEmpty（）
+判断集合是否为空，如果为空返回true。
+
+
+remove（Object o）
+从集合中删除一个对象的引用。
+
+
+int size（）
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -555,7 +571,11 @@ Collection接口中的方法
           选择结构语句if条件语句
 当判断条件1结果为true时，执行语句1，为false时，执行语句2。当判断条件1,2都不满足true时，执行语句3。
 
-例如：123456789if (判断条件1)&#123;  执行语句1&#125;else if(判断条件2)&#123;  执行语句2&#125;el
+例如：123456789if (判断条件1)&#123;  执行语句1&#125;else if(判断条件2)&#123;  执行语句2&#125;else&#123;  执行语句3&#125;
+三元运算
+一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。当判断条件成立时结果为表达式1的值，否则表达式2的值。1判断条件 ? 表达式 1 : 表达式 2
+
+例如：求取两个数x，y中较大的值。1234567891
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -610,7 +630,7 @@ Collection接口中的方法
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/75336bdc/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/ad01bc3e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -629,7 +649,7 @@ Collection接口中的方法
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/75336bdc/" itemprop="url">接口应用</a></h2>
+                <a class="post-title-link" href="/pages/ad01bc3e/" itemprop="url">方法</a></h2>
         
 
         <div class="post-meta">
@@ -659,7 +679,7 @@ Collection接口中的方法
 
           
           
-             <span id="/pages/75336bdc/" class="leancloud_visitors" data-flag-title="接口应用">
+             <span id="/pages/ad01bc3e/" class="leancloud_visitors" data-flag-title="方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -693,16 +713,17 @@ Collection接口中的方法
         
           
           
-接口定义一种标准：
+为解决代码重复编写的问题所设计的特定功能代码块。方法不能嵌套。main（）方法的作用：调用方法的实例化对象。
+
+方法结构一般为：123456修饰符 返回值类型 方法名（参数类型 参数1，参数类型 参数2，...）&#123;	执行语句	...	...	return 返回值； &#125;
+方法的重载
+Java 允许在一个程序中定义多个名称相同的方法
 
 
-通过interface定义；
-函数都是抽象函数（只有函数没有函数体）；
-子类通过implements实现；对接口里面的抽象函数进行override；123456789101112131415161718192021222324252627282930313233343536
-          ...
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/75336bdc/#more" rel="contents">
+            <a class="btn" href="/pages/ad01bc3e/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -838,8 +859,10 @@ Collection接口中的方法
           两次遇到同一个错误：
 
 ERROR Asset render failed: css/main.cssError: D:/blog/blog/themes/next/source/css/_common/components/highlight/highligh t.styl:78:30
-两次解决无
-          ...
+两次解决无果，github提问作者，作者回应升级下 hexo-renderer-stylus 插件，升级之后并没有解决错误。之后只得重新安装配置hexo，问题得以解决。
+
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/pages/11ecd5a9/#more" rel="contents">
