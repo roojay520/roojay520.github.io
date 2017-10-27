@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -104,7 +104,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/ff1e4b17/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/7395d6fb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -330,7 +330,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/ff1e4b17/" itemprop="url">淘宝双飞翼布局</a></h2>
+                <a class="post-title-link" href="/pages/7395d6fb/" itemprop="url">变量作用域</a></h2>
         
 
         <div class="post-meta">
@@ -342,7 +342,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T03:57:59+00:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T10:21:39+00:00">
                 2017-10-27
               </time>
             
@@ -360,7 +360,7 @@
 
           
           
-             <span id="/pages/ff1e4b17/" class="leancloud_visitors" data-flag-title="淘宝双飞翼布局">
+             <span id="/pages/7395d6fb/" class="leancloud_visitors" data-flag-title="变量作用域">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -393,15 +393,16 @@
       
         
           
-          淘宝双飞翼布局
-淘宝双飞翼布局和圣杯布局在前半部分的思路都差不多，只是在解决中间栏内容被挡住时所采用的方法不同。双飞翼布局在 main 下多一个增加 div，不使用相对定位，只用浮动和负边距，解决三栏液态式布局。
-
-DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证主列优先加载。
-1234567891011&lt;div class="header"&gt;        &lt;strong&gt;三栏布局之双飞翼布局&lt;/strong&gt;    &lt;/div&gt;    &lt;div class="container"&gt;        &lt;div c
+          变量作用域
+JavaScript 的函数可以嵌套，内部函数可以访问外部函数定义的变量，反之则不行。
+var和let创建的变量区别在于:
+var声明的变量作用域为最近的函数块，let声明的变量作用域为最近的闭合块，往往小于函数块。
+var声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出undefined。
+let声明不受变量提升的约束，这意味着let声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 ReferenceError（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。这个变量处于从块开始到 let 初始化处
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/ff1e4b17/#more" rel="contents">
+            <a class="btn" href="/pages/7395d6fb/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -452,7 +453,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/505644b3/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/70cbbc9f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -471,7 +472,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/505644b3/" itemprop="url">圣杯布局</a></h2>
+                <a class="post-title-link" href="/pages/70cbbc9f/" itemprop="url">函数作用域及块作用域</a></h2>
         
 
         <div class="post-meta">
@@ -483,7 +484,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T03:57:59+00:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T10:21:39+00:00">
                 2017-10-27
               </time>
             
@@ -501,7 +502,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
 
           
           
-             <span id="/pages/505644b3/" class="leancloud_visitors" data-flag-title="圣杯布局">
+             <span id="/pages/70cbbc9f/" class="leancloud_visitors" data-flag-title="函数作用域及块作用域">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -534,20 +535,18 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
       
         
           
-          圣杯布局
-圣杯布局是三栏式布局的一种经典解决方案，来源于 Matthew Levine 于 2006 年发表在 Alistapart 上的一篇文章。原文链接，其主要解决以下几种要求：
+          函数作用域及块作用域最小特权原则最小特权原则也叫最小授权或最小暴露原则。这个原则是指在软件设计中，应该最小限度地暴露必要内容，而将其他内容都“隐藏”起来，比如某个模块或对象的 API 设计。
+函数封装将函数和变量包裹在一个外部包装函数的作用域中，使用这个作用域将这些具体的细节隐藏起来，实现函数的封装。
 
+可以避免同名标识符之间的冲突，避免全局变量污染。
+将具体内容私有化，防止外部以非预期的方式使用内部私有的内容。
 
-两边侧栏固定宽度，中间栏宽度自适应，
-中间栏要放在文档流的前面以优先渲染。
-其父元素的高度始终是由三栏中高度最高的元素确定。
-
-第一步 建立基本框架写出基本的 html 框架，构建出基本盒模型，包括header, container和footer三个主体结构，再向container中加入三栏：
-1234567&lt;div class="header"&gt;&lt;/div&gt;&lt;div class
+函数作用域函数作用域的含义是指，属于这个函数的全部变量都可以在整个函数的范围内使用及复用（事实上在嵌套的作用域中也可以使用）。
+函数声明:1234567function foo()
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/505644b3/#more" rel="contents">
+            <a class="btn" href="/pages/70cbbc9f/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -598,7 +597,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/3080460d/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/422fbc06/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -617,7 +616,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/3080460d/" itemprop="url">变量提升</a></h2>
+                <a class="post-title-link" href="/pages/422fbc06/" itemprop="url">前端学习资源</a></h2>
         
 
         <div class="post-meta">
@@ -629,7 +628,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T03:57:59+00:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T10:21:39+00:00">
                 2017-10-27
               </time>
             
@@ -647,7 +646,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
 
           
           
-             <span id="/pages/3080460d/" class="leancloud_visitors" data-flag-title="变量提升">
+             <span id="/pages/422fbc06/" class="leancloud_visitors" data-flag-title="前端学习资源">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -680,20 +679,24 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
       
         
           
-          变量与函数提升包括变量和函数在内的所有声明都会在任何代码被执行前首先被处理。
-变量提升例如一个 var = 2；声明，在 javascript 引擎中它实际上被分为 2 个部分， 定义声明var a；和赋值声明 a = 2；第一个定义声明在编译阶段进行，第二个赋值声明要等到执行阶段才会进行。
-例1：
-123a = 2;var a;console.log(a); // 2
-上面的例子等同于：
-1234var a;a = 2;console.log(a); // 2
-例2：
-12console.log(a); //undefinedvar a = 2;
-上面的例子等同于：
-1234var a;co
+          基础
+前端导航：http://webjike.com/web.html
+HTML
+HTML MDN：https://developer.mozilla.org/zh-CN/docs/Web/HTML
+
+HTML5 MDN：https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5
+H5资源：http://www.html5tricks.com/
+
+
+HTML语义化
+
+CSS
+CSS MDN：https://developer.mozilla.org/zh-CN/docs/Web/CSS
+CSS 布局：http://zh.learn
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/3080460d/#more" rel="contents">
+            <a class="btn" href="/pages/422fbc06/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -744,7 +747,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/1a147173/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/91b6115c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -763,7 +766,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/1a147173/" itemprop="url">html基础</a></h2>
+                <a class="post-title-link" href="/pages/91b6115c/" itemprop="url">button常用设置</a></h2>
         
 
         <div class="post-meta">
@@ -775,7 +778,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T03:57:59+00:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T10:21:39+00:00">
                 2017-10-27
               </time>
             
@@ -793,7 +796,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
 
           
           
-             <span id="/pages/1a147173/" class="leancloud_visitors" data-flag-title="html基础">
+             <span id="/pages/91b6115c/" class="leancloud_visitors" data-flag-title="button常用设置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -826,23 +829,13 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
       
         
           
-          html 基础完整 HTML 树
-
-相关的 CSS 文件（针对样式）：
-
-1&lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
-
-相关的 JavaScript 文件（更改渲染和行为的多用途脚本）：
-
-1&lt;script src="myjavascripts.js"&gt;&lt;/script&gt;
-
-粗体斜体
-
-1234&lt;!-- 推荐使用&lt;strong&gt;进行加粗  --&gt; &lt;strong&gt;粗体&lt;/strong&gt;&lt;!-- 推荐使用&lt;em&gt;进行斜体显示
+          鼠标样式cursor：定网页浏览时用户鼠标指针的样式。
+cursor：pointer； 设定鼠标的形状为一只伸出食指的手，这也是绝大多数浏览器里面鼠标停留在网页链接上方时候的样式。default 箭头。crosshair 十字progress 沙漏
+按钮颜色平时的状态：1234567891011121314151617181920212223242526.btn &#123;    // 未按下时的背景颜色    background: #02b3e4;    // 边框圆角    border-radius: 4px;    // 去掉边框    border: none    // 边缘阴
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/1a147173/#more" rel="contents">
+            <a class="btn" href="/pages/91b6115c/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -893,7 +886,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/889563/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/f9a582e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -912,7 +905,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/889563/" itemprop="url">jQuery基础</a></h2>
+                <a class="post-title-link" href="/pages/f9a582e/" itemprop="url">全局命名空间和模块</a></h2>
         
 
         <div class="post-meta">
@@ -924,7 +917,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T03:57:59+00:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T10:21:39+00:00">
                 2017-10-27
               </time>
             
@@ -942,7 +935,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
 
           
           
-             <span id="/pages/889563/" class="leancloud_visitors" data-flag-title="jQuery基础">
+             <span id="/pages/f9a582e/" class="leancloud_visitors" data-flag-title="全局命名空间和模块">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -975,22 +968,14 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
       
         
           
-          jQuery
-CDN 方式引入 jQuery
+          全局命名空间和模块全局命名空间库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。
+例如：123456var mylibrary = &#123;    name: 'haha',    eat: (name) =&gt; &#123;        console.log(`$&#123;name&#125; is eating`);    &#125;&#125;;
+模块模块管理通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。
 
-
-
-选择器操作 DOM 节点
-$(“选择器”); 可以通过选择器选择 DOM 节点
-jQuery(“h1”); 等同于 $(“h1”); 返回 h1
-$(“h1”).text(); 返回 h1 里面的 text
-$(“h1”).text(“Hello World!”) 更改覆盖 h1 的内容
-
-注意DOM 加载完成之后 jQuery 开始运行，否则 jQuery 操作会被覆盖，不会生效。12345678// 文档加载完成后执行替换方法jQuery(document).ready(function()&#123;    $("h1").text("
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/889563/#more" rel="contents">
+            <a class="btn" href="/pages/f9a582e/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1148,7 +1133,7 @@ $(“h1”).text(“Hello World!”) 更改覆盖 h1 的内容
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Pisces
   </a>
 </div>
 
@@ -1227,6 +1212,13 @@ $(“h1”).text(“Hello World!”) 更改覆盖 h1 的内容
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
 
   
     <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
