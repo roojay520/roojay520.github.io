@@ -236,7 +236,9 @@ div {
 
 // 文章样式表
 .post {
-    @include shadowLight; // padding: 25px 0 15px;  padding: 20px 25px;
+    @include shadowLight;
+    padding: 25px 0 15px;
+    padding: 20px 25px;
     margin-bottom: 25px;
     ol,
     ul {
