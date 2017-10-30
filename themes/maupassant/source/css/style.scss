@@ -238,9 +238,6 @@ div {
 .post {
     @include shadowLight; // padding: 25px 0 15px;  padding: 20px 25px;
     margin-bottom: 25px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
     ol,
     ul {
         padding-left: 3em;
