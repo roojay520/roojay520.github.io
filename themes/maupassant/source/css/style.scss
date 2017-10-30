@@ -94,6 +94,7 @@ div {
     box-sizing: border-box;
 }
 
+// 头部
 #header {
     padding: 58px 0 0;
     text-align: left;
@@ -102,6 +103,7 @@ div {
     .site-name {
         margin-bottom: 40px;
         h1 {
+            font-size: 1.5em;
             padding: 0;
             margin: 0;
             height: 0;
@@ -119,7 +121,7 @@ div {
             margin: .2em 0 0;
             color: #999;
         }
-    }
+    } // 导航菜单
     #nav-menu {
         margin: 10px 0 -1px;
         padding: 0;
@@ -144,6 +146,7 @@ div {
     }
 }
 
+// 右边侧栏
 #sidebar {
     border-left: 1px solid #ddd;
     padding-left: 35px;
@@ -172,9 +175,14 @@ div {
         }
         .tagcloud {
             margin-top: 10px;
+            font-size: 1.2em;
             a {
-                line-height: 1.5;
-                padding: 5px;
+                line-height: 1.7;
+                padding: .5em;
+                &:hover {
+                    font-weight: 600;
+                    transition: 0.2s box-shadow ease-in-out, 0.2s background-color ease-in-out, 0.2s border-color ease-in-out;
+                }
             }
         }
         ul {
@@ -215,21 +223,28 @@ div {
 
 /* title for search result or tagged posts*/
 
+// 搜索的文章标题
 .label-title {
     margin-top: 1.1em;
-    font-size: 20px;
+    font-size: 1.2em;
     font-weight: normal;
-    color: #888;
+    color: #1a0dab;
 }
 
+// 文章样式表
 .post {
     // padding: 25px 0 15px;
     padding: 20px 25px;
     @include shadowLight;
     margin-bottom: 25px;
-    ol {
+    ol,
+    ul {
         padding-left: 3em;
     }
+    h1 {
+        font-size: 1.5em;
+        overflow: hidden;
+    } // 文章标题
     .post-title {
         margin: 0;
         color: #555;
@@ -238,7 +253,7 @@ div {
         a {
             color: #555;
         }
-    }
+    } // 文章基本信息
     .post-meta {
         padding: 0;
         margin: 15px 0 0;
@@ -300,7 +315,7 @@ div {
     }
     .post-content {
         clear: left;
-        font-size: 15px;
+        font-size: 1.1em;
         line-height: 1.77;
         color: #444;
         padding-top: 15px;
@@ -309,11 +324,13 @@ div {
         word-break: break-all;
         margin-bottom: 1.5em;
         h2 {
+            font-size: 1.4em;
             margin: 1.4em 0 1.1em;
             border-bottom: 1px solid #eee;
             overflow: hidden;
         }
         h3 {
+            font-size: 1.3em;
             margin: 1.4em 0 1.1em;
         }
         pre code {
@@ -937,7 +954,7 @@ screen and (min-width: 48em) {
 .readmore a {
     font-size: 14px;
     color: #444;
-    margin: -1em 0;
+    margin: -1em auto;
     padding: 5px 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
