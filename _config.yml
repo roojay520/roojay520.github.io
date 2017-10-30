@@ -16,7 +16,7 @@ url: http://roojay.com
 root: /
 permalink: pages/:abbrlink/
 # permalink: pages/:year/:month/:day/:title/
-permalink_defaults: pages/:abbrlink/
+permalink_defaults:
 
 # Directory
 source_dir: source
