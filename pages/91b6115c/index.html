@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="code,notes,web"><title>button常用设置 | 陌名如初</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">button常用设置</h1><a id="logo" href="/.">陌名如初</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Start</i></a><a href="/archives/"><i class="fa fa-archive"> Archiv</i></a><a href="/about/"><i class="fa fa-user"> Über</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">button常用设置</h1><div class="post-meta">Oct 30, 2017</div><div class="post-content"><h1 id="鼠标样式"><a href="#鼠标样式" class="headerlink" title="鼠标样式"></a>鼠标样式</h1><p>cursor：定网页浏览时用户鼠标指针的样式。</p>
+<p>cursor：pointer； 设定鼠标的形状为一只伸出食指的手，这也是绝大多数浏览器里面鼠标停留在网页链接上方时候的样式。<br>default 箭头。<br>crosshair 十字<br>progress 沙漏</p>
+<h1 id="按钮颜色"><a href="#按钮颜色" class="headerlink" title="按钮颜色"></a>按钮颜色</h1><p>平时的状态：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.btn</span> &#123;</div><div class="line">    // 未按下时的背景颜色</div><div class="line">    <span class="selector-tag">background</span>: <span class="selector-id">#02b3e4</span>;</div><div class="line">    // 边框圆角</div><div class="line">    <span class="selector-tag">border-radius</span>: 4<span class="selector-tag">px</span>;</div><div class="line">    // 去掉边框</div><div class="line">    <span class="selector-tag">border</span>: <span class="selector-tag">none</span></div><div class="line">    // 边缘阴影</div><div class="line">    <span class="selector-tag">box-shadow</span>: 12<span class="selector-tag">px</span> 15<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0, 0, 0, 0<span class="selector-class">.1</span>);</div><div class="line">    // 字体颜色</div><div class="line">    <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</div><div class="line">    // 显示方式</div><div class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span>;</div><div class="line">    // 字体</div><div class="line">    font-family: 'Open Sans', sans-serif;</div><div class="line">    <span class="selector-tag">font-size</span>: 12<span class="selector-tag">px</span>;</div><div class="line">    <span class="selector-tag">font-weight</span>: 600;</div><div class="line">    // 字间距</div><div class="line">    <span class="selector-tag">letter-spacing</span>: 0<span class="selector-class">.165em</span>;</div><div class="line">    // 超出隐藏</div><div class="line">    <span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</div><div class="line">    // 设置渐变效果</div><div class="line">    <span class="selector-tag">transition</span>: 0<span class="selector-class">.2s</span> <span class="selector-tag">box-shadow</span> <span class="selector-tag">ease-in-out</span>, 0<span class="selector-class">.2s</span> <span class="selector-tag">background-color</span> <span class="selector-tag">ease-in-out</span>, 0<span class="selector-class">.2s</span> <span class="selector-tag">border-color</span> <span class="selector-tag">ease-in-out</span>;</div><div class="line">&#125;</div><div class="line">// 鼠标放上去时的颜色</div><div class="line"><span class="selector-class">.btn</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">:not(</span><span class="selector-pseudo">:disabled)</span> &#123; <span class="attribute">background</span>: <span class="number">#148bb1</span>;&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="字体抗锯齿-webkit-font-smoothing有"><a href="#字体抗锯齿-webkit-font-smoothing有" class="headerlink" title="字体抗锯齿 -webkit-font-smoothing有"></a>字体抗锯齿 -webkit-font-smoothing有</h1><blockquote>
+<p>CSS3中用于webkit引擎(如chrome)中设置字体的抗锯齿或者说光滑度的属性。</p>
+</blockquote>
+<ul>
+<li>none —— 对低像素的文本比较好</li>
+<li>subpixel-antialiased ——默认值</li>
+<li>antialiased ——抗锯齿很好</li>
+</ul>
+<h1 id="文本溢出-text-overflow"><a href="#文本溢出-text-overflow" class="headerlink" title="文本溢出 text-overflow"></a>文本溢出 text-overflow</h1><blockquote>
+<p>text-overflow 属性规定当文本溢出包含元素时发生的事情。</p>
+<ul>
+<li>clip    修剪文本。<ul>
+<li>ellipsis显示省略符号来代表被修剪的文本。</li>
+<li>string使用给定的字符串来代表被修剪的文本。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h1 id="文本转换-text-transform"><a href="#文本转换-text-transform" class="headerlink" title="文本转换 text-transform"></a>文本转换 text-transform</h1><blockquote>
+<p>转换不同元素中的文本。</p>
+</blockquote>
+<ul>
+<li>none    默认。定义带有小写字母和大写字母的标准的文本。<ul>
+<li>capitalize文本中的每个单词以大写字母开头。</li>
+<li>uppercase定义仅有大写字母。</li>
+<li>lowercase定义无大写字母，仅有小写字母。</li>
+<li>inherit规定应该从父元素继承 text-transform 属性的值。</li>
+</ul>
+</li>
+</ul>
+<h1 id="元素变形过渡效果-transition"><a href="#元素变形过渡效果-transition" class="headerlink" title="元素变形过渡效果 transition"></a>元素变形过渡效果 transition</h1><blockquote>
+<p>设置元素渐变过渡，transition: property duration timing-function delay;需要加浏览器前缀。设置多个元素效果时用逗号隔开。<br><a href="http://www.w3school.com.cn/cssref/pr_transition.asp" target="_blank" rel="external">http://www.w3school.com.cn/cssref/pr_transition.asp</a></p>
+</blockquote>
+<ul>
+<li>transition-property    规定设置过渡效果的 CSS 属性的名称。<ul>
+<li>transition-duration规定完成过渡效果需要多少秒或毫秒。</li>
+<li>transition-timing-function规定速度效果的速度曲线。（<a href="http://www.w3school.com.cn/tiy/t.asp?f=css3_transition-timing-function2）" target="_blank" rel="external">http://www.w3school.com.cn/tiy/t.asp?f=css3_transition-timing-function2）</a></li>
+<li>transition-delay定义过渡效果何时开始，过渡之前需要等待的实践。</li>
+</ul>
+</li>
+</ul>
+<p><strong>速度曲线设置</strong></p>
+<ul>
+<li>linear    规定以相同速度开始至结束的过渡效果。<ul>
+<li>ease规定慢速开始，然后变快，然后慢速结束的过渡效果。</li>
+<li>ease-in规定以慢速开始的过渡效果。</li>
+<li>ease-out规定以慢速结束的过渡效果。</li>
+<li>ease-in-out规定以慢速开始和结束的过渡效果。</li>
+</ul>
+</li>
+</ul>
+<h1 id="段落文本换行-white-space"><a href="#段落文本换行-white-space" class="headerlink" title="段落文本换行 white-space"></a>段落文本换行 white-space</h1><blockquote>
+<p>white-space 属性设置如何处理元素内的空白。<br><a href="http://www.w3school.com.cn/cssref/pr_text_white-space.asp" target="_blank" rel="external">http://www.w3school.com.cn/cssref/pr_text_white-space.asp</a></p>
+</blockquote>
+<ul>
+<li>normal    默认。空白会被浏览器忽略。<ul>
+<li>pre空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。</pre></li>
+<li>nowrap文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。</li>
+<li>pre-wrap保留空白符序列，但是正常地进行换行。</li>
+<li>pre-line合并空白符序列，但是保留换行符。</li>
+<li>inherit规定应该从父元素继承 white-space 属性的值</li>
+</ul>
+</li>
+</ul>
+</div><div class="tags"><a href="/tags/css/">css</a></div><div class="post-nav"><a href="/pages/9891ebc8/" class="pre">git基础</a><a href="/pages/343902f6/" class="next">css和响应式</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://roojay.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Kategorien</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/Yarn/" style="font-size: 15px;">Yarn</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/flex/" style="font-size: 15px;">flex</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/test/" style="font-size: 15px;">test</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/VSCode-ESLint/" style="font-size: 15px;">VSCode ESLint</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/Test/" style="font-size: 15px;">Test</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/YouDon-tKnowJavaScript/" style="font-size: 15px;">YouDon'tKnowJavaScript</a> <a href="/tags/WEB/" style="font-size: 15px;">WEB</a> <a href="/tags/SSH/" style="font-size: 15px;">SSH</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/next/" style="font-size: 15px;">next</a> <a href="/tags/RegEx/" style="font-size: 15px;">RegEx</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Letzte</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/pages/998dffd6/">盒子模型</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/118b8ca3/">编译原理</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/8b41c91c/">进制快速转换</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/4b02d38a/">数组与字符串常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/70cbbc9f/">函数作用域及块作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/81d5af05/">常用正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/422fbc06/">前端学习资源</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/5b90526d/">常用排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/3080460d/">变量提升</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/7395d6fb/">变量作用域</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Blogroll</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">陌名如初.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

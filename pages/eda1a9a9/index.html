@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="code,notes,web"><title>css基础 | 陌名如初</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">css基础</h1><a id="logo" href="/.">陌名如初</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Start</i></a><a href="/archives/"><i class="fa fa-archive"> Archiv</i></a><a href="/about/"><i class="fa fa-user"> Über</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">css基础</h1><div class="post-meta">Oct 30, 2017</div><div class="post-content"><h1 id="CSS基础"><a href="#CSS基础" class="headerlink" title="CSS基础"></a>CSS基础</h1><h2 id="CSS-导入"><a href="#CSS-导入" class="headerlink" title="CSS 导入"></a>CSS 导入</h2><blockquote>
+<p>在 HTML 中引入 CSS 的方法主要有四种，它们分别是行内式、内嵌式、链接式和导入式。</p>
+</blockquote>
+<ol>
+<li>行内式</li>
+</ol>
+<ul>
+<li>在标记的 style 属性中设定 CSS 样式。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">color:white;</span> <span class="attr">background-color:blue</span>;&gt;</span></div><div class="line">Tihs is a test text.</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>内嵌式</li>
+</ol>
+<ul>
+<li><p>将 CSS 样式集中写在网页的<code>&lt;head&gt;&lt;/head&gt;</code>中的<code>&lt;style&gt;&lt;/style&gt;</code>标签对中。</p>
+</li>
+<li><p>缺点是对于一个包含很多网页的网站，在每个网页中使用嵌入式，进行修改样式时非常麻烦。单一网页可以考虑使用嵌入式。</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">  p &#123;</span></div><div class="line"><span class="css">    <span class="selector-tag">color</span><span class="selector-pseudo">:red</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>导入式</li>
+</ol>
+<ul>
+<li>使用 CSS 的规则将外部CSS文件将一个独立的<code>.css</code>文件引入 HTML 文件中，<code>&lt;style&gt;</code>标记写在<code>&lt;head&gt;</code>标记中。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">	@<span class="keyword">import</span>"<span class="keyword">mystyle</span>.<span class="keyword">css</span>'</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>链接式</li>
+</ol>
+<ul>
+<li>最常用的的一种方式。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"src/test.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h2><blockquote>
+<p>margin 属性为给定元素设置所有四个（上下左右）方向的外边距属性。四个外边距属性设置分别是： margin-top， margin-right， margin-bottom 和 margin-left 。指定的外边距允许为负数。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>值</th>
+<th>例子</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>margin: style</td>
+<td>单值语法</td>
+<td>margin: 1em;</td>
+<td>指定四周外边距都为1em</td>
+</tr>
+<tr>
+<td>margin: vertical horizontal</td>
+<td>二值语法</td>
+<td>margin: 5% auto;</td>
+<td>上下为5%，左右为auto</td>
+</tr>
+<tr>
+<td>margin: top horizontal bottom</td>
+<td>三值语法</td>
+<td>margin: 1em auto 2em;</td>
+<td>上为1em，左右为auto，下为2em</td>
+</tr>
+<tr>
+<td>margin: top right bottom left</td>
+<td>四值语法</td>
+<td>margin: 2px 1em 0 auto;</td>
+<td>上为2px，右为1em，下为0，左为auto</td>
+</tr>
+</tbody>
+</table>
+<h2 id="选择符"><a href="#选择符" class="headerlink" title="选择符"></a>选择符</h2><blockquote>
+<p>选择符用于定位我们想要样式化的网页 HTML 元素,可以选择一个或多个需要添加样式的元素。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>选择符</th>
+<th>选择内容</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>元素 选择符</td>
+<td>标签内所有元素</td>
+<td>p</td>
+</tr>
+<tr>
+<td>ID 选择符</td>
+<td>指定ID的元素</td>
+<td>#my-id</td>
+</tr>
+<tr>
+<td>Clss 选择符</td>
+<td>指定Class的元素</td>
+<td>.my-class</td>
+</tr>
+<tr>
+<td>属性 选择符</td>
+<td>拥有指定属性的元素</td>
+<td>img[src]</td>
+</tr>
+<tr>
+<td>伪类 选择符</td>
+<td>指定的元素，但是需要在特殊的状态，比如悬停</td>
+<td>a:hover</td>
+</tr>
+</tbody>
+</table>
+<h3 id="简单选择器（Simple-selectors）"><a href="#简单选择器（Simple-selectors）" class="headerlink" title="简单选择器（Simple selectors）"></a>简单选择器（Simple selectors）</h3><blockquote>
+<p>通过<code>元素类型</code>、<code>class</code>或 <code>id</code> 匹配一个或多个元素。</p>
+</blockquote>
+<h3 id="属性选择器（Attribute-selectors）"><a href="#属性选择器（Attribute-selectors）" class="headerlink" title="属性选择器（Attribute selectors）"></a>属性选择器（Attribute selectors）</h3><blockquote>
+<p>通过<code>属性/属性值</code>匹配一个或多个元素。</p>
+</blockquote>
+<ul>
+<li>[attr]：该选择器选择包含 attr 属性的所有元素，不论 attr 的值为何。</li>
+<li>[attr=val]：该选择器仅选择 attr 属性被赋值为 val 的所有元素。</li>
+<li>[attr~=val]：该选择器仅选择 attr 属性的值（以空格间隔出多个值）中有包含 val 值的所有元素，比如位于被空格分隔的多个类（class）中的一个类。</li>
+<li>[attr|=val] : 选择attr属性的值以val（包括val）或val-开头的元素。</li>
+<li>[attr^=val] : 选择attr属性的值以val开头（包括val）的元素。</li>
+<li>[attr$=val] : 选择attr属性的值以val结尾（包括val）的元素。</li>
+<li>[attr*=val] : 选择attr属性的值中包含字符串val的元素。</li>
+</ul>
+<h3 id="伪类（Pseudo-classes）"><a href="#伪类（Pseudo-classes）" class="headerlink" title="伪类（Pseudo-classes）"></a>伪类（Pseudo-classes）</h3><blockquote>
+<p>一个 CSS  伪类（pseudo-class） 是一个以冒号(:)作为前缀的关键字，当元素需要在特定状态下的设置表现样式时，往元素的选择器后面加上对应的伪类（pseudo-class）。<br>例如：页面上有一个链接， 有四种状态：</p>
+</blockquote>
+<ol>
+<li>未点击状态显示蓝色：</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123; <span class="attribute">color</span>: blue; &#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>已点击状态显示紫色：</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123; <span class="attribute">color</span>: purple; &#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>鼠标悬停状态显示红色：</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">color</span>: red;  &#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>鼠标点击状态显示绿色：</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123; <span class="attribute">color</span>: green; &#125;</div></pre></td></tr></table></figure>
+<p>多个状态同时设置，按照以上先后顺序排列。</p>
+<h3 id="伪元素（Pseudo-elements）"><a href="#伪元素（Pseudo-elements）" class="headerlink" title="伪元素（Pseudo-elements）"></a>伪元素（Pseudo-elements）</h3><blockquote>
+<p>以冒号(::)作为前缀的关键字，添加到选择器后面选择某个元素的某个部分。例如每个段落的第一个字，或者某个元素之前生成的内容。</p>
+</blockquote>
+<ul>
+<li><code>::after</code>在已选中元素尾部创建最后一个子元素，通常会配合 content 属性来为该元素添加装饰内容。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*在链接后面加上一个箭头←*/</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">::after</span> &#123; <span class="attribute">content</span>: <span class="string">"←"</span>;&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>::before</code> 在已选中元素头部创建第一个子元素。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*在链接前面加上一个箭头→*/</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">::after</span> &#123; <span class="attribute">content</span>: <span class="string">"→"</span>;&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>::first-letter</code>会选中一整块文字第一行的第一个字母，并且文字所处的行之前没有其他内容（如图片和内联的表格） 。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 使每段开头的第一个字母变红变大 */</span></div><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-letter</span> &#123;  <span class="comment">/* 使用:first来兼容IE8- */</span></div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">130%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>::first-line</code>将样式只应用于一个元素的首行。首行文本的数量取决于元素的宽，document 的宽和文本的字号。</li>
+<li><code>::first-line</code> 伪元素<strong>只作用于块容器中</strong>,所以<code>::first-line</code>伪元素只能在一个display值为block, inline-block, table-cell 或者 table-caption中有用.。在其他的类型中<code>::first-line</code>是不起作用的。</li>
+<li><code>::selection</code>应用于文档中被用户选中高亮的部分（比如使用鼠标或其他选择设备选中的部分）,ecko 引擎需要加前缀（-moz）。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 将被选中的任何文本渲染为金黄色和红色背景 */</span></div><div class="line"><span class="selector-pseudo">::-moz-selection</span> &#123;</div><div class="line">  <span class="attribute">color</span>: gold;</div><div class="line">  <span class="attribute">background</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-pseudo">::selection</span> &#123;</div><div class="line">  <span class="attribute">color</span>: gold;</div><div class="line">  <span class="attribute">background</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="组合器（Combinators）"><a href="#组合器（Combinators）" class="headerlink" title="组合器（Combinators）"></a>组合器（Combinators）</h3><blockquote>
+<p>以有效的方式组合两个或更多的选择器用于非常特定的选择的方法。例如，只选择 divs 的直系子节点的段落，或者直接跟在 headings 后面的段落。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>组合器</th>
+<th>选择值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A,B</td>
+<td>匹配同时满足A和B的任意元素</td>
+</tr>
+<tr>
+<td>A B</td>
+<td>匹配任意元素，满足条件：B是A的后代结点（B是A的子节点，或者A的子节点的子节点）</td>
+</tr>
+<tr>
+<td>A &gt; B</td>
+<td>匹配任意元素，满足条件：B是A的直接子节点</td>
+</tr>
+<tr>
+<td>A + B</td>
+<td>匹配任意元素，满足条件：B是A的下一个兄弟节点（AB有相同的父结点，并且B紧跟在A的后面）</td>
+</tr>
+<tr>
+<td>A ~ B</td>
+<td>匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="多用选择器（Multiple-selectors）"><a href="#多用选择器（Multiple-selectors）" class="headerlink" title="多用选择器（Multiple selectors）"></a>多用选择器（Multiple selectors）</h3><blockquote>
+<p>以逗号分隔开的多个选择器放在一个 CSS 规则下面， 以将一组声明应用于由这些选择器选择的所有元素。</p>
+</blockquote>
+<h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><blockquote>
+<p>网页上的所有的元素都包含在一个个盒子中。在 CSS 里面设置它们的尺寸，颜色，位置等等。</p>
+</blockquote>
+<ul>
+<li>内边距（padding）： 围绕着内容的空间（比如围绕段落的空间）</li>
+<li>边框（border）：  紧接着内边距的实体线段</li>
+<li><p>外边距(margin) ：  围绕元素外部的空间</p>
+<p><img src="src/box-model.png" alt="box"></p>
+</li>
+<li><p>width：  属于一个元素的宽</p>
+</li>
+<li>background-color： 元素内容和内边距之后的颜色</li>
+<li>color： 元素内容的颜色（通常是文本）</li>
+<li>text-shadow： 为元素内的文本设置阴影</li>
+<li>display：  设置元素的显示模式</li>
+<li>position：fixed  位置保持不动</li>
+</ul>
+<h2 id="单位长度"><a href="#单位长度" class="headerlink" title="单位长度"></a>单位长度</h2><h3 id="px-em"><a href="#px-em" class="headerlink" title="px em"></a>px em</h3><ul>
+<li>px ：像素 (px) 是一种绝对单位（ absolute units）， 因为无论其他相关的设置怎么变化，像素指定的值是不会变化的。</li>
+<li>em ：相对长度单位，相对于当前文本内的字体尺寸。</li>
+</ul>
+<h3 id="px-与em转换"><a href="#px-与em转换" class="headerlink" title="px 与em转换"></a>px 与em转换</h3><p>任意浏览器的默认字体高度为 16px（16像素），所有未经调整的浏览器都符合: 1em=16px，那么10px=0.625em。<br><br>为了简化font-size的换算，可以在 css 中的 body 选择器中声明 <code>font-size: 62.5%</code>，这时<code>10px=1em</code>。</p>
+<h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><blockquote>
+<p>box-shadow 属性向元素添加一个或多个阴影。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">box-shadow</span>: <span class="selector-tag">h-shadow</span> <span class="selector-tag">v-shadow</span> <span class="selector-tag">blur</span> <span class="selector-tag">spread</span> <span class="selector-tag">color</span> <span class="selector-tag">inset</span>;</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h-shadow</td>
+<td>必需。水平阴影。允许负值。</td>
+</tr>
+<tr>
+<td>v-shadow</td>
+<td>必需。垂直阴影。允许负值。</td>
+</tr>
+<tr>
+<td>blur</td>
+<td>可选。模糊距离。</td>
+</tr>
+<tr>
+<td>spread</td>
+<td>可选。阴影尺寸。</td>
+</tr>
+<tr>
+<td>color</td>
+<td>可选。阴影颜色。</td>
+</tr>
+<tr>
+<td>inset</td>
+<td>可选。将外部阴影(outset)改为内部阴影。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><blockquote>
+<p>一个好的布局，能将网页内容更完美的展示出来。</p>
+</blockquote>
+<h3 id="display-元素显示"><a href="#display-元素显示" class="headerlink" title="display 元素显示"></a>display 元素显示</h3><blockquote>
+<p>CSS 中最重要的控制布局的属性，用来设置一个元素应该如何显示，每一个元素都有一个默认的<code>display</code>值。<br>对于大多数元素它们的默认值通常是<code>block</code>或<code>inline</code>。</p>
+</blockquote>
+<ul>
+<li>block：块级元素。块级元素通常会占用容器的全部宽度，在其开始和结束位置都是换行符。常见的块级元素有：<code>h1</code>、<code>div</code>、<code>p</code>和<code>form</code>等，HTML5 中的新元素：<code>header</code>、<code>footer</code>和<code>section</code>等。</li>
+<li>inline：行内元素。行内元素只需要必要的宽度，不会强制换行打乱已有元素布局。常见的行内元素有：<code>span</code>和<code>a</code>。</li>
+<li>none：隐藏某个元素，且隐藏的元素不会占据任何空间。一些特殊元素的默认 display 值是它，例如 <code>script</code>。 <code>display:none</code> 通常被 JavaScript 用来在不删除元素的情况下隐藏或显示元素。</li>
+</ul>
+<h3 id="visibility-元素可见性"><a href="#visibility-元素可见性" class="headerlink" title="visibility 元素可见性"></a>visibility 元素可见性</h3><p>visibility 属性有两种用法：</p>
+<ol>
+<li>值为<code>hidden</code>时隐藏元素，并将其所占空间用空白填充。</li>
+<li>值为<code>collapse</code>时隐藏表格的一行或一列，用于快速从表格中删除一行或一列。</li>
+</ol>
+<ul>
+<li><strong><code>display:none</code>和<code>visibility:hidden</code>的区别：</strong><ul>
+<li><code>display:none</code>隐藏某个元素时，隐藏的元素不会占据任何空间。</li>
+<li><code>visibility:hidden</code>可以隐藏元素，但是隐藏的元素仍然占用原来大小的空间。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Google-原色"><a href="#Google-原色" class="headerlink" title="Google 原色"></a>Google 原色</h2><ul>
+<li>蓝色 #4285f3</li>
+<li>红色 #ea4335</li>
+<li>绿色 #34a853</li>
+<li>黄色 #fbbc05</li>
+<li>黑色 #1c262f</li>
+</ul>
+<p>google蓝 #2196f3<br>按钮红 #f50057<br>google绿 #0f9d58</p>
+</div><div class="tags"><a href="/tags/css/">css</a></div><div class="post-nav"><a href="/pages/5a252ba9/" class="pre">css布局</a><a href="/pages/e5332c52/" class="next">arguments和rest</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://roojay.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Kategorien</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/Yarn/" style="font-size: 15px;">Yarn</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/flex/" style="font-size: 15px;">flex</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/test/" style="font-size: 15px;">test</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/VSCode-ESLint/" style="font-size: 15px;">VSCode ESLint</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/Test/" style="font-size: 15px;">Test</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/YouDon-tKnowJavaScript/" style="font-size: 15px;">YouDon'tKnowJavaScript</a> <a href="/tags/WEB/" style="font-size: 15px;">WEB</a> <a href="/tags/SSH/" style="font-size: 15px;">SSH</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/next/" style="font-size: 15px;">next</a> <a href="/tags/RegEx/" style="font-size: 15px;">RegEx</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Letzte</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/pages/998dffd6/">盒子模型</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/118b8ca3/">编译原理</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/8b41c91c/">进制快速转换</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/4b02d38a/">数组与字符串常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/70cbbc9f/">函数作用域及块作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/81d5af05/">常用正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/422fbc06/">前端学习资源</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/5b90526d/">常用排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/3080460d/">变量提升</a></li><li class="post-list-item"><a class="post-list-link" href="/pages/7395d6fb/">变量作用域</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Blogroll</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">陌名如初.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
