@@ -41,7 +41,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
 
 # Home page setting
@@ -116,11 +116,11 @@ abbrlink:
   rep: hex    # 进制：dec(default) and hex
 
   #本地搜索
-# search:
-#   path: search.xml
-#   field: post
-  # format: html
-  # limit: 10000
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
   # # 数学公式
   # mathjax: true
