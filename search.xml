@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[盒子模型]]></title>
-    <url>%2Fpages%2F998dffd6%2F</url>
-    <content type="text"><![CDATA[盒子模型box-size 元素大小 = boder + padding + contentwidth box-size: boder-size;（兼容性） 它会让系统计算元素大小时会将 boder padding 包括在内。不包含外边距(margin)。 12345&#123; -webkit-box-size: boder-size; -ms-box-size: boder-size; -moz-box-size: boder-size;&#125; 浏览器前缀 -webkit -ms -moz flex 弹性布局 用于 Chrome 29+、IE 11+ 和 Mozilla 28+。要支持 Safari，必须添加 -webkit- 前缀： 1234&#123; display: -webkit-flex; display: flex;&#125;]]></content>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[编译原理]]></title>
-    <url>%2Fpages%2F118b8ca3%2F</url>
-    <content type="text"><![CDATA[编译原理尽管通常将 JavaScript 归类为“动态”或“解释执行”语言，但事实上它是一门编译语言。任何 JavaScript 代码片段在执行前都要进行编译（通常就在执行前）。但与传统的编译语言不同，它不是提前编译的，编译结果也不能在分布式系统中进行移植。 编译三步骤1. 分词/词法分析（Tokenizing/Lexing）将字符串分解成编程语言所能识别的代码块，这些代码块被称为词法单元（token）。 如果词法单元生成器在判断一个字符是一个独立的词法单元还是其他词法单元的一部分时（是否依赖于其他词法单元），调用的是有状态的解析规则，那么这个过程就被称为词法分析。 2. 解析/语法分析（Parsing）将词法单元流（数组）转换成一个逐级嵌套结构的树“抽象语法树”（Abstract Syntax Tree，AST）。拥有一个顶级节点，以及连续的子节点。类似于 DOM树？ 3. 代码生成将抽象语法树转换为引擎可识别执行的代码。例如：var a = 2；第一步：创建一个叫做 a 的变量（分配内存，确定储存地址空间等）。第二步：运行时引擎会在作用域中查找该变量（LHS），找到之后将 2 这个值储存到 a 中。]]></content>
-      <tags>
-        <tag>YouDon&#39;tKnowJavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[进制快速转换]]></title>
     <url>%2Fpages%2F8b41c91c%2F</url>
     <content type="text"><![CDATA[进制转换十进制转其他进制12345const i = 10;i.toString(2); // 2 进制 1010i.toString(8); // 8 进制 12i.toString(16); // 16 进制 ai.toString(32); // 32 进制 a 其他进制转十进制123parsetInt(x, 2); // 2 进制转 10进制parsetInt(x, 8); // 8 进制转 10 进制parsetInt(x, 16); // 16 进制转 10 进制 非十进制转十进制先转化为10进制， 然后再利用toString(参数)， 转化成不同的进制。 1parsetInt(x, 2).toString(8); // 2 进制转 8进制]]></content>
@@ -33,11 +17,19 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[函数作用域及块作用域]]></title>
-    <url>%2Fpages%2F70cbbc9f%2F</url>
-    <content type="text"><![CDATA[函数作用域及块作用域最小特权原则最小特权原则也叫最小授权或最小暴露原则。这个原则是指在软件设计中，应该最小限度地暴露必要内容，而将其他内容都“隐藏”起来，比如某个模块或对象的 API 设计。 函数封装将函数和变量包裹在一个外部包装函数的作用域中，使用这个作用域将这些具体的细节隐藏起来，实现函数的封装。 可以避免同名标识符之间的冲突，避免全局变量污染。 将具体内容私有化，防止外部以非预期的方式使用内部私有的内容。 函数作用域函数作用域的含义是指，属于这个函数的全部变量都可以在整个函数的范围内使用及复用（事实上在嵌套的作用域中也可以使用）。 函数声明:1234567function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;foo(); 立即执行函数表达式：12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;)(); 区分函数声明和表达式最简单的方法是看 function 关键字出现在声明中的位置（不仅仅是一行代码，而是整个声明中的位置）。如果 function 是声明中的第一个词，那么就是一个函数声明，否则就是一个函数表达式。 函数声明和函数表达式之间最重要的区别是它们的名称标识符将会绑定在何处。 函数声明中，foo 被绑定在所在的作用域中，可以在外部通过 foo() 来调用它。 函数表达式中，foo 被绑定在函数表达式自身的函数中，外部不能访问调用，只能在其(function foo(){…}) 中的...位置被访问。 匿名函数表达式函数表达式可以匿名，而函数声明则不可以省略函数名。 立即执行函数表达式（IIFE）立即执行函数表达式（Immediately Invoked Function Expression），将函数包含在一对（）中，成为一个函数表达式，在末尾加上另一对（）可以立即执行这个函数。第一个（）将函数变成表达式，第二个（） 执行了这个函数。 IIFE 的两种写法 立即执行函数表达式： 12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;)(); 另一种改进形式写法将调用的（）移到了用来包装的（）里面。 12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;()); 两种写法功能上一样，凭个人喜好。 IIFE 表达式的用法 匿名函数表达式 1234(() =&gt; &#123; const a = 6; console.log(a); // a&#125;)(); 将它当作函数调用，并传递参数进去 1234const name = 'haha';(function IIFE(name) &#123; console.log(name); // haha&#125;)(name); 倒置代码的运行顺序，将需要运行的函数放在第二位， IIFE 执行之后，放在第二位的函数被当作参数传递进去。 1234567891011const objA = &#123; name: 'haha',&#125;;(function IIFE(foo) &#123; foo(objA);&#125;((obj) =&gt; &#123; const name = '3'; console.log(name); // 3 console.log(obj.name); // haha&#125;)); 第二部分为一个匿名函数，被当作一个参数 foo 传入到 IIFE 函数的第一部分。最后匿名函数调用执行，将一个全局对象 objA 传入当作 obj 的参数值。 块作用域块作用域是一个用来对之前的最小授权原则进行扩展的工具，将代码从在函数中隐藏信息扩展为在块中隐藏信息。 块作用域指的是变量和函数不仅可以属于所处的作用域，也可以属于某个代码块（通常指 { .. } 内部）。 只想在 for 循环内部的上下文中使用 i，所以在 for 循环的头部使用 var 声明一个变量 i，但实际上 i 会被绑定在外部作用域（函数或全局）中，在全局范围内都有效。 1234567var arr = [];for (var i = 0; i &lt; 10; i++) &#123; arr[i] = function() &#123; console.log(i); &#125;;&#125;arr[6](); // 10 console.log(i) 内部的 i 指向全局的的 i，最后循环完毕后在执行 arr6，这时全局的 i 的值为 10. ES3 规范中规定 try/catch 的 catch 分句会创建一个块作用域，其中声明的变量仅在 catch 内部有效。 Letlet 关键字可以将变量绑定到所在的任意作用域中（通常是 { .. } 内部）。换句话说，let 为其声明的变量隐式地了所在的块作用域。 1234567var arr = [];for (let i = 0; i &lt; 10; i++) &#123; arr[i] = function () &#123; console.log(i); &#125;;&#125;arr[6](); // 6 由 let 声明的 i，每次循环都在循环的内部重新生成了一次变量， 12345678var arr = [];for (let i = 0; i &lt; 10; i++) &#123; let _i = i; arr[i] = function () &#123; console.log(_i); &#125;;&#125;arr[6](); // 6 for 循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。 let声明的变量只在它所在的代码块有效。 1234567&#123; var a = 6; let b = 9;&#125;console.log(a); // 6console.log(b); // b is not defined 暂时性死区在代码块内，使用 let 命令声明变量，在声明之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）. 1234567891011if (true) &#123; // TDZ开始 tmp = 'abc'; // ReferenceError console.log(tmp); // ReferenceError let tmp; // TDZ结束 console.log(tmp); // undefined tmp = 123; console.log(tmp); // 123&#125; ES6明确规定，如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。 只要块级作用域内存在 let 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。 123456var tmp = 6;if(true) &#123; tmp = 3; // ReferenceError let tmp;&#125;]]></content>
+    <title><![CDATA[编译原理]]></title>
+    <url>%2Fpages%2F118b8ca3%2F</url>
+    <content type="text"><![CDATA[编译原理尽管通常将 JavaScript 归类为“动态”或“解释执行”语言，但事实上它是一门编译语言。任何 JavaScript 代码片段在执行前都要进行编译（通常就在执行前）。但与传统的编译语言不同，它不是提前编译的，编译结果也不能在分布式系统中进行移植。 编译三步骤1. 分词/词法分析（Tokenizing/Lexing）将字符串分解成编程语言所能识别的代码块，这些代码块被称为词法单元（token）。 如果词法单元生成器在判断一个字符是一个独立的词法单元还是其他词法单元的一部分时（是否依赖于其他词法单元），调用的是有状态的解析规则，那么这个过程就被称为词法分析。 2. 解析/语法分析（Parsing）将词法单元流（数组）转换成一个逐级嵌套结构的树“抽象语法树”（Abstract Syntax Tree，AST）。拥有一个顶级节点，以及连续的子节点。类似于 DOM树？ 3. 代码生成将抽象语法树转换为引擎可识别执行的代码。例如：var a = 2；第一步：创建一个叫做 a 的变量（分配内存，确定储存地址空间等）。第二步：运行时引擎会在作用域中查找该变量（LHS），找到之后将 2 这个值储存到 a 中。]]></content>
       <tags>
         <tag>YouDon&#39;tKnowJavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[盒子模型]]></title>
+    <url>%2Fpages%2F998dffd6%2F</url>
+    <content type="text"><![CDATA[盒子模型box-size 元素大小 = boder + padding + contentwidth box-size: boder-size;（兼容性） 它会让系统计算元素大小时会将 boder padding 包括在内。不包含外边距(margin)。 12345&#123; -webkit-box-size: boder-size; -ms-box-size: boder-size; -moz-box-size: boder-size;&#125; 浏览器前缀 -webkit -ms -moz flex 弹性布局 用于 Chrome 29+、IE 11+ 和 Mozilla 28+。要支持 Safari，必须添加 -webkit- 前缀： 1234&#123; display: -webkit-flex; display: flex;&#125;]]></content>
+      <tags>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -49,35 +41,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[前端学习资源]]></title>
-    <url>%2Fpages%2F422fbc06%2F</url>
-    <content type="text"><![CDATA[基础 前端导航：http://webjike.com/web.html HTML HTML MDN：https://developer.mozilla.org/zh-CN/docs/Web/HTML HTML5 MDN：https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5 H5资源：http://www.html5tricks.com/ HTML语义化 CSS CSS MDN：https://developer.mozilla.org/zh-CN/docs/Web/CSS CSS 布局：http://zh.learnlayout.com/ CSS3 MDN：https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3 scss 中文网：https://www.sass.hk/ *Sass (3.4.21) 中文文档：http://www.css88.com/doc/sass/#features stylus 中文文档：http://www.zhangxinxu.com/jq/stylus/ JavaScipt JavaScript MDN：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript DOM操作（jQuery、React） 框架 Bootstrap 中文网：http://www.bootcss.com/ Vue.js React Angular 4 UI设计 免费高清图：https://pixabay.com/ 网页背景抓取：http://stylifyme.com/ Material中文：https://www.mdui.org/design/# Material：https://www.materialui.co/ Flatui：https://flatuicolors.com/ Uplabs：https://www.uplabs.com/web 花瓣：http://huaban.com/boards/3511269/ 颜色进制转换：http://www.sioe.cn/yingyong/yanse-rgb-16/ CSS 动画 JavaScript 动画 字体 汉字标准格式：https://css.hanzi.co/manual Google Fonts：https://fonts.google.com/ Google Fonts 中文版：http://www.googlefonts.cn/ 360 Google 字体库：https://cdn.baomitu.com/index/fonts ICON 在线标签：https://shields.io/ Awesome 在线 ：http://fontawesome.io/icons/ Easyicon 下载：http://www.easyicon.net/ Icon 爱看搜索：http://www.iconpng.com/ Favico 在线制作：http://www.faviconico.org/favicon Material ：https://material.io/icons/ 阿里巴巴 ：http://www.iconfont.cn/ Sample： https://simpleicons.org/ Flaticon：https://www.flaticon.com/ PS 切图 响应式设计 Flexbox 布局 阮一峰：http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool 网格布局 Node.js node.js 中文网：http://nodejs.cn/ node.js 中文社区：https://cnodejs.org/ 一起学Node.js：https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb*七天学会NodeJS：http://nqdeng.github.io/7-days-nodejs/ 进阶TypeScript 中文网：https://www.tslang.cn/ TypeScript Handbook(中文版)：https://zhongsp.gitbooks.io/typescript-handbook/content/ ECMAScript ECMAScript 5 W3C 规范镜像版: http://yanhaijing.com/es5/#null 自学手稿版： http://es5.weijieblog.com/ ECMAScript 6 阮一峰：http://es6.ruanyifeng.com/ 正则表达式 三十分钟入门：https://deerchao.net/tutorials/regex/regex.htm 工程化 gulp 中文网：http://www.gulpjs.com.cn/ NPM 淘宝镜像:http://npm.taobao.org/ AppVeyor 自动部署：https://ci.appveyor.com/ 资源 收藏夹：http://u-hey.com/20/126 图片压缩 腾讯ISUX前端智图：http://zhitu.isux.us/ 在线编程CODEPEN：https://codepen.io/JSFiddle：https://jsfiddle.net/ MarkDown 语法 MarkDown 中文：http://wowubuntu.com/markdown/index.html 代码高亮Highlightjs：https://highlightjs.org/static/demo/ CDN 静态资源库 360 前端静态资源库：https://cdn.baomitu.com/ Staticfile CDN：https://www.staticfile.org/ 又拍云：http://www.bootcdn.cn/ 前端团队 阿里巴巴国际UED:http://www.aliued.com/ 淘宝前端团队（FED）:http://taobaofed.org/ 腾讯Alloy Team：http://www.alloyteam.com/ 腾讯ISUX：https://isux.tencent.com/ 百度FEX：http://fex.baidu.com/ 京东Aotu：https://aotu.io/ 360 奇舞：https://75team.com/]]></content>
-      <tags>
-        <tag>WEB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[常用排序算法]]></title>
     <url>%2Fpages%2F5b90526d%2F</url>
     <content type="text"><![CDATA[排序算法是将一系列的值按照顺序进行排列的方法。 冒泡排序简介冒泡排序（Bubble Sort）是最易懂的排序算法，但是效率较低，生产环境中很少使用。 它的基本思想是： 依次比较相邻的两个数，如果不符合排序规则，则调换两个数的位置。这样一遍比较下来，能够保证最大（或最小）的数排在最后一位。 再对最后一位以外的数组，重复前面的过程，直至全部排序完成。 由于每进行一次这个过程，在该次比较的最后一个位置上，正确的数会自己冒出来，就好像“冒泡”一样，这种算法因此得名。 以对数组[3, 2, 4, 5, 1]进行从小到大排序为例，步骤如下： 第一位的“3”与第二位的“2”进行比较，3大于2，互换位置，数组变成[2, 3, 4, 5, 1]。 第二位的“3”与第三位的“4”进行比较，3小于4，数组不变。 第三位的“4”与第四位的“5”进行比较，4小于5，数组不变。 第四位的“5”与第五位的“1”进行比较，5大于1，互换位置，数组变成[2, 3, 4, 1, 5]。 第一轮排序完成，可以看到最后一位的5，已经是正确的数了。然后，再对剩下的数[2, 3, 4, 1]重复这个过程，每一轮都会在本轮最后一位上出现正确的数。直至剩下最后一个位置，所有排序结束。 算法实现先定义一个交换函数，作用是交换两个位置的值。 12345function swap(myArray, p1, p2)&#123; var temp = myArray[p1]; myArray[p1] = myArray[p2]; myArray[p2] = temp;&#125; 然后定义主函数。 12345678910111213141516function bubbleSort(myArray)&#123; var len = myArray.length; var i; var j; var stop; for (i = 0; i &lt; len - 1; i++)&#123; for (j = 0, stop = len - 1 - i; j &lt; stop; j++)&#123; if (myArray[j] &gt; myArray[j + 1])&#123; swap(myArray, j, j + 1); &#125; &#125; &#125; return myArray;&#125; 选择排序简介选择排序（Selection Sort）与冒泡排序类似，也是依次对相邻的数进行两两比较。不同之处在于，它不是每比较一次就调换位置，而是一轮比较完毕，找到最大值（或最小值）之后，将其放在正确的位置，其他数的位置不变。 以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下： 假定第一位的“3”是最小值。 最小值“3”与第二位的“2”进行比较，2小于3，所以新的最小值是第二位的“2”。 最小值“2”与第三位的“4”进行比较，2小于4，最小值不变。 最小值“2”与第四位的“5”进行比较，2小于5，最小值不变。 最小值“2”与第五位的“1”进行比较，1小于2，所以新的最小值是第五位的“1”。 第五位的“1”与第一位的“3”互换位置，数组变为[1, 2, 4, 5, 3]。 这一轮比较结束后，最小值“1”已经排到正确的位置了，然后对剩下的[2, 4, 5, 3]重复上面的过程。每一轮排序都会将该轮的最小值排到正确的位置，直至剩下最后一个位置，所有排序结束。 算法实现先定义一个交换函数。 123456function swap(myArray, p1, p2)&#123; var temp = myArray[p1]; myArray[p1] = myArray[p2]; myArray[p2] = temp;&#125; 然后定义主函数。 1234567891011121314151617181920212223242526function selectionSort(myArray)&#123; var len = myArray.length, min; for (i=0; i &lt; len; i++)&#123; // 将当前位置设为最小值 min = i; // 检查数组其余部分是否更小 for (j=i+1; j &lt; len; j++)&#123; if (myArray[j] &lt; myArray[min])&#123; min = j; &#125; &#125; // 如果当前位置不是最小值，将其换为最小值 if (i != min)&#123; swap(myArray, i, min); &#125; &#125; return myArray;&#125; 插入排序简介插入排序（insertion sort）比前面两种排序方法都更有效率。它将数组分成“已排序”和“未排序”两部分，一开始的时候，“已排序”的部分只有一个元素，然后将它后面一个元素从“未排序”部分插入“已排序”部分，从而“已排序”部分增加一个元素，“未排序”部分减少一个元素。以此类推，完成全部排序。 以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下： 将数组分成[3]和[2, 4, 5, 1]两部分，前者是已排序的，后者是未排序的。 取出未排序部分的第一个元素“2”，与已排序部分最后一个元素“3”比较，因为2小于3，所以2排在3前面，整个数组变成[2, 3]和[4, 5, 1]两部分。 取出未排序部分的第一个元素“4”，与已排序部分最后一个元素“3”比较，因为4大于3，所以4排在3后面，整个数组变成[2, 3, 4]和[5, 1]两部分。 取出未排序部分的第一个元素“5”，与已排序部分最后一个元素“4”比较，因为5大于4，所以5排在4后面，整个数组变成[2, 3, 4, 5]和[1]两部分。 取出未排序部分的第一个元素“1”，与已排序部分最后一个元素“5”比较，因为1小于5，所以再与前一个元素“4”比较；因为1小于4，再与前一个元素“3”比较；因为1小于3，再与前一个元素“2”比较；因为小于1小于2，所以“1”排在2的前面，整个数组变成[1, 2, 3, 4, 5]。 算法实现算法的实现如下： 1234567891011121314151617181920212223242526function insertionSort(myArray) &#123; var len = myArray.length, // 数组的长度 value, // 当前比较的值 i, // 未排序部分的当前位置 j; // 已排序部分的当前位置 for (i=0; i &lt; len; i++) &#123; // 储存当前位置的值 value = myArray[i]; /* * 当已排序部分的当前元素大于value， * 就将当前元素向后移一位，再将前一位与value比较 */ for (j=i-1; j &gt; -1 &amp;&amp; myArray[j] &gt; value; j--) &#123; myArray[j+1] = myArray[j]; &#125; myArray[j+1] = value; &#125; return myArray;&#125; 合并排序简介前面三种排序算法只有教学价值，因为效率低，很少实际使用。合并排序（Merge sort）则是一种被广泛使用的排序方法。 它的基本思想是，将两个已经排序的数组合并，要比从头开始排序所有元素来得快。因此，可以将数组拆开，分成n个只有一个元素的数组，然后不断地两两合并，直到全部排序完成。 以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下： 将数组分成[3, 2, 4]和[5, 1]两部分。 将[3, 2, 4]分成[3, 2]和[4]两部分。 将[3, 2]分成[3]和[2]两部分，然后合并成[2, 3]。 将[2, 3]和[4]合并成[2, 3, 4]。 将[5, 1]分成[5]和[1]两部分，然后合并成[1, 5]。 将[2, 3, 4]和[1, 5]合并成[1, 2, 3, 4, 5]。 算法实现这里的关键是如何合并两个已经排序的数组。具体实现请看下面的函数。 12345678910111213141516function merge(left, right)&#123; var result = [], il = 0, ir = 0; while (il &lt; left.length &amp;&amp; ir &lt; right.length)&#123; if (left[il] &lt; right[ir])&#123; result.push(left[il++]); &#125; else &#123; result.push(right[ir++]); &#125; &#125; return result.concat(left.slice(il)).concat(right.slice(ir));&#125; 上面的merge函数，合并两个已经按升序排好序的数组。首先，比较两个数组的第一个元素，将其中较小的一个放入result数组；然后，将其中较大的一个与另一个数组的第二个元素进行比较，再将其中较小的一个放入result数组的第二个位置。以此类推，直到一个数组的所有元素都进入result数组为止，再将另一个数组剩下的元素接着result数组后面返回（使用concat方法）。 有了merge函数，就可以对任意数组排序了。基本方法是将数组不断地拆成两半，直到每一半只包含零个元素或一个元素为止，然后就用merge函数，将拆成两半的数组不断合并，直到合并成一整个排序完成的数组。 12345678910111213function mergeSort(myArray)&#123; if (myArray.length &lt; 2) &#123; return myArray; &#125; var middle = Math.floor(myArray.length / 2), left = myArray.slice(0, middle), right = myArray.slice(middle); return merge(mergeSort(left), mergeSort(right));&#125; 上面的代码有一个问题，就是返回的是一个全新的数组，会多占用空间。因此，修改上面的函数，使之在原地排序，不多占用空间。 123456789101112131415161718192021222324function mergeSort(myArray)&#123; if (myArray.length &lt; 2) &#123; return myArray; &#125; var middle = Math.floor(myArray.length / 2), left = myArray.slice(0, middle), right = myArray.slice(middle), params = merge(mergeSort(left), mergeSort(right)); // 在返回的数组头部，添加两个元素，第一个是0，第二个是返回的数组长度 params.unshift(0, myArray.length); // splice用来替换数组元素，它接受多个参数， // 第一个是开始替换的位置，第二个是需要替换的个数，后面就是所有新加入的元素。 // 因为splice不接受数组作为参数，所以采用apply的写法。 // 这一句的意思就是原来的myArray数组替换成排序后的myArray myArray.splice.apply(myArray, params); // 返回排序后的数组 return myArray;&#125; 快速排序简介快速排序（quick sort）是公认最快的排序算法之一，有着广泛的应用。 它的基本思想很简单：先确定一个“支点”（pivot），将所有小于“支点”的值都放在该点的左侧，大于“支点”的值都放在该点的右侧，然后对左右两侧不断重复这个过程，直到所有排序完成。 具体做法是： 确定“支点”（pivot）。虽然数组中任意一个值都能作为“支点”，但通常是取数组的中间值。 建立两端的指针。左侧的指针指向数组的第一个元素，右侧的指针指向数组的最后一个元素。 左侧指针的当前值与“支点”进行比较，如果小于“支点”则指针向后移动一位，否则指针停在原地。 右侧指针的当前值与“支点”进行比较，如果大于“支点”则指针向前移动一位，否则指针停在原地。 左侧指针的位置与右侧指针的位置进行比较，如果前者大于等于后者，则本次排序结束；否则，左侧指针的值与右侧指针的值相交换。 对左右两侧重复第2至5步。 以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下： 选择中间值“4”作为“支点”。 第一个元素3小于4，左侧指针向后移动一位；第二个元素2小于4，左侧指针向后移动一位；第三个元素4等于4，左侧指针停在这个位置（数组的第2位）。 倒数第一个元素1小于4，右侧指针停在这个位置（数组的第4位）。 左侧指针的位置（2）小于右侧指针的位置（4），两个位置的值互换，数组变成[3, 2, 1, 5, 4]。 左侧指针向后移动一位，第四个元素5大于4，左侧指针停在这个位置（数组的第3位）。 右侧指针向前移动一位，第四个元素5大于4，右侧指针移动向前移动一位，第三个元素1小于4，右侧指针停在这个位置（数组的第3位）。 左侧指针的位置（3）大于右侧指针的位置（2），本次排序结束。 对 [3, 2, 1]和[5, 4]两部分各自不断重复上述步骤，直到排序完成。 算法实现首先部署一个swap函数，用于互换两个位置的值。 123456function swap(myArray, firstIndex, secondIndex)&#123; var temp = myArray[firstIndex]; myArray[firstIndex] = myArray[secondIndex]; myArray[secondIndex] = temp;&#125; 然后，部署一个partition函数，用于完成一轮排序。 123456789101112131415161718192021222324252627function partition(myArray, left, right) &#123; var pivot = myArray[Math.floor((right + left) / 2)], i = left, j = right; while (i &lt;= j) &#123; while (myArray[i] &lt; pivot) &#123; i++; &#125; while (myArray[j] &gt; pivot) &#123; j--; &#125; if (i &lt;= j) &#123; swap(myArray, i, j); i++; j--; &#125; &#125; return i;&#125; 接下来，就是递归上面的过程，完成整个排序。 12345678910111213141516171819202122function quickSort(myArray, left, right) &#123; if (myArray.length &lt; 2) return myArray; left = (typeof left !== "number" ? 0 : left); right = (typeof right !== "number" ? myArray.length - 1 : right); var index = partition(myArray, left, right); if (left &lt; index - 1) &#123; quickSort(myArray, left, index - 1); &#125; if (index &lt; right) &#123; quickSort(myArray, index, right); &#125; return myArray;&#125; 参考链接 Nicholas C. Zakas, Computer science in JavaScript: Bubble sort Nicholas C. Zakas, Computer science in JavaScript: Selection sort Nicholas C. Zakas, Computer science in JavaScript: Insertion sort Nicholas C. Zakas, Computer science in JavaScript: Merge sort Nicholas C. Zakas, Computer science in JavaScript: Quicksort]]></content>
       <tags>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[变量提升]]></title>
-    <url>%2Fpages%2F3080460d%2F</url>
-    <content type="text"><![CDATA[变量与函数提升包括变量和函数在内的所有声明都会在任何代码被执行前首先被处理。 变量提升例如一个 var = 2；声明，在 javascript 引擎中它实际上被分为 2 个部分， 定义声明var a；和赋值声明 a = 2；第一个定义声明在编译阶段进行，第二个赋值声明要等到执行阶段才会进行。 例1： 123a = 2;var a;console.log(a); // 2 上面的例子等同于： 1234var a;a = 2;console.log(a); // 2 例2： 12console.log(a); //undefinedvar a = 2; 上面的例子等同于： 1234var a;console.log(a); //undefineda = 2; let 与 var区别 var声明的变量作用域为最近的函数块，let声明的变量作用域为最近的闭合块，往往小于函数块。 var声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出undefined。 let声明不受变量提升的约束，这意味着let声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 ReferenceError（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。这个变量处于从块开始到 let 初始化处理的”暂存死区“之中。let声明的变量不能在实际声明之前使用，否则会抛出ReferenceError异常。 函数提升函数声明和变量声明都会被提升,但是函数表达式却不会被提升。 1234567891011foo(); // 1var foo;function foo() &#123; console.log(1);&#125;foo = function() &#123; console.log(2);&#125;; 上面的 foo() 函数执行会输出 1，而不是 2 。上面的代码等同于： 123456789function foo() &#123; console.log(1);&#125;foo(); // 1foo = function() &#123; console.log(2);&#125;; 函数会首先被提升，然后才是变量。 尽管 var foo 在 function foo(){..} 函数之前，但是 function foo(){..} 函数会被优先提升到了函数顶部， var foo 作为重复的声明会被忽略，但是如果后面再次使用函数声明会覆盖前面的声明。 一个普通块内部的变量声明通常会被提升到所在作用域的顶部，例如： 12345678910var tmp = new Date();function foo() &#123; console.log(tmp); if (false) &#123; var tmp = "hello world"; &#125;&#125;f(); // undefined if 块作用域内部的 tmp 变量被提升到了 foo() 函数作用域的顶部，而赋值操作留在了 if 块作用域内部。上面的代码等同于： 1234567891011var tmp = new Date();function foo() &#123; var tmp; console.log(tmp); if (false) &#123; tmp = "hello world"; &#125;&#125;foo(); // undefined]]></content>
-      <tags>
-        <tag>YouDon&#39;tKnowJavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[变量作用域]]></title>
-    <url>%2Fpages%2F7395d6fb%2F</url>
-    <content type="text"><![CDATA[变量作用域 JavaScript 的函数可以嵌套，内部函数可以访问外部函数定义的变量，反之则不行。 var和let创建的变量区别在于: var声明的变量作用域为最近的函数块，let声明的变量作用域为最近的闭合块，往往小于函数块。 var声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出undefined。 let声明不受变量提升的约束，这意味着let声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 ReferenceError（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。这个变量处于从块开始到 let 初始化处理的”暂存死区“之中。let声明的变量不能在实际声明之前使用，否则会抛出ReferenceError异常。]]></content>
-      <tags>
-        <tag>YouDon&#39;tKnowJavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -97,113 +65,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[圣杯布局]]></title>
-    <url>%2Fpages%2F505644b3%2F</url>
-    <content type="text"><![CDATA[圣杯布局 圣杯布局是三栏式布局的一种经典解决方案，来源于 Matthew Levine 于 2006 年发表在 Alistapart 上的一篇文章。原文链接，其主要解决以下几种要求： 两边侧栏固定宽度，中间栏宽度自适应， 中间栏要放在文档流的前面以优先渲染。 其父元素的高度始终是由三栏中高度最高的元素确定。 第一步 建立基本框架写出基本的 html 框架，构建出基本盒模型，包括header, container和footer三个主体结构，再向container中加入三栏： 1234567&lt;div class="header"&gt;&lt;/div&gt;&lt;div class="container"&gt; &lt;div class="column center"&gt;&lt;/div&gt; &lt;div class="column left"&gt;&lt;/div&gt; &lt;div class="column right"&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="footer"&gt;&lt;/div&gt; 第二步 构建基础布局将 container 的内边距设置为左右两侧边栏各自的宽度，为两侧边栏留下空间。为三栏设置合适的宽度(center宽度为 100%，left宽度为 120px，right宽度为240px)，并且将三者设为向左浮动，同时清除footer的上下环境，避免其浮动。最后将body的最小宽度设为 480px(2*LC width + RC width)，避免因为center部分的宽度小left和right的宽度导致布局乱掉。 123456789101112131415161718192021222324252627282930313233343536373839body &#123; padding: 0; margin: 0; /* 初始化LCD */ min-width: 480px;/* 2*LC-width + RC-width */&#125;.header, .footer &#123; background-color: #1c262f; color: white; text-align: center; font-size: 2em;&#125;.container &#123; padding-left: 120px; /* LC-width */ padding-right: 240px; /* RC-width */&#125;.column &#123; float: left; color: white; position: relative; text-align: justify; /* 文字两端对齐 */&#125;h1 &#123; text-align: center;&#125;.center &#123; background-color: #4285f3; width: 100%;&#125;.left &#123; background-color: #ea4335; width: 120px; /* LC-width */&#125;.right &#123; background-color: #34a853; width: 240px; /* RC-width */&#125;.footer &#123; clear: both;&#125; 第三步 将侧栏放到合适的位置设置三栏的定位属性为相对定位。设置左边栏的外边距margin-left: -100%;(中间栏所占据的宽度)，左边栏上移到中间栏的左边，但是与中间栏部分重叠。此时利用相对定位属性，为左边栏设置一个与其等宽的偏移量left：-120px;(相对于container的左边线向左偏移 120px)，左边栏刚好占据container的左内边距位置。最后设置右边栏的外边距margin-right: -240px;(右边栏自身宽度)，使右边栏占据container的右内边距位置。 1234567891011.column &#123; float: left; position: relative;&#125;.left &#123; margin-left: -100%; left: -120px;&#125;.right &#123; margin-right: -240px;&#125;]]></content>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[jQuery基础]]></title>
-    <url>%2Fpages%2F889563%2F</url>
-    <content type="text"><![CDATA[jQuery CDN 方式引入 jQuery 选择器操作 DOM 节点 $(“选择器”); 可以通过选择器选择 DOM 节点 jQuery(“h1”); 等同于 $(“h1”); 返回 h1 $(“h1”).text(); 返回 h1 里面的 text $(“h1”).text(“Hello World!”) 更改覆盖 h1 的内容 注意DOM 加载完成之后 jQuery 开始运行，否则 jQuery 操作会被覆盖，不会生效。12345678// 文档加载完成后执行替换方法jQuery(document).ready(function()&#123; $("h1").text("Hello World!);&#125;);// 或者使用以下方法$(document).ready(function()&#123; $("h1").text("Hello World!);&#125;); 伪类选择器1234.class li:first; // 选择列表里面的第一个元素.class li:last; // 选择列表里面的最后一个元素.class li:odd; // 选择列表里面的奇数位元素.class li:even; // 选择列表里面的偶数位元素 遍历寻找操作 DOM 节点 速度快于选择器操作1$(".class").find("li"); 遍历伪类选择1234$(".class").first(); // 选择列表第一个元素$(".class").last(); // 选择列表最后一个元素$(".class").odd(); // 选择列表奇数位元素$(".class").even(); // 选择列表偶数位元素 上下遍历12$(".class").parent("li"); // 向上一层遍历，得到直系父元素$(".class").children("li"); // 向下遍历，得到直系子元素]]></content>
-      <tags>
-        <tag>jQuery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[作用域以及 LHS 和 RHS]]></title>
-    <url>%2Fpages%2Fb917f198%2F</url>
-    <content type="text"><![CDATA[作用域以及 LHS 和 RHS作用域1. 作用域是一套规则，负责收集并维护由所有声明的标识符（变量）组成的一系列查询，用于确定在何处以及如何查找变量（标识符），并实施一套非常严格的规则，用于确定当前执行的代码对这些标识符的访问权限。作用域就是函数或者变量能被访问到的范围。 2. 作用域有两种工作模型： 词法作用域(JavaScript)：词法作用域就是定义在词法阶段的作用域。 动态作用域(Bash脚本) 3. 全局变量会自动成为全局对象（比如浏览器中的 window 对象）的属性，因此可以不直接通过全局对象的词法名称，而是间接地通过对全局对象属性的引用来对其进行访问。例如：window.a 这样可以访问到被局部同名变量所遮蔽的全局变量。 执行上下文执行上下文在运行时确定，词法作用域在定义时确定。 欺骗作用域无论函数在哪里被调用，也无论它如何被调用，它的词法作用域都只由函数被声明时所处的位置决定。 JavaScript 中有两个机制可以“欺骗”词法作用域：eval(..) 和 with。前者可以对一段包含一个或多个声明的“代码”字符串进行演算，并借此来修改已经存在的词法作用域（在运行时）。后者本质上是通过将一个对象的引用当作作用域来处理，将对象的属性当作作用域中的标识符来处理，从而创建了一个新的词法作用域（同样是在运行时）。 eval()函数欺骗JavaScript 中的 eval() 函数可以接受一个字符串为参数，并将传入的字符串视为好像在书写时就存在于程序中这个位置的 JavaScript 代码进行执行。例如： 1234567var a = 66;function bar(str, b) &#123; eval(str); console.log(a, b); // 55 10&#125;bar('var a = 55;', 10); 使用 eval() 函数可以将代码以动态形式插入一个指定位置，如果 eval() 中所执行的代码包含一个或多个声明（函数或者变量），就会对词法作用域的环境进行修改，达到欺诈伪装的效果。 在严格模式下，eval() 函数拥有这自己的词法作用域，其中的声明将无法修改作用域。 这个函数的副作用是引擎无法在编译时对作用域查找进行优化，会导致代码运行变慢，不建议使用。 LHS 和 RHS查询LHS 查询对变量进行赋值操作，那么就会使用 LHS 查询。 当引擎执行 LHS 查询时，如果在顶层（全局作用域）中也无法找到目标变量，全局作用域中就会创建一个具有该名称的变量，并将其返还给引擎。 严格模式禁止自动或隐式地创建全局变量。 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查询失败时类似的 ReferenceError 异常。 RHS 查询查找获取某个变量的值，就会使用 RHS 查询。 如果 RHS 查询在所有嵌套的作用域中遍寻不到所需的变量，引擎就会抛出 ReferenceError 异常。]]></content>
-      <tags>
-        <tag>YouDon&#39;tKnowJavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[js术语中英对照表]]></title>
-    <url>%2Fpages%2F6ad0123c%2F</url>
-    <content type="text"><![CDATA[中英术语对照编译相关 compile 编译 tokenizing 分词 lexing 词法分析 toekn 词法单元 parsing 解析/语法分析 Abstract Syntax Tree(AST) 抽象语法树 raw code 代码生成 LHS(Left-hand Side) 赋值操作左侧，进行赋值操作 RHS(Right-hand Side) 赋值操作非左侧，进行取值操作 异常 ReferenceError 引用错误 TypeError 类型错误 函数Immediately Invoked Function Expression(IIFE) 立即执行函数表达式Temporal dead zone(TDZ) 暂时性死区Execution context 执行上下文]]></content>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Flex布局]]></title>
-    <url>%2Fpages%2Fab688311%2F</url>
-    <content type="text"><![CDATA[Flex 布局MDN Flex 是 Flexible Box 的缩写，意为“弹性布局”，为盒模型提供灵活的布局方式。 盒子中的子元素可以在各个方向上进行布局，并且能以弹性尺寸来适应显示空间。 弹性容器的每个子元素都称为弹性项目。弹性容器直接包含的文本将被包覆成匿名弹性单元。 元素的显示顺序可以与它们在源代码中的顺序无关。 基础 flex 布局包括一个水平 main axis 和一个垂直 cross axis 通过设置 display 的值启用 flex 设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。 12345678910.box-flex&#123; display： -ms-flex； display: -webkit-flex; display: flex;&#125;.box-inline-flex&#123; display: -ms-inline-flex; display: -webkit-inline-flex; display: inline-flex;&#125; flex 属性 flex-direction：确立主轴。 justify-content：定义了在当前行上，弹性项目沿主轴如何排布。 align-items：定义了在当前行上，弹性项目沿侧轴默认如何排布。 align-self：定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。 flex-direction（主轴方向） flex-direction 决定主轴方向（项目排列方向），包括四个值。 row（默认值）：主轴为水平方向，起点在左端。 row-reverse：主轴为水平方向，起点在右端。 column：主轴为垂直方向，起点在上沿。 column-reverse：主轴为垂直方向，起点在下沿。 flex-wrap（换行控制） 控制一条轴上放不下子项目该如何换行。 nowrap（默认值）：不换行 wrap：换行，第一行在上。 wrap-reverse：换行，第一行在下。 justify-content（主轴排列方式） flex-start：从行首起始位置开始排列。 flex-end：从行尾位置开始排列。 center：居中排列。 space-between：均匀排列每个元素首个元素放置于起点，末尾元素放置于终点。 space-around：均匀排列每个元素每个元素周围分配相同的空间。 align-items(侧轴排列方式) flex-start：元素向侧轴起点对齐。 flex-end：元素向侧轴终点对齐。 center：元素在侧轴居中。如果元素在侧轴上的高度高于其容器，那么在两个方向上溢出距离相同。 baseline: 项目的第一行文字的基线对齐。 stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。 align-conten（多轴线对齐方式） align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。 flex-start：所有行从垂直轴起点开始填充。第一行的垂直轴起点边和容器的垂直轴起点边对齐。接下来的每一行紧跟前一行。 flex-end：所有行从垂直轴末尾开始填充。最后一行的垂直轴终点和容器的垂直轴终点对齐。同时所有后续行与前一个对齐。 center：所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的垂直轴起点边和第一行的距离相等于容器的垂直轴终点边和最后一行的距离。 space-between：所有行在容器中平均分布。相邻两行间距相等。容器的垂直轴起点边和终点边分别与第一行和最后一行的边对齐。 space-around：所有行在容器中平均分布，相邻两行间距相等。容器的垂直轴起点边和终点边分别与第一行和最后一行的距离是相邻两行间距的一半。 stretch：拉伸所有行来填满剩余空间。剩余空间平均的分配给每一行。 子项目属性 order：定义项目的排列顺序。数值越小，排列越靠前，默认为 0。 flex-grow：定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。 flex-shrink：定义了项目的缩小比例，默认为 1，即如果空间不足，该项目将缩小。属性为 0，项目不缩小，负值对该属性无效。 flex-basis：定义项目在主轴所占据的基本空间，默认值 auto，即项目本来的大小。 flex：是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。 align-self：允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。]]></content>
-      <tags>
-        <tag>flex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[VSCode 配置 ESLint + Airbnb]]></title>
-    <url>%2Fpages%2F3bcc390e%2F</url>
-    <content type="text"><![CDATA[VSCode 配置 ESLint + Airbnb基本环境Win 10 v1709Nodejs v8.70VScode v1.17.2 VSCode 安装 ESLint 扩展打开 VSCode 搜索 ESLint 扩展安装 NPM 安装 ESLint 全局安装（推荐）: npm install eslint -g 项目根目录本地安装： npm install eslint --save-dev 1. 自定义配置规则 全局配置在当前用户根目录下执行 eslint --init,根据个人爱好选择生成配置文件 .eslintrc.json例如：windows\user\username 项目根目录配置：在当前用户根目录下执行 eslint --init，根据个人爱好选择生成配置文件 ps：具体配置参考：http://eslint.cn/docs/user-guide/configuring 2. 使用 eslint-config-airbnb 标准规则 查看 Airbnb 标准依赖插件版本： npm info &quot;eslint-config-airbnb@latest&quot; peerDependencies 例如：本次的 plugins 的版本要求: 12345&#123; eslint: &apos;^4.9.0&apos;, &apos;eslint-plugin-import&apos;: &apos;^2.7.0&apos;, &apos;eslint-plugin-jsx-a11y&apos;: &apos;^6.0.2&apos;, &apos;eslint-plugin-react&apos;: &apos;^7.4.0&apos;&#125; 安装对应版本的插件: npm install eslint-config-airbnb eslint@^#.#.# eslint-plugin-jsx-a11y@^#.#.# eslint-plugin-import@^#.#.# eslint-plugin-react@^#.#.# -g 更改配置文件 .eslintrc.json 如下： 12345678910111213141516171819202122&#123; // 要启用的环境 "env": &#123; "browser": true, "node": true, "commonjs": true, "es6": true, "jquery": true &#125;, // 启用 airbnb 规则 "extends": "airbnb", // 使用语言及版本 "parserOptions": &#123; "ecmaVersion": 6, "sourceType": "module" &#125;, // 个人自定义规则 "rules": &#123; "no-console":"off", "no-plusplus":"off" &#125;&#125; ESLint 支持 Vue 单文件组件 安装 eslint-plugin-html 插件 npm install eslint-plugin-html -g 在 VSCode 设置设置中添加如下配置：1234567891011121314151617181920 // ESLint 配置"eslint.enable": true,// nodejs 路径， windows 路径使用双 \\ 进行转义"eslint.nodePath": "C:\\Dev\\nodejs",// 启用 eslint-plugin-html 插件"eslint.options": &#123; "plugins": ["html"]&#125;,"eslint.validate": [ "javascript", "javascriptreact", // 启用 html 和 vue 中 ESLint 验证和自动修复 &#123; "language": "html", "autoFix": true &#125;, &#123; "language": "vue", "autoFix": true &#125;]]></content>
-      <tags>
-        <tag>VSCode ESLint</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[css布局]]></title>
-    <url>%2Fpages%2F5a252ba9%2F</url>
-    <content type="text"><![CDATA[CSS 基础布局清除浮动简单的 Micro clearfix 方法清除浮动，原文链接:http://nicolasgallagher.com/micro-clearfix-hack/123456789@mixin clearfix &#123; &amp;::before, &amp;::after&#123; content: " "; display: flex; &#125; &amp;::after &#123; clear: both; &#125;&#125; 三栏式布局 两边侧栏固定宽度，中间栏宽度自适应，并且中间栏要在放在文档流前面以优先渲染。其父元素的高度始终是由三栏中高度最高的元素确定。 圣杯布局 来源于 Matthew Levine 于 2006 年发表在 Alistapart 上的一篇文章。原文链接 12345&lt;div class="container"&gt; &lt;div class="box mid"&gt;&lt;/div&gt; &lt;div class="box left"&gt;&lt;/div&gt; &lt;div class="box right"&gt;&lt;/div&gt;&lt;/div&gt; 设置box-mid box-left box-right 三者向左浮动。 设置box-mid宽度为 100%。 设置负边距，box-left设置负左边距为 100%，box-right设置负左边距为负的自身宽度。 设置container的padding值，给box-left和box-right留出空间。 设置left和right为相对定位(position: relative). 设置box-left的left值为负的box-left宽度，box-right的right值为负的right宽度。 Q:当面板的mid部分比两边的子面板宽度小的时候，布局会乱掉。A:为body设置一个最小宽度。body{min-width:700px;} 淘宝双飞翼布局 淘宝双飞翼布局是一个经典的三栏式布局，]]></content>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[css基础]]></title>
-    <url>%2Fpages%2Feda1a9a9%2F</url>
-    <content type="text"><![CDATA[CSS基础CSS 导入 在 HTML 中引入 CSS 的方法主要有四种，它们分别是行内式、内嵌式、链接式和导入式。 行内式 在标记的 style 属性中设定 CSS 样式。 123&lt;p style=color:white; background-color:blue;&gt;Tihs is a test text.&lt;/p&gt; 内嵌式 将 CSS 样式集中写在网页的&lt;head&gt;&lt;/head&gt;中的&lt;style&gt;&lt;/style&gt;标签对中。 缺点是对于一个包含很多网页的网站，在每个网页中使用嵌入式，进行修改样式时非常麻烦。单一网页可以考虑使用嵌入式。 1234567&lt;head&gt; &lt;style type="text/css"&gt; p &#123; color:red; &#125; &lt;/style&gt;&lt;/head&gt; 导入式 使用 CSS 的规则将外部CSS文件将一个独立的.css文件引入 HTML 文件中，&lt;style&gt;标记写在&lt;head&gt;标记中。 123&lt;style type="text/css"&gt; @import"mystyle.css'&lt;/style&gt; 链接式 最常用的的一种方式。 123&lt;head&gt; &lt;link rel="stylesheet" href="src/test.css" type="text/css"&gt;&lt;/head&gt; margin margin 属性为给定元素设置所有四个（上下左右）方向的外边距属性。四个外边距属性设置分别是： margin-top， margin-right， margin-bottom 和 margin-left 。指定的外边距允许为负数。 语法 值 例子 含义 margin: style 单值语法 margin: 1em; 指定四周外边距都为1em margin: vertical horizontal 二值语法 margin: 5% auto; 上下为5%，左右为auto margin: top horizontal bottom 三值语法 margin: 1em auto 2em; 上为1em，左右为auto，下为2em margin: top right bottom left 四值语法 margin: 2px 1em 0 auto; 上为2px，右为1em，下为0，左为auto 选择符 选择符用于定位我们想要样式化的网页 HTML 元素,可以选择一个或多个需要添加样式的元素。 选择符 选择内容 示例 元素 选择符 标签内所有元素 p ID 选择符 指定ID的元素 #my-id Clss 选择符 指定Class的元素 .my-class 属性 选择符 拥有指定属性的元素 img[src] 伪类 选择符 指定的元素，但是需要在特殊的状态，比如悬停 a:hover 简单选择器（Simple selectors） 通过元素类型、class或 id 匹配一个或多个元素。 属性选择器（Attribute selectors） 通过属性/属性值匹配一个或多个元素。 [attr]：该选择器选择包含 attr 属性的所有元素，不论 attr 的值为何。 [attr=val]：该选择器仅选择 attr 属性被赋值为 val 的所有元素。 [attr~=val]：该选择器仅选择 attr 属性的值（以空格间隔出多个值）中有包含 val 值的所有元素，比如位于被空格分隔的多个类（class）中的一个类。 [attr|=val] : 选择attr属性的值以val（包括val）或val-开头的元素。 [attr^=val] : 选择attr属性的值以val开头（包括val）的元素。 [attr$=val] : 选择attr属性的值以val结尾（包括val）的元素。 [attr*=val] : 选择attr属性的值中包含字符串val的元素。 伪类（Pseudo-classes） 一个 CSS 伪类（pseudo-class） 是一个以冒号(:)作为前缀的关键字，当元素需要在特定状态下的设置表现样式时，往元素的选择器后面加上对应的伪类（pseudo-class）。例如：页面上有一个链接， 有四种状态： 未点击状态显示蓝色： 1a:link &#123; color: blue; &#125; 已点击状态显示紫色： 1a:visited &#123; color: purple; &#125; 鼠标悬停状态显示红色： 1a:hover &#123; color: red; &#125; 鼠标点击状态显示绿色： 1a:active &#123; color: green; &#125; 多个状态同时设置，按照以上先后顺序排列。 伪元素（Pseudo-elements） 以冒号(::)作为前缀的关键字，添加到选择器后面选择某个元素的某个部分。例如每个段落的第一个字，或者某个元素之前生成的内容。 ::after在已选中元素尾部创建最后一个子元素，通常会配合 content 属性来为该元素添加装饰内容。 12/*在链接后面加上一个箭头←*/a::after &#123; content: "←";&#125; ::before 在已选中元素头部创建第一个子元素。 12/*在链接前面加上一个箭头→*/a::after &#123; content: "→";&#125; ::first-letter会选中一整块文字第一行的第一个字母，并且文字所处的行之前没有其他内容（如图片和内联的表格） 。 12345/* 使每段开头的第一个字母变红变大 */p::first-letter &#123; /* 使用:first来兼容IE8- */ color: red; font-size: 130%;&#125; ::first-line将样式只应用于一个元素的首行。首行文本的数量取决于元素的宽，document 的宽和文本的字号。 ::first-line 伪元素只作用于块容器中,所以::first-line伪元素只能在一个display值为block, inline-block, table-cell 或者 table-caption中有用.。在其他的类型中::first-line是不起作用的。 ::selection应用于文档中被用户选中高亮的部分（比如使用鼠标或其他选择设备选中的部分）,ecko 引擎需要加前缀（-moz）。 123456789/* 将被选中的任何文本渲染为金黄色和红色背景 */::-moz-selection &#123; color: gold; background: red;&#125;::selection &#123; color: gold; background: red;&#125; 组合器（Combinators） 以有效的方式组合两个或更多的选择器用于非常特定的选择的方法。例如，只选择 divs 的直系子节点的段落，或者直接跟在 headings 后面的段落。 组合器 选择值 A,B 匹配同时满足A和B的任意元素 A B 匹配任意元素，满足条件：B是A的后代结点（B是A的子节点，或者A的子节点的子节点） A &gt; B 匹配任意元素，满足条件：B是A的直接子节点 A + B 匹配任意元素，满足条件：B是A的下一个兄弟节点（AB有相同的父结点，并且B紧跟在A的后面） A ~ B 匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A） 多用选择器（Multiple selectors） 以逗号分隔开的多个选择器放在一个 CSS 规则下面， 以将一组声明应用于由这些选择器选择的所有元素。 盒模型 网页上的所有的元素都包含在一个个盒子中。在 CSS 里面设置它们的尺寸，颜色，位置等等。 内边距（padding）： 围绕着内容的空间（比如围绕段落的空间） 边框（border）： 紧接着内边距的实体线段 外边距(margin) ： 围绕元素外部的空间 width： 属于一个元素的宽 background-color： 元素内容和内边距之后的颜色 color： 元素内容的颜色（通常是文本） text-shadow： 为元素内的文本设置阴影 display： 设置元素的显示模式 position：fixed 位置保持不动 单位长度px em px ：像素 (px) 是一种绝对单位（ absolute units）， 因为无论其他相关的设置怎么变化，像素指定的值是不会变化的。 em ：相对长度单位，相对于当前文本内的字体尺寸。 px 与em转换任意浏览器的默认字体高度为 16px（16像素），所有未经调整的浏览器都符合: 1em=16px，那么10px=0.625em。为了简化font-size的换算，可以在 css 中的 body 选择器中声明 font-size: 62.5%，这时10px=1em。 阴影 box-shadow 属性向元素添加一个或多个阴影。 1box-shadow: h-shadow v-shadow blur spread color inset; 值 含义 h-shadow 必需。水平阴影。允许负值。 v-shadow 必需。垂直阴影。允许负值。 blur 可选。模糊距离。 spread 可选。阴影尺寸。 color 可选。阴影颜色。 inset 可选。将外部阴影(outset)改为内部阴影。 布局 一个好的布局，能将网页内容更完美的展示出来。 display 元素显示 CSS 中最重要的控制布局的属性，用来设置一个元素应该如何显示，每一个元素都有一个默认的display值。对于大多数元素它们的默认值通常是block或inline。 block：块级元素。块级元素通常会占用容器的全部宽度，在其开始和结束位置都是换行符。常见的块级元素有：h1、div、p和form等，HTML5 中的新元素：header、footer和section等。 inline：行内元素。行内元素只需要必要的宽度，不会强制换行打乱已有元素布局。常见的行内元素有：span和a。 none：隐藏某个元素，且隐藏的元素不会占据任何空间。一些特殊元素的默认 display 值是它，例如 script。 display:none 通常被 JavaScript 用来在不删除元素的情况下隐藏或显示元素。 visibility 元素可见性visibility 属性有两种用法： 值为hidden时隐藏元素，并将其所占空间用空白填充。 值为collapse时隐藏表格的一行或一列，用于快速从表格中删除一行或一列。 display:none和visibility:hidden的区别： display:none隐藏某个元素时，隐藏的元素不会占据任何空间。 visibility:hidden可以隐藏元素，但是隐藏的元素仍然占用原来大小的空间。 Google 原色 蓝色 #4285f3 红色 #ea4335 绿色 #34a853 黄色 #fbbc05 黑色 #1c262f google蓝 #2196f3按钮红 #f50057google绿 #0f9d58]]></content>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[arguments和rest]]></title>
-    <url>%2Fpages%2Fe5332c52%2F</url>
-    <content type="text"><![CDATA[arguments 参数 只在函数内部起作用，指向当前函数调用者传入的所有参数。1234567var bar = (x) =&gt; &#123; console.log(x); // a for(let i = 0; i &lt; arguments.length; i++)&#123; console.log(arguments[i]); // 根据参数索引打印参数 &#125;&#125;;bar('a', 'b', 'c'); 利用arguments可以获得调用者传入的所有参数。 arguments常用于判断传入参数个数。 rest 不定参数 JS 允许函数接收任意个参数，当参数个数不确定的情况下可以使用不定参数。12345678910"use strict"; // 严格模式// 接受任意个参数返回它们的和function sum(...rest) &#123; // 不定参数写在参数最后，前面使用 ... 标识 let result = 0; for (let i of rest) &#123; // rest 是一个数组实例 result += i; &#125; console.log(result);&#125;sum(1, 2, 3, 4); // 传入参数 不定参数写在参数最后，传入参数先绑定已有的参数，多余的参数以数组形式存入不定参数。]]></content>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[for-in和for-of]]></title>
-    <url>%2Fpages%2Ff5b5d35a%2F</url>
-    <content type="text"><![CDATA[for-in for-in循环遍历的是对象的属性名称,可以将一个对象的属性循环遍历出来。12345678var obj = &#123; name: 'XiaoMing', age: 22, sex: 'man'&#125;;for(let key in obj)&#123; console.log(key); // 'name' 'age' 'sex'&#125; 数组也是对象，for-in可以直接循环遍历出Array的索引，索引类型为 String 而不是 Number。1234var array = ['a', 'b', 'c'];for(let i in array)&#123; console.log(i); // 索引'0' '1' '2'&#125;]]></content>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[全局命名空间和模块]]></title>
-    <url>%2Fpages%2Ff9a582e%2F</url>
-    <content type="text"><![CDATA[全局命名空间和模块全局命名空间库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。 例如：123456var mylibrary = &#123; name: 'haha', eat: (name) =&gt; &#123; console.log(`$&#123;name&#125; is eating`); &#125;&#125;; 模块模块管理通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。 用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。]]></content>
-      <tags>
-        <tag>YouDon&#39;tKnowJavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[html基础]]></title>
-    <url>%2Fpages%2F1a147173%2F</url>
-    <content type="text"><![CDATA[html 基础完整 HTML 树 相关的 CSS 文件（针对样式）： 1&lt;link rel="stylesheet" type="text/css" href="style.css"&gt; 相关的 JavaScript 文件（更改渲染和行为的多用途脚本）： 1&lt;script src="myjavascripts.js"&gt;&lt;/script&gt; 粗体斜体 1234&lt;!-- 推荐使用&lt;strong&gt;进行加粗 --&gt; &lt;strong&gt;粗体&lt;/strong&gt;&lt;!-- 推荐使用&lt;em&gt;进行斜体显示 --&gt;&lt;em&gt;斜体&lt;/em&gt; &lt;sup&gt; 标签定义上标文本。 &lt;sub&gt; 标签定义下标文本。]]></content>
-      <tags>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[包管理器 Yarn]]></title>
-    <url>%2Fpages%2F522f484%2F</url>
-    <content type="text"><![CDATA[包管理器 Yarn Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 JS 包管理工具。 常用命令 yarn和 yarn install ，这两个命令的效果是一样的，等同于npm install，使用这个命令会在该目录生成一个yarn.lock的文件。 yarn add koa，安装koa模块并更新package.json和yarn.lock文件，等同于npm install koa –save。也可以使用yarn global add koa，等同于npm install koa -g，将模块直接安装到全局环境变量里，方便使用。 yarn list，根据当前项目的package.json查看模块的依赖及版本。 yarn info koa，查看koa模块的详细信息，类似于npm view koa。 yarn init，初始化项目package.json文件，等同于npm init。 yarn run，运行package.json中的script。]]></content>
-      <tags>
-        <tag>Yarn</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[作用域闭包]]></title>
-    <url>%2Fpages%2F78f2b66e%2F</url>
-    <content type="text"><![CDATA[闭包wiki 上对闭包的定义：闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。 自由变量的定义：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在自己定义的词法作用域以外的地方执行。 闭包使得函数在定义时的词法作用域以外的地方被调用时，函数可以继续访问定义时的词法作用域。 在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。 在函数 foo() 内部定义了函数 bar()， bar() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。 12345678910111213function foo() &#123; var a = 2; function func() &#123; console.log(a); &#125; bar(func);&#125;function bar(fn) &#123; fn(); // 这就是闭包&#125; 将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar(fn) 函数，从而达到访问 func() 词法作用域的目的。 无论通过何种手段将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。 循环和闭包]]></content>
+    <title><![CDATA[变量作用域]]></title>
+    <url>%2Fpages%2F7395d6fb%2F</url>
+    <content type="text"><![CDATA[变量作用域 JavaScript 的函数可以嵌套，内部函数可以访问外部函数定义的变量，反之则不行。 var和let创建的变量区别在于: var声明的变量作用域为最近的函数块，let声明的变量作用域为最近的闭合块，往往小于函数块。 var声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出undefined。 let声明不受变量提升的约束，这意味着let声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 ReferenceError（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。这个变量处于从块开始到 let 初始化处理的”暂存死区“之中。let声明的变量不能在实际声明之前使用，否则会抛出ReferenceError异常。]]></content>
       <tags>
         <tag>YouDon&#39;tKnowJavaScript</tag>
       </tags>
@@ -217,9 +81,129 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[javascript DOM]]></title>
-    <url>%2Fpages%2F218ff168%2F</url>
-    <content type="text"><![CDATA[JavaScript Dom消息窗口 document.write(字符串或者变量或者 Html 标签); 直接在向 html 的输出流中写内容，直接在网页中输出容。 alert(字符串或变量); 弹出一个包含确定的消息对话框。 confirm(stri); 弹出一个包含确定和取消的消息对话框。 str 消息框显示的文本。 返回值为 Boolean 类型，通过返回值判断用户点击了什么按钮，确定为 true ，取消为 false。 prompt(str1, str2) 弹出包含一个确定按钮、取消按钮与一个文本输入框的消息对话框。 str1 消息框显示文本，不可修改。 str2 文本框中的内容，可修改。 返回值：点击确定，文本框内容作为函数返回值。点击取消，返回 null。 open() 方法可以查找一个已经存在或者新建的浏览器窗口。 window.open() 打开一个新窗口。 123456window.open([URL], [窗口名称], [窗口参数设置])/* URL(可选参数):网页网址或路径，如果它的值是空字符串，那么窗口就不显示任何文档。* 窗口名称(可选参数)：被打开窗口的名称。只能由字母，数字或下划线构成。* _balnk:新窗口打开； _self:当前窗口打开； _top：框架网页中在上部窗口中显示目标网页；* 相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。*/ 窗口参数 ：| 参数 | 值 | 含义 || ———- | ——- | ———————— || top | Number | 窗口顶部离开屏幕顶部像素 || left | Number | 窗口顶部离开屏幕顶部像素 || width | Number | 窗口宽度 || height | Number | 窗口高度 || menubar | yes，no | 窗口菜单 || toolbar | yes，no | 窗口工具栏 || scrollbars | yes，no | 窗口滚动条 || status | yes，no | 窗口状态栏 | close() 关闭窗口 12window.close(); // 关闭本窗口[对象窗口].close() // 关闭对象窗口 JS HTML DOM 浏览器从服务器取到HTML网页以后， 会展示成页面让你看， 但是他的内部其实会把HTML组织成一个树给JS,这个树可以称为DOM。 例如这个页面： 浏览器从服务器取到HTML网页以后， 会展示成页面让你看， 但是他的内部其实会把HTML组织成一个树给JS,这个树可以称为DOM。 例如这个页面： 12345678&lt;html&gt; &lt;head&gt; &lt;title&gt;Sample Page&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;p&gt;hello world!&lt;/p&gt; &lt;/body&gt;&lt;/html&gt; 通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML: JavaScript 能够改变页面中的所有 HTML 元素 JavaScript 能够改变页面中的所有 HTML 属性 JavaScript 能够改变页面中的所有 CSS 样式 JavaScript 能够对页面中的所有事件做出反应 通过 JavaScript 操作作 HTML 元素 JS可以定位到DOM树中任意一个节点， 然后对这个节点进行操作， 例如隐藏节点、显示节点、改变颜色、获得文本的值， 改变文本的值，添加一个响应点击事件的函数等。 查找 HTML 元素 通过 id 找到 HTML 元素：`var x = document.getElementById(“ID”); 通过标签名找到 HTML 元素：var x = document.getElementById(&quot;ID&quot;); var y = x.getElementsByTagName(&quot;p&quot;); 通过类名找到 HTML 元素 stringObject.match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。 改变元素内容 document.getElementById(“ID”).innerHTML=”Hello”; // 改变内容 isNaN(x); // x 是否为数字 document.write(“写入内容”), // 向文档输出写内容 改变元素样式 document.getElementById(“ID”).style.color=”#ff0000”; // 改变样式 document.getElementById(“ID”).style.visibility=”hidden”; // 隐藏元素 document.getElementById(“ID”).style.visibility=”visible” // 显示元素 DOM 事件HTML 常见事件 当用户点击鼠标时 当网页已加载时 当图像已加载时 当鼠标移动到元素上时 当输入字段被改变时 当提交 HTML 表单时 当用户触发按键时 事件 含义 onclick 元素被点击时，调用绑定函数 onload 和 onunload 在用户进入或离开页面时被触发，用于检测访问者的浏览器类型和浏览器版本，处理 cookie onmouseover 和 onmouseout 将鼠标移至 HTML 元素上方或移出元素时触发 onchange 当域内的内容被改变时，执行绑定函数。例如：向输入框内输入小写，完成后自动转换为大写 onmousedown 和 onmouseup 按下和释放鼠标，触发事件 onfocus 和 onblur 获得焦点或者失去焦点时，触发事件。例如：向文本框输入时，改变其背景颜色 绑定方式 js 中绑定 123// 必须是一个函数的引用或函数名，而不是函数调用// 例如：foo(); 在这里将无效document.getElementById("ID").onclick = foo; html 中绑定 1onclick="foo()"]]></content>
+    <title><![CDATA[圣杯布局]]></title>
+    <url>%2Fpages%2F505644b3%2F</url>
+    <content type="text"><![CDATA[圣杯布局 圣杯布局是三栏式布局的一种经典解决方案，来源于 Matthew Levine 于 2006 年发表在 Alistapart 上的一篇文章。原文链接，其主要解决以下几种要求： 两边侧栏固定宽度，中间栏宽度自适应， 中间栏要放在文档流的前面以优先渲染。 其父元素的高度始终是由三栏中高度最高的元素确定。 第一步 建立基本框架写出基本的 html 框架，构建出基本盒模型，包括header, container和footer三个主体结构，再向container中加入三栏： 1234567&lt;div class="header"&gt;&lt;/div&gt;&lt;div class="container"&gt; &lt;div class="column center"&gt;&lt;/div&gt; &lt;div class="column left"&gt;&lt;/div&gt; &lt;div class="column right"&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="footer"&gt;&lt;/div&gt; 第二步 构建基础布局将 container 的内边距设置为左右两侧边栏各自的宽度，为两侧边栏留下空间。为三栏设置合适的宽度(center宽度为 100%，left宽度为 120px，right宽度为240px)，并且将三者设为向左浮动，同时清除footer的上下环境，避免其浮动。最后将body的最小宽度设为 480px(2*LC width + RC width)，避免因为center部分的宽度小left和right的宽度导致布局乱掉。 123456789101112131415161718192021222324252627282930313233343536373839body &#123; padding: 0; margin: 0; /* 初始化LCD */ min-width: 480px;/* 2*LC-width + RC-width */&#125;.header, .footer &#123; background-color: #1c262f; color: white; text-align: center; font-size: 2em;&#125;.container &#123; padding-left: 120px; /* LC-width */ padding-right: 240px; /* RC-width */&#125;.column &#123; float: left; color: white; position: relative; text-align: justify; /* 文字两端对齐 */&#125;h1 &#123; text-align: center;&#125;.center &#123; background-color: #4285f3; width: 100%;&#125;.left &#123; background-color: #ea4335; width: 120px; /* LC-width */&#125;.right &#123; background-color: #34a853; width: 240px; /* RC-width */&#125;.footer &#123; clear: both;&#125; 第三步 将侧栏放到合适的位置设置三栏的定位属性为相对定位。设置左边栏的外边距margin-left: -100%;(中间栏所占据的宽度)，左边栏上移到中间栏的左边，但是与中间栏部分重叠。此时利用相对定位属性，为左边栏设置一个与其等宽的偏移量left：-120px;(相对于container的左边线向左偏移 120px)，左边栏刚好占据container的左内边距位置。最后设置右边栏的外边距margin-right: -240px;(右边栏自身宽度)，使右边栏占据container的右内边距位置。 1234567891011.column &#123; float: left; position: relative;&#125;.left &#123; margin-left: -100%; left: -120px;&#125;.right &#123; margin-right: -240px;&#125;]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[变量提升]]></title>
+    <url>%2Fpages%2F3080460d%2F</url>
+    <content type="text"><![CDATA[变量与函数提升包括变量和函数在内的所有声明都会在任何代码被执行前首先被处理。 变量提升例如一个 var = 2；声明，在 javascript 引擎中它实际上被分为 2 个部分， 定义声明var a；和赋值声明 a = 2；第一个定义声明在编译阶段进行，第二个赋值声明要等到执行阶段才会进行。 例1： 123a = 2;var a;console.log(a); // 2 上面的例子等同于： 1234var a;a = 2;console.log(a); // 2 例2： 12console.log(a); //undefinedvar a = 2; 上面的例子等同于： 1234var a;console.log(a); //undefineda = 2; let 与 var区别 var声明的变量作用域为最近的函数块，let声明的变量作用域为最近的闭合块，往往小于函数块。 var声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出undefined。 let声明不受变量提升的约束，这意味着let声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 ReferenceError（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。这个变量处于从块开始到 let 初始化处理的”暂存死区“之中。let声明的变量不能在实际声明之前使用，否则会抛出ReferenceError异常。 函数提升函数声明和变量声明都会被提升,但是函数表达式却不会被提升。 1234567891011foo(); // 1var foo;function foo() &#123; console.log(1);&#125;foo = function() &#123; console.log(2);&#125;; 上面的 foo() 函数执行会输出 1，而不是 2 。上面的代码等同于： 123456789function foo() &#123; console.log(1);&#125;foo(); // 1foo = function() &#123; console.log(2);&#125;; 函数会首先被提升，然后才是变量。 尽管 var foo 在 function foo(){..} 函数之前，但是 function foo(){..} 函数会被优先提升到了函数顶部， var foo 作为重复的声明会被忽略，但是如果后面再次使用函数声明会覆盖前面的声明。 一个普通块内部的变量声明通常会被提升到所在作用域的顶部，例如： 12345678910var tmp = new Date();function foo() &#123; console.log(tmp); if (false) &#123; var tmp = "hello world"; &#125;&#125;f(); // undefined if 块作用域内部的 tmp 变量被提升到了 foo() 函数作用域的顶部，而赋值操作留在了 if 块作用域内部。上面的代码等同于： 1234567891011var tmp = new Date();function foo() &#123; var tmp; console.log(tmp); if (false) &#123; tmp = "hello world"; &#125;&#125;foo(); // undefined]]></content>
+      <tags>
+        <tag>YouDon&#39;tKnowJavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端学习资源]]></title>
+    <url>%2Fpages%2F422fbc06%2F</url>
+    <content type="text"><![CDATA[基础 前端导航：http://webjike.com/web.html HTML HTML MDN：https://developer.mozilla.org/zh-CN/docs/Web/HTML HTML5 MDN：https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5 H5资源：http://www.html5tricks.com/ HTML语义化 CSS CSS MDN：https://developer.mozilla.org/zh-CN/docs/Web/CSS CSS 布局：http://zh.learnlayout.com/ CSS3 MDN：https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3 scss 中文网：https://www.sass.hk/ *Sass (3.4.21) 中文文档：http://www.css88.com/doc/sass/#features stylus 中文文档：http://www.zhangxinxu.com/jq/stylus/ JavaScipt JavaScript MDN：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript DOM操作（jQuery、React） 框架 Bootstrap 中文网：http://www.bootcss.com/ Vue.js React Angular 4 UI设计 免费高清图：https://pixabay.com/ 网页背景抓取：http://stylifyme.com/ Material中文：https://www.mdui.org/design/# Material：https://www.materialui.co/ Flatui：https://flatuicolors.com/ Uplabs：https://www.uplabs.com/web 花瓣：http://huaban.com/boards/3511269/ 颜色进制转换：http://www.sioe.cn/yingyong/yanse-rgb-16/ CSS 动画 JavaScript 动画 字体 汉字标准格式：https://css.hanzi.co/manual Google Fonts：https://fonts.google.com/ Google Fonts 中文版：http://www.googlefonts.cn/ 360 Google 字体库：https://cdn.baomitu.com/index/fonts ICON 在线标签：https://shields.io/ Awesome 在线 ：http://fontawesome.io/icons/ Easyicon 下载：http://www.easyicon.net/ Icon 爱看搜索：http://www.iconpng.com/ Favico 在线制作：http://www.faviconico.org/favicon Material ：https://material.io/icons/ 阿里巴巴 ：http://www.iconfont.cn/ Sample： https://simpleicons.org/ Flaticon：https://www.flaticon.com/ PS 切图 响应式设计 Flexbox 布局 阮一峰：http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool 网格布局 Node.js node.js 中文网：http://nodejs.cn/ node.js 中文社区：https://cnodejs.org/ 一起学Node.js：https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb*七天学会NodeJS：http://nqdeng.github.io/7-days-nodejs/ 进阶TypeScript 中文网：https://www.tslang.cn/ TypeScript Handbook(中文版)：https://zhongsp.gitbooks.io/typescript-handbook/content/ ECMAScript ECMAScript 5 W3C 规范镜像版: http://yanhaijing.com/es5/#null 自学手稿版： http://es5.weijieblog.com/ ECMAScript 6 阮一峰：http://es6.ruanyifeng.com/ 正则表达式 三十分钟入门：https://deerchao.net/tutorials/regex/regex.htm 工程化 gulp 中文网：http://www.gulpjs.com.cn/ NPM 淘宝镜像:http://npm.taobao.org/ AppVeyor 自动部署：https://ci.appveyor.com/ 资源 收藏夹：http://u-hey.com/20/126 图片压缩 腾讯ISUX前端智图：http://zhitu.isux.us/ 在线编程CODEPEN：https://codepen.io/JSFiddle：https://jsfiddle.net/ MarkDown 语法 MarkDown 中文：http://wowubuntu.com/markdown/index.html 代码高亮Highlightjs：https://highlightjs.org/static/demo/ CDN 静态资源库 360 前端静态资源库：https://cdn.baomitu.com/ Staticfile CDN：https://www.staticfile.org/ 又拍云：http://www.bootcdn.cn/ 前端团队 阿里巴巴国际UED:http://www.aliued.com/ 淘宝前端团队（FED）:http://taobaofed.org/ 腾讯Alloy Team：http://www.alloyteam.com/ 腾讯ISUX：https://isux.tencent.com/ 百度FEX：http://fex.baidu.com/ 京东Aotu：https://aotu.io/ 360 奇舞：https://75team.com/]]></content>
+      <tags>
+        <tag>WEB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[函数作用域及块作用域]]></title>
+    <url>%2Fpages%2F70cbbc9f%2F</url>
+    <content type="text"><![CDATA[函数作用域及块作用域最小特权原则最小特权原则也叫最小授权或最小暴露原则。这个原则是指在软件设计中，应该最小限度地暴露必要内容，而将其他内容都“隐藏”起来，比如某个模块或对象的 API 设计。 函数封装将函数和变量包裹在一个外部包装函数的作用域中，使用这个作用域将这些具体的细节隐藏起来，实现函数的封装。 可以避免同名标识符之间的冲突，避免全局变量污染。 将具体内容私有化，防止外部以非预期的方式使用内部私有的内容。 函数作用域函数作用域的含义是指，属于这个函数的全部变量都可以在整个函数的范围内使用及复用（事实上在嵌套的作用域中也可以使用）。 函数声明:1234567function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;foo(); 立即执行函数表达式：12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;)(); 区分函数声明和表达式最简单的方法是看 function 关键字出现在声明中的位置（不仅仅是一行代码，而是整个声明中的位置）。如果 function 是声明中的第一个词，那么就是一个函数声明，否则就是一个函数表达式。 函数声明和函数表达式之间最重要的区别是它们的名称标识符将会绑定在何处。 函数声明中，foo 被绑定在所在的作用域中，可以在外部通过 foo() 来调用它。 函数表达式中，foo 被绑定在函数表达式自身的函数中，外部不能访问调用，只能在其(function foo(){…}) 中的...位置被访问。 匿名函数表达式函数表达式可以匿名，而函数声明则不可以省略函数名。 立即执行函数表达式（IIFE）立即执行函数表达式（Immediately Invoked Function Expression），将函数包含在一对（）中，成为一个函数表达式，在末尾加上另一对（）可以立即执行这个函数。第一个（）将函数变成表达式，第二个（） 执行了这个函数。 IIFE 的两种写法 立即执行函数表达式： 12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;)(); 另一种改进形式写法将调用的（）移到了用来包装的（）里面。 12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;()); 两种写法功能上一样，凭个人喜好。 IIFE 表达式的用法 匿名函数表达式 1234(() =&gt; &#123; const a = 6; console.log(a); // a&#125;)(); 将它当作函数调用，并传递参数进去 1234const name = 'haha';(function IIFE(name) &#123; console.log(name); // haha&#125;)(name); 倒置代码的运行顺序，将需要运行的函数放在第二位， IIFE 执行之后，放在第二位的函数被当作参数传递进去。 1234567891011const objA = &#123; name: 'haha',&#125;;(function IIFE(foo) &#123; foo(objA);&#125;((obj) =&gt; &#123; const name = '3'; console.log(name); // 3 console.log(obj.name); // haha&#125;)); 第二部分为一个匿名函数，被当作一个参数 foo 传入到 IIFE 函数的第一部分。最后匿名函数调用执行，将一个全局对象 objA 传入当作 obj 的参数值。 块作用域块作用域是一个用来对之前的最小授权原则进行扩展的工具，将代码从在函数中隐藏信息扩展为在块中隐藏信息。 块作用域指的是变量和函数不仅可以属于所处的作用域，也可以属于某个代码块（通常指 { .. } 内部）。 只想在 for 循环内部的上下文中使用 i，所以在 for 循环的头部使用 var 声明一个变量 i，但实际上 i 会被绑定在外部作用域（函数或全局）中，在全局范围内都有效。 1234567var arr = [];for (var i = 0; i &lt; 10; i++) &#123; arr[i] = function() &#123; console.log(i); &#125;;&#125;arr[6](); // 10 console.log(i) 内部的 i 指向全局的的 i，最后循环完毕后在执行 arr6，这时全局的 i 的值为 10. ES3 规范中规定 try/catch 的 catch 分句会创建一个块作用域，其中声明的变量仅在 catch 内部有效。 Letlet 关键字可以将变量绑定到所在的任意作用域中（通常是 { .. } 内部）。换句话说，let 为其声明的变量隐式地了所在的块作用域。 1234567var arr = [];for (let i = 0; i &lt; 10; i++) &#123; arr[i] = function () &#123; console.log(i); &#125;;&#125;arr[6](); // 6 由 let 声明的 i，每次循环都在循环的内部重新生成了一次变量， 12345678var arr = [];for (let i = 0; i &lt; 10; i++) &#123; let _i = i; arr[i] = function () &#123; console.log(_i); &#125;;&#125;arr[6](); // 6 for 循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。 let声明的变量只在它所在的代码块有效。 1234567&#123; var a = 6; let b = 9;&#125;console.log(a); // 6console.log(b); // b is not defined 暂时性死区在代码块内，使用 let 命令声明变量，在声明之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）. 1234567891011if (true) &#123; // TDZ开始 tmp = 'abc'; // ReferenceError console.log(tmp); // ReferenceError let tmp; // TDZ结束 console.log(tmp); // undefined tmp = 123; console.log(tmp); // 123&#125; ES6明确规定，如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。 只要块级作用域内存在 let 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。 123456var tmp = 6;if(true) &#123; tmp = 3; // ReferenceError let tmp;&#125;]]></content>
+      <tags>
+        <tag>YouDon&#39;tKnowJavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[全局命名空间和模块]]></title>
+    <url>%2Fpages%2Ff9a582e%2F</url>
+    <content type="text"><![CDATA[全局命名空间和模块全局命名空间库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。 例如：123456var mylibrary = &#123; name: 'haha', eat: (name) =&gt; &#123; console.log(`$&#123;name&#125; is eating`); &#125;&#125;; 模块模块管理通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。 用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。]]></content>
+      <tags>
+        <tag>YouDon&#39;tKnowJavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[作用域闭包]]></title>
+    <url>%2Fpages%2F78f2b66e%2F</url>
+    <content type="text"><![CDATA[闭包wiki 上对闭包的定义：闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。 自由变量的定义：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在自己定义的词法作用域以外的地方执行。 闭包使得函数在定义时的词法作用域以外的地方被调用时，函数可以继续访问定义时的词法作用域。 在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。 在函数 foo() 内部定义了函数 bar()， bar() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。 12345678910111213function foo() &#123; var a = 2; function func() &#123; console.log(a); &#125; bar(func);&#125;function bar(fn) &#123; fn(); // 这就是闭包&#125; 将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar(fn) 函数，从而达到访问 func() 词法作用域的目的。 无论通过何种手段将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。 循环和闭包]]></content>
+      <tags>
+        <tag>YouDon&#39;tKnowJavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[作用域以及 LHS 和 RHS]]></title>
+    <url>%2Fpages%2Fb917f198%2F</url>
+    <content type="text"><![CDATA[作用域以及 LHS 和 RHS作用域1. 作用域是一套规则，负责收集并维护由所有声明的标识符（变量）组成的一系列查询，用于确定在何处以及如何查找变量（标识符），并实施一套非常严格的规则，用于确定当前执行的代码对这些标识符的访问权限。作用域就是函数或者变量能被访问到的范围。 2. 作用域有两种工作模型： 词法作用域(JavaScript)：词法作用域就是定义在词法阶段的作用域。 动态作用域(Bash脚本) 3. 全局变量会自动成为全局对象（比如浏览器中的 window 对象）的属性，因此可以不直接通过全局对象的词法名称，而是间接地通过对全局对象属性的引用来对其进行访问。例如：window.a 这样可以访问到被局部同名变量所遮蔽的全局变量。 执行上下文执行上下文在运行时确定，词法作用域在定义时确定。 欺骗作用域无论函数在哪里被调用，也无论它如何被调用，它的词法作用域都只由函数被声明时所处的位置决定。 JavaScript 中有两个机制可以“欺骗”词法作用域：eval(..) 和 with。前者可以对一段包含一个或多个声明的“代码”字符串进行演算，并借此来修改已经存在的词法作用域（在运行时）。后者本质上是通过将一个对象的引用当作作用域来处理，将对象的属性当作作用域中的标识符来处理，从而创建了一个新的词法作用域（同样是在运行时）。 eval()函数欺骗JavaScript 中的 eval() 函数可以接受一个字符串为参数，并将传入的字符串视为好像在书写时就存在于程序中这个位置的 JavaScript 代码进行执行。例如： 1234567var a = 66;function bar(str, b) &#123; eval(str); console.log(a, b); // 55 10&#125;bar('var a = 55;', 10); 使用 eval() 函数可以将代码以动态形式插入一个指定位置，如果 eval() 中所执行的代码包含一个或多个声明（函数或者变量），就会对词法作用域的环境进行修改，达到欺诈伪装的效果。 在严格模式下，eval() 函数拥有这自己的词法作用域，其中的声明将无法修改作用域。 这个函数的副作用是引擎无法在编译时对作用域查找进行优化，会导致代码运行变慢，不建议使用。 LHS 和 RHS查询LHS 查询对变量进行赋值操作，那么就会使用 LHS 查询。 当引擎执行 LHS 查询时，如果在顶层（全局作用域）中也无法找到目标变量，全局作用域中就会创建一个具有该名称的变量，并将其返还给引擎。 严格模式禁止自动或隐式地创建全局变量。 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查询失败时类似的 ReferenceError 异常。 RHS 查询查找获取某个变量的值，就会使用 RHS 查询。 如果 RHS 查询在所有嵌套的作用域中遍寻不到所需的变量，引擎就会抛出 ReferenceError 异常。]]></content>
+      <tags>
+        <tag>YouDon&#39;tKnowJavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[VSCode 配置 ESLint + Airbnb]]></title>
+    <url>%2Fpages%2F3bcc390e%2F</url>
+    <content type="text"><![CDATA[VSCode 配置 ESLint + Airbnb基本环境Win 10 v1709Nodejs v8.70VScode v1.17.2 VSCode 安装 ESLint 扩展打开 VSCode 搜索 ESLint 扩展安装 NPM 安装 ESLint 全局安装（推荐）: npm install eslint -g 项目根目录本地安装： npm install eslint --save-dev 1. 自定义配置规则 全局配置在当前用户根目录下执行 eslint --init,根据个人爱好选择生成配置文件 .eslintrc.json例如：windows\user\username 项目根目录配置：在当前用户根目录下执行 eslint --init，根据个人爱好选择生成配置文件 ps：具体配置参考：http://eslint.cn/docs/user-guide/configuring 2. 使用 eslint-config-airbnb 标准规则 查看 Airbnb 标准依赖插件版本： npm info &quot;eslint-config-airbnb@latest&quot; peerDependencies 例如：本次的 plugins 的版本要求: 12345&#123; eslint: &apos;^4.9.0&apos;, &apos;eslint-plugin-import&apos;: &apos;^2.7.0&apos;, &apos;eslint-plugin-jsx-a11y&apos;: &apos;^6.0.2&apos;, &apos;eslint-plugin-react&apos;: &apos;^7.4.0&apos;&#125; 安装对应版本的插件: npm install eslint-config-airbnb eslint@^#.#.# eslint-plugin-jsx-a11y@^#.#.# eslint-plugin-import@^#.#.# eslint-plugin-react@^#.#.# -g 更改配置文件 .eslintrc.json 如下： 12345678910111213141516171819202122&#123; // 要启用的环境 "env": &#123; "browser": true, "node": true, "commonjs": true, "es6": true, "jquery": true &#125;, // 启用 airbnb 规则 "extends": "airbnb", // 使用语言及版本 "parserOptions": &#123; "ecmaVersion": 6, "sourceType": "module" &#125;, // 个人自定义规则 "rules": &#123; "no-console":"off", "no-plusplus":"off" &#125;&#125; ESLint 支持 Vue 单文件组件 安装 eslint-plugin-html 插件 npm install eslint-plugin-html -g 在 VSCode 设置设置中添加如下配置：1234567891011121314151617181920 // ESLint 配置"eslint.enable": true,// nodejs 路径， windows 路径使用双 \\ 进行转义"eslint.nodePath": "C:\\Dev\\nodejs",// 启用 eslint-plugin-html 插件"eslint.options": &#123; "plugins": ["html"]&#125;,"eslint.validate": [ "javascript", "javascriptreact", // 启用 html 和 vue 中 ESLint 验证和自动修复 &#123; "language": "html", "autoFix": true &#125;, &#123; "language": "vue", "autoFix": true &#125;]]></content>
+      <tags>
+        <tag>VSCode ESLint</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[js术语中英对照表]]></title>
+    <url>%2Fpages%2F6ad0123c%2F</url>
+    <content type="text"><![CDATA[中英术语对照编译相关 compile 编译 tokenizing 分词 lexing 词法分析 toekn 词法单元 parsing 解析/语法分析 Abstract Syntax Tree(AST) 抽象语法树 raw code 代码生成 LHS(Left-hand Side) 赋值操作左侧，进行赋值操作 RHS(Right-hand Side) 赋值操作非左侧，进行取值操作 异常 ReferenceError 引用错误 TypeError 类型错误 函数Immediately Invoked Function Expression(IIFE) 立即执行函数表达式Temporal dead zone(TDZ) 暂时性死区Execution context 执行上下文]]></content>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[包管理器 Yarn]]></title>
+    <url>%2Fpages%2F522f484%2F</url>
+    <content type="text"><![CDATA[包管理器 Yarn Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 JS 包管理工具。 常用命令 yarn和 yarn install ，这两个命令的效果是一样的，等同于npm install，使用这个命令会在该目录生成一个yarn.lock的文件。 yarn add koa，安装koa模块并更新package.json和yarn.lock文件，等同于npm install koa –save。也可以使用yarn global add koa，等同于npm install koa -g，将模块直接安装到全局环境变量里，方便使用。 yarn list，根据当前项目的package.json查看模块的依赖及版本。 yarn info koa，查看koa模块的详细信息，类似于npm view koa。 yarn init，初始化项目package.json文件，等同于npm init。 yarn run，运行package.json中的script。]]></content>
+      <tags>
+        <tag>Yarn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[for-in和for-of]]></title>
+    <url>%2Fpages%2Ff5b5d35a%2F</url>
+    <content type="text"><![CDATA[for-in for-in循环遍历的是对象的属性名称,可以将一个对象的属性循环遍历出来。12345678var obj = &#123; name: 'XiaoMing', age: 22, sex: 'man'&#125;;for(let key in obj)&#123; console.log(key); // 'name' 'age' 'sex'&#125; 数组也是对象，for-in可以直接循环遍历出Array的索引，索引类型为 String 而不是 Number。1234var array = ['a', 'b', 'c'];for(let i in array)&#123; console.log(i); // 索引'0' '1' '2'&#125;]]></content>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[css基础]]></title>
+    <url>%2Fpages%2Feda1a9a9%2F</url>
+    <content type="text"><![CDATA[CSS基础CSS 导入 在 HTML 中引入 CSS 的方法主要有四种，它们分别是行内式、内嵌式、链接式和导入式。 行内式 在标记的 style 属性中设定 CSS 样式。 123&lt;p style=color:white; background-color:blue;&gt;Tihs is a test text.&lt;/p&gt; 内嵌式 将 CSS 样式集中写在网页的&lt;head&gt;&lt;/head&gt;中的&lt;style&gt;&lt;/style&gt;标签对中。 缺点是对于一个包含很多网页的网站，在每个网页中使用嵌入式，进行修改样式时非常麻烦。单一网页可以考虑使用嵌入式。 1234567&lt;head&gt; &lt;style type="text/css"&gt; p &#123; color:red; &#125; &lt;/style&gt;&lt;/head&gt; 导入式 使用 CSS 的规则将外部CSS文件将一个独立的.css文件引入 HTML 文件中，&lt;style&gt;标记写在&lt;head&gt;标记中。 123&lt;style type="text/css"&gt; @import"mystyle.css'&lt;/style&gt; 链接式 最常用的的一种方式。 123&lt;head&gt; &lt;link rel="stylesheet" href="src/test.css" type="text/css"&gt;&lt;/head&gt; margin margin 属性为给定元素设置所有四个（上下左右）方向的外边距属性。四个外边距属性设置分别是： margin-top， margin-right， margin-bottom 和 margin-left 。指定的外边距允许为负数。 语法 值 例子 含义 margin: style 单值语法 margin: 1em; 指定四周外边距都为1em margin: vertical horizontal 二值语法 margin: 5% auto; 上下为5%，左右为auto margin: top horizontal bottom 三值语法 margin: 1em auto 2em; 上为1em，左右为auto，下为2em margin: top right bottom left 四值语法 margin: 2px 1em 0 auto; 上为2px，右为1em，下为0，左为auto 选择符 选择符用于定位我们想要样式化的网页 HTML 元素,可以选择一个或多个需要添加样式的元素。 选择符 选择内容 示例 元素 选择符 标签内所有元素 p ID 选择符 指定ID的元素 #my-id Clss 选择符 指定Class的元素 .my-class 属性 选择符 拥有指定属性的元素 img[src] 伪类 选择符 指定的元素，但是需要在特殊的状态，比如悬停 a:hover 简单选择器（Simple selectors） 通过元素类型、class或 id 匹配一个或多个元素。 属性选择器（Attribute selectors） 通过属性/属性值匹配一个或多个元素。 [attr]：该选择器选择包含 attr 属性的所有元素，不论 attr 的值为何。 [attr=val]：该选择器仅选择 attr 属性被赋值为 val 的所有元素。 [attr~=val]：该选择器仅选择 attr 属性的值（以空格间隔出多个值）中有包含 val 值的所有元素，比如位于被空格分隔的多个类（class）中的一个类。 [attr|=val] : 选择attr属性的值以val（包括val）或val-开头的元素。 [attr^=val] : 选择attr属性的值以val开头（包括val）的元素。 [attr$=val] : 选择attr属性的值以val结尾（包括val）的元素。 [attr*=val] : 选择attr属性的值中包含字符串val的元素。 伪类（Pseudo-classes） 一个 CSS 伪类（pseudo-class） 是一个以冒号(:)作为前缀的关键字，当元素需要在特定状态下的设置表现样式时，往元素的选择器后面加上对应的伪类（pseudo-class）。例如：页面上有一个链接， 有四种状态： 未点击状态显示蓝色： 1a:link &#123; color: blue; &#125; 已点击状态显示紫色： 1a:visited &#123; color: purple; &#125; 鼠标悬停状态显示红色： 1a:hover &#123; color: red; &#125; 鼠标点击状态显示绿色： 1a:active &#123; color: green; &#125; 多个状态同时设置，按照以上先后顺序排列。 伪元素（Pseudo-elements） 以冒号(::)作为前缀的关键字，添加到选择器后面选择某个元素的某个部分。例如每个段落的第一个字，或者某个元素之前生成的内容。 ::after在已选中元素尾部创建最后一个子元素，通常会配合 content 属性来为该元素添加装饰内容。 12/*在链接后面加上一个箭头←*/a::after &#123; content: "←";&#125; ::before 在已选中元素头部创建第一个子元素。 12/*在链接前面加上一个箭头→*/a::after &#123; content: "→";&#125; ::first-letter会选中一整块文字第一行的第一个字母，并且文字所处的行之前没有其他内容（如图片和内联的表格） 。 12345/* 使每段开头的第一个字母变红变大 */p::first-letter &#123; /* 使用:first来兼容IE8- */ color: red; font-size: 130%;&#125; ::first-line将样式只应用于一个元素的首行。首行文本的数量取决于元素的宽，document 的宽和文本的字号。 ::first-line 伪元素只作用于块容器中,所以::first-line伪元素只能在一个display值为block, inline-block, table-cell 或者 table-caption中有用.。在其他的类型中::first-line是不起作用的。 ::selection应用于文档中被用户选中高亮的部分（比如使用鼠标或其他选择设备选中的部分）,ecko 引擎需要加前缀（-moz）。 123456789/* 将被选中的任何文本渲染为金黄色和红色背景 */::-moz-selection &#123; color: gold; background: red;&#125;::selection &#123; color: gold; background: red;&#125; 组合器（Combinators） 以有效的方式组合两个或更多的选择器用于非常特定的选择的方法。例如，只选择 divs 的直系子节点的段落，或者直接跟在 headings 后面的段落。 组合器 选择值 A,B 匹配同时满足A和B的任意元素 A B 匹配任意元素，满足条件：B是A的后代结点（B是A的子节点，或者A的子节点的子节点） A &gt; B 匹配任意元素，满足条件：B是A的直接子节点 A + B 匹配任意元素，满足条件：B是A的下一个兄弟节点（AB有相同的父结点，并且B紧跟在A的后面） A ~ B 匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A） 多用选择器（Multiple selectors） 以逗号分隔开的多个选择器放在一个 CSS 规则下面， 以将一组声明应用于由这些选择器选择的所有元素。 盒模型 网页上的所有的元素都包含在一个个盒子中。在 CSS 里面设置它们的尺寸，颜色，位置等等。 内边距（padding）： 围绕着内容的空间（比如围绕段落的空间） 边框（border）： 紧接着内边距的实体线段 外边距(margin) ： 围绕元素外部的空间 width： 属于一个元素的宽 background-color： 元素内容和内边距之后的颜色 color： 元素内容的颜色（通常是文本） text-shadow： 为元素内的文本设置阴影 display： 设置元素的显示模式 position：fixed 位置保持不动 单位长度px em px ：像素 (px) 是一种绝对单位（ absolute units）， 因为无论其他相关的设置怎么变化，像素指定的值是不会变化的。 em ：相对长度单位，相对于当前文本内的字体尺寸。 px 与em转换任意浏览器的默认字体高度为 16px（16像素），所有未经调整的浏览器都符合: 1em=16px，那么10px=0.625em。为了简化font-size的换算，可以在 css 中的 body 选择器中声明 font-size: 62.5%，这时10px=1em。 阴影 box-shadow 属性向元素添加一个或多个阴影。 1box-shadow: h-shadow v-shadow blur spread color inset; 值 含义 h-shadow 必需。水平阴影。允许负值。 v-shadow 必需。垂直阴影。允许负值。 blur 可选。模糊距离。 spread 可选。阴影尺寸。 color 可选。阴影颜色。 inset 可选。将外部阴影(outset)改为内部阴影。 布局 一个好的布局，能将网页内容更完美的展示出来。 display 元素显示 CSS 中最重要的控制布局的属性，用来设置一个元素应该如何显示，每一个元素都有一个默认的display值。对于大多数元素它们的默认值通常是block或inline。 block：块级元素。块级元素通常会占用容器的全部宽度，在其开始和结束位置都是换行符。常见的块级元素有：h1、div、p和form等，HTML5 中的新元素：header、footer和section等。 inline：行内元素。行内元素只需要必要的宽度，不会强制换行打乱已有元素布局。常见的行内元素有：span和a。 none：隐藏某个元素，且隐藏的元素不会占据任何空间。一些特殊元素的默认 display 值是它，例如 script。 display:none 通常被 JavaScript 用来在不删除元素的情况下隐藏或显示元素。 visibility 元素可见性visibility 属性有两种用法： 值为hidden时隐藏元素，并将其所占空间用空白填充。 值为collapse时隐藏表格的一行或一列，用于快速从表格中删除一行或一列。 display:none和visibility:hidden的区别： display:none隐藏某个元素时，隐藏的元素不会占据任何空间。 visibility:hidden可以隐藏元素，但是隐藏的元素仍然占用原来大小的空间。 Google 原色 蓝色 #4285f3 红色 #ea4335 绿色 #34a853 黄色 #fbbc05 黑色 #1c262f google蓝 #2196f3按钮红 #f50057google绿 #0f9d58]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jQuery基础]]></title>
+    <url>%2Fpages%2F889563%2F</url>
+    <content type="text"><![CDATA[jQuery CDN 方式引入 jQuery 选择器操作 DOM 节点 $(“选择器”); 可以通过选择器选择 DOM 节点 jQuery(“h1”); 等同于 $(“h1”); 返回 h1 $(“h1”).text(); 返回 h1 里面的 text $(“h1”).text(“Hello World!”) 更改覆盖 h1 的内容 注意DOM 加载完成之后 jQuery 开始运行，否则 jQuery 操作会被覆盖，不会生效。12345678// 文档加载完成后执行替换方法jQuery(document).ready(function()&#123; $("h1").text("Hello World!);&#125;);// 或者使用以下方法$(document).ready(function()&#123; $("h1").text("Hello World!);&#125;); 伪类选择器1234.class li:first; // 选择列表里面的第一个元素.class li:last; // 选择列表里面的最后一个元素.class li:odd; // 选择列表里面的奇数位元素.class li:even; // 选择列表里面的偶数位元素 遍历寻找操作 DOM 节点 速度快于选择器操作1$(".class").find("li"); 遍历伪类选择1234$(".class").first(); // 选择列表第一个元素$(".class").last(); // 选择列表最后一个元素$(".class").odd(); // 选择列表奇数位元素$(".class").even(); // 选择列表偶数位元素 上下遍历12$(".class").parent("li"); // 向上一层遍历，得到直系父元素$(".class").children("li"); // 向下遍历，得到直系子元素]]></content>
+      <tags>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[html基础]]></title>
+    <url>%2Fpages%2F1a147173%2F</url>
+    <content type="text"><![CDATA[html 基础完整 HTML 树 相关的 CSS 文件（针对样式）： 1&lt;link rel="stylesheet" type="text/css" href="style.css"&gt; 相关的 JavaScript 文件（更改渲染和行为的多用途脚本）： 1&lt;script src="myjavascripts.js"&gt;&lt;/script&gt; 粗体斜体 1234&lt;!-- 推荐使用&lt;strong&gt;进行加粗 --&gt; &lt;strong&gt;粗体&lt;/strong&gt;&lt;!-- 推荐使用&lt;em&gt;进行斜体显示 --&gt;&lt;em&gt;斜体&lt;/em&gt; &lt;sup&gt; 标签定义上标文本。 &lt;sub&gt; 标签定义下标文本。]]></content>
+      <tags>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[button常用设置]]></title>
+    <url>%2Fpages%2F91b6115c%2F</url>
+    <content type="text"><![CDATA[鼠标样式cursor：定网页浏览时用户鼠标指针的样式。 cursor：pointer； 设定鼠标的形状为一只伸出食指的手，这也是绝大多数浏览器里面鼠标停留在网页链接上方时候的样式。default 箭头。crosshair 十字progress 沙漏 按钮颜色平时的状态：1234567891011121314151617181920212223242526.btn &#123; // 未按下时的背景颜色 background: #02b3e4; // 边框圆角 border-radius: 4px; // 去掉边框 border: none // 边缘阴影 box-shadow: 12px 15px 20px rgba(0, 0, 0, 0.1); // 字体颜色 color: #fff; // 显示方式 display: inline-block; // 字体 font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: 600; // 字间距 letter-spacing: 0.165em; // 超出隐藏 overflow: hidden; // 设置渐变效果 transition: 0.2s box-shadow ease-in-out, 0.2s background-color ease-in-out, 0.2s border-color ease-in-out;&#125;// 鼠标放上去时的颜色.btn:hover:not(:disabled) &#123; background: #148bb1;&#125; 字体抗锯齿 -webkit-font-smoothing有 CSS3中用于webkit引擎(如chrome)中设置字体的抗锯齿或者说光滑度的属性。 none —— 对低像素的文本比较好 subpixel-antialiased ——默认值 antialiased ——抗锯齿很好 文本溢出 text-overflow text-overflow 属性规定当文本溢出包含元素时发生的事情。 clip 修剪文本。 ellipsis显示省略符号来代表被修剪的文本。 string使用给定的字符串来代表被修剪的文本。 文本转换 text-transform 转换不同元素中的文本。 none 默认。定义带有小写字母和大写字母的标准的文本。 capitalize文本中的每个单词以大写字母开头。 uppercase定义仅有大写字母。 lowercase定义无大写字母，仅有小写字母。 inherit规定应该从父元素继承 text-transform 属性的值。 元素变形过渡效果 transition 设置元素渐变过渡，transition: property duration timing-function delay;需要加浏览器前缀。设置多个元素效果时用逗号隔开。http://www.w3school.com.cn/cssref/pr_transition.asp transition-property 规定设置过渡效果的 CSS 属性的名称。 transition-duration规定完成过渡效果需要多少秒或毫秒。 transition-timing-function规定速度效果的速度曲线。（http://www.w3school.com.cn/tiy/t.asp?f=css3_transition-timing-function2） transition-delay定义过渡效果何时开始，过渡之前需要等待的实践。 速度曲线设置 linear 规定以相同速度开始至结束的过渡效果。 ease规定慢速开始，然后变快，然后慢速结束的过渡效果。 ease-in规定以慢速开始的过渡效果。 ease-out规定以慢速结束的过渡效果。 ease-in-out规定以慢速开始和结束的过渡效果。 段落文本换行 white-space white-space 属性设置如何处理元素内的空白。http://www.w3school.com.cn/cssref/pr_text_white-space.asp normal 默认。空白会被浏览器忽略。 pre空白会被浏览器保留。其行为方式类似 HTML 中的 标签。 nowrap文本不会换行，文本会在在同一行上继续，直到遇到 标签为止。 pre-wrap保留空白符序列，但是正常地进行换行。 pre-line合并空白符序列，但是保留换行符。 inherit规定应该从父元素继承 white-space 属性的值]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[arguments和rest]]></title>
+    <url>%2Fpages%2Fe5332c52%2F</url>
+    <content type="text"><![CDATA[arguments 参数 只在函数内部起作用，指向当前函数调用者传入的所有参数。1234567var bar = (x) =&gt; &#123; console.log(x); // a for(let i = 0; i &lt; arguments.length; i++)&#123; console.log(arguments[i]); // 根据参数索引打印参数 &#125;&#125;;bar('a', 'b', 'c'); 利用arguments可以获得调用者传入的所有参数。 arguments常用于判断传入参数个数。 rest 不定参数 JS 允许函数接收任意个参数，当参数个数不确定的情况下可以使用不定参数。12345678910"use strict"; // 严格模式// 接受任意个参数返回它们的和function sum(...rest) &#123; // 不定参数写在参数最后，前面使用 ... 标识 let result = 0; for (let i of rest) &#123; // rest 是一个数组实例 result += i; &#125; console.log(result);&#125;sum(1, 2, 3, 4); // 传入参数 不定参数写在参数最后，传入参数先绑定已有的参数，多余的参数以数组形式存入不定参数。]]></content>
       <tags>
         <tag>javascript</tag>
       </tags>
@@ -233,19 +217,35 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[button常用设置]]></title>
-    <url>%2Fpages%2F91b6115c%2F</url>
-    <content type="text"><![CDATA[鼠标样式cursor：定网页浏览时用户鼠标指针的样式。 cursor：pointer； 设定鼠标的形状为一只伸出食指的手，这也是绝大多数浏览器里面鼠标停留在网页链接上方时候的样式。default 箭头。crosshair 十字progress 沙漏 按钮颜色平时的状态：1234567891011121314151617181920212223242526.btn &#123; // 未按下时的背景颜色 background: #02b3e4; // 边框圆角 border-radius: 4px; // 去掉边框 border: none // 边缘阴影 box-shadow: 12px 15px 20px rgba(0, 0, 0, 0.1); // 字体颜色 color: #fff; // 显示方式 display: inline-block; // 字体 font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: 600; // 字间距 letter-spacing: 0.165em; // 超出隐藏 overflow: hidden; // 设置渐变效果 transition: 0.2s box-shadow ease-in-out, 0.2s background-color ease-in-out, 0.2s border-color ease-in-out;&#125;// 鼠标放上去时的颜色.btn:hover:not(:disabled) &#123; background: #148bb1;&#125; 字体抗锯齿 -webkit-font-smoothing有 CSS3中用于webkit引擎(如chrome)中设置字体的抗锯齿或者说光滑度的属性。 none —— 对低像素的文本比较好 subpixel-antialiased ——默认值 antialiased ——抗锯齿很好 文本溢出 text-overflow text-overflow 属性规定当文本溢出包含元素时发生的事情。 clip 修剪文本。 ellipsis显示省略符号来代表被修剪的文本。 string使用给定的字符串来代表被修剪的文本。 文本转换 text-transform 转换不同元素中的文本。 none 默认。定义带有小写字母和大写字母的标准的文本。 capitalize文本中的每个单词以大写字母开头。 uppercase定义仅有大写字母。 lowercase定义无大写字母，仅有小写字母。 inherit规定应该从父元素继承 text-transform 属性的值。 元素变形过渡效果 transition 设置元素渐变过渡，transition: property duration timing-function delay;需要加浏览器前缀。设置多个元素效果时用逗号隔开。http://www.w3school.com.cn/cssref/pr_transition.asp transition-property 规定设置过渡效果的 CSS 属性的名称。 transition-duration规定完成过渡效果需要多少秒或毫秒。 transition-timing-function规定速度效果的速度曲线。（http://www.w3school.com.cn/tiy/t.asp?f=css3_transition-timing-function2） transition-delay定义过渡效果何时开始，过渡之前需要等待的实践。 速度曲线设置 linear 规定以相同速度开始至结束的过渡效果。 ease规定慢速开始，然后变快，然后慢速结束的过渡效果。 ease-in规定以慢速开始的过渡效果。 ease-out规定以慢速结束的过渡效果。 ease-in-out规定以慢速开始和结束的过渡效果。 段落文本换行 white-space white-space 属性设置如何处理元素内的空白。http://www.w3school.com.cn/cssref/pr_text_white-space.asp normal 默认。空白会被浏览器忽略。 pre空白会被浏览器保留。其行为方式类似 HTML 中的 标签。 nowrap文本不会换行，文本会在在同一行上继续，直到遇到 标签为止。 pre-wrap保留空白符序列，但是正常地进行换行。 pre-line合并空白符序列，但是保留换行符。 inherit规定应该从父元素继承 white-space 属性的值]]></content>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[css和响应式]]></title>
     <url>%2Fpages%2F343902f6%2F</url>
     <content type="text"><![CDATA[css框架##Bootstrap 框架 Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。http://www.runoob.com/bootstrap/bootstrap-tutorial.html 在 html head 开头引入下面代码： 1234567891011121314&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;!-- 兼容古老的 IE --&gt; &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt; &lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt; &lt;meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"&gt; &lt;!-- CSS 样式重置 --&gt; &lt;link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet"&gt; &lt;!-- 引入 Bootstrap css 压缩文件--&gt; &lt;link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"&gt; &lt;!-- 引入自己 css 的文件 --&gt; &lt;link rel="stylesheet" href="../style/task_1.css"&gt; &lt;title&gt;Test&lt;/title&gt;&lt;/head&gt; 响应式设计 根据不同像素屏幕，展示不同大小页面。 !important 为开发者提供了一个增加样式权重的方法。!important是对整条样式的声明，包括这个样式的属性和属性值。 ### 媒体查询 12345@media only screen and (max-width: 300px) &#123; p &#123; background-color: red; &#125;&#125; only 兼容旧式浏览器。 screen 表示这个媒体查询适用于所有屏幕。 and 后面跟条件。 一般个@media样式要放在css样式表的最下面，不然会被相同样式覆盖。 CSS 样式重置 不同的浏览器在对于CSS没有定义的一些样式属性是不一样的 比如没有在自己的CSS里面规定超链接有没有下划线的时候，有些浏览器有，有些浏览器没有。 再比如有一些浏览器规定的超链接默认颜色是蓝色，有一些又是黑色。 而这个CSS的功能就是对几乎所有的默认样式进行重置，让所有的浏览器上对于未定义的样式浏览效果达到一致。 使用方法： 12&lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt;&lt;link href="https://lib.baomitu.com/normalize/7.0.0/normalize.min.css" rel="stylesheet"&gt; 网格设计 大部分网页采用 12 columns 设计，可以很好的划分为2，3，4等份。 文章字体 segmentfault 123font-family: -apple-system,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;font-size: 14px; 知乎 12font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;font-size: 15px; 颜色导航栏 #243d4c 背景 #eee #f5f5f5 #f8f8f8 #ffffff 按钮 #02b3e4 #148bb1 #2D78BA 边框阴影1234567891011.ss::before, .clss::before &#123; bottom: 0; box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24); content: ''; display: block; left: 0; pointer-events: none; position: absolute; right: 0; top: 0;&#125;]]></content>
       <tags>
         <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[css布局]]></title>
+    <url>%2Fpages%2F5a252ba9%2F</url>
+    <content type="text"><![CDATA[CSS 基础布局清除浮动简单的 Micro clearfix 方法清除浮动，原文链接:http://nicolasgallagher.com/micro-clearfix-hack/123456789@mixin clearfix &#123; &amp;::before, &amp;::after&#123; content: " "; display: flex; &#125; &amp;::after &#123; clear: both; &#125;&#125; 三栏式布局 两边侧栏固定宽度，中间栏宽度自适应，并且中间栏要在放在文档流前面以优先渲染。其父元素的高度始终是由三栏中高度最高的元素确定。 圣杯布局 来源于 Matthew Levine 于 2006 年发表在 Alistapart 上的一篇文章。原文链接 12345&lt;div class="container"&gt; &lt;div class="box mid"&gt;&lt;/div&gt; &lt;div class="box left"&gt;&lt;/div&gt; &lt;div class="box right"&gt;&lt;/div&gt;&lt;/div&gt; 设置box-mid box-left box-right 三者向左浮动。 设置box-mid宽度为 100%。 设置负边距，box-left设置负左边距为 100%，box-right设置负左边距为负的自身宽度。 设置container的padding值，给box-left和box-right留出空间。 设置left和right为相对定位(position: relative). 设置box-left的left值为负的box-left宽度，box-right的right值为负的right宽度。 Q:当面板的mid部分比两边的子面板宽度小的时候，布局会乱掉。A:为body设置一个最小宽度。body{min-width:700px;} 淘宝双飞翼布局 淘宝双飞翼布局是一个经典的三栏式布局，]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Flex布局]]></title>
+    <url>%2Fpages%2Fab688311%2F</url>
+    <content type="text"><![CDATA[Flex 布局MDN Flex 是 Flexible Box 的缩写，意为“弹性布局”，为盒模型提供灵活的布局方式。 盒子中的子元素可以在各个方向上进行布局，并且能以弹性尺寸来适应显示空间。 弹性容器的每个子元素都称为弹性项目。弹性容器直接包含的文本将被包覆成匿名弹性单元。 元素的显示顺序可以与它们在源代码中的顺序无关。 基础 flex 布局包括一个水平 main axis 和一个垂直 cross axis 通过设置 display 的值启用 flex 设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。 12345678910.box-flex&#123; display： -ms-flex； display: -webkit-flex; display: flex;&#125;.box-inline-flex&#123; display: -ms-inline-flex; display: -webkit-inline-flex; display: inline-flex;&#125; flex 属性 flex-direction：确立主轴。 justify-content：定义了在当前行上，弹性项目沿主轴如何排布。 align-items：定义了在当前行上，弹性项目沿侧轴默认如何排布。 align-self：定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。 flex-direction（主轴方向） flex-direction 决定主轴方向（项目排列方向），包括四个值。 row（默认值）：主轴为水平方向，起点在左端。 row-reverse：主轴为水平方向，起点在右端。 column：主轴为垂直方向，起点在上沿。 column-reverse：主轴为垂直方向，起点在下沿。 flex-wrap（换行控制） 控制一条轴上放不下子项目该如何换行。 nowrap（默认值）：不换行 wrap：换行，第一行在上。 wrap-reverse：换行，第一行在下。 justify-content（主轴排列方式） flex-start：从行首起始位置开始排列。 flex-end：从行尾位置开始排列。 center：居中排列。 space-between：均匀排列每个元素首个元素放置于起点，末尾元素放置于终点。 space-around：均匀排列每个元素每个元素周围分配相同的空间。 align-items(侧轴排列方式) flex-start：元素向侧轴起点对齐。 flex-end：元素向侧轴终点对齐。 center：元素在侧轴居中。如果元素在侧轴上的高度高于其容器，那么在两个方向上溢出距离相同。 baseline: 项目的第一行文字的基线对齐。 stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。 align-conten（多轴线对齐方式） align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。 flex-start：所有行从垂直轴起点开始填充。第一行的垂直轴起点边和容器的垂直轴起点边对齐。接下来的每一行紧跟前一行。 flex-end：所有行从垂直轴末尾开始填充。最后一行的垂直轴终点和容器的垂直轴终点对齐。同时所有后续行与前一个对齐。 center：所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的垂直轴起点边和第一行的距离相等于容器的垂直轴终点边和最后一行的距离。 space-between：所有行在容器中平均分布。相邻两行间距相等。容器的垂直轴起点边和终点边分别与第一行和最后一行的边对齐。 space-around：所有行在容器中平均分布，相邻两行间距相等。容器的垂直轴起点边和终点边分别与第一行和最后一行的距离是相邻两行间距的一半。 stretch：拉伸所有行来填满剩余空间。剩余空间平均的分配给每一行。 子项目属性 order：定义项目的排列顺序。数值越小，排列越靠前，默认为 0。 flex-grow：定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。 flex-shrink：定义了项目的缩小比例，默认为 1，即如果空间不足，该项目将缩小。属性为 0，项目不缩小，负值对该属性无效。 flex-basis：定义项目在主轴所占据的基本空间，默认值 auto，即项目本来的大小。 flex：是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。 align-self：允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。]]></content>
+      <tags>
+        <tag>flex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[javascript DOM]]></title>
+    <url>%2Fpages%2F218ff168%2F</url>
+    <content type="text"><![CDATA[JavaScript Dom消息窗口 document.write(字符串或者变量或者 Html 标签); 直接在向 html 的输出流中写内容，直接在网页中输出容。 alert(字符串或变量); 弹出一个包含确定的消息对话框。 confirm(stri); 弹出一个包含确定和取消的消息对话框。 str 消息框显示的文本。 返回值为 Boolean 类型，通过返回值判断用户点击了什么按钮，确定为 true ，取消为 false。 prompt(str1, str2) 弹出包含一个确定按钮、取消按钮与一个文本输入框的消息对话框。 str1 消息框显示文本，不可修改。 str2 文本框中的内容，可修改。 返回值：点击确定，文本框内容作为函数返回值。点击取消，返回 null。 open() 方法可以查找一个已经存在或者新建的浏览器窗口。 window.open() 打开一个新窗口。 123456window.open([URL], [窗口名称], [窗口参数设置])/* URL(可选参数):网页网址或路径，如果它的值是空字符串，那么窗口就不显示任何文档。* 窗口名称(可选参数)：被打开窗口的名称。只能由字母，数字或下划线构成。* _balnk:新窗口打开； _self:当前窗口打开； _top：框架网页中在上部窗口中显示目标网页；* 相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。*/ 窗口参数 ：| 参数 | 值 | 含义 || ———- | ——- | ———————— || top | Number | 窗口顶部离开屏幕顶部像素 || left | Number | 窗口顶部离开屏幕顶部像素 || width | Number | 窗口宽度 || height | Number | 窗口高度 || menubar | yes，no | 窗口菜单 || toolbar | yes，no | 窗口工具栏 || scrollbars | yes，no | 窗口滚动条 || status | yes，no | 窗口状态栏 | close() 关闭窗口 12window.close(); // 关闭本窗口[对象窗口].close() // 关闭对象窗口 JS HTML DOM 浏览器从服务器取到HTML网页以后， 会展示成页面让你看， 但是他的内部其实会把HTML组织成一个树给JS,这个树可以称为DOM。 例如这个页面： 浏览器从服务器取到HTML网页以后， 会展示成页面让你看， 但是他的内部其实会把HTML组织成一个树给JS,这个树可以称为DOM。 例如这个页面： 12345678&lt;html&gt; &lt;head&gt; &lt;title&gt;Sample Page&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;p&gt;hello world!&lt;/p&gt; &lt;/body&gt;&lt;/html&gt; 通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML: JavaScript 能够改变页面中的所有 HTML 元素 JavaScript 能够改变页面中的所有 HTML 属性 JavaScript 能够改变页面中的所有 CSS 样式 JavaScript 能够对页面中的所有事件做出反应 通过 JavaScript 操作作 HTML 元素 JS可以定位到DOM树中任意一个节点， 然后对这个节点进行操作， 例如隐藏节点、显示节点、改变颜色、获得文本的值， 改变文本的值，添加一个响应点击事件的函数等。 查找 HTML 元素 通过 id 找到 HTML 元素：`var x = document.getElementById(“ID”); 通过标签名找到 HTML 元素：var x = document.getElementById(&quot;ID&quot;); var y = x.getElementsByTagName(&quot;p&quot;); 通过类名找到 HTML 元素 stringObject.match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。 改变元素内容 document.getElementById(“ID”).innerHTML=”Hello”; // 改变内容 isNaN(x); // x 是否为数字 document.write(“写入内容”), // 向文档输出写内容 改变元素样式 document.getElementById(“ID”).style.color=”#ff0000”; // 改变样式 document.getElementById(“ID”).style.visibility=”hidden”; // 隐藏元素 document.getElementById(“ID”).style.visibility=”visible” // 显示元素 DOM 事件HTML 常见事件 当用户点击鼠标时 当网页已加载时 当图像已加载时 当鼠标移动到元素上时 当输入字段被改变时 当提交 HTML 表单时 当用户触发按键时 事件 含义 onclick 元素被点击时，调用绑定函数 onload 和 onunload 在用户进入或离开页面时被触发，用于检测访问者的浏览器类型和浏览器版本，处理 cookie onmouseover 和 onmouseout 将鼠标移至 HTML 元素上方或移出元素时触发 onchange 当域内的内容被改变时，执行绑定函数。例如：向输入框内输入小写，完成后自动转换为大写 onmousedown 和 onmouseup 按下和释放鼠标，触发事件 onfocus 和 onblur 获得焦点或者失去焦点时，触发事件。例如：向文本框输入时，改变其背景颜色 绑定方式 js 中绑定 123// 必须是一个函数的引用或函数名，而不是函数调用// 例如：foo(); 在这里将无效document.getElementById("ID").onclick = foo; html 中绑定 1onclick="foo()"]]></content>
+      <tags>
+        <tag>javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -321,41 +321,17 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java中的I/O流]]></title>
-    <url>%2Fpages%2F649b2029%2F</url>
-    <content type="text"><![CDATA[流的概念和作用&gt; 流是数据源到Java程序，Java程序到输出位置之间的管道。 IO流的分类 根据数据处理类的不同分为：字符流和字节流。 根据数据流向不同分为：输入流和输出流。 输入输出是以Java程序为参照物的，相对于Java程序本身 输入流：从数据源中读取数据到Java程序中，这个过程称之为输入。 输出流：Java程序将数据写入到其他地方，这个过程称之为输出。 节点流和处理流。 节点流：普通的管道； 处理流：功能性管道，对数据进一步加工。 字节流字节流中的核心类 InputStream int read(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 读取数据的量；返回值为这次调用read方法读取数据的长度。 OutputStream void write(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 写入数据的量； 程序步骤 导入类 java.io.*； 定义主函数； 声明输入流的引用； 声明输出流的引用；123456789101112131415161718192021try&#123; 1.生成代表输入流的对象； 2.生成代表输出流的对象； 3. 生成一个byte字节数组； 4.调用输入流的read方法读取数据； 5.定义临时变量接受数据的量； 6.调用输出流的write方法写入数据；&#125;catch(Exception e)&#123; Systen.out.println(e);&#125;//finally进行结尾处理finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125;&#125; 示例 1：12345678910111213141516171819202122232425262728293031323334import java.io.*;public class Test&#123; public static void main(String args[])&#123; //声明输入流引用 FileInputStream fis = null; //声明输出流引用 FileOutputStream fos = null; try&#123; //生成代表输入流的对象 fis = new FileInputStream("D:/java/8.8/from.txt"); //生成代表输入流的对象 fos = new FileOutputStream("D:/java/8.8/to.txt"); //生成一个字节型buffer数组 byte[] buffer = new byte[100]; //定义一个临时变量，用于接受调用输入流read方法读取数据的量 int temp = fis.read(buffer,0,b.length); //调用输出流的write方法写入数据 fos.write(buffer,0,temp); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; //finally进行结尾处理 finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 大文件的读写 调节buffer数组的大小； 对read，write方法采取while循环； 示例 2：1234567while(true)&#123; int temp = fis.read(buffer,0,buffer.length); if(temp == -1)&#123; break; &#125; fos.write(buffer,0,temp);&#125; 字符流 字符流：是以对写文件时，以字符为基础 字节输入流：Reader &lt;–FileReader int read(char [] c, int off, int length ) 字节输出流：Writer &lt;–FileWriter void writer(char [] c, int off, int length) 示例 3：12345678910111213141516171819202122232425262728293031import java.io.*;public class TestChar&#123; public static void main(String args[])&#123; FileReader fr = null; FileWriter fw = null; try&#123; fr = new FileReader("d:/java/9.5/read.txt"); fw = new FileWriter("d:/java/9.5/write.txt"); char [] buffer = new char[1024]; while(true)&#123; int temp = fr.read(buffer, 0, buffer.length); if(temp == -1)&#123; break; &#125; fw.write(buffer, 0, temp); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; fr.close(); fw.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125;]]></content>
+    <title><![CDATA[Java中的运算符]]></title>
+    <url>%2Fpages%2F83e4d5ed%2F</url>
+    <content type="text"><![CDATA[Java中的运算符 Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。 算术运算符 进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。例如：16600/1000*1000 最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。 进行除法运算时如果有小数参与，得到的结果为小数。例如：16.6/10 结果为0.66。 进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。例如：1(-6)/2 结果为-3。16/(-3) 结果为2。 赋值运算符 可以通过一条赋值语句对多个变量进行赋值。例如： 12int x, y, z;x = y = z = 5; //为三个变量同时赋值。 使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。 位运算符左移：&lt;&lt; 00000100&lt;]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[获取键盘输入]]></title>
-    <url>%2Fpages%2F828295ba%2F</url>
-    <content type="text"><![CDATA[123456789/**Java获取键盘输入值*/public static void main(String args[])&#123; Scanner sc = new Scanner(Systen.in); String s = sc.nextLine(); //接受字符和字符串类型的输入 int age = sc.nextInt(); float salary = sc.nextFloat();&#125; 简单运行、退出方法12345678910111213141516171819202122import java.util.Scanner;public class Test &#123; public static void main(String args[]) &#123; int t = 1;itcast : while(t &gt; 0) &#123; System.out.println("1.运行：\n" + "2.退出："); Scanner sc1 = new Scanner(System.in); int i = sc1.nextInt(); switch(i) &#123; case 1: //这里输入具体的计算程序 break; case 2: break itcast; default: System.out.println("输入有误，请重新输入"); break; &#125; &#125; &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[处理流Decorator模式]]></title>
-    <url>%2Fpages%2Fbbf344f6%2F</url>
-    <content type="text"><![CDATA[处理流BufferedReader readeLine：每次读取一行数据 示例：1234567891011121314151617181920212223242526272829303132import java.io.*;public class Test&#123; public static void main(String args[])&#123; FileReader filereader = null; BufferedReader bufferedreader = null; try&#123; filereader = new FileReader("C:/Users/Jay/Desktop/9.6/src1/read.txt"); bufferedreader = new BufferedReader(filereader); String line = null; while(true)&#123; line = bufferedreader.readLine(); if(line == null)&#123; break; &#125; System.out.println(line); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; filereader.close(); bufferedreader.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125; Decorator（装饰者）模式 示例：123456789101112131415161718192021222324252627282930313233343536373839interface Teacher&#123; public void teaching();&#125;class MathTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名数学老师"); &#125;&#125;class ChineseTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名语文老师"); &#125;&#125;class ATeacher implements Teacher&#123; private Teacher teacher; public ATeacher(Teacher teacher)&#123; this.teacher = teacher; &#125; public void teaching()&#123; System.out.println("你好，我来自ASchool"); teacher.teaching(); &#125;&#125;public class Test&#123; public static void main(String args[])&#123; MathTeacher mathTeacher = new MathTeacher(); ATeacher aTeacher1 = new ATeacher(mathTeacher); aTeacher1.teaching(); ChineseTeacher chineseTeacher = new ChineseTeacher(); ATeacher aTeacher2 = new ATeacher(chineseTeacher); aTeacher2.teaching(); &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[进制转换]]></title>
-    <url>%2Fpages%2F7dc91154%2F</url>
-    <content type="text"><![CDATA[十进制转换二进制 将一个十进制数转换为二进制，就是将这个数不断取余的过程，将这个数除以 2，得到了商和余数，然后将商不断除以 2，直到商为 0，然后将余数倒过来排列，所得到的数就是转换的二进制结果。 二进制转八进制将二进制数自右向左每三位分成一段，然后将每三位数转换为一位八进制数。 例如：111000101 = 111 000 101 = 0 7 0 5 八进制以 0 开头。 二进制转十六进制 将二进制数自右向左每四位分成一段，然后将每四位转换为一位十六进制数。 例如：111010100110=1110 1010 0110=0x E A 6 十六进制以 0x 或者 0X 开头。]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[方法]]></title>
-    <url>%2Fpages%2Fad01bc3e%2F</url>
-    <content type="text"><![CDATA[为解决代码重复编写的问题所设计的特定功能代码块。方法不能嵌套。main（）方法的作用：调用方法的实例化对象。 方法结构一般为：123456修饰符 返回值类型 方法名（参数类型 参数1，参数类型 参数2，...）&#123; 执行语句 ... ... return 返回值； &#125; 方法的重载 Java 允许在一个程序中定义多个名称相同的方法]]></content>
+    <title><![CDATA[Java中的变量]]></title>
+    <url>%2Fpages%2Fc075d141%2F</url>
+    <content type="text"><![CDATA[变量的定义 在程序的运行过程中，会产生一些临时数据储存在内存单元中，这每一个内存单元都用一个标识符来标识，这些内存单元被称为变量。 变量的数据类型变量的数据类型分为两种，即基本数据类型和引用数据类型。 1. 基本数据类型 数值型分为两种： 1.1 整数类型（byte 1字节，short 2字节，int 4字节，long 8字节） 1.2 浮点类型（float 4字节，double 8字节） 字符型（char）2字节 布尔型（boolean）1字节 2. 引用数据类型 类（class) 接口（interface） 数组 枚举（enum） 注解（annotation） 变量类型转换 在程序中，当把一种数据类型的值赋值给另一种数据类型时，需要进行数据类型的转换。数据类型转换分为两种：自动类型转换和强制类型转换。 1. 自动类型转换 两种数据类型转换不需要显式声明，自动转换类型必须满足两个条件：两种数据类型彼此兼容和转换目标类型的取值范围必须大于原来类型的取值范围。 byte→short，int，long short，char→int，long int→long byte，char，short，int→float byte，char，short，int，long，float→double boolean类型无法转换为其他类型。 2. 强制类型转换 自动转换类型无法进行转换时，进行强制类型转换。取值范围较大的数据类型转换为取值范围较小的类型，可能会造成精度丢失。 例如：12int num;byte b =(byte)num;]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
@@ -369,17 +345,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java中的数组]]></title>
-    <url>%2Fpages%2Fe7882660%2F</url>
-    <content type="text"><![CDATA[数组是用来存储固定大小的同类型元素。 数组的定义方法静态定义法1int arr [] = &#123;1,5,6,4,&#125;; arr：整型数组。 arr[n]：n为下标，从第0位开始。arr[0]=1, arr[1]=5, arr[2]=6. 数组长度：arr.length. 动态定义法1int arr [] = new int[10]; 数组的长度为10. 二维数组的定义方法123456静态定义法：int arr[] [] = &#123;&#123;5,3,6&#125;,&#123;5,8,7&#125;,&#123;6,3,2&#125;&#125;;动态定义法：int arr[] [] = new int[][];例：int[1][2] = 7;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[throw和throws]]></title>
-    <url>%2Fpages%2F29cc0096%2F</url>
-    <content type="text"><![CDATA[throwthrow的作用 如果Java虚拟机不能判断异常e，可以生成异常对象e，用throw加上这个异常对象抛出这个异常。 示例： 123456789101112131415161718package src;class People&#123; private int age; public void setAge(int age)&#123; if(age &lt; 0)&#123; RuntimeException e = new RuntimeException("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); people.setAge(-20); &#125;&#125; 运行结果： throwsthrows 声明一个函数可能产生异常，函数不对异常进行处理，在调用函数的地方对异常进行处理。 示例： 1234567891011121314151617181920212223package src1;class People&#123; private int age; public void setAge(int age) throws Exception&#123; if(age &lt; 0)&#123; Exception e = new Exception("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); try&#123; people.setAge(-20); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 运行结果：]]></content>
+    <title><![CDATA[Java中的I/O流]]></title>
+    <url>%2Fpages%2F649b2029%2F</url>
+    <content type="text"><![CDATA[流的概念和作用&gt; 流是数据源到Java程序，Java程序到输出位置之间的管道。 IO流的分类 根据数据处理类的不同分为：字符流和字节流。 根据数据流向不同分为：输入流和输出流。 输入输出是以Java程序为参照物的，相对于Java程序本身 输入流：从数据源中读取数据到Java程序中，这个过程称之为输入。 输出流：Java程序将数据写入到其他地方，这个过程称之为输出。 节点流和处理流。 节点流：普通的管道； 处理流：功能性管道，对数据进一步加工。 字节流字节流中的核心类 InputStream int read(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 读取数据的量；返回值为这次调用read方法读取数据的长度。 OutputStream void write(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 写入数据的量； 程序步骤 导入类 java.io.*； 定义主函数； 声明输入流的引用； 声明输出流的引用；123456789101112131415161718192021try&#123; 1.生成代表输入流的对象； 2.生成代表输出流的对象； 3. 生成一个byte字节数组； 4.调用输入流的read方法读取数据； 5.定义临时变量接受数据的量； 6.调用输出流的write方法写入数据；&#125;catch(Exception e)&#123; Systen.out.println(e);&#125;//finally进行结尾处理finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125;&#125; 示例 1：12345678910111213141516171819202122232425262728293031323334import java.io.*;public class Test&#123; public static void main(String args[])&#123; //声明输入流引用 FileInputStream fis = null; //声明输出流引用 FileOutputStream fos = null; try&#123; //生成代表输入流的对象 fis = new FileInputStream("D:/java/8.8/from.txt"); //生成代表输入流的对象 fos = new FileOutputStream("D:/java/8.8/to.txt"); //生成一个字节型buffer数组 byte[] buffer = new byte[100]; //定义一个临时变量，用于接受调用输入流read方法读取数据的量 int temp = fis.read(buffer,0,b.length); //调用输出流的write方法写入数据 fos.write(buffer,0,temp); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; //finally进行结尾处理 finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 大文件的读写 调节buffer数组的大小； 对read，write方法采取while循环； 示例 2：1234567while(true)&#123; int temp = fis.read(buffer,0,buffer.length); if(temp == -1)&#123; break; &#125; fos.write(buffer,0,temp);&#125; 字符流 字符流：是以对写文件时，以字符为基础 字节输入流：Reader &lt;–FileReader int read(char [] c, int off, int length ) 字节输出流：Writer &lt;–FileWriter void writer(char [] c, int off, int length) 示例 3：12345678910111213141516171819202122232425262728293031import java.io.*;public class TestChar&#123; public static void main(String args[])&#123; FileReader fr = null; FileWriter fw = null; try&#123; fr = new FileReader("d:/java/9.5/read.txt"); fw = new FileWriter("d:/java/9.5/write.txt"); char [] buffer = new char[1024]; while(true)&#123; int temp = fr.read(buffer, 0, buffer.length); if(temp == -1)&#123; break; &#125; fw.write(buffer, 0, temp); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; fr.close(); fw.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125;]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
@@ -393,17 +361,41 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java中的运算符]]></title>
-    <url>%2Fpages%2F83e4d5ed%2F</url>
-    <content type="text"><![CDATA[Java中的运算符 Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。 算术运算符 进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。例如：16600/1000*1000 最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。 进行除法运算时如果有小数参与，得到的结果为小数。例如：16.6/10 结果为0.66。 进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。例如：1(-6)/2 结果为-3。16/(-3) 结果为2。 赋值运算符 可以通过一条赋值语句对多个变量进行赋值。例如： 12int x, y, z;x = y = z = 5; //为三个变量同时赋值。 使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。 位运算符左移：&lt;&lt; 00000100&lt;]]></content>
+    <title><![CDATA[获取键盘输入]]></title>
+    <url>%2Fpages%2F828295ba%2F</url>
+    <content type="text"><![CDATA[123456789/**Java获取键盘输入值*/public static void main(String args[])&#123; Scanner sc = new Scanner(Systen.in); String s = sc.nextLine(); //接受字符和字符串类型的输入 int age = sc.nextInt(); float salary = sc.nextFloat();&#125; 简单运行、退出方法12345678910111213141516171819202122import java.util.Scanner;public class Test &#123; public static void main(String args[]) &#123; int t = 1;itcast : while(t &gt; 0) &#123; System.out.println("1.运行：\n" + "2.退出："); Scanner sc1 = new Scanner(System.in); int i = sc1.nextInt(); switch(i) &#123; case 1: //这里输入具体的计算程序 break; case 2: break itcast; default: System.out.println("输入有误，请重新输入"); break; &#125; &#125; &#125;&#125;]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java中的变量]]></title>
-    <url>%2Fpages%2Fc075d141%2F</url>
-    <content type="text"><![CDATA[变量的定义 在程序的运行过程中，会产生一些临时数据储存在内存单元中，这每一个内存单元都用一个标识符来标识，这些内存单元被称为变量。 变量的数据类型变量的数据类型分为两种，即基本数据类型和引用数据类型。 1. 基本数据类型 数值型分为两种： 1.1 整数类型（byte 1字节，short 2字节，int 4字节，long 8字节） 1.2 浮点类型（float 4字节，double 8字节） 字符型（char）2字节 布尔型（boolean）1字节 2. 引用数据类型 类（class) 接口（interface） 数组 枚举（enum） 注解（annotation） 变量类型转换 在程序中，当把一种数据类型的值赋值给另一种数据类型时，需要进行数据类型的转换。数据类型转换分为两种：自动类型转换和强制类型转换。 1. 自动类型转换 两种数据类型转换不需要显式声明，自动转换类型必须满足两个条件：两种数据类型彼此兼容和转换目标类型的取值范围必须大于原来类型的取值范围。 byte→short，int，long short，char→int，long int→long byte，char，short，int→float byte，char，short，int，long，float→double boolean类型无法转换为其他类型。 2. 强制类型转换 自动转换类型无法进行转换时，进行强制类型转换。取值范围较大的数据类型转换为取值范围较小的类型，可能会造成精度丢失。 例如：12int num;byte b =(byte)num;]]></content>
+    <title><![CDATA[throw和throws]]></title>
+    <url>%2Fpages%2F29cc0096%2F</url>
+    <content type="text"><![CDATA[throwthrow的作用 如果Java虚拟机不能判断异常e，可以生成异常对象e，用throw加上这个异常对象抛出这个异常。 示例： 123456789101112131415161718package src;class People&#123; private int age; public void setAge(int age)&#123; if(age &lt; 0)&#123; RuntimeException e = new RuntimeException("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); people.setAge(-20); &#125;&#125; 运行结果： throwsthrows 声明一个函数可能产生异常，函数不对异常进行处理，在调用函数的地方对异常进行处理。 示例： 1234567891011121314151617181920212223package src1;class People&#123; private int age; public void setAge(int age) throws Exception&#123; if(age &lt; 0)&#123; Exception e = new Exception("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); try&#123; people.setAge(-20); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 运行结果：]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[进制转换]]></title>
+    <url>%2Fpages%2F7dc91154%2F</url>
+    <content type="text"><![CDATA[十进制转换二进制 将一个十进制数转换为二进制，就是将这个数不断取余的过程，将这个数除以 2，得到了商和余数，然后将商不断除以 2，直到商为 0，然后将余数倒过来排列，所得到的数就是转换的二进制结果。 二进制转八进制将二进制数自右向左每三位分成一段，然后将每三位数转换为一位八进制数。 例如：111000101 = 111 000 101 = 0 7 0 5 八进制以 0 开头。 二进制转十六进制 将二进制数自右向左每四位分成一段，然后将每四位转换为一位十六进制数。 例如：111010100110=1110 1010 0110=0x E A 6 十六进制以 0x 或者 0X 开头。]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java中的数组]]></title>
+    <url>%2Fpages%2Fe7882660%2F</url>
+    <content type="text"><![CDATA[数组是用来存储固定大小的同类型元素。 数组的定义方法静态定义法1int arr [] = &#123;1,5,6,4,&#125;; arr：整型数组。 arr[n]：n为下标，从第0位开始。arr[0]=1, arr[1]=5, arr[2]=6. 数组长度：arr.length. 动态定义法1int arr [] = new int[10]; 数组的长度为10. 二维数组的定义方法123456静态定义法：int arr[] [] = &#123;&#123;5,3,6&#125;,&#123;5,8,7&#125;,&#123;6,3,2&#125;&#125;;动态定义法：int arr[] [] = new int[][];例：int[1][2] = 7;]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[方法]]></title>
+    <url>%2Fpages%2Fad01bc3e%2F</url>
+    <content type="text"><![CDATA[为解决代码重复编写的问题所设计的特定功能代码块。方法不能嵌套。main（）方法的作用：调用方法的实例化对象。 方法结构一般为：123456修饰符 返回值类型 方法名（参数类型 参数1，参数类型 参数2，...）&#123; 执行语句 ... ... return 返回值； &#125; 方法的重载 Java 允许在一个程序中定义多个名称相同的方法]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
@@ -428,6 +420,14 @@
     <title><![CDATA[Java中的异常]]></title>
     <url>%2Fpages%2Ff029d2bb%2F</url>
     <content type="text"><![CDATA[什么是异常 异常的分类 try…catch…finally结构的使用方法 1. 什么是异常？ 异常(Exception)：中断了正常指令流的事件。 异常是一个对象； 异常产生于程序运行时； 指令流：程序执行时一系列的连续指令称为指令流。 示例：12345class Test&#123; public static void main(String args[])&#123; int i = 1 / 0; &#125;&#125; 抛出异常： Exception in thread “main” java.lang.ArithmeticException: / by zero at Test3.main(Test3.java:6) Exception in thread “main” ：在主线程中出现异常； ArithmeticException：异常的名称，算术异常； / by zero：被0除； at Test.main(Test.java:3)：异常位置； 2. 异常的分类JDK提供的类： Throwable：所有异常的父类； Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭； Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption RuntimeException + Error 和其子类都是属于uncheckexceptionException类中除了 RuntimeException之外的类，都是属于checkexception ExceptioncheckException checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。示例：123456class TestCheck&#123; public static void main(String args[])&#123; //CheckException Thread.sleep(1000); //让当前线程休眠1000ms &#125;&#125; 运行结果： uncheckException（ RuntimeException） 运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成示例：123456class Test&#123; public static void main(String args[])&#123; //UncheckException int i = 1 / 0; &#125;&#125; 运行结果： 3. try…catch…finally结构 12345678910111213try&#123; //代码A //有可能出现异常的代码B //代码C&#125;catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //处理异常的代码D //代码E&#125;finally&#123; //异常的出口 //执行扫尾工作的代码F&#125; 如果try中代码B没有异常：执行代码A-B-C-F如果try中代码B出现异常：执行代码A-B-D-E-FuncheckException 1234567891011121314151617181920//uncheckExceptionclass TestCheck&#123; public static void main(String args[])&#123; System.out.println(1); try&#123; System.out.println(2); //有可能出现异常的代码 int i = 1/0; System.out.println(3); &#125; catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); &#125; finally&#123; //异常的出口 System.out.println("finally"); &#125; &#125;&#125; 运行结果： checkException 1234567891011121314151617181920//checkExceptionclass TestCheck&#123; public static void main(String args[])&#123; System.out.println(1); try&#123; System.out.println(2); //有可能出现异常的代码 Thread.sleep(1000); //让当前线程休眠1000ms System.out.println(3); &#125; catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); &#125; finally&#123; //异常的出口 System.out.println("finally"); &#125; &#125;&#125; 运行结果：屏幕首先显示1，2，然后停顿1000ms，再显示3和finally]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[处理流Decorator模式]]></title>
+    <url>%2Fpages%2Fbbf344f6%2F</url>
+    <content type="text"><![CDATA[处理流BufferedReader readeLine：每次读取一行数据 示例：1234567891011121314151617181920212223242526272829303132import java.io.*;public class Test&#123; public static void main(String args[])&#123; FileReader filereader = null; BufferedReader bufferedreader = null; try&#123; filereader = new FileReader("C:/Users/Jay/Desktop/9.6/src1/read.txt"); bufferedreader = new BufferedReader(filereader); String line = null; while(true)&#123; line = bufferedreader.readLine(); if(line == null)&#123; break; &#125; System.out.println(line); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; filereader.close(); bufferedreader.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125; Decorator（装饰者）模式 示例：123456789101112131415161718192021222324252627282930313233343536373839interface Teacher&#123; public void teaching();&#125;class MathTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名数学老师"); &#125;&#125;class ChineseTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名语文老师"); &#125;&#125;class ATeacher implements Teacher&#123; private Teacher teacher; public ATeacher(Teacher teacher)&#123; this.teacher = teacher; &#125; public void teaching()&#123; System.out.println("你好，我来自ASchool"); teacher.teaching(); &#125;&#125;public class Test&#123; public static void main(String args[])&#123; MathTeacher mathTeacher = new MathTeacher(); ATeacher aTeacher1 = new ATeacher(mathTeacher); aTeacher1.teaching(); ChineseTeacher chineseTeacher = new ChineseTeacher(); ATeacher aTeacher2 = new ATeacher(chineseTeacher); aTeacher2.teaching(); &#125;&#125;]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
