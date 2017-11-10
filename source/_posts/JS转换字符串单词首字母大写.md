@@ -1,7 +1,8 @@
 ---
 title: JS转换字符串单词首字母大写
-date: 2017-11-2 13:30:29
 tags: javascript
+abbrlink: e11bdebd
+date: 2017-11-02 13:30:29
 ---
 
 代码如下:

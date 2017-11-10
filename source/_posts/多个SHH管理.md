@@ -1,6 +1,7 @@
 ---
 title: 多个SSH管理
 tags: SSH
+abbrlink: 8ee164b8
 ---
 # 多个 SSH key 管理
 

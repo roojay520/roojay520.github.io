@@ -1,7 +1,8 @@
 ---
 title: 处理流Decorator模式
-date: 2017/6/16 
+date: 2017/6/16
 tags: Java
+abbrlink: bbf344f6
 ---
 
 ## 处理流 ##

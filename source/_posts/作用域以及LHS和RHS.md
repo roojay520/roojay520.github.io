@@ -1,6 +1,7 @@
 ---
 title: 作用域以及 LHS 和 RHS
 tags: YouDon'tKnowJavaScript
+abbrlink: b917f198
 ---
 # 作用域以及 LHS 和 RHS
 ## 作用域

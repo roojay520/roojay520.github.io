@@ -1,7 +1,8 @@
 ---
 title: Android View&Layout
-date: 2017-06-16 14:24:12
 tags: Android
+abbrlink: 29c8a334
+date: 2017-06-16 14:24:12
 ---
 ## View 视图
 

@@ -1,6 +1,7 @@
 ---
 title: css基础
 tags: css
+abbrlink: eda1a9a9
 ---
 # CSS基础
 

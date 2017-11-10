@@ -1,7 +1,8 @@
 ---
 title: Win10配置免安装MySQL
-date: 2017-06-20 22:36:45
 tags: MySQL
+abbrlink: e38ac448
+date: 2017-06-20 22:36:45
 ---
 
 1. #### 下载文件：

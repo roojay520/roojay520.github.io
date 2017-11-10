@@ -1,7 +1,8 @@
 ---
 title: Java中的数组
-date: 2017/6/16 
+date: 2017/6/16
 tags: Java
+abbrlink: e7882660
 ---
 
 * 数组是用来存储固定大小的同类型元素。

@@ -1,6 +1,7 @@
 ---
 title: git基础
 tags: git
+abbrlink: 9891ebc8
 ---
 
 # git 操作指南

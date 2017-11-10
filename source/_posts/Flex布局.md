@@ -1,6 +1,7 @@
 ---
 title: Flex布局
 tags: flex
+abbrlink: ab688311
 ---
 # Flex 布局
 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)

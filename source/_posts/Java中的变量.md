@@ -1,7 +1,8 @@
 ---
 title: Java中的变量
-date: 2017/6/16 
+date: 2017/6/16
 tags: Java
+abbrlink: c075d141
 ---
 
 ## 变量的定义

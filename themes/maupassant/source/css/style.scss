@@ -121,9 +121,14 @@ div {
         #logo {
             font: bold 2.0em "Times New Roman", Georgia, Times, sans-serif;
             color: #555;
+            padding: .5em;
             span,
             &:hover {
-                color: #777;
+                border-radius: 4px;
+                color: #d26911;
+                text-align: left;
+                @include shadowDark;
+                background: #f8f8f8;
             }
         }
         .description {
@@ -145,7 +150,11 @@ div {
             line-height: 27px;
             color: #444;
             &:hover {
-                border-bottom-color: #444;
+                border-radius: 4px;
+                color: #d26911;
+                text-align: left;
+                @include shadowDark;
+                background: #f8f8f8;
             }
             &.current {
                 border: 1px solid #ddd;
@@ -524,6 +533,16 @@ div {
     }
     .date {
         padding-right: .7em;
+    }
+    a {
+        padding: .5em;
+        &:hover {
+            border-radius: 4px;
+            color: #d26911;
+            text-align: left;
+            @include shadowDark;
+            background: #f8f8f8;
+        }
     }
 }
 
@@ -1625,6 +1644,7 @@ figure.highlight,
         font-size: 15px;
         line-height: 25px;
         color: #555;
+        padding: .5em;
         &.pre {
             float: left;
             &:before {
@@ -1643,7 +1663,9 @@ figure.highlight,
         }
         &:hover {
             border-radius: 4px;
-            border-bottom-color: #d26911;
+            color: #d26911; // line-height: 1.6;
+            text-align: left;
+            @include shadowDark;
             background: #f8f8f8;
         }
     }
@@ -1905,6 +1927,5 @@ em.search-keyword {
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 4px;
     border-radius: 4px;
-    background-image: linear-gradient(120deg, #ebedee 100%, #fdfbfb 0%);
-    // background: -webkit-gradient(linear, 0 0, 0 100%, from(#cfd9df), to(#e2ebf0));
+    background-image: linear-gradient(120deg, #ebedee 100%, #fdfbfb 0%); // background: -webkit-gradient(linear, 0 0, 0 100%, from(#cfd9df), to(#e2ebf0));
 }

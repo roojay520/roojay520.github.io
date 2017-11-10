@@ -1,6 +1,7 @@
 ---
 title: html基础
 tags: html
+abbrlink: 1a147173
 ---
 
 # html 基础

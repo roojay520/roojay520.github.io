@@ -1,7 +1,8 @@
 ---
 title: Java中的I/O流
-date: 2017/6/16 
+date: 2017/6/16
 tags: Java
+abbrlink: 649b2029
 ---
 
 ## 流的概念和作用 

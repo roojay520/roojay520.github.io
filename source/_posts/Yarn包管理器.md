@@ -1,6 +1,7 @@
 ---
 title: 包管理器 Yarn
 tags: Yarn
+abbrlink: 522f484
 ---
 # 包管理器 Yarn
 

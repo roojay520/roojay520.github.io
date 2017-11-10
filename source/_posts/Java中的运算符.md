@@ -1,7 +1,8 @@
 ---
 title: Java中的运算符
-date: 2017/6/16 
+date: 2017/6/16
 tags: Java
+abbrlink: 83e4d5ed
 ---
 
 ## Java中的运算符 ##

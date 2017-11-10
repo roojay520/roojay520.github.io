@@ -1,7 +1,8 @@
 ---
 title: MongoDB安装
-date: 2017-09-17 22:09:17
 tags: MongoDB
+abbrlink: c5d54bc1
+date: 2017-09-17 22:09:17
 ---
 ## MongoDB
 安装使用:

@@ -1,6 +1,7 @@
 ---
 title: JS基础基础
 tags: javascript
+abbrlink: d4c7d8e9
 ---
 # JS基础
 

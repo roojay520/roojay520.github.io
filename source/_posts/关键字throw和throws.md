@@ -1,7 +1,8 @@
 ---
 title: throw和throws
-date: 2017/6/16 
+date: 2017/6/16
 tags: Java
+abbrlink: 29cc0096
 ---
 
 ## throw ##

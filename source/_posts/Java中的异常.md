@@ -1,7 +1,8 @@
 ---
 title: Java中的异常
-date: 2017/6/16 
+date: 2017/6/16
 tags: Java
+abbrlink: f029d2bb
 ---
 
 1. 什么是异常

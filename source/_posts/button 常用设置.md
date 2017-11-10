@@ -1,6 +1,7 @@
 ---
 title: button常用设置
 tags: css
+abbrlink: 91b6115c
 ---
 
 # 鼠标样式

@@ -1,6 +1,7 @@
 ---
 title: jQuery基础
 tags: jQuery
+abbrlink: '889563'
 ---
 # jQuery
 > CDN 方式引入 jQuery

@@ -1,7 +1,8 @@
 ---
 title: for-in和for-of
-data: date:2017-09-11 16:18:50
+data: 'date:2017-09-11 16:18:50'
 tags: javascript
+abbrlink: f5b5d35a
 ---
 
 ## for-in

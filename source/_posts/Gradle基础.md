@@ -1,7 +1,8 @@
 ---
 title: Gradle基础
-date: 2017-06-17 12:38:36
 tags: Android
+abbrlink: 691946d1
+date: 2017-06-17 12:38:36
 ---
 
 

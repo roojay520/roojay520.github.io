@@ -1,6 +1,7 @@
 ---
 title: javascript DOM
 tags: javascript
+abbrlink: 218ff168
 ---
 # JavaScript Dom
 ## 消息窗口

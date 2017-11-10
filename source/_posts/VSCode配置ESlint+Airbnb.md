@@ -1,7 +1,8 @@
 ---
 title: VSCode 配置 ESLint + Airbnb
-date:
 tags: VSCode ESLint
+abbrlink: 3bcc390e
+date:
 ---
 
 # VSCode 配置 ESLint + Airbnb

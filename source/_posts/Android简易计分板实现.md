@@ -1,7 +1,8 @@
 ---
 title: Android简易计分板实现
-date: 2017-06-16 14:30:29
 tags: Android
+abbrlink: 81bae912
+date: 2017-06-16 14:30:29
 ---
 
 ### 一、View的选择 ###

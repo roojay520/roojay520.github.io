@@ -1,6 +1,7 @@
 ---
 title: arguments和rest
 tags: javascript
+abbrlink: e5332c52
 ---
 
 ## arguments 参数
