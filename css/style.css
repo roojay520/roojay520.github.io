@@ -88,9 +88,15 @@ div {
       font-size: 1.5em; }
     #header .site-name #logo {
       font: bold 2.0em "Times New Roman", Georgia, Times, sans-serif;
-      color: #555; }
+      color: #555;
+      padding: .5em; }
       #header .site-name #logo span, #header .site-name #logo:hover {
-        color: #777; }
+        border-radius: 4px;
+        color: #d26911;
+        text-align: left;
+        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+        border-radius: 2px;
+        background: #f8f8f8; }
     #header .site-name .description {
       margin: .2em 0 0;
       color: #999; }
@@ -108,7 +114,12 @@ div {
       line-height: 27px;
       color: #444; }
       #header #nav-menu a:hover {
-        border-bottom-color: #444; }
+        border-radius: 4px;
+        color: #d26911;
+        text-align: left;
+        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+        border-radius: 2px;
+        background: #f8f8f8; }
       #header #nav-menu a.current {
         border: 1px solid #ddd;
         border-bottom-color: #fff; }
@@ -420,6 +431,15 @@ div {
     font: bold 25px / 1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
   .post-archive .date {
     padding-right: .7em; }
+  .post-archive a {
+    padding: .5em; }
+    .post-archive a:hover {
+      border-radius: 4px;
+      color: #d26911;
+      text-align: left;
+      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+      border-radius: 2px;
+      background: #f8f8f8; }
 
 /* for archive page ends*/
 /* middle*/
@@ -1341,7 +1361,8 @@ figure.highlight,
     border-bottom: none;
     font-size: 15px;
     line-height: 25px;
-    color: #555; }
+    color: #555;
+    padding: .5em; }
     .post-nav a.pre {
       float: left; }
       .post-nav a.pre:before {
@@ -1356,7 +1377,10 @@ figure.highlight,
         content: "\f0da"; }
     .post-nav a:hover {
       border-radius: 4px;
-      border-bottom-color: #d26911;
+      color: #d26911;
+      text-align: left;
+      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+      border-radius: 2px;
       background: #f8f8f8; }
 
 /* toc*/
