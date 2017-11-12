@@ -5,7 +5,7 @@ environment:
     secure: ScV5X9LdxxK0TBitaMcrlwOLPTcTe6zytwDDM+h9dm/+EIXmKB5oFPsiSPtoVkI0
 
 install:
-  - ps: Install-Product node $env:nodejs_version
+  - ps: Install-Product node 8.9.0
   - node --version
   - npm --version
   - npm install
