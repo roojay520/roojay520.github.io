@@ -1,7 +1,8 @@
 ---
-title: 处理流Decorator模式
+title: 处理流与Decorator模式
 date: 2017/6/16
 tags: Java
+categories: Java
 abbrlink: bbf344f6
 ---
 
@@ -16,7 +17,7 @@ abbrlink: bbf344f6
 import java.io.*;
 public class Test{
 	public static void main(String args[]){
-		FileReader filereader = null; 
+		FileReader filereader = null;
 		BufferedReader bufferedreader = null;
 		try{
 			filereader = new FileReader("C:/Users/Jay/Desktop/9.6/src1/read.txt");
@@ -82,8 +83,8 @@ public class Test{
 		MathTeacher mathTeacher = new MathTeacher();
 		ATeacher aTeacher1 = new ATeacher(mathTeacher);
 		aTeacher1.teaching();
-		
-		
+
+
 		ChineseTeacher chineseTeacher = new ChineseTeacher();
 		ATeacher aTeacher2 = new ATeacher(chineseTeacher);
 		aTeacher2.teaching();

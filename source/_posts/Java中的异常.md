@@ -2,6 +2,7 @@
 title: Java中的异常
 date: 2017/6/16
 tags: Java
+categories: Java
 abbrlink: f029d2bb
 ---
 
@@ -11,12 +12,12 @@ abbrlink: f029d2bb
 
 ## 1. 什么是异常？  ##
 
-> 
+>
 * 异常(Exception)：中断了正常指令流的事件。
 * 异常是一个对象；
 * 异常产生于程序运行时；
 * 指令流：程序执行时一系列的连续指令称为指令流。
-> 
+>
 示例：
 ```java
 class Test{
@@ -36,18 +37,18 @@ class Test{
 
 ## 2. 异常的分类 ##
 ### JDK提供的类： ###
- 
+
 > ![](http://i.imgur.com/gTBhe2x.png)
 1.  Throwable：所有异常的父类；
 2.  Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭；
 3.   Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption
-> 
-RuntimeException + Error 和其子类都是属于uncheckexception 
+>
+RuntimeException + Error 和其子类都是属于uncheckexception
 Exception类中除了 RuntimeException之外的类，都是属于checkexception
 
 #### Exception ####
 ##### checkException #####
-> 
+>
 checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。
 示例：
 ```java
@@ -62,7 +63,7 @@ class TestCheck{
 ![](http://i.imgur.com/xMd1LOi.png)
 
 ##### uncheckException（ RuntimeException） #####
-> 
+>
 运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成
 示例：
 ```java
@@ -77,7 +78,7 @@ class Test{
 ![](http://i.imgur.com/ll7JnfN.png)
 
 ## 3. try...catch...finally结构 ##
-> 
+>
 ```java
 try{
        //代码A
@@ -97,7 +98,7 @@ finally{
 #### 如果try中代码B出现异常：执行代码A-B-D-E-F
 
 ### uncheckException ###
-> 
+>
 ```java
 //uncheckException
 class TestCheck{
@@ -106,7 +107,7 @@ class TestCheck{
 		try{
 			System.out.println(2);
 			//有可能出现异常的代码
-			int i = 1/0; 
+			int i = 1/0;
 			System.out.println(3);
 		}
 		catch(Exception e){ //虚拟机产生的异常对象e
@@ -124,7 +125,7 @@ class TestCheck{
 ![](http://i.imgur.com/DG4HLEn.png)
 
 ### checkException ###
-> 
+>
 ```java
 //checkException
 class TestCheck{

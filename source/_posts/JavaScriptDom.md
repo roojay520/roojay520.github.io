@@ -1,9 +1,10 @@
 ---
 title: javascript DOM
-tags: javascript
+tags: JavaScript
+categories: JavaScript
 abbrlink: 218ff168
+data: 2017/9/16
 ---
-# JavaScript Dom
 ## 消息窗口
 
 * document.write(字符串或者变量或者 Html 标签); 直接在向 html 的输出流中写内容，直接在网页中输出容。

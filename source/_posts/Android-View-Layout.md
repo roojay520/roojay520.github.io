@@ -1,6 +1,7 @@
 ---
 title: Android View&Layout
 tags: Android
+categories: Android
 abbrlink: 29c8a334
 date: 2017-06-16 14:24:12
 ---

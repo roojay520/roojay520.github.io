@@ -1,6 +1,7 @@
 ---
 title: Android简易计分板实现
 tags: Android
+categories: Android
 abbrlink: 81bae912
 date: 2017-06-16 14:30:29
 ---
@@ -293,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    
+
     <style name="textView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -302,7 +303,7 @@ public class MainActivity extends AppCompatActivity {
         <item name="android:textColor">#FFFEFE</item>
         <item name="android:textSize">24sp</item>
     </style>
-    
+
     <style name="pointsTextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

@@ -1,7 +1,9 @@
 ---
 title: css和响应式
-tags: css
+tags: CSS
+categories: CSS
 abbrlink: 343902f6
+data: 2017/9/16
 ---
 
 # css框架

@@ -1,9 +1,10 @@
 ---
 title: JS基础基础
-tags: javascript
+tags: JavaScript
+categories: JavaScript
 abbrlink: d4c7d8e9
+data: 2017/9/16
 ---
-# JS基础
 
 ## JS简介
 

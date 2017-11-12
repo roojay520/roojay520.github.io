@@ -1,9 +1,11 @@
 ---
 title: 多个SSH管理
 tags: SSH
+categories: Git
 abbrlink: 8ee164b8
+data: 2017/9/16
 ---
-# 多个 SSH key 管理
+## 多个 SSH key 管理
 
 * 在创建ssh key的时候，将新的密钥进行重新命名，比如id_rsa_coding，使用下面的命令：
 `ssh-keygen -t rsa -C "roojay520@gmail.com" -f ~/.ssh/id_rsa_coding`

@@ -1,6 +1,7 @@
 ---
 title: Java基础与Button交互
 tags: Android
+categories: Java
 abbrlink: b8bb4b60
 date: 2017-06-16 14:28:18
 ---
@@ -60,7 +61,7 @@ POINTS_FOR_FREE_THROW = 100;
     执行语句
     ...
     ...
-    return 返回值； 
+    return 返回值；
 }
 ```
 ## 选择结构语句
@@ -119,7 +120,7 @@ switch(表达式){
       break;
   default: //default处理和前面的case都不匹配的值
     执行语句4;
-      break;    
+      break;
 }
 ```
 ## 循环结构语句

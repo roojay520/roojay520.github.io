@@ -1,6 +1,7 @@
 ---
 title: MongoDB安装
 tags: MongoDB
+categories: 数据库
 abbrlink: c5d54bc1
 date: 2017-09-17 22:09:17
 ---

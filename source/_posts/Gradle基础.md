@@ -1,10 +1,10 @@
 ---
 title: Gradle基础
-tags: Android
+tags: Gradle
 abbrlink: 691946d1
+categories: Android
 date: 2017-06-17 12:38:36
 ---
-
 
 ## Roay/app/build.gradle
 
@@ -38,12 +38,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
-    
+
     buildTypes {
         debug {
             // debug模式
         }
-        
+
         release {
             // 是否进行混淆
             minifyEnabled false
@@ -51,7 +51,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
-    
+
     // 移除lint检查的error
     lintOptions {
       abortOnError false

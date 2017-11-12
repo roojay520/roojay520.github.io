@@ -3,9 +3,10 @@ title: Java中的多线程
 date: 2017/6/16
 abbrlink: 265f6f6b
 tags: Java
+categories: Java
 ---
 
-## 多进程 
+## 多进程
 在操作系统中能（同时）运行多个任务（程序）。
 
 ## 多线程 ##
@@ -30,7 +31,7 @@ public class Test{
 		FirstThread firstThread = new FirstThread();
 		//启动线程start（）方法
 		firstThread.start();
-		
+
 		for(int i = 1; i < 50; i++){
 			System.out.println("Main---->:" + i);
 		}
@@ -66,7 +67,7 @@ public class Test{
 		Thread thread = new Thread(firstThread);
 		//通知Thread对象执行start（）方法
 		thread.start();
-		
+
 		for(int i = 1; i <50; i++){
 			System.out.println("Main--->:" + i);
 		}
@@ -83,23 +84,23 @@ class FirstThread implements Runnable{
 }
 ```
 
-   
+
 ## 线程的简单控制方法 ##
 
 * 中断线程
   * Thread.sleep（n毫秒）//当前线程休眠n毫秒
   * Thread.yield（）//当前线程自动让出CPU，AB重新线程抢占CPU
- 
+
 *  设置线程的优先级
   *  getPriority（）
   *  setPriority（）
     * thread.setPriority(Thread.MAX_PRIORITY) //设置最大优先级为10
     * thread.setPriority(Thread.MIN_PRIORITY) //设置最小优先级为1
-    
+
 ## 同步语法 ##
 ### 同步代码块 ###
 
-```java 
+```java
 synchronized(this) {   //this：同步锁
 
 		代码块
@@ -115,7 +116,7 @@ public class Test{
 	public static void main(String args[]){
 		MyThread myThread = new MyThread();
 		//生成两个Thread对象，但是这两个Thread对象共用同一个线程体
-		Thread t1 = new Thread(myThread); 
+		Thread t1 = new Thread(myThread);
 		Thread t2 = new Thread(myThread);
 		//通过Thread对象的setName（）方法设置线程名字
 		//使用getName方法获取线程的名字

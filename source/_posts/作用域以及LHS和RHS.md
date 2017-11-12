@@ -1,9 +1,10 @@
 ---
-title: 作用域以及 LHS 和 RHS
+title: 作用域以及 LHS 和 RHS 查询
 tags: YouDon'tKnowJavaScript
+categories: JavaScript
 abbrlink: b917f198
+data: 2017/9/16
 ---
-# 作用域以及 LHS 和 RHS
 ## 作用域
 
 **1.** 作用域是一套规则，负责收集并维护由所有声明的标识符（变量）组成的一系列查询，用于确定在何处以及如何查找变量（标识符），并实施一套非常严格的规则，用于确定当前执行的代码对这些标识符的访问权限。作用域就是函数或者变量能被访问到的范围。

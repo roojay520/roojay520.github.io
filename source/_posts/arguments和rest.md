@@ -1,11 +1,13 @@
 ---
 title: arguments和rest
-tags: javascript
+tags: JavaScript
+categories: JavaScript
 abbrlink: e5332c52
+data: 2017/9/16
 ---
-
 ## arguments 参数
 > 只在函数内部起作用，指向当前函数调用者传入的所有参数。
+
 ```javascript
 var bar = (x) => {
     console.log(x); // a
@@ -15,6 +17,7 @@ var bar = (x) => {
 };
 bar('a', 'b', 'c');
 ```
+
 * 利用`arguments`可以获得调用者传入的所有参数。
 * `arguments`常用于判断传入参数个数。
 

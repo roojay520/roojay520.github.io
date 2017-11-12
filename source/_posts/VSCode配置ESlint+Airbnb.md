@@ -1,11 +1,12 @@
 ---
-title: VSCode 配置 ESLint + Airbnb
-tags: VSCode ESLint
+title: VSCode 配置 ESLint + Airbnb + vue
+tags:
+    - VSCode
+    - ESLint
+categories: VSCode
 abbrlink: 3bcc390e
-date:
+date: 2017/10/1
 ---
-
-# VSCode 配置 ESLint + Airbnb
 
 ## 基本环境
 

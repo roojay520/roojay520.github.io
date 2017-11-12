@@ -2,16 +2,17 @@
 title: Java中的I/O流
 date: 2017/6/16
 tags: Java
+categories: Java
 abbrlink: 649b2029
 ---
 
-## 流的概念和作用 
+## 流的概念和作用
 >
 > 流是数据源到Java程序，Java程序到输出位置之间的管道。
 
 
 ## IO流的分类 ##
-> 
+>
 1. 根据数据处理类的不同分为：字符流和字节流。
 2. 根据数据流向不同分为：输入流和输出流。
 * 输入输出是以Java程序为参照物的，相对于Java程序本身
@@ -27,7 +28,7 @@ abbrlink: 649b2029
 ![](http://i.imgur.com/zhxfDm7.png)
 
 ### InputStream ###
-> 
+>
 #### int read(byte [] b,int off,int len) ####
 byte[] b：byte类型数组；
 int off：偏移量；
@@ -35,7 +36,7 @@ int len： 读取数据的量；
 返回值为这次调用read方法读取数据的长度。
 
 ### OutputStream ###
-> 
+>
 #### void write(byte [] b,int off,int len) ####
 byte[] b：byte类型数组；
 int off：偏移量；
@@ -117,7 +118,7 @@ public class Test{
 
 #### 示例 2：
 
-```java 
+```java
 while(true){
 	int temp = fis.read(buffer,0,buffer.length);
 	if(temp == -1){
@@ -130,7 +131,7 @@ while(true){
 ## 字符流 ##
 
 * 字符流：是以对写文件时，以字符为基础
-* 字节输入流：Reader <--FileReader 
+* 字节输入流：Reader <--FileReader
     * int read(char [] c, int off, int length )
 * 字节输出流：Writer  <--FileWriter
     * void writer(char [] c, int off, int length)

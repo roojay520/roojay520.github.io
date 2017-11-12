@@ -1,6 +1,7 @@
 ---
 title: Map和Set
-tags: javascript
+tags: JavaScript
+categories: JavaScript
 abbrlink: 5225cd1c
 date: 2017-09-11 11:14:28
 ---

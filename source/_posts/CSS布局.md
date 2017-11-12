@@ -1,7 +1,9 @@
 ---
 title: css布局
-tags: css
+tags: CSS
+categories: CSS
 abbrlink: 5a252ba9
+data: 2017/9/16
 ---
 
 # CSS 基础布局

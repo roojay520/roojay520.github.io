@@ -1,6 +1,7 @@
 ---
 title: html列表
-tags: html
+tags: HTML
+categories: HTML
 abbrlink: a465a2c5
 date: 2017-09-16 20:04:38
 ---

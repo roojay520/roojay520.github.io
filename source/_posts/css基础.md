@@ -1,9 +1,10 @@
 ---
 title: css基础
-tags: css
+tags: CSS
+categories: CSS
 abbrlink: eda1a9a9
+2017/9/16
 ---
-# CSS基础
 
 ## CSS 导入
 

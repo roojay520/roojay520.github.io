@@ -2,6 +2,7 @@
 title: Java中的变量
 date: 2017/6/16
 tags: Java
+categories: Java
 abbrlink: c075d141
 ---
 
