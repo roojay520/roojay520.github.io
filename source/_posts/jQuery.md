@@ -2,7 +2,7 @@
 title: jQuery基础
 tags: jQuery
 categories: JavaScript
-data: 2017/9/16
+data: 2017-11-12
 abbrlink: '889563'
 ---
 > CDN 方式引入 jQuery
