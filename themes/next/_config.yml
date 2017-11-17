@@ -280,7 +280,7 @@ highlight_theme: night eighties
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
   host: //cdn.baomitu.com/index/fonts
@@ -347,7 +347,7 @@ han: false
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: roojay
   count: true
 
@@ -365,12 +365,12 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://github.com/xCss/Valine
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true
+  appid:  GE64fXlzDQYUxw40DAMVrNte-gzGzoHsz
+  appkey:  w9OWcYkGH8nzrLwX97UKGnK1
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
-  placeholder: Comment input placeholder
+  verify: true
+  placeholder: Any good suggestions?
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
