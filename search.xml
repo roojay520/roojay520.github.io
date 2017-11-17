@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[webpack 基础使用]]></title>
+    <url>%2Fpages%2Fb4ba32f9%2F</url>
+    <content type="text"><![CDATA[Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。 模块CommonJSNode.js 遵循 CommonJS 规范, 模块通过 exports 或者 module.exports 导出需要暴露的接口, 使用 require 方法同步加载所要依赖的其它模块. 1234567891011// bar.js 导出文件exports.addSum = (a, b) =&gt; a + b;// 或者module.exports = function(a, b)&#123; return a + b;&#125;// foo.js 引入文件const addSum = require('bar');// 或者 const addSum = require('./bar.js');const result = addSum(2, 5); // 7 ES6 模块ES6 模块的设计思想是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西(require 是运行时加载模块)。ES6 通过过 export 命令显式指定输出的代码，再通过 import 命令输入。 123456789101112131415161718192021// bar.jsconst sumAdd = (x, y) =&gt; x + y;const sumMinus = (a, b) =&gt; a - b;// 导出两个方法export &#123;sumAdd, sumMinus&#125;;// foo.js// 只加载 sumAdd 方法import &#123;sumAdd&#125; from './bar';sumAdd(2, 3); // 5sumMinus(3, 2); // 报错// 加载两个方法import &#123;sumAdd,sumMinus &#125; from './bar';sumAdd(2, 3); // 5sumMinus(3, 2); // 1// 加载所有模块import './bar';sumAdd(2, 3); // 5sumMinus(3, 2); // 1 export default 用于导出匿名函数.import() 类似于 Node 的 require方法，区别主要是前者是异步加载，后者是同步加载.import()返回一个 Promise 对象. webpack Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。 LoaderWebpack 本身只能处理原生的 JavaScript 模块，但是 loader 转换器可以将各种类型的资源转换成 JavaScript 模块。任何资源都可以成为 Webpack 可以处理的模块。 插件 plugin 和 loader 的区别是, loader 是在 import 时根据不同的文件名, 匹配不同的 loader对这个文件做处理,而 plugin 关注的不是文件的格式, 而是在编译的各个阶段, 会触发不同的事件,让你可以干预每个编译阶段. 配置文件12# 初始化一个项目,生成 package.json 文件$ npm init 更改 package.json 文件:1234567891011121314151617181920212223242526272829303132333435363738394041424344&#123; "name": "webpack", "version": "1.0.0", "description": "Webpack setting.", "scripts": &#123; "dev": "set type=dev&amp;webpack&amp;webpack-dev-server --open", "build": "set type=build&amp;webpack" &#125;, "keywords": [ "webpack" ], "author": "roojay &lt;roojay520@gmail.com&gt;", "repository": &#123; "type": "git", "url": "https://github.com/roojay520/webpack.git" &#125;, "license": "MIT", "devDependencies": &#123; "autoprefixer": "^7.1.6", "babel-core": "^6.26.0", "babel-loader": "^7.1.2", "babel-preset-env": "^1.6.1", "copy-webpack-plugin": "^4.2.0", "css-loader": "^0.28.7", "extract-text-webpack-plugin": "^3.0.2", "file-loader": "^1.1.5", "glob": "^7.1.2", "html-webpack-plugin": "^2.30.1", "html-withimg-loader": "^0.1.16", "node-sass": "^4.5.3", "postcss-loader": "^2.0.8", "purify-css": "^1.2.5", "purifycss-webpack": "^0.7.0", "sass-loader": "^6.0.6", "style-loader": "^0.19.0", "uglifyjs-webpack-plugin": "^1.0.1", "url-loader": "^0.6.2", "webpack": "^3.8.1", "webpack-dev-server": "^2.9.3" &#125;, "dependencies": &#123; "normalize.css": "^7.0.0" &#125;&#125; 设置 webpack.config 文件123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180// 路径支持const path = require('path');// node glob 对象const glob = require('glob');// 引 入webpack 内部文件const webpack = require('webpack');// css 分离导出插件const ExtractTextPlugin = require('extract-text-webpack-plugin');// js 压缩const UglifyPlugin = require('uglifyjs-webpack-plugin');// html 插入const HtmlPlugin = require('html-webpack-plugin');// 去掉未使用的 CSS,减少 CSS 冗余const PurifyCss = require('purifycss-webpack');// 无需编译打包的静态资源转移const CopyWebpackPlugin = require('copy-webpack-plugin');// 公共路径配置let publicPath;process.env.type === 'build' ? (publicPath = 'http://cdn.roojay.com/') : (publicPath = 'http://127.0.0.1:4399/');module.exports = &#123; // 开发调试设置 devtool: 'eval-source-map', // 入口文件 entry: &#123; // js 入口文件 app: `$&#123;__dirname&#125;/src/main.js` // 第三方库抽离 // jquery: 'jquery', // vue: 'vue' &#125;, // 出口文件 output: &#123; // 打包文件路径 path: `$&#123;__dirname&#125;/dist/`, filename: 'js/[name].[hash:6].js', publicPath: website.publicPath &#125;, // 模块 module: &#123; // 编译规则 rules: [ // 配置 babel &#123; test: /\.js$/, use: &#123; loader: 'babel-loader', // 匹配正则表达式排除 exclude: /node_modules/ &#125;, // 配置sass编译规则 &#123; // 匹配处理文件的扩展名的正则表达式 test: /\.(css|scss)$/, // 使用模块的名称 use: ExtractTextPlugin.extract(&#123; fallback: 'style-loader', use: [&#123; loader: 'css-loader', options: &#123; minimize: true, sourceMap: true, modules: true, importLoaders: 1 &#125; &#125;, // 前缀自动插入 &#123; loader: 'postcss-loader' &#125;, // scss 转换 &#123; loader: 'sass-loader' &#125; ] &#125;) &#125;, // 图片字体处理 &#123; test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/, use: &#123; loader: 'url-loader', options: &#123; // 将小于 10KB 的图片转换为成 Base64 的格式，写入JS。 limit: 10240, outputPath: 'images/' &#125; &#125; &#125;, // html 文件中引入 &lt;img&gt; 标签 &#123; test: /\.(htm|html)$/i, loader: 'html-withimg-loader' &#125; ] &#125;, // 插件配置 plugins: [ // 开头文件插入 new webpack.BannerPlugin('Created by @Roojay.') // 打包生成 html new HtmlPlugin(&#123; // 开启 html 压缩 minify: &#123; // 去掉属性双引号 removeAttributeQuotes: true &#125;, // 避免缓存JS hash: true, // html 打包模板文件路径 template: './src/index.html' &#125;), // css 打包分离 new ExtractTextPlugin('./css/[name].[hash:6].css'), // 去掉未使用的 css // 如果存在使用 js 更改元素类名实现 css 样式,不要启用这个插件 启用 css-loader 里面的压缩 // new PurifyCss(&#123; // // 配置解析规则的路径(绝对路径) // paths: glob.sync(path.join(__dirname, 'src/*.html')), // // css 空格压缩 // minimize: true // &#125;), // js压缩 new UglifyPlugin(&#123; uglifyOptions: &#123; ie8: false, output: &#123; // 去掉注释 comments: false, // 压缩掉空格 beautify: false &#125;, mangle: &#123; keep_fnames: true &#125;, compress: &#123; drop_console: true &#125; &#125; &#125;), // 无需编译的静态资源转移 new CopyWebpackPlugin([&#123; from: `$&#123;__dirname&#125;/src/docs`, to: './docs' &#125;]), // 启用热加载 new webpack.HotModuleReplacementPlugin(), // 第三方类库引入 // new webpack.ProvidePlugin(&#123; // $: "jquery", // Vue: "vue" // &#125;), // 第三方库打包抽离 // new webpack.optimize.CommonsChunkPlugin(&#123; // // 入口引入时的名字 // name: ['vue', 'jquery'], // // 打包文件的路径 // filename: 'static/js/[name].min.js', // // 最小打包模块 // minChunks: 3 // &#125;), ], // watch 配置 watchOptions: &#123; // 检测文件修改时间,单位(毫秒) poll: 1000, // 防止误操作重复打包,半秒内重复保存,不执行打包操作 aggregeateTimeout: 500, ignore: /node_modules/ &#125;, // 配置开发时用的服务器 devServer: &#123; contentBase: path.resolve(__dirname, 'dist'), host: '127.0.0.1', // 服务端压缩开启 compress: true, port: 4399, historyApiFallback: true &#125;&#125;;]]></content>
+      <tags>
+        <tag>Webpack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[作用域闭包]]></title>
+    <url>%2Fpages%2F78f2b66e%2F</url>
+    <content type="text"><![CDATA[闭包wiki 上对闭包的定义：闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。 自由变量的定义：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在自己定义的词法作用域以外的地方执行。 闭包使得函数在定义时的词法作用域以外的地方被调用时，函数可以继续访问定义时的词法作用域。 在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。 在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。 1234567891011121314function foo() &#123; let a = 0; return function func() &#123; console.log(a); a++; &#125;;&#125;const bar = foo();const baz = foo();bar(); // 0bar(); // 1 闭包保存上次计算的值bar(); // 2baz(); // 0 新生成函数 将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。 无论通过何种手段将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>YouDon&#39;tKnowJavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[作用域以及 LHS 和 RHS 查询]]></title>
+    <url>%2Fpages%2Fb917f198%2F</url>
+    <content type="text"><![CDATA[作用域1. 作用域是一套规则，负责收集并维护由所有声明的标识符（变量）组成的一系列查询，用于确定在何处以及如何查找变量（标识符），并实施一套非常严格的规则，用于确定当前执行的代码对这些标识符的访问权限。作用域就是函数或者变量能被访问到的范围。 2. 作用域有两种工作模型： 词法作用域(JavaScript)：词法作用域就是定义在词法阶段的作用域。 动态作用域(Bash脚本) 3. 全局变量会自动成为全局对象（比如浏览器中的 window 对象）的属性，因此可以不直接通过全局对象的词法名称，而是间接地通过对全局对象属性的引用来对其进行访问。例如：window.a 这样可以访问到被局部同名变量所遮蔽的全局变量。 执行上下文执行上下文在运行时确定，词法作用域在定义时确定。 欺骗作用域无论函数在哪里被调用，也无论它如何被调用，它的词法作用域都只由函数被声明时所处的位置决定。 JavaScript 中有两个机制可以“欺骗”词法作用域：eval(..) 和 with。前者可以对一段包含一个或多个声明的“代码”字符串进行演算，并借此来修改已经存在的词法作用域（在运行时）。后者本质上是通过将一个对象的引用当作作用域来处理，将对象的属性当作作用域中的标识符来处理，从而创建了一个新的词法作用域（同样是在运行时）。 eval()函数欺骗JavaScript 中的 eval() 函数可以接受一个字符串为参数，并将传入的字符串视为好像在书写时就存在于程序中这个位置的 JavaScript 代码进行执行。例如： 1234567var a = 66;function bar(str, b) &#123; eval(str); console.log(a, b); // 55 10&#125;bar('var a = 55;', 10); 使用 eval() 函数可以将代码以动态形式插入一个指定位置，如果 eval() 中所执行的代码包含一个或多个声明（函数或者变量），就会对词法作用域的环境进行修改，达到欺诈伪装的效果。 在严格模式下，eval() 函数拥有这自己的词法作用域，其中的声明将无法修改作用域。 这个函数的副作用是引擎无法在编译时对作用域查找进行优化，会导致代码运行变慢，不建议使用。 LHS 和 RHS查询LHS 查询对变量进行赋值操作，那么就会使用 LHS 查询。 当引擎执行 LHS 查询时，如果在顶层（全局作用域）中也无法找到目标变量，全局作用域中就会创建一个具有该名称的变量，并将其返还给引擎。 严格模式禁止自动或隐式地创建全局变量。 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查询失败时类似的 ReferenceError 异常。 RHS 查询查找获取某个变量的值，就会使用 RHS 查询。 如果 RHS 查询在所有嵌套的作用域中遍寻不到所需的变量，引擎就会抛出 ReferenceError 异常。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>YouDon&#39;tKnowJavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[函数作用域及块作用域]]></title>
+    <url>%2Fpages%2F70cbbc9f%2F</url>
+    <content type="text"><![CDATA[最小特权原则最小特权原则也叫最小授权或最小暴露原则。这个原则是指在软件设计中，应该最小限度地暴露必要内容，而将其他内容都“隐藏”起来，比如某个模块或对象的 API 设计。 函数封装将函数和变量包裹在一个外部包装函数的作用域中，使用这个作用域将这些具体的细节隐藏起来，实现函数的封装。 可以避免同名标识符之间的冲突，避免全局变量污染。 将具体内容私有化，防止外部以非预期的方式使用内部私有的内容。 函数作用域函数作用域的含义是指，属于这个函数的全部变量都可以在整个函数的范围内使用及复用（事实上在嵌套的作用域中也可以使用）。 函数声明:1234567function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;foo(); 立即执行函数表达式：12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;)(); 区分函数声明和表达式最简单的方法是看 function 关键字出现在声明中的位置（不仅仅是一行代码，而是整个声明中的位置）。如果 function 是声明中的第一个词，那么就是一个函数声明，否则就是一个函数表达式。 函数声明和函数表达式之间最重要的区别是它们的名称标识符将会绑定在何处。 函数声明中，foo 被绑定在所在的作用域中，可以在外部通过 foo() 来调用它。 函数表达式中，foo 被绑定在函数表达式自身的函数中，外部不能访问调用，只能在其(function foo(){…}) 中的...位置被访问。 匿名函数表达式函数表达式可以匿名，而函数声明则不可以省略函数名。 立即执行函数表达式（IIFE）立即执行函数表达式（Immediately Invoked Function Expression），将函数包含在一对（）中，成为一个函数表达式，在末尾加上另一对（）可以立即执行这个函数。第一个（）将函数变成表达式，第二个（） 执行了这个函数。 IIFE 的两种写法 立即执行函数表达式： 12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;)(); 另一种改进形式写法将调用的（）移到了用来包装的（）里面。 12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;()); 两种写法功能上一样，凭个人喜好。 IIFE 表达式的用法 匿名函数表达式 1234(() =&gt; &#123; const a = 6; console.log(a); // a&#125;)(); 将它当作函数调用，并传递参数进去 1234const name = 'haha';(function IIFE(name) &#123; console.log(name); // haha&#125;)(name); 倒置代码的运行顺序，将需要运行的函数放在第二位， IIFE 执行之后，放在第二位的函数被当作参数传递进去。 1234567891011const objA = &#123; name: 'haha',&#125;;(function IIFE(foo) &#123; foo(objA);&#125;((obj) =&gt; &#123; const name = '3'; console.log(name); // 3 console.log(obj.name); // haha&#125;)); 第二部分为一个匿名函数，被当作一个参数 foo 传入到 IIFE 函数的第一部分。最后匿名函数调用执行，将一个全局对象 objA 传入当作 obj 的参数值。 块作用域块作用域是一个用来对之前的最小授权原则进行扩展的工具，将代码从在函数中隐藏信息扩展为在块中隐藏信息。 块作用域指的是变量和函数不仅可以属于所处的作用域，也可以属于某个代码块（通常指 { .. } 内部）。 只想在 for 循环内部的上下文中使用 i，所以在 for 循环的头部使用 var 声明一个变量 i，但实际上 i 会被绑定在外部作用域（函数或全局）中，在全局范围内都有效。 1234567var arr = [];for (var i = 0; i &lt; 10; i++) &#123; arr[i] = function() &#123; console.log(i); &#125;;&#125;arr[6](); // 10 console.log(i) 内部的 i 指向全局的的 i，最后循环完毕后在执行 arr6，这时全局的 i 的值为 10. ES3 规范中规定 try/catch 的 catch 分句会创建一个块作用域，其中声明的变量仅在 catch 内部有效。 Let 变量let 关键字可以将变量绑定到所在的任意作用域中（通常是 { .. } 内部）。换句话说，let 为其声明的变量隐式地了所在的块作用域。 1234567var arr = [];for (let i = 0; i &lt; 10; i++) &#123; arr[i] = function () &#123; console.log(i); &#125;;&#125;arr[6](); // 6 由 let 声明的 i，每次循环都在循环的内部重新生成了一次变量， 12345678var arr = [];for (let i = 0; i &lt; 10; i++) &#123; let _i = i; arr[i] = function () &#123; console.log(_i); &#125;;&#125;arr[6](); // 6 for 循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。 let 声明的变量只在它所在的代码块有效。 1234567&#123; var a = 6; let b = 9;&#125;console.log(a); // 6console.log(b); // b is not defined 暂时性死区在代码块内，使用 let 命令声明变量，在声明之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）. 1234567891011if (true) &#123; // TDZ开始 tmp = 'abc'; // ReferenceError console.log(tmp); // ReferenceError let tmp; // TDZ结束 console.log(tmp); // undefined tmp = 123; console.log(tmp); // 123&#125; ES6 明确规定，如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。 只要块级作用域内存在 let 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。 123456var tmp = 6;if(true) &#123; tmp = 3; // ReferenceError let tmp;&#125;]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>YouDon&#39;tKnowJavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[jQuery基础]]></title>
     <url>%2Fpages%2F889563%2F</url>
     <content type="text"><![CDATA[CDN 方式引入 jQuery 选择器操作 DOM 节点 $(“选择器”); 可以通过选择器选择 DOM 节点 jQuery(“h1”); 等同于 $(“h1”); 返回 h1 $(“h1”).text(); 返回 h1 里面的 text $(“h1”).text(“Hello World!”) 更改覆盖 h1 的内容 注意DOM 加载完成之后 jQuery 开始运行，否则 jQuery 操作会被覆盖，不会生效。12345678// 文档加载完成后执行替换方法jQuery(document).ready(function()&#123; $("h1").text("Hello World!);&#125;);// 或者使用以下方法$(document).ready(function()&#123; $("h1").text("Hello World!);&#125;); 伪类选择器1234.class li:first; // 选择列表里面的第一个元素.class li:last; // 选择列表里面的最后一个元素.class li:odd; // 选择列表里面的奇数位元素.class li:even; // 选择列表里面的偶数位元素 遍历寻找操作 DOM 节点 速度快于选择器操作1$(".class").find("li"); 遍历伪类选择1234$(".class").first(); // 选择列表第一个元素$(".class").last(); // 选择列表最后一个元素$(".class").odd(); // 选择列表奇数位元素$(".class").even(); // 选择列表偶数位元素 上下遍历12$(".class").parent("li"); // 向上一层遍历，得到直系父元素$(".class").children("li"); // 向下遍历，得到直系子元素]]></content>
@@ -144,42 +185,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[函数作用域及块作用域]]></title>
-    <url>%2Fpages%2F70cbbc9f%2F</url>
-    <content type="text"><![CDATA[最小特权原则最小特权原则也叫最小授权或最小暴露原则。这个原则是指在软件设计中，应该最小限度地暴露必要内容，而将其他内容都“隐藏”起来，比如某个模块或对象的 API 设计。 函数封装将函数和变量包裹在一个外部包装函数的作用域中，使用这个作用域将这些具体的细节隐藏起来，实现函数的封装。 可以避免同名标识符之间的冲突，避免全局变量污染。 将具体内容私有化，防止外部以非预期的方式使用内部私有的内容。 函数作用域函数作用域的含义是指，属于这个函数的全部变量都可以在整个函数的范围内使用及复用（事实上在嵌套的作用域中也可以使用）。 函数声明:1234567function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;foo(); 立即执行函数表达式：12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;)(); 区分函数声明和表达式最简单的方法是看 function 关键字出现在声明中的位置（不仅仅是一行代码，而是整个声明中的位置）。如果 function 是声明中的第一个词，那么就是一个函数声明，否则就是一个函数表达式。 函数声明和函数表达式之间最重要的区别是它们的名称标识符将会绑定在何处。 函数声明中，foo 被绑定在所在的作用域中，可以在外部通过 foo() 来调用它。 函数表达式中，foo 被绑定在函数表达式自身的函数中，外部不能访问调用，只能在其(function foo(){…}) 中的...位置被访问。 匿名函数表达式函数表达式可以匿名，而函数声明则不可以省略函数名。 立即执行函数表达式（IIFE）立即执行函数表达式（Immediately Invoked Function Expression），将函数包含在一对（）中，成为一个函数表达式，在末尾加上另一对（）可以立即执行这个函数。第一个（）将函数变成表达式，第二个（） 执行了这个函数。 IIFE 的两种写法 立即执行函数表达式： 12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;)(); 另一种改进形式写法将调用的（）移到了用来包装的（）里面。 12345(function foo() &#123; for (let i = 0; i &lt; 10; i++) &#123; console.log(i); &#125;&#125;()); 两种写法功能上一样，凭个人喜好。 IIFE 表达式的用法 匿名函数表达式 1234(() =&gt; &#123; const a = 6; console.log(a); // a&#125;)(); 将它当作函数调用，并传递参数进去 1234const name = 'haha';(function IIFE(name) &#123; console.log(name); // haha&#125;)(name); 倒置代码的运行顺序，将需要运行的函数放在第二位， IIFE 执行之后，放在第二位的函数被当作参数传递进去。 1234567891011const objA = &#123; name: 'haha',&#125;;(function IIFE(foo) &#123; foo(objA);&#125;((obj) =&gt; &#123; const name = '3'; console.log(name); // 3 console.log(obj.name); // haha&#125;)); 第二部分为一个匿名函数，被当作一个参数 foo 传入到 IIFE 函数的第一部分。最后匿名函数调用执行，将一个全局对象 objA 传入当作 obj 的参数值。 块作用域块作用域是一个用来对之前的最小授权原则进行扩展的工具，将代码从在函数中隐藏信息扩展为在块中隐藏信息。 块作用域指的是变量和函数不仅可以属于所处的作用域，也可以属于某个代码块（通常指 { .. } 内部）。 只想在 for 循环内部的上下文中使用 i，所以在 for 循环的头部使用 var 声明一个变量 i，但实际上 i 会被绑定在外部作用域（函数或全局）中，在全局范围内都有效。 1234567var arr = [];for (var i = 0; i &lt; 10; i++) &#123; arr[i] = function() &#123; console.log(i); &#125;;&#125;arr[6](); // 10 console.log(i) 内部的 i 指向全局的的 i，最后循环完毕后在执行 arr6，这时全局的 i 的值为 10. ES3 规范中规定 try/catch 的 catch 分句会创建一个块作用域，其中声明的变量仅在 catch 内部有效。 Letlet 关键字可以将变量绑定到所在的任意作用域中（通常是 { .. } 内部）。换句话说，let 为其声明的变量隐式地了所在的块作用域。 1234567var arr = [];for (let i = 0; i &lt; 10; i++) &#123; arr[i] = function () &#123; console.log(i); &#125;;&#125;arr[6](); // 6 由 let 声明的 i，每次循环都在循环的内部重新生成了一次变量， 12345678var arr = [];for (let i = 0; i &lt; 10; i++) &#123; let _i = i; arr[i] = function () &#123; console.log(_i); &#125;;&#125;arr[6](); // 6 for 循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。 let声明的变量只在它所在的代码块有效。 1234567&#123; var a = 6; let b = 9;&#125;console.log(a); // 6console.log(b); // b is not defined 暂时性死区在代码块内，使用 let 命令声明变量，在声明之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）. 1234567891011if (true) &#123; // TDZ开始 tmp = 'abc'; // ReferenceError console.log(tmp); // ReferenceError let tmp; // TDZ结束 console.log(tmp); // undefined tmp = 123; console.log(tmp); // 123&#125; ES6明确规定，如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。 只要块级作用域内存在 let 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。 123456var tmp = 6;if(true) &#123; tmp = 3; // ReferenceError let tmp;&#125;]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>YouDon&#39;tKnowJavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[全局命名空间和模块]]></title>
     <url>%2Fpages%2Ff9a582e%2F</url>
     <content type="text"><![CDATA[全局命名空间库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。 例如：123456var mylibrary = &#123; name: 'haha', eat: (name) =&gt; &#123; console.log(`$&#123;name&#125; is eating`); &#125;&#125;; 模块管理通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。 用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>YouDon&#39;tKnowJavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[作用域闭包]]></title>
-    <url>%2Fpages%2F78f2b66e%2F</url>
-    <content type="text"><![CDATA[闭包wiki 上对闭包的定义：闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。 自由变量的定义：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在自己定义的词法作用域以外的地方执行。 闭包使得函数在定义时的词法作用域以外的地方被调用时，函数可以继续访问定义时的词法作用域。 在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。 在函数 foo() 内部定义了函数 bar()， bar() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。 12345678910111213function foo() &#123; var a = 2; function func() &#123; console.log(a); &#125; bar(func);&#125;function bar(fn) &#123; fn(); // 这就是闭包&#125; 将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar(fn) 函数，从而达到访问 func() 词法作用域的目的。 无论通过何种手段将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>YouDon&#39;tKnowJavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[作用域以及 LHS 和 RHS 查询]]></title>
-    <url>%2Fpages%2Fb917f198%2F</url>
-    <content type="text"><![CDATA[作用域1. 作用域是一套规则，负责收集并维护由所有声明的标识符（变量）组成的一系列查询，用于确定在何处以及如何查找变量（标识符），并实施一套非常严格的规则，用于确定当前执行的代码对这些标识符的访问权限。作用域就是函数或者变量能被访问到的范围。 2. 作用域有两种工作模型： 词法作用域(JavaScript)：词法作用域就是定义在词法阶段的作用域。 动态作用域(Bash脚本) 3. 全局变量会自动成为全局对象（比如浏览器中的 window 对象）的属性，因此可以不直接通过全局对象的词法名称，而是间接地通过对全局对象属性的引用来对其进行访问。例如：window.a 这样可以访问到被局部同名变量所遮蔽的全局变量。 执行上下文执行上下文在运行时确定，词法作用域在定义时确定。 欺骗作用域无论函数在哪里被调用，也无论它如何被调用，它的词法作用域都只由函数被声明时所处的位置决定。 JavaScript 中有两个机制可以“欺骗”词法作用域：eval(..) 和 with。前者可以对一段包含一个或多个声明的“代码”字符串进行演算，并借此来修改已经存在的词法作用域（在运行时）。后者本质上是通过将一个对象的引用当作作用域来处理，将对象的属性当作作用域中的标识符来处理，从而创建了一个新的词法作用域（同样是在运行时）。 eval()函数欺骗JavaScript 中的 eval() 函数可以接受一个字符串为参数，并将传入的字符串视为好像在书写时就存在于程序中这个位置的 JavaScript 代码进行执行。例如： 1234567var a = 66;function bar(str, b) &#123; eval(str); console.log(a, b); // 55 10&#125;bar('var a = 55;', 10); 使用 eval() 函数可以将代码以动态形式插入一个指定位置，如果 eval() 中所执行的代码包含一个或多个声明（函数或者变量），就会对词法作用域的环境进行修改，达到欺诈伪装的效果。 在严格模式下，eval() 函数拥有这自己的词法作用域，其中的声明将无法修改作用域。 这个函数的副作用是引擎无法在编译时对作用域查找进行优化，会导致代码运行变慢，不建议使用。 LHS 和 RHS查询LHS 查询对变量进行赋值操作，那么就会使用 LHS 查询。 当引擎执行 LHS 查询时，如果在顶层（全局作用域）中也无法找到目标变量，全局作用域中就会创建一个具有该名称的变量，并将其返还给引擎。 严格模式禁止自动或隐式地创建全局变量。 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查询失败时类似的 ReferenceError 异常。 RHS 查询查找获取某个变量的值，就会使用 RHS 查询。 如果 RHS 查询在所有嵌套的作用域中遍寻不到所需的变量，引擎就会抛出 ReferenceError 异常。]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -350,7 +358,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[VSCode 配置 ESLint + Airbnb + vue]]></title>
+    <title><![CDATA[VSCode 配置 ESLint + Airbnb + Vue]]></title>
     <url>%2Fpages%2F3bcc390e%2F</url>
     <content type="text"><![CDATA[基本环境Win 10 v1709Nodejs v8.70VScode v1.17.2 VSCode 安装 ESLint 扩展打开 VSCode 搜索 ESLint 扩展安装 NPM 安装 ESLint 全局安装（推荐）: npm install eslint -g 项目根目录本地安装： npm install eslint --save-dev 1. 自定义配置规则 全局配置在当前用户根目录下执行 eslint --init,根据个人爱好选择生成配置文件 .eslintrc.json例如：windows\user\username 项目根目录配置：在当前用户根目录下执行 eslint --init，根据个人爱好选择生成配置文件 ps：具体配置参考：http://eslint.cn/docs/user-guide/configuring 2. 使用 eslint-config-airbnb 标准规则 查看 Airbnb 标准依赖插件版本： npm info &quot;eslint-config-airbnb@latest&quot; peerDependencies 例如：本次的 plugins 的版本要求: 12345&#123; eslint: &apos;^4.9.0&apos;, &apos;eslint-plugin-import&apos;: &apos;^2.7.0&apos;, &apos;eslint-plugin-jsx-a11y&apos;: &apos;^6.0.2&apos;, &apos;eslint-plugin-react&apos;: &apos;^7.4.0&apos;&#125; 安装对应版本的插件: npm install eslint-config-airbnb eslint@^#.#.# eslint-plugin-jsx-a11y@^#.#.# eslint-plugin-import@^#.#.# eslint-plugin-react@^#.#.# -g 更改配置文件 .eslintrc.json 如下： 12345678910111213141516171819202122&#123; // 要启用的环境 "env": &#123; "browser": true, "node": true, "commonjs": true, "es6": true, "jquery": true &#125;, // 启用 airbnb 规则 "extends": "airbnb", // 使用语言及版本 "parserOptions": &#123; "ecmaVersion": 6, "sourceType": "module" &#125;, // 个人自定义规则 "rules": &#123; "no-console":"off", "no-plusplus":"off" &#125;&#125; ESLint 支持 Vue 单文件组件 安装 eslint-plugin-html 插件 npm install eslint-plugin-html -g 在 VSCode 设置设置中添加如下配置：1234567891011121314151617181920 // ESLint 配置"eslint.enable": true,// nodejs 路径， windows 路径使用双 \\ 进行转义"eslint.nodePath": "C:\\Dev\\nodejs",// 启用 eslint-plugin-html 插件"eslint.options": &#123; "plugins": ["html"]&#125;,"eslint.validate": [ "javascript", "javascriptreact", // 启用 html 和 vue 中 ESLint 验证和自动修复 &#123; "language": "html", "autoFix": true &#125;, &#123; "language": "vue", "autoFix": true &#125;]]></content>
       <categories>
@@ -450,9 +458,130 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[接口应用]]></title>
+    <url>%2Fpages%2F75336bdc%2F</url>
+    <content type="text"><![CDATA[接口定义一种标准： 通过interface定义； 函数都是抽象函数（只有函数没有函数体）； 子类通过implements实现；对接口里面的抽象函数进行override；123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566/***定义一个Printer接口，通过HPPrinter，CanonPrinter两个子类去实现*/package printer; //定义一个Printer接口interface Printer&#123; public void open(); public void print(String s); public void close();&#125;//定义HPPrinter去implements Printer接口class HPPrinter implements Printer&#123; @Override public void open()&#123; System.out.println("HPPrinter open"); &#125; public void print(String s)&#123; System.out.println("HPPrinter print:" + s); &#125; public void close()&#123; System.out.println("HPPrinter close"); &#125;&#125;//定义CanonPrinter去implements Printer接口class CanonPrinter implements Printer&#123; @Override private void clean()&#123; System.out.println("clean"); &#125; public void open()&#123; System.out.println("CanonPrinter open"); &#125; public void print(String s)&#123; System.out.println("CanonPrinter print:" + s); &#125; public void close()&#123; this.clean(); System.out.println("CanonPrinter close"); &#125;&#125;//静态工厂方法模式class PrinterFactory&#123;//定义一个静态函数getPrinter(int flag)，返回值类型为Printer public static Printer getPrinter(int flag)&#123; Printer printer = null;//根据用户选择生成新的对象，并向上转型为Printer类型 if (flag == 0)&#123; printer = new HPPrinter(); &#125; else if(flag == 1)&#123; printer = new CanonPrinter(); &#125; return printer; &#125;&#125;//定义一个主函数，对函数进行调用class Test&#123; public static void main(String args[])&#123; int flag = 1; //工厂方法模式调用 类名+函数 Printer printer = PrinterFactory.getPrinter(flag); printer.open(); printer.print("Test"); printer.close(); &#125;&#125; 工厂方法简单工厂模式 Java 简单工厂模式（Simple Factory Pattern）又叫静态工厂方法模式（Static FactoryMethod Pattern），通过专门定义一个类来负责创建其他类的实例（将生成对象的代码封装在工厂类中），被创建的实例通常都具有共同的父类。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[方法]]></title>
+    <url>%2Fpages%2Fad01bc3e%2F</url>
+    <content type="text"><![CDATA[为解决代码重复编写的问题所设计的特定功能代码块。方法不能嵌套。main（）方法的作用：调用方法的实例化对象。 方法结构一般为：123456修饰符 返回值类型 方法名（参数类型 参数1，参数类型 参数2，...）&#123; 执行语句 ... ... return 返回值；&#125; 方法的重载 Java 允许在一个程序中定义多个名称相同的方法]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[throw和throws]]></title>
+    <url>%2Fpages%2F29cc0096%2F</url>
+    <content type="text"><![CDATA[throwthrow的作用 如果Java虚拟机不能判断异常e，可以生成异常对象e，用throw加上这个异常对象抛出这个异常。&gt;示例：123456789101112131415161718package src;class People&#123; private int age; public void setAge(int age)&#123; if(age &lt; 0)&#123; RuntimeException e = new RuntimeException("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); people.setAge(-20); &#125;&#125; 运行结果： throwsthrows 声明一个函数可能产生异常，函数不对异常进行处理，在调用函数的地方对异常进行处理。&gt;示例：1234567891011121314151617181920212223package src1;class People&#123; private int age; public void setAge(int age) throws Exception&#123; if(age &lt; 0)&#123; Exception e = new Exception("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); try&#123; people.setAge(-20); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 运行结果：]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[类集框架]]></title>
+    <url>%2Fpages%2F85b5073b%2F</url>
+    <content type="text"><![CDATA[类集框架是一组类和接口； 位于java.until包当中； 主要用于存储盒管理对象； 主要分为三大类：集合(Set)、列表(List)和映射(Map)。 类集框架的主体结构 Collection为单列集合，Map为双列集合。 Collection接口中的方法 方法 功能 boolean add（Object o） 向集合中加入一个对象。 void clear（） 删除集合当中的所有对象。 boolean isEmpty（） 判断集合是否为空，如果为空返回true。 remove（Object o） 从集合中删除一个对象的引用。 int size（） 返回集合中元素的数目。 Iterator接口 主要用于迭代访问（即遍历）整个Collection中的元素，因此Iterator对象也被称为迭代器。 方法 作用 hasNet() 判断当前迭代器中是否还有下一个元素，返回值为boolean值。 next() 返回当前迭代器下一个元素。 示例：12345678910111213141516171819202122import java.util.Set;import java.util.HashSet;import java.util.Iterator;public class TestIterator&#123; public static void main(String args[])&#123; Set&lt;String&gt; set = new HashSet&lt;String&gt;(); set.add("a"); set.add("b"); set.add("c"); set.add("d"); set.add("e"); //调用Set对象的Iterator方法生成一个迭代器对象，该对象遍历整个Set Iterator&lt;String&gt; it = set.iterator(); //判断Set集合中是否存在下一个元素 while(it.hasNext())&#123; //取出Set集合中的元素 String s = it.next(); System.out.println(s); &#125; &#125;&#125; ListIterator接口 可以按任一方向遍历列表、迭代期间修改列表，并获得迭代器在列表中的当前位置。 方法 功能 void add(Object o) 将指定的元素插入列表。 boolean hasPrevious() 如果以逆向遍历列表，列表迭代器有多个元素，则返回true。 Object previous() 返回列表中的前一个元素。 void remove() 从列表中移除由next或previous返回的最后一个元素。 示例：12345678910111213141516171819import java.util.*;public class Test&#123; public static void main(String args[]) &#123; ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;(); list.add("Monday"); list.add("Tuesday"); list.add("Wednesday"); list.add("Thursday"); System.out.println(list); //生成一个ListIterator对象 ListIterator it = list.listIterator(list.size()); //调用hasPrevious()方法判断是否存在元素 while(it.hasPrevious())&#123; //调用previous()方法返回元素 Object obj = it.previous(); System.out.println(obj); &#125; &#125;&#125; 集合（Set） 集合中的对象不按特定方式排序，并且没有重复对象。 HashSet集合 HashSet是Set接口的一个实现类，它所储存的元素时不可重复且无序的。根据对象的哈希值来确定元素在集合中的储存位置，因此具有良好的存取和查找性能。 示例：123456789101112131415161718192021222324252627282930import java.util.Set;import java.util.HashSet;public class TestSet&#123; public static void main(String args[])&#123; //生成HashSet对象并向上转型为Set Set&lt;String&gt; set =new HashSet&lt;String&gt;(); //定义一个boolean型变量b1接受 isEmpty（）方法返回值 boolean b1 = set.isEmpty(); System.out.println(b1); set.add("a"); set.add("b"); set.add("c"); set.add("d"); set.add("e"); set.add("f"); boolean b2 =set.isEmpty(); System.out.println(b2); //调用size（）方法获取集合长度 int i =set.size(); System.out.println("初始状态set集合中元素的数目" + i); //调用remove（）方法移除对象d set.remove("d"); int j = set.size(); System.out.println("处理之后set集合中元素的数目" + j); &#125;&#125; TreeSet集合 它内部采用自平衡点排序二叉树来储存元素，这样的结构保证TreeSet集合没有重复的元素，并且可以对元素进行排序。 二叉树 二叉树是指每个节点最多有两个子节点的有序树，每个节点及其子节点组成的树称为子树，通常左侧的节点称为“左子树”，右侧的的子节点称为“右子树”。 示例：1234567891011121314151617import java.util.*;public class Test01&#123; public static void main(String args[])&#123; //创建TreeSet集合 TreeSet&lt;String&gt; ts = new TreeSet&lt;String&gt;(); ts.add("10"); ts.add("50"); ts.add("20"); ts.add("40"); ts.add("30"); //获取Iterator对象 Iterator it = ts.iterator(); while(it.hasNext())&#123; System.out.println(it.next()); &#125; &#125;&#125; 结果： 列表（List） 集合中对象按照索引位置排序，即元素的存入和取出顺序一致，可以有重复对象。 ArrayList ArrayList的底层是使用一个数组来保存元素，当增加或删除指定位置的元素时，会创建新的数组，效率较低，因此不适合做大量的增删操作。但是这种数组的结构允许程序通过索引的方式来访问元素，因此使用ArryList集合查找元素很便捷。 示例：123456789101112131415161718192021import java.util.List;import java.util.ArrayList;public class Test&#123; public static void main(String args[])&#123; ArrayList&lt;String&gt; arrayList = new ArrayList&lt;String&gt;(); //向ArrayList中存入数据 arrayList.add("a"); arrayList.add("b"); arrayList.add("c"); arrayList.add("d"); //移除这个对象 arrayList.remove(2); //从ArrayList中取数据 for(int i = 0; i &lt; arrayList.size(); i++)&#123; String s = arrayList.get(i); System.out.println(s); &#125; &#125;&#125; LinkedList 内部维护了一个双向循环链表，链表中的每一个元素都使用引用的方式来记住它的前一个元素和后一个元素，插入一个新元素，只需修改元素之间的这种引用关系即可。 示例：123456789101112131415161718192021import java.util.List;import java.util.LinkedList;public class Test01&#123; public static void main(String args[])&#123; //创建LinkedList集合 LinkedList&lt;String&gt; link = new LinkedList&lt;String&gt;(); //向集合中添加元素 link.add("One"); link.add("Two"); link.add("Three"); link.add("Four"); //取出并打印该集合中的所有元素 System.out.println(link.toString()); //向指定位置插入元素 link.add(2,"插个队"); System.out.println(link); //移除指定位置的元素 link.remove(2); System.out.println(link); &#125;&#125; 映射（Map） 集合中的每一个元素包含一个键对象和一个值对象，键不可重复，值可以重复。 键对象 值对象 key1 value1 key2 value2 key3 value3 Map接口中的方法 方法 作用 void clear() 从此映射中移除所有映射关系（可选操作）。 boolean containsKey（Object Key） 如果此映射包含指定键的映射关系，则返回 true。 boolean equals（Object o） 比较指定的对象与此映射是否相等。 get（Object key） 返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回null。 boolean isEmpty（） 如果此映射未包含键-值映射关系，则返回 true。 put（） 将指定的值与此映射中的指定键关联。 remove（Object key） 如果存在一个键的映射关系，则将其从此映射中移除。 int size（） 返回此Map中的键值对数目。 Map与HashMap示例：12345678910111213141516import java.util.Map;import java.util.HashMap;public class Test&#123; public static void main(String args[])&#123; //生成HashMap对象并向上转型为Map Map&lt;String,String&gt; map = new HashMap&lt;String,String&gt;(); //向map中添加键值对 map.put("1","One"); map.put("2","Two"); map.put("3","Three"); //调用get（Object key）方法，返回指定键所映射的值； //如果对于该键来说，此映射不包含任何映射关系，则返回 null。 String s = map.get("2"); System.out.println(s); &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java中的变量]]></title>
+    <url>%2Fpages%2Fc075d141%2F</url>
+    <content type="text"><![CDATA[变量的定义 在程序的运行过程中，会产生一些临时数据储存在内存单元中，这每一个内存单元都用一个标识符来标识，这些内存单元被称为变量。 变量的数据类型变量的数据类型分为两种，即基本数据类型和引用数据类型。 1. 基本数据类型 数值型分为两种： 1.1 整数类型（byte 1字节，short 2字节，int 4字节，long 8字节） 1.2 浮点类型（float 4字节，double 8字节） 字符型（char）2字节 布尔型（boolean）1字节 2. 引用数据类型 类（class) 接口（interface） 数组 枚举（enum） 注解（annotation） 变量类型转换 在程序中，当把一种数据类型的值赋值给另一种数据类型时，需要进行数据类型的转换。数据类型转换分为两种：自动类型转换和强制类型转换。 1. 自动类型转换 两种数据类型转换不需要显式声明，自动转换类型必须满足两个条件：两种数据类型彼此兼容和转换目标类型的取值范围必须大于原来类型的取值范围。 byte→short，int，long short，char→int，long int→long byte，char，short，int→float byte，char，short，int，long，float→double boolean类型无法转换为其他类型。 2. 强制类型转换 自动转换类型无法进行转换时，进行强制类型转换。取值范围较大的数据类型转换为取值范围较小的类型，可能会造成精度丢失。 例如：12int num;byte b =(byte)num;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java中的I/O流]]></title>
+    <url>%2Fpages%2F649b2029%2F</url>
+    <content type="text"><![CDATA[流的概念和作用&gt; 流是数据源到Java程序，Java程序到输出位置之间的管道。 IO流的分类&gt; 根据数据处理类的不同分为：字符流和字节流。 根据数据流向不同分为：输入流和输出流。 输入输出是以Java程序为参照物的，相对于Java程序本身 输入流：从数据源中读取数据到Java程序中，这个过程称之为输入。 输出流：Java程序将数据写入到其他地方，这个过程称之为输出。 节点流和处理流。 节点流：普通的管道； 处理流：功能性管道，对数据进一步加工。 字节流字节流中的核心类 InputStream&gt; int read(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 读取数据的量；返回值为这次调用read方法读取数据的长度。 OutputStream&gt; void write(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 写入数据的量； 程序步骤 导入类 java.io.*； 定义主函数； 声明输入流的引用； 声明输出流的引用；123456789101112131415161718192021try&#123; 1.生成代表输入流的对象； 2.生成代表输出流的对象； 3. 生成一个byte字节数组； 4.调用输入流的read方法读取数据； 5.定义临时变量接受数据的量； 6.调用输出流的write方法写入数据；&#125;catch(Exception e)&#123; Systen.out.println(e);&#125;//finally进行结尾处理finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125;&#125; 示例 1：12345678910111213141516171819202122232425262728293031323334import java.io.*;public class Test&#123; public static void main(String args[])&#123; //声明输入流引用 FileInputStream fis = null; //声明输出流引用 FileOutputStream fos = null; try&#123; //生成代表输入流的对象 fis = new FileInputStream("D:/java/8.8/from.txt"); //生成代表输入流的对象 fos = new FileOutputStream("D:/java/8.8/to.txt"); //生成一个字节型buffer数组 byte[] buffer = new byte[100]; //定义一个临时变量，用于接受调用输入流read方法读取数据的量 int temp = fis.read(buffer,0,b.length); //调用输出流的write方法写入数据 fos.write(buffer,0,temp); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; //finally进行结尾处理 finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 大文件的读写 调节buffer数组的大小； 对read，write方法采取while循环； 示例 2：1234567while(true)&#123; int temp = fis.read(buffer,0,buffer.length); if(temp == -1)&#123; break; &#125; fos.write(buffer,0,temp);&#125; 字符流 字符流：是以对写文件时，以字符为基础 字节输入流：Reader &lt;–FileReader int read(char [] c, int off, int length ) 字节输出流：Writer &lt;–FileWriter void writer(char [] c, int off, int length) 示例 3：12345678910111213141516171819202122232425262728293031import java.io.*;public class TestChar&#123; public static void main(String args[])&#123; FileReader fr = null; FileWriter fw = null; try&#123; fr = new FileReader("d:/java/9.5/read.txt"); fw = new FileWriter("d:/java/9.5/write.txt"); char [] buffer = new char[1024]; while(true)&#123; int temp = fr.read(buffer, 0, buffer.length); if(temp == -1)&#123; break; &#125; fw.write(buffer, 0, temp); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; fr.close(); fw.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[结构语句]]></title>
     <url>%2Fpages%2F1c7ee7be%2F</url>
     <content type="text"><![CDATA[选择结构语句if条件语句 当判断条件1结果为true时，执行语句1，为false时，执行语句2。当判断条件1,2都不满足true时，执行语句3。 例如：123456789if (判断条件1)&#123; 执行语句1&#125;else if(判断条件2)&#123; 执行语句2&#125;else&#123; 执行语句3&#125; 三元运算 一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。当判断条件成立时结果为表达式1的值，否则表达式2的值。1判断条件 ? 表达式 1 : 表达式 2 例如：求取两个数x，y中较大的值。123456789101112//if-else实现方法int x, y, max;if(x&gt;y)&#123; max = x;&#125;else&#123; max = y;&#125;//三元运算实现int x, y, max;max = x &gt; y ? x : y; switch语句 在switch语句中使用switch关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，当表达式的值和某个目标值匹配时，会执行对应case下的语句。 例如：1234567891011121314switch(表达式)&#123; case 1: 执行语句1; break; //break终止case并跳出switch循环 case 2: 执行语句2; break; case 3: 执行语句3； break; default: //default处理和前面的case都不匹配的值 执行语句4; break;&#125; 循环结构语句while循环语句 循环条件判断为true时，执行语句循环执行，直到循环条件为false。 例如：123while(循环条件)&#123; 执行语句&#125; do…while循环语句 循环体会无条件执行一次，然后根据循环条件决定是否继续执行。 例如：1234do&#123; 执行语句&#125;while(循环条件); for循环语句 一般用在循环次数已知的情况下，循环条件判断为true执行顺序①→②→④→③ 例如：123for(初始化表达式①;循环条件②;操作表达式③)&#123; 执行语句④&#125; 1234567891011121314151617181920/** * Created by Roojay on 2017/4/7. * 利用嵌套循环打印一个正三角形。 */public class Test1 &#123; public static void main(String args[])&#123; int i, j, k; for(i = 1; i &lt;= 5; i++)&#123; for(k = 0; k &lt; 5 - i; k++)&#123; System.out.print(" "); &#125; for(j = 1; j &lt;= i; j++)&#123; System.out.print("* "); &#125; System.out.println(); &#125; &#125;&#125; 跳转语句break语句 当它出现在switch条件语句中时，作用是终止某个case并跳出switch结构。当它出现在循环语句中，作用是跳出循环语句，执行后面的代码。当它出现在嵌套循环内层循环中时，只能跳出内层循环，如果想跳出外层循环，需要对外层前面添加标记 itcast： ，在后面使用 break itcast 跳出外层循环。 continue语句 continue语句用在循环语句中，它的作用是终止本次循环，执行下一次循环。也可以使用标记结束外循环。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java中的异常]]></title>
+    <url>%2Fpages%2Ff029d2bb%2F</url>
+    <content type="text"><![CDATA[什么是异常 异常的分类 try…catch…finally结构的使用方法 1. 什么是异常？&gt; 异常(Exception)：中断了正常指令流的事件。 异常是一个对象； 异常产生于程序运行时； 指令流：程序执行时一系列的连续指令称为指令流。&gt;示例： 12345class Test&#123; public static void main(String args[])&#123; int i = 1 / 0; &#125;&#125; 抛出异常： Exception in thread “main” java.lang.ArithmeticException: / by zero at Test3.main(Test3.java:6) Exception in thread “main” ：在主线程中出现异常； ArithmeticException：异常的名称，算术异常； / by zero：被0除； at Test.main(Test.java:3)：异常位置； 2. 异常的分类JDK提供的类： Throwable：所有异常的父类； Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭； Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption RuntimeException + Error 和其子类都是属于uncheckexceptionException类中除了 RuntimeException之外的类，都是属于checkexception ExceptioncheckException&gt;checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。示例：123456class TestCheck&#123; public static void main(String args[])&#123; //CheckException Thread.sleep(1000); //让当前线程休眠1000ms &#125;&#125; 运行结果： uncheckException（ RuntimeException）&gt;运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成示例：123456class Test&#123; public static void main(String args[])&#123; //UncheckException int i = 1 / 0; &#125;&#125; 运行结果： 3. try…catch…finally结构&gt;12345678910111213try&#123; //代码A //有可能出现异常的代码B //代码C&#125;catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //处理异常的代码D //代码E&#125;finally&#123; //异常的出口 //执行扫尾工作的代码F&#125; 如果try中代码B没有异常：执行代码A-B-C-F如果try中代码B出现异常：执行代码A-B-D-E-FuncheckException&gt;1234567891011121314151617181920//uncheckExceptionclass TestCheck&#123; public static void main(String args[])&#123; System.out.println(1); try&#123; System.out.println(2); //有可能出现异常的代码 int i = 1/0; System.out.println(3); &#125; catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); &#125; finally&#123; //异常的出口 System.out.println("finally"); &#125; &#125;&#125; 运行结果： checkException&gt;1234567891011121314151617181920//checkExceptionclass TestCheck&#123; public static void main(String args[])&#123; System.out.println(1); try&#123; System.out.println(2); //有可能出现异常的代码 Thread.sleep(1000); //让当前线程休眠1000ms System.out.println(3); &#125; catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); &#125; finally&#123; //异常的出口 System.out.println("finally"); &#125; &#125;&#125; 运行结果：屏幕首先显示1，2，然后停顿1000ms，再显示3和finally]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[获取键盘输入]]></title>
+    <url>%2Fpages%2F828295ba%2F</url>
+    <content type="text"><![CDATA[123456789/**Java获取键盘输入值*/public static void main(String args[])&#123; Scanner sc = new Scanner(Systen.in); String s = sc.nextLine(); //接受字符和字符串类型的输入 int age = sc.nextInt(); float salary = sc.nextFloat();&#125; 简单运行、退出方法12345678910111213141516171819202122import java.util.Scanner;public class Test &#123; public static void main(String args[]) &#123; int t = 1;itcast : while(t &gt; 0) &#123; System.out.println("1.运行：\n" + "2.退出："); Scanner sc1 = new Scanner(System.in); int i = sc1.nextInt(); switch(i) &#123; case 1: //这里输入具体的计算程序 break; case 2: break itcast; default: System.out.println("输入有误，请重新输入"); break; &#125; &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[处理流与Decorator模式]]></title>
+    <url>%2Fpages%2Fbbf344f6%2F</url>
+    <content type="text"><![CDATA[处理流BufferedReader readeLine：每次读取一行数据 示例：1234567891011121314151617181920212223242526272829303132import java.io.*;public class Test&#123; public static void main(String args[])&#123; FileReader filereader = null; BufferedReader bufferedreader = null; try&#123; filereader = new FileReader("C:/Users/Jay/Desktop/9.6/src1/read.txt"); bufferedreader = new BufferedReader(filereader); String line = null; while(true)&#123; line = bufferedreader.readLine(); if(line == null)&#123; break; &#125; System.out.println(line); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; filereader.close(); bufferedreader.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125; Decorator（装饰者）模式 示例：123456789101112131415161718192021222324252627282930313233343536373839interface Teacher&#123; public void teaching();&#125;class MathTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名数学老师"); &#125;&#125;class ChineseTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名语文老师"); &#125;&#125;class ATeacher implements Teacher&#123; private Teacher teacher; public ATeacher(Teacher teacher)&#123; this.teacher = teacher; &#125; public void teaching()&#123; System.out.println("你好，我来自ASchool"); teacher.teaching(); &#125;&#125;public class Test&#123; public static void main(String args[])&#123; MathTeacher mathTeacher = new MathTeacher(); ATeacher aTeacher1 = new ATeacher(mathTeacher); aTeacher1.teaching(); ChineseTeacher chineseTeacher = new ChineseTeacher(); ATeacher aTeacher2 = new ATeacher(chineseTeacher); aTeacher2.teaching(); &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[进制转换]]></title>
+    <url>%2Fpages%2F7dc91154%2F</url>
+    <content type="text"><![CDATA[十进制转换二进制 将一个十进制数转换为二进制，就是将这个数不断取余的过程，将这个数除以 2，得到了商和余数，然后将商不断除以 2，直到商为 0，然后将余数倒过来排列，所得到的数就是转换的二进制结果。 二进制转八进制将二进制数自右向左每三位分成一段，然后将每三位数转换为一位八进制数。 例如：111000101 = 111 000 101 = 0 7 0 5 八进制以 0 开头。 二进制转十六进制 将二进制数自右向左每四位分成一段，然后将每四位转换为一位十六进制数。 例如：111010100110=1110 1010 0110=0x E A 6 十六进制以 0x 或者 0X 开头。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java中的运算符]]></title>
+    <url>%2Fpages%2F83e4d5ed%2F</url>
+    <content type="text"><![CDATA[Java中的运算符 Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。 算术运算符 进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。例如：16600/1000*1000 最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。 进行除法运算时如果有小数参与，得到的结果为小数。例如：16.6/10 结果为0.66。 进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。例如：1(-6)/2 结果为-3。16/(-3) 结果为2。 赋值运算符 可以通过一条赋值语句对多个变量进行赋值。例如： 12int x, y, z;x = y = z = 5; //为三个变量同时赋值。 使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。 位运算符左移：&lt;&lt; 00000100&lt;]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -475,127 +604,6 @@
     <title><![CDATA[Java中的多线程]]></title>
     <url>%2Fpages%2F265f6f6b%2F</url>
     <content type="text"><![CDATA[多进程在操作系统中能（同时）运行多个任务（程序）。 多线程在同一应用程序中有多个顺序流（同时）执行。 线程的创建方法继承Thread类创建多线程 继承Thread类，覆写Thread类的run（）方法，在run（）方法中实现运行在线程上的代码。 定义一个类FirstThread继承Thread类，覆写Thread类的run（）方法； 生成线程类的对象firstThread； 启动线程start（）方法。 示例：12345678910111213141516171819202122public class Test&#123; public static void main(String args[])&#123; //生成线程类的对象 FirstThread firstThread = new FirstThread(); //启动线程start（）方法 firstThread.start(); for(int i = 1; i &lt; 50; i++)&#123; System.out.println("Main----&gt;:" + i); &#125; &#125;&#125;//继承Thread类，覆写Thread类的run（）方法class FirstThread extends Thread&#123; public void run()&#123; for(int i = 1; i &lt; 50; i++)&#123; System.out.println("FirstThread---&gt;:" + i); &#125; &#125;&#125; 实现Runnable接口创建多线程 提供一个实现接口Runnable的类作为线程的目标对象，在初始化一个Thread类或者Thread子类的线程对象时，把目标对象传递给这个线程实例，由该目标对象提供线程体。 定义一个类FirstThread实现Runnable接口； 生成Runnable实现类FirstThread的一个对象firstThread； 生成一个Thread对象，并将firstThread作为参数传递给该Thread对象； 通知Thread对象执行start（）方法。 示例：123456789101112131415161718192021222324public class Test&#123; public static void main(String args[])&#123; //生成Runnable实现类FirstThread的一个对象firstThread FirstThread firstThread = new FirstThread(); //生成一个Thread对象 //并将firstThread作为参数传递给该Thread对象 Thread thread = new Thread(firstThread); //通知Thread对象执行start（）方法 thread.start(); for(int i = 1; i &lt;50; i++)&#123; System.out.println("Main---&gt;:" + i); &#125; &#125;&#125;//实现Runnable接口的类FirstThreadclass FirstThread implements Runnable&#123; public void run()&#123; for(int i = 1; i &lt;50; i++)&#123; System.out.println("FirstThread---&gt;:" + i); &#125; &#125;&#125; 线程的简单控制方法 中断线程 Thread.sleep（n毫秒）//当前线程休眠n毫秒 Thread.yield（）//当前线程自动让出CPU，AB重新线程抢占CPU 设置线程的优先级 getPriority（） setPriority（） thread.setPriority(Thread.MAX_PRIORITY) //设置最大优先级为10 thread.setPriority(Thread.MIN_PRIORITY) //设置最小优先级为1 同步语法同步代码块1234synchronized(this) &#123; //this：同步锁 代码块&#125; synchronized锁住一个对象。 如果线程A得到同步锁，那么他将可以执行代码块， 即使线程B从线程A手中抢到了同步锁，B也不能立即执行代码块，它必须等到线程A执行完这个代码块之后才能执行。 示例1234567891011121314151617181920212223242526272829303132public class Test&#123; public static void main(String args[])&#123; MyThread myThread = new MyThread(); //生成两个Thread对象，但是这两个Thread对象共用同一个线程体 Thread t1 = new Thread(myThread); Thread t2 = new Thread(myThread); //通过Thread对象的setName（）方法设置线程名字 //使用getName方法获取线程的名字 t1.setName("线程A"); t2.setName("线程B"); //分别启动两个线程 t1.start(); t2.start(); &#125;&#125;class MyThread implements Runnable&#123; int i = 100; public void run()&#123; while(true)&#123; synchronized(this)&#123; //this：同步锁 //Thread.currentThread()获取当前这段代码运行的线程位置 System.out.println(Thread.currentThread().getName() + i); i--; Thread.yield(); if(i &lt; 0)&#123; break; &#125; &#125; &#125; &#125;&#125; 同步方法1234public synchronized void run()&#123; 代码块&#125; synchronized锁住this。]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[接口应用]]></title>
-    <url>%2Fpages%2F75336bdc%2F</url>
-    <content type="text"><![CDATA[接口定义一种标准： 通过interface定义； 函数都是抽象函数（只有函数没有函数体）； 子类通过implements实现；对接口里面的抽象函数进行override；123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566/***定义一个Printer接口，通过HPPrinter，CanonPrinter两个子类去实现*/package printer; //定义一个Printer接口interface Printer&#123; public void open(); public void print(String s); public void close();&#125;//定义HPPrinter去implements Printer接口class HPPrinter implements Printer&#123; @Override public void open()&#123; System.out.println("HPPrinter open"); &#125; public void print(String s)&#123; System.out.println("HPPrinter print:" + s); &#125; public void close()&#123; System.out.println("HPPrinter close"); &#125;&#125;//定义CanonPrinter去implements Printer接口class CanonPrinter implements Printer&#123; @Override private void clean()&#123; System.out.println("clean"); &#125; public void open()&#123; System.out.println("CanonPrinter open"); &#125; public void print(String s)&#123; System.out.println("CanonPrinter print:" + s); &#125; public void close()&#123; this.clean(); System.out.println("CanonPrinter close"); &#125;&#125;//静态工厂方法模式class PrinterFactory&#123;//定义一个静态函数getPrinter(int flag)，返回值类型为Printer public static Printer getPrinter(int flag)&#123; Printer printer = null;//根据用户选择生成新的对象，并向上转型为Printer类型 if (flag == 0)&#123; printer = new HPPrinter(); &#125; else if(flag == 1)&#123; printer = new CanonPrinter(); &#125; return printer; &#125;&#125;//定义一个主函数，对函数进行调用class Test&#123; public static void main(String args[])&#123; int flag = 1; //工厂方法模式调用 类名+函数 Printer printer = PrinterFactory.getPrinter(flag); printer.open(); printer.print("Test"); printer.close(); &#125;&#125; 工厂方法简单工厂模式 Java 简单工厂模式（Simple Factory Pattern）又叫静态工厂方法模式（Static FactoryMethod Pattern），通过专门定义一个类来负责创建其他类的实例（将生成对象的代码封装在工厂类中），被创建的实例通常都具有共同的父类。]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java中的变量]]></title>
-    <url>%2Fpages%2Fc075d141%2F</url>
-    <content type="text"><![CDATA[变量的定义 在程序的运行过程中，会产生一些临时数据储存在内存单元中，这每一个内存单元都用一个标识符来标识，这些内存单元被称为变量。 变量的数据类型变量的数据类型分为两种，即基本数据类型和引用数据类型。 1. 基本数据类型 数值型分为两种： 1.1 整数类型（byte 1字节，short 2字节，int 4字节，long 8字节） 1.2 浮点类型（float 4字节，double 8字节） 字符型（char）2字节 布尔型（boolean）1字节 2. 引用数据类型 类（class) 接口（interface） 数组 枚举（enum） 注解（annotation） 变量类型转换 在程序中，当把一种数据类型的值赋值给另一种数据类型时，需要进行数据类型的转换。数据类型转换分为两种：自动类型转换和强制类型转换。 1. 自动类型转换 两种数据类型转换不需要显式声明，自动转换类型必须满足两个条件：两种数据类型彼此兼容和转换目标类型的取值范围必须大于原来类型的取值范围。 byte→short，int，long short，char→int，long int→long byte，char，short，int→float byte，char，short，int，long，float→double boolean类型无法转换为其他类型。 2. 强制类型转换 自动转换类型无法进行转换时，进行强制类型转换。取值范围较大的数据类型转换为取值范围较小的类型，可能会造成精度丢失。 例如：12int num;byte b =(byte)num;]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java中的运算符]]></title>
-    <url>%2Fpages%2F83e4d5ed%2F</url>
-    <content type="text"><![CDATA[Java中的运算符 Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。 算术运算符 进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。例如：16600/1000*1000 最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。 进行除法运算时如果有小数参与，得到的结果为小数。例如：16.6/10 结果为0.66。 进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。例如：1(-6)/2 结果为-3。16/(-3) 结果为2。 赋值运算符 可以通过一条赋值语句对多个变量进行赋值。例如： 12int x, y, z;x = y = z = 5; //为三个变量同时赋值。 使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。 位运算符左移：&lt;&lt; 00000100&lt;]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[方法]]></title>
-    <url>%2Fpages%2Fad01bc3e%2F</url>
-    <content type="text"><![CDATA[为解决代码重复编写的问题所设计的特定功能代码块。方法不能嵌套。main（）方法的作用：调用方法的实例化对象。 方法结构一般为：123456修饰符 返回值类型 方法名（参数类型 参数1，参数类型 参数2，...）&#123; 执行语句 ... ... return 返回值；&#125; 方法的重载 Java 允许在一个程序中定义多个名称相同的方法]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[类集框架]]></title>
-    <url>%2Fpages%2F85b5073b%2F</url>
-    <content type="text"><![CDATA[类集框架是一组类和接口； 位于java.until包当中； 主要用于存储盒管理对象； 主要分为三大类：集合(Set)、列表(List)和映射(Map)。 类集框架的主体结构 Collection为单列集合，Map为双列集合。 Collection接口中的方法 方法 功能 boolean add（Object o） 向集合中加入一个对象。 void clear（） 删除集合当中的所有对象。 boolean isEmpty（） 判断集合是否为空，如果为空返回true。 remove（Object o） 从集合中删除一个对象的引用。 int size（） 返回集合中元素的数目。 Iterator接口 主要用于迭代访问（即遍历）整个Collection中的元素，因此Iterator对象也被称为迭代器。 方法 作用 hasNet() 判断当前迭代器中是否还有下一个元素，返回值为boolean值。 next() 返回当前迭代器下一个元素。 示例：12345678910111213141516171819202122import java.util.Set;import java.util.HashSet;import java.util.Iterator;public class TestIterator&#123; public static void main(String args[])&#123; Set&lt;String&gt; set = new HashSet&lt;String&gt;(); set.add("a"); set.add("b"); set.add("c"); set.add("d"); set.add("e"); //调用Set对象的Iterator方法生成一个迭代器对象，该对象遍历整个Set Iterator&lt;String&gt; it = set.iterator(); //判断Set集合中是否存在下一个元素 while(it.hasNext())&#123; //取出Set集合中的元素 String s = it.next(); System.out.println(s); &#125; &#125;&#125; ListIterator接口 可以按任一方向遍历列表、迭代期间修改列表，并获得迭代器在列表中的当前位置。 方法 功能 void add(Object o) 将指定的元素插入列表。 boolean hasPrevious() 如果以逆向遍历列表，列表迭代器有多个元素，则返回true。 Object previous() 返回列表中的前一个元素。 void remove() 从列表中移除由next或previous返回的最后一个元素。 示例：12345678910111213141516171819import java.util.*;public class Test&#123; public static void main(String args[]) &#123; ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;(); list.add("Monday"); list.add("Tuesday"); list.add("Wednesday"); list.add("Thursday"); System.out.println(list); //生成一个ListIterator对象 ListIterator it = list.listIterator(list.size()); //调用hasPrevious()方法判断是否存在元素 while(it.hasPrevious())&#123; //调用previous()方法返回元素 Object obj = it.previous(); System.out.println(obj); &#125; &#125;&#125; 集合（Set） 集合中的对象不按特定方式排序，并且没有重复对象。 HashSet集合 HashSet是Set接口的一个实现类，它所储存的元素时不可重复且无序的。根据对象的哈希值来确定元素在集合中的储存位置，因此具有良好的存取和查找性能。 示例：123456789101112131415161718192021222324252627282930import java.util.Set;import java.util.HashSet;public class TestSet&#123; public static void main(String args[])&#123; //生成HashSet对象并向上转型为Set Set&lt;String&gt; set =new HashSet&lt;String&gt;(); //定义一个boolean型变量b1接受 isEmpty（）方法返回值 boolean b1 = set.isEmpty(); System.out.println(b1); set.add("a"); set.add("b"); set.add("c"); set.add("d"); set.add("e"); set.add("f"); boolean b2 =set.isEmpty(); System.out.println(b2); //调用size（）方法获取集合长度 int i =set.size(); System.out.println("初始状态set集合中元素的数目" + i); //调用remove（）方法移除对象d set.remove("d"); int j = set.size(); System.out.println("处理之后set集合中元素的数目" + j); &#125;&#125; TreeSet集合 它内部采用自平衡点排序二叉树来储存元素，这样的结构保证TreeSet集合没有重复的元素，并且可以对元素进行排序。 二叉树 二叉树是指每个节点最多有两个子节点的有序树，每个节点及其子节点组成的树称为子树，通常左侧的节点称为“左子树”，右侧的的子节点称为“右子树”。 示例：1234567891011121314151617import java.util.*;public class Test01&#123; public static void main(String args[])&#123; //创建TreeSet集合 TreeSet&lt;String&gt; ts = new TreeSet&lt;String&gt;(); ts.add("10"); ts.add("50"); ts.add("20"); ts.add("40"); ts.add("30"); //获取Iterator对象 Iterator it = ts.iterator(); while(it.hasNext())&#123; System.out.println(it.next()); &#125; &#125;&#125; 结果： 列表（List） 集合中对象按照索引位置排序，即元素的存入和取出顺序一致，可以有重复对象。 ArrayList ArrayList的底层是使用一个数组来保存元素，当增加或删除指定位置的元素时，会创建新的数组，效率较低，因此不适合做大量的增删操作。但是这种数组的结构允许程序通过索引的方式来访问元素，因此使用ArryList集合查找元素很便捷。 示例：123456789101112131415161718192021import java.util.List;import java.util.ArrayList;public class Test&#123; public static void main(String args[])&#123; ArrayList&lt;String&gt; arrayList = new ArrayList&lt;String&gt;(); //向ArrayList中存入数据 arrayList.add("a"); arrayList.add("b"); arrayList.add("c"); arrayList.add("d"); //移除这个对象 arrayList.remove(2); //从ArrayList中取数据 for(int i = 0; i &lt; arrayList.size(); i++)&#123; String s = arrayList.get(i); System.out.println(s); &#125; &#125;&#125; LinkedList 内部维护了一个双向循环链表，链表中的每一个元素都使用引用的方式来记住它的前一个元素和后一个元素，插入一个新元素，只需修改元素之间的这种引用关系即可。 示例：123456789101112131415161718192021import java.util.List;import java.util.LinkedList;public class Test01&#123; public static void main(String args[])&#123; //创建LinkedList集合 LinkedList&lt;String&gt; link = new LinkedList&lt;String&gt;(); //向集合中添加元素 link.add("One"); link.add("Two"); link.add("Three"); link.add("Four"); //取出并打印该集合中的所有元素 System.out.println(link.toString()); //向指定位置插入元素 link.add(2,"插个队"); System.out.println(link); //移除指定位置的元素 link.remove(2); System.out.println(link); &#125;&#125; 映射（Map） 集合中的每一个元素包含一个键对象和一个值对象，键不可重复，值可以重复。 键对象 值对象 key1 value1 key2 value2 key3 value3 Map接口中的方法 方法 作用 void clear() 从此映射中移除所有映射关系（可选操作）。 boolean containsKey（Object Key） 如果此映射包含指定键的映射关系，则返回 true。 boolean equals（Object o） 比较指定的对象与此映射是否相等。 get（Object key） 返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回null。 boolean isEmpty（） 如果此映射未包含键-值映射关系，则返回 true。 put（） 将指定的值与此映射中的指定键关联。 remove（Object key） 如果存在一个键的映射关系，则将其从此映射中移除。 int size（） 返回此Map中的键值对数目。 Map与HashMap示例：12345678910111213141516import java.util.Map;import java.util.HashMap;public class Test&#123; public static void main(String args[])&#123; //生成HashMap对象并向上转型为Map Map&lt;String,String&gt; map = new HashMap&lt;String,String&gt;(); //向map中添加键值对 map.put("1","One"); map.put("2","Two"); map.put("3","Three"); //调用get（Object key）方法，返回指定键所映射的值； //如果对于该键来说，此映射不包含任何映射关系，则返回 null。 String s = map.get("2"); System.out.println(s); &#125;&#125;]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[处理流与Decorator模式]]></title>
-    <url>%2Fpages%2Fbbf344f6%2F</url>
-    <content type="text"><![CDATA[处理流BufferedReader readeLine：每次读取一行数据 示例：1234567891011121314151617181920212223242526272829303132import java.io.*;public class Test&#123; public static void main(String args[])&#123; FileReader filereader = null; BufferedReader bufferedreader = null; try&#123; filereader = new FileReader("C:/Users/Jay/Desktop/9.6/src1/read.txt"); bufferedreader = new BufferedReader(filereader); String line = null; while(true)&#123; line = bufferedreader.readLine(); if(line == null)&#123; break; &#125; System.out.println(line); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; filereader.close(); bufferedreader.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125; Decorator（装饰者）模式 示例：123456789101112131415161718192021222324252627282930313233343536373839interface Teacher&#123; public void teaching();&#125;class MathTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名数学老师"); &#125;&#125;class ChineseTeacher implements Teacher&#123; public void teaching()&#123; System.out.println("我是一名语文老师"); &#125;&#125;class ATeacher implements Teacher&#123; private Teacher teacher; public ATeacher(Teacher teacher)&#123; this.teacher = teacher; &#125; public void teaching()&#123; System.out.println("你好，我来自ASchool"); teacher.teaching(); &#125;&#125;public class Test&#123; public static void main(String args[])&#123; MathTeacher mathTeacher = new MathTeacher(); ATeacher aTeacher1 = new ATeacher(mathTeacher); aTeacher1.teaching(); ChineseTeacher chineseTeacher = new ChineseTeacher(); ATeacher aTeacher2 = new ATeacher(chineseTeacher); aTeacher2.teaching(); &#125;&#125;]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java中的I/O流]]></title>
-    <url>%2Fpages%2F649b2029%2F</url>
-    <content type="text"><![CDATA[流的概念和作用&gt; 流是数据源到Java程序，Java程序到输出位置之间的管道。 IO流的分类&gt; 根据数据处理类的不同分为：字符流和字节流。 根据数据流向不同分为：输入流和输出流。 输入输出是以Java程序为参照物的，相对于Java程序本身 输入流：从数据源中读取数据到Java程序中，这个过程称之为输入。 输出流：Java程序将数据写入到其他地方，这个过程称之为输出。 节点流和处理流。 节点流：普通的管道； 处理流：功能性管道，对数据进一步加工。 字节流字节流中的核心类 InputStream&gt; int read(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 读取数据的量；返回值为这次调用read方法读取数据的长度。 OutputStream&gt; void write(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 写入数据的量； 程序步骤 导入类 java.io.*； 定义主函数； 声明输入流的引用； 声明输出流的引用；123456789101112131415161718192021try&#123; 1.生成代表输入流的对象； 2.生成代表输出流的对象； 3. 生成一个byte字节数组； 4.调用输入流的read方法读取数据； 5.定义临时变量接受数据的量； 6.调用输出流的write方法写入数据；&#125;catch(Exception e)&#123; Systen.out.println(e);&#125;//finally进行结尾处理finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125;&#125; 示例 1：12345678910111213141516171819202122232425262728293031323334import java.io.*;public class Test&#123; public static void main(String args[])&#123; //声明输入流引用 FileInputStream fis = null; //声明输出流引用 FileOutputStream fos = null; try&#123; //生成代表输入流的对象 fis = new FileInputStream("D:/java/8.8/from.txt"); //生成代表输入流的对象 fos = new FileOutputStream("D:/java/8.8/to.txt"); //生成一个字节型buffer数组 byte[] buffer = new byte[100]; //定义一个临时变量，用于接受调用输入流read方法读取数据的量 int temp = fis.read(buffer,0,b.length); //调用输出流的write方法写入数据 fos.write(buffer,0,temp); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; //finally进行结尾处理 finally&#123; try&#123; fis.close(); fos.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 大文件的读写 调节buffer数组的大小； 对read，write方法采取while循环； 示例 2：1234567while(true)&#123; int temp = fis.read(buffer,0,buffer.length); if(temp == -1)&#123; break; &#125; fos.write(buffer,0,temp);&#125; 字符流 字符流：是以对写文件时，以字符为基础 字节输入流：Reader &lt;–FileReader int read(char [] c, int off, int length ) 字节输出流：Writer &lt;–FileWriter void writer(char [] c, int off, int length) 示例 3：12345678910111213141516171819202122232425262728293031import java.io.*;public class TestChar&#123; public static void main(String args[])&#123; FileReader fr = null; FileWriter fw = null; try&#123; fr = new FileReader("d:/java/9.5/read.txt"); fw = new FileWriter("d:/java/9.5/write.txt"); char [] buffer = new char[1024]; while(true)&#123; int temp = fr.read(buffer, 0, buffer.length); if(temp == -1)&#123; break; &#125; fw.write(buffer, 0, temp); &#125; &#125; catch(Exception e)&#123; System.out.println(e); &#125; finally&#123; try&#123; fr.close(); fw.close(); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125; &#125;&#125;]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[获取键盘输入]]></title>
-    <url>%2Fpages%2F828295ba%2F</url>
-    <content type="text"><![CDATA[123456789/**Java获取键盘输入值*/public static void main(String args[])&#123; Scanner sc = new Scanner(Systen.in); String s = sc.nextLine(); //接受字符和字符串类型的输入 int age = sc.nextInt(); float salary = sc.nextFloat();&#125; 简单运行、退出方法12345678910111213141516171819202122import java.util.Scanner;public class Test &#123; public static void main(String args[]) &#123; int t = 1;itcast : while(t &gt; 0) &#123; System.out.println("1.运行：\n" + "2.退出："); Scanner sc1 = new Scanner(System.in); int i = sc1.nextInt(); switch(i) &#123; case 1: //这里输入具体的计算程序 break; case 2: break itcast; default: System.out.println("输入有误，请重新输入"); break; &#125; &#125; &#125;&#125;]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[进制转换]]></title>
-    <url>%2Fpages%2F7dc91154%2F</url>
-    <content type="text"><![CDATA[十进制转换二进制 将一个十进制数转换为二进制，就是将这个数不断取余的过程，将这个数除以 2，得到了商和余数，然后将商不断除以 2，直到商为 0，然后将余数倒过来排列，所得到的数就是转换的二进制结果。 二进制转八进制将二进制数自右向左每三位分成一段，然后将每三位数转换为一位八进制数。 例如：111000101 = 111 000 101 = 0 7 0 5 八进制以 0 开头。 二进制转十六进制 将二进制数自右向左每四位分成一段，然后将每四位转换为一位十六进制数。 例如：111010100110=1110 1010 0110=0x E A 6 十六进制以 0x 或者 0X 开头。]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[throw和throws]]></title>
-    <url>%2Fpages%2F29cc0096%2F</url>
-    <content type="text"><![CDATA[throwthrow的作用 如果Java虚拟机不能判断异常e，可以生成异常对象e，用throw加上这个异常对象抛出这个异常。&gt;示例：123456789101112131415161718package src;class People&#123; private int age; public void setAge(int age)&#123; if(age &lt; 0)&#123; RuntimeException e = new RuntimeException("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); people.setAge(-20); &#125;&#125; 运行结果： throwsthrows 声明一个函数可能产生异常，函数不对异常进行处理，在调用函数的地方对异常进行处理。&gt;示例：1234567891011121314151617181920212223package src1;class People&#123; private int age; public void setAge(int age) throws Exception&#123; if(age &lt; 0)&#123; Exception e = new Exception("年龄不能为负数"); throw e; &#125; this.age = age; System.out.println(age); &#125;&#125;class Test&#123; public static void main(String args[])&#123; People people = new People(); try&#123; people.setAge(-20); &#125; catch(Exception e)&#123; System.out.println(e); &#125; &#125;&#125; 运行结果：]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java中的异常]]></title>
-    <url>%2Fpages%2Ff029d2bb%2F</url>
-    <content type="text"><![CDATA[什么是异常 异常的分类 try…catch…finally结构的使用方法 1. 什么是异常？&gt; 异常(Exception)：中断了正常指令流的事件。 异常是一个对象； 异常产生于程序运行时； 指令流：程序执行时一系列的连续指令称为指令流。&gt;示例： 12345class Test&#123; public static void main(String args[])&#123; int i = 1 / 0; &#125;&#125; 抛出异常： Exception in thread “main” java.lang.ArithmeticException: / by zero at Test3.main(Test3.java:6) Exception in thread “main” ：在主线程中出现异常； ArithmeticException：异常的名称，算术异常； / by zero：被0除； at Test.main(Test.java:3)：异常位置； 2. 异常的分类JDK提供的类： Throwable：所有异常的父类； Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭； Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption RuntimeException + Error 和其子类都是属于uncheckexceptionException类中除了 RuntimeException之外的类，都是属于checkexception ExceptioncheckException&gt;checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。示例：123456class TestCheck&#123; public static void main(String args[])&#123; //CheckException Thread.sleep(1000); //让当前线程休眠1000ms &#125;&#125; 运行结果： uncheckException（ RuntimeException）&gt;运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成示例：123456class Test&#123; public static void main(String args[])&#123; //UncheckException int i = 1 / 0; &#125;&#125; 运行结果： 3. try…catch…finally结构&gt;12345678910111213try&#123; //代码A //有可能出现异常的代码B //代码C&#125;catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //处理异常的代码D //代码E&#125;finally&#123; //异常的出口 //执行扫尾工作的代码F&#125; 如果try中代码B没有异常：执行代码A-B-C-F如果try中代码B出现异常：执行代码A-B-D-E-FuncheckException&gt;1234567891011121314151617181920//uncheckExceptionclass TestCheck&#123; public static void main(String args[])&#123; System.out.println(1); try&#123; System.out.println(2); //有可能出现异常的代码 int i = 1/0; System.out.println(3); &#125; catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); &#125; finally&#123; //异常的出口 System.out.println("finally"); &#125; &#125;&#125; 运行结果： checkException&gt;1234567891011121314151617181920//checkExceptionclass TestCheck&#123; public static void main(String args[])&#123; System.out.println(1); try&#123; System.out.println(2); //有可能出现异常的代码 Thread.sleep(1000); //让当前线程休眠1000ms System.out.println(3); &#125; catch(Exception e)&#123; //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); &#125; finally&#123; //异常的出口 System.out.println("finally"); &#125; &#125;&#125; 运行结果：屏幕首先显示1，2，然后停顿1000ms，再显示3和finally]]></content>
       <categories>
         <category>Java</category>
       </categories>

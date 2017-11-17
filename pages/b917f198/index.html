@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Strange">
 <meta property="og:description" content="作用域1. 作用域是一套规则，负责收集并维护由所有声明的标识符（变量）组成的一系列查询，用于确定在何处以及如何查找变量（标识符），并实施一套非常严格的规则，用于确定当前执行的代码对这些标识符的访问权限。作用域就是函数或者变量能被访问到的范围。 2. 作用域有两种工作模型：  词法作用域(JavaScript)：词法作用域就是定义在词法阶段的作用域。 动态作用域(Bash脚本)  3. 全局变量会自">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-12T02:27:06.904Z">
+<meta property="og:updated_time" content="2017-11-17T13:07:56.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="作用域以及 LHS 和 RHS 查询">
 <meta name="twitter:description" content="作用域1. 作用域是一套规则，负责收集并维护由所有声明的标识符（变量）组成的一系列查询，用于确定在何处以及如何查找变量（标识符），并实施一套非常严格的规则，用于确定当前执行的代码对这些标识符的访问权限。作用域就是函数或者变量能被访问到的范围。 2. 作用域有两种工作模型：  词法作用域(JavaScript)：词法作用域就是定义在词法阶段的作用域。 动态作用域(Bash脚本)  3. 全局变量会自">
@@ -341,8 +341,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-12T02:27:06+00:00">
-                2017-11-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-17T13:07:56+00:00">
+                2017-11-17
               </time>
             
 
@@ -440,7 +440,7 @@
 <p>在严格模式下，eval() 函数拥有这自己的词法作用域，其中的声明将无法修改作用域。</p>
 <p>这个函数的副作用是引擎无法在编译时对作用域查找进行优化，会导致代码运行变慢，不建议使用。</p>
 <h2 id="LHS-和-RHS查询"><a href="#LHS-和-RHS查询" class="headerlink" title="LHS 和 RHS查询"></a>LHS 和 RHS查询</h2><h3 id="LHS-查询"><a href="#LHS-查询" class="headerlink" title="LHS 查询"></a>LHS 查询</h3><p><strong>对变量进行赋值操作，那么就会使用 LHS 查询。</strong></p>
-<p>当引擎执行 LHS 查询时，如果在顶层（全局作用域）中也无法找到目标变量，<br>全局作用域中就会创建一个具有该名称的变量，并将其返还给引擎。</p>
+<p>当引擎执行 LHS 查询时，如果在顶层（全局作用域）中也无法找到目标变量，全局作用域中就会创建一个具有该名称的变量，并将其返还给引擎。</p>
 <p>严格模式禁止自动或隐式地创建全局变量。 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查询失败时类似的 ReferenceError 异常。</p>
 <h3 id="RHS-查询"><a href="#RHS-查询" class="headerlink" title="RHS 查询"></a>RHS 查询</h3><p><strong>查找获取某个变量的值，就会使用 RHS 查询。</strong></p>
 <p>如果 RHS 查询在所有嵌套的作用域中遍寻不到所需的变量，引擎就会抛出 ReferenceError 异常。</p>
@@ -492,8 +492,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pages/6ad0123c/" rel="next" title="js术语中英对照表">
-                <i class="fa fa-chevron-left"></i> js术语中英对照表
+              <a href="/pages/70cbbc9f/" rel="next" title="函数作用域及块作用域">
+                <i class="fa fa-chevron-left"></i> 函数作用域及块作用域
               </a>
             
           </div>
@@ -592,7 +592,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -614,7 +614,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">Tags</span>
                 </a>
               </div>
