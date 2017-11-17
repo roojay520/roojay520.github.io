@@ -1,5 +1,5 @@
 ---
-title: VSCode 配置 ESLint + Airbnb + vue
+title: VSCode 配置 ESLint + Airbnb + Vue
 tags:
     - VSCode
     - ESLint
