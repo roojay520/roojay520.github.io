@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/d4c7d8e9/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/e5332c52/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -374,7 +374,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/d4c7d8e9/" itemprop="url">JS基础基础</a></h2>
+                <a class="post-title-link" href="/pages/e5332c52/" itemprop="url">arguments和rest</a></h2>
         
 
         <div class="post-meta">
@@ -386,8 +386,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-12T02:22:42+00:00">
-                2017-11-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-18T03:31:00+00:00">
+                2017-11-18
               </time>
             
 
@@ -426,7 +426,7 @@
 
           
           
-             <span id="/pages/d4c7d8e9/" class="leancloud_visitors" data-flag-title="JS基础基础">
+             <span id="/pages/e5332c52/" class="leancloud_visitors" data-flag-title="arguments和rest">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -459,17 +459,14 @@
       
         
           
-          JS简介
-Netscape公司的Brendan Eich设计JS，只能运行在浏览器中。
-Ryan Dahl于2009年设计node.js，JS可以在服务端运行。
-JavaScript 是脚本语言。浏览器会在读取代码时，逐行地执行脚本代码。而传统编程语言，会在执行前对所有代码进行编译。
-proto 实现继承关系。
-对象名.prototype在原型对象层次优化子对象对公共方法的调用。
-语法糖使java
+          arguments 参数
+只在函数内部起作用，指向当前函数调用者传入的所有参数。
+
+1234567var bar = (x) =&gt; &#123;    console.log(x); // a    for(let i = 0; i &lt; arguments.length; i++)&#123;        console.log(arguments[i]); // 根据参数索引打印参
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/d4c7d8e9/#more" rel="contents">
+            <a class="btn" href="/pages/e5332c52/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -520,7 +517,7 @@ proto 实现继承关系。
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/218ff168/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/9bc01b38/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -539,7 +536,7 @@ proto 实现继承关系。
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/218ff168/" itemprop="url">javascript DOM</a></h2>
+                <a class="post-title-link" href="/pages/9bc01b38/" itemprop="url">内部类</a></h2>
         
 
         <div class="post-meta">
@@ -551,8 +548,8 @@ proto 实现继承关系。
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-12T02:22:17+00:00">
-                2017-11-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-18T03:31:00+00:00">
+                2017-11-18
               </time>
             
 
@@ -574,8 +571,8 @@ proto 实现继承关系。
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -591,7 +588,7 @@ proto 实现继承关系。
 
           
           
-             <span id="/pages/218ff168/" class="leancloud_visitors" data-flag-title="javascript DOM">
+             <span id="/pages/9bc01b38/" class="leancloud_visitors" data-flag-title="内部类">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -624,18 +621,16 @@ proto 实现继承关系。
       
         
           
-          消息窗口
-document.write(字符串或者变量或者 Html 标签); 直接在向 html 的输出流中写内容，直接在网页中输出容。
-alert(字符串或变量); 弹出一个包含确定的消息对话框。
+          
+内部类：一个类定义在另一个类的里面。
 
-confirm(stri); 弹出一个包含确定和取消的消息对话框。
-
-str 消息框显示的文本。
-返回值为 Boolean 类型，通过返回值判断用户点击了什么按钮，确定为 true ，取消为 fa
+示例：&gt;1234class A&#123;	class B&#123;	&#125;&#125;
+B这个类被称之为A的内部类。编译之后生成A.class和A$B.class。内部类可以随意使用外部类的成员变量。
+内部类的使用方法示例：1234567891011121314151617181920212223class A&#123;	int i;	c
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/218ff168/#more" rel="contents">
+            <a class="btn" href="/pages/9bc01b38/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -686,7 +681,7 @@ str 消息框显示的文本。
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/1a147173/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/eda1a9a9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -705,7 +700,7 @@ str 消息框显示的文本。
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/1a147173/" itemprop="url">html基础</a></h2>
+                <a class="post-title-link" href="/pages/eda1a9a9/" itemprop="url">css基础</a></h2>
         
 
         <div class="post-meta">
@@ -717,8 +712,8 @@ str 消息框显示的文本。
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-12T02:22:07+00:00">
-                2017-11-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-18T03:31:00+00:00">
+                2017-11-18
               </time>
             
 
@@ -740,8 +735,8 @@ str 消息框显示的文本。
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -757,7 +752,7 @@ str 消息框显示的文本。
 
           
           
-             <span id="/pages/1a147173/" class="leancloud_visitors" data-flag-title="html基础">
+             <span id="/pages/eda1a9a9/" class="leancloud_visitors" data-flag-title="css基础">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -790,185 +785,25 @@ str 消息框显示的文本。
       
         
           
-          完整 HTML 树
+          CSS 导入
+在 HTML 中引入 CSS 的方法主要有四种，它们分别是行内式、内嵌式、链接式和导入式。
 
-相关的 CSS 文件（针对样式）：
 
-1&lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+行内式
 
-相关的 JavaScript 文件（更改渲染和行为的多用途脚本）：
 
-1&lt;script src="myjavascripts.js"&gt;&lt;/script&gt;
+在标记的 style 属性中设定 CSS 样式。
 
-粗体斜体
+123&lt;p style=color:white; background-color:blue;&gt;Tihs is a test text.&lt;/p&gt;
 
-1234&lt;!
+内嵌式
+
+
+将 CSS 样式集中写在网页的&lt;he
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/1a147173/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/9891ebc8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Roojay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Strange">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/pages/9891ebc8/" itemprop="url">git基础</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-12T02:21:03+00:00">
-                2017-11-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/pages/9891ebc8/" class="leancloud_visitors" data-flag-title="git基础">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          git 基础命令git 全局配置12git config —global	user.name &quot;roojay&quot;git	config —global	user.email &quot;roojay520@gmail.com&quot;
-创建文件夹 test1mkdir test
-切换到 test 文件夹1cd test
-新建 readme.md 文件1touch readme.m
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/pages/9891ebc8/#more" rel="contents">
+            <a class="btn" href="/pages/eda1a9a9/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -1050,8 +885,8 @@ str 消息框显示的文本。
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-12T02:20:42+00:00">
-                2017-11-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-18T03:31:00+00:00">
+                2017-11-18
               </time>
             
 
@@ -1168,6 +1003,168 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/9891ebc8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Roojay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Strange">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/pages/9891ebc8/" itemprop="url">git基础</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-18T03:31:00+00:00">
+                2017-11-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/pages/9891ebc8/" class="leancloud_visitors" data-flag-title="git基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          git 基础命令git 全局配置12git config —global	user.name &quot;roojay&quot;git	config —global	user.email &quot;roojay520@gmail.com&quot;
+创建文件夹 test1mkdir test
+切换到 test 文件夹1cd test
+新建 readme.md 文件1touch readme.m
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/pages/9891ebc8/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1222,7 +1219,7 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -1244,7 +1241,7 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">Tags</span>
                 </a>
               </div>
