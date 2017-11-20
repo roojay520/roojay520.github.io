@@ -13,17 +13,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[盒子模型]]></title>
-    <url>%2Fpages%2F998dffd6%2F</url>
-    <content type="text"><![CDATA[浏览器中的每个视图可以看成是一个一个嵌套的盒子. box-size 元素大小 = boder + padding + contentwidth box-size: boder-size;（兼容性） 它会让系统计算元素大小时会将 boder padding 包括在内。不包含外边距(margin)。 12345&#123; -webkit-box-size: boder-size; -ms-box-size: boder-size; -moz-box-size: boder-size;&#125; 浏览器前缀 -webkit -ms -moz flex 弹性布局 用于 Chrome 29+、IE 11+ 和 Mozilla 28+。要支持 Safari，必须添加 -webkit- 前缀： 1234&#123; display: -webkit-flex; display: flex;&#125;]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[进制快速转换]]></title>
     <url>%2Fpages%2F8b41c91c%2F</url>
     <content type="text"><![CDATA[十进制转其他进制12345const i = 10;i.toString(2); // 2 进制 1010i.toString(8); // 8 进制 12i.toString(16); // 16 进制 ai.toString(32); // 32 进制 a 其他进制转十进制123parsetInt(x, 2); // 2 进制转 10进制parsetInt(x, 8); // 8 进制转 10 进制parsetInt(x, 16); // 16 进制转 10 进制 非十进制转十进制先转化为10进制， 然后再利用toString(参数)， 转化成不同的进制。 1parsetInt(x, 2).toString(8); // 2 进制转 8进制]]></content>
@@ -35,14 +24,25 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[变量作用域]]></title>
-    <url>%2Fpages%2F7395d6fb%2F</url>
-    <content type="text"><![CDATA[变量作用域 JavaScript 的函数可以嵌套，内部函数可以访问外部函数定义的变量，反之则不行。 var和let创建的变量区别在于: var声明的变量作用域为最近的函数块，let声明的变量作用域为最近的闭合块，往往小于函数块。 var声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出undefined。 let声明不受变量提升的约束，这意味着let声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 ReferenceError（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。这个变量处于从块开始到 let 初始化处理的”暂存死区“之中。let声明的变量不能在实际声明之前使用，否则会抛出ReferenceError异常。]]></content>
+    <title><![CDATA[盒子模型]]></title>
+    <url>%2Fpages%2F998dffd6%2F</url>
+    <content type="text"><![CDATA[浏览器中的每个视图可以看成是一个一个嵌套的盒子. box-size 元素大小 = boder + padding + contentwidth box-size: boder-size;（兼容性） 它会让系统计算元素大小时会将 boder padding 包括在内。不包含外边距(margin)。 12345&#123; -webkit-box-size: boder-size; -ms-box-size: boder-size; -moz-box-size: boder-size;&#125; 浏览器前缀 -webkit -ms -moz flex 弹性布局 用于 Chrome 29+、IE 11+ 和 Mozilla 28+。要支持 Safari，必须添加 -webkit- 前缀： 1234&#123; display: -webkit-flex; display: flex;&#125;]]></content>
       <categories>
-        <category>JavaScript</category>
+        <category>CSS</category>
       </categories>
       <tags>
-        <tag>YouDon&#39;tKnowJavaScript</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[淘宝双飞翼布局]]></title>
+    <url>%2Fpages%2Fff1e4b17%2F</url>
+    <content type="text"><![CDATA[淘宝双飞翼布局 淘宝双飞翼布局和圣杯布局在前半部分的思路都差不多，只是在解决中间栏内容被挡住时所采用的方法不同。双飞翼布局在 main 下多一个增加 div，不使用相对定位，只用浮动和负边距，解决三栏液态式布局。 DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证主列优先加载。 1234567891011&lt;div class="header"&gt; &lt;strong&gt;三栏布局之双飞翼布局&lt;/strong&gt; &lt;/div&gt; &lt;div class="container"&gt; &lt;div class="col main"&gt; &lt;div class="main-wrap"&gt;我是一个宽度自适应的主列。&lt;/div&gt; &lt;/div&gt; &lt;div class="col sub"&gt;我是一个子列。&lt;/div&gt; &lt;div class="col extra"&gt;我是一个附加列。&lt;/div&gt; &lt;/div&gt; &lt;div class="footer"&gt;&lt;/div&gt; 以上 DOM 结构中，在 main 中添加了一个子 div，用来解决中间列内容被遮挡问题。 CSS 样式去掉相对定位的使用，去掉了父容器的 padding，使用中间栏新增 div 的 margin 解决遮挡问题。 12345678910111213141516171819202122232425262728293031323334353637383940414243body &#123; padding: 0; margin: 0; min-width: 440px;&#125;.header,.footer &#123; background-color: ##1c262f; color: white; text-align: center; font-size: 1.5em;&#125;.container &#123; width: 100%; min-height: 200px;&#125;.col &#123; float: left; color: white; text-align: justify; /* 文字两端对齐 */ min-height:120px;&#125;.main&#123; width: 100%;&#125;.sub &#123; background-color: ##ea4335; width: 120px; margin-left: -100%;&#125;.extra &#123; background-color: ##34a853; width: 200px; margin-left: -200px;&#125;.main-wrap &#123; margin-left: 120px; margin-right: 200px; background-color: ##4285f3;&#125;.footr &#123; clear: both;&#125; 为 body 加上一个最小宽度(2 * sub width + extra width),避免网页放大时中间栏被挤到消失。]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -76,14 +76,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[淘宝双飞翼布局]]></title>
-    <url>%2Fpages%2Fff1e4b17%2F</url>
-    <content type="text"><![CDATA[淘宝双飞翼布局 淘宝双飞翼布局和圣杯布局在前半部分的思路都差不多，只是在解决中间栏内容被挡住时所采用的方法不同。双飞翼布局在 main 下多一个增加 div，不使用相对定位，只用浮动和负边距，解决三栏液态式布局。 DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证主列优先加载。 1234567891011&lt;div class="header"&gt; &lt;strong&gt;三栏布局之双飞翼布局&lt;/strong&gt; &lt;/div&gt; &lt;div class="container"&gt; &lt;div class="col main"&gt; &lt;div class="main-wrap"&gt;我是一个宽度自适应的主列。&lt;/div&gt; &lt;/div&gt; &lt;div class="col sub"&gt;我是一个子列。&lt;/div&gt; &lt;div class="col extra"&gt;我是一个附加列。&lt;/div&gt; &lt;/div&gt; &lt;div class="footer"&gt;&lt;/div&gt; 以上 DOM 结构中，在 main 中添加了一个子 div，用来解决中间列内容被遮挡问题。 CSS 样式去掉相对定位的使用，去掉了父容器的 padding，使用中间栏新增 div 的 margin 解决遮挡问题。 12345678910111213141516171819202122232425262728293031323334353637383940414243body &#123; padding: 0; margin: 0; min-width: 440px;&#125;.header,.footer &#123; background-color: ##1c262f; color: white; text-align: center; font-size: 1.5em;&#125;.container &#123; width: 100%; min-height: 200px;&#125;.col &#123; float: left; color: white; text-align: justify; /* 文字两端对齐 */ min-height:120px;&#125;.main&#123; width: 100%;&#125;.sub &#123; background-color: ##ea4335; width: 120px; margin-left: -100%;&#125;.extra &#123; background-color: ##34a853; width: 200px; margin-left: -200px;&#125;.main-wrap &#123; margin-left: 120px; margin-right: 200px; background-color: ##4285f3;&#125;.footr &#123; clear: both;&#125; 为 body 加上一个最小宽度(2 * sub width + extra width),避免网页放大时中间栏被挤到消失。]]></content>
+    <title><![CDATA[变量作用域]]></title>
+    <url>%2Fpages%2F7395d6fb%2F</url>
+    <content type="text"><![CDATA[变量作用域 JavaScript 的函数可以嵌套，内部函数可以访问外部函数定义的变量，反之则不行。 var和let创建的变量区别在于: var声明的变量作用域为最近的函数块，let声明的变量作用域为最近的闭合块，往往小于函数块。 var声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出undefined。 let声明不受变量提升的约束，这意味着let声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 ReferenceError（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。这个变量处于从块开始到 let 初始化处理的”暂存死区“之中。let声明的变量不能在实际声明之前使用，否则会抛出ReferenceError异常。]]></content>
       <categories>
-        <category>CSS</category>
+        <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>YouDon&#39;tKnowJavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -197,14 +197,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[作用域以及 LHS 和 RHS 查询]]></title>
-    <url>%2Fpages%2Fb917f198%2F</url>
-    <content type="text"><![CDATA[作用域1. 作用域是一套规则，负责收集并维护由所有声明的标识符（变量）组成的一系列查询，用于确定在何处以及如何查找变量（标识符），并实施一套非常严格的规则，用于确定当前执行的代码对这些标识符的访问权限。作用域就是函数或者变量能被访问到的范围。 2. 作用域有两种工作模型： 词法作用域(JavaScript)：词法作用域就是定义在词法阶段的作用域。 动态作用域(Bash脚本) 3. 全局变量会自动成为全局对象（比如浏览器中的 window 对象）的属性，因此可以不直接通过全局对象的词法名称，而是间接地通过对全局对象属性的引用来对其进行访问。例如：window.a 这样可以访问到被局部同名变量所遮蔽的全局变量。 执行上下文执行上下文在运行时确定，词法作用域在定义时确定。 欺骗作用域无论函数在哪里被调用，也无论它如何被调用，它的词法作用域都只由函数被声明时所处的位置决定。 JavaScript 中有两个机制可以“欺骗”词法作用域：eval(..) 和 with。前者可以对一段包含一个或多个声明的“代码”字符串进行演算，并借此来修改已经存在的词法作用域（在运行时）。后者本质上是通过将一个对象的引用当作作用域来处理，将对象的属性当作作用域中的标识符来处理，从而创建了一个新的词法作用域（同样是在运行时）。 eval()函数欺骗JavaScript 中的 eval() 函数可以接受一个字符串为参数，并将传入的字符串视为好像在书写时就存在于程序中这个位置的 JavaScript 代码进行执行。例如： 1234567var a = 66;function bar(str, b) &#123; eval(str); console.log(a, b); // 55 10&#125;bar('var a = 55;', 10); 使用 eval() 函数可以将代码以动态形式插入一个指定位置，如果 eval() 中所执行的代码包含一个或多个声明（函数或者变量），就会对词法作用域的环境进行修改，达到欺诈伪装的效果。 在严格模式下，eval() 函数拥有这自己的词法作用域，其中的声明将无法修改作用域。 这个函数的副作用是引擎无法在编译时对作用域查找进行优化，会导致代码运行变慢，不建议使用。 LHS 和 RHS查询LHS 查询对变量进行赋值操作，那么就会使用 LHS 查询。 当引擎执行 LHS 查询时，如果在顶层（全局作用域）中也无法找到目标变量，全局作用域中就会创建一个具有该名称的变量，并将其返还给引擎。 严格模式禁止自动或隐式地创建全局变量。 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查询失败时类似的 ReferenceError 异常。 RHS 查询查找获取某个变量的值，就会使用 RHS 查询。 如果 RHS 查询在所有嵌套的作用域中遍寻不到所需的变量，引擎就会抛出 ReferenceError 异常。]]></content>
+    <title><![CDATA[js术语中英对照表]]></title>
+    <url>%2Fpages%2F6ad0123c%2F</url>
+    <content type="text"><![CDATA[编译相关 compile 编译 tokenizing 分词 lexing 词法分析 toekn 词法单元 parsing 解析/语法分析 Abstract Syntax Tree(AST) 抽象语法树 raw code 代码生成 LHS(Left-hand Side) 赋值操作左侧，进行赋值操作 RHS(Right-hand Side) 赋值操作非左侧，进行取值操作 异常 ReferenceError 引用错误 TypeError 类型错误 函数Immediately Invoked Function Expression(IIFE) 立即执行函数表达式Temporal dead zone(TDZ) 暂时性死区Execution context 执行上下文]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>YouDon&#39;tKnowJavaScript</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -230,9 +230,20 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[js术语中英对照表]]></title>
-    <url>%2Fpages%2F6ad0123c%2F</url>
-    <content type="text"><![CDATA[编译相关 compile 编译 tokenizing 分词 lexing 词法分析 toekn 词法单元 parsing 解析/语法分析 Abstract Syntax Tree(AST) 抽象语法树 raw code 代码生成 LHS(Left-hand Side) 赋值操作左侧，进行赋值操作 RHS(Right-hand Side) 赋值操作非左侧，进行取值操作 异常 ReferenceError 引用错误 TypeError 类型错误 函数Immediately Invoked Function Expression(IIFE) 立即执行函数表达式Temporal dead zone(TDZ) 暂时性死区Execution context 执行上下文]]></content>
+    <title><![CDATA[作用域以及 LHS 和 RHS 查询]]></title>
+    <url>%2Fpages%2Fb917f198%2F</url>
+    <content type="text"><![CDATA[作用域1. 作用域是一套规则，负责收集并维护由所有声明的标识符（变量）组成的一系列查询，用于确定在何处以及如何查找变量（标识符），并实施一套非常严格的规则，用于确定当前执行的代码对这些标识符的访问权限。作用域就是函数或者变量能被访问到的范围。 2. 作用域有两种工作模型： 词法作用域(JavaScript)：词法作用域就是定义在词法阶段的作用域。 动态作用域(Bash脚本) 3. 全局变量会自动成为全局对象（比如浏览器中的 window 对象）的属性，因此可以不直接通过全局对象的词法名称，而是间接地通过对全局对象属性的引用来对其进行访问。例如：window.a 这样可以访问到被局部同名变量所遮蔽的全局变量。 执行上下文执行上下文在运行时确定，词法作用域在定义时确定。 欺骗作用域无论函数在哪里被调用，也无论它如何被调用，它的词法作用域都只由函数被声明时所处的位置决定。 JavaScript 中有两个机制可以“欺骗”词法作用域：eval(..) 和 with。前者可以对一段包含一个或多个声明的“代码”字符串进行演算，并借此来修改已经存在的词法作用域（在运行时）。后者本质上是通过将一个对象的引用当作作用域来处理，将对象的属性当作作用域中的标识符来处理，从而创建了一个新的词法作用域（同样是在运行时）。 eval()函数欺骗JavaScript 中的 eval() 函数可以接受一个字符串为参数，并将传入的字符串视为好像在书写时就存在于程序中这个位置的 JavaScript 代码进行执行。例如： 1234567var a = 66;function bar(str, b) &#123; eval(str); console.log(a, b); // 55 10&#125;bar('var a = 55;', 10); 使用 eval() 函数可以将代码以动态形式插入一个指定位置，如果 eval() 中所执行的代码包含一个或多个声明（函数或者变量），就会对词法作用域的环境进行修改，达到欺诈伪装的效果。 在严格模式下，eval() 函数拥有这自己的词法作用域，其中的声明将无法修改作用域。 这个函数的副作用是引擎无法在编译时对作用域查找进行优化，会导致代码运行变慢，不建议使用。 LHS 和 RHS查询LHS 查询对变量进行赋值操作，那么就会使用 LHS 查询。 当引擎执行 LHS 查询时，如果在顶层（全局作用域）中也无法找到目标变量，全局作用域中就会创建一个具有该名称的变量，并将其返还给引擎。 严格模式禁止自动或隐式地创建全局变量。 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查询失败时类似的 ReferenceError 异常。 RHS 查询查找获取某个变量的值，就会使用 RHS 查询。 如果 RHS 查询在所有嵌套的作用域中遍寻不到所需的变量，引擎就会抛出 ReferenceError 异常。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>YouDon&#39;tKnowJavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[for-in和for-of]]></title>
+    <url>%2Fpages%2Ff5b5d35a%2F</url>
+    <content type="text"><![CDATA[for-in for-in循环遍历的是对象的属性名称,可以将一个对象的属性循环遍历出来。12345678var obj = &#123; name: 'XiaoMing', age: 22, sex: 'man'&#125;;for(let key in obj)&#123; console.log(key); // 'name' 'age' 'sex'&#125; 数组也是对象，for-in可以直接循环遍历出Array的索引，索引类型为 String 而不是 Number。1234var array = ['a', 'b', 'c'];for(let i in array)&#123; console.log(i); // 索引'0' '1' '2'&#125;]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -249,17 +260,6 @@
       </categories>
       <tags>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[for-in和for-of]]></title>
-    <url>%2Fpages%2Ff5b5d35a%2F</url>
-    <content type="text"><![CDATA[for-in for-in循环遍历的是对象的属性名称,可以将一个对象的属性循环遍历出来。12345678var obj = &#123; name: 'XiaoMing', age: 22, sex: 'man'&#125;;for(let key in obj)&#123; console.log(key); // 'name' 'age' 'sex'&#125; 数组也是对象，for-in可以直接循环遍历出Array的索引，索引类型为 String 而不是 Number。1234var array = ['a', 'b', 'c'];for(let i in array)&#123; console.log(i); // 索引'0' '1' '2'&#125;]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>

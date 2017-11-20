@@ -386,7 +386,7 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T04:44:41+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T05:12:50+00:00">
                 2017-11-20
               </time>
             
@@ -551,7 +551,7 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T04:44:41+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T05:12:50+00:00">
                 2017-11-20
               </time>
             
@@ -660,7 +660,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/ff1e4b17/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/7395d6fb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -679,7 +679,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/ff1e4b17/" itemprop="url">淘宝双飞翼布局</a></h2>
+                <a class="post-title-link" href="/pages/7395d6fb/" itemprop="url">变量作用域</a></h2>
         
 
         <div class="post-meta">
@@ -691,7 +691,7 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T04:44:41+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T05:12:50+00:00">
                 2017-11-20
               </time>
             
@@ -714,8 +714,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -731,7 +731,7 @@
 
           
           
-             <span id="/pages/ff1e4b17/" class="leancloud_visitors" data-flag-title="淘宝双飞翼布局">
+             <span id="/pages/7395d6fb/" class="leancloud_visitors" data-flag-title="变量作用域">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -764,15 +764,16 @@
       
         
           
-          淘宝双飞翼布局
-淘宝双飞翼布局和圣杯布局在前半部分的思路都差不多，只是在解决中间栏内容被挡住时所采用的方法不同。双飞翼布局在 main 下多一个增加 div，不使用相对定位，只用浮动和负边距，解决三栏液态式布局。
-
-DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证主列优先加载。
-1234567891011&lt;div class="header"&gt;        &lt;s
+          变量作用域
+JavaScript 的函数可以嵌套，内部函数可以访问外部函数定义的变量，反之则不行。
+var和let创建的变量区别在于:
+var声明的变量作用域为最近的函数块，let声明的变量作用域为最近的闭合块，往往小于函数块。
+var声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出undefined。
+let声明不受变量提升的约束，这意味着let声明不会被提升到当前执
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/ff1e4b17/#more" rel="contents">
+            <a class="btn" href="/pages/7395d6fb/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -854,7 +855,7 @@ DOM 结构在 DOM 中按照主列、子列、附加列的顺序排列，保证�
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T04:44:41+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T05:12:50+00:00">
                 2017-11-20
               </time>
             
@@ -1016,7 +1017,7 @@ join() 数组连接成一个字符串
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T04:44:41+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T05:12:50+00:00">
                 2017-11-20
               </time>
             
@@ -1438,7 +1439,7 @@ join() 数组连接成一个字符串
         av: AV,
         el: '#vcomments' ,
         verify: true,
-        notify: false,
+        notify: true,
         app_id: 'GE64fXlzDQYUxw40DAMVrNte-gzGzoHsz',
         app_key: 'w9OWcYkGH8nzrLwX97UKGnK1',
         placeholder: 'Any good suggestions?'
