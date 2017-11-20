@@ -368,7 +368,7 @@ valine:
   enable: true
   appid:  GE64fXlzDQYUxw40DAMVrNte-gzGzoHsz
   appkey:  w9OWcYkGH8nzrLwX97UKGnK1
-  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  notify: true # mail notifier , https://github.com/xCss/Valine/wiki
   verify: true
   placeholder: Any good suggestions?
 
