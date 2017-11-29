@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -144,7 +144,7 @@
 <meta property="og:url" content="http://roojay.com/page/5/index.html">
 <meta property="og:site_name" content="Strange">
 <meta property="og:description" content="code,notes,web,javascript.font end">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Strange">
 <meta name="twitter:description" content="code,notes,web,javascript.font end">
@@ -163,7 +163,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: 'undefined',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -195,7 +195,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -244,7 +244,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -254,7 +254,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            关于
           </a>
         </li>
       
@@ -264,7 +264,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -274,7 +274,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            分类
           </a>
         </li>
       
@@ -284,7 +284,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -297,7 +297,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            搜索
           </a>
         </li>
       
@@ -317,7 +317,7 @@
     </span>
     <div class="local-search-input-wrapper">
       <input autocomplete="off"
-             placeholder="Searching..." spellcheck="false"
+             placeholder="搜索..." spellcheck="false"
              type="text" id="local-search-input">
     </div>
   </div>
@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/e5332c52/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/1a147173/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -374,7 +374,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/e5332c52/" itemprop="url">arguments和rest</a></h2>
+                <a class="post-title-link" href="/pages/1a147173/" itemprop="url">html基础</a></h2>
         
 
         <div class="post-meta">
@@ -384,10 +384,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T05:12:50+00:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T06:03:05+00:00">
+                2017-11-29
               </time>
             
 
@@ -405,12 +405,12 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
                   </a>
                 </span>
 
@@ -426,13 +426,13 @@
 
           
           
-             <span id="/pages/e5332c52/" class="leancloud_visitors" data-flag-title="arguments和rest">
+             <span id="/pages/1a147173/" class="leancloud_visitors" data-flag-title="html基础">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Visitors&#58;</span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -459,15 +459,24 @@
       
         
           
-          arguments 参数
-只在函数内部起作用，指向当前函数调用者传入的所有参数。
+          完整 HTML 树
 
-1234567var bar = (x) =&gt; &#123;    console.log(x); // a    for(let i = 0; i &lt; arguments.length; i++)&#123;        console.log(arguments[i]); // 根据参数索引打印参
+相关的 CSS 文件（针对样式）：
+
+1&lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+
+相关的 JavaScript 文件（更改渲染和行为的多用途脚本）：
+
+1&lt;script src="myjavascripts.js"&gt;&lt;/script&gt;
+
+粗体斜体
+
+1234&lt;!
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/e5332c52/#more" rel="contents">
-              Weiterlesen &raquo;
+            <a class="btn" href="/pages/1a147173/#more" rel="contents">
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -517,7 +526,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/b917f198/">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/91b6115c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roojay">
@@ -536,7 +545,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pages/b917f198/" itemprop="url">作用域以及 LHS 和 RHS 查询</a></h2>
+                <a class="post-title-link" href="/pages/91b6115c/" itemprop="url">button常用设置</a></h2>
         
 
         <div class="post-meta">
@@ -546,10 +555,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T05:12:50+00:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T06:03:05+00:00">
+                2017-11-29
               </time>
             
 
@@ -567,12 +576,12 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -588,13 +597,13 @@
 
           
           
-             <span id="/pages/b917f198/" class="leancloud_visitors" data-flag-title="作用域以及 LHS 和 RHS 查询">
+             <span id="/pages/91b6115c/" class="leancloud_visitors" data-flag-title="button常用设置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Visitors&#58;</span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -621,180 +630,14 @@
       
         
           
-          作用域1. 作用域是一套规则，负责收集并维护由所有声明的标识符（变量）组成的一系列查询，用于确定在何处以及如何查找变量（标识符），并实施一套非常严格的规则，用于确定当前执行的代码对这些标识符的访问权限。作用域就是函数或者变量能被访问到的范围。
-2. 作用域有两种工作模型：
-
-词法作用域(JavaScript)：词法作用域就是定义在词法阶段的作用域。
-动态作用域(Bash脚本)
-
-3. 全局变量会自
+          鼠标样式cursor：定网页浏览时用户鼠标指针的样式。
+cursor：pointer； 设定鼠标的形状为一只伸出食指的手，这也是绝大多数浏览器里面鼠标停留在网页链接上方时候的样式。default 箭头。crosshair 十字progress 沙漏
+按钮颜色平时的状态：1234567891011121314151617181920212223242526.btn &#123;    // 未按下时
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pages/b917f198/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/f5b5d35a/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Roojay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Strange">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/pages/f5b5d35a/" itemprop="url">for-in和for-of</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T05:12:50+00:00">
-                2017-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/pages/f5b5d35a/" class="leancloud_visitors" data-flag-title="for-in和for-of">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          for-in
-for-in循环遍历的是对象的属性名称,可以将一个对象的属性循环遍历出来。12345678var obj = &#123;    name: 'XiaoMing',    age: 22,    sex: 'man'&#125;;for(let key in obj)&#123;    console.log(key); // 'name' 'age' 'sex'&#125;
-
-数组
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/pages/f5b5d35a/#more" rel="contents">
-              Weiterlesen &raquo;
+            <a class="btn" href="/pages/91b6115c/#more" rel="contents">
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -873,10 +716,10 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T05:12:50+00:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T06:03:05+00:00">
+                2017-11-29
               </time>
             
 
@@ -894,7 +737,7 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -921,7 +764,7 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Visitors&#58;</span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -967,7 +810,169 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/pages/eda1a9a9/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://roojay.com/pages/f5b5d35a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Roojay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Strange">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/pages/f5b5d35a/" itemprop="url">for-in和for-of</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T06:03:05+00:00">
+                2017-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/pages/f5b5d35a/" class="leancloud_visitors" data-flag-title="for-in和for-of">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          for-in
+for-in循环遍历的是对象的属性名称,可以将一个对象的属性循环遍历出来。12345678var obj = &#123;    name: 'XiaoMing',    age: 22,    sex: 'man'&#125;;for(let key in obj)&#123;    console.log(key); // 'name' 'age' 'sex'&#125;
+
+数组
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/pages/f5b5d35a/#more" rel="contents">
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1046,10 +1051,10 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T05:12:50+00:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T06:03:05+00:00">
+                2017-11-29
               </time>
             
 
@@ -1067,7 +1072,7 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1094,7 +1099,7 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Visitors&#58;</span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1129,7 +1134,7 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/pages/9891ebc8/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1170,7 +1175,7 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1220,8 +1225,8 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">60</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -1231,8 +1236,8 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
-                  <span class="site-state-item-name">Kategorien</span>
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
                 </a>
               </div>
             
@@ -1243,7 +1248,7 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">25</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">标签</span>
                 </a>
               </div>
             
@@ -1317,7 +1322,7 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -1325,7 +1330,7 @@ for-in循环遍历的是对象的属性名称,可以将一个对象的属性循�
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
 
 
 
