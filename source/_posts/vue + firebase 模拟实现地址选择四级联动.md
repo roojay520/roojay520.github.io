@@ -1,11 +1,11 @@
 ---
 title: vue + firebase 模拟实现地址选择四级联动
 mathjax: true
-date: 2017-11-18 11:26:21
-abbrlink:
+abbrlink: 90b768b0
 tags:
-    - Vue
-    - Firebase
+  - Vue
+  - Firebase
+date: 2017-11-18 11:26:21
 ---
 
 ## vue + firebase 模拟实现地址选择四级联动

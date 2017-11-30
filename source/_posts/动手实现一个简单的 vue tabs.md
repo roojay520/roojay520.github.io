@@ -1,12 +1,12 @@
 ---
 title: 动手实现一个简单的 vue tabs
 mathjax: true
-date: 2017-11-20 12:31:14
-abbrlink:
+abbrlink: '44515447'
 tags:
-    - tabs
-    - vue
+  - tabs
+  - vue
 categories: Vue
+date: 2017-11-20 12:31:14
 ---
 ## 动手写一个简单的 vue tabs 切换页
 
