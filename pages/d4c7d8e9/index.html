@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/"/>
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            JS基础基础 | 
+        
+        Strange
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="code,notes,web,javascript.font end">
+    <meta name="keywords" content=",JavaScript">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source//css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source//css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source//css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source//css/prettify/github-v2.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+    </style>
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source//css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Strange">
+    <meta name="msapplication-starturl" content="http://roojay.com/pages/d4c7d8e9/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Strange">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="q5eUPNsW0zcaeq4vIHco4tLTpAbErCb2hsPK4KkJikM" />
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://roojay.com/pages/d4c7d8e9/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="JS基础基础 | Strange">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="code,notes,web,javascript.font end">
+    <meta property="og:article:tag" content="JavaScript"> 
+
+    
+        <meta property="article:published_time" content="Sun Nov 12 2017 02:22:42 GMT+0000">
+        <meta property="article:modified_time" content="Sun Nov 12 2017 02:22:42 GMT+0000">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://roojay.com/pages/d4c7d8e9/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://roojay.com/pages/d4c7d8e9/index.html",
+    "headline": "JS基础基础",
+    "datePublished": "Sun Nov 12 2017 02:22:42 GMT+0000",
+    "dateModified": "Sun Nov 12 2017 02:22:42 GMT+0000",
+    "author": {
+        "@type": "Person",
+        "name": "Roojay",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Strange",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",JavaScript",
+    "description": "code,notes,web,javascript.font end",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JS简介"><span class="post-toc-text">JS简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础"><span class="post-toc-text">基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据类型"><span class="post-toc-text">数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符串（String）"><span class="post-toc-text">字符串（String）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数组-Array"><span class="post-toc-text">数组(Array)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数字-Number-所有数字以-64-位浮点数储存"><span class="post-toc-text">数字(Number) 所有数字以 64 位浮点数储存.</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#布尔-Boolean"><span class="post-toc-text">布尔(Boolean)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对象-Object"><span class="post-toc-text">对象(Object)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#日期-Date"><span class="post-toc-text">日期(Date)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#方法-function"><span class="post-toc-text">方法(function)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#空（Null）"><span class="post-toc-text">空（Null）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#未定义（Undefined）"><span class="post-toc-text">未定义（Undefined）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#强制转换"><span class="post-toc-text">强制转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#parseFloat"><span class="post-toc-text">parseFloat</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#parseInt"><span class="post-toc-text">parseInt</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#操作符"><span class="post-toc-text">操作符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#逻辑运算符"><span class="post-toc-text">逻辑运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#位运算符"><span class="post-toc-text">位运算符</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数"><span class="post-toc-text">函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#箭头函数"><span class="post-toc-text">箭头函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常见错误"><span class="post-toc-text">常见错误</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#适用场景"><span class="post-toc-text">适用场景</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#副作用"><span class="post-toc-text">副作用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#in-运算符"><span class="post-toc-text">in 运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#instanceof-运算符"><span class="post-toc-text">instanceof 运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其它运算符"><span class="post-toc-text">其它运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#typeof"><span class="post-toc-text">typeof</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单双引号"><span class="post-toc-text">单双引号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模板字符串"><span class="post-toc-text">模板字符串</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#变量"><span class="post-toc-text">变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JS-面向对象"><span class="post-toc-text">JS 面向对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建对象"><span class="post-toc-text">创建对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#继承"><span class="post-toc-text">继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#构造函数-原型"><span class="post-toc-text">构造函数 原型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法糖"><span class="post-toc-text">语法糖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#闭包"><span class="post-toc-text">闭包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AJAX-异步调用"><span class="post-toc-text">AJAX 异步调用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSON"><span class="post-toc-text">JSON</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                JS基础基础
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Roojay</strong>
+        <span>11月 12, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/pages/d4c7d8e9/" class="leancloud-views_num" data-flag-title="JS基础基础">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JS基础基础&url=http://roojay.com/pages/d4c7d8e9/index.html&pic=http://roojay.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=JS基础基础&url=http://roojay.com/pages/d4c7d8e9/index.html&via=Roojay" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://roojay.com/pages/d4c7d8e9/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://roojay.com/pages/d4c7d8e9/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="JS简介"><a href="#JS简介" class="headerlink" title="JS简介"></a>JS简介</h2><ul>
+<li>Netscape公司的Brendan Eich设计JS，只能运行在浏览器中。</li>
+<li>Ryan Dahl于2009年设计node.js，JS可以在服务端运行。</li>
+<li>JavaScript 是脚本语言。浏览器会在读取代码时，逐行地执行脚本代码。而传统编程语言，会在执行前对所有代码进行编译。</li>
+<li><em>proto</em> 实现继承关系。</li>
+<li>对象名.prototype在原型对象层次优化子对象对公共方法的调用。</li>
+<li>语法糖使javascript贴近java语法。</li>
+</ul>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="字符串（String）"><a href="#字符串（String）" class="headerlink" title="字符串（String）"></a>字符串（String）</h4><ul>
+<li>str.length; 查看一个字符串的长度。</li>
+<li>str.charAt(index); 获取单个字符。</li>
+<li>str.split(“a”); 指定从 a 处分割字符串为字符串数组。</li>
+<li>str.slice(开始索引， 结束索引); 获取一个字符串中的一部分内容，字符串切片。</li>
+<li>str[]; 通过索引获取单个字符。</li>
+<li>str.indexOf(‘所选字符’); 获取字符串中单个或者多个字符索引，如果找不到成员，返回 -1</li>
+<li>str.toLowerCase(); 将字符串转化为小写返回。</li>
+<li>str.toUpperCase(); 将字符串转化为大写返回。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串操作</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'东风无力百花残'</span>;</span><br><span class="line"><span class="comment">// 获取字符串长度 a</span></span><br><span class="line"><span class="keyword">var</span> a = str.length;</span><br><span class="line"><span class="comment">// 获取字符 '花' 的索引</span></span><br><span class="line"><span class="keyword">var</span> b = str.indexOf(<span class="string">'花'</span>);</span><br><span class="line"><span class="comment">// 通过索引获取字符 '百花'</span></span><br><span class="line"><span class="keyword">var</span> c = str.slice(b - <span class="number">1</span>, b + <span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"字符串长度："</span> + a + <span class="string">"\n花的索引："</span> + b + <span class="string">"\n获取花字符："</span> + c);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 将一个大小混写的人名，姓全部转换为大写，名除首字母外全部转换为小写。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 定义一个 name 字符串</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"ALbERt EINstEin"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">nameChanger</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 定义 finaNmae 复制 name 内容</span></span><br><span class="line"> <span class="keyword">let</span> finaName = name;</span><br><span class="line">  <span class="comment">// 以空格为参考，分割字符串为字符串数组</span></span><br><span class="line">  <span class="comment">// names = ["ALbERt", "EINstEin"]</span></span><br><span class="line">  <span class="keyword">let</span> names = name.split(<span class="string">" "</span>);</span><br><span class="line">  <span class="comment">// slice(0， 1) 选择首字母转换为大写，slice(1) 选择后面的字符转换为小写</span></span><br><span class="line">  names[<span class="number">0</span>] = names[<span class="number">0</span>].slice(<span class="number">0</span>, <span class="number">1</span>).toUpperCase() + names[<span class="number">0</span>].slice(<span class="number">1</span>).toLowerCase();</span><br><span class="line">  <span class="comment">// 设置第二个数组元素全部为大写</span></span><br><span class="line">  names[<span class="number">1</span>] = names[<span class="number">1</span>].toUpperCase();</span><br><span class="line">  <span class="comment">// 将数组中的所有元素转换为一个字符串</span></span><br><span class="line">  <span class="comment">// 设定空格为分隔符</span></span><br><span class="line">  finaName = names.join(<span class="string">" "</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(finaName);</span><br><span class="line">&#125;</span><br><span class="line">nameChanger(name);</span><br></pre></td></tr></table></figure>
+<h4 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h4><ul>
+<li>splice(index, num, item1,…..,itemN); 用于插入、删除或替换数组的元素。<ul>
+<li>index （必须） 删除/添加元素的开始下标。</li>
+<li>num （必须） 删除元素的数量。</li>
+<li>item （可选） 要添加的新元素。</li>
+</ul>
+</li>
+<li>pop(); 删除数组末尾的元素。</li>
+<li>push(“item”); 添加元素到数组末尾。</li>
+<li>shift(); 删除数组头部元素。</li>
+<li>unshift(“item”); 添加元素到数组头部。</li>
+</ul>
+<h4 id="数字-Number-所有数字以-64-位浮点数储存"><a href="#数字-Number-所有数字以-64-位浮点数储存" class="headerlink" title="数字(Number) 所有数字以 64 位浮点数储存."></a>数字(Number) 所有数字以 64 位浮点数储存.</h4><ul>
+<li>JavaScript 使用数字表示形式的 8 字节 IEEE 754 浮点标准来表示数字。  这意味着您可以编写最大为 1.79769x10308 和最小为 5x10-324 的数字。</li>
+<li>以零开头且后面的数字都小于 8， 会被识别为八进制数。</li>
+<li>0x 或 0X开头为十六进制数。</li>
+<li>八进制或者十六进制数字不能有小数部分。</li>
+<li>JavaScript 区分正零和负零。</li>
+</ul>
+<h4 id="布尔-Boolean"><a href="#布尔-Boolean" class="headerlink" title="布尔(Boolean)"></a>布尔(Boolean)</h4><ul>
+<li>可将任何表达式用作比较表达式。计算结果为 0、null、undefined 或空字符串的任何表达式被解释为 false。</li>
+</ul>
+<h4 id="对象-Object"><a href="#对象-Object" class="headerlink" title="对象(Object)"></a>对象(Object)</h4><ul>
+<li>确定对象属性是否存在，可使用 in 运算符：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个 people 对象</span></span><br><span class="line"><span class="keyword">var</span> people = &#123;</span><br><span class="line">  name: <span class="string">'xiaoming'</span>,</span><br><span class="line">  age: <span class="number">12</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 判断 people 对象中是否存在 name 属性</span></span><br><span class="line"><span class="keyword">if</span>(<span class="string">'name'</span> <span class="keyword">in</span> people) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'true'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'flase'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出 true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="日期-Date"><a href="#日期-Date" class="headerlink" title="日期(Date)"></a>日期(Date)</h4><h4 id="方法-function"><a href="#方法-function" class="headerlink" title="方法(function)"></a>方法(function)</h4><ul>
+<li>indexOf(‘目标’, 开始位置 ); 获取数组成员索引，开始位置可省略不写。若成员不存在返回值为 -1。</li>
+<li>splice(index, num); 删除指定索引 index 位置的数组成员，num 指删除数量。返回值为删除的数组。</li>
+</ul>
+<h4 id="空（Null）"><a href="#空（Null）" class="headerlink" title="空（Null）"></a>空（Null）</h4><ul>
+<li>表示什么都没有，将变量赋值 null 可以清除变量的内容（不删除变量）。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="literal">null</span>; <span class="comment">// 值为空 null</span></span><br><span class="line"><span class="keyword">typeof</span> num; <span class="comment">//返回值为 object</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="未定义（Undefined）"><a href="#未定义（Undefined）" class="headerlink" title="未定义（Undefined）"></a>未定义（Undefined）</h4><ul>
+<li>变量的值未定义。可以将变量与 undefined 进行比较确定变量是否存在。</li>
+<li>也可以通过将变量的类型与字符串“undefined”进行比较确定其类型是否为 undefined。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num;</span><br><span class="line"><span class="keyword">typeof</span> num; <span class="comment">// 返回值为 undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>null 和 undefined 的值相等，类型不同。null 值的行为与数字 0 类似，而 undefined 的行为与特定值 NaN（非数字）类似。</strong></p>
+<p>JavaScript 拥有动态类型，相同的变量可用作不同的类型：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x;               <span class="comment">// 此时 x 为 undefined</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>;           <span class="comment">// 此时 x 为数字</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="string">'hello'</span>;      <span class="comment">// 此时 x 为字符串</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h4><ul>
+<li>JavaScript 是一个弱类型的语言，其变量类型由其值的类型决定。</li>
+<li>字符串、数字和布尔值的强制转换规则：<ul>
+<li>如果添加一个数字和字符串，则该数字会强制转换为字符串。</li>
+<li>如果添加一个布尔值和字符串，则该布尔值会强制转换为字符串。</li>
+<li>如果添加一个数字和布尔值，则该布尔值会强制转换为数字。</li>
+</ul>
+</li>
+</ul>
+<h5 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat"></a>parseFloat</h5><p>将字符串转换为浮点数。<br><code>parseFloat(numString);</code> numString 参数是一个包含浮点数的字符串。函数返回一个等于 numString 中包含的数字的数值。如果 numString 的前缀无法解析为浮点数，则返回 NaN（非数字）。</p>
+<h5 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt"></a>parseInt</h5><p>将字符串转为整数。<br><code>parseInt(numString, radix);</code>numString 参数是要转换为数字的字符串。radix(2~36) 为需要转成整数的进制。若没有指定基数：以”0x”或者”0X”开头, 则是 16 进制；0 开头为 8 进制或者 10 进制，具体由环境决定；其它默认是 10 进制。 函数将其第一个参数转换为字符串然后再解析它，解析成功返回一个进制指定的整数，反之返回 NaN。</p>
+<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><p>操作符优先级;<br>| 运算符                             | 说明                                                   |<br>| ———————————- | —————————————————— |<br>| .[ ] ( )                           | 字段访问、数组索引、函数调用和表达式分组               |<br>| ++ – - ~ ! delete new typeof void | 一元运算符、返回数据类型、对象创建、未定义的值         |<br>| * / %                              | 相乘，相除，取模                                       |<br>| + - +                              | 相加、相减、字符串串联                                 |<br>| &lt;&lt; &gt;&gt; &gt;&gt;&gt;                          | 移位                                                   |<br>| &lt; &lt;= &gt; &gt;= instanceof               | 小于、小于或等于、大于、大于或等于、是否为特定类的实例 |<br>| == != === !==                      | 相等、不相等、全等，不全等                             |<br>| &amp;&amp;                                 | 逻辑“与”                                             |<br>| <code>||</code>                               | 逻辑“或”                                             |<br>| ?:                                 | 三元条件运算                                           |<br>| = OP=                              | 赋值、赋值运算（如 += 和 &amp;=）                          |<br>| ,                                  | 多个计算                                               |</p>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>==  <strong>只比较两边的值，与类型无关。</strong>当值相等时返回 true，<br>===  <strong>同时比较两边的类型和值</strong>，只有当类型和值都相等时返回 true。</p>
+<p>!=  <strong>只比较两边的类型，与值无关</strong>，类型相同返回 true，类型不同返回 false<br>!== <strong>只要值或者类型有一个不相等</strong>，返回 ture</p>
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><ul>
+<li>两个整数交换数值<br><code>a ^= b;
+b ^= a;
+a ^= b;</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 位操作快速交换两个整数的值</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">12</span>;</span><br><span class="line">a ^= b;</span><br><span class="line">b ^= a;</span><br><span class="line">a ^= b;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a is:'</span> + a + <span class="string">'\nb is:'</span> + b); <span class="comment">// a is:12 b is:10</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><blockquote>
+<p>函数也称为’全局方法’。</p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><h4 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h4><ul>
+<li>错误1：使用箭头函数定义对象的方法</li>
+<li>错误2：在原型上使用箭头函数<h4 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h4></li>
+<li>箭头函数适合于无复杂逻辑或者无副作用的纯函数场景下，例如用在map、reduce、filter的回调函数定义中；</li>
+<li>不要在最外层定义箭头函数，因为在函数内部操作this会很容易污染全局作用域。最起码在箭头函数外部包一层普通函数，将this控制在可见的范围内；</li>
+<li>如开头所述，箭头函数最吸引人的地方是简洁。在有多层函数嵌套的情况下，箭头函数的简洁性并没有很大的提升，反而影响了函数的作用范围的识别度，这种情况不建议使用箭头函数。<h4 id="副作用"><a href="#副作用" class="headerlink" title="副作用"></a>副作用</h4></li>
+</ul>
+<ol>
+<li>函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。</li>
+<li>不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。</li>
+<li>不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用Rest参数代替。</li>
+<li>不可以使用yield命令，因此箭头函数不能用作Generator函数。<h3 id="in-运算符"><a href="#in-运算符" class="headerlink" title="in 运算符"></a>in 运算符</h3>判断某个属性是否属于这个对象。<br><code>&#39;name&#39; in obj</code></li>
+</ol>
+<ul>
+<li>‘name’ 属性值</li>
+<li>obj 对象</li>
+</ul>
+</blockquote>
+<h3 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h3><p>返回值为布尔类型，判断一个对象是否为特定类的一个实例。<br><code>result = obj instanceof class</code></p>
+<ul>
+<li>result 返回值</li>
+<li>obj 对象</li>
+<li>class 特定类</li>
+</ul>
+<h3 id="其它运算符"><a href="#其它运算符" class="headerlink" title="其它运算符"></a>其它运算符</h3><h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><ul>
+<li>可以使用 typeof 操作符来检测变量的数据类型。<code>typeof 66  // 返回值为 number</code>。</li>
+<li>在JavaScript中，数组是一种特殊的对象类型。 typeof [1,2,3,4] 返回 object。</li>
+</ul>
+<h3 id="单双引号"><a href="#单双引号" class="headerlink" title="单双引号"></a>单双引号</h3><ul>
+<li>同一种引号不能嵌套,最外层一般使用单引号，避免和 HTML 里面的冲突：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//会报错误</span></span><br><span class="line"><span class="string">""</span>name<span class="string">" + 18"</span></span><br><span class="line"><span class="comment">//正确的方式</span></span><br><span class="line"><span class="string">'"name" + 18'</span></span><br></pre></td></tr></table></figure>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><blockquote>
+<p>允许嵌入表达式的字符串。使用反引号（``）代替单引号或者双引号，中间包含特定语法（${表达式}）,表达式是任意 JavaScript 表达式（如变量或函数）。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`hello <span class="subst">$&#123;表达式&#125;</span>`</span>;</span><br><span class="line"> <span class="string">`sun <span class="subst">$&#123;a + b&#125;</span>`</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
+<li>JavaScript 变量均为对象。当您声明一个变量时，就创建了一个新的对象。</li>
+<li>声明新变量时，可以使用关键词 “new” 来声明其类型。<code>var x = new String;</code></li>
+<li>使用 let 和 var 关键字声明变量，let的作用域是块，而var的作用域是函数。</li>
+<li>如果把值直接赋给尚未声明的变量，该变量将被自动作为全局变量声明。</li>
+<li>let 可以声明作用域被限制在块级中的变量、语句或者表达式。var声明的变量是全局或者整个函数块的。</li>
+<li>let声明的变量只在其声明的块或子块中可用，这一点，与var相似。二者之间最主要的区别在于 var 声明的变量的作用域是整个封闭函数。</li>
+<li>在 HTML 中, 全局变量都是 window 对象: 所有数据变量都属于 window 对象。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">varTest</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">2</span>;  <span class="comment">// 同样的变量</span></span><br><span class="line">    <span class="built_in">console</span>.log(x);  <span class="comment">// 显示2</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(x);  <span class="comment">// 显示2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">letTest</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> x = <span class="number">2</span>;  <span class="comment">// 不同的变量</span></span><br><span class="line">    <span class="built_in">console</span>.log(x);  <span class="comment">// 显示2</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(x);  <span class="comment">// 显示1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在程序或者函数的顶层，let并不会像var一样在全局对象上创造一个属性.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">'global'</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="string">'global'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.x); <span class="comment">// "global"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.y); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h2 id="JS-面向对象"><a href="#JS-面向对象" class="headerlink" title="JS 面向对象"></a>JS 面向对象</h2><ul>
+<li>javascript是基于原型的面向对象的语言，没有类的概念。</li>
+</ul>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><ul>
+<li>JS中不用 class 创建对象</li>
+<li>对象：属性加方法构成</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个 people 对象，拥有 name 属性和 speak 方法</span></span><br><span class="line"><span class="keyword">var</span> people = &#123;</span><br><span class="line">    country: <span class="string">"CN"</span>;</span><br><span class="line">    <span class="keyword">from</span>: funcation()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"From"</span> + <span class="keyword">this</span>.conuntry)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;；</span><br><span class="line">people.from();</span><br><span class="line"><span class="comment">//由于对象并不和类关联， 我们可以随意地给这个对象增加属性</span></span><br><span class="line">people.speak = <span class="string">"Chinese"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(people.speak);</span><br></pre></td></tr></table></figure>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
+<li>继承就是让两个对象建立关联，</li>
+<li>在 Javascript 中每个对象都有一个特殊的属性叫做<strong>proto</strong>， 你可以用这个属性去关联另外一个对象(原型)。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个american对象</span></span><br><span class="line"><span class="keyword">var</span> american = &#123;</span><br><span class="line">  country: <span class="string">"US"</span>;</span><br><span class="line">  _proto_: people;<span class="comment">//指向people对象</span></span><br><span class="line">&#125;；</span><br><span class="line"><span class="comment">//定义一个chinese对象</span></span><br><span class="line"><span class="keyword">var</span> chinese = &#123;</span><br><span class="line">  country: <span class="string">"CN"</span>;</span><br><span class="line">  _proto_:people;<span class="comment">//指向people对象</span></span><br><span class="line">&#125;;</span><br><span class="line">american.from();</span><br><span class="line">chinese.from();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>american, chinese 的原型都是 people，当 from() 方法被调用时，先在自身的方法列表中寻找，找不到时再去原型中去寻找，如果原型中找不到，就去原型的原型中寻找，直到 Object 那里，如果还找不到，那就是方法未定义。这些对象通过<em>proto</em>建立了一个原型链。</li>
+</ul>
+<h3 id="构造函数-原型"><a href="#构造函数-原型" class="headerlink" title="构造函数 原型"></a>构造函数 原型</h3><ul>
+<li>将原型对象放入 Object.prototype 中，每次 new 新对象时，js会自动建立原型链。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Student.prototype = &#123;</span><br><span class="line">  say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"My name is"</span> + <span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//创建新对象，js自动构建原型链继承 say 方法</span></span><br><span class="line"><span class="keyword">var</span> xiaoming = <span class="keyword">new</span> Student(<span class="string">"xiaoming"</span>);</span><br><span class="line"><span class="keyword">var</span> laowang = <span class="keyword">new</span> Student(<span class="string">"laowang"</span>);</span><br><span class="line"></span><br><span class="line">xiaoming.say();</span><br><span class="line">laowang.say();</span><br></pre></td></tr></table></figure>
+<h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  say()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"My name is"</span> + <span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xiaoming = <span class="keyword">new</span> Student(<span class="string">"xiaoming"</span>);</span><br><span class="line">xiaoming.say();</span><br></pre></td></tr></table></figure>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>  ​</p>
+<h2 id="AJAX-异步调用"><a href="#AJAX-异步调用" class="headerlink" title="AJAX 异步调用"></a>AJAX 异步调用</h2><ul>
+<li>异步的 JavaScript 和 XML</li>
+<li>AJAX 是一种用于创建快速动态网页的技术。</li>
+<li>通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</li>
+<li>传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。</li>
+<li>例如服务器返回下面的 XML 数据：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">book</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">isbn</span>&gt;</span>978-7-229-03093-3<span class="tag">&lt;/<span class="name">isbn</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>三体<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">author</span>&gt;</span>刘慈欣<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">introduction</span>&gt;</span>中国最牛的科幻书<span class="tag">&lt;/<span class="name">introduction</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">price</span>&gt;</span>38.00<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>上面的数据中，标签占去了大部分，数据比较臃肿。</li>
+</ul>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
+<li>JavaScript 对象表示法（JavaScript Object Notation）。</li>
+<li>JSON 是存储和交换文本信息的语法。类似 XML。</li>
+<li>JSON 比 XML 更小、更快，更易解析。</li>
+<li>JSON.parse(); 解析一个JSON字符串，可选地转换生成的值及其属性，并返回值。</li>
+<li>JSON.stringify(); 返回与指定值相对应的一个JSON字符串，可选地仅包含某些属性或以用户定义的方式替换属性值。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这种结构完全可以表达上面的xml 内容</span></span><br><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line"><span class="string">"isbn"</span>: <span class="string">"978-7-229-03093-3"</span>,</span><br><span class="line"><span class="string">"name"</span>: <span class="string">"三体"</span>,</span><br><span class="line"> <span class="string">"author"</span>: <span class="string">"刘慈欣"</span>,</span><br><span class="line"><span class="string">"introduction"</span>: <span class="string">"中国最牛的科幻书"</span>,</span><br><span class="line"><span class="string">"price"</span>: <span class="string">"38.00"</span></span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//JS语法还支持数组，可以表达多个对象</span></span><br><span class="line"><span class="keyword">var</span> books = [</span><br><span class="line"> &#123;</span><br><span class="line"><span class="string">"isbn"</span>: <span class="string">"978-7-229-03093-3"</span>,</span><br><span class="line"><span class="string">"name"</span>: <span class="string">"三体"</span>,</span><br><span class="line"><span class="string">"author"</span>: <span class="string">"刘慈欣"</span>,</span><br><span class="line"><span class="string">"introduction"</span>: <span class="string">"中国最牛的科幻书"</span>,</span><br><span class="line"><span class="string">"price"</span>: <span class="string">"38.00"</span></span><br><span class="line"> &#125;,</span><br><span class="line"> &#123;</span><br><span class="line"><span class="string">"isbn"</span>: <span class="string">"978-7-229-03094-1"</span>,</span><br><span class="line"><span class="string">"name"</span>: <span class="string">"我是一个线程"</span>,</span><br><span class="line"><span class="string">"author"</span>: <span class="string">"刘欣"</span>,</span><br><span class="line"><span class="string">"introduction"</span>: <span class="string">"一个线程的自述"</span>,</span><br><span class="line"><span class="string">"price"</span>: <span class="string">"0.0"</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>books[0].name –&gt;返回“三体”</li>
+<li>books[1].author –&gt;返回“刘欣”</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'What is your any good suggestions?'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'true' == true;
+    var verify = 'true' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "GE64fXlzDQYUxw40DAMVrNte-gzGzoHsz",
+        appKey: "w9OWcYkGH8nzrLwX97UKGnK1",
+        placeholder: "Just go go",
+        pageSize:'10',
+        avatar:'identicon',
+        lang:'zh-cn'
+    });
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/pages/522f484/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/pages/218ff168/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Roojay's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        roojay520@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">36</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">19</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/HTML/">HTML<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Nodejs/">Nodejs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Tools/">Tools<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/VSCode/">VSCode<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/其他/">其他<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/">数据库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编程相关/">编程相关<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/roojay520" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Strange
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source//js/lazyload.min.js", true)</script>
+
+
+
+    <script>lsloader.load("js_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source//js/js.min.js", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('GE64fXlzDQYUxw40DAMVrNte-gzGzoHsz', 'w9OWcYkGH8nzrLwX97UKGnK1');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.bootcss.com/prettify/r298/prettify.min.js", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
