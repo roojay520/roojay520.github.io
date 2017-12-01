@@ -124,7 +124,7 @@ qrcode:
 #    Prettify
 #        theme: # Available value in /source/css/prettify/[theme].min.css
 prettify:
-    enable: true
+    enable: false
     theme: "github-v2"
 
 #    Hanabi (https://github.com/egoist/hanabi)
@@ -134,9 +134,9 @@ prettify:
 #                    - If `includeDefaultColors` is true, this will append colors to the color pool
 #                    - If `includeDefaultColors` is false, this will instead default color pool
 hanabi:
-    enable: false
-    line_number: false
-    includeDefaultColors: false
+    enable: true
+    line_number: true
+    includeDefaultColors: true
     customColors:
 
 # Post License
@@ -244,7 +244,7 @@ comment:
     valine_pageSize: 10 # comment list page size
     valine_avatar: identicon # gravatar style https://valine.js.org/#/avatar
     valine_lang: zh-cn # i18n
-    valine_placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
+    valine_placeholder: What is your any good suggestions? # valine comment input placeholder(like: Please leave your footprints )
     valine_guest_info: What is your any good suggestions? #valine comment header info
     gitalk_repo: # git repo of the hexo
     gitalk_owner: # git repo's owner
