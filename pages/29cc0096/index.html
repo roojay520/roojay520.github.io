@@ -527,15 +527,55 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h2 id="throw"><a href="#throw" class="headerlink" title="throw"></a>throw</h2><h3 id="throw的作用"><a href="#throw的作用" class="headerlink" title="throw的作用"></a>throw的作用</h3><ul>
-<li>如果Java虚拟机不能判断异常e，可以生成异常对象e，用throw加上这个异常对象抛出这个异常。<br>&gt;<br>示例：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> src;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(age &lt; <span class="number">0</span>)&#123;</span><br><span class="line">			RuntimeException e = <span class="keyword">new</span> RuntimeException(<span class="string">"年龄不能为负数"</span>);</span><br><span class="line">			<span class="keyword">throw</span> e;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">		System.out.println(age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		People people = <span class="keyword">new</span> People();</span><br><span class="line">		people.setAge(-<span class="number">20</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>如果Java虚拟机不能判断异常e，可以生成异常对象e，用throw加上这个异常对象抛出这个异常。<br>&gt;<br>示例：<pre><code class="java">package src;
+class People{
+  private int age;
+  public void setAge(int age){
+      if(age &lt; 0){
+          RuntimeException e = new RuntimeException(&quot;年龄不能为负数&quot;);
+          throw e;
+      }
+      this.age = age;
+      System.out.println(age);
+  }
+}
+class Test{
+  public static void main(String args[]){
+      People people = new People();
+      people.setAge(-20);
+  }
+}
+</code></pre>
 </li>
 </ul>
 <p>运行结果：<br><img src="http://i.imgur.com/hSqdO9z.png" alt=""></p>
 <h2 id="throws"><a href="#throws" class="headerlink" title="throws"></a>throws</h2><h3 id="throws-1"><a href="#throws-1" class="headerlink" title="throws"></a>throws</h3><ul>
-<li>声明一个函数可能产生异常，函数不对异常进行处理，在调用函数的地方对异常进行处理。<br>&gt;<br>示例：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> src1;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span>  <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(age &lt; <span class="number">0</span>)&#123;</span><br><span class="line">			Exception e = <span class="keyword">new</span> Exception(<span class="string">"年龄不能为负数"</span>);</span><br><span class="line">			<span class="keyword">throw</span> e;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">		System.out.println(age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		People people = <span class="keyword">new</span> People();</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			people.setAge(-<span class="number">20</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">			System.out.println(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>声明一个函数可能产生异常，函数不对异常进行处理，在调用函数的地方对异常进行处理。<br>&gt;<br>示例：<pre><code class="java">package src1;
+class People{
+  private int age;
+  public void setAge(int age)  throws Exception{
+      if(age &lt; 0){
+          Exception e = new Exception(&quot;年龄不能为负数&quot;);
+          throw e;
+      }
+      this.age = age;
+      System.out.println(age);
+  }
+}
+class Test{
+  public static void main(String args[]){
+      People people = new People();
+      try{
+          people.setAge(-20);
+      }
+      catch(Exception e){
+          System.out.println(e);
+      }
+  }
+}
+</code></pre>
+运行结果：<br><img src="http://i.imgur.com/wJqKdCu.png" alt=""></li>
 </ul>
-<p>运行结果：<br><img src="http://i.imgur.com/wJqKdCu.png" alt=""></p>
 
         
     
@@ -579,7 +619,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/pages/85b5073b/" id="post_nav-newer" class="prev-content">
+        <a href="/pages/75336bdc/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -593,7 +633,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/pages/7dc91154/" id="post_nav-older" class="next-content">
+        <a href="/pages/265f6f6b/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

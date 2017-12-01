@@ -551,32 +551,318 @@
 </li>
 <li>可以采用 Horizontal LinearLayout 作为其视图容器。</li>
 </ul>
-<h4 id="整体布局-active-main-xml-代码如下所示："><a href="#整体布局-active-main-xml-代码如下所示：" class="headerlink" title="整体布局 active_main.xml 代码如下所示："></a>整体布局 active_main.xml 代码如下所示：</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/activity_main"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:background</span>=<span class="string">"#D2403E"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:padding</span>=<span class="string">"@dimen/activity_vertical_margin"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">tools:context</span>=<span class="string">"com.roojay.android.courtcounter.MainActivity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_marginTop</span>=<span class="string">"18dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"@style/textView"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/teama_text_view"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:text</span>=<span class="string">"@string/team_a"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/pointsa_text_view"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"@style/pointsTextView"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:text</span>=<span class="string">"@string/points_a"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"@style/addButtonView"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/buttona3"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:onClick</span>=<span class="string">"addThreeA"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:text</span>=<span class="string">"@string/add3a"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"@style/addButtonView"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/buttona2"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:onClick</span>=<span class="string">"addTwoA"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:text</span>=<span class="string">"@string/add2a"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"@style/addButtonView"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/buttona1"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:onClick</span>=<span class="string">"addOneA"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:text</span>=<span class="string">"@string/add1a"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"1dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginTop</span>=<span class="string">"8dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginBottom</span>=<span class="string">"8dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:background</span>=<span class="string">"#FFFEFE"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"@style/textView"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/teamb_text_view"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:text</span>=<span class="string">"@string/team_b"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"@style/pointsTextView"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/pointsb_text_view"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:text</span>=<span class="string">"@string/points_b"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"@style/addButtonView"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/buttonb3"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:onClick</span>=<span class="string">"addThreeB"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:text</span>=<span class="string">"@string/add3b"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"@style/addButtonView"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/buttonb2"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:onClick</span>=<span class="string">"addTwoB"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:text</span>=<span class="string">"@string/add2b"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"@style/addButtonView"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/buttonb1"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:onClick</span>=<span class="string">"addOneB"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:text</span>=<span class="string">"@string/add1b"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">        <span class="attr">style</span>=<span class="string">"@style/resetButtonView"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/button_reset"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:onClick</span>=<span class="string">"reset"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"@string/reset_text_views"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="整体布局-active-main-xml-代码如下所示："><a href="#整体布局-active-main-xml-代码如下所示：" class="headerlink" title="整体布局 active_main.xml 代码如下所示："></a>整体布局 active_main.xml 代码如下所示：</h4><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:id=&quot;@+id/activity_main&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:background=&quot;#D2403E&quot;
+    android:padding=&quot;@dimen/activity_vertical_margin&quot;
+    tools:context=&quot;com.roojay.android.courtcounter.MainActivity&quot;&gt;
+
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginTop=&quot;18dp&quot;
+        android:orientation=&quot;horizontal&quot;&gt;
+
+        &lt;LinearLayout
+            android:layout_width=&quot;0dp&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_weight=&quot;1&quot;
+            android:orientation=&quot;vertical&quot;&gt;
+
+            &lt;TextView
+                style=&quot;@style/textView&quot;
+                android:id=&quot;@+id/teama_text_view&quot;
+                android:text=&quot;@string/team_a&quot; /&gt;
+
+            &lt;TextView
+                android:id=&quot;@+id/pointsa_text_view&quot;
+                style=&quot;@style/pointsTextView&quot;
+                android:text=&quot;@string/points_a&quot; /&gt;
+
+            &lt;Button
+                style=&quot;@style/addButtonView&quot;
+                android:id=&quot;@+id/buttona3&quot;
+                android:onClick=&quot;addThreeA&quot;
+                android:text=&quot;@string/add3a&quot; /&gt;
+
+            &lt;Button
+                style=&quot;@style/addButtonView&quot;
+                android:id=&quot;@+id/buttona2&quot;
+                android:onClick=&quot;addTwoA&quot;
+                android:text=&quot;@string/add2a&quot; /&gt;
+
+            &lt;Button
+                style=&quot;@style/addButtonView&quot;
+                android:id=&quot;@+id/buttona1&quot;
+                android:onClick=&quot;addOneA&quot;
+                android:text=&quot;@string/add1a&quot; /&gt;
+        &lt;/LinearLayout&gt;
+
+        &lt;View
+            android:layout_width=&quot;1dp&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:layout_marginTop=&quot;8dp&quot;
+            android:layout_marginBottom=&quot;8dp&quot;
+            android:background=&quot;#FFFEFE&quot; /&gt;
+
+
+        &lt;LinearLayout
+            android:layout_width=&quot;0dp&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:layout_weight=&quot;1&quot;
+            android:orientation=&quot;vertical&quot;&gt;
+
+            &lt;TextView
+                style=&quot;@style/textView&quot;
+                android:id=&quot;@+id/teamb_text_view&quot;
+                android:text=&quot;@string/team_b&quot; /&gt;
+
+            &lt;TextView
+                style=&quot;@style/pointsTextView&quot;
+                android:id=&quot;@+id/pointsb_text_view&quot;
+                android:text=&quot;@string/points_b&quot; /&gt;
+
+            &lt;Button
+                style=&quot;@style/addButtonView&quot;
+                android:id=&quot;@+id/buttonb3&quot;
+                android:onClick=&quot;addThreeB&quot;
+                android:text=&quot;@string/add3b&quot; /&gt;
+
+            &lt;Button
+                style=&quot;@style/addButtonView&quot;
+                android:id=&quot;@+id/buttonb2&quot;
+                android:onClick=&quot;addTwoB&quot;
+                android:text=&quot;@string/add2b&quot; /&gt;
+
+            &lt;Button
+                style=&quot;@style/addButtonView&quot;
+                android:id=&quot;@+id/buttonb1&quot;
+                android:onClick=&quot;addOneB&quot;
+                android:text=&quot;@string/add1b&quot; /&gt;
+
+        &lt;/LinearLayout&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;Button
+        style=&quot;@style/resetButtonView&quot;
+        android:id=&quot;@+id/button_reset&quot;
+        android:onClick=&quot;reset&quot;
+        android:text=&quot;@string/reset_text_views&quot; /&gt;
+
+
+&lt;/RelativeLayout&gt;
+</code></pre>
 <h3 id="三、交互"><a href="#三、交互" class="headerlink" title="三、交互"></a>三、交互</h3><ul>
 <li>通过 Button 的 android:onClick 属性指定方法。</li>
 <li>将各个 Button 与 Java 中的方法关联起来。</li>
 <li>具体操作是在 active_main.xml 中设置 android:onClick=”buttonName” 为每个 Button 设置一个独特的名字，这个名字用于 Java 代码寻找和识别每个不同的 Button 。</li>
 </ul>
 <p>例如：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在 active_main.xml 中设置 Button3A 的 onClick 属性为 android:onClick="addThreeA"</span><br></pre></td></tr></table></figure>
+<pre><code class="xml">在 active_main.xml 中设置 Button3A 的 onClick 属性为 android:onClick=&quot;addThreeA&quot;
+</code></pre>
 <p>在 MainActivity.java 中编写代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addThreeA</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//所需要执行的操作，假如是 A 团队加三分</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">    public void addThreeA(View view) {
+
+    //所需要执行的操作，假如是 A 团队加三分
+
+    }
+</code></pre>
 <p>那么当你按下 Button3A 就将 A 团队的分数加上三分。</p>
-<h4 id="整个-MainActivity-java-代码"><a href="#整个-MainActivity-java-代码" class="headerlink" title="整个 MainActivity.java 代码"></a>整个 MainActivity.java 代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.roojay.android.courtcounter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.widget.TextView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> scorea = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> scoreb = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Add 3 points for the Team A.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addThreeA</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        scorea = scorea + <span class="number">3</span>;</span><br><span class="line">        displayTeamscorea(scorea);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Add 2 points for the Team A.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addTwoA</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        scorea = scorea + <span class="number">2</span>;</span><br><span class="line">        displayTeamscorea(scorea);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Add 1 point for the Team A.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addOneA</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        scorea = scorea + <span class="number">1</span>;</span><br><span class="line">        displayTeamscorea(scorea);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Displays the given scorea for Team A.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">displayTeamscorea</span><span class="params">(<span class="keyword">int</span> scorea)</span> </span>&#123;</span><br><span class="line">        TextView scoreaView = (TextView) findViewById(R.id.pointsa_text_view);</span><br><span class="line">        scoreaView.setText(String.valueOf(scorea));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Add 3 points for the Team B.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addThreeB</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        scoreb = scoreb + <span class="number">3</span>;</span><br><span class="line">        displayTeamscoreb(scoreb);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Add 2 points for the Team B.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addTwoB</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        scoreb = scoreb + <span class="number">2</span>;</span><br><span class="line">        displayTeamscoreb(scoreb);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Add 1 point for the Team B.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addOneB</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        scoreb = scoreb + <span class="number">1</span>;</span><br><span class="line">        displayTeamscoreb(scoreb);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Displays the given scoreb for Team B.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">displayTeamscoreb</span><span class="params">(<span class="keyword">int</span> scoreb)</span> </span>&#123;</span><br><span class="line">        TextView scorebView = (TextView) findViewById(R.id.pointsb_text_view);</span><br><span class="line">        scorebView.setText(String.valueOf(scoreb));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reset</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        scorea = <span class="number">0</span>;</span><br><span class="line">        scoreb = <span class="number">0</span>;</span><br><span class="line">        displayTeamscorea(scorea);</span><br><span class="line">        displayTeamscoreb(scoreb);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="整个-MainActivity-java-代码"><a href="#整个-MainActivity-java-代码" class="headerlink" title="整个 MainActivity.java 代码"></a>整个 MainActivity.java 代码</h4><pre><code class="java">package com.roojay.android.courtcounter;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    int scorea = 0;
+    int scoreb = 0;
+
+
+    /**
+     * Add 3 points for the Team A.
+     */
+    public void addThreeA(View view) {
+        scorea = scorea + 3;
+        displayTeamscorea(scorea);
+    }
+
+    /**
+     * Add 2 points for the Team A.
+     */
+    public void addTwoA(View view) {
+        scorea = scorea + 2;
+        displayTeamscorea(scorea);
+    }
+
+    /**
+     * Add 1 point for the Team A.
+     */
+    public void addOneA(View view) {
+        scorea = scorea + 1;
+        displayTeamscorea(scorea);
+    }
+
+    /**
+     * Displays the given scorea for Team A.
+     */
+    public void displayTeamscorea(int scorea) {
+        TextView scoreaView = (TextView) findViewById(R.id.pointsa_text_view);
+        scoreaView.setText(String.valueOf(scorea));
+    }
+
+
+    /**
+     * Add 3 points for the Team B.
+     */
+    public void addThreeB(View view) {
+        scoreb = scoreb + 3;
+        displayTeamscoreb(scoreb);
+    }
+
+    /**
+     * Add 2 points for the Team B.
+     */
+    public void addTwoB(View view) {
+        scoreb = scoreb + 2;
+        displayTeamscoreb(scoreb);
+    }
+
+    /**
+     * Add 1 point for the Team B.
+     */
+    public void addOneB(View view) {
+        scoreb = scoreb + 1;
+        displayTeamscoreb(scoreb);
+    }
+
+    /**
+     * Displays the given scoreb for Team B.
+     */
+    public void displayTeamscoreb(int scoreb) {
+        TextView scorebView = (TextView) findViewById(R.id.pointsb_text_view);
+        scorebView.setText(String.valueOf(scoreb));
+    }
+
+
+    public void reset(View view) {
+        scorea = 0;
+        scoreb = 0;
+        displayTeamscorea(scorea);
+        displayTeamscoreb(scoreb);
+
+    }
+}
+</code></pre>
 <h3 id="四、代码优化及-APP-美化"><a href="#四、代码优化及-APP-美化" class="headerlink" title="四、代码优化及 APP 美化"></a>四、代码优化及 APP 美化</h3><h4 id="style-xml-的设置"><a href="#style-xml-的设置" class="headerlink" title="style.xml 的设置"></a>style.xml 的设置</h4><ul>
 <li>当每一个 View 都有着大量相同的元素，可以将这些元素定义在<br><code>res/value/styles.xml</code> 中。</li>
 </ul>
 <p>具体的写法如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"cofe_textView"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColor"</span>&gt;</span>#FFFFFF<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined">       ...</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;style name=&quot;cofe_textView&quot;&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;#FFFFFF&lt;/item&gt;
+        &lt;item name=&quot;android:layout_width&quot;&gt;wrap_content&lt;/item&gt;
+       ...
+
+    &lt;/style&gt;
+</code></pre>
 <p>然后可以用<code>style=&quot;@style/cofe_textView&quot;</code>语句轻易地重复引用这些设置：</p>
-<p>例如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">              <span class="attr">style</span>=<span class="string">"@style/textView"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">android:id</span>=<span class="string">"@+id/teamb_text_view"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">android:text</span>=<span class="string">"@string/team_b"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="整个-style-xml-代码如下"><a href="#整个-style-xml-代码如下" class="headerlink" title="整个 style.xml 代码如下"></a>整个 style.xml 代码如下</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.DarkActionBar"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">        <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"textView"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>match_parent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:fontFamily"</span>&gt;</span>sans-serif-medium<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:gravity"</span>&gt;</span>center<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColor"</span>&gt;</span>#FFFEFE<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>24sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"pointsTextView"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>match_parent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:fontFamily"</span>&gt;</span>sans-serif-medium<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_margin"</span>&gt;</span>24dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:gravity"</span>&gt;</span>center<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColor"</span>&gt;</span>#2B2A2A<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>56sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:background"</span>&gt;</span>#FFFEFE<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"addButtonView"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>match_parent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginBottom"</span>&gt;</span>8dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginLeft"</span>&gt;</span>24dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginRight"</span>&gt;</span>24dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:background"</span>&gt;</span>#2B2A2A<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColor"</span>&gt;</span>#FFFEFE<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"resetButtonView"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_width"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_height"</span>&gt;</span>wrap_content<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_marginBottom"</span>&gt;</span>32dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:background"</span>&gt;</span>#2B2A2A<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColor"</span>&gt;</span>#FFFEFE<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_centerHorizontal"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:layout_alignParentBottom"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<pre><code class="xml">&lt;TextView
+              style=&quot;@style/textView&quot;
+              android:id=&quot;@+id/teamb_text_view&quot;
+              android:text=&quot;@string/team_b&quot; /&gt;
+</code></pre>
+<h4 id="整个-style-xml-代码如下"><a href="#整个-style-xml-代码如下" class="headerlink" title="整个 style.xml 代码如下"></a>整个 style.xml 代码如下</h4><pre><code class="xml">&lt;resources&gt;
+
+    &lt;!-- Base application theme. --&gt;
+    &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.DarkActionBar&quot;&gt;
+        &lt;!-- Customize your theme here. --&gt;
+        &lt;item name=&quot;colorPrimary&quot;&gt;@color/colorPrimary&lt;/item&gt;
+        &lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/colorPrimaryDark&lt;/item&gt;
+        &lt;item name=&quot;colorAccent&quot;&gt;@color/colorAccent&lt;/item&gt;
+    &lt;/style&gt;
+
+    &lt;style name=&quot;textView&quot;&gt;
+        &lt;item name=&quot;android:layout_width&quot;&gt;match_parent&lt;/item&gt;
+        &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;
+        &lt;item name=&quot;android:fontFamily&quot;&gt;sans-serif-medium&lt;/item&gt;
+        &lt;item name=&quot;android:gravity&quot;&gt;center&lt;/item&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;#FFFEFE&lt;/item&gt;
+        &lt;item name=&quot;android:textSize&quot;&gt;24sp&lt;/item&gt;
+    &lt;/style&gt;
+
+    &lt;style name=&quot;pointsTextView&quot;&gt;
+        &lt;item name=&quot;android:layout_width&quot;&gt;match_parent&lt;/item&gt;
+        &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;
+        &lt;item name=&quot;android:fontFamily&quot;&gt;sans-serif-medium&lt;/item&gt;
+        &lt;item name=&quot;android:layout_margin&quot;&gt;24dp&lt;/item&gt;
+        &lt;item name=&quot;android:gravity&quot;&gt;center&lt;/item&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;#2B2A2A&lt;/item&gt;
+        &lt;item name=&quot;android:textSize&quot;&gt;56sp&lt;/item&gt;
+        &lt;item name=&quot;android:background&quot;&gt;#FFFEFE&lt;/item&gt;
+    &lt;/style&gt;
+
+    &lt;style name=&quot;addButtonView&quot;&gt;
+        &lt;item name=&quot;android:layout_width&quot;&gt;match_parent&lt;/item&gt;
+        &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;
+        &lt;item name=&quot;android:layout_marginBottom&quot;&gt;8dp&lt;/item&gt;
+        &lt;item name=&quot;android:layout_marginLeft&quot;&gt;24dp&lt;/item&gt;
+        &lt;item name=&quot;android:layout_marginRight&quot;&gt;24dp&lt;/item&gt;
+        &lt;item name=&quot;android:background&quot;&gt;#2B2A2A&lt;/item&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;#FFFEFE&lt;/item&gt;
+    &lt;/style&gt;
+
+    &lt;style name=&quot;resetButtonView&quot;&gt;
+        &lt;item name=&quot;android:layout_width&quot;&gt;wrap_content&lt;/item&gt;
+        &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;
+        &lt;item name=&quot;android:layout_marginBottom&quot;&gt;32dp&lt;/item&gt;
+        &lt;item name=&quot;android:background&quot;&gt;#2B2A2A&lt;/item&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;#FFFEFE&lt;/item&gt;
+        &lt;item name=&quot;android:layout_centerHorizontal&quot;&gt;true&lt;/item&gt;
+        &lt;item name=&quot;android:layout_alignParentBottom&quot;&gt;true&lt;/item&gt;
+    &lt;/style&gt;
+
+&lt;/resources&gt;
+</code></pre>
 <h4 id="strings-xml"><a href="#strings-xml" class="headerlink" title="strings.xml"></a>strings.xml</h4><ul>
 <li>在 Android 中会将应用中出现的文字放入 string.xml 中，这样一个字符可以重复调用，而不用每次去编写，可以减少数据的冗余，减小 APP 应用的体积。并且当你的 APP 国际化时只需更改 strings.xml 中的文字定义，就可以实现其他语言的显示。</li>
 </ul>
-<p>strings.xml 中的字符定义如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"text_name"</span>&gt;</span>显示的文字<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>调用时：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:text="@string/text_name"</span><br></pre></td></tr></table></figure></p>
-<h4 id="整个-strings-xml-代码如下"><a href="#整个-strings-xml-代码如下" class="headerlink" title="整个 strings.xml 代码如下"></a>整个 strings.xml 代码如下</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"app_name"</span>&gt;</span>Court Counter<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"add2b"</span>&gt;</span>+2 points<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"add1b"</span>&gt;</span>+1 pointsb<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"team_a"</span>&gt;</span>Team A<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"add2a"</span>&gt;</span>+2 points<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"points_a"</span>&gt;</span>0<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"add3a"</span>&gt;</span>+3 points<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"add1a"</span>&gt;</span>+1 points<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"team_b"</span>&gt;</span>Team B<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"points_b"</span>&gt;</span>0<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"add3b"</span>&gt;</span>+3 points<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"reset_text_views"</span>&gt;</span>reset<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>strings.xml 中的字符定义如下：</p>
+<pre><code class="xml">&lt;resources&gt;
+    &lt;string name=&quot;text_name&quot;&gt;显示的文字&lt;/string&gt;
+    ...
+&lt;/resources&gt;
+</code></pre>
+<p>调用时：</p>
+<pre><code class="xml">android:text=&quot;@string/text_name&quot;
+</code></pre>
+<h4 id="整个-strings-xml-代码如下"><a href="#整个-strings-xml-代码如下" class="headerlink" title="整个 strings.xml 代码如下"></a>整个 strings.xml 代码如下</h4><pre><code class="xml">&lt;resources&gt;
+    &lt;string name=&quot;app_name&quot;&gt;Court Counter&lt;/string&gt;
+    &lt;string name=&quot;add2b&quot;&gt;+2 points&lt;/string&gt;
+    &lt;string name=&quot;add1b&quot;&gt;+1 pointsb&lt;/string&gt;
+    &lt;string name=&quot;team_a&quot;&gt;Team A&lt;/string&gt;
+    &lt;string name=&quot;add2a&quot;&gt;+2 points&lt;/string&gt;
+    &lt;string name=&quot;points_a&quot;&gt;0&lt;/string&gt;
+    &lt;string name=&quot;add3a&quot;&gt;+3 points&lt;/string&gt;
+    &lt;string name=&quot;add1a&quot;&gt;+1 points&lt;/string&gt;
+    &lt;string name=&quot;team_b&quot;&gt;Team B&lt;/string&gt;
+    &lt;string name=&quot;points_b&quot;&gt;0&lt;/string&gt;
+    &lt;string name=&quot;add3b&quot;&gt;+3 points&lt;/string&gt;
+    &lt;string name=&quot;reset_text_views&quot;&gt;reset&lt;/string&gt;
+&lt;/resources&gt;
+</code></pre>
 <h3 id="五、APP-强制锁定横竖屏"><a href="#五、APP-强制锁定横竖屏" class="headerlink" title="五、APP 强制锁定横竖屏"></a>五、APP 强制锁定横竖屏</h3><ul>
 <li>在最开始做出 APP 时没有考虑到 APP 横屏的问题，偶然一次横屏之后发现 APP 显示不全了，当时也没多想，既然横屏不行，那就去掉横屏显示，锁定在竖屏。上网查了下资料，锁定横竖屏有两种实现方式：XML 或 Java 方式。这个 APP 采用了 XML 锁定方式。</li>
 </ul>
@@ -589,11 +875,41 @@
 <li>landscape：锁定为横屏。</li>
 <li>portrait：锁定为竖屏。</li>
 </ul>
-<h5 id="具体代码如下："><a href="#具体代码如下：" class="headerlink" title="具体代码如下："></a>具体代码如下：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"com.roojay.android.courtcounter"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:allowBackup</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:icon</span>=<span class="string">"@mipmap/ic_launcher"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:supportsRtl</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".MainActivity"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:screenOrientation</span>=<span class="string">"portrait"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="具体代码如下："><a href="#具体代码如下：" class="headerlink" title="具体代码如下："></a>具体代码如下：</h5><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.roojay.android.courtcounter&quot;&gt;
+
+    &lt;application
+        android:allowBackup=&quot;true&quot;
+        android:icon=&quot;@mipmap/ic_launcher&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:supportsRtl=&quot;true&quot;
+        android:theme=&quot;@style/AppTheme&quot; &gt;
+        &lt;activity android:name=&quot;.MainActivity&quot;
+            android:screenOrientation=&quot;portrait&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
 <h4 id="Java代码锁定横竖屏"><a href="#Java代码锁定横竖屏" class="headerlink" title="Java代码锁定横竖屏"></a>Java代码锁定横竖屏</h4><ul>
 <li>在onCreate()方法中加入锁定代码。</li>
 </ul>
-<h5 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);<span class="comment">//锁定为横屏</span></span><br><span class="line">      <span class="comment">//setRequestedOrientation(ActivityInfo .SCREEN_ORIENTATION_PORTRAIT);//锁定为竖屏</span></span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h5><pre><code class="java">public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//锁定为横屏
+      //setRequestedOrientation(ActivityInfo .SCREEN_ORIENTATION_PORTRAIT);//锁定为竖屏
+        setContentView(R.layout.activity_main);
+    }
+</code></pre>
 </li>
 </ul>
 <h3 id="六、APP-演示及源码"><a href="#六、APP-演示及源码" class="headerlink" title="六、APP 演示及源码"></a>六、APP 演示及源码</h3><ul>

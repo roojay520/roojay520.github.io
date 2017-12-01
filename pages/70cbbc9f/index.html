@@ -533,8 +533,22 @@
 <li>将具体内容私有化，防止外部以非预期的方式使用内部私有的内容。</li>
 </ol>
 <h2 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h2><p>函数作用域的含义是指，属于这个函数的全部变量都可以在整个函数的范围内使用及复用（事实上在嵌套的作用域中也可以使用）。</p>
-<p><strong>函数声明:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure></p>
-<p><strong>立即执行函数表达式：</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p><strong>函数声明:</strong></p>
+<pre><code class="javascript">function foo() {
+    for (let i = 0; i &lt; 10; i++) {
+        console.log(i);
+    }
+}
+
+foo();
+</code></pre>
+<p><strong>立即执行函数表达式：</strong></p>
+<pre><code class="javascript">(function foo() {
+    for (let i = 0; i &lt; 10; i++) {
+        console.log(i);
+    }
+})();
+</code></pre>
 <p>区分函数声明和表达式最简单的方法是看 function 关键字出现在声明中的位置（不仅仅是一行代码，而是整个声明中的位置）。<strong>如果 function 是声明中的第一个词，那么就是一个函数声明，否则就是一个函数表达式。</strong></p>
 <p>函数声明和函数表达式之间最重要的区别是它们的名称标识符将会绑定在何处。</p>
 <ol>
@@ -546,43 +560,118 @@
 <h4 id="IIFE-的两种写法"><a href="#IIFE-的两种写法" class="headerlink" title="IIFE 的两种写法"></a>IIFE 的两种写法</h4><ol>
 <li>立即执行函数表达式：</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">(function foo() {
+    for (let i = 0; i &lt; 10; i++) {
+        console.log(i);
+    }
+})();
+</code></pre>
 <ol>
 <li>另一种改进形式写法将调用的（）移到了用来包装的（）里面。</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">(function foo() {
+    for (let i = 0; i &lt; 10; i++) {
+        console.log(i);
+    }
+}());
+</code></pre>
 <p>两种写法功能上一样，凭个人喜好。</p>
 <h4 id="IIFE-表达式的用法"><a href="#IIFE-表达式的用法" class="headerlink" title="IIFE 表达式的用法"></a>IIFE 表达式的用法</h4><ol>
 <li>匿名函数表达式</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> a = <span class="number">6</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">// a</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">(() =&gt; {
+    const a = 6;
+    console.log(a); // a
+})();
+</code></pre>
 <ol>
 <li>将它当作<strong>函数调用</strong>，并传递参数进去</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">'haha'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">IIFE</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name); <span class="comment">// haha</span></span><br><span class="line">&#125;)(name);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">const name = &#39;haha&#39;;
+(function IIFE(name) {
+    console.log(name); // haha
+})(name);
+</code></pre>
 <ol>
 <li>倒置代码的运行顺序，将需要运行的函数放在第二位， IIFE 执行之后，放在第二位的函数被当作参数传递进去。</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> objA = &#123;</span><br><span class="line">    name: <span class="string">'haha'</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">IIFE</span>(<span class="params">foo</span>) </span>&#123;</span><br><span class="line">    foo(objA);</span><br><span class="line">&#125;(<span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> name = <span class="string">'3'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(name); <span class="comment">// 3</span></span><br><span class="line">    <span class="built_in">console</span>.log(obj.name); <span class="comment">// haha</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">const objA = {
+    name: &#39;haha&#39;,
+};
+
+(function IIFE(foo) {
+    foo(objA);
+}((obj) =&gt; {
+    const name = &#39;3&#39;;
+    console.log(name); // 3
+    console.log(obj.name); // haha
+}));
+</code></pre>
 <p>第二部分为一个匿名函数，被当作一个参数 foo 传入到 IIFE 函数的第一部分。最后匿名函数调用执行，将一个全局对象 objA 传入当作 obj 的参数值。</p>
 <h2 id="块作用域"><a href="#块作用域" class="headerlink" title="块作用域"></a>块作用域</h2><p>块作用域是一个用来对之前的最小授权原则进行扩展的工具，将代码从在函数中隐藏信息扩展为在块中隐藏信息。</p>
 <p>块作用域指的是变量和函数不仅可以属于所处的作用域，也可以属于某个代码块（通常指 { .. } 内部）。</p>
 <p>只想在 for 循环内部的上下文中使用 i，所以在 for 循环的头部使用 var 声明一个变量 i，但实际上 i 会被绑定在外部作用域（函数或全局）中，在全局范围内都有效。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  arr[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">arr[<span class="number">6</span>](); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var arr = [];
+for (var i = 0; i &lt; 10; i++) {
+  arr[i] = function() {
+    console.log(i);
+  };
+}
+arr[6](); // 10
+</code></pre>
 <p>console.log(i) 内部的 i 指向全局的的 i，最后循环完毕后在执行 arr<a href="">6</a>，这时全局的 i 的值为 10.</p>
 <p>ES3 规范中规定 try/catch 的 catch 分句会创建一个块作用域，其中声明的变量仅在 catch 内部有效。</p>
 <h3 id="Let-变量"><a href="#Let-变量" class="headerlink" title="Let 变量"></a>Let 变量</h3><p>let 关键字可以将变量绑定到所在的任意作用域中（通常是 {  ..  } 内部）。换句话说，let 为其声明的变量隐式地了所在的块作用域。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  arr[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">arr[<span class="number">6</span>](); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var arr = [];
+for (let i = 0; i &lt; 10; i++) {
+  arr[i] = function () {
+    console.log(i);
+  };
+}
+arr[6](); // 6
+</code></pre>
 <p>由 let 声明的 i，每次循环都在循环的内部重新生成了一次变量，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> _i = i;</span><br><span class="line">  arr[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(_i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">arr[<span class="number">6</span>](); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var arr = [];
+for (let i = 0; i &lt; 10; i++) {
+    let _i = i;
+  arr[i] = function () {
+    console.log(_i);
+  };
+}
+arr[6](); // 6
+</code></pre>
 <p>for 循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p>
 <p>let 声明的变量只在它所在的代码块有效。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">let</span> b = <span class="number">9</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 6</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// b is not defined</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">{
+    var a = 6;
+    let b = 9;
+}
+
+console.log(a); // 6
+console.log(b); // b is not defined
+</code></pre>
 <h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>在代码块内，使用 let 命令声明变量，在声明之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="comment">// TDZ开始</span></span><br><span class="line">  tmp = <span class="string">'abc'</span>; <span class="comment">// ReferenceError</span></span><br><span class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// ReferenceError</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> tmp; <span class="comment">// TDZ结束</span></span><br><span class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line">  tmp = <span class="number">123</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// 123</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">if (true) {
+  // TDZ开始
+  tmp = &#39;abc&#39;; // ReferenceError
+  console.log(tmp); // ReferenceError
+
+  let tmp; // TDZ结束
+  console.log(tmp); // undefined
+
+  tmp = 123;
+  console.log(tmp); // 123
+}
+</code></pre>
 <p>ES6 明确规定，如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。</p>
 <p>只要块级作用域内存在 let 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tmp = <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">  tmp = <span class="number">3</span>; <span class="comment">// ReferenceError</span></span><br><span class="line">  <span class="keyword">let</span> tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var tmp = 6;
+
+if(true) {
+  tmp = 3; // ReferenceError
+  let tmp;
+}
+</code></pre>
 
         
     

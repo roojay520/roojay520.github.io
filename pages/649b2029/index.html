@@ -554,15 +554,77 @@
 <li>导入类 java.io.*；</li>
 <li>定义主函数；</li>
 <li>声明输入流的引用；</li>
-<li>声明输出流的引用；<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">  <span class="number">1</span>.生成代表输入流的对象；</span><br><span class="line">  <span class="number">2</span>.生成代表输出流的对象；</span><br><span class="line">  <span class="number">3</span>. 生成一个<span class="keyword">byte</span>字节数组；</span><br><span class="line">  <span class="number">4</span>.调用输入流的read方法读取数据；</span><br><span class="line">  <span class="number">5</span>.定义临时变量接受数据的量；</span><br><span class="line">  <span class="number">6</span>.调用输出流的write方法写入数据；</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">	Systen.out.println(e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//finally进行结尾处理</span></span><br><span class="line"><span class="keyword">finally</span>&#123;</span><br><span class="line">	<span class="keyword">try</span>&#123;</span><br><span class="line">		fis.close();</span><br><span class="line">		fos.close();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">		System.out.println(e);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>声明输出流的引用；<pre><code class="java">try{
+1.生成代表输入流的对象；
+2.生成代表输出流的对象；
+3. 生成一个byte字节数组；
+4.调用输入流的read方法读取数据；
+5.定义临时变量接受数据的量；
+6.调用输出流的write方法写入数据；
+}
+catch(Exception e){
+ Systen.out.println(e);
+}
+//finally进行结尾处理
+finally{
+ try{
+     fis.close();
+     fos.close();
+ }
+ catch(Exception e){
+     System.out.println(e);
+ }
+}
+</code></pre>
+<h4 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h4><pre><code class="java">import java.io.*;
+public class Test{
+ public static void main(String args[]){
+     //声明输入流引用
+     FileInputStream fis = null;
+     //声明输出流引用
+     FileOutputStream fos = null;
+     try{
+         //生成代表输入流的对象
+         fis = new FileInputStream(&quot;D:/java/8.8/from.txt&quot;);
+         //生成代表输入流的对象
+         fos = new FileOutputStream(&quot;D:/java/8.8/to.txt&quot;);
+         //生成一个字节型buffer数组
+         byte[] buffer = new byte[100];
+         //定义一个临时变量，用于接受调用输入流read方法读取数据的量
+         int temp = fis.read(buffer,0,b.length);
+         //调用输出流的write方法写入数据
+         fos.write(buffer,0,temp);
+     }
+     catch(Exception e){
+         System.out.println(e);
+     }
+ }
+     //finally进行结尾处理
+     finally{
+         try{
+             fis.close();
+             fos.close();
+         }
+         catch(Exception e){
+             System.out.println(e);
+         }
+     }
+}
+</code></pre>
 </li>
 </ol>
-<h4 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		<span class="comment">//声明输入流引用</span></span><br><span class="line">		FileInputStream fis = <span class="keyword">null</span>;</span><br><span class="line">		<span class="comment">//声明输出流引用</span></span><br><span class="line">		FileOutputStream fos = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="comment">//生成代表输入流的对象</span></span><br><span class="line">			fis = <span class="keyword">new</span> FileInputStream(<span class="string">"D:/java/8.8/from.txt"</span>);</span><br><span class="line">			<span class="comment">//生成代表输入流的对象</span></span><br><span class="line">			fos = <span class="keyword">new</span> FileOutputStream(<span class="string">"D:/java/8.8/to.txt"</span>);</span><br><span class="line">			<span class="comment">//生成一个字节型buffer数组</span></span><br><span class="line">			<span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">100</span>];</span><br><span class="line">			<span class="comment">//定义一个临时变量，用于接受调用输入流read方法读取数据的量</span></span><br><span class="line">			<span class="keyword">int</span> temp = fis.read(buffer,<span class="number">0</span>,b.length);</span><br><span class="line">			<span class="comment">//调用输出流的write方法写入数据</span></span><br><span class="line">			fos.write(buffer,<span class="number">0</span>,temp);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">			System.out.println(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="comment">//finally进行结尾处理</span></span><br><span class="line">		<span class="keyword">finally</span>&#123;</span><br><span class="line">			<span class="keyword">try</span>&#123;</span><br><span class="line">				fis.close();</span><br><span class="line">				fos.close();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">				System.out.println(e);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="大文件的读写"><a href="#大文件的读写" class="headerlink" title="大文件的读写"></a>大文件的读写</h2><ol>
 <li>调节buffer数组的大小；</li>
 <li>对read，write方法采取while循环；</li>
 </ol>
-<h4 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">	<span class="keyword">int</span> temp = fis.read(buffer,<span class="number">0</span>,buffer.length);</span><br><span class="line">	<span class="keyword">if</span>(temp == -<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	fos.write(buffer,<span class="number">0</span>,temp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h4><pre><code class="java">while(true){
+    int temp = fis.read(buffer,0,buffer.length);
+    if(temp == -1){
+        break;
+    }
+    fos.write(buffer,0,temp);
+}
+</code></pre>
 <h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><ul>
 <li>字符流：是以对写文件时，以字符为基础</li>
 <li>字节输入流：Reader &lt;–FileReader<ul>
@@ -574,7 +636,39 @@
 </ul>
 </li>
 </ul>
-<h4 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestChar</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		FileReader fr = <span class="keyword">null</span>;</span><br><span class="line">		FileWriter fw = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			fr = <span class="keyword">new</span> FileReader(<span class="string">"d:/java/9.5/read.txt"</span>);</span><br><span class="line">			fw = <span class="keyword">new</span> FileWriter(<span class="string">"d:/java/9.5/write.txt"</span>);</span><br><span class="line">			<span class="keyword">char</span> [] buffer = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">1024</span>];</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">				<span class="keyword">int</span> temp = fr.read(buffer, <span class="number">0</span>, buffer.length);</span><br><span class="line">				<span class="keyword">if</span>(temp == -<span class="number">1</span>)&#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				fw.write(buffer, <span class="number">0</span>, temp);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">			System.out.println(e);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">finally</span>&#123;</span><br><span class="line">			<span class="keyword">try</span>&#123;</span><br><span class="line">				fr.close();</span><br><span class="line">				fw.close();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">				System.out.println(e);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h4><pre><code class="java">import java.io.*;
+public class TestChar{
+    public static void main(String args[]){
+        FileReader fr = null;
+        FileWriter fw = null;
+        try{
+            fr = new FileReader(&quot;d:/java/9.5/read.txt&quot;);
+            fw = new FileWriter(&quot;d:/java/9.5/write.txt&quot;);
+            char [] buffer = new char[1024];
+            while(true){
+                int temp = fr.read(buffer, 0, buffer.length);
+                if(temp == -1){
+                    break;
+                }
+                fw.write(buffer, 0, temp);
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        finally{
+            try{
+                fr.close();
+                fw.close();
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
+        }
+    }
+}
+</code></pre>
+
         
     
 
@@ -617,7 +711,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/pages/7dc91154/" id="post_nav-newer" class="prev-content">
+        <a href="/pages/265f6f6b/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -631,7 +725,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/pages/e7882660/" id="post_nav-older" class="next-content">
+        <a href="/pages/bbf344f6/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

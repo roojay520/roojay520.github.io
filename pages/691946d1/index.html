@@ -531,12 +531,102 @@
 <p>​</p>
 </li>
 </ul>
-<h3 id="文件内容如下："><a href="#文件内容如下：" class="headerlink" title="文件内容如下："></a>文件内容如下：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明是Android程序</span></span><br><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    <span class="comment">// 编译SDK的版本</span></span><br><span class="line">    compileSdkVersion <span class="number">21</span></span><br><span class="line">    <span class="comment">// build tools的版本</span></span><br><span class="line">    buildToolsVersion <span class="string">"21.1.1"</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">    	<span class="comment">// 应用的包名</span></span><br><span class="line">        applicationId <span class="string">"ly.roay"</span></span><br><span class="line">        minSdkVersion <span class="number">14</span></span><br><span class="line">        targetSdkVersion <span class="number">21</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">"1.0.0"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// java版本</span></span><br><span class="line">    compileOptions &#123;</span><br><span class="line">        sourceCompatibility JavaVersion.VERSION_1_7</span><br><span class="line">        targetCompatibility JavaVersion.VERSION_1_7</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            <span class="comment">// debug模式</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        release &#123;</span><br><span class="line">            <span class="comment">// 是否进行混淆</span></span><br><span class="line">            minifyEnabled <span class="keyword">false</span></span><br><span class="line">            <span class="comment">// 混淆文件的位置</span></span><br><span class="line">            <span class="function">proguardFiles <span class="title">getDefaultProguardFile</span><span class="params">(<span class="string">'proguard-android.txt'</span>)</span>, 'proguard-rules.txt'</span></span><br><span class="line"><span class="function">        &#125;</span></span><br><span class="line"><span class="function">    &#125;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="comment">// 移除lint检查的error</span></span></span><br><span class="line"><span class="function">    lintOptions </span>&#123;</span><br><span class="line">      abortOnError <span class="keyword">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    <span class="comment">// 编译libs目录下的所有jar包</span></span><br><span class="line">    <span class="function">compile <span class="title">fileTree</span><span class="params">(dir: <span class="string">'libs'</span>, include: [<span class="string">'*.jar'</span>])</span></span></span><br><span class="line"><span class="function">    compile 'com.android.support:support-v4:21.0.2'</span></span><br><span class="line"><span class="function">    compile 'com.etsy.android.grid:library:1.0.5'</span></span><br><span class="line"><span class="function">    compile 'com.alexvasilkov:foldable-layout:1.0.1'</span></span><br><span class="line"><span class="function">    <span class="comment">// 编译extras目录下的ShimmerAndroid模块</span></span></span><br><span class="line"><span class="function">    compile <span class="title">project</span><span class="params">(<span class="string">':extras:ShimmerAndroid'</span>)</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="文件内容如下："><a href="#文件内容如下：" class="headerlink" title="文件内容如下："></a>文件内容如下：</h3><pre><code class="java">// 声明是Android程序
+apply plugin: &#39;com.android.application&#39;
+
+android {
+    // 编译SDK的版本
+    compileSdkVersion 21
+    // build tools的版本
+    buildToolsVersion &quot;21.1.1&quot;
+
+    defaultConfig {
+        // 应用的包名
+        applicationId &quot;ly.roay&quot;
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 1
+        versionName &quot;1.0.0&quot;
+    }
+
+    // java版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    buildTypes {
+        debug {
+            // debug模式
+        }
+
+        release {
+            // 是否进行混淆
+            minifyEnabled false
+            // 混淆文件的位置
+            proguardFiles getDefaultProguardFile(&#39;proguard-android.txt&#39;), &#39;proguard-rules.txt&#39;
+        }
+    }
+
+    // 移除lint检查的error
+    lintOptions {
+      abortOnError false
+    }
+}
+
+dependencies {
+    // 编译libs目录下的所有jar包
+    compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])
+    compile &#39;com.android.support:support-v4:21.0.2&#39;
+    compile &#39;com.etsy.android.grid:library:1.0.5&#39;
+    compile &#39;com.alexvasilkov:foldable-layout:1.0.1&#39;
+    // 编译extras目录下的ShimmerAndroid模块
+    compile project(&#39;:extras:ShimmerAndroid&#39;)
+}
+</code></pre>
 <h2 id="Roay-build-gradle"><a href="#Roay-build-gradle" class="headerlink" title="Roay/build.gradle"></a>Roay/build.gradle</h2><ul>
 <li><p>这个文件是整个项目的gradle基础配置文。</p>
 </li>
 <li><p>内容主要包含了两个方面：一个是声明仓库的源，这里可以看到是指明的jcenter(), 之前版本则是mavenCentral(), jcenter可以理解成是一个新的中央远程仓库，兼容maven中心仓库，而且性能更优。另一个是声明了android gradle plugin的版本，android studio 1.0正式版必须要求支持gradle plugin 1.0的版本。</p>
-<h3 id="文件内容如下：-1"><a href="#文件内容如下：-1" class="headerlink" title="文件内容如下："></a>文件内容如下：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Top-level build file where you can add configuration options common to all sub-projects/modules.</span></span><br><span class="line"></span><br><span class="line">buildscript &#123;<span class="comment">// Top-level build file where you can add configuration options common to all sub-projects/modules.</span></span><br><span class="line"></span><br><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath <span class="string">'com.android.tools.build:gradle:1.0.0'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath <span class="string">'com.android.tools.build:gradle:2.2.0'</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// <span class="doctag">NOTE:</span> Do not place your application dependencies here; they belong</span></span><br><span class="line">        <span class="comment">// in the individual module build.gradle files</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">task <span class="title">clean</span><span class="params">(type: Delete)</span> </span>&#123;</span><br><span class="line">    delete rootProject.buildDir</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="文件内容如下：-1"><a href="#文件内容如下：-1" class="headerlink" title="文件内容如下："></a>文件内容如下：</h3><pre><code class="java">// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath &#39;com.android.tools.build:gradle:1.0.0&#39;
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath &#39;com.android.tools.build:gradle:2.2.0&#39;
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+</code></pre>
 <p>​</p>
 <p>​</p>
 </li>

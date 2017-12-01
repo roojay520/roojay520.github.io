@@ -532,7 +532,21 @@
 <p>闭包使得函数在<strong>定义时的词法作用域以外</strong>的地方被调用时，函数<strong>可以继续访问定义时的词法作用域</strong>。</p>
 <p>在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。</p>
 <p>在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">        a++;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> bar = foo();</span><br><span class="line"><span class="keyword">const</span> baz = foo();</span><br><span class="line">bar(); <span class="comment">// 0</span></span><br><span class="line">bar(); <span class="comment">// 1 闭包保存上次计算的值</span></span><br><span class="line">bar(); <span class="comment">// 2</span></span><br><span class="line">baz(); <span class="comment">// 0 新生成函数</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">function foo() {
+    let a = 0;
+
+    return function func() {
+        console.log(a);
+        a++;
+    };
+}
+const bar = foo();
+const baz = foo();
+bar(); // 0
+bar(); // 1 闭包保存上次计算的值
+bar(); // 2
+baz(); // 0 新生成函数
+</code></pre>
 <p>将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。</p>
 <p>无论通过何种手段<strong>将内部函数传递到所在的词法作用域以外</strong>，它都会<strong>持有对原始定义作用域的引用</strong>，无论在何处<strong>执行这个函数都会使用闭包</strong>。</p>
 

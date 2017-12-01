@@ -532,7 +532,73 @@
 <ol>
 <li>通过interface定义；</li>
 <li>函数都是抽象函数（只有函数没有函数体）；</li>
-<li>子类通过implements实现；对接口里面的抽象函数进行override；<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*定义一个Printer接口，通过HPPrinter，CanonPrinter两个子类去实现</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">package</span> printer;</span><br><span class="line"> <span class="comment">//定义一个Printer接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Printer</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String s)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义HPPrinter去implements Printer接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HPPrinter</span> <span class="keyword">implements</span> <span class="title">Printer</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"HPPrinter open"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"HPPrinter print:"</span> + s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"HPPrinter close"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义CanonPrinter去implements Printer接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CanonPrinter</span> <span class="keyword">implements</span> <span class="title">Printer</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">clean</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"clean"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"CanonPrinter open"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"CanonPrinter print:"</span> + s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.clean();</span><br><span class="line">        System.out.println(<span class="string">"CanonPrinter close"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//静态工厂方法模式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrinterFactory</span></span>&#123;</span><br><span class="line"><span class="comment">//定义一个静态函数getPrinter(int flag)，返回值类型为Printer</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Printer <span class="title">getPrinter</span><span class="params">(<span class="keyword">int</span> flag)</span></span>&#123;</span><br><span class="line">        Printer printer = <span class="keyword">null</span>;</span><br><span class="line"><span class="comment">//根据用户选择生成新的对象，并向上转型为Printer类型</span></span><br><span class="line">        <span class="keyword">if</span> (flag == <span class="number">0</span>)&#123;</span><br><span class="line">            printer = <span class="keyword">new</span> HPPrinter();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(flag == <span class="number">1</span>)&#123;</span><br><span class="line">            printer = <span class="keyword">new</span> CanonPrinter();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> printer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义一个主函数，对函数进行调用</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//工厂方法模式调用 类名+函数</span></span><br><span class="line">        Printer printer = PrinterFactory.getPrinter(flag);</span><br><span class="line">        printer.open();</span><br><span class="line">        printer.print(<span class="string">"Test"</span>);</span><br><span class="line">        printer.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>子类通过implements实现；对接口里面的抽象函数进行override；<pre><code class="java">/**
+*定义一个Printer接口，通过HPPrinter，CanonPrinter两个子类去实现
+*/
+package printer;
+//定义一个Printer接口
+interface Printer{
+ public void open();
+ public void print(String s);
+ public void close();
+}
+//定义HPPrinter去implements Printer接口
+class HPPrinter implements Printer{
+ @Override
+ public void open(){
+     System.out.println(&quot;HPPrinter open&quot;);
+ }
+ public void print(String s){
+     System.out.println(&quot;HPPrinter print:&quot; + s);
+ }
+ public void close(){
+     System.out.println(&quot;HPPrinter close&quot;);
+ }
+}
+//定义CanonPrinter去implements Printer接口
+class CanonPrinter implements Printer{
+ @Override
+ private void clean(){
+     System.out.println(&quot;clean&quot;);
+ }
+ public void open(){
+     System.out.println(&quot;CanonPrinter open&quot;);
+ }
+ public void print(String s){
+     System.out.println(&quot;CanonPrinter print:&quot; + s);
+ }
+ public void close(){
+     this.clean();
+     System.out.println(&quot;CanonPrinter close&quot;);
+ }
+}
+//静态工厂方法模式
+class PrinterFactory{
+//定义一个静态函数getPrinter(int flag)，返回值类型为Printer
+ public static Printer getPrinter(int flag){
+     Printer printer = null;
+//根据用户选择生成新的对象，并向上转型为Printer类型
+     if (flag == 0){
+         printer = new HPPrinter();
+     }
+     else if(flag == 1){
+         printer = new CanonPrinter();
+     }
+     return printer;
+ }
+}
+//定义一个主函数，对函数进行调用
+class Test{
+ public static void main(String args[]){
+     int flag = 1;
+     //工厂方法模式调用 类名+函数
+     Printer printer = PrinterFactory.getPrinter(flag);
+     printer.open();
+     printer.print(&quot;Test&quot;);
+     printer.close();
+ }
+}
+</code></pre>
 </li>
 </ol>
 <h2 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h2><h4 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h4><blockquote>
@@ -582,7 +648,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/pages/c075d141/" id="post_nav-newer" class="prev-content">
+        <a href="/pages/ad01bc3e/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -596,7 +662,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/pages/24709d34/" id="post_nav-older" class="next-content">
+        <a href="/pages/29cc0096/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

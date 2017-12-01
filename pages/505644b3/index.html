@@ -535,11 +535,69 @@
 <li>其父元素的高度始终是由三栏中高度最高的元素确定。</li>
 </ul>
 <h2 id="第一步-建立基本框架"><a href="#第一步-建立基本框架" class="headerlink" title="第一步 建立基本框架"></a>第一步 建立基本框架</h2><p>写出基本的 html 框架，构建出基本盒模型，包括<code>header</code>, <code>container</code>和<code>footer</code>三个主体结构，再向<code>container</code>中加入三栏：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;div class=&quot;header&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;column center&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;column left&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;column right&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
+</code></pre>
 <h3 id="第二步-构建基础布局"><a href="#第二步-构建基础布局" class="headerlink" title="第二步 构建基础布局"></a>第二步 构建基础布局</h3><p>将 <code>container</code> 的内边距设置为左右两侧边栏各自的宽度，为两侧边栏留下空间。为三栏设置合适的宽度(<code>center</code>宽度为 100%，<code>left</code>宽度为 120px，<code>right</code>宽度为240px)，并且将三者设为向左浮动，同时清除<code>footer</code>的上下环境，避免其浮动。最后将<code>body</code>的最小宽度设为 480px(2*LC width + RC width)，避免因为<code>center</code>部分的宽度小<code>left</code>和<code>right</code>的宽度导致布局乱掉。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>; <span class="comment">/* 初始化LCD */</span></span><br><span class="line">    <span class="attribute">min-width</span>: <span class="number">480px</span>;<span class="comment">/* 2*LC-width + RC-width */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.header</span>, <span class="selector-class">.footer</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#1c262f</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">2em</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">120px</span>;  <span class="comment">/* LC-width */</span></span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">240px</span>; <span class="comment">/* RC-width */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.column</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">text-align</span>: justify; <span class="comment">/* 文字两端对齐 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#4285f3</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#ea4335</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">120px</span>; <span class="comment">/* LC-width */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#34a853</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">240px</span>;  <span class="comment">/* RC-width */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.footer</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">        body {
+            padding: 0;
+            margin: 0; /* 初始化LCD */
+            min-width: 480px;/* 2*LC-width + RC-width */
+        }
+        .header, .footer {
+            background-color: #1c262f;
+            color: white;
+            text-align: center;
+            font-size: 2em;
+        }
+        .container {
+            padding-left: 120px;  /* LC-width */
+            padding-right: 240px; /* RC-width */
+        }
+        .column {
+            float: left;
+            color: white;
+            position: relative;
+            text-align: justify; /* 文字两端对齐 */
+        }
+        h1 {
+            text-align: center;
+        }
+        .center {
+            background-color: #4285f3;
+            width: 100%;
+        }
+        .left {
+            background-color: #ea4335;
+            width: 120px; /* LC-width */
+        }
+        .right {
+            background-color: #34a853;
+            width: 240px;  /* RC-width */
+        }
+        .footer {
+            clear: both;
+        }
+</code></pre>
 <h3 id="第三步-将侧栏放到合适的位置"><a href="#第三步-将侧栏放到合适的位置" class="headerlink" title="第三步 将侧栏放到合适的位置"></a>第三步 将侧栏放到合适的位置</h3><p>设置三栏的定位属性为相对定位。设置左边栏的外边距<code>margin-left: -100%;</code>(中间栏所占据的宽度)，左边栏上移到中间栏的左边，但是与中间栏部分重叠。此时利用相对定位属性，为左边栏设置一个与其等宽的偏移量<code>left：-120px;</code>(相对于<code>container</code>的左边线向左偏移 120px)，左边栏刚好占据<code>container</code>的左内边距位置。最后设置右边栏的外边距<code>margin-right: -240px;</code>(右边栏自身宽度)，使右边栏占据<code>container</code>的右内边距位置。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.column</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">left</span>: -<span class="number">120px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">240px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">        .column {
+            float: left;
+            position: relative;
+        }
+        .left {
+            margin-left: -100%;
+            left: -120px;
+        }
+        .right {
+            margin-right: -240px;
+        }
+</code></pre>
+
         
     
 

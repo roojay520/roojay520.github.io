@@ -533,7 +533,12 @@
 <li>元素大小 = boder + padding + contentwidth</li>
 <li>box-size: boder-size;（兼容性） 它会让系统计算元素大小时会将 boder padding 包括在内。不包含外边距(margin)。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="attribute">-webkit-box-size</span>: boder-size;</span><br><span class="line"> <span class="attribute">-ms-box-size</span>: boder-size;</span><br><span class="line"> <span class="attribute">-moz-box-size</span>: boder-size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">{
+ -webkit-box-size: boder-size;
+ -ms-box-size: boder-size;
+ -moz-box-size: boder-size;
+}
+</code></pre>
 <h2 id="浏览器前缀"><a href="#浏览器前缀" class="headerlink" title="浏览器前缀"></a>浏览器前缀</h2><ul>
 <li>-webkit</li>
 <li>-ms</li>
@@ -545,7 +550,11 @@
 <ul>
 <li>用于 Chrome 29+、IE 11+ 和 Mozilla 28+。要支持 Safari，必须添加 -webkit- 前缀：</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-flex;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">{
+    display: -webkit-flex;
+    display: flex;
+}
+</code></pre>
 
         
     

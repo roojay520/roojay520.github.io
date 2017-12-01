@@ -528,32 +528,61 @@
     
         <h2 id="split-将字符串分割成数组"><a href="#split-将字符串分割成数组" class="headerlink" title="split() 将字符串分割成数组"></a>split() 将字符串分割成数组</h2><p>str.split(‘分隔符’, 返回数组最大的长度)</p>
 <p>根据分隔符(字符串或者正则表达式)将一个字符串分割成数组。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'wind rain fire'</span>;</span><br><span class="line"><span class="keyword">const</span> arr = str.split(<span class="string">' '</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// arr['wind', 'rain', 'fire']</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">const str = &#39;wind rain fire&#39;;
+const arr = str.split(&#39; &#39;);
+console.log(arr); // arr[&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;]
+</code></pre>
 <h2 id="join-数组连接成一个字符串"><a href="#join-数组连接成一个字符串" class="headerlink" title="join() 数组连接成一个字符串"></a>join() 数组连接成一个字符串</h2><p>arr.join(‘分隔符’)</p>
 <p>分隔符默认值为<code>,</code><br>将数组（或一个类数组对象）的所有元素使用分隔符连接成一个新字符串。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="string">'wind'</span>, <span class="string">'rain'</span>, <span class="string">'fire'</span>];</span><br><span class="line"><span class="keyword">const</span> str = arr.join(<span class="string">'+'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">// wind+rain+fire</span></span><br></pre></td></tr></table></figure>
-<h2 id="字符串快速排序"><a href="#字符串快速排序" class="headerlink" title="字符串快速排序"></a>字符串快速排序</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> strSort = <span class="function"><span class="params">str</span> =&gt;</span> str.split(<span class="string">''</span>).sort().join(<span class="string">''</span>);</span><br><span class="line">strSort(str);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">const arr = [&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;];
+const str = arr.join(&#39;+&#39;);
+console.log(str); // wind+rain+fire
+</code></pre>
+<h2 id="字符串快速排序"><a href="#字符串快速排序" class="headerlink" title="字符串快速排序"></a>字符串快速排序</h2><pre><code class="javascript">const strSort = str =&gt; str.split(&#39;&#39;).sort().join(&#39;&#39;);
+strSort(str);
+</code></pre>
 <h2 id="map-创建新数组"><a href="#map-创建新数组" class="headerlink" title="map() 创建新数组"></a>map() 创建新数组</h2><p>arr.map(callback)</p>
 <p>创建一个新数组，新数组的每个元素都是 callback 函数的结果。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> newArr = arr.map(<span class="function"><span class="params">num</span> =&gt;</span> num * <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newArr); <span class="comment">// newArr[2, 4, 6]</span></span><br></pre></td></tr></table></figure>
-<h2 id="数组取最大最小值"><a href="#数组取最大最小值" class="headerlink" title="数组取最大最小值"></a>数组取最大最小值</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr);  <span class="comment">// 取数组最大值</span></span><br><span class="line"><span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, arr);  <span class="comment">// 取数组最小值</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">const arr = [1, 2, 3];
+const newArr = arr.map(num =&gt; num * 2);
+console.log(newArr); // newArr[2, 4, 6]
+</code></pre>
+<h2 id="数组取最大最小值"><a href="#数组取最大最小值" class="headerlink" title="数组取最大最小值"></a>数组取最大最小值</h2><pre><code class="javascript">Math.max.apply(null, arr);  // 取数组最大值
+Math.min.apply(null, arr);  // 取数组最小值
+</code></pre>
 <p>ES6 扩展 rest 不定参数写法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.max(...arr);  <span class="comment">// 取数组最大值</span></span><br><span class="line"><span class="built_in">Math</span>.min(...arr);  <span class="comment">// 取数组最小值</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">Math.max(...arr);  // 取数组最大值
+Math.min(...arr);  // 取数组最小值
+</code></pre>
 <h2 id="filter-数组中取通过测试的值"><a href="#filter-数组中取通过测试的值" class="headerlink" title="filter() 数组中取通过测试的值"></a>filter() 数组中取通过测试的值</h2><p>filter(fn)</p>
 <p>创建一个新数组, 其包含通过 fn 函数测试返回值为 true 的所有元素。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [...arr] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> isOdd = <span class="function"><span class="params">num</span> =&gt;</span> num % <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> odd = arr.filter(isOdd); <span class="comment">// odd is [1, 7]</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">let [...arr] = [1, 2, 4, 7, 6];
+
+const isOdd = num =&gt; num % 2;
+
+let odd = arr.filter(isOdd); // odd is [1, 7]
+</code></pre>
 <h2 id="slice-取一部分数组"><a href="#slice-取一部分数组" class="headerlink" title="slice() 取一部分数组"></a>slice() 取一部分数组</h2><p>slice(start, end)</p>
 <ul>
 <li>start, end 数组下标</li>
 </ul>
 <p>返回一个从 start 到 end（不包括 end）选择的数组的一部分浅拷贝到一个新数组对象。原始数组不会被修改。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>];</span><br><span class="line"><span class="keyword">let</span> arr13 = arr.slice(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// ['a', 'b', 'c', 'd']</span></span><br><span class="line"><span class="built_in">console</span>.log(arr13); <span class="comment">// ['b', 'c']</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">let arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;];
+let arr13 = arr.slice(1, 3);
+console.log(arr); // [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
+console.log(arr13); // [&#39;b&#39;, &#39;c&#39;]
+</code></pre>
 <p>如果参数为负数，例如<code>start = -3, end = -1</code>，就表示倒数第三位到倒数第一位，不包括</p>
-<h2 id="reduce-数组求和"><a href="#reduce-数组求和" class="headerlink" title="reduce() 数组求和"></a>reduce() 数组求和</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">let</span> sumArr = arr.reduce(<span class="function">(<span class="params">sum, value</span>) =&gt;</span> sum + value, <span class="number">0</span>);</span><br><span class="line"><span class="comment">// sumArr is 9.</span></span><br></pre></td></tr></table></figure>
+<h2 id="reduce-数组求和"><a href="#reduce-数组求和" class="headerlink" title="reduce() 数组求和"></a>reduce() 数组求和</h2><pre><code class="javascript">let arr = [1, 3, 5];
+let sumArr = arr.reduce((sum, value) =&gt; sum + value, 0);
+// sumArr is 9.
+</code></pre>
 <p>sum 上一次调用回调返回的值，或者是提供的初始值 0;<br>num 数组中正在处理的元素;<br>0 可选项，其值用于第一次调用 callback 的第一个参数 sum。如果没有设置初始值，则将数组中的第一个元素作为初始值。空数组调用 reduce 时没有设置初始值将会报错。</p>
 <h2 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h2><p>str.repeat(n)</p>
 <p>创建 n 个 str 的副本，将其连接在一起返回一个新的字符串。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'ha'</span>.repeat(<span class="number">3</span>); <span class="comment">// 'hahaha'</span></span><br><span class="line"><span class="string">'ha'</span>.repeat(<span class="number">2</span>); <span class="comment">// 'haha'</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">&#39;ha&#39;.repeat(3); // &#39;hahaha&#39;
+&#39;ha&#39;.repeat(2); // &#39;haha&#39;
+</code></pre>
 <h2 id="match-字符串中正则取值"><a href="#match-字符串中正则取值" class="headerlink" title="match() 字符串中正则取值"></a>match() 字符串中正则取值</h2><p>str.match(regx)</p>
 <p>方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配，返回匹配值构成的数组。</p>
 

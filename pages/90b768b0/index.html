@@ -531,12 +531,31 @@
 <ul>
 <li><p>安装 firebase 和 vuefire:<br><code>npm i -S firebase vuefire</code></p>
 </li>
-<li><p>在入口文件中注册使用 vuefire 和 firebase:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> VueFire <span class="keyword">from</span> <span class="string">'vuefire'</span>;</span><br><span class="line"><span class="keyword">import</span> Firebase <span class="keyword">from</span> <span class="string">'firebase'</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(VueFire);</span><br></pre></td></tr></table></figure>
+<li><p>在入口文件中注册使用 vuefire 和 firebase:<br>```JavaScript<br>// main.js<br>import VueFire from ‘vuefire’;<br>import Firebase from ‘firebase’;</p>
 </li>
 </ul>
-<p>在 vue 组件中注册使用 firebase<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Firebase <span class="keyword">from</span> <span class="string">'firebase'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">    apiKey: <span class="string">'AIzaSyBSHeqABc_pmcXwBgP4GhIvO3DH9eJtZlo'</span>,</span><br><span class="line">    authDomain: <span class="string">'roojay123.firebaseapp.com'</span>,</span><br><span class="line">    databaseURL: <span class="string">'https://roojay123.firebaseio.com'</span>,</span><br><span class="line">    projectId: <span class="string">'roojay123'</span>,</span><br><span class="line">    storageBucket: <span class="string">'roojay123.appspot.com'</span>,</span><br><span class="line">    messagingSenderId: <span class="string">'691637156012'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 注册 app</span></span><br><span class="line">Firebase.initializeApp(config);</span><br><span class="line"><span class="comment">// 获取数据库引用</span></span><br><span class="line"><span class="keyword">const</span> db = Firebase.database();</span><br></pre></td></tr></table></figure></p>
-<p>通过 <code>.ref(&#39;/&#39;)</code> 取得位于根目录下的地址数据数组:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firebase: &#123;</span><br><span class="line">        data: db.ref(<span class="string">'/'</span>)</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure></p>
+<p>Vue.use(VueFire);</p>
+<pre><code>在 vue 组件中注册使用 firebase
+```javascript
+import Firebase from &#39;firebase&#39;;
+
+const config = {
+    apiKey: &#39;AIzaSyBSHeqABc_pmcXwBgP4GhIvO3DH9eJtZlo&#39;,
+    authDomain: &#39;roojay123.firebaseapp.com&#39;,
+    databaseURL: &#39;https://roojay123.firebaseio.com&#39;,
+    projectId: &#39;roojay123&#39;,
+    storageBucket: &#39;roojay123.appspot.com&#39;,
+    messagingSenderId: &#39;691637156012&#39;
+};
+// 注册 app
+Firebase.initializeApp(config);
+// 获取数据库引用
+const db = Firebase.database();
+</code></pre><p>通过 <code>.ref(&#39;/&#39;)</code> 取得位于根目录下的地址数据数组:</p>
+<pre><code class="JavaScript">firebase: {
+        data: db.ref(&#39;/&#39;)
+    },
+</code></pre>
 <p>使用 vue <code>v-for</code> 指令, 将数组数据渲染到页面列表中.</p>
 <p>为列表绑定一个 click 方法, 用于获取点击元素的 index, 在根据这个 index 的值渲染后面其他列表的数据.</p>
 <p><img src="https://i.loli.net/2017/11/18/5a0f0ff5c6cdb.gif" alt="gif"></p>

@@ -529,12 +529,22 @@
         <h2 id="Map-键值对"><a href="#Map-键值对" class="headerlink" title="Map 键值对"></a>Map 键值对</h2><blockquote>
 <p>一组键值对结构，查找速度快。储存具有映射关系的数据，例如身份证上面的姓名和身份证号码。</p>
 </blockquote>
-<h3 id="Map-函数"><a href="#Map-函数" class="headerlink" title="Map 函数"></a>Map 函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>(); <span class="comment">// 初始化 Map</span></span><br><span class="line">map.set(<span class="string">'XiaoMing'</span>, <span class="number">22</span>); <span class="comment">// 添加键值对 key-value</span></span><br><span class="line">map.set(<span class="string">'HaHa'</span>, <span class="number">66</span>);</span><br><span class="line">map.has(<span class="string">'HaHa'</span>); <span class="comment">// 是否存在 'HaHa', 返回值为 true</span></span><br><span class="line">map.get(<span class="string">'XiaoMing'</span>); <span class="comment">// 22  获得对应的 value</span></span><br><span class="line">map.delete(<span class="string">'HaHa'</span>); <span class="comment">// 删除 key: 'HaHa'</span></span><br></pre></td></tr></table></figure>
+<h3 id="Map-函数"><a href="#Map-函数" class="headerlink" title="Map 函数"></a>Map 函数</h3><pre><code class="javascript">var map = new Map(); // 初始化 Map
+map.set(&#39;XiaoMing&#39;, 22); // 添加键值对 key-value
+map.set(&#39;HaHa&#39;, 66);
+map.has(&#39;HaHa&#39;); // 是否存在 &#39;HaHa&#39;, 返回值为 true
+map.get(&#39;XiaoMing&#39;); // 22  获得对应的 value
+map.delete(&#39;HaHa&#39;); // 删除 key: &#39;HaHa&#39;
+</code></pre>
 <p>一个 key 只能对应一个 value，对同一个 key，后添加的 value 会覆盖前面的 value。</p>
 <h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><blockquote>
 <p>一组 Key 值的集合，无序且不重复，不储存 Value。</p>
 </blockquote>
-<h3 id="Set-函数"><a href="#Set-函数" class="headerlink" title="Set 函数"></a>Set 函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(); <span class="comment">// 初始化 Set</span></span><br><span class="line">set.add(<span class="number">6</span>); <span class="comment">// 添加 Key 6</span></span><br><span class="line">set.delete(<span class="number">6</span>); <span class="comment">// 删除 Key 6</span></span><br></pre></td></tr></table></figure>
+<h3 id="Set-函数"><a href="#Set-函数" class="headerlink" title="Set 函数"></a>Set 函数</h3><pre><code class="javascript">var set = new Set(); // 初始化 Set
+set.add(6); // 添加 Key 6
+set.delete(6); // 删除 Key 6
+</code></pre>
+
         
     
 

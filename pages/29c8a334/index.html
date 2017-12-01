@@ -554,7 +554,14 @@
 <li><strong>android:layout_gravity：</strong>是相对于包含该元素的父元素来说的，设置该元素在父元素的什么位置；</li>
 <li><p>比如TextView: android:layout_gravity表示TextView在界面上的位置，android:gravity表示TextView文本在TextView的什么位置，默认值是左侧.</p>
 <p>​</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:text</span>=<span class="string">"Hello Android!"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:background</span>=<span class="string">"@android:color/darker_gray"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:layout_width</span>=<span class="string">"150dp"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:layout_height</span>=<span class="string">"75dp"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 注释内容 --&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;TextView
+        android:text=&quot;Hello Android!&quot;
+        android:background=&quot;@android:color/darker_gray&quot;
+        android:layout_width=&quot;150dp&quot;
+        android:layout_height=&quot;75dp&quot; /&gt;
+
+&lt;!-- 注释内容 --&gt;
+</code></pre>
 </li>
 </ul>
 </li>
@@ -563,7 +570,13 @@
 <li>属性: android:scaleType=”center”:不改变图片大小居中显示。</li>
 <li>属性: android:scaleType=”centerCrop”:自适应屏幕居中显示。</li>
 </ul>
-  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">             <span class="attr">android:src</span>=<span class="string">"@drawable/cake"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">android:scaleType</span>=<span class="string">"center"</span>  /&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="xml">
+  &lt;ImageView
+               android:src=&quot;@drawable/cake&quot;
+               android:layout_width=&quot;wrap_content&quot;
+               android:layout_height=&quot;wrap_content&quot;
+               android:scaleType=&quot;center&quot;  /&gt;
+</code></pre>
 <h3 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h3><ul>
 <li>XML 布局文件中的 <button> 元素创建 Button，则可以使用该元素的 android:onClick 属性指定方法。这一方便的备选方案专为不改变行为的 Button 提供。</button></li>
 <li>android:onClick=”buttonname”</li>
@@ -574,7 +587,24 @@
 <li>属性：android:orientation=”vertical” 决定布局以垂直(列)显示。</li>
 <li>属性：android:orientation=”horizontal”决定布局以水平(行)显示。</li>
 </ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"2"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"3"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;LinearLayout
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:orientation=&quot;vertical&quot;&gt;
+&lt;TextView
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:text=&quot;1&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:text=&quot;2&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:text=&quot;3&quot;/&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
 <p> <img src="http://i.imgur.com/dkCwMv0.png" alt=""></p>
 </li>
 </ul>
@@ -595,7 +625,64 @@
 <li>水平方向居中：android:layout_centerHorizontal=”true”</li>
 <li>屏幕居中：android:layout_centerInParent=”true”</li>
 </ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentLeft</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_centerHorizontal</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"2"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentRight</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"3"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_centerVertical</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentLeft</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"4"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_centerInParent</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"Center"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_centerVertical</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentRight</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"5"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentLeft</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"6"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_centerHorizontal</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"7"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignParentRight</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;RelativeLayout
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;match_parent&quot;&gt;
+&lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_alignParentTop=&quot;true&quot;
+android:layout_alignParentLeft=&quot;true&quot;
+android:text=&quot;1&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_alignParentTop=&quot;true&quot;
+android:layout_centerHorizontal=&quot;true&quot;
+android:text=&quot;2&quot;/&gt;
+  &lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_alignParentTop=&quot;true&quot;
+android:layout_alignParentRight=&quot;true&quot;
+android:text=&quot;3&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_centerVertical=&quot;true&quot;
+android:layout_alignParentLeft=&quot;true&quot;
+android:text=&quot;4&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_centerInParent=&quot;true&quot;
+android:text=&quot;Center&quot;/&gt;
+  &lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_centerVertical=&quot;true&quot;
+android:layout_alignParentRight=&quot;true&quot;
+android:text=&quot;5&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_alignParentBottom=&quot;true&quot;
+android:layout_alignParentLeft=&quot;true&quot;
+android:text=&quot;6&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_alignParentBottom=&quot;true&quot;
+android:layout_centerHorizontal=&quot;true&quot;
+android:text=&quot;7&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_alignParentBottom=&quot;true&quot;
+android:layout_alignParentRight=&quot;true&quot;
+android:text=&quot;8&quot;/&gt;
+&lt;/RelativeLayout&gt;
+</code></pre>
 <p>​</p>
 <p><img src="http://i.imgur.com/2e9IPMB.png" alt=""></p>
 </li>
@@ -607,7 +694,41 @@
 <li>位于center下边：android:layout_below=”@id/center”</li>
 <li>位于center左边：android:layout_toLeftOf=”@id/center”</li>
 <li><p>位于center右边：android:layout_toRightOf=”@id/center”</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:id</span>=<span class="string">"@+id/center"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_centerInParent</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"Center"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_toLeftOf</span>=<span class="string">"@id/center"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignBottom</span>=<span class="string">"@id/center"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"2"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_toRightOf</span>=<span class="string">"@id/center"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignBottom</span>=<span class="string">"@id/center"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"3"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_above</span>=<span class="string">"@id/center"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignLeft</span>=<span class="string">"@id/center"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_below</span>=<span class="string">"@id/center"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_alignLeft</span>=<span class="string">"@id/center"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"4"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;RelativeLayout
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;match_parent&quot;&gt;
+&lt;TextView
+android:id=&quot;@+id/center&quot;
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_centerInParent=&quot;true&quot;
+android:text=&quot;Center&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_toLeftOf=&quot;@id/center&quot;
+android:layout_alignBottom=&quot;@id/center&quot;
+android:text=&quot;2&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_toRightOf=&quot;@id/center&quot;
+android:layout_alignBottom=&quot;@id/center&quot;
+android:text=&quot;3&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_above=&quot;@id/center&quot;
+android:layout_alignLeft=&quot;@id/center&quot;
+android:text=&quot;1&quot;/&gt;
+&lt;TextView
+android:layout_width=&quot;wrap_content&quot;
+android:layout_height=&quot;wrap_content&quot;
+android:layout_below=&quot;@id/center&quot;
+android:layout_alignLeft=&quot;@id/center&quot;
+android:text=&quot;4&quot;/&gt;
+&lt;/RelativeLayout&gt;
+</code></pre>
 <p><img src="http://i.imgur.com/wyQuZei.png" alt=""></p>
 </li>
 </ul>
@@ -702,7 +823,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/pages/85b5073b/" id="post_nav-older" class="next-content">
+        <a href="/pages/ad01bc3e/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

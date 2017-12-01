@@ -529,9 +529,128 @@
         <h2 id="动手写一个简单的-vue-tabs-切换页"><a href="#动手写一个简单的-vue-tabs-切换页" class="headerlink" title="动手写一个简单的 vue tabs 切换页"></a>动手写一个简单的 vue tabs 切换页</h2><p>使用第三方的框架的组件进行布局时, 发现出来的效果和自己想要的总是差一点, 所以自己动手写了一个 tabs 选项卡.</p>
 <p>整个选项卡分为两个部分: 上半部分的标题和下半部分的内容. 要求是: 当点击到某个选项时, 选项下的光标随之切换, 下半部分的内容更新.</p>
 <p>HTML 部分: 将这个 tabs 分为 title 和 views 两个部分, title 部分使用 v-for 循环将一个存着标题的数组渲染到页面中去, views 部分根据当前选择选项的 index 显示对应的内容.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"tabs"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"titles"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(goods,index) in goods"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:key</span>=<span class="string">"goods.index"</span></span></span><br><span class="line"><span class="tag">          @<span class="attr">click</span>=<span class="string">"toggle(index)"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">:class</span>=<span class="string">"&#123;selected:select==index&#125;"</span>&gt;</span>&#123;&#123;goods.text&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"views"</span>&gt;</span></span><br><span class="line">      &#123;&#123;views[select].text&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"currentView"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>JavaScript 部分: 一个 title 数组和一个内容数组 views, 一个select 标识符, 用来确定被选中选项的 index 值, 还包括一个 toggle 方法用来响应鼠标点击更改 select 的值.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        select: <span class="number">0</span>,</span><br><span class="line">        goods: [</span><br><span class="line">          &#123;<span class="attr">text</span>: <span class="string">'下单'</span>&#125;,</span><br><span class="line">          &#123;<span class="attr">text</span>: <span class="string">'挂单'</span>&#125;,</span><br><span class="line">          &#123;<span class="attr">text</span>: <span class="string">'外卖'</span>&#125;,</span><br><span class="line">          &#123;<span class="attr">text</span>: <span class="string">'团购'</span>&#125;],</span><br><span class="line">        views: [</span><br><span class="line">          &#123;<span class="attr">text</span>: <span class="string">'下单页面'</span>&#125;,</span><br><span class="line">          &#123;<span class="attr">text</span>: <span class="string">'挂单页面'</span>&#125;,</span><br><span class="line">          &#123;<span class="attr">text</span>: <span class="string">'外卖页面'</span>&#125;,</span><br><span class="line">          &#123;<span class="attr">text</span>: <span class="string">'团购页面'</span>&#125;]</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      toggle(index) &#123;</span><br><span class="line">        <span class="keyword">this</span>.select = index;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure></p>
-<p>CSS 部分: 这个主要问题是鼠标点击切换标题时, 下面的光标随之移到, 最开始使用 border-bottom 来作为光标, 但发现样式不好控制. 最后使用伪元素, 解决下光标问题. 为标题加一个 span 标签, 给其绑定一个动态的的 class selected, 当前选择元素的 select 和 当前的 index 相等时, 为其添上一个 selected 类.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;style lang="scss"&gt;</span><br><span class="line">  <span class="selector-id">#tabs</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    // 让整个页面绝对居中</span><br><span class="line">    <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">    <span class="selector-tag">top</span>: 0;</span><br><span class="line">    <span class="selector-tag">right</span>: 0;</span><br><span class="line">    <span class="selector-tag">bottom</span>: 0;</span><br><span class="line">    <span class="selector-tag">left</span>: 0;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">width</span>: 30%;</span><br><span class="line">    <span class="selector-tag">height</span>: 100%;</span><br><span class="line">    <span class="selector-tag">margin</span>: <span class="selector-tag">auto</span>;</span><br><span class="line">    <span class="selector-tag">padding</span>: 0;</span><br><span class="line">    <span class="selector-tag">padding</span>: 0 1<span class="selector-tag">em</span>;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">font-size</span>: 16<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">background-color</span>: <span class="selector-id">#fff</span>;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">flex-direction</span>: <span class="selector-tag">column</span>;</span><br><span class="line">    <span class="selector-class">.titles</span> &#123;</span><br><span class="line">      ul &#123;</span><br><span class="line">        <span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"></span><br><span class="line">        <span class="selector-tag">list-style</span>: <span class="selector-tag">none</span>;</span><br><span class="line"></span><br><span class="line">        <span class="selector-tag">width</span>: 100%;</span><br><span class="line">        <span class="selector-tag">margin</span>: 0 0 1<span class="selector-tag">em</span> 0;</span><br><span class="line">        <span class="selector-tag">padding</span>: 0;</span><br><span class="line">        <span class="selector-tag">border-bottom</span>: 2<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">rgba</span>(0, 0, 0, <span class="selector-class">.18</span>);</span><br><span class="line"></span><br><span class="line">        <span class="selector-tag">flex-direction</span>: <span class="selector-tag">row</span>;</span><br><span class="line">        <span class="selector-tag">justify-content</span>: <span class="selector-tag">space-between</span>;</span><br><span class="line">        <span class="selector-tag">li</span> &#123;</span><br><span class="line">          <span class="attribute">display</span>: inline;</span><br><span class="line"></span><br><span class="line">          <span class="attribute">margin</span>: <span class="number">1em</span> <span class="number">0</span>;</span><br><span class="line">          &amp;:hover &#123;</span><br><span class="line">            <span class="selector-tag">cursor</span>: <span class="selector-tag">pointer</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="selector-tag">span</span> &#123;</span><br><span class="line">            <span class="attribute">position</span>: relative;</span><br><span class="line"></span><br><span class="line">            <span class="attribute">padding</span>: <span class="number">1em</span> <span class="number">0</span>;</span><br><span class="line">            // 下划线</span><br><span class="line">            &amp;<span class="selector-pseudo">::after</span> &#123;</span><br><span class="line"></span><br><span class="line">              <span class="attribute">display</span>: block;</span><br><span class="line">              <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">              <span class="attribute">position</span>: absolute;</span><br><span class="line">              top: 3.125em; // 文字高度 加上文字上下 padding 值加上父元素 border-bottom 的宽度</span><br><span class="line">              <span class="selector-tag">left</span>: 0;</span><br><span class="line"></span><br><span class="line">              width: 2em; // 下划线初始两个字宽度</span><br><span class="line">              <span class="selector-tag">height</span>: 3<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line">              <span class="selector-tag">background-color</span>: <span class="selector-id">#409eff</span>;</span><br><span class="line"></span><br><span class="line">              transition: transform .3s ease-in-out; // 设置缓入缓出效果</span><br><span class="line">              transform: scale(0, 1); // 将 x 轴缩放为 0</span><br><span class="line">              transform-origin: 50%; // transform-origin 属性允许改变被转换元素的位置</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        // 选中时样式</span><br><span class="line">        <span class="selector-class">.selected</span> &#123;</span><br><span class="line">          <span class="attribute">color</span>: <span class="number">#409eff</span>;</span><br><span class="line">          &amp;::after &#123;</span><br><span class="line">            transform: scale(1, 1); // 选中时恢复</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<pre><code class="html">&lt;template&gt;
+  &lt;div id=&quot;tabs&quot;&gt;
+    &lt;div class=&quot;titles&quot;&gt;
+      &lt;ul&gt;
+        &lt;li v-for=&quot;(goods,index) in goods&quot;
+          :key=&quot;goods.index&quot;
+          @click=&quot;toggle(index)&quot;&gt;
+          &lt;span :class=&quot;{selected:select==index}&quot;&gt;{{goods.text}}&lt;/span&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;views&quot;&gt;
+      {{views[select].text}}
+    &lt;/div&gt;
+    &lt;component :is=&quot;currentView&quot;&gt;1&lt;/component&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+<p>JavaScript 部分: 一个 title 数组和一个内容数组 views, 一个select 标识符, 用来确定被选中选项的 index 值, 还包括一个 toggle 方法用来响应鼠标点击更改 select 的值.</p>
+<pre><code class="javascript">&lt;script&gt;
+  export default {
+    data() {
+      return {
+        select: 0,
+        goods: [
+          {text: &#39;下单&#39;},
+          {text: &#39;挂单&#39;},
+          {text: &#39;外卖&#39;},
+          {text: &#39;团购&#39;}],
+        views: [
+          {text: &#39;下单页面&#39;},
+          {text: &#39;挂单页面&#39;},
+          {text: &#39;外卖页面&#39;},
+          {text: &#39;团购页面&#39;}]
+        };
+    },
+    methods: {
+      toggle(index) {
+        this.select = index;
+      }
+    }
+  };
+</code></pre>
+<p>CSS 部分: 这个主要问题是鼠标点击切换标题时, 下面的光标随之移到, 最开始使用 border-bottom 来作为光标, 但发现样式不好控制. 最后使用伪元素, 解决下光标问题. 为标题加一个 span 标签, 给其绑定一个动态的的 class selected, 当前选择元素的 select 和 当前的 index 相等时, 为其添上一个 selected 类.</p>
+<pre><code class="css">&lt;style lang=&quot;scss&quot;&gt;
+  #tabs {
+    display: flex;
+    // 让整个页面绝对居中
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 30%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+    padding: 0 1em;
+
+    font-size: 16px;
+
+    background-color: #fff;
+
+    flex-direction: column;
+    .titles {
+      ul {
+        display: flex;
+
+        list-style: none;
+
+        width: 100%;
+        margin: 0 0 1em 0;
+        padding: 0;
+        border-bottom: 2px solid rgba(0, 0, 0, .18);
+
+        flex-direction: row;
+        justify-content: space-between;
+        li {
+          display: inline;
+
+          margin: 1em 0;
+          &amp;:hover {
+            cursor: pointer;
+          }
+          span {
+            position: relative;
+
+            padding: 1em 0;
+            // 下划线
+            &amp;::after {
+
+              display: block;
+              content: &quot;&quot;;
+              position: absolute;
+              top: 3.125em; // 文字高度 加上文字上下 padding 值加上父元素 border-bottom 的宽度
+              left: 0;
+
+              width: 2em; // 下划线初始两个字宽度
+              height: 3px;
+
+              background-color: #409eff;
+
+              transition: transform .3s ease-in-out; // 设置缓入缓出效果
+              transform: scale(0, 1); // 将 x 轴缩放为 0
+              transform-origin: 50%; // transform-origin 属性允许改变被转换元素的位置
+            }
+          }
+        }
+        // 选中时样式
+        .selected {
+          color: #409eff;
+          &amp;::after {
+            transform: scale(1, 1); // 选中时恢复
+          }
+        }
+      }
+    }
+  }
+&lt;/style&gt;
+</code></pre>
 <p>效果演示图: <img src="http://ou37yhdfy.bkt.clouddn.com/201711201243_855.gif" alt=""></p>
 
         

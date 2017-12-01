@@ -529,13 +529,61 @@
         <ul>
 <li>内部类：一个类定义在另一个类的里面。</li>
 </ul>
-<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><p>&gt;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><p>&gt;</p>
+<pre><code class="java">class A{
+    class B{
+    }
+}
+</code></pre>
 <p>B这个类被称之为A的内部类。<br>编译之后生成A.class和A$B.class。<br>内部类可以随意使用外部类的成员变量。</p>
-<h1 id="内部类的使用方法"><a href="#内部类的使用方法" class="headerlink" title="内部类的使用方法"></a>内部类的使用方法</h1><h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> j;</span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">funB</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">int</span> result = i + j;</span><br><span class="line">			System.out.println(result);</span><br><span class="line">			<span class="keyword">return</span> result;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		A a = <span class="keyword">new</span> A();</span><br><span class="line"></span><br><span class="line">		A.B b = a.new B();</span><br><span class="line"></span><br><span class="line">		a.i = <span class="number">5</span>;</span><br><span class="line">		b.j = <span class="number">6</span>;</span><br><span class="line">		b.funB();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="内部类的使用方法"><a href="#内部类的使用方法" class="headerlink" title="内部类的使用方法"></a>内部类的使用方法</h1><h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">class A{
+    int i;
+    class B{
+        int j;
+        int funB(){
+            int result = i + j;
+            System.out.println(result);
+            return result;
+        }
+    }
+}
+
+class Test{
+    public static void main(String args[]){
+        A a = new A();
+
+        A.B b = a.new B();
+
+        a.i = 5;
+        b.j = 6;
+        b.funB();
+    }
+}
+</code></pre>
 <h1 id="匿名内部类的使用方法"><a href="#匿名内部类的使用方法" class="headerlink" title="匿名内部类的使用方法"></a>匿名内部类的使用方法</h1><ul>
 <li>匿名内部类：没有名字的内部类。</li>
 </ul>
-<h4 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSth</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(A a)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"B类的fun函数"</span>);</span><br><span class="line">		a.doSth();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		B b = <span class="keyword">new</span> B();</span><br><span class="line">		b.fun(<span class="keyword">new</span> A()&#123;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSth</span><span class="params">()</span></span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"匿名内部类"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">interface A{
+    public void doSth();
+}
+class B{
+    public void fun(A a){
+        System.out.println(&quot;B类的fun函数&quot;);
+        a.doSth();
+    }
+}
+public class Test{
+    public static void main(String args[]){
+        B b = new B();
+        b.fun(new A(){
+            public void doSth(){
+                System.out.println(&quot;匿名内部类&quot;);
+            }
+        });
+    }
+}
+</code></pre>
+
         
     
 

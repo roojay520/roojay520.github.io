@@ -535,7 +535,10 @@
 <ul>
 <li>在标记的 style 属性中设定 CSS 样式。</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">color:white;</span> <span class="attr">background-color:blue</span>;&gt;</span></span><br><span class="line">Tihs is a test text.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">     &lt;p style=color:white; background-color:blue;&gt;
+     Tihs is a test text.
+     &lt;/p&gt;
+</code></pre>
 <ol>
 <li>内嵌式</li>
 </ol>
@@ -545,21 +548,34 @@
 <li><p>缺点是对于一个包含很多网页的网站，在每个网页中使用嵌入式，进行修改样式时非常麻烦。单一网页可以考虑使用嵌入式。</p>
 </li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  p &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span><span class="selector-pseudo">:red</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">     &lt;head&gt;
+       &lt;style type=&quot;text/css&quot;&gt;
+       p {
+         color:red;
+       }
+       &lt;/style&gt;
+     &lt;/head&gt;
+</code></pre>
 <ol>
 <li>导入式</li>
 </ol>
 <ul>
 <li>使用 CSS 的规则将外部CSS文件将一个独立的<code>.css</code>文件引入 HTML 文件中，<code>&lt;style&gt;</code>标记写在<code>&lt;head&gt;</code>标记中。</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	@<span class="keyword">import</span>"<span class="keyword">mystyle</span>.<span class="keyword">css</span>'</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">   &lt;style type=&quot;text/css&quot;&gt;
+       @import&quot;mystyle.css&#39;
+   &lt;/style&gt;
+</code></pre>
 <ol>
 <li>链接式</li>
 </ol>
 <ul>
 <li>最常用的的一种方式。</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"src/test.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">   &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;src/test.css&quot; type=&quot;text/css&quot;&gt;
+   &lt;/head&gt;
+</code></pre>
 <h2 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h2><blockquote>
 <p>margin 属性为给定元素设置所有四个（上下左右）方向的外边距属性。四个外边距属性设置分别是： margin-top， margin-right， margin-bottom 和 margin-left 。指定的外边距允许为负数。</p>
 </blockquote>
@@ -659,19 +675,23 @@
 <ol>
 <li>未点击状态显示蓝色：</li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123; <span class="attribute">color</span>: blue; &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a:link { color: blue; }
+</code></pre>
 <ol>
 <li>已点击状态显示紫色：</li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123; <span class="attribute">color</span>: purple; &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a:visited { color: purple; }
+</code></pre>
 <ol>
 <li>鼠标悬停状态显示红色：</li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">color</span>: red;  &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a:hover { color: red;  }
+</code></pre>
 <ol>
 <li>鼠标点击状态显示绿色：</li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123; <span class="attribute">color</span>: green; &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a:active { color: green; }
+</code></pre>
 <p>多个状态同时设置，按照以上先后顺序排列。</p>
 <h3 id="伪元素（Pseudo-elements）"><a href="#伪元素（Pseudo-elements）" class="headerlink" title="伪元素（Pseudo-elements）"></a>伪元素（Pseudo-elements）</h3><blockquote>
 <p>以冒号(::)作为前缀的关键字，添加到选择器后面选择某个元素的某个部分。例如每个段落的第一个字，或者某个元素之前生成的内容。</p>
@@ -679,21 +699,39 @@
 <ul>
 <li><code>::after</code>在已选中元素尾部创建最后一个子元素，通常会配合 content 属性来为该元素添加装饰内容。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在链接后面加上一个箭头←*/</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">::after</span> &#123; <span class="attribute">content</span>: <span class="string">"←"</span>;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/*在链接后面加上一个箭头←*/
+a::after { content: &quot;←&quot;;}
+</code></pre>
 <ul>
 <li><code>::before</code> 在已选中元素头部创建第一个子元素。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在链接前面加上一个箭头→*/</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">::after</span> &#123; <span class="attribute">content</span>: <span class="string">"→"</span>;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/*在链接前面加上一个箭头→*/
+a::after { content: &quot;→&quot;;}
+</code></pre>
 <ul>
 <li><code>::first-letter</code>会选中一整块文字第一行的第一个字母，并且文字所处的行之前没有其他内容（如图片和内联的表格） 。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 使每段开头的第一个字母变红变大 */</span></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-letter</span> &#123;  <span class="comment">/* 使用:first来兼容IE8- */</span></span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">130%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/* 使每段开头的第一个字母变红变大 */
+p::first-letter {  /* 使用:first来兼容IE8- */
+  color: red;
+  font-size: 130%;
+}
+</code></pre>
 <ul>
 <li><code>::first-line</code>将样式只应用于一个元素的首行。首行文本的数量取决于元素的宽，document 的宽和文本的字号。</li>
 <li><code>::first-line</code> 伪元素<strong>只作用于块容器中</strong>,所以<code>::first-line</code>伪元素只能在一个display值为block, inline-block, table-cell 或者 table-caption中有用.。在其他的类型中<code>::first-line</code>是不起作用的。</li>
 <li><code>::selection</code>应用于文档中被用户选中高亮的部分（比如使用鼠标或其他选择设备选中的部分）,ecko 引擎需要加前缀（-moz）。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 将被选中的任何文本渲染为金黄色和红色背景 */</span></span><br><span class="line"><span class="selector-pseudo">::-moz-selection</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: gold;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: gold;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/* 将被选中的任何文本渲染为金黄色和红色背景 */
+::-moz-selection {
+  color: gold;
+  background: red;
+}
+::selection {
+  color: gold;
+  background: red;
+}
+</code></pre>
 <h3 id="组合器（Combinators）"><a href="#组合器（Combinators）" class="headerlink" title="组合器（Combinators）"></a>组合器（Combinators）</h3><blockquote>
 <p>以有效的方式组合两个或更多的选择器用于非常特定的选择的方法。例如，只选择 divs 的直系子节点的段落，或者直接跟在 headings 后面的段落。</p>
 </blockquote>
@@ -755,7 +793,8 @@
 <h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><blockquote>
 <p>box-shadow 属性向元素添加一个或多个阴影。</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box-shadow</span>: <span class="selector-tag">h-shadow</span> <span class="selector-tag">v-shadow</span> <span class="selector-tag">blur</span> <span class="selector-tag">spread</span> <span class="selector-tag">color</span> <span class="selector-tag">inset</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">box-shadow: h-shadow v-shadow blur spread color inset;
+</code></pre>
 <table>
 <thead>
 <tr>

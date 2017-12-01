@@ -526,8 +526,39 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">Java获取键盘输入值</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">  Scanner sc = <span class="keyword">new</span> Scanner(Systen.in);</span><br><span class="line">  String s = sc.nextLine(); <span class="comment">//接受字符和字符串类型的输入</span></span><br><span class="line">  <span class="keyword">int</span> age = sc.nextInt();</span><br><span class="line">  <span class="keyword">float</span> salary = sc.nextFloat();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="简单运行、退出方法"><a href="#简单运行、退出方法" class="headerlink" title="简单运行、退出方法"></a>简单运行、退出方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">itcast :</span><br><span class="line">		<span class="keyword">while</span>(t &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">"1.运行：\n"</span> + <span class="string">"2.退出："</span>);</span><br><span class="line">			Scanner sc1 = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">			<span class="keyword">int</span> i = sc1.nextInt();</span><br><span class="line">			<span class="keyword">switch</span>(i) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">				<span class="comment">//这里输入具体的计算程序</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">				<span class="keyword">break</span> itcast;</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				System.out.println(<span class="string">"输入有误，请重新输入"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <pre><code class="java">/**
+Java获取键盘输入值
+*/
+public static void main(String args[]){
+  Scanner sc = new Scanner(Systen.in);
+  String s = sc.nextLine(); //接受字符和字符串类型的输入
+  int age = sc.nextInt();
+  float salary = sc.nextFloat();
+}
+</code></pre>
+<h4 id="简单运行、退出方法"><a href="#简单运行、退出方法" class="headerlink" title="简单运行、退出方法"></a>简单运行、退出方法</h4><pre><code class="java">import java.util.Scanner;
+public class Test {
+    public static void main(String args[]) {
+        int t = 1;
+itcast :
+        while(t &gt; 0) {
+            System.out.println(&quot;1.运行：\n&quot; + &quot;2.退出：&quot;);
+            Scanner sc1 = new Scanner(System.in);
+            int i = sc1.nextInt();
+            switch(i) {
+            case 1:
+                //这里输入具体的计算程序
+                break;
+            case 2:
+                break itcast;
+            default:
+                System.out.println(&quot;输入有误，请重新输入&quot;);
+                break;
+            }
+        }
+    }
+}
+</code></pre>
 
         
     
@@ -571,7 +602,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/pages/1c7ee7be/" id="post_nav-newer" class="prev-content">
+        <a href="/pages/7dc91154/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -585,7 +616,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/pages/265f6f6b/" id="post_nav-older" class="next-content">
+        <a href="/pages/1c7ee7be/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

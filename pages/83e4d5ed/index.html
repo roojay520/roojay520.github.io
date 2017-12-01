@@ -530,24 +530,30 @@
 <p>Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。</p>
 </blockquote>
 <h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><ol>
-<li>进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。<br>例如：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6600</span>/<span class="number">1000</span>*<span class="number">1000</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<li><p>进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。<br>例如：</p>
+<pre><code class="java">6600/1000*1000
+</code></pre>
 <p>最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。</p>
-<ol>
-<li>进行除法运算时如果有小数参与，得到的结果为小数。<br>例如：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6.6</span>/<span class="number">10</span></span><br></pre></td></tr></table></figure>
 </li>
-</ol>
+<li><p>进行除法运算时如果有小数参与，得到的结果为小数。<br>例如：</p>
+<pre><code class="java">6.6/10
+</code></pre>
 <p>结果为0.66。</p>
-<ol>
-<li>进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。<br>例如：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(-<span class="number">6</span>)/<span class="number">2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。<br>例如：</p>
+<pre><code class="java">(-6)/2
+</code></pre>
+<p>结果为-3。</p>
+<pre><code class="java">6/(-3)
+</code></pre>
+<p>结果为2。</p>
 </li>
 </ol>
-<p>结果为-3。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span>/(-<span class="number">3</span>)</span><br></pre></td></tr></table></figure></p>
-<p>结果为2。</p>
 <h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><ol>
 <li><p>可以通过一条赋值语句对多个变量进行赋值。<br>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x, y, z;</span><br><span class="line">x = y = z = <span class="number">5</span>;  <span class="comment">//为三个变量同时赋值。</span></span><br></pre></td></tr></table></figure>
+<pre><code class="java">int x, y, z;
+x = y = z = 5;  //为三个变量同时赋值。
+</code></pre>
 </li>
 <li><p>使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。</p>
 </li>
@@ -596,7 +602,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/pages/ad01bc3e/" id="post_nav-newer" class="prev-content">
+        <a href="/pages/bbf344f6/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -610,7 +616,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/pages/f029d2bb/" id="post_nav-older" class="next-content">
+        <a href="/pages/85b5073b/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

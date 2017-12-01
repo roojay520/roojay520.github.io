@@ -542,10 +542,39 @@
 <li>str[]; 通过索引获取单个字符。</li>
 <li>str.indexOf(‘所选字符’); 获取字符串中单个或者多个字符索引，如果找不到成员，返回 -1</li>
 <li>str.toLowerCase(); 将字符串转化为小写返回。</li>
-<li>str.toUpperCase(); 将字符串转化为大写返回。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串操作</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'东风无力百花残'</span>;</span><br><span class="line"><span class="comment">// 获取字符串长度 a</span></span><br><span class="line"><span class="keyword">var</span> a = str.length;</span><br><span class="line"><span class="comment">// 获取字符 '花' 的索引</span></span><br><span class="line"><span class="keyword">var</span> b = str.indexOf(<span class="string">'花'</span>);</span><br><span class="line"><span class="comment">// 通过索引获取字符 '百花'</span></span><br><span class="line"><span class="keyword">var</span> c = str.slice(b - <span class="number">1</span>, b + <span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"字符串长度："</span> + a + <span class="string">"\n花的索引："</span> + b + <span class="string">"\n获取花字符："</span> + c);</span><br></pre></td></tr></table></figure>
+<li>str.toUpperCase(); 将字符串转化为大写返回。<pre><code class="javascript">// 字符串操作
+var str = &#39;东风无力百花残&#39;;
+// 获取字符串长度 a
+var a = str.length;
+// 获取字符 &#39;花&#39; 的索引
+var b = str.indexOf(&#39;花&#39;);
+// 通过索引获取字符 &#39;百花&#39;
+var c = str.slice(b - 1, b + 1);
+console.log(&quot;字符串长度：&quot; + a + &quot;\n花的索引：&quot; + b + &quot;\n获取花字符：&quot; + c);
+</code></pre>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 将一个大小混写的人名，姓全部转换为大写，名除首字母外全部转换为小写。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 定义一个 name 字符串</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"ALbERt EINstEin"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">nameChanger</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 定义 finaNmae 复制 name 内容</span></span><br><span class="line"> <span class="keyword">let</span> finaName = name;</span><br><span class="line">  <span class="comment">// 以空格为参考，分割字符串为字符串数组</span></span><br><span class="line">  <span class="comment">// names = ["ALbERt", "EINstEin"]</span></span><br><span class="line">  <span class="keyword">let</span> names = name.split(<span class="string">" "</span>);</span><br><span class="line">  <span class="comment">// slice(0， 1) 选择首字母转换为大写，slice(1) 选择后面的字符转换为小写</span></span><br><span class="line">  names[<span class="number">0</span>] = names[<span class="number">0</span>].slice(<span class="number">0</span>, <span class="number">1</span>).toUpperCase() + names[<span class="number">0</span>].slice(<span class="number">1</span>).toLowerCase();</span><br><span class="line">  <span class="comment">// 设置第二个数组元素全部为大写</span></span><br><span class="line">  names[<span class="number">1</span>] = names[<span class="number">1</span>].toUpperCase();</span><br><span class="line">  <span class="comment">// 将数组中的所有元素转换为一个字符串</span></span><br><span class="line">  <span class="comment">// 设定空格为分隔符</span></span><br><span class="line">  finaName = names.join(<span class="string">" "</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(finaName);</span><br><span class="line">&#125;</span><br><span class="line">nameChanger(name);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">/* 将一个大小混写的人名，姓全部转换为大写，名除首字母外全部转换为小写。
+*/
+// 定义一个 name 字符串
+var name = &quot;ALbERt EINstEin&quot;;
+function nameChanger(name) {
+  // 定义 finaNmae 复制 name 内容
+ let finaName = name;
+  // 以空格为参考，分割字符串为字符串数组
+  // names = [&quot;ALbERt&quot;, &quot;EINstEin&quot;]
+  let names = name.split(&quot; &quot;);
+  // slice(0， 1) 选择首字母转换为大写，slice(1) 选择后面的字符转换为小写
+  names[0] = names[0].slice(0, 1).toUpperCase() + names[0].slice(1).toLowerCase();
+  // 设置第二个数组元素全部为大写
+  names[1] = names[1].toUpperCase();
+  // 将数组中的所有元素转换为一个字符串
+  // 设定空格为分隔符
+  finaName = names.join(&quot; &quot;);
+  console.log(finaName);
+}
+nameChanger(name);
+</code></pre>
 <h4 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h4><ul>
 <li>splice(index, num, item1,…..,itemN); 用于插入、删除或替换数组的元素。<ul>
 <li>index （必须） 删除/添加元素的开始下标。</li>
@@ -569,7 +598,20 @@
 <li>可将任何表达式用作比较表达式。计算结果为 0、null、undefined 或空字符串的任何表达式被解释为 false。</li>
 </ul>
 <h4 id="对象-Object"><a href="#对象-Object" class="headerlink" title="对象(Object)"></a>对象(Object)</h4><ul>
-<li>确定对象属性是否存在，可使用 in 运算符：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个 people 对象</span></span><br><span class="line"><span class="keyword">var</span> people = &#123;</span><br><span class="line">  name: <span class="string">'xiaoming'</span>,</span><br><span class="line">  age: <span class="number">12</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 判断 people 对象中是否存在 name 属性</span></span><br><span class="line"><span class="keyword">if</span>(<span class="string">'name'</span> <span class="keyword">in</span> people) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'true'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'flase'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出 true</span></span><br></pre></td></tr></table></figure>
+<li>确定对象属性是否存在，可使用 in 运算符：<pre><code class="javascript">// 定义一个 people 对象
+var people = {
+name: &#39;xiaoming&#39;,
+age: 12,
+};
+// 判断 people 对象中是否存在 name 属性
+if(&#39;name&#39; in people) {
+console.log(&#39;true&#39;);
+}
+else {
+console.log(&#39;flase&#39;);
+}
+// 输出 true
+</code></pre>
 </li>
 </ul>
 <h4 id="日期-Date"><a href="#日期-Date" class="headerlink" title="日期(Date)"></a>日期(Date)</h4><h4 id="方法-function"><a href="#方法-function" class="headerlink" title="方法(function)"></a>方法(function)</h4><ul>
@@ -577,16 +619,23 @@
 <li>splice(index, num); 删除指定索引 index 位置的数组成员，num 指删除数量。返回值为删除的数组。</li>
 </ul>
 <h4 id="空（Null）"><a href="#空（Null）" class="headerlink" title="空（Null）"></a>空（Null）</h4><ul>
-<li>表示什么都没有，将变量赋值 null 可以清除变量的内容（不删除变量）。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="literal">null</span>; <span class="comment">// 值为空 null</span></span><br><span class="line"><span class="keyword">typeof</span> num; <span class="comment">//返回值为 object</span></span><br></pre></td></tr></table></figure>
+<li>表示什么都没有，将变量赋值 null 可以清除变量的内容（不删除变量）。<pre><code class="javascript">var num = null; // 值为空 null
+typeof num; //返回值为 object
+</code></pre>
 </li>
 </ul>
 <h4 id="未定义（Undefined）"><a href="#未定义（Undefined）" class="headerlink" title="未定义（Undefined）"></a>未定义（Undefined）</h4><ul>
 <li>变量的值未定义。可以将变量与 undefined 进行比较确定变量是否存在。</li>
-<li>也可以通过将变量的类型与字符串“undefined”进行比较确定其类型是否为 undefined。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num;</span><br><span class="line"><span class="keyword">typeof</span> num; <span class="comment">// 返回值为 undefined</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>也可以通过将变量的类型与字符串“undefined”进行比较确定其类型是否为 undefined。<pre><code class="javascript">var num;
+typeof num; // 返回值为 undefined
+</code></pre>
+<strong>null 和 undefined 的值相等，类型不同。null 值的行为与数字 0 类似，而 undefined 的行为与特定值 NaN（非数字）类似。</strong></li>
 </ul>
-<p><strong>null 和 undefined 的值相等，类型不同。null 值的行为与数字 0 类似，而 undefined 的行为与特定值 NaN（非数字）类似。</strong></p>
-<p>JavaScript 拥有动态类型，相同的变量可用作不同的类型：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x;               <span class="comment">// 此时 x 为 undefined</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>;           <span class="comment">// 此时 x 为数字</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="string">'hello'</span>;      <span class="comment">// 此时 x 为字符串</span></span><br></pre></td></tr></table></figure></p>
+<p>JavaScript 拥有动态类型，相同的变量可用作不同的类型：</p>
+<pre><code class="javascript">var x;               // 此时 x 为 undefined
+var x = 5;           // 此时 x 为数字
+var x = &#39;hello&#39;;      // 此时 x 为字符串
+</code></pre>
 <h4 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h4><ul>
 <li>JavaScript 是一个弱类型的语言，其变量类型由其值的类型决定。</li>
 <li>字符串、数字和布尔值的强制转换规则：<ul>
@@ -604,12 +653,18 @@
 <h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><ul>
 <li>两个整数交换数值<br><code>a ^= b;
 b ^= a;
-a ^= b;</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 位操作快速交换两个整数的值</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">12</span>;</span><br><span class="line">a ^= b;</span><br><span class="line">b ^= a;</span><br><span class="line">a ^= b;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a is:'</span> + a + <span class="string">'\nb is:'</span> + b); <span class="comment">// a is:12 b is:10</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+a ^= b;</code><pre><code class="javascript">// 位操作快速交换两个整数的值
+var a = 10;
+var b = 12;
+a ^= b;
+b ^= a;
+a ^= b;
+console.log(&#39;a is:&#39; + a + &#39;\nb is:&#39; + b); // a is:12 b is:10
+</code></pre>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><blockquote>
 <p>函数也称为’全局方法’。</p>
-<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><h4 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h4><ul>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><h4 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h4></blockquote>
+</li>
 <li>错误1：使用箭头函数定义对象的方法</li>
 <li>错误2：在原型上使用箭头函数<h4 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h4></li>
 <li>箭头函数适合于无复杂逻辑或者无副作用的纯函数场景下，例如用在map、reduce、filter的回调函数定义中；</li>
@@ -626,7 +681,6 @@ a ^= b;</code><figure class="highlight javascript"><table><tr><td class="gutter"
 <li>‘name’ 属性值</li>
 <li>obj 对象</li>
 </ul>
-</blockquote>
 <h3 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h3><p>返回值为布尔类型，判断一个对象是否为特定类的一个实例。<br><code>result = obj instanceof class</code></p>
 <ul>
 <li>result 返回值</li>
@@ -640,9 +694,16 @@ a ^= b;</code><figure class="highlight javascript"><table><tr><td class="gutter"
 <h3 id="单双引号"><a href="#单双引号" class="headerlink" title="单双引号"></a>单双引号</h3><ul>
 <li>同一种引号不能嵌套,最外层一般使用单引号，避免和 HTML 里面的冲突：</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//会报错误</span></span><br><span class="line"><span class="string">""</span>name<span class="string">" + 18"</span></span><br><span class="line"><span class="comment">//正确的方式</span></span><br><span class="line"><span class="string">'"name" + 18'</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">//会报错误
+&quot;&quot;name&quot; + 18&quot;
+//正确的方式
+&#39;&quot;name&quot; + 18&#39;
+</code></pre>
 <h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><blockquote>
-<p>允许嵌入表达式的字符串。使用反引号（``）代替单引号或者双引号，中间包含特定语法（${表达式}）,表达式是任意 JavaScript 表达式（如变量或函数）。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`hello <span class="subst">$&#123;表达式&#125;</span>`</span>;</span><br><span class="line"> <span class="string">`sun <span class="subst">$&#123;a + b&#125;</span>`</span></span><br></pre></td></tr></table></figure></p>
+<p>允许嵌入表达式的字符串。使用反引号（``）代替单引号或者双引号，中间包含特定语法（${表达式}）,表达式是任意 JavaScript 表达式（如变量或函数）。</p>
+<pre><code class="javascript">  `hello ${表达式}`;
+   `sun ${a + b}`
+</code></pre>
 </blockquote>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
 <li>JavaScript 变量均为对象。当您声明一个变量时，就创建了一个新的对象。</li>
@@ -653,11 +714,31 @@ a ^= b;</code><figure class="highlight javascript"><table><tr><td class="gutter"
 <li>let声明的变量只在其声明的块或子块中可用，这一点，与var相似。二者之间最主要的区别在于 var 声明的变量的作用域是整个封闭函数。</li>
 <li>在 HTML 中, 全局变量都是 window 对象: 所有数据变量都属于 window 对象。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">varTest</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">2</span>;  <span class="comment">// 同样的变量</span></span><br><span class="line">    <span class="built_in">console</span>.log(x);  <span class="comment">// 显示2</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(x);  <span class="comment">// 显示2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">letTest</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> x = <span class="number">2</span>;  <span class="comment">// 不同的变量</span></span><br><span class="line">    <span class="built_in">console</span>.log(x);  <span class="comment">// 显示2</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(x);  <span class="comment">// 显示1</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">function varTest() {
+  var x = 1;
+  if (true) {
+    var x = 2;  // 同样的变量
+    console.log(x);  // 显示2
+  }
+  console.log(x);  // 显示2
+}
+
+function letTest() {
+  let x = 1;
+  if (true) {
+    let x = 2;  // 不同的变量
+    console.log(x);  // 显示2
+  }
+  console.log(x);  // 显示1
+</code></pre>
 <ul>
 <li>在程序或者函数的顶层，let并不会像var一样在全局对象上创造一个属性.</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">'global'</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="string">'global'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.x); <span class="comment">// "global"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.y); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var x = &#39;global&#39;;
+let y = &#39;global&#39;;
+console.log(this.x); // &quot;global&quot;
+console.log(this.y); // undefined
+</code></pre>
 <h2 id="JS-面向对象"><a href="#JS-面向对象" class="headerlink" title="JS 面向对象"></a>JS 面向对象</h2><ul>
 <li>javascript是基于原型的面向对象的语言，没有类的概念。</li>
 </ul>
@@ -665,20 +746,68 @@ a ^= b;</code><figure class="highlight javascript"><table><tr><td class="gutter"
 <li>JS中不用 class 创建对象</li>
 <li>对象：属性加方法构成</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个 people 对象，拥有 name 属性和 speak 方法</span></span><br><span class="line"><span class="keyword">var</span> people = &#123;</span><br><span class="line">    country: <span class="string">"CN"</span>;</span><br><span class="line">    <span class="keyword">from</span>: funcation()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"From"</span> + <span class="keyword">this</span>.conuntry)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;；</span><br><span class="line">people.from();</span><br><span class="line"><span class="comment">//由于对象并不和类关联， 我们可以随意地给这个对象增加属性</span></span><br><span class="line">people.speak = <span class="string">"Chinese"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(people.speak);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">  //创建一个 people 对象，拥有 name 属性和 speak 方法
+  var people = {
+      country: &quot;CN&quot;;
+      from: funcation(){
+          console.log(&quot;From&quot; + this.conuntry)
+      }
+  }；
+  people.from();
+  //由于对象并不和类关联， 我们可以随意地给这个对象增加属性
+  people.speak = &quot;Chinese&quot;;
+  console.log(people.speak);
+</code></pre>
 <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
 <li>继承就是让两个对象建立关联，</li>
 <li>在 Javascript 中每个对象都有一个特殊的属性叫做<strong>proto</strong>， 你可以用这个属性去关联另外一个对象(原型)。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个american对象</span></span><br><span class="line"><span class="keyword">var</span> american = &#123;</span><br><span class="line">  country: <span class="string">"US"</span>;</span><br><span class="line">  _proto_: people;<span class="comment">//指向people对象</span></span><br><span class="line">&#125;；</span><br><span class="line"><span class="comment">//定义一个chinese对象</span></span><br><span class="line"><span class="keyword">var</span> chinese = &#123;</span><br><span class="line">  country: <span class="string">"CN"</span>;</span><br><span class="line">  _proto_:people;<span class="comment">//指向people对象</span></span><br><span class="line">&#125;;</span><br><span class="line">american.from();</span><br><span class="line">chinese.from();</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">    //定义一个american对象
+    var american = {
+      country: &quot;US&quot;;
+      _proto_: people;//指向people对象
+    }；
+    //定义一个chinese对象
+    var chinese = {
+      country: &quot;CN&quot;;
+      _proto_:people;//指向people对象
+    };
+    american.from();
+    chinese.from();
+</code></pre>
 <ul>
 <li>american, chinese 的原型都是 people，当 from() 方法被调用时，先在自身的方法列表中寻找，找不到时再去原型中去寻找，如果原型中找不到，就去原型的原型中寻找，直到 Object 那里，如果还找不到，那就是方法未定义。这些对象通过<em>proto</em>建立了一个原型链。</li>
 </ul>
 <h3 id="构造函数-原型"><a href="#构造函数-原型" class="headerlink" title="构造函数 原型"></a>构造函数 原型</h3><ul>
 <li>将原型对象放入 Object.prototype 中，每次 new 新对象时，js会自动建立原型链。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Student.prototype = &#123;</span><br><span class="line">  say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"My name is"</span> + <span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//创建新对象，js自动构建原型链继承 say 方法</span></span><br><span class="line"><span class="keyword">var</span> xiaoming = <span class="keyword">new</span> Student(<span class="string">"xiaoming"</span>);</span><br><span class="line"><span class="keyword">var</span> laowang = <span class="keyword">new</span> Student(<span class="string">"laowang"</span>);</span><br><span class="line"></span><br><span class="line">xiaoming.say();</span><br><span class="line">laowang.say();</span><br></pre></td></tr></table></figure>
-<h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  say()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"My name is"</span> + <span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xiaoming = <span class="keyword">new</span> Student(<span class="string">"xiaoming"</span>);</span><br><span class="line">xiaoming.say();</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">  function Student(name){
+    this.name = name;
+  }
+  Student.prototype = {
+    say: function(){
+      console.log(&quot;My name is&quot; + this.name);
+    }
+  }
+  //创建新对象，js自动构建原型链继承 say 方法
+  var xiaoming = new Student(&quot;xiaoming&quot;);
+  var laowang = new Student(&quot;laowang&quot;);
+
+  xiaoming.say();
+  laowang.say();
+</code></pre>
+<h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><pre><code class="javascript">  class Student{
+    constructor(name){
+      this.name = name;
+    }
+    say(){
+      console.log(&quot;My name is&quot; + this.name);
+    }
+  }
+
+  var xiaoming = new Student(&quot;xiaoming&quot;);
+  xiaoming.say();
+</code></pre>
 <h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>  ​</p>
 <h2 id="AJAX-异步调用"><a href="#AJAX-异步调用" class="headerlink" title="AJAX 异步调用"></a>AJAX 异步调用</h2><ul>
 <li>异步的 JavaScript 和 XML</li>
@@ -687,7 +816,14 @@ a ^= b;</code><figure class="highlight javascript"><table><tr><td class="gutter"
 <li>传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。</li>
 <li>例如服务器返回下面的 XML 数据：</li>
 </ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">book</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">isbn</span>&gt;</span>978-7-229-03093-3<span class="tag">&lt;/<span class="name">isbn</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>三体<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">author</span>&gt;</span>刘慈欣<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">introduction</span>&gt;</span>中国最牛的科幻书<span class="tag">&lt;/<span class="name">introduction</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">price</span>&gt;</span>38.00<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;book&gt;
+    &lt;isbn&gt;978-7-229-03093-3&lt;/isbn&gt;
+    &lt;name&gt;三体&lt;/name&gt;
+    &lt;author&gt;刘慈欣&lt;/author&gt;
+   &lt;introduction&gt;中国最牛的科幻书&lt;/introduction&gt;
+   &lt;price&gt;38.00&lt;/price&gt;
+&lt;/book&gt;
+</code></pre>
 <ul>
 <li>上面的数据中，标签占去了大部分，数据比较臃肿。</li>
 </ul>
@@ -698,7 +834,31 @@ a ^= b;</code><figure class="highlight javascript"><table><tr><td class="gutter"
 <li>JSON.parse(); 解析一个JSON字符串，可选地转换生成的值及其属性，并返回值。</li>
 <li>JSON.stringify(); 返回与指定值相对应的一个JSON字符串，可选地仅包含某些属性或以用户定义的方式替换属性值。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这种结构完全可以表达上面的xml 内容</span></span><br><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line"><span class="string">"isbn"</span>: <span class="string">"978-7-229-03093-3"</span>,</span><br><span class="line"><span class="string">"name"</span>: <span class="string">"三体"</span>,</span><br><span class="line"> <span class="string">"author"</span>: <span class="string">"刘慈欣"</span>,</span><br><span class="line"><span class="string">"introduction"</span>: <span class="string">"中国最牛的科幻书"</span>,</span><br><span class="line"><span class="string">"price"</span>: <span class="string">"38.00"</span></span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//JS语法还支持数组，可以表达多个对象</span></span><br><span class="line"><span class="keyword">var</span> books = [</span><br><span class="line"> &#123;</span><br><span class="line"><span class="string">"isbn"</span>: <span class="string">"978-7-229-03093-3"</span>,</span><br><span class="line"><span class="string">"name"</span>: <span class="string">"三体"</span>,</span><br><span class="line"><span class="string">"author"</span>: <span class="string">"刘慈欣"</span>,</span><br><span class="line"><span class="string">"introduction"</span>: <span class="string">"中国最牛的科幻书"</span>,</span><br><span class="line"><span class="string">"price"</span>: <span class="string">"38.00"</span></span><br><span class="line"> &#125;,</span><br><span class="line"> &#123;</span><br><span class="line"><span class="string">"isbn"</span>: <span class="string">"978-7-229-03094-1"</span>,</span><br><span class="line"><span class="string">"name"</span>: <span class="string">"我是一个线程"</span>,</span><br><span class="line"><span class="string">"author"</span>: <span class="string">"刘欣"</span>,</span><br><span class="line"><span class="string">"introduction"</span>: <span class="string">"一个线程的自述"</span>,</span><br><span class="line"><span class="string">"price"</span>: <span class="string">"0.0"</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">//这种结构完全可以表达上面的xml 内容
+var book = {
+&quot;isbn&quot;: &quot;978-7-229-03093-3&quot;,
+&quot;name&quot;: &quot;三体&quot;,
+ &quot;author&quot;: &quot;刘慈欣&quot;,
+&quot;introduction&quot;: &quot;中国最牛的科幻书&quot;,
+&quot;price&quot;: &quot;38.00&quot;
+ }
+//JS语法还支持数组，可以表达多个对象
+var books = [
+ {
+&quot;isbn&quot;: &quot;978-7-229-03093-3&quot;,
+&quot;name&quot;: &quot;三体&quot;,
+&quot;author&quot;: &quot;刘慈欣&quot;,
+&quot;introduction&quot;: &quot;中国最牛的科幻书&quot;,
+&quot;price&quot;: &quot;38.00&quot;
+ },
+ {
+&quot;isbn&quot;: &quot;978-7-229-03094-1&quot;,
+&quot;name&quot;: &quot;我是一个线程&quot;,
+&quot;author&quot;: &quot;刘欣&quot;,
+&quot;introduction&quot;: &quot;一个线程的自述&quot;,
+&quot;price&quot;: &quot;0.0&quot;
+ }
+</code></pre>
 <ul>
 <li>books[0].name –&gt;返回“三体”</li>
 <li>books[1].author –&gt;返回“刘欣”</li>

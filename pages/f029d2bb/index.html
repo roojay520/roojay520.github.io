@@ -537,7 +537,12 @@
 <li>异常是一个对象；</li>
 <li>异常产生于程序运行时；</li>
 <li><p>指令流：程序执行时一系列的连续指令称为指令流。<br>&gt;<br>示例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span> / <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">class Test{
+  public static void main(String args[]){
+      int i = 1 / 0;
+  }
+}
+</code></pre>
 <p>抛出异常：</p>
 <blockquote>
 <p>Exception in thread “main” java.lang.ArithmeticException: / by zero<br>  at Test3.main(Test3.java:6)</p>
@@ -558,14 +563,84 @@
 </ol>
 <p>RuntimeException + Error 和其子类都是属于uncheckexception<br>Exception类中除了 RuntimeException之外的类，都是属于checkexception</p>
 </blockquote>
-<h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4><h5 id="checkException"><a href="#checkException" class="headerlink" title="checkException"></a>checkException</h5><p>&gt;<br>checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。<br>示例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCheck</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        <span class="comment">//CheckException</span></span><br><span class="line">		Thread.sleep(<span class="number">1000</span>); <span class="comment">//让当前线程休眠1000ms</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4><h5 id="checkException"><a href="#checkException" class="headerlink" title="checkException"></a>checkException</h5><p>&gt;<br>checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。<br>示例：</p>
+<pre><code class="java">class TestCheck{
+    public static void main(String args[]){
+        //CheckException
+        Thread.sleep(1000); //让当前线程休眠1000ms
+    }
+}
+</code></pre>
 <p>运行结果：<br><img src="http://i.imgur.com/xMd1LOi.png" alt=""></p>
-<h5 id="uncheckException（-RuntimeException）"><a href="#uncheckException（-RuntimeException）" class="headerlink" title="uncheckException（ RuntimeException）"></a>uncheckException（ RuntimeException）</h5><p>&gt;<br>运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成<br>示例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		<span class="comment">//UncheckException</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span> / <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="uncheckException（-RuntimeException）"><a href="#uncheckException（-RuntimeException）" class="headerlink" title="uncheckException（ RuntimeException）"></a>uncheckException（ RuntimeException）</h5><p>&gt;<br>运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成<br>示例：</p>
+<pre><code class="java">class Test{
+    public static void main(String args[]){
+        //UncheckException
+        int i = 1 / 0;
+    }
+}
+</code></pre>
 <p>运行结果：<br><img src="http://i.imgur.com/ll7JnfN.png" alt=""></p>
-<h2 id="3-try…catch…finally结构"><a href="#3-try…catch…finally结构" class="headerlink" title="3. try…catch…finally结构"></a>3. try…catch…finally结构</h2><p>&gt;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">       <span class="comment">//代码A</span></span><br><span class="line">	<span class="comment">//有可能出现异常的代码B</span></span><br><span class="line">	<span class="comment">//代码C</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(Exception e)&#123; <span class="comment">//虚拟机产生的异常对象e</span></span><br><span class="line">	e.printStackTrace(); <span class="comment">//处理异常的代码D</span></span><br><span class="line">	<span class="comment">//代码E</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">finally</span>&#123;</span><br><span class="line">	<span class="comment">//异常的出口</span></span><br><span class="line">	<span class="comment">//执行扫尾工作的代码F</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="如果try中代码B没有异常：执行代码A-B-C-F"><a href="#如果try中代码B没有异常：执行代码A-B-C-F" class="headerlink" title="如果try中代码B没有异常：执行代码A-B-C-F"></a>如果try中代码B没有异常：执行代码A-B-C-F</h4><h4 id="如果try中代码B出现异常：执行代码A-B-D-E-F"><a href="#如果try中代码B出现异常：执行代码A-B-D-E-F" class="headerlink" title="如果try中代码B出现异常：执行代码A-B-D-E-F"></a>如果try中代码B出现异常：执行代码A-B-D-E-F</h4><h3 id="uncheckException"><a href="#uncheckException" class="headerlink" title="uncheckException"></a>uncheckException</h3><p>&gt;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//uncheckException</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCheck</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			System.out.println(<span class="number">2</span>);</span><br><span class="line">			<span class="comment">//有可能出现异常的代码</span></span><br><span class="line">			<span class="keyword">int</span> i = <span class="number">1</span>/<span class="number">0</span>;</span><br><span class="line">			System.out.println(<span class="number">3</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(Exception e)&#123; <span class="comment">//虚拟机产生的异常对象e</span></span><br><span class="line">			e.printStackTrace(); <span class="comment">//打印异常栈的追踪信息</span></span><br><span class="line">			System.out.println(<span class="number">4</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">finally</span>&#123;</span><br><span class="line">			<span class="comment">//异常的出口</span></span><br><span class="line">			System.out.println(<span class="string">"finally"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-try…catch…finally结构"><a href="#3-try…catch…finally结构" class="headerlink" title="3. try…catch…finally结构"></a>3. try…catch…finally结构</h2><p>&gt;</p>
+<pre><code class="java">try{
+       //代码A
+    //有可能出现异常的代码B
+    //代码C
+}
+catch(Exception e){ //虚拟机产生的异常对象e
+    e.printStackTrace(); //处理异常的代码D
+    //代码E
+}
+finally{
+    //异常的出口
+    //执行扫尾工作的代码F
+}
+</code></pre>
+<h4 id="如果try中代码B没有异常：执行代码A-B-C-F"><a href="#如果try中代码B没有异常：执行代码A-B-C-F" class="headerlink" title="如果try中代码B没有异常：执行代码A-B-C-F"></a>如果try中代码B没有异常：执行代码A-B-C-F</h4><h4 id="如果try中代码B出现异常：执行代码A-B-D-E-F"><a href="#如果try中代码B出现异常：执行代码A-B-D-E-F" class="headerlink" title="如果try中代码B出现异常：执行代码A-B-D-E-F"></a>如果try中代码B出现异常：执行代码A-B-D-E-F</h4><h3 id="uncheckException"><a href="#uncheckException" class="headerlink" title="uncheckException"></a>uncheckException</h3><p>&gt;</p>
+<pre><code class="java">//uncheckException
+class TestCheck{
+    public static void main(String args[]){
+        System.out.println(1);
+        try{
+            System.out.println(2);
+            //有可能出现异常的代码
+            int i = 1/0;
+            System.out.println(3);
+        }
+        catch(Exception e){ //虚拟机产生的异常对象e
+            e.printStackTrace(); //打印异常栈的追踪信息
+            System.out.println(4);
+        }
+        finally{
+            //异常的出口
+            System.out.println(&quot;finally&quot;);
+        }
+    }
+}
+</code></pre>
 <p>运行结果：<br><img src="http://i.imgur.com/DG4HLEn.png" alt=""></p>
-<h3 id="checkException-1"><a href="#checkException-1" class="headerlink" title="checkException"></a>checkException</h3><p>&gt;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//checkException</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCheck</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			System.out.println(<span class="number">2</span>);</span><br><span class="line">			<span class="comment">//有可能出现异常的代码</span></span><br><span class="line">			Thread.sleep(<span class="number">1000</span>); <span class="comment">//让当前线程休眠1000ms</span></span><br><span class="line">			System.out.println(<span class="number">3</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(Exception e)&#123; <span class="comment">//虚拟机产生的异常对象e</span></span><br><span class="line">			e.printStackTrace(); <span class="comment">//打印异常栈的追踪信息</span></span><br><span class="line">			System.out.println(<span class="number">4</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">finally</span>&#123;</span><br><span class="line">			<span class="comment">//异常的出口</span></span><br><span class="line">			System.out.println(<span class="string">"finally"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="checkException-1"><a href="#checkException-1" class="headerlink" title="checkException"></a>checkException</h3><p>&gt;</p>
+<pre><code class="java">//checkException
+class TestCheck{
+    public static void main(String args[]){
+        System.out.println(1);
+        try{
+            System.out.println(2);
+            //有可能出现异常的代码
+            Thread.sleep(1000); //让当前线程休眠1000ms
+            System.out.println(3);
+        }
+        catch(Exception e){ //虚拟机产生的异常对象e
+            e.printStackTrace(); //打印异常栈的追踪信息
+            System.out.println(4);
+        }
+        finally{
+            //异常的出口
+            System.out.println(&quot;finally&quot;);
+        }
+    }
+}
+</code></pre>
 <p>运行结果：<br><img src="http://i.imgur.com/yWIuLO9.png" alt=""><br>屏幕首先显示1，2，然后停顿1000ms，再显示3和finally</p>
 
         
@@ -610,7 +685,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/pages/83e4d5ed/" id="post_nav-newer" class="prev-content">
+        <a href="/pages/e7882660/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -624,7 +699,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/pages/bbf344f6/" id="post_nav-older" class="next-content">
+        <a href="/pages/c075d141/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

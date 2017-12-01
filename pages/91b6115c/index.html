@@ -528,7 +528,34 @@
     
         <h2 id="鼠标样式"><a href="#鼠标样式" class="headerlink" title="鼠标样式"></a>鼠标样式</h2><p>cursor：定网页浏览时用户鼠标指针的样式。</p>
 <p>cursor：pointer； 设定鼠标的形状为一只伸出食指的手，这也是绝大多数浏览器里面鼠标停留在网页链接上方时候的样式。<br>default 箭头。<br>crosshair 十字<br>progress 沙漏</p>
-<h2 id="按钮颜色"><a href="#按钮颜色" class="headerlink" title="按钮颜色"></a>按钮颜色</h2><p>平时的状态：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.btn</span> &#123;</span><br><span class="line">    // 未按下时的背景颜色</span><br><span class="line">    <span class="selector-tag">background</span>: #<span class="selector-id">#02b3e4</span>;</span><br><span class="line">    // 边框圆角</span><br><span class="line">    <span class="selector-tag">border-radius</span>: 4<span class="selector-tag">px</span>;</span><br><span class="line">    // 去掉边框</span><br><span class="line">    <span class="selector-tag">border</span>: <span class="selector-tag">none</span></span><br><span class="line">    // 边缘阴影</span><br><span class="line">    <span class="selector-tag">box-shadow</span>: 12<span class="selector-tag">px</span> 15<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0, 0, 0, 0<span class="selector-class">.1</span>);</span><br><span class="line">    // 字体颜色</span><br><span class="line">    <span class="selector-tag">color</span>: #<span class="selector-id">#fff</span>;</span><br><span class="line">    // 显示方式</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span>;</span><br><span class="line">    // 字体</span><br><span class="line">    font-family: 'Open Sans', sans-serif;</span><br><span class="line">    <span class="selector-tag">font-size</span>: 12<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">font-weight</span>: 600;</span><br><span class="line">    // 字间距</span><br><span class="line">    <span class="selector-tag">letter-spacing</span>: 0<span class="selector-class">.165em</span>;</span><br><span class="line">    // 超出隐藏</span><br><span class="line">    <span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line">    // 设置渐变效果</span><br><span class="line">    <span class="selector-tag">transition</span>: 0<span class="selector-class">.2s</span> <span class="selector-tag">box-shadow</span> <span class="selector-tag">ease-in-out</span>, 0<span class="selector-class">.2s</span> <span class="selector-tag">background-color</span> <span class="selector-tag">ease-in-out</span>, 0<span class="selector-class">.2s</span> <span class="selector-tag">border-color</span> <span class="selector-tag">ease-in-out</span>;</span><br><span class="line">&#125;</span><br><span class="line">// 鼠标放上去时的颜色</span><br><span class="line"><span class="selector-class">.btn</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">:not(</span><span class="selector-pseudo">:disabled)</span> &#123; <span class="attribute">background</span>: #<span class="number">#148bb1</span>;&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="按钮颜色"><a href="#按钮颜色" class="headerlink" title="按钮颜色"></a>按钮颜色</h2><p>平时的状态：</p>
+<pre><code class="css">.btn {
+    // 未按下时的背景颜色
+    background: ##02b3e4;
+    // 边框圆角
+    border-radius: 4px;
+    // 去掉边框
+    border: none
+    // 边缘阴影
+    box-shadow: 12px 15px 20px rgba(0, 0, 0, 0.1);
+    // 字体颜色
+    color: ##fff;
+    // 显示方式
+    display: inline-block;
+    // 字体
+    font-family: &#39;Open Sans&#39;, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    // 字间距
+    letter-spacing: 0.165em;
+    // 超出隐藏
+    overflow: hidden;
+    // 设置渐变效果
+    transition: 0.2s box-shadow ease-in-out, 0.2s background-color ease-in-out, 0.2s border-color ease-in-out;
+}
+// 鼠标放上去时的颜色
+.btn:hover:not(:disabled) { background: ##148bb1;}
+</code></pre>
 <h2 id="字体抗锯齿-webkit-font-smoothing有"><a href="#字体抗锯齿-webkit-font-smoothing有" class="headerlink" title="字体抗锯齿 -webkit-font-smoothing有"></a>字体抗锯齿 -webkit-font-smoothing有</h2><blockquote>
 <p>CSS3中用于webkit引擎(如chrome)中设置字体的抗锯齿或者说光滑度的属性。</p>
 </blockquote>

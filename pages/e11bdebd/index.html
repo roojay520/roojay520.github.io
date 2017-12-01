@@ -517,7 +517,11 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>代码如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> string = <span class="string">'to young, too simple.'</span>;</span><br><span class="line"><span class="keyword">const</span> toUp = <span class="function"><span class="params">str</span> =&gt;</span> str.split(<span class="string">' '</span>).map(<span class="function"><span class="params">item</span> =&gt;</span> item.charAt(<span class="number">0</span>).toLocaleUpperCase() + item.slice(<span class="number">1</span>)).join(<span class="string">' '</span>);</span><br><span class="line">toUp(string);</span><br></pre></td></tr></table></figure></p>
+        <p>代码如下:</p>
+<pre><code class="javascript">const string = &#39;to young, too simple.&#39;;
+const toUp = str =&gt; str.split(&#39; &#39;).map(item =&gt; item.charAt(0).toLocaleUpperCase() + item.slice(1)).join(&#39; &#39;);
+toUp(string);
+</code></pre>
 
         
     

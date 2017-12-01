@@ -541,7 +541,17 @@
 <li>通过设置 display 的值启用 flex</li>
 <li>设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box-flex</span>&#123;</span><br><span class="line">	display： -ms-flex；</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">-webkit-flex</span>;</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box-inline-flex</span>&#123;</span><br><span class="line">	<span class="attribute">display</span>: -ms-inline-flex;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-inline-flex;</span><br><span class="line">	<span class="attribute">display</span>: inline-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">    .box-flex{
+        display： -ms-flex；
+        display: -webkit-flex;
+        display: flex;
+    }
+    .box-inline-flex{
+        display: -ms-inline-flex;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+    }
+</code></pre>
 <h2 id="flex-属性"><a href="#flex-属性" class="headerlink" title="flex 属性"></a>flex 属性</h2><ul>
 <li>flex-direction：确立主轴。</li>
 <li>justify-content：定义了在当前行上，弹性项目沿主轴如何排布。</li>

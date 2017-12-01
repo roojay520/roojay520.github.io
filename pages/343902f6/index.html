@@ -532,13 +532,32 @@
 <ul>
 <li>在 html head 开头引入下面代码：</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--  兼容古老的 IE --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, user-scalable=no"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- CSS 样式重置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入 Bootstrap css 压缩文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入自己 css 的文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"../style/task_1.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;!--  兼容古老的 IE --&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt;
+    &lt;!-- CSS 样式重置 --&gt;
+    &lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;!-- 引入 Bootstrap css 压缩文件--&gt;
+    &lt;link href=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;!-- 引入自己 css 的文件 --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;../style/task_1.css&quot;&gt;
+    &lt;title&gt;Test&lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
 <h2 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h2><blockquote>
 <p>根据不同像素屏幕，展示不同大小页面。</p>
 </blockquote>
 <p><code>!important</code> 为开发者提供了一个增加样式权重的方法。!important是对整条样式的声明，包括这个样式的属性和属性值。</p>
 <p><strong>### 媒体查询</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> only screen and (max-width: <span class="number">300px</span>) &#123;</span><br><span class="line">    <span class="selector-tag">p</span> &#123;</span><br><span class="line">        <span class="attribute">background-color</span>: red;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">@media only screen and (max-width: 300px) {
+    p {
+        background-color: red;
+    }
+}
+</code></pre>
 <ul>
 <li>only 兼容旧式浏览器。</li>
 <li>screen 表示这个媒体查询适用于所有屏幕。</li>
@@ -552,19 +571,22 @@
 <li>而这个CSS的功能就是对几乎所有的默认样式进行重置，让所有的浏览器上对于未定义的样式浏览效果达到一致。</li>
 </ul>
 <p><strong>使用方法：</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://lib.baomitu.com/normalize/7.0.0/normalize.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt;
+&lt;link href=&quot;https://lib.baomitu.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre>
 <h3 id="网格设计"><a href="#网格设计" class="headerlink" title="网格设计"></a>网格设计</h3><ul>
 <li>大部分网页采用 12 columns 设计，可以很好的划分为2，3，4等份。</li>
 </ul>
 <h2 id="文章字体"><a href="#文章字体" class="headerlink" title="文章字体"></a>文章字体</h2><ul>
-<li><p>segmentfault</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">font-family</span>: <span class="selector-tag">-apple-system</span>,"<span class="selector-tag">Helvetica</span> <span class="selector-tag">Neue</span>",<span class="selector-tag">Helvetica</span>,<span class="selector-tag">Arial</span>,"<span class="selector-tag">PingFang</span> <span class="selector-tag">SC</span>","<span class="selector-tag">Hiragino</span> <span class="selector-tag">Sans</span> <span class="selector-tag">GB</span>","<span class="selector-tag">WenQuanYi</span> <span class="selector-tag">Micro</span> <span class="selector-tag">Hei</span>","<span class="selector-tag">Microsoft</span> <span class="selector-tag">Yahei</span>",<span class="selector-tag">sans-serif</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">font-size</span>: 14<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>知乎</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">font-family</span>: <span class="selector-tag">Helvetica</span> <span class="selector-tag">Neue</span>,<span class="selector-tag">Helvetica</span>,<span class="selector-tag">PingFang</span> <span class="selector-tag">SC</span>,<span class="selector-tag">Hiragino</span> <span class="selector-tag">Sans</span> <span class="selector-tag">GB</span>,<span class="selector-tag">Microsoft</span> <span class="selector-tag">YaHei</span>,<span class="selector-tag">Noto</span> <span class="selector-tag">Sans</span> <span class="selector-tag">CJK</span> <span class="selector-tag">SC</span>,<span class="selector-tag">WenQuanYi</span> <span class="selector-tag">Micro</span> <span class="selector-tag">Hei</span>,<span class="selector-tag">Arial</span>,<span class="selector-tag">sans-serif</span>;</span><br><span class="line"><span class="selector-tag">font-size</span>: 15<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
-</li>
+<li>segmentfault<br>```css<br>font-family: -apple-system,”Helvetica Neue”,Helvetica,Arial,”PingFang SC”,”Hiragino Sans GB”,”WenQuanYi Micro Hei”,”Microsoft Yahei”,sans-serif;</li>
 </ul>
-<h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>导航栏 #243d4c</p>
+<p>font-size: 14px;</p>
+<pre><code>
+* 知乎
+```css
+font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
+font-size: 15px;
+</code></pre><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>导航栏 #243d4c</p>
 <p>背景 #eee</p>
 <p>#f5f5f5</p>
 <p>#f8f8f8</p>
@@ -572,7 +594,19 @@
 <p>按钮 #02b3e4</p>
 <p>#148bb1</p>
 <p>#2D78BA</p>
-<p>边框阴影<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ss</span><span class="selector-pseudo">::before</span>, <span class="selector-class">.clss</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> -<span class="number">1px</span> <span class="number">0</span> <span class="number">#e0e0e0</span>, <span class="number">0</span> <span class="number">0</span> <span class="number">2px</span> <span class="built_in">rgba</span>(0,0,0,.12), <span class="number">0</span> <span class="number">2px</span> <span class="number">4px</span> <span class="built_in">rgba</span>(0,0,0,.24);</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">pointer-events</span>: none;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>边框阴影</p>
+<pre><code class="css">.ss::before, .clss::before {
+    bottom: 0;
+    box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
+    content: &#39;&#39;;
+    display: block;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+</code></pre>
 
         
     

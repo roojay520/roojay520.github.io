@@ -537,13 +537,35 @@
 <li>$(“h1”).text(); 返回 h1 里面的 text</li>
 <li>$(“h1”).text(“Hello World!”) 更改覆盖 h1 的内容</li>
 </ul>
-<p><strong>注意DOM 加载完成之后 jQuery 开始运行，否则 jQuery 操作会被覆盖，不会生效。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文档加载完成后执行替换方法</span></span><br><span class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"h1"</span>).text(<span class="string">"Hello World!);</span></span><br><span class="line"><span class="string">&#125;);</span></span><br><span class="line"><span class="string">// 或者使用以下方法</span></span><br><span class="line"><span class="string">$(document).ready(function()&#123;</span></span><br><span class="line"><span class="string">    $("</span>h1<span class="string">").text("</span>Hello World!);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.class li:first; <span class="comment">// 选择列表里面的第一个元素</span></span><br><span class="line">.class li:last; <span class="comment">// 选择列表里面的最后一个元素</span></span><br><span class="line">.class li:odd; <span class="comment">// 选择列表里面的奇数位元素</span></span><br><span class="line">.class li:even; <span class="comment">// 选择列表里面的偶数位元素</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意DOM 加载完成之后 jQuery 开始运行，否则 jQuery 操作会被覆盖，不会生效。</strong></p>
+<pre><code class="javascript">// 文档加载完成后执行替换方法
+jQuery(document).ready(function(){
+    $(&quot;h1&quot;).text(&quot;Hello World!);
+});
+// 或者使用以下方法
+$(document).ready(function(){
+    $(&quot;h1&quot;).text(&quot;Hello World!);
+});
+</code></pre>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><pre><code class="javascript">.class li:first; // 选择列表里面的第一个元素
+.class li:last; // 选择列表里面的最后一个元素
+.class li:odd; // 选择列表里面的奇数位元素
+.class li:even; // 选择列表里面的偶数位元素
+</code></pre>
 <h2 id="遍历寻找操作-DOM-节点"><a href="#遍历寻找操作-DOM-节点" class="headerlink" title="遍历寻找操作 DOM 节点"></a>遍历寻找操作 DOM 节点</h2><blockquote>
-<p>速度快于选择器操作<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".class"</span>).find(<span class="string">"li"</span>);</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="遍历伪类选择"><a href="#遍历伪类选择" class="headerlink" title="遍历伪类选择"></a>遍历伪类选择</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".class"</span>).first(); <span class="comment">// 选择列表第一个元素</span></span><br><span class="line">$(<span class="string">".class"</span>).last(); <span class="comment">// 选择列表最后一个元素</span></span><br><span class="line">$(<span class="string">".class"</span>).odd(); <span class="comment">// 选择列表奇数位元素</span></span><br><span class="line">$(<span class="string">".class"</span>).even(); <span class="comment">// 选择列表偶数位元素</span></span><br></pre></td></tr></table></figure>
-<h3 id="上下遍历"><a href="#上下遍历" class="headerlink" title="上下遍历"></a>上下遍历</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".class"</span>).parent(<span class="string">"li"</span>); <span class="comment">// 向上一层遍历，得到直系父元素</span></span><br><span class="line">$(<span class="string">".class"</span>).children(<span class="string">"li"</span>); <span class="comment">// 向下遍历，得到直系子元素</span></span><br></pre></td></tr></table></figure>
+<p>速度快于选择器操作</p>
+<pre><code class="javascript">$(&quot;.class&quot;).find(&quot;li&quot;);
+</code></pre>
+<h3 id="遍历伪类选择"><a href="#遍历伪类选择" class="headerlink" title="遍历伪类选择"></a>遍历伪类选择</h3><pre><code class="javascript">$(&quot;.class&quot;).first(); // 选择列表第一个元素
+$(&quot;.class&quot;).last(); // 选择列表最后一个元素
+$(&quot;.class&quot;).odd(); // 选择列表奇数位元素
+$(&quot;.class&quot;).even(); // 选择列表偶数位元素
+</code></pre>
+<h3 id="上下遍历"><a href="#上下遍历" class="headerlink" title="上下遍历"></a>上下遍历</h3></blockquote>
+<pre><code class="javascript">$(&quot;.class&quot;).parent(&quot;li&quot;); // 向上一层遍历，得到直系父元素
+$(&quot;.class&quot;).children(&quot;li&quot;); // 向下遍历，得到直系子元素
+</code></pre>
+
         
     
 

@@ -529,28 +529,101 @@
         <h2 id="选择结构语句"><a href="#选择结构语句" class="headerlink" title="选择结构语句"></a>选择结构语句</h2><h3 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h3><blockquote>
 <p>当判断条件1结果为true时，执行语句1，为false时，执行语句2。当判断条件1,2都不满足true时，执行语句3。</p>
 </blockquote>
-<p>例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (判断条件<span class="number">1</span>)&#123;</span><br><span class="line">  执行语句<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(判断条件<span class="number">2</span>)&#123;</span><br><span class="line">  执行语句<span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">  执行语句<span class="number">3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>例如：</p>
+<pre><code class="java">if (判断条件1){
+  执行语句1
+}
+else if(判断条件2){
+  执行语句2
+}
+else{
+  执行语句3
+}
+</code></pre>
 <h3 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h3><blockquote>
-<p>一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。<br>当判断条件成立时结果为表达式1的值，否则表达式2的值。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">判断条件 ? 表达式 <span class="number">1</span> : 表达式 <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+<p>一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。<br>当判断条件成立时结果为表达式1的值，否则表达式2的值。</p>
+<pre><code class="java">判断条件 ? 表达式 1 : 表达式 2
+</code></pre>
 </blockquote>
-<p>例如：求取两个数x，y中较大的值。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//if-else实现方法</span></span><br><span class="line"><span class="keyword">int</span> x, y, max;</span><br><span class="line"><span class="keyword">if</span>(x&gt;y)&#123;</span><br><span class="line">	max = x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">	max = y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//三元运算实现</span></span><br><span class="line"><span class="keyword">int</span> x, y, max;</span><br><span class="line">max = x &gt; y ? x : y;</span><br></pre></td></tr></table></figure></p>
+<p>例如：求取两个数x，y中较大的值。</p>
+<pre><code class="java">//if-else实现方法
+int x, y, max;
+if(x&gt;y){
+    max = x;
+}
+else{
+    max = y;
+}
+
+//三元运算实现
+int x, y, max;
+max = x &gt; y ? x : y;
+</code></pre>
 <h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><blockquote>
 <p>在switch语句中使用switch关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，<br>当表达式的值和某个目标值匹配时，会执行对应case下的语句。</p>
 </blockquote>
-<p>例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)&#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    执行语句<span class="number">1</span>;</span><br><span class="line">       <span class="keyword">break</span>; <span class="comment">//break终止case并跳出switch循环</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    执行语句<span class="number">2</span>;</span><br><span class="line">     <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    执行语句<span class="number">3</span>；</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>: <span class="comment">//default处理和前面的case都不匹配的值</span></span><br><span class="line">    执行语句<span class="number">4</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>例如：</p>
+<pre><code class="java">switch(表达式){
+  case 1:
+    执行语句1;
+       break; //break终止case并跳出switch循环
+  case 2:
+    执行语句2;
+     break;
+  case 3:
+    执行语句3；
+      break;
+  default: //default处理和前面的case都不匹配的值
+    执行语句4;
+      break;
+}
+</code></pre>
 <h2 id="循环结构语句"><a href="#循环结构语句" class="headerlink" title="循环结构语句"></a>循环结构语句</h2><h3 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h3><blockquote>
 <p>循环条件判断为true时，执行语句循环执行，直到循环条件为false。</p>
 </blockquote>
-<p>例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(循环条件)&#123;</span><br><span class="line">	执行语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>例如：</p>
+<pre><code class="java">while(循环条件){
+    执行语句
+}
+</code></pre>
 <h3 id="do…while循环语句"><a href="#do…while循环语句" class="headerlink" title="do…while循环语句"></a>do…while循环语句</h3><blockquote>
 <p>循环体会无条件执行一次，然后根据循环条件决定是否继续执行。</p>
 </blockquote>
-<p>例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">  执行语句</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(循环条件);</span><br></pre></td></tr></table></figure></p>
+<p>例如：</p>
+<pre><code class="java">do{
+  执行语句
+}
+while(循环条件);
+</code></pre>
 <h3 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h3><blockquote>
 <p>一般用在循环次数已知的情况下，循环条件判断为true执行顺序①→②→④→③</p>
 </blockquote>
-<p>例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(初始化表达式①;循环条件②;操作表达式③)&#123;</span><br><span class="line">  执行语句④</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by Roojay on 2017/4/7.</span></span><br><span class="line"><span class="comment"> * 利用嵌套循环打印一个正三角形。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i, j, k;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(k = <span class="number">0</span>; k &lt; <span class="number">5</span> - i; k++)&#123;</span><br><span class="line">                System.out.print(<span class="string">" "</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(j = <span class="number">1</span>; j &lt;= i; j++)&#123;</span><br><span class="line">                System.out.print(<span class="string">"* "</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<pre><code class="java">for(初始化表达式①;循环条件②;操作表达式③){
+  执行语句④
+}
+</code></pre>
+<pre><code class="java">/**
+ * Created by Roojay on 2017/4/7.
+ * 利用嵌套循环打印一个正三角形。
+ */
+public class Test1 {
+    public static void main(String args[]){
+        int i, j, k;
+        for(i = 1; i &lt;= 5; i++){
+            for(k = 0; k &lt; 5 - i; k++){
+                System.out.print(&quot; &quot;);
+            }
+            for(j = 1; j &lt;= i; j++){
+                System.out.print(&quot;* &quot;);
+            }
+
+            System.out.println();
+        }
+
+    }
+}
+</code></pre>
 <h3 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h3><h4 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h4><blockquote>
 <p>当它出现在switch条件语句中时，作用是终止某个case并跳出switch结构。<br>当它出现在循环语句中，作用是跳出循环语句，执行后面的代码。<br>当它出现在嵌套循环内层循环中时，只能跳出内层循环，如果想跳出外层循环，<br>需要对外层前面添加标记 itcast： ，在后面使用 break itcast 跳出外层循环。</p>
 </blockquote>
@@ -600,7 +673,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/pages/bbf344f6/" id="post_nav-newer" class="prev-content">
+        <a href="/pages/828295ba/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -614,7 +687,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/pages/828295ba/" id="post_nav-older" class="next-content">
+        <a href="/pages/e7882660/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

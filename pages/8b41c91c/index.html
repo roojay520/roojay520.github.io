@@ -526,10 +526,20 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="十进制转其他进制"><a href="#十进制转其他进制" class="headerlink" title="十进制转其他进制"></a>十进制转其他进制</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> i = <span class="number">10</span>;</span><br><span class="line">i.toString(<span class="number">2</span>);  <span class="comment">// 2 进制 1010</span></span><br><span class="line">i.toString(<span class="number">8</span>);  <span class="comment">// 8 进制 12</span></span><br><span class="line">i.toString(<span class="number">16</span>);  <span class="comment">// 16 进制 a</span></span><br><span class="line">i.toString(<span class="number">32</span>);  <span class="comment">// 32 进制 a</span></span><br></pre></td></tr></table></figure>
-<h2 id="其他进制转十进制"><a href="#其他进制转十进制" class="headerlink" title="其他进制转十进制"></a>其他进制转十进制</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parsetInt(x, <span class="number">2</span>); <span class="comment">// 2 进制转 10进制</span></span><br><span class="line">parsetInt(x, <span class="number">8</span>); <span class="comment">// 8 进制转 10 进制</span></span><br><span class="line">parsetInt(x, <span class="number">16</span>); <span class="comment">// 16 进制转 10 进制</span></span><br></pre></td></tr></table></figure>
+        <h2 id="十进制转其他进制"><a href="#十进制转其他进制" class="headerlink" title="十进制转其他进制"></a>十进制转其他进制</h2><pre><code class="javascript">const i = 10;
+i.toString(2);  // 2 进制 1010
+i.toString(8);  // 8 进制 12
+i.toString(16);  // 16 进制 a
+i.toString(32);  // 32 进制 a
+</code></pre>
+<h2 id="其他进制转十进制"><a href="#其他进制转十进制" class="headerlink" title="其他进制转十进制"></a>其他进制转十进制</h2><pre><code class="javascript">parsetInt(x, 2); // 2 进制转 10进制
+parsetInt(x, 8); // 8 进制转 10 进制
+parsetInt(x, 16); // 16 进制转 10 进制
+</code></pre>
 <h2 id="非十进制转十进制"><a href="#非十进制转十进制" class="headerlink" title="非十进制转十进制"></a>非十进制转十进制</h2><p>先转化为10进制， 然后再利用toString(参数)， 转化成不同的进制。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parsetInt(x, <span class="number">2</span>).toString(<span class="number">8</span>); <span class="comment">// 2 进制转 8进制</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">parsetInt(x, 2).toString(8); // 2 进制转 8进制
+</code></pre>
+
         
     
 
