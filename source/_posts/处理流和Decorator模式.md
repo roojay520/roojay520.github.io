@@ -1,6 +1,6 @@
 ---
 title: 处理流与Decorator模式
-date: 2017/6/16
+date: 2017-06-16
 tags: Java
 categories: Java
 abbrlink: bbf344f6

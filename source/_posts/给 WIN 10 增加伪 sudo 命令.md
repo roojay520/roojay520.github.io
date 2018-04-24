@@ -1,10 +1,10 @@
 ---
 title: 给 WIN 10 增加伪 sudo 命令
 mathjax: true
-date: 2018-01-06 12:22:35
 abbrlink:
 tags: Windows
 categories: Windows
+date: 2018-01-06 12:22:35
 ---
 
 1. 管理员权限打开 PowerShell

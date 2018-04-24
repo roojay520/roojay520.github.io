@@ -3,7 +3,7 @@ title: git基础
 tags: Git
 categories: Git
 abbrlink: 9891ebc8
-data: 2017/9/16
+date: 2017-09-16
 ---
 
 ## git 基础命令

@@ -5,7 +5,7 @@ tags:
     - ESLint
 categories: VSCode
 abbrlink: 3bcc390e
-date: 2017/10/1
+date: 2017-10-01
 ---
 
 ## 基本环境

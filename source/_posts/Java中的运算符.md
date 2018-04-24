@@ -1,6 +1,6 @@
 ---
 title: Java中的运算符
-date: 2017/6/16
+date: 2017-06-16
 tags: Java
 categories: Java
 abbrlink: 83e4d5ed

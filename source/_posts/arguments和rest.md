@@ -3,7 +3,7 @@ title: arguments和rest
 tags: JavaScript
 categories: JavaScript
 abbrlink: e5332c52
-data: 2017/9/16
+date: 2017-09-16
 ---
 ## arguments 参数
 > 只在函数内部起作用，指向当前函数调用者传入的所有参数。

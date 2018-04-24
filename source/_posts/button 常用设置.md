@@ -3,7 +3,7 @@ title: button常用设置
 tags: CSS
 categories: CSS
 abbrlink: 91b6115c
-data: 2017/9/16
+date: 2017-09-16
 ---
 
 ## 鼠标样式

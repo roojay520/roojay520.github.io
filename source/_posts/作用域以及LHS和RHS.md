@@ -3,7 +3,7 @@ title: 作用域以及 LHS 和 RHS 查询
 tags: YouDon'tKnowJavaScript
 categories: JavaScript
 abbrlink: b917f198
-data: 2017/9/16
+date: 2017-09-16
 ---
 ## 作用域
 

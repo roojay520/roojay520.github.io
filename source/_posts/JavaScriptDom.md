@@ -3,7 +3,7 @@ title: javascript DOM
 tags: JavaScript
 categories: JavaScript
 abbrlink: 218ff168
-data: 2017/9/16
+date: 2017-09-16
 ---
 ## 消息窗口
 

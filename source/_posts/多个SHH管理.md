@@ -3,7 +3,7 @@ title: 多个SSH管理
 tags: SSH
 categories: Git
 abbrlink: 8ee164b8
-data: 2017/9/16
+date: 2017-09-16
 ---
 ## 多个 SSH key 管理
 

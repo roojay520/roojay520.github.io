@@ -3,7 +3,7 @@ title: 包管理器 Yarn
 tags: Yarn
 categories: Nodejs
 abbrlink: 522f484
-data: 2017/9/16
+date: 2017-09-16
 ---
 # 包管理器 Yarn
 

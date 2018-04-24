@@ -1,9 +1,9 @@
 ---
 title: Java中的多线程
-date: 2017/6/16
 abbrlink: 265f6f6b
 tags: Java
 categories: Java
+date: 2017-06-16
 ---
 
 ## 多进程

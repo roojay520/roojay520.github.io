@@ -3,7 +3,7 @@ title: css基础
 tags: CSS
 categories: CSS
 abbrlink: eda1a9a9
-data: 2017/9/16
+date: 2017-09-16
 ---
 
 ## CSS 导入
@@ -37,11 +37,11 @@ data: 2017/9/16
 
 3. 导入式
 
-* 使用 CSS 的规则将外部CSS文件将一个独立的`.css`文件引入 HTML 文件中，`<style>`标记写在`<head>`标记中。
+* 使用 CSS 的规则将外部CSS文件将一个独立的`.css`文件引入 HTML 文件中，`<style>` 标记写在 `<head>`标记中。
 
 ```html
    <style type="text/css">
-   	@import"mystyle.css'
+   	@import "mystyle.css"
    </style>
 ```
 

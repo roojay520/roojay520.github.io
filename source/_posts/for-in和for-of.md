@@ -3,7 +3,7 @@ title: for-in和for-of
 tags: JavaScript
 categories: JavaScript
 abbrlink: f5b5d35a
-data: 2017/9/16
+date: 2017-09-16
 ---
 
 ## for-in
