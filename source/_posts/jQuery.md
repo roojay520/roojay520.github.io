@@ -2,8 +2,8 @@
 title: jQuery基础
 tags: jQuery
 categories: JavaScript
-data: 2017-11-12
 abbrlink: '889563'
+date: 2017-11-12
 ---
 > CDN 方式引入 jQuery
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
