@@ -10,8 +10,8 @@ date: 2017-09-16
 ### git 全局配置
 
 ```
-git config —global	user.name "roojay"
-git	config —global	user.email "roojay520@gmail.com"
+git config —global user.name "roojay"
+git config —global user.email "roojay520@gmail.com"
 ```
 
 ### 创建文件夹 test
@@ -41,7 +41,7 @@ mkdir test
 ```
 ### 将 readme.md 移除缓存区
 ```
- git rm	--cached readme.md
+ git rm --cached readme.md
 ```
 ### 删除 readme.md 文件
 
@@ -56,16 +56,19 @@ mkdir test
 ```
 ### 提交文件到本地仓库
 ```
- git commit	-m 'first commit' //m 后面的 'fisrst commit' 表示提交信息
+ git commit -m 'first commit' //m 后面的 'fisrst commit' 表示提交信息
 ```
 ### 查看操作日志
 ```
-git	log
+git log
 ```
 ## branch 操作
 ### 查看本地分支
 
-    git branch
+```
+git branch
+```
+
 ### 查看远程分支
 
 ```
@@ -74,23 +77,30 @@ git branch -r
 
 ### 创建新分支 test
 
-    git	branch test
+`git branch test`
+
 ### 切换分支
 
-    git	checkout test
+`git checkout test`
 
 ### 快速创建加切换
 
-    git	checkout -b test
+`git checkout -b test`
+
 ### 删除本地分支
-    git	branch	-d
-    //强制删除本地分支
-    git branch -D test
+
+```
+git branch -d
+//强制删除本地分支
+git branch -D test
+```
+
 ### 删除远程分支
 
 ```
 git push origin:testA
 ```
+
 ### 远程分支迁至本地
 
 ```
@@ -98,8 +108,9 @@ git checkout testA origin/testA
 ```
 
 ### 版本标签
+
 ```
-git	tag //查看版本记录
+git tag //查看版本记录
 git tag v1.0.0 //创建版本 v1.0.0 标签
 git checkout v1.0.0 //切换到v1.0.0 版本状态
 ```
@@ -108,12 +119,12 @@ git checkout v1.0.0 //切换到v1.0.0 版本状态
 ```
 ssh-keygen -t rsa
 ```
-> 执行完以上命令后，在 C:/Users/Username/.ssh 文件下生成两个文件	id_rsa（密钥）	和	id_rsa.pub（公钥）
+> 执行完以上命令后，在 C:/Users/Username/.ssh 文件下生成两个文件 id_rsa（密钥） 和 id_rsa.pub（公钥）
 
 ### 2.GitHub 添加 SSH key
 
->  将 id_rsa.pub 的内容添加到	GitHub： Setting→SSH keys and GPG keys→New SSH key
->  输入	`ssh -T git@github.com`测试是否添加成功
+>  将 id_rsa.pub 的内容添加到 GitHub： Setting→SSH keys and GPG keys→New SSH key
+>  输入 `ssh -T git@github.com`测试是否添加成功
 
 ### 3. Push 推送
 ```
@@ -127,27 +138,28 @@ git push origin master
 git pull origin master
 ```
 ### 5. 提交代码
+
 ```
 //clone 自己的项目
-git	clone git@github.com:roojay520/test.git
+git clone git@github.com:roojay520/test.git
 //修改 test 项目代码
 //commit 文件
 git add change.md
 git commit -m 'change file'
 //推送到 GitHub
-git	push origin	master
+git push origin master
 ```
 ### 6. 关联本地已有项目
-> 假如我们需要把本地已有的 test1 项目的所有代码提交到 GitHub 上的 test	项目。
+> 假如我们需要把本地已有的 test1 项目的所有代码提交到 GitHub 上的 test 项目。
 
 ```
 //将本地 test1 项目与远程 test 项目关联
-git	remote add origin git@github.com:roojay520/test.git
+git remote add origin git@github.com:roojay520/test.git
 //其中 orgin 是远程仓库的名字
 //查看当前项目的远程仓库
-git	remote -v
+git remote -v
 //向远程仓库提交代码
-git push origin	master
+git push origin master
 ```
 ## git 进阶
 
@@ -159,23 +171,23 @@ git push origin	master
 
 * 使用`git reset`命令进行版本回退。
 
-  ```
-  //这个 HEAD 可以是具体的 commit id
-  git reset --hard HEAD^
-  ```
+```
+//这个 HEAD 可以是具体的 commit id
+git reset --hard HEAD^
+```
 
 ## 常用配置
 ### 用户配置
 > 全局设置用户名和用户邮箱
 > user.name 用户名； user.email 用户邮箱
 ```
-git	config --global	user.name "roojay"
-git	config --global user.email "roojay520@gmail.com"
+git config --global user.name "roojay"
+git config --global user.email "roojay520@gmail.com"
 ```
-> 如果单独的某一个项目想要用特定的邮箱，切换到你的项目，以码把	--global 参数去除，执行一遍。
+> 如果单独的某一个项目想要用特定的邮箱，切换到你的项目，以码把 --global 参数去除，执行一遍。
 ```
-git	config user.name "roojay"
-git	config user.email "roojay520@gmail.com"
+git config user.name "roojay"
+git config user.email "roojay520@gmail.com"
 ```
 ### 快捷配置 alias
 >为命令设置别名
@@ -206,10 +218,10 @@ git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(
 ```
 
 ## 合并分支
-> rebase	跟 merge	的区别可以理解成有两个书架，需要把两个书架的书整理到一起去，第一种做法是	merge	，直接腾出一块地方把另一个书架的书全部放进去，这种做法你可以知道哪些书是来自另一个书架的；第二种做法就是 rebase	，他会把两个书架的书先进行比较，按照购书的时间来给他重新排序，然后重新放置好，这样做的好处就是合并之后的书架看起来很有逻辑，但是你很难清晰的知道哪些书来自哪个书架的。
+> rebase 跟 merge 的区别可以理解成有两个书架，需要把两个书架的书整理到一起去，第一种做法是 merge ，直接腾出一块地方把另一个书架的书全部放进去，这种做法你可以知道哪些书是来自另一个书架的；第二种做法就是 rebase ，他会把两个书架的书先进行比较，按照购书的时间来给他重新排序，然后重新放置好，这样做的好处就是合并之后的书架看起来很有逻辑，但是你很难清晰的知道哪些书来自哪个书架的。
 
 ### merge 暴力合并
-> 在 testA 分支开发完了一个功能，合并到主分支	master	上去
+> 在 testA 分支开发完了一个功能，合并到主分支 master 上去
 ```
 git checkout master
 git merge testA
