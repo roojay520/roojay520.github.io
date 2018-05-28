@@ -20,33 +20,33 @@ mkdir test
 ```
 ### 切换到 test 文件夹
 ```
- cd test
+cd test
 ```
 ### 新建 readme.md 文件
 ```
- touch readme.md
+touch readme.md
 ```
 
 ### 初始化仓库
 ```
- git init
+git init
 ```
 ### 查看仓库信息
 ```
- git status
+git status
 ```
 ### 添加 readme.md 到缓存区
 ```
- git add readme.md
+git add readme.md
 ```
 ### 将 readme.md 移除缓存区
 ```
- git rm --cached readme.md
+git rm --cached readme.md
 ```
 ### 删除 readme.md 文件
 
 ```
-  rm readme.md
+rm readme.md
 ```
 
 ### 删除文件 test 文件夹
@@ -56,7 +56,7 @@ mkdir test
 ```
 ### 提交文件到本地仓库
 ```
- git commit -m 'first commit' //m 后面的 'fisrst commit' 表示提交信息
+git commit -m 'first commit' //m 后面的 'fisrst commit' 表示提交信息
 ```
 ### 查看操作日志
 ```
@@ -77,15 +77,21 @@ git branch -r
 
 ### 创建新分支 test
 
-`git branch test`
+```
+git branch test
+```
 
 ### 切换分支
 
-`git checkout test`
+```
+git checkout test
+```
 
 ### 快速创建加切换
 
-`git checkout -b test`
+```
+git checkout -b test
+```
 
 ### 删除本地分支
 
