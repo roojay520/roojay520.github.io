@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="VSCode"> <meta property="og:article:tag" content="ESLint"> 
 
     
-        <meta property="article:published_time" content="Sun Oct 01 2017 00:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Mon May 28 2018 09:19:08 GMT+0000">
+        <meta property="article:published_time" content="Sat Sep 08 2018 00:00:00 GMT+0000">
+        <meta property="article:modified_time" content="Sat Sep 08 2018 15:23:00 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/3bcc390e/index.html",
     "headline": "VSCode 配置 ESLint + Airbnb + Vue",
-    "datePublished": "Sun Oct 01 2017 00:00:00 GMT+0000",
-    "dateModified": "Mon May 28 2018 09:19:08 GMT+0000",
+    "datePublished": "Sat Sep 08 2018 00:00:00 GMT+0000",
+    "dateModified": "Sat Sep 08 2018 15:23:00 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -380,7 +380,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本环境"><span class="post-toc-text">基本环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VSCode-安装-ESLint-扩展"><span class="post-toc-text">VSCode 安装 ESLint 扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#NPM-安装-ESLint"><span class="post-toc-text">NPM 安装 ESLint</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-自定义配置规则"><span class="post-toc-text">1. 自定义配置规则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-使用-eslint-config-airbnb-标准规则"><span class="post-toc-text">2. 使用 eslint-config-airbnb 标准规则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ESLint-支持-Vue-单文件组件"><span class="post-toc-text">ESLint 支持 Vue 单文件组件</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本环境"><span class="post-toc-text">基本环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VSCode-安装-ESLint-扩展"><span class="post-toc-text">VSCode 安装 ESLint 扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#NPM-安装-ESLint"><span class="post-toc-text">NPM 安装 ESLint</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-自定义配置规则"><span class="post-toc-text">1. 自定义配置规则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-使用-eslint-config-airbnb-base-标准规则"><span class="post-toc-text">2. 使用 eslint-config-airbnb-base 标准规则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ESLint-支持-Html-以及-Vue-单文件组件"><span class="post-toc-text">ESLint 支持 Html 以及 Vue 单文件组件</span></a></li></ol>
     </ul>
     
 
@@ -431,7 +431,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Roojay</strong>
-        <span>10月 01, 2017</span>
+        <span>9月 08, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -534,7 +534,10 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="基本环境"><a href="#基本环境" class="headerlink" title="基本环境"></a>基本环境</h2><p>Win 10 v1709<br>Nodejs v8.70<br>VScode v1.17.2</p>
+        <blockquote>
+<p>2018-09-08 更新，调整为 <code>eslint-config-airbnb-base</code> 正确配置。</p>
+</blockquote>
+<h2 id="基本环境"><a href="#基本环境" class="headerlink" title="基本环境"></a>基本环境</h2><p>Win 10 v1709<br>Nodejs v8.11.3<br>VScode v1.26.1</p>
 <h2 id="VSCode-安装-ESLint-扩展"><a href="#VSCode-安装-ESLint-扩展" class="headerlink" title="VSCode 安装 ESLint 扩展"></a>VSCode 安装 ESLint 扩展</h2><p>打开 VSCode 搜索 ESLint 扩展安装</p>
 <h2 id="NPM-安装-ESLint"><a href="#NPM-安装-ESLint" class="headerlink" title="NPM 安装 ESLint"></a>NPM 安装 ESLint</h2><ol>
 <li><p>全局安装（推荐）:</p>
@@ -551,20 +554,21 @@
 </li>
 </ol>
 <p>ps：具体配置参考：<a href="http://eslint.cn/docs/user-guide/configuring" target="_blank" rel="noopener">http://eslint.cn/docs/user-guide/configuring</a></p>
-<h2 id="2-使用-eslint-config-airbnb-标准规则"><a href="#2-使用-eslint-config-airbnb-标准规则" class="headerlink" title="2. 使用 eslint-config-airbnb 标准规则"></a>2. 使用 eslint-config-airbnb 标准规则</h2><ol>
+<h2 id="2-使用-eslint-config-airbnb-base-标准规则"><a href="#2-使用-eslint-config-airbnb-base-标准规则" class="headerlink" title="2. 使用 eslint-config-airbnb-base 标准规则"></a>2. 使用 eslint-config-airbnb-base 标准规则</h2><ol>
 <li><p>查看 Airbnb 标准依赖插件版本：</p>
-<p><code>npm info &quot;eslint-config-airbnb@latest&quot; peerDependencies</code></p>
+<p><code>npm info &quot;eslint-config-airbnb-base@latest&quot; peerDependencies</code></p>
 </li>
 </ol>
 <p>例如：本次的 plugins 的版本要求:</p>
-<pre><code>{  eslint: &#39;^4.9.0&#39;,
-  &#39;eslint-plugin-import&#39;: &#39;^2.7.0&#39;,
-  &#39;eslint-plugin-jsx-a11y&#39;: &#39;^6.0.2&#39;,
-  &#39;eslint-plugin-react&#39;: &#39;^7.4.0&#39;
+<pre><code>{  
+  eslint: &#39;^4.19.1 || ^5.3.0&#39;,
+  eslint-plugin-import&#39;: &#39;^2.14.0&#39; 
 }
 </code></pre><ol start="2">
 <li><p>安装对应版本的插件:</p>
-<p><code>npm install eslint-config-airbnb eslint@^#.#.# eslint-plugin-jsx-a11y@^#.#.# eslint-plugin-import@^#.#.# eslint-plugin-react@^#.#.# -g</code></p>
+<p><code>npm install eslint-config-airbnb-base eslint@^#.#.# eslint-plugin-import@^#.#.# -g</code></p>
+</li>
+<li><p>安装  babel-eslint 插件：<br> <code>npm i -g babel-eslint</code></p>
 </li>
 <li><p>更改配置文件 <code>.eslintrc.json</code> 如下：</p>
 </li>
@@ -573,16 +577,15 @@
     // 要启用的环境
     &quot;env&quot;: {
         &quot;browser&quot;: true,
-        &quot;node&quot;: true,
-        &quot;commonjs&quot;: true,
         &quot;es6&quot;: true,
-        &quot;jquery&quot;: true
+        &quot;node&quot;: true
     },
     // 启用 airbnb 规则
-    &quot;extends&quot;: &quot;airbnb&quot;,
+    &quot;extends&quot;: &quot;airbnb-base&quot;,
     // 使用语言及版本
     &quot;parserOptions&quot;: {
-        &quot;ecmaVersion&quot;: 6,
+        &quot;parser&quot;: &quot;babel-eslint&quot;,
+        &quot;ecmaVersion&quot;: 2017,
         &quot;sourceType&quot;: &quot;module&quot;
     },
     // 个人自定义规则
@@ -592,18 +595,20 @@
     }
 }
 </code></pre>
-<h2 id="ESLint-支持-Vue-单文件组件"><a href="#ESLint-支持-Vue-单文件组件" class="headerlink" title="ESLint 支持 Vue 单文件组件"></a>ESLint 支持 Vue 单文件组件</h2><ol>
-<li>安装 eslint-plugin-html 插件</li>
+<h2 id="ESLint-支持-Html-以及-Vue-单文件组件"><a href="#ESLint-支持-Html-以及-Vue-单文件组件" class="headerlink" title="ESLint 支持 Html 以及 Vue 单文件组件"></a>ESLint 支持 Html 以及 Vue 单文件组件</h2><ol>
+<li>安装 eslint-plugin-html 和 eslint-plugin-vue 插件</li>
 </ol>
-<p><code>npm install eslint-plugin-html -g</code></p>
+<p><code>npm i -g eslint-plugin-html eslint-plugin-vue</code></p>
 <ol start="2">
 <li>在 VSCode 设置设置中添加如下配置：<pre><code class="json">  // ESLint 配置
  &quot;eslint.enable&quot;: true,
+ // 保存时是否自动修复
+ &quot;eslint.autoFixOnSave&quot;: false,
  // nodejs 路径， windows 路径使用双 \\ 进行转义
  &quot;eslint.nodePath&quot;: &quot;C:\\Dev\\nodejs&quot;,
- // 启用 eslint-plugin-html 插件
  &quot;eslint.options&quot;: {
-     &quot;plugins&quot;: [&quot;html&quot;]
+     // 配置文件的地址
+     &quot;configFile&quot;: &quot;C:\\Users\\roojay\\.eslintrc.json&quot;,
  },
  &quot;eslint.validate&quot;: [
      &quot;javascript&quot;,
@@ -663,21 +668,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/pages/e11bdebd/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/pages/3080460d/" id="post_nav-older" class="next-content">
+        <a href="/pages/c19490dd/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -769,7 +766,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
