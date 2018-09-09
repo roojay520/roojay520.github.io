@@ -282,9 +282,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[css和响应式]]></title>
-    <url>%2Fpages%2F343902f6%2F</url>
-    <content type="text"><![CDATA[css框架Bootstrap 框架 Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。http://www.runoob.com/bootstrap/bootstrap-tutorial.html 在 html head 开头引入下面代码： &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;!-- 兼容古老的 IE --&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt; &lt;!-- CSS 样式重置 --&gt; &lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt; &lt;!-- 引入 Bootstrap css 压缩文件--&gt; &lt;link href=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt; &lt;!-- 引入自己 css 的文件 --&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;../style/task_1.css&quot;&gt; &lt;title&gt;Test&lt;/title&gt; &lt;/head&gt; 响应式设计 根据不同像素屏幕，展示不同大小页面。 !important 为开发者提供了一个增加样式权重的方法。!important是对整条样式的声明，包括这个样式的属性和属性值。 ### 媒体查询 @media only screen and (max-width: 300px) { p { background-color: red; } } only 兼容旧式浏览器。 screen 表示这个媒体查询适用于所有屏幕。 and 后面跟条件。 一般个@media样式要放在css样式表的最下面，不然会被相同样式覆盖。 CSS 样式重置 不同的浏览器在对于CSS没有定义的一些样式属性是不一样的 比如没有在自己的CSS里面规定超链接有没有下划线的时候，有些浏览器有，有些浏览器没有。 再比如有一些浏览器规定的超链接默认颜色是蓝色，有一些又是黑色。 而这个CSS的功能就是对几乎所有的默认样式进行重置，让所有的浏览器上对于未定义的样式浏览效果达到一致。 使用方法： &lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt; &lt;link href=&quot;https://lib.baomitu.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt; 网格设计 大部分网页采用 12 columns 设计，可以很好的划分为2，3，4等份。 文章字体 segmentfault`cssfont-family: -apple-system,”Helvetica Neue”,Helvetica,Arial,”PingFang SC”,”Hiragino Sans GB”,”WenQuanYi Micro Hei”,”Microsoft Yahei”,sans-serif; font-size: 14px; * 知乎 ```css font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif; font-size: 15px; 颜色导航栏 #243d4c 背景 #eee #f5f5f5 #f8f8f8 #ffffff 按钮 #02b3e4 #148bb1 #2D78BA 边框阴影 .ss::before, .clss::before { bottom: 0; box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24); content: &#39;&#39;; display: block; left: 0; pointer-events: none; position: absolute; right: 0; top: 0; }]]></content>
+    <title><![CDATA[css布局]]></title>
+    <url>%2Fpages%2F5a252ba9%2F</url>
+    <content type="text"><![CDATA[CSS 基础布局清除浮动简单的 Micro clearfix 方法清除浮动，原文链接:http://nicolasgallagher.com/micro-clearfix-hack/ @mixin clearfix { &amp;::before, &amp;::after{ content: &quot; &quot;; display: flex; } &amp;::after { clear: both; } } 三栏式布局 两边侧栏固定宽度，中间栏宽度自适应，并且中间栏要在放在文档流前面以优先渲染。其父元素的高度始终是由三栏中高度最高的元素确定。 圣杯布局 来源于 Matthew Levine 于 2006 年发表在 Alistapart 上的一篇文章。原文链接 &lt;div class=&quot;container&quot;&gt; &lt;div class=&quot;box mid&quot;&gt;&lt;/div&gt; &lt;div class=&quot;box left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;box right&quot;&gt;&lt;/div&gt; &lt;/div&gt; 设置box-mid box-left box-right 三者向左浮动。 设置box-mid宽度为 100%。 设置负边距，box-left设置负左边距为 100%，box-right设置负左边距为负的自身宽度。 设置container的padding值，给box-left和box-right留出空间。 设置left和right为相对定位(position: relative). 设置box-left的left值为负的box-left宽度，box-right的right值为负的right宽度。 Q:当面板的mid部分比两边的子面板宽度小的时候，布局会乱掉。A:为body设置一个最小宽度。body{min-width:700px;} 淘宝双飞翼布局 淘宝双飞翼布局是一个经典的三栏式布局，]]></content>
       <categories>
         <category>CSS</category>
       </categories>
@@ -326,9 +326,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[作用域闭包]]></title>
-    <url>%2Fpages%2F78f2b66e%2F</url>
-    <content type="text"><![CDATA[闭包wiki 上对闭包的定义：闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。 自由变量的定义：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在自己定义的词法作用域以外的地方执行。 闭包使得函数在定义时的词法作用域以外的地方被调用时，函数可以继续访问定义时的词法作用域。 在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。 在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。 function foo() { let a = 0; return function func() { console.log(a); a++; }; } const bar = foo(); const baz = foo(); bar(); // 0 bar(); // 1 闭包保存上次计算的值 bar(); // 2 baz(); // 0 新生成函数 将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。 无论通过何种手段将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。]]></content>
+    <title><![CDATA[全局命名空间和模块]]></title>
+    <url>%2Fpages%2Ff9a582e%2F</url>
+    <content type="text"><![CDATA[全局命名空间库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。 例如： var mylibrary = { name: &#39;haha&#39;, eat: (name) =&gt; { console.log(`${name} is eating`); } }; 模块管理通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。 用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -337,9 +337,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[全局命名空间和模块]]></title>
-    <url>%2Fpages%2Ff9a582e%2F</url>
-    <content type="text"><![CDATA[全局命名空间库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。 例如： var mylibrary = { name: &#39;haha&#39;, eat: (name) =&gt; { console.log(`${name} is eating`); } }; 模块管理通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。 用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。]]></content>
+    <title><![CDATA[作用域闭包]]></title>
+    <url>%2Fpages%2F78f2b66e%2F</url>
+    <content type="text"><![CDATA[闭包wiki 上对闭包的定义：闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。 自由变量的定义：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在自己定义的词法作用域以外的地方执行。 闭包使得函数在定义时的词法作用域以外的地方被调用时，函数可以继续访问定义时的词法作用域。 在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。 在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。 function foo() { let a = 0; return function func() { console.log(a); a++; }; } const bar = foo(); const baz = foo(); bar(); // 0 bar(); // 1 闭包保存上次计算的值 bar(); // 2 baz(); // 0 新生成函数 将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。 无论通过何种手段将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -414,9 +414,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[css布局]]></title>
-    <url>%2Fpages%2F5a252ba9%2F</url>
-    <content type="text"><![CDATA[CSS 基础布局清除浮动简单的 Micro clearfix 方法清除浮动，原文链接:http://nicolasgallagher.com/micro-clearfix-hack/ @mixin clearfix { &amp;::before, &amp;::after{ content: &quot; &quot;; display: flex; } &amp;::after { clear: both; } } 三栏式布局 两边侧栏固定宽度，中间栏宽度自适应，并且中间栏要在放在文档流前面以优先渲染。其父元素的高度始终是由三栏中高度最高的元素确定。 圣杯布局 来源于 Matthew Levine 于 2006 年发表在 Alistapart 上的一篇文章。原文链接 &lt;div class=&quot;container&quot;&gt; &lt;div class=&quot;box mid&quot;&gt;&lt;/div&gt; &lt;div class=&quot;box left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;box right&quot;&gt;&lt;/div&gt; &lt;/div&gt; 设置box-mid box-left box-right 三者向左浮动。 设置box-mid宽度为 100%。 设置负边距，box-left设置负左边距为 100%，box-right设置负左边距为负的自身宽度。 设置container的padding值，给box-left和box-right留出空间。 设置left和right为相对定位(position: relative). 设置box-left的left值为负的box-left宽度，box-right的right值为负的right宽度。 Q:当面板的mid部分比两边的子面板宽度小的时候，布局会乱掉。A:为body设置一个最小宽度。body{min-width:700px;} 淘宝双飞翼布局 淘宝双飞翼布局是一个经典的三栏式布局，]]></content>
+    <title><![CDATA[css和响应式]]></title>
+    <url>%2Fpages%2F343902f6%2F</url>
+    <content type="text"><![CDATA[css框架Bootstrap 框架 Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。http://www.runoob.com/bootstrap/bootstrap-tutorial.html 在 html head 开头引入下面代码： &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;!-- 兼容古老的 IE --&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt; &lt;!-- CSS 样式重置 --&gt; &lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt; &lt;!-- 引入 Bootstrap css 压缩文件--&gt; &lt;link href=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt; &lt;!-- 引入自己 css 的文件 --&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;../style/task_1.css&quot;&gt; &lt;title&gt;Test&lt;/title&gt; &lt;/head&gt; 响应式设计 根据不同像素屏幕，展示不同大小页面。 !important 为开发者提供了一个增加样式权重的方法。!important是对整条样式的声明，包括这个样式的属性和属性值。 ### 媒体查询 @media only screen and (max-width: 300px) { p { background-color: red; } } only 兼容旧式浏览器。 screen 表示这个媒体查询适用于所有屏幕。 and 后面跟条件。 一般个@media样式要放在css样式表的最下面，不然会被相同样式覆盖。 CSS 样式重置 不同的浏览器在对于CSS没有定义的一些样式属性是不一样的 比如没有在自己的CSS里面规定超链接有没有下划线的时候，有些浏览器有，有些浏览器没有。 再比如有一些浏览器规定的超链接默认颜色是蓝色，有一些又是黑色。 而这个CSS的功能就是对几乎所有的默认样式进行重置，让所有的浏览器上对于未定义的样式浏览效果达到一致。 使用方法： &lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt; &lt;link href=&quot;https://lib.baomitu.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt; 网格设计 大部分网页采用 12 columns 设计，可以很好的划分为2，3，4等份。 文章字体 segmentfault`cssfont-family: -apple-system,”Helvetica Neue”,Helvetica,Arial,”PingFang SC”,”Hiragino Sans GB”,”WenQuanYi Micro Hei”,”Microsoft Yahei”,sans-serif; font-size: 14px; * 知乎 ```css font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif; font-size: 15px; 颜色导航栏 #243d4c 背景 #eee #f5f5f5 #f8f8f8 #ffffff 按钮 #02b3e4 #148bb1 #2D78BA 边框阴影 .ss::before, .clss::before { bottom: 0; box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24); content: &#39;&#39;; display: block; left: 0; pointer-events: none; position: absolute; right: 0; top: 0; }]]></content>
       <categories>
         <category>CSS</category>
       </categories>
