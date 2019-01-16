@@ -106,8 +106,7 @@ copyright_since: 2016
 # You can specify the text you want to show in footer, HTML tag is supported.
 #   For example, you can setup ICP license number as:
 #       '<a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>'
-footer_text: "<div id=\"hitokoto\"> <script> var dom = document.querySelector('#hitokoto'); fetch("https://v1.hitokoto.cn/?c=d&encode=text&charset=utf-8").then(res => res.text()).then(res => dom.innerHTML = res); </script> </div>"
-
+footer_text:''
 # Qrcode for redirect at other device
 #    use: choose which method to generate the qrcode for each posts.
 #        Available value: plugin | online
