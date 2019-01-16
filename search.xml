@@ -161,6 +161,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[进制快速转换]]></title>
+    <url>%2Fpages%2F8b41c91c%2F</url>
+    <content type="text"><![CDATA[十进制转其他进制const i = 10; i.toString(2); // 2 进制 1010 i.toString(8); // 8 进制 12 i.toString(16); // 16 进制 a i.toString(32); // 32 进制 a 其他进制转十进制parsetInt(x, 2); // 2 进制转 10进制 parsetInt(x, 8); // 8 进制转 10 进制 parsetInt(x, 16); // 16 进制转 10 进制 非十进制转十进制先转化为10进制， 然后再利用toString(参数)， 转化成不同的进制。 parsetInt(x, 2).toString(8); // 2 进制转 8进制]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[盒子模型]]></title>
     <url>%2Fpages%2F998dffd6%2F</url>
     <content type="text"><![CDATA[浏览器中的每个视图可以看成是一个一个嵌套的盒子. box-size 元素大小 = boder + padding + contentwidth box-size: boder-size;（兼容性） 它会让系统计算元素大小时会将 boder padding 包括在内。不包含外边距(margin)。 { -webkit-box-size: boder-size; -ms-box-size: boder-size; -moz-box-size: boder-size; } 浏览器前缀 -webkit -ms -moz flex 弹性布局 用于 Chrome 29+、IE 11+ 和 Mozilla 28+。要支持 Safari，必须添加 -webkit- 前缀： { display: -webkit-flex; display: flex; }]]></content>
@@ -238,17 +249,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[进制快速转换]]></title>
-    <url>%2Fpages%2F8b41c91c%2F</url>
-    <content type="text"><![CDATA[十进制转其他进制const i = 10; i.toString(2); // 2 进制 1010 i.toString(8); // 8 进制 12 i.toString(16); // 16 进制 a i.toString(32); // 32 进制 a 其他进制转十进制parsetInt(x, 2); // 2 进制转 10进制 parsetInt(x, 8); // 8 进制转 10 进制 parsetInt(x, 16); // 16 进制转 10 进制 非十进制转十进制先转化为10进制， 然后再利用toString(参数)， 转化成不同的进制。 parsetInt(x, 2).toString(8); // 2 进制转 8进制]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[git基础]]></title>
     <url>%2Fpages%2F9891ebc8%2F</url>
     <content type="text"><![CDATA[git 基础命令git 全局配置git config —global user.name &quot;roojay&quot; git config —global user.email &quot;roojay520@gmail.com&quot; 创建文件夹 testmkdir test 切换到 test 文件夹cd test 新建 readme.md 文件touch readme.md 初始化仓库git init 查看仓库信息git status 添加 readme.md 到缓存区git add readme.md 将 readme.md 移除缓存区git rm --cached readme.md 删除 readme.md 文件rm readme.md 删除文件 test 文件夹 rm -r test 提交文件到本地仓库git commit -m &#39;first commit&#39; //m 后面的 &#39;fisrst commit&#39; 表示提交信息 查看操作日志git log branch 操作查看本地分支git branch 查看远程分支git branch -r 创建新分支 testgit branch test 切换分支git checkout test 快速创建加切换git checkout -b test 删除本地分支git branch -d //强制删除本地分支 git branch -D test 删除远程分支git push origin:testA 远程分支迁至本地git checkout testA origin/testA 版本标签git tag //查看版本记录 git tag v1.0.0 //创建版本 v1.0.0 标签 git checkout v1.0.0 //切换到v1.0.0 版本状态 提交代码到 GitHub1.生成 SSHssh-keygen -t rsa 执行完以上命令后，在 C:/Users/Username/.ssh 文件下生成两个文件 id_rsa（密钥） 和 id_rsa.pub（公钥） 2.GitHub 添加 SSH key 将 id_rsa.pub 的内容添加到 GitHub： Setting→SSH keys and GPG keys→New SSH key 输入 ssh -T git@github.com测试是否添加成功 3. Push 推送//将本地代码推到远程 master 分支 git push origin master 4. Pull 拉取//将远程 master 分支的代码拉取到本地 git pull origin master 5. 提交代码//clone 自己的项目 git clone git@github.com:roojay520/test.git //修改 test 项目代码 //commit 文件 git add change.md git commit -m &#39;change file&#39; //推送到 GitHub git push origin master 6. 关联本地已有项目 假如我们需要把本地已有的 test1 项目的所有代码提交到 GitHub 上的 test 项目。 //将本地 test1 项目与远程 test 项目关联 git remote add origin git@github.com:roojay520/test.git //其中 orgin 是远程仓库的名字 //查看当前项目的远程仓库 git remote -v //向远程仓库提交代码 git push origin master git 进阶版本回退 在Git中，用HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。 使用git reflog用来查看命令历史，或者使用git log查看提交 log，找到提交的 commit id。 使用git reset命令进行版本回退。 //这个 HEAD 可以是具体的 commit id git reset --hard HEAD^ 常用配置用户配置 全局设置用户名和用户邮箱user.name 用户名； user.email 用户邮箱 git config --global user.name &quot;roojay&quot; git config --global user.email &quot;roojay520@gmail.com&quot; 如果单独的某一个项目想要用特定的邮箱，切换到你的项目，以码把 –global 参数去除，执行一遍。 git config user.name &quot;roojay&quot; git config user.email &quot;roojay520@gmail.com&quot; 快捷配置 alias 为命令设置别名 //切换 ck git config --global alias.ck checkout #别名 //提交 cm git config --global alias.cm commit //查看信息 st git config --global alias.st status //分支 br git config --global alias.br branch 组合命令 //推送 psm git config --global alias.psm &#39;push origin master&#39; //拉取 plm git config --global alias.plm &#39;pull origin master&#39; //个性日志输出 lg git config --global alias.lg &quot;log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --date=relative&quot; //设置个性日志输出 git log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --date=relative 合并分支 rebase 跟 merge 的区别可以理解成有两个书架，需要把两个书架的书整理到一起去，第一种做法是 merge ，直接腾出一块地方把另一个书架的书全部放进去，这种做法你可以知道哪些书是来自另一个书架的；第二种做法就是 rebase ，他会把两个书架的书先进行比较，按照购书的时间来给他重新排序，然后重新放置好，这样做的好处就是合并之后的书架看起来很有逻辑，但是你很难清晰的知道哪些书来自哪个书架的。 merge 暴力合并 在 testA 分支开发完了一个功能，合并到主分支 master 上去 git checkout master git merge testA rebase 比较合并git checkout master git rebase testA]]></content>
@@ -260,17 +260,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[html基础]]></title>
-    <url>%2Fpages%2F1a147173%2F</url>
-    <content type="text"><![CDATA[完整 HTML 树 相关的 CSS 文件（针对样式）： &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt; 相关的 JavaScript 文件（更改渲染和行为的多用途脚本）： &lt;script src=&quot;myjavascripts.js&quot;&gt;&lt;/script&gt; 粗体斜体 &lt;!-- 推荐使用&lt;strong&gt;进行加粗 --&gt; &lt;strong&gt;粗体&lt;/strong&gt; &lt;!-- 推荐使用&lt;em&gt;进行斜体显示 --&gt; &lt;em&gt;斜体&lt;/em&gt; &lt;sup&gt; 标签定义上标文本。 &lt;sub&gt; 标签定义下标文本。]]></content>
-      <categories>
-        <category>HTML</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[css和响应式]]></title>
     <url>%2Fpages%2F343902f6%2F</url>
     <content type="text"><![CDATA[css框架Bootstrap 框架 Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。http://www.runoob.com/bootstrap/bootstrap-tutorial.html 在 html head 开头引入下面代码： &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;!-- 兼容古老的 IE --&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt; &lt;!-- CSS 样式重置 --&gt; &lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt; &lt;!-- 引入 Bootstrap css 压缩文件--&gt; &lt;link href=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt; &lt;!-- 引入自己 css 的文件 --&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;../style/task_1.css&quot;&gt; &lt;title&gt;Test&lt;/title&gt; &lt;/head&gt; 响应式设计 根据不同像素屏幕，展示不同大小页面。 !important 为开发者提供了一个增加样式权重的方法。!important是对整条样式的声明，包括这个样式的属性和属性值。 ### 媒体查询 @media only screen and (max-width: 300px) { p { background-color: red; } } only 兼容旧式浏览器。 screen 表示这个媒体查询适用于所有屏幕。 and 后面跟条件。 一般个@media样式要放在css样式表的最下面，不然会被相同样式覆盖。 CSS 样式重置 不同的浏览器在对于CSS没有定义的一些样式属性是不一样的 比如没有在自己的CSS里面规定超链接有没有下划线的时候，有些浏览器有，有些浏览器没有。 再比如有一些浏览器规定的超链接默认颜色是蓝色，有一些又是黑色。 而这个CSS的功能就是对几乎所有的默认样式进行重置，让所有的浏览器上对于未定义的样式浏览效果达到一致。 使用方法： &lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt; &lt;link href=&quot;https://lib.baomitu.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt; 网格设计 大部分网页采用 12 columns 设计，可以很好的划分为2，3，4等份。 文章字体 segmentfault`cssfont-family: -apple-system,”Helvetica Neue”,Helvetica,Arial,”PingFang SC”,”Hiragino Sans GB”,”WenQuanYi Micro Hei”,”Microsoft Yahei”,sans-serif; font-size: 14px; * 知乎 ```css font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif; font-size: 15px; 颜色导航栏 #243d4c 背景 #eee #f5f5f5 #f8f8f8 #ffffff 按钮 #02b3e4 #148bb1 #2D78BA 边框阴影 .ss::before, .clss::before { bottom: 0; box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24); content: &#39;&#39;; display: block; left: 0; pointer-events: none; position: absolute; right: 0; top: 0; }]]></content>
@@ -279,6 +268,17 @@
       </categories>
       <tags>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[html基础]]></title>
+    <url>%2Fpages%2F1a147173%2F</url>
+    <content type="text"><![CDATA[完整 HTML 树 相关的 CSS 文件（针对样式）： &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt; 相关的 JavaScript 文件（更改渲染和行为的多用途脚本）： &lt;script src=&quot;myjavascripts.js&quot;&gt;&lt;/script&gt; 粗体斜体 &lt;!-- 推荐使用&lt;strong&gt;进行加粗 --&gt; &lt;strong&gt;粗体&lt;/strong&gt; &lt;!-- 推荐使用&lt;em&gt;进行斜体显示 --&gt; &lt;em&gt;斜体&lt;/em&gt; &lt;sup&gt; 标签定义上标文本。 &lt;sub&gt; 标签定义下标文本。]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -381,14 +381,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[多个SSH管理]]></title>
-    <url>%2Fpages%2F8ee164b8%2F</url>
-    <content type="text"><![CDATA[多个 SSH key 管理 在创建ssh key的时候，将新的密钥进行重新命名，比如id_rsa_coding，使用下面的命令：ssh-keygen -t rsa -C &quot;roojay520@gmail.com&quot; -f ~/.ssh/id_rsa_codingb48684451cdeae15e70966c332895a1947144e1e git config –global user.name “roojay”git config –global user.email “roojay520@gmail.com“ git config –global user.name “roojay”git config –global user.email “roojay@126.com“ STATIC_SITE_REPO https://github.com/roojay520/roojay520.github.ioTARGET_BRANCH masterGIT_USER_EMAIL roojay520@gmail.comGIT_USER_NAME roojay]]></content>
+    <title><![CDATA[常用正则表达式]]></title>
+    <url>%2Fpages%2F81d5af05%2F</url>
+    <content type="text"><![CDATA[一、校验数字的表达式 数字：^[0-9]*$ n位的数字：^\d{n}$ 至少n位的数字：^\d{n,}$ m-n位的数字：^\d{m,n}$ 零和非零开头的数字：^(0|[1-9][0-9]*)$ 非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(.[0-9]{1,2})?$ 带1-2位小数的正数或负数：^(\-)?\d+(\.\d{1,2})?$ 正数、负数、和小数：^(\-|\+)?\d+(\.\d+)?$ 有两位小数的正实数：^[0-9]+(.[0-9]{2})?$ 有1~3位小数的正实数：^[0-9]+(.[0-9]{1,3})?$ 非零的正整数：^[1-9]\d*$ 或 ^([1-9][0-9]*){1,3}$ 或 ^\+?[1-9][0-9]*$ 非零的负整数：^\-[1-9][]0-9&quot;*$ 或 ^-[1-9]\d*$ 非负整数：^\d+$ 或 ^[1-9]\d*|0$ 非正整数：^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$ 非负浮点数：^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$ 非正浮点数：^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$ 正浮点数：^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$ 负浮点数：^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$ 浮点数：^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$ 二、校验字符的表达式 汉字：^[\u4e00-\u9fa5]{0,}$ 英文和数字：^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$ 长度为3-20的所有字符：^.{3,20}$ 由26个英文字母组成的字符串：^[A-Za-z]+$ 由26个大写英文字母组成的字符串：^[A-Z]+$ 由26个小写英文字母组成的字符串：^[a-z]+$ 由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$ 由数字、26个英文字母或者下划线组成的字符串：^\w+$ 或 ^\w{3,20}$ 中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$ 中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$ 可以输入含有^%&amp;&#39;,;=?$\“等字符：[^%&amp;&#39;,;=?$\x22]+ 12 禁止输入含有~的字符：[^~\x22]+ 三、特殊需求表达式 Email地址：^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$ 域名：[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.? InternetURL：[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$ 手机号码： ^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$ 电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：^(\(\d{3,4}-)|\d{3.4}-)?\d{7,8}$ 国内电话号码(0511-4405222、021-87888822)：\d{3}-\d{8}|\d{4}-\d{7} 身份证号(15位、18位数字)：^\d{15}|\d{18}$ 短身份证号码(数字、字母x结尾)：^([0-9]){7,18}(x|X)?$ 或 ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$ 帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$ 密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w{5,17}$ 强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$ 日期格式：^\d{4}-\d{1,2}-\d{1,2} 一年的12个月(01～09和1～12)：^(0?[1-9]|1[0-2])$ 一个月的31天(01～09和1～31)：^((0?[1-9])|((1|2)[0-9])|30|31)$ 钱的输入格式： a. 有四种钱的表示形式我们可以接受:”10000.00” 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：^[1-9][0-9]*$ b. 这表示任意一个不以0开头的数字,但是,这也意味着一个字符”0”不通过,所以我们采用下面的形式：^(0|[1-9][0-9]*)$ c. 一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?[1-9][0-9]*)$ e. 这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$ f. 必须说明的是,小数点后面至少应该有1位数,所以”10.”是不通过的,但是 “10” 和 “10.2” 是通过的：^[0-9]+(.[0-9]{2})?$ g. 这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^[0-9]+(.[0-9]{1,2})?$ h. 这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$ i. 1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$ 备注：这就是最终结果了,别忘了”+”可以用”*”替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里 xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$ 中文字符的正则表达式：[\u4e00-\u9fa5] 双字节字符：[^\x00-\xff] (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1)) 空白行的正则表达式：\n\s*\r (可以用来删除空白行) HTML标记的正则表达式：&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? /&gt; (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力) 首尾空白字符的正则表达式：^\s*|\s*$或(^\s*)|(\s*$) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式) 腾讯QQ号：[1-9][0-9]{4,} (腾讯QQ号从10000开始) 中国邮政编码：[1-9]\d{5}(?!\d) (中国邮政编码为6位数字) IP地址：\d+\.\d+\.\d+\.\d+ (提取IP地址时有用) IP地址：((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))]]></content>
       <categories>
-        <category>Git</category>
+        <category>Tools</category>
       </categories>
       <tags>
-        <tag>SSH</tag>
+        <tag>RegEx</tag>
       </tags>
   </entry>
   <entry>
@@ -414,14 +414,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[常用正则表达式]]></title>
-    <url>%2Fpages%2F81d5af05%2F</url>
-    <content type="text"><![CDATA[一、校验数字的表达式 数字：^[0-9]*$ n位的数字：^\d{n}$ 至少n位的数字：^\d{n,}$ m-n位的数字：^\d{m,n}$ 零和非零开头的数字：^(0|[1-9][0-9]*)$ 非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(.[0-9]{1,2})?$ 带1-2位小数的正数或负数：^(\-)?\d+(\.\d{1,2})?$ 正数、负数、和小数：^(\-|\+)?\d+(\.\d+)?$ 有两位小数的正实数：^[0-9]+(.[0-9]{2})?$ 有1~3位小数的正实数：^[0-9]+(.[0-9]{1,3})?$ 非零的正整数：^[1-9]\d*$ 或 ^([1-9][0-9]*){1,3}$ 或 ^\+?[1-9][0-9]*$ 非零的负整数：^\-[1-9][]0-9&quot;*$ 或 ^-[1-9]\d*$ 非负整数：^\d+$ 或 ^[1-9]\d*|0$ 非正整数：^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$ 非负浮点数：^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$ 非正浮点数：^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$ 正浮点数：^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$ 负浮点数：^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$ 浮点数：^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$ 二、校验字符的表达式 汉字：^[\u4e00-\u9fa5]{0,}$ 英文和数字：^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$ 长度为3-20的所有字符：^.{3,20}$ 由26个英文字母组成的字符串：^[A-Za-z]+$ 由26个大写英文字母组成的字符串：^[A-Z]+$ 由26个小写英文字母组成的字符串：^[a-z]+$ 由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$ 由数字、26个英文字母或者下划线组成的字符串：^\w+$ 或 ^\w{3,20}$ 中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$ 中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$ 可以输入含有^%&amp;&#39;,;=?$\“等字符：[^%&amp;&#39;,;=?$\x22]+ 12 禁止输入含有~的字符：[^~\x22]+ 三、特殊需求表达式 Email地址：^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$ 域名：[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.? InternetURL：[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$ 手机号码： ^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$ 电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：^(\(\d{3,4}-)|\d{3.4}-)?\d{7,8}$ 国内电话号码(0511-4405222、021-87888822)：\d{3}-\d{8}|\d{4}-\d{7} 身份证号(15位、18位数字)：^\d{15}|\d{18}$ 短身份证号码(数字、字母x结尾)：^([0-9]){7,18}(x|X)?$ 或 ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$ 帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$ 密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w{5,17}$ 强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$ 日期格式：^\d{4}-\d{1,2}-\d{1,2} 一年的12个月(01～09和1～12)：^(0?[1-9]|1[0-2])$ 一个月的31天(01～09和1～31)：^((0?[1-9])|((1|2)[0-9])|30|31)$ 钱的输入格式： a. 有四种钱的表示形式我们可以接受:”10000.00” 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：^[1-9][0-9]*$ b. 这表示任意一个不以0开头的数字,但是,这也意味着一个字符”0”不通过,所以我们采用下面的形式：^(0|[1-9][0-9]*)$ c. 一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?[1-9][0-9]*)$ e. 这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$ f. 必须说明的是,小数点后面至少应该有1位数,所以”10.”是不通过的,但是 “10” 和 “10.2” 是通过的：^[0-9]+(.[0-9]{2})?$ g. 这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^[0-9]+(.[0-9]{1,2})?$ h. 这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$ i. 1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$ 备注：这就是最终结果了,别忘了”+”可以用”*”替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里 xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$ 中文字符的正则表达式：[\u4e00-\u9fa5] 双字节字符：[^\x00-\xff] (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1)) 空白行的正则表达式：\n\s*\r (可以用来删除空白行) HTML标记的正则表达式：&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? /&gt; (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力) 首尾空白字符的正则表达式：^\s*|\s*$或(^\s*)|(\s*$) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式) 腾讯QQ号：[1-9][0-9]{4,} (腾讯QQ号从10000开始) 中国邮政编码：[1-9]\d{5}(?!\d) (中国邮政编码为6位数字) IP地址：\d+\.\d+\.\d+\.\d+ (提取IP地址时有用) IP地址：((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))]]></content>
+    <title><![CDATA[多个SSH管理]]></title>
+    <url>%2Fpages%2F8ee164b8%2F</url>
+    <content type="text"><![CDATA[多个 SSH key 管理 在创建ssh key的时候，将新的密钥进行重新命名，比如id_rsa_coding，使用下面的命令：ssh-keygen -t rsa -C &quot;roojay520@gmail.com&quot; -f ~/.ssh/id_rsa_codingb48684451cdeae15e70966c332895a1947144e1e git config –global user.name “roojay”git config –global user.email “roojay520@gmail.com“ git config –global user.name “roojay”git config –global user.email “roojay@126.com“ STATIC_SITE_REPO https://github.com/roojay520/roojay520.github.ioTARGET_BRANCH masterGIT_USER_EMAIL roojay520@gmail.comGIT_USER_NAME roojay]]></content>
       <categories>
-        <category>Tools</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>RegEx</tag>
+        <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
@@ -535,9 +535,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java中的I/O流]]></title>
-    <url>%2Fpages%2F649b2029%2F</url>
-    <content type="text"><![CDATA[流的概念和作用 流是数据源到Java程序，Java程序到输出位置之间的管道。 IO流的分类 根据数据处理类的不同分为：字符流和字节流。 根据数据流向不同分为：输入流和输出流。 输入输出是以Java程序为参照物的，相对于Java程序本身 输入流：从数据源中读取数据到Java程序中，这个过程称之为输入。 输出流：Java程序将数据写入到其他地方，这个过程称之为输出。 节点流和处理流。 节点流：普通的管道； 处理流：功能性管道，对数据进一步加工。 字节流字节流中的核心类 InputStream int read(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 读取数据的量；返回值为这次调用read方法读取数据的长度。 OutputStream void write(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 写入数据的量； 程序步骤 导入类 java.io.*； 定义主函数； 声明输入流的引用； 声明输出流的引用；try{ 1.生成代表输入流的对象； 2.生成代表输出流的对象； 3. 生成一个byte字节数组； 4.调用输入流的read方法读取数据； 5.定义临时变量接受数据的量； 6.调用输出流的write方法写入数据； } catch(Exception e){ Systen.out.println(e); } //finally进行结尾处理 finally{ try{ fis.close(); fos.close(); } catch(Exception e){ System.out.println(e); } } 示例 1：import java.io.*; public class Test{ public static void main(String args[]){ //声明输入流引用 FileInputStream fis = null; //声明输出流引用 FileOutputStream fos = null; try{ //生成代表输入流的对象 fis = new FileInputStream(&quot;D:/java/8.8/from.txt&quot;); //生成代表输入流的对象 fos = new FileOutputStream(&quot;D:/java/8.8/to.txt&quot;); //生成一个字节型buffer数组 byte[] buffer = new byte[100]; //定义一个临时变量，用于接受调用输入流read方法读取数据的量 int temp = fis.read(buffer,0,b.length); //调用输出流的write方法写入数据 fos.write(buffer,0,temp); } catch(Exception e){ System.out.println(e); } } //finally进行结尾处理 finally{ try{ fis.close(); fos.close(); } catch(Exception e){ System.out.println(e); } } } 大文件的读写 调节buffer数组的大小； 对read，write方法采取while循环； 示例 2：while(true){ int temp = fis.read(buffer,0,buffer.length); if(temp == -1){ break; } fos.write(buffer,0,temp); } 字符流 字符流：是以对写文件时，以字符为基础 字节输入流：Reader &lt;–FileReader int read(char [] c, int off, int length ) 字节输出流：Writer &lt;–FileWriter void writer(char [] c, int off, int length) 示例 3：import java.io.*; public class TestChar{ public static void main(String args[]){ FileReader fr = null; FileWriter fw = null; try{ fr = new FileReader(&quot;d:/java/9.5/read.txt&quot;); fw = new FileWriter(&quot;d:/java/9.5/write.txt&quot;); char [] buffer = new char[1024]; while(true){ int temp = fr.read(buffer, 0, buffer.length); if(temp == -1){ break; } fw.write(buffer, 0, temp); } } catch(Exception e){ System.out.println(e); } finally{ try{ fr.close(); fw.close(); } catch(Exception e){ System.out.println(e); } } } }]]></content>
+    <title><![CDATA[Java中的异常]]></title>
+    <url>%2Fpages%2Ff029d2bb%2F</url>
+    <content type="text"><![CDATA[什么是异常 异常的分类 try…catch…finally结构的使用方法 1. 什么是异常？ 异常(Exception)：中断了正常指令流的事件。 异常是一个对象； 异常产生于程序运行时； 指令流：程序执行时一系列的连续指令称为指令流。 示例： class Test{ public static void main(String args[]){ int i = 1 / 0; } } 抛出异常： Exception in thread “main” java.lang.ArithmeticException: / by zero at Test3.main(Test3.java:6) Exception in thread “main” ：在主线程中出现异常； ArithmeticException：异常的名称，算术异常； / by zero：被0除； at Test.main(Test.java:3)：异常位置； 2. 异常的分类JDK提供的类： Throwable：所有异常的父类； Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭； Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption RuntimeException + Error 和其子类都是属于uncheckexceptionException类中除了 RuntimeException之外的类，都是属于checkexception ExceptioncheckException checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。示例： class TestCheck{ public static void main(String args[]){ //CheckException Thread.sleep(1000); //让当前线程休眠1000ms } } 运行结果： uncheckException（ RuntimeException） 运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成示例： class Test{ public static void main(String args[]){ //UncheckException int i = 1 / 0; } } 运行结果： 3. try…catch…finally结构 try{ //代码A //有可能出现异常的代码B //代码C } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //处理异常的代码D //代码E } finally{ //异常的出口 //执行扫尾工作的代码F } 如果try中代码B没有异常：执行代码A-B-C-F如果try中代码B出现异常：执行代码A-B-D-E-FuncheckException //uncheckException class TestCheck{ public static void main(String args[]){ System.out.println(1); try{ System.out.println(2); //有可能出现异常的代码 int i = 1/0; System.out.println(3); } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); } finally{ //异常的出口 System.out.println(&quot;finally&quot;); } } } 运行结果： checkException //checkException class TestCheck{ public static void main(String args[]){ System.out.println(1); try{ System.out.println(2); //有可能出现异常的代码 Thread.sleep(1000); //让当前线程休眠1000ms System.out.println(3); } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); } finally{ //异常的出口 System.out.println(&quot;finally&quot;); } } } 运行结果：屏幕首先显示1，2，然后停顿1000ms，再显示3和finally]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -590,9 +590,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java中的异常]]></title>
-    <url>%2Fpages%2Ff029d2bb%2F</url>
-    <content type="text"><![CDATA[什么是异常 异常的分类 try…catch…finally结构的使用方法 1. 什么是异常？ 异常(Exception)：中断了正常指令流的事件。 异常是一个对象； 异常产生于程序运行时； 指令流：程序执行时一系列的连续指令称为指令流。 示例： class Test{ public static void main(String args[]){ int i = 1 / 0; } } 抛出异常： Exception in thread “main” java.lang.ArithmeticException: / by zero at Test3.main(Test3.java:6) Exception in thread “main” ：在主线程中出现异常； ArithmeticException：异常的名称，算术异常； / by zero：被0除； at Test.main(Test.java:3)：异常位置； 2. 异常的分类JDK提供的类： Throwable：所有异常的父类； Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭； Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption RuntimeException + Error 和其子类都是属于uncheckexceptionException类中除了 RuntimeException之外的类，都是属于checkexception ExceptioncheckException checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。示例： class TestCheck{ public static void main(String args[]){ //CheckException Thread.sleep(1000); //让当前线程休眠1000ms } } 运行结果： uncheckException（ RuntimeException） 运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成示例： class Test{ public static void main(String args[]){ //UncheckException int i = 1 / 0; } } 运行结果： 3. try…catch…finally结构 try{ //代码A //有可能出现异常的代码B //代码C } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //处理异常的代码D //代码E } finally{ //异常的出口 //执行扫尾工作的代码F } 如果try中代码B没有异常：执行代码A-B-C-F如果try中代码B出现异常：执行代码A-B-D-E-FuncheckException //uncheckException class TestCheck{ public static void main(String args[]){ System.out.println(1); try{ System.out.println(2); //有可能出现异常的代码 int i = 1/0; System.out.println(3); } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); } finally{ //异常的出口 System.out.println(&quot;finally&quot;); } } } 运行结果： checkException //checkException class TestCheck{ public static void main(String args[]){ System.out.println(1); try{ System.out.println(2); //有可能出现异常的代码 Thread.sleep(1000); //让当前线程休眠1000ms System.out.println(3); } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); } finally{ //异常的出口 System.out.println(&quot;finally&quot;); } } } 运行结果：屏幕首先显示1，2，然后停顿1000ms，再显示3和finally]]></content>
+    <title><![CDATA[Java中的I/O流]]></title>
+    <url>%2Fpages%2F649b2029%2F</url>
+    <content type="text"><![CDATA[流的概念和作用 流是数据源到Java程序，Java程序到输出位置之间的管道。 IO流的分类 根据数据处理类的不同分为：字符流和字节流。 根据数据流向不同分为：输入流和输出流。 输入输出是以Java程序为参照物的，相对于Java程序本身 输入流：从数据源中读取数据到Java程序中，这个过程称之为输入。 输出流：Java程序将数据写入到其他地方，这个过程称之为输出。 节点流和处理流。 节点流：普通的管道； 处理流：功能性管道，对数据进一步加工。 字节流字节流中的核心类 InputStream int read(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 读取数据的量；返回值为这次调用read方法读取数据的长度。 OutputStream void write(byte [] b,int off,int len)byte[] b：byte类型数组；int off：偏移量；int len： 写入数据的量； 程序步骤 导入类 java.io.*； 定义主函数； 声明输入流的引用； 声明输出流的引用；try{ 1.生成代表输入流的对象； 2.生成代表输出流的对象； 3. 生成一个byte字节数组； 4.调用输入流的read方法读取数据； 5.定义临时变量接受数据的量； 6.调用输出流的write方法写入数据； } catch(Exception e){ Systen.out.println(e); } //finally进行结尾处理 finally{ try{ fis.close(); fos.close(); } catch(Exception e){ System.out.println(e); } } 示例 1：import java.io.*; public class Test{ public static void main(String args[]){ //声明输入流引用 FileInputStream fis = null; //声明输出流引用 FileOutputStream fos = null; try{ //生成代表输入流的对象 fis = new FileInputStream(&quot;D:/java/8.8/from.txt&quot;); //生成代表输入流的对象 fos = new FileOutputStream(&quot;D:/java/8.8/to.txt&quot;); //生成一个字节型buffer数组 byte[] buffer = new byte[100]; //定义一个临时变量，用于接受调用输入流read方法读取数据的量 int temp = fis.read(buffer,0,b.length); //调用输出流的write方法写入数据 fos.write(buffer,0,temp); } catch(Exception e){ System.out.println(e); } } //finally进行结尾处理 finally{ try{ fis.close(); fos.close(); } catch(Exception e){ System.out.println(e); } } } 大文件的读写 调节buffer数组的大小； 对read，write方法采取while循环； 示例 2：while(true){ int temp = fis.read(buffer,0,buffer.length); if(temp == -1){ break; } fos.write(buffer,0,temp); } 字符流 字符流：是以对写文件时，以字符为基础 字节输入流：Reader &lt;–FileReader int read(char [] c, int off, int length ) 字节输出流：Writer &lt;–FileWriter void writer(char [] c, int off, int length) 示例 3：import java.io.*; public class TestChar{ public static void main(String args[]){ FileReader fr = null; FileWriter fw = null; try{ fr = new FileReader(&quot;d:/java/9.5/read.txt&quot;); fw = new FileWriter(&quot;d:/java/9.5/write.txt&quot;); char [] buffer = new char[1024]; while(true){ int temp = fr.read(buffer, 0, buffer.length); if(temp == -1){ break; } fw.write(buffer, 0, temp); } } catch(Exception e){ System.out.println(e); } finally{ try{ fr.close(); fw.close(); } catch(Exception e){ System.out.println(e); } } } }]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -688,13 +688,13 @@
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[categories]]></title>
-    <url>%2Fcategories%2Findex.html</url>
+    <title><![CDATA[tags]]></title>
+    <url>%2Ftags%2Findex.html</url>
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[tags]]></title>
-    <url>%2Ftags%2Findex.html</url>
+    <title><![CDATA[categories]]></title>
+    <url>%2Fcategories%2Findex.html</url>
     <content type="text"></content>
   </entry>
   <entry>
