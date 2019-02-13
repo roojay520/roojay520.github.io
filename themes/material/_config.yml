@@ -205,8 +205,14 @@ sidebar:
         #     link: "/about"
         #     icon: person
         #     divider: false
-        标签云: "/tags"
-        友情链接: "/links"
+        标签云:
+            link: "/tags"
+            icon: person
+            divider: false
+        友情链接:
+            link: "/links"
+            icon: person
+            divider: false
     article_num:
         use: false
         divider: false

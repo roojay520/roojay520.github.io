@@ -211,7 +211,7 @@ sidebar:
         # 友情链接:
         #     link: "/links"
         #     icon: person
-            divider: false
+            # divider: false
     article_num:
         use: false
         divider: false
