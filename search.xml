@@ -183,9 +183,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[全局命名空间和模块]]></title>
-    <url>%2Fpages%2Ff9a582e%2F</url>
-    <content type="text"><![CDATA[全局命名空间库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。 例如： var mylibrary = { name: &#39;haha&#39;, eat: (name) =&gt; { console.log(`${name} is eating`); } }; 模块管理通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。 用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。]]></content>
+    <title><![CDATA[作用域闭包]]></title>
+    <url>%2Fpages%2F78f2b66e%2F</url>
+    <content type="text"><![CDATA[闭包wiki 上对闭包的定义：闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。 自由变量的定义：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在自己定义的词法作用域以外的地方执行。 闭包使得函数在定义时的词法作用域以外的地方被调用时，函数可以继续访问定义时的词法作用域。 在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。 在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。 function foo() { let a = 0; return function func() { console.log(a); a++; }; } const bar = foo(); const baz = foo(); bar(); // 0 bar(); // 1 闭包保存上次计算的值 bar(); // 2 baz(); // 0 新生成函数 将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。 无论通过何种手段将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -205,17 +205,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[包管理器 Yarn]]></title>
-    <url>%2Fpages%2F522f484%2F</url>
-    <content type="text"><![CDATA[包管理器 Yarn Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 JS 包管理工具。 常用命令 yarn和 yarn install ，这两个命令的效果是一样的，等同于npm install，使用这个命令会在该目录生成一个yarn.lock的文件。 yarn add koa，安装koa模块并更新package.json和yarn.lock文件，等同于npm install koa –save。也可以使用yarn global add koa，等同于npm install koa -g，将模块直接安装到全局环境变量里，方便使用。 yarn list，根据当前项目的package.json查看模块的依赖及版本。 yarn info koa，查看koa模块的详细信息，类似于npm view koa。 yarn init，初始化项目package.json文件，等同于npm init。 yarn run，运行package.json中的script。]]></content>
-      <categories>
-        <category>Nodejs</category>
-      </categories>
-      <tags>
-        <tag>Yarn</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[arguments和rest]]></title>
     <url>%2Fpages%2Fe5332c52%2F</url>
     <content type="text"><![CDATA[arguments 参数 只在函数内部起作用，指向当前函数调用者传入的所有参数。 var bar = (x) =&gt; { console.log(x); // a for(let i = 0; i &lt; arguments.length; i++){ console.log(arguments[i]); // 根据参数索引打印参数 } }; bar(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;); 利用arguments可以获得调用者传入的所有参数。 arguments常用于判断传入参数个数。 rest 不定参数 JS 允许函数接收任意个参数，当参数个数不确定的情况下可以使用不定参数。 &quot;use strict&quot;; // 严格模式 // 接受任意个参数返回它们的和 function sum(...rest) { // 不定参数写在参数最后，前面使用 ... 标识 let result = 0; for (let i of rest) { // rest 是一个数组实例 result += i; } console.log(result); } sum(1, 2, 3, 4); // 传入参数 不定参数写在参数最后，传入参数先绑定已有的参数，多余的参数以数组形式存入不定参数。]]></content>
@@ -224,6 +213,17 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[包管理器 Yarn]]></title>
+    <url>%2Fpages%2F522f484%2F</url>
+    <content type="text"><![CDATA[包管理器 Yarn Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 JS 包管理工具。 常用命令 yarn和 yarn install ，这两个命令的效果是一样的，等同于npm install，使用这个命令会在该目录生成一个yarn.lock的文件。 yarn add koa，安装koa模块并更新package.json和yarn.lock文件，等同于npm install koa –save。也可以使用yarn global add koa，等同于npm install koa -g，将模块直接安装到全局环境变量里，方便使用。 yarn list，根据当前项目的package.json查看模块的依赖及版本。 yarn info koa，查看koa模块的详细信息，类似于npm view koa。 yarn init，初始化项目package.json文件，等同于npm init。 yarn run，运行package.json中的script。]]></content>
+      <categories>
+        <category>Nodejs</category>
+      </categories>
+      <tags>
+        <tag>Yarn</tag>
       </tags>
   </entry>
   <entry>
@@ -348,9 +348,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[作用域闭包]]></title>
-    <url>%2Fpages%2F78f2b66e%2F</url>
-    <content type="text"><![CDATA[闭包wiki 上对闭包的定义：闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。 自由变量的定义：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在自己定义的词法作用域以外的地方执行。 闭包使得函数在定义时的词法作用域以外的地方被调用时，函数可以继续访问定义时的词法作用域。 在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。 在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。 function foo() { let a = 0; return function func() { console.log(a); a++; }; } const bar = foo(); const baz = foo(); bar(); // 0 bar(); // 1 闭包保存上次计算的值 bar(); // 2 baz(); // 0 新生成函数 将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。 无论通过何种手段将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。]]></content>
+    <title><![CDATA[全局命名空间和模块]]></title>
+    <url>%2Fpages%2Ff9a582e%2F</url>
+    <content type="text"><![CDATA[全局命名空间库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。 例如： var mylibrary = { name: &#39;haha&#39;, eat: (name) =&gt; { console.log(`${name} is eating`); } }; 模块管理通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。 用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -381,17 +381,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[前端学习资源]]></title>
-    <url>%2Fpages%2F422fbc06%2F</url>
-    <content type="text"><![CDATA[导航 前端导航：http://webjike.com/web.html HTML HTML MDN：https://developer.mozilla.org/zh-CN/docs/Web/HTML HTML5 MDN：https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5 HTML语义化 CSS CSS MDN：https://developer.mozilla.org/zh-CN/docs/Web/CSS CSS 布局：http://zh.learnlayout.com/ CSS3 MDN：https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3 scss 中文网：https://www.sass.hk/ *Sass (3.4.21) 中文文档：http://www.css88.com/doc/sass/#features stylus 中文文档：http://www.zhangxinxu.com/jq/stylus/ JavaScipt JavaScript MDN：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript DOM操作（jQuery、React） 框架 Bootstrap 中文网：http://www.bootcss.com/ Vue.js React Angular 4 UI设计 免费高清图：https://pixabay.com/ 网页背景抓取：http://stylifyme.com/ Material中文：https://www.mdui.org/design/# Material：https://www.materialui.co/ Flatui：https://flatuicolors.com/ Uplabs：https://www.uplabs.com/web 花瓣：http://huaban.com/boards/3511269/ 颜色进制转换：http://www.sioe.cn/yingyong/yanse-rgb-16/ CSS 动画 JavaScript 动画 字体 汉字标准格式：https://css.hanzi.co/manual Google Fonts：https://fonts.google.com/ Google Fonts 中文版：http://www.googlefonts.cn/ 360 Google 字体库：https://cdn.baomitu.com/index/fonts ICON 在线标签：https://shields.io/ Awesome 在线 ：http://fontawesome.io/icons/ Easyicon 下载：http://www.easyicon.net/ Icon 爱看搜索：http://www.iconpng.com/ Favico 在线制作：http://www.faviconico.org/favicon Material ：https://material.io/icons/ 阿里巴巴 ：http://www.iconfont.cn/ Sample： https://simpleicons.org/ Flaticon：https://www.flaticon.com/ PS 切图 响应式设计 Flexbox 布局 阮一峰：http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool 网格布局 Node.js node.js 中文网：http://nodejs.cn/ node.js 中文社区：https://cnodejs.org/ 一起学Node.js：https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb*七天学会NodeJS：http://nqdeng.github.io/7-days-nodejs/ 进阶TypeScript 中文网：https://www.tslang.cn/ TypeScript Handbook(中文版)：https://zhongsp.gitbooks.io/typescript-handbook/content/ ECMAScript ECMAScript 5 W3C 规范镜像版: http://yanhaijing.com/es5/#null 自学手稿版： http://es5.weijieblog.com/ ECMAScript 6 阮一峰：http://es6.ruanyifeng.com/ 正则表达式 三十分钟入门：https://deerchao.net/tutorials/regex/regex.htm 工程化 gulp 中文网：http://www.gulpjs.com.cn/ NPM 淘宝镜像:http://npm.taobao.org/ AppVeyor 自动部署：https://ci.appveyor.com/ 资源 收藏夹：http://u-hey.com/20/126 图片压缩 腾讯ISUX前端智图：http://zhitu.isux.us/ 在线编程CODEPEN：https://codepen.io/JSFiddle：https://jsfiddle.net/ MarkDown 语法 MarkDown 中文：http://wowubuntu.com/markdown/index.html 代码高亮Highlightjs：https://highlightjs.org/static/demo/ CDN 静态资源库 360 前端静态资源库：https://cdn.baomitu.com/ Staticfile CDN：https://www.staticfile.org/ 又拍云：http://www.bootcdn.cn/ 前端团队 阿里巴巴国际UED:http://www.aliued.com/ 淘宝前端团队（FED）:http://taobaofed.org/ 腾讯Alloy Team：http://www.alloyteam.com/ 腾讯ISUX：https://isux.tencent.com/ 百度FEX：http://fex.baidu.com/ 京东Aotu：https://aotu.io/ 360 奇舞：https://75team.com/]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[函数作用域及块作用域]]></title>
     <url>%2Fpages%2F70cbbc9f%2F</url>
     <content type="text"><![CDATA[最小特权原则最小特权原则也叫最小授权或最小暴露原则。这个原则是指在软件设计中，应该最小限度地暴露必要内容，而将其他内容都“隐藏”起来，比如某个模块或对象的 API 设计。 函数封装将函数和变量包裹在一个外部包装函数的作用域中，使用这个作用域将这些具体的细节隐藏起来，实现函数的封装。 可以避免同名标识符之间的冲突，避免全局变量污染。 将具体内容私有化，防止外部以非预期的方式使用内部私有的内容。 函数作用域函数作用域的含义是指，属于这个函数的全部变量都可以在整个函数的范围内使用及复用（事实上在嵌套的作用域中也可以使用）。 函数声明: function foo() { for (let i = 0; i &lt; 10; i++) { console.log(i); } } foo(); 立即执行函数表达式： (function foo() { for (let i = 0; i &lt; 10; i++) { console.log(i); } })(); 区分函数声明和表达式最简单的方法是看 function 关键字出现在声明中的位置（不仅仅是一行代码，而是整个声明中的位置）。如果 function 是声明中的第一个词，那么就是一个函数声明，否则就是一个函数表达式。 函数声明和函数表达式之间最重要的区别是它们的名称标识符将会绑定在何处。 函数声明中，foo 被绑定在所在的作用域中，可以在外部通过 foo() 来调用它。 函数表达式中，foo 被绑定在函数表达式自身的函数中，外部不能访问调用，只能在其(function foo(){…}) 中的...位置被访问。 匿名函数表达式函数表达式可以匿名，而函数声明则不可以省略函数名。 立即执行函数表达式（IIFE）立即执行函数表达式（Immediately Invoked Function Expression），将函数包含在一对（）中，成为一个函数表达式，在末尾加上另一对（）可以立即执行这个函数。第一个（）将函数变成表达式，第二个（） 执行了这个函数。 IIFE 的两种写法 立即执行函数表达式： (function foo() { for (let i = 0; i &lt; 10; i++) { console.log(i); } })(); 另一种改进形式写法将调用的（）移到了用来包装的（）里面。 (function foo() { for (let i = 0; i &lt; 10; i++) { console.log(i); } }()); 两种写法功能上一样，凭个人喜好。 IIFE 表达式的用法 匿名函数表达式 (() =&gt; { const a = 6; console.log(a); // a })(); 将它当作函数调用，并传递参数进去 const name = &#39;haha&#39;; (function IIFE(name) { console.log(name); // haha })(name); 倒置代码的运行顺序，将需要运行的函数放在第二位， IIFE 执行之后，放在第二位的函数被当作参数传递进去。 const objA = { name: &#39;haha&#39;, }; (function IIFE(foo) { foo(objA); }((obj) =&gt; { const name = &#39;3&#39;; console.log(name); // 3 console.log(obj.name); // haha })); 第二部分为一个匿名函数，被当作一个参数 foo 传入到 IIFE 函数的第一部分。最后匿名函数调用执行，将一个全局对象 objA 传入当作 obj 的参数值。 块作用域块作用域是一个用来对之前的最小授权原则进行扩展的工具，将代码从在函数中隐藏信息扩展为在块中隐藏信息。 块作用域指的是变量和函数不仅可以属于所处的作用域，也可以属于某个代码块（通常指 { .. } 内部）。 只想在 for 循环内部的上下文中使用 i，所以在 for 循环的头部使用 var 声明一个变量 i，但实际上 i 会被绑定在外部作用域（函数或全局）中，在全局范围内都有效。 var arr = []; for (var i = 0; i &lt; 10; i++) { arr[i] = function() { console.log(i); }; } arr[6](); // 10 console.log(i) 内部的 i 指向全局的的 i，最后循环完毕后在执行 arr6，这时全局的 i 的值为 10. ES3 规范中规定 try/catch 的 catch 分句会创建一个块作用域，其中声明的变量仅在 catch 内部有效。 Let 变量let 关键字可以将变量绑定到所在的任意作用域中（通常是 { .. } 内部）。换句话说，let 为其声明的变量隐式地了所在的块作用域。 var arr = []; for (let i = 0; i &lt; 10; i++) { arr[i] = function () { console.log(i); }; } arr[6](); // 6 由 let 声明的 i，每次循环都在循环的内部重新生成了一次变量， var arr = []; for (let i = 0; i &lt; 10; i++) { let _i = i; arr[i] = function () { console.log(_i); }; } arr[6](); // 6 for 循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。 let 声明的变量只在它所在的代码块有效。 { var a = 6; let b = 9; } console.log(a); // 6 console.log(b); // b is not defined 暂时性死区在代码块内，使用 let 命令声明变量，在声明之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）. if (true) { // TDZ开始 tmp = &#39;abc&#39;; // ReferenceError console.log(tmp); // ReferenceError let tmp; // TDZ结束 console.log(tmp); // undefined tmp = 123; console.log(tmp); // 123 } ES6 明确规定，如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。 只要块级作用域内存在 let 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。 var tmp = 6; if(true) { tmp = 3; // ReferenceError let tmp; }]]></content>
@@ -400,6 +389,17 @@
       </categories>
       <tags>
         <tag>YouDon&#39;tKnowJavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端学习资源]]></title>
+    <url>%2Fpages%2F422fbc06%2F</url>
+    <content type="text"><![CDATA[导航 前端导航：http://webjike.com/web.html HTML HTML MDN：https://developer.mozilla.org/zh-CN/docs/Web/HTML HTML5 MDN：https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5 HTML语义化 CSS CSS MDN：https://developer.mozilla.org/zh-CN/docs/Web/CSS CSS 布局：http://zh.learnlayout.com/ CSS3 MDN：https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3 scss 中文网：https://www.sass.hk/ *Sass (3.4.21) 中文文档：http://www.css88.com/doc/sass/#features stylus 中文文档：http://www.zhangxinxu.com/jq/stylus/ JavaScipt JavaScript MDN：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript DOM操作（jQuery、React） 框架 Bootstrap 中文网：http://www.bootcss.com/ Vue.js React Angular 4 UI设计 免费高清图：https://pixabay.com/ 网页背景抓取：http://stylifyme.com/ Material中文：https://www.mdui.org/design/# Material：https://www.materialui.co/ Flatui：https://flatuicolors.com/ Uplabs：https://www.uplabs.com/web 花瓣：http://huaban.com/boards/3511269/ 颜色进制转换：http://www.sioe.cn/yingyong/yanse-rgb-16/ CSS 动画 JavaScript 动画 字体 汉字标准格式：https://css.hanzi.co/manual Google Fonts：https://fonts.google.com/ Google Fonts 中文版：http://www.googlefonts.cn/ 360 Google 字体库：https://cdn.baomitu.com/index/fonts ICON 在线标签：https://shields.io/ Awesome 在线 ：http://fontawesome.io/icons/ Easyicon 下载：http://www.easyicon.net/ Icon 爱看搜索：http://www.iconpng.com/ Favico 在线制作：http://www.faviconico.org/favicon Material ：https://material.io/icons/ 阿里巴巴 ：http://www.iconfont.cn/ Sample： https://simpleicons.org/ Flaticon：https://www.flaticon.com/ PS 切图 响应式设计 Flexbox 布局 阮一峰：http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool 网格布局 Node.js node.js 中文网：http://nodejs.cn/ node.js 中文社区：https://cnodejs.org/ 一起学Node.js：https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb*七天学会NodeJS：http://nqdeng.github.io/7-days-nodejs/ 进阶TypeScript 中文网：https://www.tslang.cn/ TypeScript Handbook(中文版)：https://zhongsp.gitbooks.io/typescript-handbook/content/ ECMAScript ECMAScript 5 W3C 规范镜像版: http://yanhaijing.com/es5/#null 自学手稿版： http://es5.weijieblog.com/ ECMAScript 6 阮一峰：http://es6.ruanyifeng.com/ 正则表达式 三十分钟入门：https://deerchao.net/tutorials/regex/regex.htm 工程化 gulp 中文网：http://www.gulpjs.com.cn/ NPM 淘宝镜像:http://npm.taobao.org/ AppVeyor 自动部署：https://ci.appveyor.com/ 资源 收藏夹：http://u-hey.com/20/126 图片压缩 腾讯ISUX前端智图：http://zhitu.isux.us/ 在线编程CODEPEN：https://codepen.io/JSFiddle：https://jsfiddle.net/ MarkDown 语法 MarkDown 中文：http://wowubuntu.com/markdown/index.html 代码高亮Highlightjs：https://highlightjs.org/static/demo/ CDN 静态资源库 360 前端静态资源库：https://cdn.baomitu.com/ Staticfile CDN：https://www.staticfile.org/ 又拍云：http://www.bootcdn.cn/ 前端团队 阿里巴巴国际UED:http://www.aliued.com/ 淘宝前端团队（FED）:http://taobaofed.org/ 腾讯Alloy Team：http://www.alloyteam.com/ 腾讯ISUX：https://isux.tencent.com/ 百度FEX：http://fex.baidu.com/ 京东Aotu：https://aotu.io/ 360 奇舞：https://75team.com/]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
       </tags>
   </entry>
   <entry>
@@ -524,9 +524,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[内部类]]></title>
-    <url>%2Fpages%2F9bc01b38%2F</url>
-    <content type="text"><![CDATA[内部类：一个类定义在另一个类的里面。 示例： class A{ class B{ } } B这个类被称之为A的内部类。编译之后生成A.class和A$B.class。内部类可以随意使用外部类的成员变量。 内部类的使用方法示例：class A{ int i; class B{ int j; int funB(){ int result = i + j; System.out.println(result); return result; } } } class Test{ public static void main(String args[]){ A a = new A(); A.B b = a.new B(); a.i = 5; b.j = 6; b.funB(); } } 匿名内部类的使用方法 匿名内部类：没有名字的内部类。 示例：interface A{ public void doSth(); } class B{ public void fun(A a){ System.out.println(&quot;B类的fun函数&quot;); a.doSth(); } } public class Test{ public static void main(String args[]){ B b = new B(); b.fun(new A(){ public void doSth(){ System.out.println(&quot;匿名内部类&quot;); } }); } }]]></content>
+    <title><![CDATA[处理流与Decorator模式]]></title>
+    <url>%2Fpages%2Fbbf344f6%2F</url>
+    <content type="text"><![CDATA[处理流BufferedReader readeLine：每次读取一行数据 示例：import java.io.*; public class Test{ public static void main(String args[]){ FileReader filereader = null; BufferedReader bufferedreader = null; try{ filereader = new FileReader(&quot;C:/Users/Jay/Desktop/9.6/src1/read.txt&quot;); bufferedreader = new BufferedReader(filereader); String line = null; while(true){ line = bufferedreader.readLine(); if(line == null){ break; } System.out.println(line); } } catch(Exception e){ System.out.println(e); } finally{ try{ filereader.close(); bufferedreader.close(); } catch(Exception e){ System.out.println(e); } } } } Decorator（装饰者）模式 示例：interface Teacher{ public void teaching(); } class MathTeacher implements Teacher{ public void teaching(){ System.out.println(&quot;我是一名数学老师&quot;); } } class ChineseTeacher implements Teacher{ public void teaching(){ System.out.println(&quot;我是一名语文老师&quot;); } } class ATeacher implements Teacher{ private Teacher teacher; public ATeacher(Teacher teacher){ this.teacher = teacher; } public void teaching(){ System.out.println(&quot;你好，我来自ASchool&quot;); teacher.teaching(); } } public class Test{ public static void main(String args[]){ MathTeacher mathTeacher = new MathTeacher(); ATeacher aTeacher1 = new ATeacher(mathTeacher); aTeacher1.teaching(); ChineseTeacher chineseTeacher = new ChineseTeacher(); ATeacher aTeacher2 = new ATeacher(chineseTeacher); aTeacher2.teaching(); } }]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -557,9 +557,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[处理流与Decorator模式]]></title>
-    <url>%2Fpages%2Fbbf344f6%2F</url>
-    <content type="text"><![CDATA[处理流BufferedReader readeLine：每次读取一行数据 示例：import java.io.*; public class Test{ public static void main(String args[]){ FileReader filereader = null; BufferedReader bufferedreader = null; try{ filereader = new FileReader(&quot;C:/Users/Jay/Desktop/9.6/src1/read.txt&quot;); bufferedreader = new BufferedReader(filereader); String line = null; while(true){ line = bufferedreader.readLine(); if(line == null){ break; } System.out.println(line); } } catch(Exception e){ System.out.println(e); } finally{ try{ filereader.close(); bufferedreader.close(); } catch(Exception e){ System.out.println(e); } } } } Decorator（装饰者）模式 示例：interface Teacher{ public void teaching(); } class MathTeacher implements Teacher{ public void teaching(){ System.out.println(&quot;我是一名数学老师&quot;); } } class ChineseTeacher implements Teacher{ public void teaching(){ System.out.println(&quot;我是一名语文老师&quot;); } } class ATeacher implements Teacher{ private Teacher teacher; public ATeacher(Teacher teacher){ this.teacher = teacher; } public void teaching(){ System.out.println(&quot;你好，我来自ASchool&quot;); teacher.teaching(); } } public class Test{ public static void main(String args[]){ MathTeacher mathTeacher = new MathTeacher(); ATeacher aTeacher1 = new ATeacher(mathTeacher); aTeacher1.teaching(); ChineseTeacher chineseTeacher = new ChineseTeacher(); ATeacher aTeacher2 = new ATeacher(chineseTeacher); aTeacher2.teaching(); } }]]></content>
+    <title><![CDATA[throw和throws]]></title>
+    <url>%2Fpages%2F29cc0096%2F</url>
+    <content type="text"><![CDATA[throwthrow的作用 如果Java虚拟机不能判断异常e，可以生成异常对象e，用throw加上这个异常对象抛出这个异常。 示例：package src; class People{ private int age; public void setAge(int age){ if(age &lt; 0){ RuntimeException e = new RuntimeException(&quot;年龄不能为负数&quot;); throw e; } this.age = age; System.out.println(age); } } class Test{ public static void main(String args[]){ People people = new People(); people.setAge(-20); } } 运行结果： throwsthrows 声明一个函数可能产生异常，函数不对异常进行处理，在调用函数的地方对异常进行处理。 示例：package src1; class People{ private int age; public void setAge(int age) throws Exception{ if(age &lt; 0){ Exception e = new Exception(&quot;年龄不能为负数&quot;); throw e; } this.age = age; System.out.println(age); } } class Test{ public static void main(String args[]){ People people = new People(); try{ people.setAge(-20); } catch(Exception e){ System.out.println(e); } } } 运行结果：]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -623,9 +623,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[throw和throws]]></title>
-    <url>%2Fpages%2F29cc0096%2F</url>
-    <content type="text"><![CDATA[throwthrow的作用 如果Java虚拟机不能判断异常e，可以生成异常对象e，用throw加上这个异常对象抛出这个异常。 示例：package src; class People{ private int age; public void setAge(int age){ if(age &lt; 0){ RuntimeException e = new RuntimeException(&quot;年龄不能为负数&quot;); throw e; } this.age = age; System.out.println(age); } } class Test{ public static void main(String args[]){ People people = new People(); people.setAge(-20); } } 运行结果： throwsthrows 声明一个函数可能产生异常，函数不对异常进行处理，在调用函数的地方对异常进行处理。 示例：package src1; class People{ private int age; public void setAge(int age) throws Exception{ if(age &lt; 0){ Exception e = new Exception(&quot;年龄不能为负数&quot;); throw e; } this.age = age; System.out.println(age); } } class Test{ public static void main(String args[]){ People people = new People(); try{ people.setAge(-20); } catch(Exception e){ System.out.println(e); } } } 运行结果：]]></content>
+    <title><![CDATA[内部类]]></title>
+    <url>%2Fpages%2F9bc01b38%2F</url>
+    <content type="text"><![CDATA[内部类：一个类定义在另一个类的里面。 示例： class A{ class B{ } } B这个类被称之为A的内部类。编译之后生成A.class和A$B.class。内部类可以随意使用外部类的成员变量。 内部类的使用方法示例：class A{ int i; class B{ int j; int funB(){ int result = i + j; System.out.println(result); return result; } } } class Test{ public static void main(String args[]){ A a = new A(); A.B b = a.new B(); a.i = 5; b.j = 6; b.funB(); } } 匿名内部类的使用方法 匿名内部类：没有名字的内部类。 示例：interface A{ public void doSth(); } class B{ public void fun(A a){ System.out.println(&quot;B类的fun函数&quot;); a.doSth(); } } public class Test{ public static void main(String args[]){ B b = new B(); b.fun(new A(){ public void doSth(){ System.out.println(&quot;匿名内部类&quot;); } }); } }]]></content>
       <categories>
         <category>Java</category>
       </categories>
