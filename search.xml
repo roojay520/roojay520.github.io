@@ -205,17 +205,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[arguments和rest]]></title>
-    <url>%2Fpages%2Fe5332c52%2F</url>
-    <content type="text"><![CDATA[arguments 参数 只在函数内部起作用，指向当前函数调用者传入的所有参数。 var bar = (x) =&gt; { console.log(x); // a for(let i = 0; i &lt; arguments.length; i++){ console.log(arguments[i]); // 根据参数索引打印参数 } }; bar(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;); 利用arguments可以获得调用者传入的所有参数。 arguments常用于判断传入参数个数。 rest 不定参数 JS 允许函数接收任意个参数，当参数个数不确定的情况下可以使用不定参数。 &quot;use strict&quot;; // 严格模式 // 接受任意个参数返回它们的和 function sum(...rest) { // 不定参数写在参数最后，前面使用 ... 标识 let result = 0; for (let i of rest) { // rest 是一个数组实例 result += i; } console.log(result); } sum(1, 2, 3, 4); // 传入参数 不定参数写在参数最后，传入参数先绑定已有的参数，多余的参数以数组形式存入不定参数。]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[包管理器 Yarn]]></title>
     <url>%2Fpages%2F522f484%2F</url>
     <content type="text"><![CDATA[包管理器 Yarn Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 JS 包管理工具。 常用命令 yarn和 yarn install ，这两个命令的效果是一样的，等同于npm install，使用这个命令会在该目录生成一个yarn.lock的文件。 yarn add koa，安装koa模块并更新package.json和yarn.lock文件，等同于npm install koa –save。也可以使用yarn global add koa，等同于npm install koa -g，将模块直接安装到全局环境变量里，方便使用。 yarn list，根据当前项目的package.json查看模块的依赖及版本。 yarn info koa，查看koa模块的详细信息，类似于npm view koa。 yarn init，初始化项目package.json文件，等同于npm init。 yarn run，运行package.json中的script。]]></content>
@@ -224,6 +213,17 @@
       </categories>
       <tags>
         <tag>Yarn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[arguments和rest]]></title>
+    <url>%2Fpages%2Fe5332c52%2F</url>
+    <content type="text"><![CDATA[arguments 参数 只在函数内部起作用，指向当前函数调用者传入的所有参数。 var bar = (x) =&gt; { console.log(x); // a for(let i = 0; i &lt; arguments.length; i++){ console.log(arguments[i]); // 根据参数索引打印参数 } }; bar(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;); 利用arguments可以获得调用者传入的所有参数。 arguments常用于判断传入参数个数。 rest 不定参数 JS 允许函数接收任意个参数，当参数个数不确定的情况下可以使用不定参数。 &quot;use strict&quot;; // 严格模式 // 接受任意个参数返回它们的和 function sum(...rest) { // 不定参数写在参数最后，前面使用 ... 标识 let result = 0; for (let i of rest) { // rest 是一个数组实例 result += i; } console.log(result); } sum(1, 2, 3, 4); // 传入参数 不定参数写在参数最后，传入参数先绑定已有的参数，多余的参数以数组形式存入不定参数。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -590,9 +590,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java中的多线程]]></title>
-    <url>%2Fpages%2F265f6f6b%2F</url>
-    <content type="text"><![CDATA[多进程在操作系统中能（同时）运行多个任务（程序）。 多线程在同一应用程序中有多个顺序流（同时）执行。 线程的创建方法继承Thread类创建多线程 继承Thread类，覆写Thread类的run（）方法，在run（）方法中实现运行在线程上的代码。 定义一个类FirstThread继承Thread类，覆写Thread类的run（）方法； 生成线程类的对象firstThread； 启动线程start（）方法。 示例：public class Test{ public static void main(String args[]){ //生成线程类的对象 FirstThread firstThread = new FirstThread(); //启动线程start（）方法 firstThread.start(); for(int i = 1; i &lt; 50; i++){ System.out.println(&quot;Main----&gt;:&quot; + i); } } } //继承Thread类，覆写Thread类的run（）方法 class FirstThread extends Thread{ public void run(){ for(int i = 1; i &lt; 50; i++){ System.out.println(&quot;FirstThread---&gt;:&quot; + i); } } } 实现Runnable接口创建多线程 提供一个实现接口Runnable的类作为线程的目标对象，在初始化一个Thread类或者Thread子类的线程对象时，把目标对象传递给这个线程实例，由该目标对象提供线程体。 定义一个类FirstThread实现Runnable接口； 生成Runnable实现类FirstThread的一个对象firstThread； 生成一个Thread对象，并将firstThread作为参数传递给该Thread对象； 通知Thread对象执行start（）方法。 示例：public class Test{ public static void main(String args[]){ //生成Runnable实现类FirstThread的一个对象firstThread FirstThread firstThread = new FirstThread(); //生成一个Thread对象 //并将firstThread作为参数传递给该Thread对象 Thread thread = new Thread(firstThread); //通知Thread对象执行start（）方法 thread.start(); for(int i = 1; i &lt;50; i++){ System.out.println(&quot;Main---&gt;:&quot; + i); } } } //实现Runnable接口的类FirstThread class FirstThread implements Runnable{ public void run(){ for(int i = 1; i &lt;50; i++){ System.out.println(&quot;FirstThread---&gt;:&quot; + i); } } } 线程的简单控制方法 中断线程 Thread.sleep（n毫秒）//当前线程休眠n毫秒 Thread.yield（）//当前线程自动让出CPU，AB重新线程抢占CPU 设置线程的优先级 getPriority（） setPriority（） thread.setPriority(Thread.MAX_PRIORITY) //设置最大优先级为10 thread.setPriority(Thread.MIN_PRIORITY) //设置最小优先级为1 同步语法同步代码块synchronized(this) { //this：同步锁 代码块 } synchronized锁住一个对象。 如果线程A得到同步锁，那么他将可以执行代码块， 即使线程B从线程A手中抢到了同步锁，B也不能立即执行代码块，它必须等到线程A执行完这个代码块之后才能执行。 示例public class Test{ public static void main(String args[]){ MyThread myThread = new MyThread(); //生成两个Thread对象，但是这两个Thread对象共用同一个线程体 Thread t1 = new Thread(myThread); Thread t2 = new Thread(myThread); //通过Thread对象的setName（）方法设置线程名字 //使用getName方法获取线程的名字 t1.setName(&quot;线程A&quot;); t2.setName(&quot;线程B&quot;); //分别启动两个线程 t1.start(); t2.start(); } } class MyThread implements Runnable{ int i = 100; public void run(){ while(true){ synchronized(this){ //this：同步锁 //Thread.currentThread()获取当前这段代码运行的线程位置 System.out.println(Thread.currentThread().getName() + i); i--; Thread.yield(); if(i &lt; 0){ break; } } } } } 同步方法public synchronized void run(){ 代码块 } synchronized锁住this。]]></content>
+    <title><![CDATA[Java中的异常]]></title>
+    <url>%2Fpages%2Ff029d2bb%2F</url>
+    <content type="text"><![CDATA[什么是异常 异常的分类 try…catch…finally结构的使用方法 1. 什么是异常？ 异常(Exception)：中断了正常指令流的事件。 异常是一个对象； 异常产生于程序运行时； 指令流：程序执行时一系列的连续指令称为指令流。 示例： class Test{ public static void main(String args[]){ int i = 1 / 0; } } 抛出异常： Exception in thread “main” java.lang.ArithmeticException: / by zero at Test3.main(Test3.java:6) Exception in thread “main” ：在主线程中出现异常； ArithmeticException：异常的名称，算术异常； / by zero：被0除； at Test.main(Test.java:3)：异常位置； 2. 异常的分类JDK提供的类： Throwable：所有异常的父类； Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭； Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption RuntimeException + Error 和其子类都是属于uncheckexceptionException类中除了 RuntimeException之外的类，都是属于checkexception ExceptioncheckException checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。示例： class TestCheck{ public static void main(String args[]){ //CheckException Thread.sleep(1000); //让当前线程休眠1000ms } } 运行结果： uncheckException（ RuntimeException） 运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成示例： class Test{ public static void main(String args[]){ //UncheckException int i = 1 / 0; } } 运行结果： 3. try…catch…finally结构 try{ //代码A //有可能出现异常的代码B //代码C } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //处理异常的代码D //代码E } finally{ //异常的出口 //执行扫尾工作的代码F } 如果try中代码B没有异常：执行代码A-B-C-F如果try中代码B出现异常：执行代码A-B-D-E-FuncheckException //uncheckException class TestCheck{ public static void main(String args[]){ System.out.println(1); try{ System.out.println(2); //有可能出现异常的代码 int i = 1/0; System.out.println(3); } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); } finally{ //异常的出口 System.out.println(&quot;finally&quot;); } } } 运行结果： checkException //checkException class TestCheck{ public static void main(String args[]){ System.out.println(1); try{ System.out.println(2); //有可能出现异常的代码 Thread.sleep(1000); //让当前线程休眠1000ms System.out.println(3); } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); } finally{ //异常的出口 System.out.println(&quot;finally&quot;); } } } 运行结果：屏幕首先显示1，2，然后停顿1000ms，再显示3和finally]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -634,9 +634,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java中的异常]]></title>
-    <url>%2Fpages%2Ff029d2bb%2F</url>
-    <content type="text"><![CDATA[什么是异常 异常的分类 try…catch…finally结构的使用方法 1. 什么是异常？ 异常(Exception)：中断了正常指令流的事件。 异常是一个对象； 异常产生于程序运行时； 指令流：程序执行时一系列的连续指令称为指令流。 示例： class Test{ public static void main(String args[]){ int i = 1 / 0; } } 抛出异常： Exception in thread “main” java.lang.ArithmeticException: / by zero at Test3.main(Test3.java:6) Exception in thread “main” ：在主线程中出现异常； ArithmeticException：异常的名称，算术异常； / by zero：被0除； at Test.main(Test.java:3)：异常位置； 2. 异常的分类JDK提供的类： Throwable：所有异常的父类； Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭； Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption RuntimeException + Error 和其子类都是属于uncheckexceptionException类中除了 RuntimeException之外的类，都是属于checkexception ExceptioncheckException checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。示例： class TestCheck{ public static void main(String args[]){ //CheckException Thread.sleep(1000); //让当前线程休眠1000ms } } 运行结果： uncheckException（ RuntimeException） 运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成示例： class Test{ public static void main(String args[]){ //UncheckException int i = 1 / 0; } } 运行结果： 3. try…catch…finally结构 try{ //代码A //有可能出现异常的代码B //代码C } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //处理异常的代码D //代码E } finally{ //异常的出口 //执行扫尾工作的代码F } 如果try中代码B没有异常：执行代码A-B-C-F如果try中代码B出现异常：执行代码A-B-D-E-FuncheckException //uncheckException class TestCheck{ public static void main(String args[]){ System.out.println(1); try{ System.out.println(2); //有可能出现异常的代码 int i = 1/0; System.out.println(3); } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); } finally{ //异常的出口 System.out.println(&quot;finally&quot;); } } } 运行结果： checkException //checkException class TestCheck{ public static void main(String args[]){ System.out.println(1); try{ System.out.println(2); //有可能出现异常的代码 Thread.sleep(1000); //让当前线程休眠1000ms System.out.println(3); } catch(Exception e){ //虚拟机产生的异常对象e e.printStackTrace(); //打印异常栈的追踪信息 System.out.println(4); } finally{ //异常的出口 System.out.println(&quot;finally&quot;); } } } 运行结果：屏幕首先显示1，2，然后停顿1000ms，再显示3和finally]]></content>
+    <title><![CDATA[Java中的多线程]]></title>
+    <url>%2Fpages%2F265f6f6b%2F</url>
+    <content type="text"><![CDATA[多进程在操作系统中能（同时）运行多个任务（程序）。 多线程在同一应用程序中有多个顺序流（同时）执行。 线程的创建方法继承Thread类创建多线程 继承Thread类，覆写Thread类的run（）方法，在run（）方法中实现运行在线程上的代码。 定义一个类FirstThread继承Thread类，覆写Thread类的run（）方法； 生成线程类的对象firstThread； 启动线程start（）方法。 示例：public class Test{ public static void main(String args[]){ //生成线程类的对象 FirstThread firstThread = new FirstThread(); //启动线程start（）方法 firstThread.start(); for(int i = 1; i &lt; 50; i++){ System.out.println(&quot;Main----&gt;:&quot; + i); } } } //继承Thread类，覆写Thread类的run（）方法 class FirstThread extends Thread{ public void run(){ for(int i = 1; i &lt; 50; i++){ System.out.println(&quot;FirstThread---&gt;:&quot; + i); } } } 实现Runnable接口创建多线程 提供一个实现接口Runnable的类作为线程的目标对象，在初始化一个Thread类或者Thread子类的线程对象时，把目标对象传递给这个线程实例，由该目标对象提供线程体。 定义一个类FirstThread实现Runnable接口； 生成Runnable实现类FirstThread的一个对象firstThread； 生成一个Thread对象，并将firstThread作为参数传递给该Thread对象； 通知Thread对象执行start（）方法。 示例：public class Test{ public static void main(String args[]){ //生成Runnable实现类FirstThread的一个对象firstThread FirstThread firstThread = new FirstThread(); //生成一个Thread对象 //并将firstThread作为参数传递给该Thread对象 Thread thread = new Thread(firstThread); //通知Thread对象执行start（）方法 thread.start(); for(int i = 1; i &lt;50; i++){ System.out.println(&quot;Main---&gt;:&quot; + i); } } } //实现Runnable接口的类FirstThread class FirstThread implements Runnable{ public void run(){ for(int i = 1; i &lt;50; i++){ System.out.println(&quot;FirstThread---&gt;:&quot; + i); } } } 线程的简单控制方法 中断线程 Thread.sleep（n毫秒）//当前线程休眠n毫秒 Thread.yield（）//当前线程自动让出CPU，AB重新线程抢占CPU 设置线程的优先级 getPriority（） setPriority（） thread.setPriority(Thread.MAX_PRIORITY) //设置最大优先级为10 thread.setPriority(Thread.MIN_PRIORITY) //设置最小优先级为1 同步语法同步代码块synchronized(this) { //this：同步锁 代码块 } synchronized锁住一个对象。 如果线程A得到同步锁，那么他将可以执行代码块， 即使线程B从线程A手中抢到了同步锁，B也不能立即执行代码块，它必须等到线程A执行完这个代码块之后才能执行。 示例public class Test{ public static void main(String args[]){ MyThread myThread = new MyThread(); //生成两个Thread对象，但是这两个Thread对象共用同一个线程体 Thread t1 = new Thread(myThread); Thread t2 = new Thread(myThread); //通过Thread对象的setName（）方法设置线程名字 //使用getName方法获取线程的名字 t1.setName(&quot;线程A&quot;); t2.setName(&quot;线程B&quot;); //分别启动两个线程 t1.start(); t2.start(); } } class MyThread implements Runnable{ int i = 100; public void run(){ while(true){ synchronized(this){ //this：同步锁 //Thread.currentThread()获取当前这段代码运行的线程位置 System.out.println(Thread.currentThread().getName() + i); i--; Thread.yield(); if(i &lt; 0){ break; } } } } } 同步方法public synchronized void run(){ 代码块 } synchronized锁住this。]]></content>
       <categories>
         <category>Java</category>
       </categories>
