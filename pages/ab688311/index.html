@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -265,7 +265,7 @@
 
     
         <meta property="article:published_time" content="Sat Sep 16 2017 00:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Wed Feb 13 2019 14:20:59 GMT+0000">
+        <meta property="article:modified_time" content="Tue Aug 20 2019 10:41:04 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -288,7 +288,7 @@
     "mainEntityOfPage": "https://roojay.com/pages/ab688311/index.html",
     "headline": "Flex布局",
     "datePublished": "Sat Sep 16 2017 00:00:00 GMT+0000",
-    "dateModified": "Wed Feb 13 2019 14:20:59 GMT+0000",
+    "dateModified": "Tue Aug 20 2019 10:41:04 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -374,7 +374,8 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -425,7 +426,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -467,7 +468,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/CSS/">CSS</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -549,7 +550,7 @@
 <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
 <li>flex 布局包括一个水平 main axis 和一个垂直 cross axis</li>
 </ul>
-<p><img src="https://mdn.mozillademos.org/files/12998/flexbox.png" alt=""></p>
+<p><img src="https://mdn.mozillademos.org/files/12998/flexbox.png" alt></p>
 <ul>
 <li>通过设置 display 的值启用 flex</li>
 <li>设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。</li>
@@ -571,7 +572,7 @@
 <li>align-items：定义了在当前行上，弹性项目沿侧轴默认如何排布。</li>
 <li>align-self：定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。</li>
 </ul>
-<h3 id="flex-direction（主轴方向）"><a href="#flex-direction（主轴方向）" class="headerlink" title="flex-direction（主轴方向）"></a>flex-direction（主轴方向）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png" alt=""></p>
+<h3 id="flex-direction（主轴方向）"><a href="#flex-direction（主轴方向）" class="headerlink" title="flex-direction（主轴方向）"></a>flex-direction（主轴方向）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png" alt></p>
 <blockquote>
 <p>flex-direction 决定主轴方向（项目排列方向），包括四个值。</p>
 <ul>
@@ -581,7 +582,7 @@
 <li>column-reverse：主轴为垂直方向，起点在下沿。</li>
 </ul>
 </blockquote>
-<h3 id="flex-wrap（换行控制）"><a href="#flex-wrap（换行控制）" class="headerlink" title="flex-wrap（换行控制）"></a>flex-wrap（换行控制）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png" alt=""></p>
+<h3 id="flex-wrap（换行控制）"><a href="#flex-wrap（换行控制）" class="headerlink" title="flex-wrap（换行控制）"></a>flex-wrap（换行控制）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png" alt></p>
 <blockquote>
 <p>控制一条轴上放不下子项目该如何换行。</p>
 </blockquote>
@@ -590,7 +591,7 @@
 <li>wrap：换行，第一行在上。</li>
 <li>wrap-reverse：换行，第一行在下。</li>
 </ul>
-<h3 id="justify-content（主轴排列方式）"><a href="#justify-content（主轴排列方式）" class="headerlink" title="justify-content（主轴排列方式）"></a>justify-content（主轴排列方式）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt=""></p>
+<h3 id="justify-content（主轴排列方式）"><a href="#justify-content（主轴排列方式）" class="headerlink" title="justify-content（主轴排列方式）"></a>justify-content（主轴排列方式）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt></p>
 <ul>
 <li>flex-start：从行首起始位置开始排列。</li>
 <li>flex-end：从行尾位置开始排列。</li>
@@ -598,7 +599,7 @@
 <li>space-between：均匀排列每个元素<br>首个元素放置于起点，末尾元素放置于终点。</li>
 <li>space-around：均匀排列每个元素<br>每个元素周围分配相同的空间。</li>
 </ul>
-<h3 id="align-items-侧轴排列方式"><a href="#align-items-侧轴排列方式" class="headerlink" title="align-items(侧轴排列方式)"></a>align-items(侧轴排列方式)</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt=""></p>
+<h3 id="align-items-侧轴排列方式"><a href="#align-items-侧轴排列方式" class="headerlink" title="align-items(侧轴排列方式)"></a>align-items(侧轴排列方式)</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt></p>
 <ul>
 <li>flex-start：元素向侧轴起点对齐。</li>
 <li>flex-end：元素向侧轴终点对齐。</li>
@@ -609,7 +610,7 @@
 <h3 id="align-conten（多轴线对齐方式）"><a href="#align-conten（多轴线对齐方式）" class="headerlink" title="align-conten（多轴线对齐方式）"></a>align-conten（多轴线对齐方式）</h3><blockquote>
 <p>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
 </blockquote>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt=""></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt></p>
 <ul>
 <li>flex-start：所有行从垂直轴起点开始填充。第一行的垂直轴起点边和容器的垂直轴起点边对齐。接下来的每一行紧跟前一行。</li>
 <li>flex-end：所有行从垂直轴末尾开始填充。最后一行的垂直轴终点和容器的垂直轴终点对齐。同时所有后续行与前一个对齐。</li>
@@ -619,12 +620,12 @@
 <li>stretch：拉伸所有行来填满剩余空间。剩余空间平均的分配给每一行。</li>
 </ul>
 <h2 id="子项目属性"><a href="#子项目属性" class="headerlink" title="子项目属性"></a>子项目属性</h2><ul>
-<li>order：定义项目的排列顺序。数值越小，排列越靠前，默认为 0。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png" alt=""></li>
-<li>flex-grow：定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png" alt=""></li>
-<li>flex-shrink：定义了项目的缩小比例，默认为 1，即如果空间不足，该项目将缩小。属性为 0，项目不缩小，负值对该属性无效。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg" alt=""></li>
+<li>order：定义项目的排列顺序。数值越小，排列越靠前，默认为 0。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png" alt></li>
+<li>flex-grow：定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png" alt></li>
+<li>flex-shrink：定义了项目的缩小比例，默认为 1，即如果空间不足，该项目将缩小。属性为 0，项目不缩小，负值对该属性无效。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg" alt></li>
 <li>flex-basis：定义项目在主轴所占据的基本空间，默认值 auto，即项目本来的大小。</li>
 <li>flex：是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</li>
-<li>align-self：允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt=""></li>
+<li>align-self：允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt></li>
 </ul>
 
         
@@ -639,7 +640,7 @@
                 <!-- Post Comments -->
                 
                     
-    <div id="comment" style="padding:10px;" class="vcomment"></div>
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
@@ -776,7 +777,7 @@
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -794,7 +795,7 @@
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/FE/">FE<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/HTML/">HTML<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Nodejs/">Nodejs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Tools/">Tools<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/VSCode/">VSCode<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Windows/">Windows<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/其他/">其他<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/">数据库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编程相关/">编程相关<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -845,7 +846,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             主题 - Material
             <span class="sidebar-badge badge-circle">i</span>

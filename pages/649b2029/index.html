@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -265,7 +265,7 @@
 
     
         <meta property="article:published_time" content="Fri Jun 16 2017 00:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Wed Feb 13 2019 14:20:59 GMT+0000">
+        <meta property="article:modified_time" content="Tue Aug 20 2019 10:41:04 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -288,7 +288,7 @@
     "mainEntityOfPage": "https://roojay.com/pages/649b2029/index.html",
     "headline": "Java中的I/O流",
     "datePublished": "Fri Jun 16 2017 00:00:00 GMT+0000",
-    "dateModified": "Wed Feb 13 2019 14:20:59 GMT+0000",
+    "dateModified": "Tue Aug 20 2019 10:41:04 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -374,12 +374,13 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#流的概念和作用"><span class="post-toc-text">流的概念和作用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IO流的分类"><span class="post-toc-text">IO流的分类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字节流"><span class="post-toc-text">字节流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字节流中的核心类"><span class="post-toc-text">字节流中的核心类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#InputStream"><span class="post-toc-text">InputStream</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#int-read-byte-b-int-off-int-len"><span class="post-toc-text">int read(byte [] b,int off,int len)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#OutputStream"><span class="post-toc-text">OutputStream</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#void-write-byte-b-int-off-int-len"><span class="post-toc-text">void write(byte [] b,int off,int len)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#程序步骤"><span class="post-toc-text">程序步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#示例-1："><span class="post-toc-text">示例 1：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#大文件的读写"><span class="post-toc-text">大文件的读写</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#示例-2："><span class="post-toc-text">示例 2：</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字符流"><span class="post-toc-text">字符流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#示例-3："><span class="post-toc-text">示例 3：</span></a></li></ol></li>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#流的概念和作用"><span class="post-toc-text">流的概念和作用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IO流的分类"><span class="post-toc-text">IO流的分类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字节流"><span class="post-toc-text">字节流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字节流中的核心类"><span class="post-toc-text">字节流中的核心类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#InputStream"><span class="post-toc-text">InputStream</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#int-read-byte-b-int-off-int-len"><span class="post-toc-text">int read(byte [] b,int off,int len)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#OutputStream"><span class="post-toc-text">OutputStream</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#void-write-byte-b-int-off-int-len"><span class="post-toc-text">void write(byte [] b,int off,int len)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#程序步骤"><span class="post-toc-text">程序步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#示例-1："><span class="post-toc-text">示例 1：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#大文件的读写"><span class="post-toc-text">大文件的读写</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#示例-2："><span class="post-toc-text">示例 2：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字符流"><span class="post-toc-text">字符流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#示例-3："><span class="post-toc-text">示例 3：</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -425,7 +426,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -467,7 +468,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/Java/">Java</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -558,7 +559,7 @@
 <li>节点流：普通的管道；</li>
 <li>处理流：功能性管道，对数据进一步加工。</li>
 </ol>
-<h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><h3 id="字节流中的核心类"><a href="#字节流中的核心类" class="headerlink" title="字节流中的核心类"></a>字节流中的核心类</h3><p><img src="http://i.imgur.com/zhxfDm7.png" alt=""></p>
+<h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><h3 id="字节流中的核心类"><a href="#字节流中的核心类" class="headerlink" title="字节流中的核心类"></a>字节流中的核心类</h3><p><img src="http://i.imgur.com/zhxfDm7.png" alt></p>
 <h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><blockquote>
 </blockquote>
 <h4 id="int-read-byte-b-int-off-int-len"><a href="#int-read-byte-b-int-off-int-len" class="headerlink" title="int read(byte [] b,int off,int len)"></a>int read(byte [] b,int off,int len)</h4><p>byte[] b：byte类型数组；<br>int off：偏移量；<br>int len： 读取数据的量；<br>返回值为这次调用read方法读取数据的长度。</p>
@@ -696,7 +697,7 @@ public class TestChar{
                 <!-- Post Comments -->
                 
                     
-    <div id="comment" style="padding:10px;" class="vcomment"></div>
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
@@ -833,7 +834,7 @@ public class TestChar{
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -851,7 +852,7 @@ public class TestChar{
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/FE/">FE<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/HTML/">HTML<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/Nodejs/">Nodejs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Tools/">Tools<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/VSCode/">VSCode<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Vue/">Vue<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Windows/">Windows<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/其他/">其他<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/">数据库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编程相关/">编程相关<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -902,7 +903,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             主题 - Material
             <span class="sidebar-badge badge-circle">i</span>
