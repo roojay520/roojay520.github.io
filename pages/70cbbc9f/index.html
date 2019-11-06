@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="YouDon&#39;tKnowJavaScript"> 
 
     
-        <meta property="article:published_time" content="Fri Sep 15 2017 16:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
+        <meta property="article:published_time" content="Sat Sep 16 2017 00:00:00 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 02:25:48 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/70cbbc9f/index.html",
     "headline": "函数作用域及块作用域",
-    "datePublished": "Fri Sep 15 2017 16:00:00 GMT+0000",
-    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
+    "datePublished": "Sat Sep 16 2017 00:00:00 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 02:25:48 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -431,7 +431,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Roojay</strong>
-        <span>9月 15, 2017</span>
+        <span>9月 16, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -554,13 +554,15 @@
     }
 }
 
-foo();</code></pre>
+foo();
+</code></pre>
 <p><strong>立即执行函数表达式：</strong></p>
 <pre><code class="javascript">(function foo() {
     for (let i = 0; i &lt; 10; i++) {
         console.log(i);
     }
 })();
+
 </code></pre>
 <p>区分函数声明和表达式最简单的方法是看 function 关键字出现在声明中的位置（不仅仅是一行代码，而是整个声明中的位置）。<strong>如果 function 是声明中的第一个词，那么就是一个函数声明，否则就是一个函数表达式。</strong></p>
 <p>函数声明和函数表达式之间最重要的区别是它们的名称标识符将会绑定在何处。</p>
@@ -578,6 +580,7 @@ foo();</code></pre>
         console.log(i);
     }
 })();
+
 </code></pre>
 <ol start="2">
 <li>另一种改进形式写法将调用的（）移到了用来包装的（）里面。</li>
@@ -586,7 +589,8 @@ foo();</code></pre>
     for (let i = 0; i &lt; 10; i++) {
         console.log(i);
     }
-}());</code></pre>
+}());
+</code></pre>
 <p>两种写法功能上一样，凭个人喜好。</p>
 <h4 id="IIFE-表达式的用法"><a href="#IIFE-表达式的用法" class="headerlink" title="IIFE 表达式的用法"></a>IIFE 表达式的用法</h4><ol>
 <li>匿名函数表达式</li>
@@ -594,7 +598,8 @@ foo();</code></pre>
 <pre><code class="javascript">(() =&gt; {
     const a = 6;
     console.log(a); // a
-})();</code></pre>
+})();
+</code></pre>
 <ol start="2">
 <li>将它当作<strong>函数调用</strong>，并传递参数进去</li>
 </ol>
@@ -602,6 +607,7 @@ foo();</code></pre>
 (function IIFE(name) {
     console.log(name); // haha
 })(name);
+
 </code></pre>
 <ol start="3">
 <li>倒置代码的运行顺序，将需要运行的函数放在第二位， IIFE 执行之后，放在第二位的函数被当作参数传递进去。</li>
@@ -616,7 +622,8 @@ foo();</code></pre>
     const name = &#39;3&#39;;
     console.log(name); // 3
     console.log(obj.name); // haha
-}));</code></pre>
+}));
+</code></pre>
 <p>第二部分为一个匿名函数，被当作一个参数 foo 传入到 IIFE 函数的第一部分。最后匿名函数调用执行，将一个全局对象 objA 传入当作 obj 的参数值。</p>
 <h2 id="块作用域"><a href="#块作用域" class="headerlink" title="块作用域"></a>块作用域</h2><p>块作用域是一个用来对之前的最小授权原则进行扩展的工具，将代码从在函数中隐藏信息扩展为在块中隐藏信息。</p>
 <p>块作用域指的是变量和函数不仅可以属于所处的作用域，也可以属于某个代码块（通常指 { .. } 内部）。</p>
@@ -628,6 +635,7 @@ for (var i = 0; i &lt; 10; i++) {
   };
 }
 arr[6](); // 10
+
 </code></pre>
 <p>console.log(i) 内部的 i 指向全局的的 i，最后循环完毕后在执行 arr<a href>6</a>，这时全局的 i 的值为 10.</p>
 <p>ES3 规范中规定 try/catch 的 catch 分句会创建一个块作用域，其中声明的变量仅在 catch 内部有效。</p>
@@ -638,7 +646,8 @@ for (let i = 0; i &lt; 10; i++) {
     console.log(i);
   };
 }
-arr[6](); // 6</code></pre>
+arr[6](); // 6
+</code></pre>
 <p>由 let 声明的 i，每次循环都在循环的内部重新生成了一次变量，</p>
 <pre><code class="javascript">var arr = [];
 for (let i = 0; i &lt; 10; i++) {
@@ -647,7 +656,8 @@ for (let i = 0; i &lt; 10; i++) {
     console.log(_i);
   };
 }
-arr[6](); // 6</code></pre>
+arr[6](); // 6
+</code></pre>
 <p>for 循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p>
 <p>let 声明的变量只在它所在的代码块有效。</p>
 <pre><code class="javascript">{
@@ -656,7 +666,8 @@ arr[6](); // 6</code></pre>
 }
 
 console.log(a); // 6
-console.log(b); // b is not defined</code></pre>
+console.log(b); // b is not defined
+</code></pre>
 <h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>在代码块内，使用 let 命令声明变量，在声明之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）.</p>
 <pre><code class="javascript">if (true) {
   // TDZ开始
@@ -668,7 +679,8 @@ console.log(b); // b is not defined</code></pre>
 
   tmp = 123;
   console.log(tmp); // 123
-}</code></pre>
+}
+</code></pre>
 <p>ES6 明确规定，如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。</p>
 <p>只要块级作用域内存在 let 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。</p>
 <pre><code class="javascript">var tmp = 6;
@@ -676,7 +688,8 @@ console.log(b); // b is not defined</code></pre>
 if(true) {
   tmp = 3; // ReferenceError
   let tmp;
-}</code></pre>
+}
+</code></pre>
 
         
     

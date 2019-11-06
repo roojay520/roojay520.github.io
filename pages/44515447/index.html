@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="tabs"> <meta property="og:article:tag" content="vue"> 
 
     
-        <meta property="article:published_time" content="Mon Nov 20 2017 04:31:14 GMT+0000">
-        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
+        <meta property="article:published_time" content="Mon Nov 20 2017 12:31:14 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 02:25:48 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/44515447/index.html",
     "headline": "动手实现一个简单的 vue tabs",
-    "datePublished": "Mon Nov 20 2017 04:31:14 GMT+0000",
-    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
+    "datePublished": "Mon Nov 20 2017 12:31:14 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 02:25:48 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -560,7 +560,8 @@
     &lt;/div&gt;
     &lt;component :is=&quot;currentView&quot;&gt;1&lt;/component&gt;
   &lt;/div&gt;
-&lt;/template&gt;</code></pre>
+&lt;/template&gt;
+</code></pre>
 <p>JavaScript 部分: 一个 title 数组和一个内容数组 views, 一个select 标识符, 用来确定被选中选项的 index 值, 还包括一个 toggle 方法用来响应鼠标点击更改 select 的值.</p>
 <pre><code class="javascript">&lt;script&gt;
   export default {
@@ -584,7 +585,8 @@
         this.select = index;
       }
     }
-  };</code></pre>
+  };
+</code></pre>
 <p>CSS 部分: 这个主要问题是鼠标点击切换标题时, 下面的光标随之移到, 最开始使用 border-bottom 来作为光标, 但发现样式不好控制. 最后使用伪元素, 解决下光标问题. 为标题加一个 span 标签, 给其绑定一个动态的的 class selected, 当前选择元素的 select 和 当前的 index 相等时, 为其添上一个 selected 类.</p>
 <pre><code class="css">&lt;style lang=&quot;scss&quot;&gt;
   #tabs {
@@ -661,7 +663,8 @@
       }
     }
   }
-&lt;/style&gt;</code></pre>
+&lt;/style&gt;
+</code></pre>
 <p>效果演示图: <img src="http://ou37yhdfy.bkt.clouddn.com/201711201243_855.gif" alt></p>
 
         

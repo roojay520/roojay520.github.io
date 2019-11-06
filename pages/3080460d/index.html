@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="YouDon&#39;tKnowJavaScript"> 
 
     
-        <meta property="article:published_time" content="Thu Sep 28 2017 16:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
+        <meta property="article:published_time" content="Fri Sep 29 2017 00:00:00 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 02:25:48 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/3080460d/index.html",
     "headline": "变量提升",
-    "datePublished": "Thu Sep 28 2017 16:00:00 GMT+0000",
-    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
+    "datePublished": "Fri Sep 29 2017 00:00:00 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 02:25:48 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -431,7 +431,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Roojay</strong>
-        <span>9月 28, 2017</span>
+        <span>9月 29, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -545,20 +545,24 @@
 <p><strong>例1：</strong></p>
 <pre><code class="javascript">a = 2;
 var a;
-console.log(a); // 2</code></pre>
+console.log(a); // 2
+</code></pre>
 <p>上面的例子等同于：</p>
 <pre><code class="javascript">var a;
 
 a = 2;
-console.log(a); // 2</code></pre>
+console.log(a); // 2
+</code></pre>
 <p><strong>例2：</strong></p>
 <pre><code class="javascript">console.log(a); //undefined
-var a = 2;</code></pre>
+var a = 2;
+</code></pre>
 <p>上面的例子等同于：</p>
 <pre><code class="javascript">var a;
 
 console.log(a); //undefined
-a = 2;</code></pre>
+a = 2;
+</code></pre>
 <h4 id="let-与-var区别"><a href="#let-与-var区别" class="headerlink" title="let 与 var区别"></a>let 与 var区别</h4><ol>
 <li><code>var</code>声明的变量作用域为最近的函数块，<code>let</code>声明的变量作用域为最近的闭合块，往往小于函数块。</li>
 <li><code>var</code>声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出<code>undefined</code>。</li>
@@ -575,7 +579,8 @@ function foo() {
 
 foo = function() {
     console.log(2);
-};</code></pre>
+};
+</code></pre>
 <p>上面的 foo() 函数执行会输出 1，而不是 2 。<br>上面的代码等同于：</p>
 <pre><code class="javascript">function foo() {
     console.log(1);
@@ -585,7 +590,8 @@ foo(); // 1
 
 foo = function() {
     console.log(2);
-};</code></pre>
+};
+</code></pre>
 <p><strong>函数会首先被提升，然后才是变量。</strong></p>
 <p>尽管 var foo 在 function foo(){..} 函数之前，但是 function foo(){..} 函数会被优先提升到了函数顶部， var foo 作为重复的声明会被忽略，但是如果后面再次使用函数声明会覆盖前面的声明。</p>
 <p>一个普通块内部的变量声明通常会被提升到所在作用域的顶部，例如：</p>
@@ -598,7 +604,8 @@ function foo() {
     }
 }
 
-f(); // undefined</code></pre>
+f(); // undefined
+</code></pre>
 <p>if 块作用域内部的 tmp 变量被提升到了 foo() 函数作用域的顶部，而赋值操作留在了 if 块作用域内部。上面的代码等同于：</p>
 <pre><code class="javascript">var tmp = new Date();
 
@@ -610,7 +617,8 @@ function foo() {
     }
 }
 
-foo(); // undefined</code></pre>
+foo(); // undefined
+</code></pre>
 
         
     

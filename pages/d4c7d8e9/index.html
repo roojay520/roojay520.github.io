@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="JavaScript"> 
 
     
-        <meta property="article:published_time" content="Fri Sep 15 2017 16:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
+        <meta property="article:published_time" content="Sat Sep 16 2017 00:00:00 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 02:25:48 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/d4c7d8e9/index.html",
     "headline": "JS基础基础",
-    "datePublished": "Fri Sep 15 2017 16:00:00 GMT+0000",
-    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
+    "datePublished": "Sat Sep 16 2017 00:00:00 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 02:25:48 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -431,7 +431,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Roojay</strong>
-        <span>9月 15, 2017</span>
+        <span>9月 16, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -564,7 +564,8 @@ var a = str.length;
 var b = str.indexOf(&#39;花&#39;);
 // 通过索引获取字符 &#39;百花&#39;
 var c = str.slice(b - 1, b + 1);
-console.log(&quot;字符串长度：&quot; + a + &quot;\n花的索引：&quot; + b + &quot;\n获取花字符：&quot; + c);</code></pre>
+console.log(&quot;字符串长度：&quot; + a + &quot;\n花的索引：&quot; + b + &quot;\n获取花字符：&quot; + c);
+</code></pre>
 </li>
 </ul>
 <pre><code class="javascript">/* 将一个大小混写的人名，姓全部转换为大写，名除首字母外全部转换为小写。
@@ -586,7 +587,8 @@ function nameChanger(name) {
   finaName = names.join(&quot; &quot;);
   console.log(finaName);
 }
-nameChanger(name);</code></pre>
+nameChanger(name);
+</code></pre>
 <h4 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h4><ul>
 <li>splice(index, num, item1,…..,itemN); 用于插入、删除或替换数组的元素。<ul>
 <li>index （必须） 删除/添加元素的开始下标。</li>
@@ -622,7 +624,8 @@ console.log(&#39;true&#39;);
 else {
 console.log(&#39;flase&#39;);
 }
-// 输出 true</code></pre>
+// 输出 true
+</code></pre>
 </li>
 </ul>
 <h4 id="日期-Date"><a href="#日期-Date" class="headerlink" title="日期(Date)"></a>日期(Date)</h4><h4 id="方法-function"><a href="#方法-function" class="headerlink" title="方法(function)"></a>方法(function)</h4><ul>
@@ -631,20 +634,22 @@ console.log(&#39;flase&#39;);
 </ul>
 <h4 id="空（Null）"><a href="#空（Null）" class="headerlink" title="空（Null）"></a>空（Null）</h4><ul>
 <li>表示什么都没有，将变量赋值 null 可以清除变量的内容（不删除变量）。<pre><code class="javascript">var num = null; // 值为空 null
-typeof num; //返回值为 object</code></pre>
+typeof num; //返回值为 object
+</code></pre>
 </li>
 </ul>
 <h4 id="未定义（Undefined）"><a href="#未定义（Undefined）" class="headerlink" title="未定义（Undefined）"></a>未定义（Undefined）</h4><ul>
 <li>变量的值未定义。可以将变量与 undefined 进行比较确定变量是否存在。</li>
 <li>也可以通过将变量的类型与字符串“undefined”进行比较确定其类型是否为 undefined。<pre><code class="javascript">var num;
-typeof num; // 返回值为 undefined</code></pre>
-</li>
-<li><em>null 和 undefined 的值相等，类型不同。null 值的行为与数字 0 类似，而 undefined 的行为与特定值 NaN（非数字）类似。*</em></li>
+typeof num; // 返回值为 undefined
+</code></pre>
+<strong>null 和 undefined 的值相等，类型不同。null 值的行为与数字 0 类似，而 undefined 的行为与特定值 NaN（非数字）类似。</strong></li>
 </ul>
 <p>JavaScript 拥有动态类型，相同的变量可用作不同的类型：</p>
 <pre><code class="javascript">var x;               // 此时 x 为 undefined
 var x = 5;           // 此时 x 为数字
-var x = &#39;hello&#39;;      // 此时 x 为字符串</code></pre>
+var x = &#39;hello&#39;;      // 此时 x 为字符串
+</code></pre>
 <h4 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h4><ul>
 <li>JavaScript 是一个弱类型的语言，其变量类型由其值的类型决定。</li>
 <li>字符串、数字和布尔值的强制转换规则：<ul>
@@ -668,7 +673,8 @@ var b = 12;
 a ^= b;
 b ^= a;
 a ^= b;
-console.log(&#39;a is:&#39; + a + &#39;\nb is:&#39; + b); // a is:12 b is:10</code></pre>
+console.log(&#39;a is:&#39; + a + &#39;\nb is:&#39; + b); // a is:12 b is:10
+</code></pre>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><blockquote>
 <p>函数也称为’全局方法’。</p>
 </blockquote>
@@ -705,12 +711,14 @@ console.log(&#39;a is:&#39; + a + &#39;\nb is:&#39; + b); // a is:12 b is:10</co
 <pre><code class="javascript">//会报错误
 &quot;&quot;name&quot; + 18&quot;
 //正确的方式
-&#39;&quot;name&quot; + 18&#39;</code></pre>
+&#39;&quot;name&quot; + 18&#39;
+</code></pre>
 <h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><blockquote>
-<p>允许嵌入表达式的字符串。使用反引号（``）代替单引号或者双引号，中间包含特定语法（${表达式}）,表达式是任意 JavaScript 表达式（如变量或函数）。</p>
-</blockquote>
+<p>允许嵌入表达式的字符串。使用反引号（<code></code>）代替单引号或者双引号，中间包含特定语法（${表达式}）,表达式是任意 JavaScript 表达式（如变量或函数）。</p>
 <pre><code class="javascript">  `hello ${表达式}`;
-   `sun ${a + b}`</code></pre>
+   `sun ${a + b}`
+</code></pre>
+</blockquote>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
 <li>JavaScript 变量均为对象。当您声明一个变量时，就创建了一个新的对象。</li>
 <li>声明新变量时，可以使用关键词 “new” 来声明其类型。<code>var x = new String;</code></li>
@@ -735,14 +743,16 @@ function letTest() {
     let x = 2;  // 不同的变量
     console.log(x);  // 显示2
   }
-  console.log(x);  // 显示1</code></pre>
+  console.log(x);  // 显示1
+</code></pre>
 <ul>
 <li>在程序或者函数的顶层，let并不会像var一样在全局对象上创造一个属性.</li>
 </ul>
 <pre><code class="javascript">var x = &#39;global&#39;;
 let y = &#39;global&#39;;
 console.log(this.x); // &quot;global&quot;
-console.log(this.y); // undefined</code></pre>
+console.log(this.y); // undefined
+</code></pre>
 <h2 id="JS-面向对象"><a href="#JS-面向对象" class="headerlink" title="JS 面向对象"></a>JS 面向对象</h2><ul>
 <li>javascript是基于原型的面向对象的语言，没有类的概念。</li>
 </ul>
@@ -760,7 +770,8 @@ console.log(this.y); // undefined</code></pre>
   people.from();
   //由于对象并不和类关联， 我们可以随意地给这个对象增加属性
   people.speak = &quot;Chinese&quot;;
-  console.log(people.speak);</code></pre>
+  console.log(people.speak);
+</code></pre>
 <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
 <li>继承就是让两个对象建立关联，</li>
 <li>在 Javascript 中每个对象都有一个特殊的属性叫做<strong>proto</strong>， 你可以用这个属性去关联另外一个对象(原型)。</li>
@@ -776,9 +787,10 @@ console.log(this.y); // undefined</code></pre>
       _proto_:people;//指向people对象
     };
     american.from();
-    chinese.from();</code></pre>
+    chinese.from();
+</code></pre>
 <ul>
-<li>american, chinese 的原型都是 people，当 from() 方法被调用时，先在自身的方法列表中寻找，找不到时再去原型中去寻找，如果原型中找不到，就去原型的原型中寻找，直到 Object 那里，如果还找不到，那就是方法未定义。这些对象通过_proto_建立了一个原型链。</li>
+<li>american, chinese 的原型都是 people，当 from() 方法被调用时，先在自身的方法列表中寻找，找不到时再去原型中去寻找，如果原型中找不到，就去原型的原型中寻找，直到 Object 那里，如果还找不到，那就是方法未定义。这些对象通过<em>proto</em>建立了一个原型链。</li>
 </ul>
 <h3 id="构造函数-原型"><a href="#构造函数-原型" class="headerlink" title="构造函数 原型"></a>构造函数 原型</h3><ul>
 <li>将原型对象放入 Object.prototype 中，每次 new 新对象时，js会自动建立原型链。</li>
@@ -796,7 +808,8 @@ console.log(this.y); // undefined</code></pre>
   var laowang = new Student(&quot;laowang&quot;);
 
   xiaoming.say();
-  laowang.say();</code></pre>
+  laowang.say();
+</code></pre>
 <h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><pre><code class="javascript">  class Student{
     constructor(name){
       this.name = name;
@@ -807,7 +820,8 @@ console.log(this.y); // undefined</code></pre>
   }
 
   var xiaoming = new Student(&quot;xiaoming&quot;);
-  xiaoming.say();</code></pre>
+  xiaoming.say();
+</code></pre>
 <h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>  ​</p>
 <h2 id="AJAX-异步调用"><a href="#AJAX-异步调用" class="headerlink" title="AJAX 异步调用"></a>AJAX 异步调用</h2><ul>
 <li>异步的 JavaScript 和 XML</li>
@@ -822,7 +836,8 @@ console.log(this.y); // undefined</code></pre>
     &lt;author&gt;刘慈欣&lt;/author&gt;
    &lt;introduction&gt;中国最牛的科幻书&lt;/introduction&gt;
    &lt;price&gt;38.00&lt;/price&gt;
-&lt;/book&gt;</code></pre>
+&lt;/book&gt;
+</code></pre>
 <ul>
 <li>上面的数据中，标签占去了大部分，数据比较臃肿。</li>
 </ul>
@@ -856,7 +871,8 @@ var books = [
 &quot;author&quot;: &quot;刘欣&quot;,
 &quot;introduction&quot;: &quot;一个线程的自述&quot;,
 &quot;price&quot;: &quot;0.0&quot;
- }</code></pre>
+ }
+</code></pre>
 <ul>
 <li>books[0].name –&gt;返回“三体”</li>
 <li>books[1].author –&gt;返回“刘欣”</li>
@@ -904,7 +920,7 @@ var books = [
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/pages/343902f6/" id="post_nav-newer" class="prev-content">
+        <a href="/pages/218ff168/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>

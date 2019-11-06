@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="算法"> 
 
     
-        <meta property="article:published_time" content="Tue Nov 21 2017 12:52:13 GMT+0000">
-        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
+        <meta property="article:published_time" content="Tue Nov 21 2017 20:52:13 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 02:25:48 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/b511dfae/index.html",
     "headline": "欧几里得算法",
-    "datePublished": "Tue Nov 21 2017 12:52:13 GMT+0000",
-    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
+    "datePublished": "Tue Nov 21 2017 20:52:13 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 02:25:48 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -536,12 +536,11 @@
 <li>The length of Bob’s lap (larger than 0).</li>
 <li>The length of Charles’ lap (larger than 0).</li>
 <li>The first number is the number of laps that Bob has to run.</li>
-<li>The second number is the number of laps that Charles has to run.</li>
+<li>The second number is the number of laps that Charles has to run.<br><strong>Examples:</strong><pre><code class="javascript">nbrOfLaps(5, 3); // returns [3, 5]
+nbrOfLaps(4, 6); // returns [3, 2]
+</code></pre>
+<img src="http://ou37yhdfy.bkt.clouddn.com/201711212058_357.png" alt></li>
 </ol>
-<p><strong>Examples:</strong></p>
-<pre><code class="javascript">nbrOfLaps(5, 3); // returns [3, 5]
-nbrOfLaps(4, 6); // returns [3, 2]</code></pre>
-<p><img src="http://ou37yhdfy.bkt.clouddn.com/201711212058_357.png" alt></p>
 <p>思路: 这是一个求取最大公约数的问题, 二者各跑的圈数除以最大公约数, 即得到二人至少要跑的圈数.</p>
 <blockquote>
 <p>欧几里德算法又称辗转相除法，用于计算两个整数 a,b 的最大公约数。其计算原理依赖于下面的定理：<br><strong>定理：</strong> gcd(a,b) = gcd(b,a mod b)<br><strong>证明：</strong><br>a 可以表示成 a = kb + r，则 r = a mod b.<br>假设 d 是 a,b 的一个公约数，则有 d|a, d|b，而 r = a - kb，因此 d|r.<br>因此 d 是(b,a mod b)的公约数<br>假设 d 是(b,a mod b)的公约数，则<br>d|b , d |r ，但是 a = kb +r<br>因此 d 也是(a,b)的公约数<br>因此(a,b)和(b,a mod b)的公约数是一样的，其最大公约数也必然相等.</p>
@@ -551,7 +550,8 @@ nbrOfLaps(4, 6); // returns [3, 2]</code></pre>
   if (b === 0) return a;
   return gcd(b, a % b);
 };
-const nbrOfLaps = (x, y) =&gt; [y, x].map(item =&gt; item / gcd(x, y));</code></pre>
+const nbrOfLaps = (x, y) =&gt; [y, x].map(item =&gt; item / gcd(x, y));
+</code></pre>
 
         
     

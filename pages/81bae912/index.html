@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="Android"> 
 
     
-        <meta property="article:published_time" content="Fri Jun 16 2017 06:30:29 GMT+0000">
-        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
+        <meta property="article:published_time" content="Fri Jun 16 2017 14:30:29 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 02:25:48 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/81bae912/index.html",
     "headline": "Android简易计分板实现",
-    "datePublished": "Fri Jun 16 2017 06:30:29 GMT+0000",
-    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
+    "datePublished": "Fri Jun 16 2017 14:30:29 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 02:25:48 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -669,6 +669,7 @@
 
 
 &lt;/RelativeLayout&gt;
+
 </code></pre>
 <h3 id="三、交互"><a href="#三、交互" class="headerlink" title="三、交互"></a>三、交互</h3><ul>
 <li>通过 Button 的 android:onClick 属性指定方法。</li>
@@ -676,13 +677,15 @@
 <li>具体操作是在 active_main.xml 中设置 android:onClick=”buttonName” 为每个 Button 设置一个独特的名字，这个名字用于 Java 代码寻找和识别每个不同的 Button 。</li>
 </ul>
 <p>例如：</p>
-<pre><code class="xml">在 active_main.xml 中设置 Button3A 的 onClick 属性为 android:onClick=&quot;addThreeA&quot;</code></pre>
+<pre><code class="xml">在 active_main.xml 中设置 Button3A 的 onClick 属性为 android:onClick=&quot;addThreeA&quot;
+</code></pre>
 <p>在 MainActivity.java 中编写代码：</p>
 <pre><code class="java">    public void addThreeA(View view) {
 
     //所需要执行的操作，假如是 A 团队加三分
 
-    }</code></pre>
+    }
+</code></pre>
 <p>那么当你按下 Button3A 就将 A 团队的分数加上三分。</p>
 <h4 id="整个-MainActivity-java-代码"><a href="#整个-MainActivity-java-代码" class="headerlink" title="整个 MainActivity.java 代码"></a>整个 MainActivity.java 代码</h4><pre><code class="java">package com.roojay.android.courtcounter;
 
@@ -777,6 +780,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
 </code></pre>
 <h3 id="四、代码优化及-APP-美化"><a href="#四、代码优化及-APP-美化" class="headerlink" title="四、代码优化及 APP 美化"></a>四、代码优化及 APP 美化</h3><h4 id="style-xml-的设置"><a href="#style-xml-的设置" class="headerlink" title="style.xml 的设置"></a>style.xml 的设置</h4><ul>
 <li>当每一个 View 都有着大量相同的元素，可以将这些元素定义在<br><code>res/value/styles.xml</code> 中。</li>
@@ -787,13 +791,15 @@ public class MainActivity extends AppCompatActivity {
         &lt;item name=&quot;android:layout_width&quot;&gt;wrap_content&lt;/item&gt;
        ...
 
-    &lt;/style&gt;</code></pre>
+    &lt;/style&gt;
+</code></pre>
 <p>然后可以用<code>style=&quot;@style/cofe_textView&quot;</code>语句轻易地重复引用这些设置：</p>
 <p>例如：</p>
 <pre><code class="xml">&lt;TextView
               style=&quot;@style/textView&quot;
               android:id=&quot;@+id/teamb_text_view&quot;
               android:text=&quot;@string/team_b&quot; /&gt;
+
 </code></pre>
 <h4 id="整个-style-xml-代码如下"><a href="#整个-style-xml-代码如下" class="headerlink" title="整个 style.xml 代码如下"></a>整个 style.xml 代码如下</h4><pre><code class="xml">&lt;resources&gt;
 
@@ -846,6 +852,7 @@ public class MainActivity extends AppCompatActivity {
     &lt;/style&gt;
 
 &lt;/resources&gt;
+
 </code></pre>
 <h4 id="strings-xml"><a href="#strings-xml" class="headerlink" title="strings.xml"></a>strings.xml</h4><ul>
 <li>在 Android 中会将应用中出现的文字放入 string.xml 中，这样一个字符可以重复调用，而不用每次去编写，可以减少数据的冗余，减小 APP 应用的体积。并且当你的 APP 国际化时只需更改 strings.xml 中的文字定义，就可以实现其他语言的显示。</li>
@@ -855,9 +862,11 @@ public class MainActivity extends AppCompatActivity {
     &lt;string name=&quot;text_name&quot;&gt;显示的文字&lt;/string&gt;
     ...
 &lt;/resources&gt;
+
 </code></pre>
 <p>调用时：</p>
-<pre><code class="xml">android:text=&quot;@string/text_name&quot;</code></pre>
+<pre><code class="xml">android:text=&quot;@string/text_name&quot;
+</code></pre>
 <h4 id="整个-strings-xml-代码如下"><a href="#整个-strings-xml-代码如下" class="headerlink" title="整个 strings.xml 代码如下"></a>整个 strings.xml 代码如下</h4><pre><code class="xml">&lt;resources&gt;
     &lt;string name=&quot;app_name&quot;&gt;Court Counter&lt;/string&gt;
     &lt;string name=&quot;add2b&quot;&gt;+2 points&lt;/string&gt;
@@ -872,6 +881,7 @@ public class MainActivity extends AppCompatActivity {
     &lt;string name=&quot;add3b&quot;&gt;+3 points&lt;/string&gt;
     &lt;string name=&quot;reset_text_views&quot;&gt;reset&lt;/string&gt;
 &lt;/resources&gt;
+
 </code></pre>
 <h3 id="五、APP-强制锁定横竖屏"><a href="#五、APP-强制锁定横竖屏" class="headerlink" title="五、APP 强制锁定横竖屏"></a>五、APP 强制锁定横竖屏</h3><ul>
 <li>在最开始做出 APP 时没有考虑到 APP 横屏的问题，偶然一次横屏之后发现 APP 显示不全了，当时也没多想，既然横屏不行，那就去掉横屏显示，锁定在竖屏。上网查了下资料，锁定横竖屏有两种实现方式：XML 或 Java 方式。这个 APP 采用了 XML 锁定方式。</li>
@@ -905,7 +915,8 @@ public class MainActivity extends AppCompatActivity {
         &lt;/activity&gt;
     &lt;/application&gt;
 
-&lt;/manifest&gt;</code></pre>
+&lt;/manifest&gt;
+</code></pre>
 <h4 id="Java代码锁定横竖屏"><a href="#Java代码锁定横竖屏" class="headerlink" title="Java代码锁定横竖屏"></a>Java代码锁定横竖屏</h4><ul>
 <li>在onCreate()方法中加入锁定代码。</li>
 </ul>
@@ -917,7 +928,8 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//锁定为横屏
       //setRequestedOrientation(ActivityInfo .SCREEN_ORIENTATION_PORTRAIT);//锁定为竖屏
         setContentView(R.layout.activity_main);
-    }</code></pre>
+    }
+</code></pre>
 </li>
 </ul>
 <h3 id="六、APP-演示及源码"><a href="#六、APP-演示及源码" class="headerlink" title="六、APP 演示及源码"></a>六、APP 演示及源码</h3><ul>

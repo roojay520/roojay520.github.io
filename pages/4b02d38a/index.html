@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="JavaScript"> 
 
     
-        <meta property="article:published_time" content="Fri Sep 15 2017 16:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
+        <meta property="article:published_time" content="Sat Sep 16 2017 00:00:00 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 02:25:48 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/4b02d38a/index.html",
     "headline": "数组与字符串常用方法",
-    "datePublished": "Fri Sep 15 2017 16:00:00 GMT+0000",
-    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
+    "datePublished": "Sat Sep 16 2017 00:00:00 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 02:25:48 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -431,7 +431,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Roojay</strong>
-        <span>9月 15, 2017</span>
+        <span>9月 16, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -544,31 +544,38 @@
 <p>根据分隔符(字符串或者正则表达式)将一个字符串分割成数组。</p>
 <pre><code class="javascript">const str = &#39;wind rain fire&#39;;
 const arr = str.split(&#39; &#39;);
-console.log(arr); // arr[&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;]</code></pre>
+console.log(arr); // arr[&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;]
+</code></pre>
 <h2 id="join-数组连接成一个字符串"><a href="#join-数组连接成一个字符串" class="headerlink" title="join() 数组连接成一个字符串"></a>join() 数组连接成一个字符串</h2><p>arr.join(‘分隔符’)</p>
 <p>分隔符默认值为<code>,</code><br>将数组（或一个类数组对象）的所有元素使用分隔符连接成一个新字符串。</p>
 <pre><code class="javascript">const arr = [&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;];
 const str = arr.join(&#39;+&#39;);
-console.log(str); // wind+rain+fire</code></pre>
+console.log(str); // wind+rain+fire
+</code></pre>
 <h2 id="字符串快速排序"><a href="#字符串快速排序" class="headerlink" title="字符串快速排序"></a>字符串快速排序</h2><pre><code class="javascript">const strSort = str =&gt; str.split(&#39;&#39;).sort().join(&#39;&#39;);
-strSort(str);</code></pre>
+strSort(str);
+</code></pre>
 <h2 id="map-创建新数组"><a href="#map-创建新数组" class="headerlink" title="map() 创建新数组"></a>map() 创建新数组</h2><p>arr.map(callback)</p>
 <p>创建一个新数组，新数组的每个元素都是 callback 函数的结果。</p>
 <pre><code class="javascript">const arr = [1, 2, 3];
 const newArr = arr.map(num =&gt; num * 2);
-console.log(newArr); // newArr[2, 4, 6]</code></pre>
+console.log(newArr); // newArr[2, 4, 6]
+</code></pre>
 <h2 id="数组取最大最小值"><a href="#数组取最大最小值" class="headerlink" title="数组取最大最小值"></a>数组取最大最小值</h2><pre><code class="javascript">Math.max.apply(null, arr);  // 取数组最大值
-Math.min.apply(null, arr);  // 取数组最小值</code></pre>
+Math.min.apply(null, arr);  // 取数组最小值
+</code></pre>
 <p>ES6 扩展 rest 不定参数写法：</p>
 <pre><code class="javascript">Math.max(...arr);  // 取数组最大值
-Math.min(...arr);  // 取数组最小值</code></pre>
+Math.min(...arr);  // 取数组最小值
+</code></pre>
 <h2 id="filter-数组中取通过测试的值"><a href="#filter-数组中取通过测试的值" class="headerlink" title="filter() 数组中取通过测试的值"></a>filter() 数组中取通过测试的值</h2><p>filter(fn)</p>
 <p>创建一个新数组, 其包含通过 fn 函数测试返回值为 true 的所有元素。</p>
 <pre><code class="javascript">let [...arr] = [1, 2, 4, 7, 6];
 
 const isOdd = num =&gt; num % 2;
 
-let odd = arr.filter(isOdd); // odd is [1, 7]</code></pre>
+let odd = arr.filter(isOdd); // odd is [1, 7]
+</code></pre>
 <h2 id="slice-取一部分数组"><a href="#slice-取一部分数组" class="headerlink" title="slice() 取一部分数组"></a>slice() 取一部分数组</h2><p>slice(start, end)</p>
 <ul>
 <li>start, end 数组下标</li>
@@ -577,16 +584,19 @@ let odd = arr.filter(isOdd); // odd is [1, 7]</code></pre>
 <pre><code class="javascript">let arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;];
 let arr13 = arr.slice(1, 3);
 console.log(arr); // [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
-console.log(arr13); // [&#39;b&#39;, &#39;c&#39;]</code></pre>
+console.log(arr13); // [&#39;b&#39;, &#39;c&#39;]
+</code></pre>
 <p>如果参数为负数，例如<code>start = -3, end = -1</code>，就表示倒数第三位到倒数第一位，不包括</p>
 <h2 id="reduce-数组求和"><a href="#reduce-数组求和" class="headerlink" title="reduce() 数组求和"></a>reduce() 数组求和</h2><pre><code class="javascript">let arr = [1, 3, 5];
 let sumArr = arr.reduce((sum, value) =&gt; sum + value, 0);
-// sumArr is 9.</code></pre>
+// sumArr is 9.
+</code></pre>
 <p>sum 上一次调用回调返回的值，或者是提供的初始值 0;<br>num 数组中正在处理的元素;<br>0 可选项，其值用于第一次调用 callback 的第一个参数 sum。如果没有设置初始值，则将数组中的第一个元素作为初始值。空数组调用 reduce 时没有设置初始值将会报错。</p>
 <h2 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h2><p>str.repeat(n)</p>
 <p>创建 n 个 str 的副本，将其连接在一起返回一个新的字符串。</p>
 <pre><code class="javascript">&#39;ha&#39;.repeat(3); // &#39;hahaha&#39;
-&#39;ha&#39;.repeat(2); // &#39;haha&#39;</code></pre>
+&#39;ha&#39;.repeat(2); // &#39;haha&#39;
+</code></pre>
 <h2 id="match-字符串中正则取值"><a href="#match-字符串中正则取值" class="headerlink" title="match() 字符串中正则取值"></a>match() 字符串中正则取值</h2><p>str.match(regx)</p>
 <p>方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配，返回匹配值构成的数组。</p>
 

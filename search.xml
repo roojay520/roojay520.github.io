@@ -29,42 +29,24 @@
 <li>如何看待 SCSS 这种 CSS 预处理器？</li>
 </ol>
 <h2 id="JS-部分"><a href="#JS-部分" class="headerlink" title="JS 部分"></a>JS 部分</h2><ol>
-<li><p>谈谈你对原型的理解？</p>
-</li>
-<li><p>JS 如何实现继承？如何实现多继承？</p>
-</li>
-<li><p>闭包是什么？它的使用场景是什么？</p>
-</li>
-<li><p>什么是深拷贝与浅拷贝？如何实现？</p>
-</li>
-<li><p>如何判断一个变量是数组类型？</p>
-</li>
-<li><p>谈谈你对同步和异步的理解？</p>
-</li>
-<li><p>简述下变量提升与函数提升？如何避免？</p>
-</li>
-<li><p>熟悉 ES6 语法吗？ES6 带来了哪些改变？</p>
-</li>
-<li><p>你经常使用的数组方法有哪些？为什么要使用它们呢？</p>
-</li>
-<li><p>简述一下 Promise 的概念？它的实现原理是什么？</p>
-</li>
-<li><p>async/await 的作用是什么？它的实现原理是什么？</p>
-</li>
-<li><p>有了解过 Generator 函数吗？简单介绍一下。</p>
-</li>
-<li><p>了解 Iterator 吗？它的作用是什么？</p>
-</li>
-<li><p>import 和 require 引入有什么区别？</p>
-</li>
-<li><p>了解函数式编程这个概念吗？它有哪些特性？</p>
-</li>
-<li><p>如何理解高阶函数？</p>
-</li>
-<li><p>ES7 新增了哪些语法？</p>
-</li>
-<li><p>如何理解 JS 单线程？</p>
-</li>
+<li>谈谈你对原型的理解？</li>
+<li>JS 如何实现继承？如何实现多继承？</li>
+<li>闭包是什么？它的使用场景是什么？</li>
+<li>什么是深拷贝与浅拷贝？如何实现？</li>
+<li>如何判断一个变量是数组类型？</li>
+<li>谈谈你对同步和异步的理解？</li>
+<li>简述下变量提升与函数提升？如何避免？</li>
+<li>熟悉 ES6 语法吗？ES6 带来了哪些改变？</li>
+<li>你经常使用的数组方法有哪些？为什么要使用它们呢？</li>
+<li>简述一下 Promise 的概念？它的实现原理是什么？</li>
+<li>async/await 的作用是什么？它的实现原理是什么？</li>
+<li>有了解过 Generator 函数吗？简单介绍一下。</li>
+<li>了解 Iterator 吗？它的作用是什么？</li>
+<li>import 和 require 引入有什么区别？</li>
+<li>了解函数式编程这个概念吗？它有哪些特性？</li>
+<li>如何理解高阶函数？</li>
+<li>ES7 新增了哪些语法？</li>
+<li>如何理解 JS 单线程？</li>
 <li><p>编程题：以下 a.js 文件导出 name1、name，在 b.js 中输出 name1、name2 的值</p>
 <pre><code class="javascript">// a.js
 export const name1 = &#39;name1&#39;;
@@ -76,7 +58,8 @@ export default {
 import name, { name1 } from &#39;a.js&#39;;
 
 console.log(`name1: ${name1}`);
-console.log(`name2: ${name.name2}`);</code></pre>
+console.log(`name2: ${name.name2}`);
+</code></pre>
 </li>
 </ol>
 <h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><ol>
@@ -196,7 +179,8 @@ console.log(`name2: ${name.name2}`);</code></pre>
 <pre><code>{  
   eslint: &#39;^4.19.1 || ^5.3.0&#39;,
   eslint-plugin-import&#39;: &#39;^2.14.0&#39; 
-}</code></pre><ol start="2">
+}
+</code></pre><ol start="2">
 <li><p>安装对应版本的插件:</p>
 <p><code>npm install eslint-config-airbnb-base eslint@^#.#.# eslint-plugin-import@^#.#.# -g</code></p>
 </li>
@@ -225,7 +209,8 @@ console.log(`name2: ${name.name2}`);</code></pre>
         &quot;no-console&quot;:&quot;off&quot;,
         &quot;no-plusplus&quot;:&quot;off&quot;
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="ESLint-支持-Html-以及-Vue-单文件组件"><a href="#ESLint-支持-Html-以及-Vue-单文件组件" class="headerlink" title="ESLint 支持 Html 以及 Vue 单文件组件"></a>ESLint 支持 Html 以及 Vue 单文件组件</h2><ol>
 <li>安装 eslint-plugin-html 和 eslint-plugin-vue 插件</li>
 </ol>
@@ -252,7 +237,8 @@ console.log(`name2: ${name.name2}`);</code></pre>
      {
          &quot;language&quot;: &quot;vue&quot;,
          &quot;autoFix&quot;: true
-     }</code></pre>
+     }
+</code></pre>
 </li>
 </ol>
 ]]></content>
@@ -268,23 +254,23 @@ console.log(`name2: ${name.name2}`);</code></pre>
     <title>给 WIN 10 增加伪 sudo 命令</title>
     <url>/pages/c19490dd/</url>
     <content><![CDATA[<ol>
-<li><p>管理员权限打开 PowerShell</p>
-</li>
-<li><p>更改 PowerShell 默认脚本执行策略.</p>
-<ol>
+<li>管理员权限打开 PowerShell</li>
+<li>更改 PowerShell 默认脚本执行策略.<ol>
 <li>输入<code>get-executionpolicy</code> 查看当前脚本执行策略, 当前默认为为 <code>Restricted</code> 即不允许执行任何脚本。</li>
 <li>输入 <code>get-help set-executionpolicy</code>, 获取执行策略</li>
 <li>输入<code>set-executionpolicy remotesigned</code> 更改执行策略为 <code>remotesigned</code></li>
 </ol>
 </li>
 <li><p>输入下面脚本命令执行:</p>
-<pre><code class="bash">$script_path=&quot;$HOME\Documents\Scripts&quot;; if (!(test-path $script_path)) {New-Item -ItemType directory $script_path} if (!(test-path $profile)) { new-item -path $profile -itemtype file -force }&quot;. $script_path\sudo.ps1&quot; | Out-File $profile -append; &quot;function sudo(){if (`$args.Length -eq 1){start-process `$args[0] -verb `&quot;runAs`&quot;} if (`$args.Length -gt 1){start-process `$args[0] -ArgumentList `$args[1..`$args.Length] -verb `&quot;runAs`&quot;}}&quot; | Out-File $script_path\sudo.ps1; powershell</code></pre>
+<pre><code class="bash">$script_path=&quot;$HOME\Documents\Scripts&quot;; if (!(test-path $script_path)) {New-Item -ItemType directory $script_path} if (!(test-path $profile)) { new-item -path $profile -itemtype file -force }&quot;. $script_path\sudo.ps1&quot; | Out-File $profile -append; &quot;function sudo(){if (`$args.Length -eq 1){start-process `$args[0] -verb `&quot;runAs`&quot;} if (`$args.Length -gt 1){start-process `$args[0] -ArgumentList `$args[1..`$args.Length] -verb `&quot;runAs`&quot;}}&quot; | Out-File $script_path\sudo.ps1; powershell
+</code></pre>
 </li>
 <li><p>搜索 UAC 即更改用户账户控制设置, 设置为从不通知.</p>
 </li>
 </ol>
 <h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><pre><code class="bash">sudo powershell
-sudo cmd</code></pre>
+sudo cmd
+</code></pre>
 <p>参考链接: <a href="https://superuser.com/questions/42537/is-there-any-sudo-command-for-windows" target="_blank" rel="noopener">Is there any ‘sudo’ command for Windows?</a></p>
 ]]></content>
       <categories>
@@ -302,12 +288,11 @@ sudo cmd</code></pre>
 <li>The length of Bob’s lap (larger than 0).</li>
 <li>The length of Charles’ lap (larger than 0).</li>
 <li>The first number is the number of laps that Bob has to run.</li>
-<li>The second number is the number of laps that Charles has to run.</li>
+<li>The second number is the number of laps that Charles has to run.<br><strong>Examples:</strong><pre><code class="javascript">nbrOfLaps(5, 3); // returns [3, 5]
+nbrOfLaps(4, 6); // returns [3, 2]
+</code></pre>
+<img src="http://ou37yhdfy.bkt.clouddn.com/201711212058_357.png" alt></li>
 </ol>
-<p><strong>Examples:</strong></p>
-<pre><code class="javascript">nbrOfLaps(5, 3); // returns [3, 5]
-nbrOfLaps(4, 6); // returns [3, 2]</code></pre>
-<p><img src="http://ou37yhdfy.bkt.clouddn.com/201711212058_357.png" alt></p>
 <p>思路: 这是一个求取最大公约数的问题, 二者各跑的圈数除以最大公约数, 即得到二人至少要跑的圈数.</p>
 <blockquote>
 <p>欧几里德算法又称辗转相除法，用于计算两个整数 a,b 的最大公约数。其计算原理依赖于下面的定理：<br><strong>定理：</strong> gcd(a,b) = gcd(b,a mod b)<br><strong>证明：</strong><br>a 可以表示成 a = kb + r，则 r = a mod b.<br>假设 d 是 a,b 的一个公约数，则有 d|a, d|b，而 r = a - kb，因此 d|r.<br>因此 d 是(b,a mod b)的公约数<br>假设 d 是(b,a mod b)的公约数，则<br>d|b , d |r ，但是 a = kb +r<br>因此 d 也是(a,b)的公约数<br>因此(a,b)和(b,a mod b)的公约数是一样的，其最大公约数也必然相等.</p>
@@ -317,7 +302,8 @@ nbrOfLaps(4, 6); // returns [3, 2]</code></pre>
   if (b === 0) return a;
   return gcd(b, a % b);
 };
-const nbrOfLaps = (x, y) =&gt; [y, x].map(item =&gt; item / gcd(x, y));</code></pre>
+const nbrOfLaps = (x, y) =&gt; [y, x].map(item =&gt; item / gcd(x, y));
+</code></pre>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -349,7 +335,8 @@ const nbrOfLaps = (x, y) =&gt; [y, x].map(item =&gt; item / gcd(x, y));</code></
     &lt;/div&gt;
     &lt;component :is=&quot;currentView&quot;&gt;1&lt;/component&gt;
   &lt;/div&gt;
-&lt;/template&gt;</code></pre>
+&lt;/template&gt;
+</code></pre>
 <p>JavaScript 部分: 一个 title 数组和一个内容数组 views, 一个select 标识符, 用来确定被选中选项的 index 值, 还包括一个 toggle 方法用来响应鼠标点击更改 select 的值.</p>
 <pre><code class="javascript">&lt;script&gt;
   export default {
@@ -373,7 +360,8 @@ const nbrOfLaps = (x, y) =&gt; [y, x].map(item =&gt; item / gcd(x, y));</code></
         this.select = index;
       }
     }
-  };</code></pre>
+  };
+</code></pre>
 <p>CSS 部分: 这个主要问题是鼠标点击切换标题时, 下面的光标随之移到, 最开始使用 border-bottom 来作为光标, 但发现样式不好控制. 最后使用伪元素, 解决下光标问题. 为标题加一个 span 标签, 给其绑定一个动态的的 class selected, 当前选择元素的 select 和 当前的 index 相等时, 为其添上一个 selected 类.</p>
 <pre><code class="css">&lt;style lang=&quot;scss&quot;&gt;
   #tabs {
@@ -450,7 +438,8 @@ const nbrOfLaps = (x, y) =&gt; [y, x].map(item =&gt; item / gcd(x, y));</code></
       }
     }
   }
-&lt;/style&gt;</code></pre>
+&lt;/style&gt;
+</code></pre>
 <p>效果演示图: <img src="http://ou37yhdfy.bkt.clouddn.com/201711201243_855.gif" alt></p>
 ]]></content>
       <categories>
@@ -469,11 +458,7 @@ const nbrOfLaps = (x, y) =&gt; [y, x].map(item =&gt; item / gcd(x, y));</code></
 <ul>
 <li><p>安装 firebase 和 vuefire:<br><code>npm i -S firebase vuefire</code></p>
 </li>
-<li><p>在入口文件中注册使用 vuefire 和 firebase:</p>
-<pre><code class="JavaScript">// main.js
-import VueFire from &#39;vuefire&#39;;
-import Firebase from &#39;firebase&#39;;
-</code></pre>
+<li><p>在入口文件中注册使用 vuefire 和 firebase:<br><code>`</code>JavaScript<br>// main.js<br>import VueFire from ‘vuefire’;<br>import Firebase from ‘firebase’;</p>
 </li>
 </ul>
 <p>Vue.use(VueFire);</p>
@@ -492,10 +477,12 @@ const config = {
 // 注册 app
 Firebase.initializeApp(config);
 // 获取数据库引用
-const db = Firebase.database();</code></pre><p>通过 <code>.ref(&#39;/&#39;)</code> 取得位于根目录下的地址数据数组:</p>
+const db = Firebase.database();
+</code></pre><p>通过 <code>.ref(&#39;/&#39;)</code> 取得位于根目录下的地址数据数组:</p>
 <pre><code class="JavaScript">firebase: {
         data: db.ref(&#39;/&#39;)
-    },</code></pre>
+    },
+</code></pre>
 <p>使用 vue <code>v-for</code> 指令, 将数组数据渲染到页面列表中.</p>
 <p>为列表绑定一个 click 方法, 用于获取点击元素的 index, 在根据这个 index 的值渲染后面其他列表的数据.</p>
 <p><img src="https://i.loli.net/2017/11/18/5a0f0ff5c6cdb.gif" alt="gif"></p>
@@ -527,6 +514,7 @@ module.exports = function(a, b){
 const addSum = require(&#39;bar&#39;);
 // 或者 const addSum = require(&#39;./bar.js&#39;);
 const result = addSum(2, 5); // 7
+
 </code></pre>
 <h4 id="ES6-模块"><a href="#ES6-模块" class="headerlink" title="ES6 模块"></a>ES6 模块</h4><p>ES6 模块的设计思想是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西(require 是运行时加载模块)。ES6 通过过 <code>export</code> 命令显式指定输出的代码，再通过 <code>import</code> 命令输入。</p>
 <pre><code class="javascript">// bar.js
@@ -549,7 +537,8 @@ sumMinus(3, 2); // 1
 // 加载所有模块
 import &#39;./bar&#39;;
 sumAdd(2, 3); // 5
-sumMinus(3, 2); // 1</code></pre>
+sumMinus(3, 2); // 1
+</code></pre>
 <p><code>export default</code> 用于导出匿名函数.<br><code>import()</code> 类似于 Node 的 <code>require</code>方法，区别主要是前者是异步加载，后者是同步加载.<br><code>import()</code>返回一个 Promise 对象.</p>
 <h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><blockquote>
 <p>Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。</p>
@@ -558,7 +547,8 @@ sumMinus(3, 2); // 1</code></pre>
 <h4 id="Loader"><a href="#Loader" class="headerlink" title="Loader"></a>Loader</h4><p>Webpack 本身只能处理原生的 JavaScript 模块，但是 loader 转换器可以将各种类型的资源转换成 JavaScript 模块。任何资源都可以成为 Webpack 可以处理的模块。</p>
 <h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><p> plugin 和 loader 的区别是, loader 是在 import 时根据不同的文件名, 匹配不同的 loader对这个文件做处理,而 plugin 关注的不是文件的格式, 而是在编译的各个阶段, 会触发不同的事件,让你可以干预每个编译阶段.</p>
 <h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><pre><code class="bash"># 初始化一个项目,生成 package.json 文件
-$ npm init</code></pre>
+$ npm init
+</code></pre>
 <p>更改 package.json 文件:</p>
 <pre><code class="json">{
   &quot;name&quot;: &quot;webpack&quot;,
@@ -603,7 +593,8 @@ $ npm init</code></pre>
   &quot;dependencies&quot;: {
     &quot;normalize.css&quot;: &quot;^7.0.0&quot;
   }
-}</code></pre>
+}
+</code></pre>
 <p>设置 webpack.config 文件</p>
 <pre><code class="js">// 路径支持
 const path = require(&#39;path&#39;);
@@ -785,6 +776,7 @@ module.exports = {
         historyApiFallback: true
     }
 };
+
 </code></pre>
 ]]></content>
       <tags>
@@ -813,21 +805,26 @@ jQuery(document).ready(function(){
 // 或者使用以下方法
 $(document).ready(function(){
     $(&quot;h1&quot;).text(&quot;Hello World!);
-});</code></pre>
+});
+</code></pre>
 <h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><pre><code class="javascript">.class li:first; // 选择列表里面的第一个元素
 .class li:last; // 选择列表里面的最后一个元素
 .class li:odd; // 选择列表里面的奇数位元素
-.class li:even; // 选择列表里面的偶数位元素</code></pre>
+.class li:even; // 选择列表里面的偶数位元素
+</code></pre>
 <h2 id="遍历寻找操作-DOM-节点"><a href="#遍历寻找操作-DOM-节点" class="headerlink" title="遍历寻找操作 DOM 节点"></a>遍历寻找操作 DOM 节点</h2><blockquote>
 <p>速度快于选择器操作</p>
+<pre><code class="javascript">$(&quot;.class&quot;).find(&quot;li&quot;);
+</code></pre>
 </blockquote>
-<pre><code class="javascript">$(&quot;.class&quot;).find(&quot;li&quot;);</code></pre>
 <h3 id="遍历伪类选择"><a href="#遍历伪类选择" class="headerlink" title="遍历伪类选择"></a>遍历伪类选择</h3><pre><code class="javascript">$(&quot;.class&quot;).first(); // 选择列表第一个元素
 $(&quot;.class&quot;).last(); // 选择列表最后一个元素
 $(&quot;.class&quot;).odd(); // 选择列表奇数位元素
-$(&quot;.class&quot;).even(); // 选择列表偶数位元素</code></pre>
+$(&quot;.class&quot;).even(); // 选择列表偶数位元素
+</code></pre>
 <h3 id="上下遍历"><a href="#上下遍历" class="headerlink" title="上下遍历"></a>上下遍历</h3><pre><code class="javascript">$(&quot;.class&quot;).parent(&quot;li&quot;); // 向上一层遍历，得到直系父元素
-$(&quot;.class&quot;).children(&quot;li&quot;); // 向下遍历，得到直系子元素</code></pre>
+$(&quot;.class&quot;).children(&quot;li&quot;); // 向下遍历，得到直系子元素
+</code></pre>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -842,7 +839,8 @@ $(&quot;.class&quot;).children(&quot;li&quot;); // 向下遍历，得到直系�
     <content><![CDATA[<p>代码如下:</p>
 <pre><code class="javascript">const string = &#39;to young, too simple.&#39;;
 const toUp = str =&gt; str.split(&#39; &#39;).map(item =&gt; item.charAt(0).toLocaleUpperCase() + item.slice(1)).join(&#39; &#39;);
-toUp(string);</code></pre>
+toUp(string);
+</code></pre>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -859,20 +857,24 @@ toUp(string);</code></pre>
 <p><strong>例1：</strong></p>
 <pre><code class="javascript">a = 2;
 var a;
-console.log(a); // 2</code></pre>
+console.log(a); // 2
+</code></pre>
 <p>上面的例子等同于：</p>
 <pre><code class="javascript">var a;
 
 a = 2;
-console.log(a); // 2</code></pre>
+console.log(a); // 2
+</code></pre>
 <p><strong>例2：</strong></p>
 <pre><code class="javascript">console.log(a); //undefined
-var a = 2;</code></pre>
+var a = 2;
+</code></pre>
 <p>上面的例子等同于：</p>
 <pre><code class="javascript">var a;
 
 console.log(a); //undefined
-a = 2;</code></pre>
+a = 2;
+</code></pre>
 <h4 id="let-与-var区别"><a href="#let-与-var区别" class="headerlink" title="let 与 var区别"></a>let 与 var区别</h4><ol>
 <li><code>var</code>声明的变量作用域为最近的函数块，<code>let</code>声明的变量作用域为最近的闭合块，往往小于函数块。</li>
 <li><code>var</code>声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出<code>undefined</code>。</li>
@@ -889,7 +891,8 @@ function foo() {
 
 foo = function() {
     console.log(2);
-};</code></pre>
+};
+</code></pre>
 <p>上面的 foo() 函数执行会输出 1，而不是 2 。<br>上面的代码等同于：</p>
 <pre><code class="javascript">function foo() {
     console.log(1);
@@ -899,7 +902,8 @@ foo(); // 1
 
 foo = function() {
     console.log(2);
-};</code></pre>
+};
+</code></pre>
 <p><strong>函数会首先被提升，然后才是变量。</strong></p>
 <p>尽管 var foo 在 function foo(){..} 函数之前，但是 function foo(){..} 函数会被优先提升到了函数顶部， var foo 作为重复的声明会被忽略，但是如果后面再次使用函数声明会覆盖前面的声明。</p>
 <p>一个普通块内部的变量声明通常会被提升到所在作用域的顶部，例如：</p>
@@ -912,7 +916,8 @@ function foo() {
     }
 }
 
-f(); // undefined</code></pre>
+f(); // undefined
+</code></pre>
 <p>if 块作用域内部的 tmp 变量被提升到了 foo() 函数作用域的顶部，而赋值操作留在了 if 块作用域内部。上面的代码等同于：</p>
 <pre><code class="javascript">var tmp = new Date();
 
@@ -924,7 +929,8 @@ function foo() {
     }
 }
 
-foo(); // undefined</code></pre>
+foo(); // undefined
+</code></pre>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -1007,7 +1013,7 @@ foo(); // undefined</code></pre>
     <title>html列表</title>
     <url>/pages/a465a2c5/</url>
     <content><![CDATA[<h2 id="html-列表"><a href="#html-列表" class="headerlink" title="html 列表"></a>html 列表</h2><h3 id="1-无序列表"><a href="#1-无序列表" class="headerlink" title="1. 无序列表"></a>1. 无序列表</h3><p>使用标签: <code>ul</code> <code>li</code><br><strong>常用属性:</strong><br><code>disc</code>(实心圆)<br><code>circle</code>(空心圆)<br><code>square</code>(正方形)</p>
-<h3 id="2-有序列表"><a href="#2-有序列表" class="headerlink" title="2. 有序列表"></a>2. 有序列表</h3><p>使用标签: <code>ol</code> <code>li</code><br>*<em>常用属性: *</em><br><code>A</code>(大写字母ABC编号)<br><code>a</code>(小写字母abc编号)<br><code>I</code>(大写罗马数字编号)<br><code>i</code>(小写罗马数字编号)<br><code>start</code>(规定编号从何值开始)</p>
+<h3 id="2-有序列表"><a href="#2-有序列表" class="headerlink" title="2. 有序列表"></a>2. 有序列表</h3><p>使用标签: <code>ol</code> <code>li</code><br><strong>常用属性: </strong><br><code>A</code>(大写字母ABC编号)<br><code>a</code>(小写字母abc编号)<br><code>I</code>(大写罗马数字编号)<br><code>i</code>(小写罗马数字编号)<br><code>start</code>(规定编号从何值开始)</p>
 <h3 id="3-列表嵌套"><a href="#3-列表嵌套" class="headerlink" title="3. 列表嵌套"></a>3. 列表嵌套</h3><p>列表之间可以互相嵌套</p>
 <h3 id="4-自定义列表"><a href="#4-自定义列表" class="headerlink" title="4. 自定义列表"></a>4. 自定义列表</h3><p>没有编号，只有列表格式。<br>使用标签: <code>dl</code>(自定义列表) <code>dt</code>(列表项) <code>dd</code>(列表描述)</p>
 ]]></content>
@@ -1032,7 +1038,8 @@ foo(); // undefined</code></pre>
  -webkit-box-size: boder-size;
  -ms-box-size: boder-size;
  -moz-box-size: boder-size;
-}</code></pre>
+}
+</code></pre>
 <h2 id="浏览器前缀"><a href="#浏览器前缀" class="headerlink" title="浏览器前缀"></a>浏览器前缀</h2><ul>
 <li>-webkit</li>
 <li>-ms</li>
@@ -1047,7 +1054,8 @@ foo(); // undefined</code></pre>
 <pre><code class="css">{
     display: -webkit-flex;
     display: flex;
-}</code></pre>
+}
+</code></pre>
 ]]></content>
       <categories>
         <category>CSS</category>
@@ -1083,7 +1091,8 @@ foo(); // undefined</code></pre>
         display: -ms-inline-flex;
         display: -webkit-inline-flex;
         display: inline-flex;
-    }</code></pre>
+    }
+</code></pre>
 <h2 id="flex-属性"><a href="#flex-属性" class="headerlink" title="flex 属性"></a>flex 属性</h2><ul>
 <li>flex-direction：确立主轴。</li>
 <li>justify-content：定义了在当前行上，弹性项目沿主轴如何排布。</li>
@@ -1093,13 +1102,13 @@ foo(); // undefined</code></pre>
 <h3 id="flex-direction（主轴方向）"><a href="#flex-direction（主轴方向）" class="headerlink" title="flex-direction（主轴方向）"></a>flex-direction（主轴方向）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png" alt></p>
 <blockquote>
 <p>flex-direction 决定主轴方向（项目排列方向），包括四个值。</p>
-</blockquote>
 <ul>
 <li>row（默认值）：主轴为水平方向，起点在左端。</li>
 <li>row-reverse：主轴为水平方向，起点在右端。</li>
 <li>column：主轴为垂直方向，起点在上沿。</li>
 <li>column-reverse：主轴为垂直方向，起点在下沿。</li>
 </ul>
+</blockquote>
 <h3 id="flex-wrap（换行控制）"><a href="#flex-wrap（换行控制）" class="headerlink" title="flex-wrap（换行控制）"></a>flex-wrap（换行控制）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png" alt></p>
 <blockquote>
 <p>控制一条轴上放不下子项目该如何换行。</p>
@@ -1160,31 +1169,38 @@ foo(); // undefined</code></pre>
 <p>根据分隔符(字符串或者正则表达式)将一个字符串分割成数组。</p>
 <pre><code class="javascript">const str = &#39;wind rain fire&#39;;
 const arr = str.split(&#39; &#39;);
-console.log(arr); // arr[&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;]</code></pre>
+console.log(arr); // arr[&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;]
+</code></pre>
 <h2 id="join-数组连接成一个字符串"><a href="#join-数组连接成一个字符串" class="headerlink" title="join() 数组连接成一个字符串"></a>join() 数组连接成一个字符串</h2><p>arr.join(‘分隔符’)</p>
 <p>分隔符默认值为<code>,</code><br>将数组（或一个类数组对象）的所有元素使用分隔符连接成一个新字符串。</p>
 <pre><code class="javascript">const arr = [&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;];
 const str = arr.join(&#39;+&#39;);
-console.log(str); // wind+rain+fire</code></pre>
+console.log(str); // wind+rain+fire
+</code></pre>
 <h2 id="字符串快速排序"><a href="#字符串快速排序" class="headerlink" title="字符串快速排序"></a>字符串快速排序</h2><pre><code class="javascript">const strSort = str =&gt; str.split(&#39;&#39;).sort().join(&#39;&#39;);
-strSort(str);</code></pre>
+strSort(str);
+</code></pre>
 <h2 id="map-创建新数组"><a href="#map-创建新数组" class="headerlink" title="map() 创建新数组"></a>map() 创建新数组</h2><p>arr.map(callback)</p>
 <p>创建一个新数组，新数组的每个元素都是 callback 函数的结果。</p>
 <pre><code class="javascript">const arr = [1, 2, 3];
 const newArr = arr.map(num =&gt; num * 2);
-console.log(newArr); // newArr[2, 4, 6]</code></pre>
+console.log(newArr); // newArr[2, 4, 6]
+</code></pre>
 <h2 id="数组取最大最小值"><a href="#数组取最大最小值" class="headerlink" title="数组取最大最小值"></a>数组取最大最小值</h2><pre><code class="javascript">Math.max.apply(null, arr);  // 取数组最大值
-Math.min.apply(null, arr);  // 取数组最小值</code></pre>
+Math.min.apply(null, arr);  // 取数组最小值
+</code></pre>
 <p>ES6 扩展 rest 不定参数写法：</p>
 <pre><code class="javascript">Math.max(...arr);  // 取数组最大值
-Math.min(...arr);  // 取数组最小值</code></pre>
+Math.min(...arr);  // 取数组最小值
+</code></pre>
 <h2 id="filter-数组中取通过测试的值"><a href="#filter-数组中取通过测试的值" class="headerlink" title="filter() 数组中取通过测试的值"></a>filter() 数组中取通过测试的值</h2><p>filter(fn)</p>
 <p>创建一个新数组, 其包含通过 fn 函数测试返回值为 true 的所有元素。</p>
 <pre><code class="javascript">let [...arr] = [1, 2, 4, 7, 6];
 
 const isOdd = num =&gt; num % 2;
 
-let odd = arr.filter(isOdd); // odd is [1, 7]</code></pre>
+let odd = arr.filter(isOdd); // odd is [1, 7]
+</code></pre>
 <h2 id="slice-取一部分数组"><a href="#slice-取一部分数组" class="headerlink" title="slice() 取一部分数组"></a>slice() 取一部分数组</h2><p>slice(start, end)</p>
 <ul>
 <li>start, end 数组下标</li>
@@ -1193,16 +1209,19 @@ let odd = arr.filter(isOdd); // odd is [1, 7]</code></pre>
 <pre><code class="javascript">let arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;];
 let arr13 = arr.slice(1, 3);
 console.log(arr); // [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
-console.log(arr13); // [&#39;b&#39;, &#39;c&#39;]</code></pre>
+console.log(arr13); // [&#39;b&#39;, &#39;c&#39;]
+</code></pre>
 <p>如果参数为负数，例如<code>start = -3, end = -1</code>，就表示倒数第三位到倒数第一位，不包括</p>
 <h2 id="reduce-数组求和"><a href="#reduce-数组求和" class="headerlink" title="reduce() 数组求和"></a>reduce() 数组求和</h2><pre><code class="javascript">let arr = [1, 3, 5];
 let sumArr = arr.reduce((sum, value) =&gt; sum + value, 0);
-// sumArr is 9.</code></pre>
+// sumArr is 9.
+</code></pre>
 <p>sum 上一次调用回调返回的值，或者是提供的初始值 0;<br>num 数组中正在处理的元素;<br>0 可选项，其值用于第一次调用 callback 的第一个参数 sum。如果没有设置初始值，则将数组中的第一个元素作为初始值。空数组调用 reduce 时没有设置初始值将会报错。</p>
 <h2 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h2><p>str.repeat(n)</p>
 <p>创建 n 个 str 的副本，将其连接在一起返回一个新的字符串。</p>
 <pre><code class="javascript">&#39;ha&#39;.repeat(3); // &#39;hahaha&#39;
-&#39;ha&#39;.repeat(2); // &#39;haha&#39;</code></pre>
+&#39;ha&#39;.repeat(2); // &#39;haha&#39;
+</code></pre>
 <h2 id="match-字符串中正则取值"><a href="#match-字符串中正则取值" class="headerlink" title="match() 字符串中正则取值"></a>match() 字符串中正则取值</h2><p>str.match(regx)</p>
 <p>方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配，返回匹配值构成的数组。</p>
 ]]></content>
@@ -1236,6 +1255,7 @@ bar(); // 0
 bar(); // 1 闭包保存上次计算的值
 bar(); // 2
 baz(); // 0 新生成函数
+
 </code></pre>
 <p>将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。</p>
 <p>无论通过何种手段<strong>将内部函数传递到所在的词法作用域以外</strong>，它都会<strong>持有对原始定义作用域的引用</strong>，无论在何处<strong>执行这个函数都会使用闭包</strong>。</p>
@@ -1419,14 +1439,14 @@ baz(); // 0 新生成函数
         console.log(arguments[i]); // 根据参数索引打印参数
     }
 };
-bar(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;);</code></pre>
+bar(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;);
+</code></pre>
 <ul>
 <li>利用<code>arguments</code>可以获得调用者传入的所有参数。</li>
 <li><code>arguments</code>常用于判断传入参数个数。</li>
 </ul>
 <h2 id="rest-不定参数"><a href="#rest-不定参数" class="headerlink" title="rest 不定参数"></a>rest 不定参数</h2><blockquote>
 <p>JS 允许函数接收任意个参数，当参数个数不确定的情况下可以使用不定参数。</p>
-</blockquote>
 <pre><code class="javascript">&quot;use strict&quot;; // 严格模式
 // 接受任意个参数返回它们的和
 function sum(...rest) { // 不定参数写在参数最后，前面使用 ... 标识
@@ -1436,8 +1456,10 @@ function sum(...rest) { // 不定参数写在参数最后，前面使用 ... 标
   }
   console.log(result);
 }
-sum(1, 2, 3, 4); // 传入参数</code></pre>
+sum(1, 2, 3, 4); // 传入参数
+</code></pre>
 <p>不定参数写在参数最后，传入参数先绑定已有的参数，多余的参数以数组形式存入不定参数。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -1477,7 +1499,8 @@ sum(1, 2, 3, 4); // 传入参数</code></pre>
     transition: 0.2s box-shadow ease-in-out, 0.2s background-color ease-in-out, 0.2s border-color ease-in-out;
 }
 // 鼠标放上去时的颜色
-.btn:hover:not(:disabled) { background: ##148bb1;}</code></pre>
+.btn:hover:not(:disabled) { background: ##148bb1;}
+</code></pre>
 <h2 id="字体抗锯齿-webkit-font-smoothing有"><a href="#字体抗锯齿-webkit-font-smoothing有" class="headerlink" title="字体抗锯齿 -webkit-font-smoothing有"></a>字体抗锯齿 -webkit-font-smoothing有</h2><blockquote>
 <p>CSS3中用于webkit引擎(如chrome)中设置字体的抗锯齿或者说光滑度的属性。</p>
 </blockquote>
@@ -1488,7 +1511,6 @@ sum(1, 2, 3, 4); // 传入参数</code></pre>
 </ul>
 <h2 id="文本溢出-text-overflow"><a href="#文本溢出-text-overflow" class="headerlink" title="文本溢出 text-overflow"></a>文本溢出 text-overflow</h2><blockquote>
 <p>text-overflow 属性规定当文本溢出包含元素时发生的事情。</p>
-</blockquote>
 <ul>
 <li>clip    修剪文本。<ul>
 <li>ellipsis显示省略符号来代表被修剪的文本。</li>
@@ -1496,6 +1518,7 @@ sum(1, 2, 3, 4); // 传入参数</code></pre>
 </ul>
 </li>
 </ul>
+</blockquote>
 <h2 id="文本转换-text-transform"><a href="#文本转换-text-transform" class="headerlink" title="文本转换 text-transform"></a>文本转换 text-transform</h2><blockquote>
 <p>转换不同元素中的文本。</p>
 </blockquote>
@@ -1555,7 +1578,6 @@ sum(1, 2, 3, 4); // 传入参数</code></pre>
     <url>/pages/f5b5d35a/</url>
     <content><![CDATA[<h2 id="for-in"><a href="#for-in" class="headerlink" title="for-in"></a>for-in</h2><blockquote>
 <p><code>for-in</code>循环遍历的是对象的属性名称,可以将一个对象的属性循环遍历出来。</p>
-</blockquote>
 <pre><code class="javascript">var obj = {
     name: &#39;XiaoMing&#39;,
     age: 22,
@@ -1563,12 +1585,15 @@ sum(1, 2, 3, 4); // 传入参数</code></pre>
 };
 for(let key in obj){
     console.log(key); // &#39;name&#39; &#39;age&#39; &#39;sex&#39;
-}</code></pre>
+}
+</code></pre>
 <p>数组也是对象，<code>for-in</code>可以直接循环遍历出<code>Array</code>的索引，索引类型为 String 而不是 Number。</p>
 <pre><code class="javascript">var array = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
 for(let i in array){
     console.log(i); // 索引&#39;0&#39; &#39;1&#39; &#39;2&#39;
-}</code></pre>
+}
+</code></pre>
+</blockquote>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -1581,26 +1606,51 @@ for(let i in array){
     <title>git基础</title>
     <url>/pages/9891ebc8/</url>
     <content><![CDATA[<h2 id="git-基础命令"><a href="#git-基础命令" class="headerlink" title="git 基础命令"></a>git 基础命令</h2><h3 id="git-全局配置"><a href="#git-全局配置" class="headerlink" title="git 全局配置"></a>git 全局配置</h3><pre><code>git config —global user.name &quot;roojay&quot;
-git config —global user.email &quot;roojay520@gmail.com&quot;</code></pre><h3 id="创建文件夹-test"><a href="#创建文件夹-test" class="headerlink" title="创建文件夹 test"></a>创建文件夹 test</h3><pre><code>mkdir test</code></pre><h3 id="切换到-test-文件夹"><a href="#切换到-test-文件夹" class="headerlink" title="切换到 test 文件夹"></a>切换到 test 文件夹</h3><pre><code>cd test</code></pre><h3 id="新建-readme-md-文件"><a href="#新建-readme-md-文件" class="headerlink" title="新建 readme.md 文件"></a>新建 readme.md 文件</h3><pre><code>touch readme.md</code></pre><h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><pre><code>git init</code></pre><h3 id="查看仓库信息"><a href="#查看仓库信息" class="headerlink" title="查看仓库信息"></a>查看仓库信息</h3><pre><code>git status</code></pre><h3 id="添加-readme-md-到缓存区"><a href="#添加-readme-md-到缓存区" class="headerlink" title="添加 readme.md 到缓存区"></a>添加 readme.md 到缓存区</h3><pre><code>git add readme.md</code></pre><h3 id="将-readme-md-移除缓存区"><a href="#将-readme-md-移除缓存区" class="headerlink" title="将 readme.md 移除缓存区"></a>将 readme.md 移除缓存区</h3><pre><code>git rm --cached readme.md</code></pre><h3 id="删除-readme-md-文件"><a href="#删除-readme-md-文件" class="headerlink" title="删除 readme.md 文件"></a>删除 readme.md 文件</h3><pre><code>rm readme.md</code></pre><h3 id="删除文件-test-文件夹"><a href="#删除文件-test-文件夹" class="headerlink" title="删除文件 test 文件夹"></a>删除文件 test 文件夹</h3><pre><code> rm -r test</code></pre><h3 id="提交文件到本地仓库"><a href="#提交文件到本地仓库" class="headerlink" title="提交文件到本地仓库"></a>提交文件到本地仓库</h3><pre><code>git commit -m &#39;first commit&#39; //m 后面的 &#39;fisrst commit&#39; 表示提交信息</code></pre><h3 id="查看操作日志"><a href="#查看操作日志" class="headerlink" title="查看操作日志"></a>查看操作日志</h3><pre><code>git log</code></pre><h2 id="branch-操作"><a href="#branch-操作" class="headerlink" title="branch 操作"></a>branch 操作</h2><h3 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h3><pre><code>git branch</code></pre><h3 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h3><pre><code>git branch -r</code></pre><h3 id="创建新分支-test"><a href="#创建新分支-test" class="headerlink" title="创建新分支 test"></a>创建新分支 test</h3><pre><code>git branch test</code></pre><h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><pre><code>git checkout test</code></pre><h3 id="快速创建加切换"><a href="#快速创建加切换" class="headerlink" title="快速创建加切换"></a>快速创建加切换</h3><pre><code>git checkout -b test</code></pre><h3 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h3><pre><code>git branch -d
+git config —global user.email &quot;roojay520@gmail.com&quot;
+</code></pre><h3 id="创建文件夹-test"><a href="#创建文件夹-test" class="headerlink" title="创建文件夹 test"></a>创建文件夹 test</h3><pre><code>mkdir test
+</code></pre><h3 id="切换到-test-文件夹"><a href="#切换到-test-文件夹" class="headerlink" title="切换到 test 文件夹"></a>切换到 test 文件夹</h3><pre><code>cd test
+</code></pre><h3 id="新建-readme-md-文件"><a href="#新建-readme-md-文件" class="headerlink" title="新建 readme.md 文件"></a>新建 readme.md 文件</h3><pre><code>touch readme.md
+</code></pre><h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><pre><code>git init
+</code></pre><h3 id="查看仓库信息"><a href="#查看仓库信息" class="headerlink" title="查看仓库信息"></a>查看仓库信息</h3><pre><code>git status
+</code></pre><h3 id="添加-readme-md-到缓存区"><a href="#添加-readme-md-到缓存区" class="headerlink" title="添加 readme.md 到缓存区"></a>添加 readme.md 到缓存区</h3><pre><code>git add readme.md
+</code></pre><h3 id="将-readme-md-移除缓存区"><a href="#将-readme-md-移除缓存区" class="headerlink" title="将 readme.md 移除缓存区"></a>将 readme.md 移除缓存区</h3><pre><code>git rm --cached readme.md
+</code></pre><h3 id="删除-readme-md-文件"><a href="#删除-readme-md-文件" class="headerlink" title="删除 readme.md 文件"></a>删除 readme.md 文件</h3><pre><code>rm readme.md
+</code></pre><h3 id="删除文件-test-文件夹"><a href="#删除文件-test-文件夹" class="headerlink" title="删除文件 test 文件夹"></a>删除文件 test 文件夹</h3><pre><code> rm -r test
+</code></pre><h3 id="提交文件到本地仓库"><a href="#提交文件到本地仓库" class="headerlink" title="提交文件到本地仓库"></a>提交文件到本地仓库</h3><pre><code>git commit -m &#39;first commit&#39; //m 后面的 &#39;fisrst commit&#39; 表示提交信息
+</code></pre><h3 id="查看操作日志"><a href="#查看操作日志" class="headerlink" title="查看操作日志"></a>查看操作日志</h3><pre><code>git log
+</code></pre><h2 id="branch-操作"><a href="#branch-操作" class="headerlink" title="branch 操作"></a>branch 操作</h2><h3 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h3><pre><code>git branch
+</code></pre><h3 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h3><pre><code>git branch -r
+</code></pre><h3 id="创建新分支-test"><a href="#创建新分支-test" class="headerlink" title="创建新分支 test"></a>创建新分支 test</h3><pre><code>git branch test
+</code></pre><h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><pre><code>git checkout test
+</code></pre><h3 id="快速创建加切换"><a href="#快速创建加切换" class="headerlink" title="快速创建加切换"></a>快速创建加切换</h3><pre><code>git checkout -b test
+</code></pre><h3 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h3><pre><code>git branch -d
 //强制删除本地分支
-git branch -D test</code></pre><h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><pre><code>git push origin:testA</code></pre><h3 id="远程分支迁至本地"><a href="#远程分支迁至本地" class="headerlink" title="远程分支迁至本地"></a>远程分支迁至本地</h3><pre><code>git checkout testA origin/testA</code></pre><h3 id="版本标签"><a href="#版本标签" class="headerlink" title="版本标签"></a>版本标签</h3><pre><code>git tag //查看版本记录
+git branch -D test
+</code></pre><h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><pre><code>git push origin:testA
+</code></pre><h3 id="远程分支迁至本地"><a href="#远程分支迁至本地" class="headerlink" title="远程分支迁至本地"></a>远程分支迁至本地</h3><pre><code>git checkout testA origin/testA
+</code></pre><h3 id="版本标签"><a href="#版本标签" class="headerlink" title="版本标签"></a>版本标签</h3><pre><code>git tag //查看版本记录
 git tag v1.0.0 //创建版本 v1.0.0 标签
-git checkout v1.0.0 //切换到v1.0.0 版本状态</code></pre><h2 id="提交代码到-GitHub"><a href="#提交代码到-GitHub" class="headerlink" title="提交代码到 GitHub"></a>提交代码到 GitHub</h2><h3 id="1-生成-SSH"><a href="#1-生成-SSH" class="headerlink" title="1.生成 SSH"></a>1.生成 SSH</h3><pre><code>ssh-keygen -t rsa</code></pre><blockquote>
+git checkout v1.0.0 //切换到v1.0.0 版本状态
+</code></pre><h2 id="提交代码到-GitHub"><a href="#提交代码到-GitHub" class="headerlink" title="提交代码到 GitHub"></a>提交代码到 GitHub</h2><h3 id="1-生成-SSH"><a href="#1-生成-SSH" class="headerlink" title="1.生成 SSH"></a>1.生成 SSH</h3><pre><code>ssh-keygen -t rsa
+</code></pre><blockquote>
 <p>执行完以上命令后，在 C:/Users/Username/.ssh 文件下生成两个文件 id_rsa（密钥） 和 id_rsa.pub（公钥）</p>
 </blockquote>
 <h3 id="2-GitHub-添加-SSH-key"><a href="#2-GitHub-添加-SSH-key" class="headerlink" title="2.GitHub 添加 SSH key"></a>2.GitHub 添加 SSH key</h3><blockquote>
 <p> 将 id_rsa.pub 的内容添加到 GitHub： Setting→SSH keys and GPG keys→New SSH key<br> 输入 <code>ssh -T git@github.com</code>测试是否添加成功</p>
 </blockquote>
 <h3 id="3-Push-推送"><a href="#3-Push-推送" class="headerlink" title="3. Push 推送"></a>3. Push 推送</h3><pre><code>//将本地代码推到远程 master 分支
-git push origin master</code></pre><h3 id="4-Pull-拉取"><a href="#4-Pull-拉取" class="headerlink" title="4. Pull 拉取"></a>4. Pull 拉取</h3><pre><code>//将远程 master 分支的代码拉取到本地
-git pull origin master</code></pre><h3 id="5-提交代码"><a href="#5-提交代码" class="headerlink" title="5. 提交代码"></a>5. 提交代码</h3><pre><code>//clone 自己的项目
+git push origin master
+</code></pre><h3 id="4-Pull-拉取"><a href="#4-Pull-拉取" class="headerlink" title="4. Pull 拉取"></a>4. Pull 拉取</h3><pre><code>//将远程 master 分支的代码拉取到本地
+git pull origin master
+</code></pre><h3 id="5-提交代码"><a href="#5-提交代码" class="headerlink" title="5. 提交代码"></a>5. 提交代码</h3><pre><code>//clone 自己的项目
 git clone git@github.com:roojay520/test.git
 //修改 test 项目代码
 //commit 文件
 git add change.md
 git commit -m &#39;change file&#39;
 //推送到 GitHub
-git push origin master</code></pre><h3 id="6-关联本地已有项目"><a href="#6-关联本地已有项目" class="headerlink" title="6. 关联本地已有项目"></a>6. 关联本地已有项目</h3><blockquote>
+git push origin master
+</code></pre><h3 id="6-关联本地已有项目"><a href="#6-关联本地已有项目" class="headerlink" title="6. 关联本地已有项目"></a>6. 关联本地已有项目</h3><blockquote>
 <p>假如我们需要把本地已有的 test1 项目的所有代码提交到 GitHub 上的 test 项目。</p>
 </blockquote>
 <pre><code>//将本地 test1 项目与远程 test 项目关联
@@ -1609,7 +1659,8 @@ git remote add origin git@github.com:roojay520/test.git
 //查看当前项目的远程仓库
 git remote -v
 //向远程仓库提交代码
-git push origin master</code></pre><h2 id="git-进阶"><a href="#git-进阶" class="headerlink" title="git 进阶"></a>git 进阶</h2><h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><ul>
+git push origin master
+</code></pre><h2 id="git-进阶"><a href="#git-进阶" class="headerlink" title="git 进阶"></a>git 进阶</h2><h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><ul>
 <li><p>在Git中，用<code>HEAD</code>表示当前版本，上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个<code>^</code>比较容易数不过来，所以写成<code>HEAD~100</code>。</p>
 </li>
 <li><p>使用<code>git reflog</code>用来查看命令历史，或者使用<code>git log</code>查看提交 log，找到提交的 <code>commit id</code>。</p>
@@ -1618,17 +1669,17 @@ git push origin master</code></pre><h2 id="git-进阶"><a href="#git-进阶" cla
 </li>
 </ul>
 <pre><code>//这个 HEAD 可以是具体的 commit id
-git reset --hard HEAD^</code></pre><h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><h3 id="用户配置"><a href="#用户配置" class="headerlink" title="用户配置"></a>用户配置</h3><blockquote>
+git reset --hard HEAD^
+</code></pre><h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><h3 id="用户配置"><a href="#用户配置" class="headerlink" title="用户配置"></a>用户配置</h3><blockquote>
 <p>全局设置用户名和用户邮箱<br>user.name 用户名； user.email 用户邮箱</p>
-</blockquote>
 <pre><code>git config --global user.name &quot;roojay&quot;
-git config --global user.email &quot;roojay520@gmail.com&quot;</code></pre><blockquote>
-<p>如果单独的某一个项目想要用特定的邮箱，切换到你的项目，以码把 –global 参数去除，执行一遍。</p>
-</blockquote>
+git config --global user.email &quot;roojay520@gmail.com&quot;
+</code></pre><p>如果单独的某一个项目想要用特定的邮箱，切换到你的项目，以码把 –global 参数去除，执行一遍。</p>
 <pre><code>git config user.name &quot;roojay&quot;
-git config user.email &quot;roojay520@gmail.com&quot;</code></pre><h3 id="快捷配置-alias"><a href="#快捷配置-alias" class="headerlink" title="快捷配置 alias"></a>快捷配置 alias</h3><blockquote>
+git config user.email &quot;roojay520@gmail.com&quot;
+</code></pre></blockquote>
+<h3 id="快捷配置-alias"><a href="#快捷配置-alias" class="headerlink" title="快捷配置 alias"></a>快捷配置 alias</h3><blockquote>
 <p>为命令设置别名</p>
-</blockquote>
 <pre><code>//切换 ck
 git config --global alias.ck checkout #别名
 //提交 cm
@@ -1636,24 +1687,28 @@ git config --global alias.cm commit
 //查看信息 st
 git config --global alias.st status
 //分支 br
-git config --global alias.br branch</code></pre><blockquote>
-<p>组合命令</p>
+git config --global alias.br branch
+</code></pre><p>组合命令</p>
 </blockquote>
 <pre><code>//推送 psm
 git config --global alias.psm &#39;push origin master&#39;
 //拉取 plm
-git config --global alias.plm &#39;pull origin master&#39;</code></pre><pre><code>//个性日志输出 lg
+git config --global alias.plm &#39;pull origin master&#39;
+</code></pre><pre><code>//个性日志输出 lg
 git config --global alias.lg &quot;log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --date=relative&quot;
 //设置个性日志输出
-git log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --date=relative</code></pre><h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><blockquote>
+git log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --date=relative
+</code></pre><h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><blockquote>
 <p>rebase 跟 merge 的区别可以理解成有两个书架，需要把两个书架的书整理到一起去，第一种做法是 merge ，直接腾出一块地方把另一个书架的书全部放进去，这种做法你可以知道哪些书是来自另一个书架的；第二种做法就是 rebase ，他会把两个书架的书先进行比较，按照购书的时间来给他重新排序，然后重新放置好，这样做的好处就是合并之后的书架看起来很有逻辑，但是你很难清晰的知道哪些书来自哪个书架的。</p>
 </blockquote>
 <h3 id="merge-暴力合并"><a href="#merge-暴力合并" class="headerlink" title="merge 暴力合并"></a>merge 暴力合并</h3><blockquote>
 <p>在 testA 分支开发完了一个功能，合并到主分支 master 上去</p>
-</blockquote>
 <pre><code>git checkout master
-git merge testA</code></pre><h3 id="rebase-比较合并"><a href="#rebase-比较合并" class="headerlink" title="rebase 比较合并"></a>rebase 比较合并</h3><pre><code>git checkout master
-git rebase testA</code></pre>]]></content>
+git merge testA
+</code></pre></blockquote>
+<h3 id="rebase-比较合并"><a href="#rebase-比较合并" class="headerlink" title="rebase 比较合并"></a>rebase 比较合并</h3><pre><code>git checkout master
+git rebase testA
+</code></pre>]]></content>
       <categories>
         <category>Git</category>
       </categories>
@@ -1662,11 +1717,136 @@ git rebase testA</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>css和响应式</title>
+    <url>/pages/343902f6/</url>
+    <content><![CDATA[<h1 id="css框架"><a href="#css框架" class="headerlink" title="css框架"></a>css框架</h1><h2 id="Bootstrap-框架"><a href="#Bootstrap-框架" class="headerlink" title="Bootstrap 框架"></a>Bootstrap 框架</h2><blockquote>
+<p>Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。<br><a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/bootstrap/bootstrap-tutorial.html</a></p>
+</blockquote>
+<ul>
+<li>在 html head 开头引入下面代码：</li>
+</ul>
+<pre><code class="html">&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;!--  兼容古老的 IE --&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt;
+    &lt;!-- CSS 样式重置 --&gt;
+    &lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;!-- 引入 Bootstrap css 压缩文件--&gt;
+    &lt;link href=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;!-- 引入自己 css 的文件 --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;../style/task_1.css&quot;&gt;
+    &lt;title&gt;Test&lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
+<h2 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h2><blockquote>
+<p>根据不同像素屏幕，展示不同大小页面。</p>
+</blockquote>
+<p><code>!important</code> 为开发者提供了一个增加样式权重的方法。!important是对整条样式的声明，包括这个样式的属性和属性值。</p>
+<p><strong>### 媒体查询</strong></p>
+<pre><code class="css">@media only screen and (max-width: 300px) {
+    p {
+        background-color: red;
+    }
+}
+</code></pre>
+<ul>
+<li>only 兼容旧式浏览器。</li>
+<li>screen 表示这个媒体查询适用于所有屏幕。</li>
+<li>and 后面跟条件。</li>
+<li><strong>一般个@media样式要放在css样式表的最下面，不然会被相同样式覆盖。</strong></li>
+</ul>
+<h3 id="CSS-样式重置"><a href="#CSS-样式重置" class="headerlink" title="CSS 样式重置"></a>CSS 样式重置</h3><ul>
+<li>不同的浏览器在对于CSS没有定义的一些样式属性是不一样的</li>
+<li>比如没有在自己的CSS里面规定超链接有没有下划线的时候，有些浏览器有，有些浏览器没有。</li>
+<li>再比如有一些浏览器规定的超链接默认颜色是蓝色，有一些又是黑色。</li>
+<li>而这个CSS的功能就是对几乎所有的默认样式进行重置，让所有的浏览器上对于未定义的样式浏览效果达到一致。</li>
+</ul>
+<p><strong>使用方法：</strong></p>
+<pre><code class="html">&lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt;
+&lt;link href=&quot;https://lib.baomitu.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre>
+<h3 id="网格设计"><a href="#网格设计" class="headerlink" title="网格设计"></a>网格设计</h3><ul>
+<li>大部分网页采用 12 columns 设计，可以很好的划分为2，3，4等份。</li>
+</ul>
+<h2 id="文章字体"><a href="#文章字体" class="headerlink" title="文章字体"></a>文章字体</h2><ul>
+<li>segmentfault<br><code>`</code>css<br>font-family: -apple-system,”Helvetica Neue”,Helvetica,Arial,”PingFang SC”,”Hiragino Sans GB”,”WenQuanYi Micro Hei”,”Microsoft Yahei”,sans-serif;</li>
+</ul>
+<p>font-size: 14px;</p>
+<pre><code>
+* 知乎
+```css
+font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
+font-size: 15px;
+</code></pre><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>导航栏 #243d4c</p>
+<p>背景 #eee</p>
+<p>#f5f5f5</p>
+<p>#f8f8f8</p>
+<p>#ffffff</p>
+<p>按钮 #02b3e4</p>
+<p>#148bb1</p>
+<p>#2D78BA</p>
+<p>边框阴影</p>
+<pre><code class="css">.ss::before, .clss::before {
+    bottom: 0;
+    box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
+    content: &#39;&#39;;
+    display: block;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+</code></pre>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>html基础</title>
+    <url>/pages/1a147173/</url>
+    <content><![CDATA[<h2 id="完整-HTML-树"><a href="#完整-HTML-树" class="headerlink" title="完整 HTML 树"></a>完整 HTML 树</h2><p><img src="https://i.loli.net/2017/10/26/59f1ff406e5f5.png" alt="DOM"></p>
+<ul>
+<li>相关的 CSS 文件（针对样式）：</li>
+</ul>
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;
+</code></pre>
+<ul>
+<li>相关的 JavaScript 文件（更改渲染和行为的多用途脚本）：</li>
+</ul>
+<pre><code class="html">&lt;script src=&quot;myjavascripts.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<ul>
+<li>粗体斜体</li>
+</ul>
+<pre><code class="html">&lt;!-- 推荐使用&lt;strong&gt;进行加粗  --&gt;
+ &lt;strong&gt;粗体&lt;/strong&gt;
+&lt;!-- 推荐使用&lt;em&gt;进行斜体显示  --&gt;
+&lt;em&gt;斜体&lt;/em&gt;
+</code></pre>
+<ul>
+<li><code>&lt;sup&gt;</code> 标签定义上标文本。</li>
+<li><code>&lt;sub&gt;</code> 标签定义下标文本。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>javascript DOM</title>
     <url>/pages/218ff168/</url>
     <content><![CDATA[<h2 id="消息窗口"><a href="#消息窗口" class="headerlink" title="消息窗口"></a>消息窗口</h2><ul>
-<li><p>document.write(字符串或者变量或者 Html 标签); 直接在向 html 的输出流中写内容，直接在网页中输出容。</p>
-</li>
+<li>document.write(字符串或者变量或者 Html 标签); 直接在向 html 的输出流中写内容，直接在网页中输出容。</li>
 <li><p>alert(字符串或变量); 弹出一个包含确定的消息对话框。<br><img src="https://i.loli.net/2017/10/26/59f1ff9e6f473.png" alt="js-alert"></p>
 </li>
 <li><p>confirm(stri); 弹出一个包含确定和取消的消息对话框。</p>
@@ -1684,68 +1864,19 @@ git rebase testA</code></pre>]]></content>
 </li>
 <li><p>open() 方法可以查找一个已经存在或者新建的浏览器窗口。</p>
 <ul>
-<li>window.open() 打开一个新窗口。<br>```javascript<br>window.open([URL], [窗口名称], [窗口参数设置])<br>/* URL(可选参数):网页网址或路径，如果它的值是空字符串，那么窗口就不显示任何文档。</li>
+<li>window.open() 打开一个新窗口。<br><code>`</code>javascript<br>window.open([URL], [窗口名称], [窗口参数设置])<br>/* URL(可选参数):网页网址或路径，如果它的值是空字符串，那么窗口就不显示任何文档。</li>
 <li>窗口名称(可选参数)：被打开窗口的名称。只能由字母，数字或下划线构成。</li>
 <li>_balnk:新窗口打开； _self:当前窗口打开； _top：框架网页中在上部窗口中显示目标网页；</li>
-<li>相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。</li>
-<li>/<br>```</li>
-<li>窗口参数 ：<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>值</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>top</td>
-<td>Number</td>
-<td>窗口顶部离开屏幕顶部像素</td>
-</tr>
-<tr>
-<td>left</td>
-<td>Number</td>
-<td>窗口顶部离开屏幕顶部像素</td>
-</tr>
-<tr>
-<td>width</td>
-<td>Number</td>
-<td>窗口宽度</td>
-</tr>
-<tr>
-<td>height</td>
-<td>Number</td>
-<td>窗口高度</td>
-</tr>
-<tr>
-<td>menubar</td>
-<td>yes，no</td>
-<td>窗口菜单</td>
-</tr>
-<tr>
-<td>toolbar</td>
-<td>yes，no</td>
-<td>窗口工具栏</td>
-</tr>
-<tr>
-<td>scrollbars</td>
-<td>yes，no</td>
-<td>窗口滚动条</td>
-</tr>
-<tr>
-<td>status</td>
-<td>yes，no</td>
-<td>窗口状态栏</td>
-</tr>
-</tbody></table>
-</li>
+<li>相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。<br>*/<br><code>`</code></li>
+<li>窗口参数 ：<br>| 参数       | 值      | 含义                     |<br>| ———- | ——- | ———————— |<br>| top        | Number  | 窗口顶部离开屏幕顶部像素 |<br>| left       | Number  | 窗口顶部离开屏幕顶部像素 |<br>| width      | Number  | 窗口宽度                 |<br>| height     | Number  | 窗口高度                 |<br>| menubar    | yes，no | 窗口菜单                 |<br>| toolbar    | yes，no | 窗口工具栏               |<br>| scrollbars | yes，no | 窗口滚动条               |<br>| status     | yes，no | 窗口状态栏               |</li>
 </ul>
 </li>
 <li><p>close() 关闭窗口</p>
 </li>
 </ul>
 <pre><code class="javascript">    window.close(); // 关闭本窗口
-    [对象窗口].close() // 关闭对象窗口</code></pre>
+    [对象窗口].close() // 关闭对象窗口
+</code></pre>
 <h2 id="JS-HTML-DOM"><a href="#JS-HTML-DOM" class="headerlink" title="JS HTML DOM"></a>JS HTML DOM</h2><blockquote>
 <p>浏览器从服务器取到HTML网页以后， 会展示成页面让你看， 但是他的内部其实会把HTML组织成一个树给JS,这个树可以称为DOM。 例如这个页面：</p>
 </blockquote>
@@ -1759,7 +1890,8 @@ git rebase testA</code></pre>]]></content>
  &lt;body&gt;
    &lt;p&gt;hello world!&lt;/p&gt;
  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;/html&gt;
+</code></pre>
 <p><img src="https://i.loli.net/2017/10/26/59f1ffc7e1cb1.png" alt="full-html-tree"></p>
 <p>通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML:</p>
 <ul>
@@ -1813,7 +1945,8 @@ var y = x.getElementsByTagName(&quot;p&quot;);</code></li>
 <th>含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>onclick</td>
 <td>元素被点击时，调用绑定函数</td>
 </tr>
@@ -1837,13 +1970,16 @@ var y = x.getElementsByTagName(&quot;p&quot;);</code></li>
 <td>onfocus 和 onblur</td>
 <td>获得焦点或者失去焦点时，触发事件。例如：向文本框输入时，改变其背景颜色</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 id="绑定方式"><a href="#绑定方式" class="headerlink" title="绑定方式"></a>绑定方式</h3><ol>
 <li>js 中绑定<pre><code class="javascript">//  必须是一个函数的引用或函数名，而不是函数调用
 // 例如：foo(); 在这里将无效
-document.getElementById(&quot;ID&quot;).onclick = foo;</code></pre>
+document.getElementById(&quot;ID&quot;).onclick = foo;
+</code></pre>
 </li>
-<li>html 中绑定<pre><code class="html">onclick=&quot;foo()&quot;</code></pre>
+<li>html 中绑定<pre><code class="html">onclick=&quot;foo()&quot;
+</code></pre>
 </li>
 </ol>
 ]]></content>
@@ -1852,121 +1988,6 @@ document.getElementById(&quot;ID&quot;).onclick = foo;</code></pre>
       </categories>
       <tags>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>html基础</title>
-    <url>/pages/1a147173/</url>
-    <content><![CDATA[<h2 id="完整-HTML-树"><a href="#完整-HTML-树" class="headerlink" title="完整 HTML 树"></a>完整 HTML 树</h2><p><img src="https://i.loli.net/2017/10/26/59f1ff406e5f5.png" alt="DOM"></p>
-<ul>
-<li>相关的 CSS 文件（针对样式）：</li>
-</ul>
-<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;</code></pre>
-<ul>
-<li>相关的 JavaScript 文件（更改渲染和行为的多用途脚本）：</li>
-</ul>
-<pre><code class="html">&lt;script src=&quot;myjavascripts.js&quot;&gt;&lt;/script&gt;</code></pre>
-<ul>
-<li>粗体斜体</li>
-</ul>
-<pre><code class="html">&lt;!-- 推荐使用&lt;strong&gt;进行加粗  --&gt;
- &lt;strong&gt;粗体&lt;/strong&gt;
-&lt;!-- 推荐使用&lt;em&gt;进行斜体显示  --&gt;
-&lt;em&gt;斜体&lt;/em&gt;</code></pre>
-<ul>
-<li><code>&lt;sup&gt;</code> 标签定义上标文本。</li>
-<li><code>&lt;sub&gt;</code> 标签定义下标文本。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>HTML</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>css和响应式</title>
-    <url>/pages/343902f6/</url>
-    <content><![CDATA[<h1 id="css框架"><a href="#css框架" class="headerlink" title="css框架"></a>css框架</h1><h2 id="Bootstrap-框架"><a href="#Bootstrap-框架" class="headerlink" title="Bootstrap 框架"></a>Bootstrap 框架</h2><blockquote>
-<p>Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。<br><a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/bootstrap/bootstrap-tutorial.html</a></p>
-</blockquote>
-<ul>
-<li>在 html head 开头引入下面代码：</li>
-</ul>
-<pre><code class="html">&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;!--  兼容古老的 IE --&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt;
-    &lt;!-- CSS 样式重置 --&gt;
-    &lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-    &lt;!-- 引入 Bootstrap css 压缩文件--&gt;
-    &lt;link href=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-    &lt;!-- 引入自己 css 的文件 --&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;../style/task_1.css&quot;&gt;
-    &lt;title&gt;Test&lt;/title&gt;
-&lt;/head&gt;</code></pre>
-<h2 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h2><blockquote>
-<p>根据不同像素屏幕，展示不同大小页面。</p>
-</blockquote>
-<p><code>!important</code> 为开发者提供了一个增加样式权重的方法。!important是对整条样式的声明，包括这个样式的属性和属性值。</p>
-<p><strong>### 媒体查询</strong></p>
-<pre><code class="css">@media only screen and (max-width: 300px) {
-    p {
-        background-color: red;
-    }
-}</code></pre>
-<ul>
-<li>only 兼容旧式浏览器。</li>
-<li>screen 表示这个媒体查询适用于所有屏幕。</li>
-<li>and 后面跟条件。</li>
-<li><strong>一般个@media样式要放在css样式表的最下面，不然会被相同样式覆盖。</strong></li>
-</ul>
-<h3 id="CSS-样式重置"><a href="#CSS-样式重置" class="headerlink" title="CSS 样式重置"></a>CSS 样式重置</h3><ul>
-<li>不同的浏览器在对于CSS没有定义的一些样式属性是不一样的</li>
-<li>比如没有在自己的CSS里面规定超链接有没有下划线的时候，有些浏览器有，有些浏览器没有。</li>
-<li>再比如有一些浏览器规定的超链接默认颜色是蓝色，有一些又是黑色。</li>
-<li>而这个CSS的功能就是对几乎所有的默认样式进行重置，让所有的浏览器上对于未定义的样式浏览效果达到一致。</li>
-</ul>
-<p><strong>使用方法：</strong></p>
-<pre><code class="html">&lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt;
-&lt;link href=&quot;https://lib.baomitu.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
-<h3 id="网格设计"><a href="#网格设计" class="headerlink" title="网格设计"></a>网格设计</h3><ul>
-<li>大部分网页采用 12 columns 设计，可以很好的划分为2，3，4等份。</li>
-</ul>
-<h2 id="文章字体"><a href="#文章字体" class="headerlink" title="文章字体"></a>文章字体</h2><ul>
-<li>segmentfault<pre><code class="css">font-family: -apple-system,&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;WenQuanYi Micro Hei&quot;,&quot;Microsoft Yahei&quot;,sans-serif;
-</code></pre>
-</li>
-</ul>
-<p>font-size: 14px;</p>
-<pre><code>
-* 知乎
-```css
-font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
-font-size: 15px;</code></pre><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>导航栏 #243d4c</p>
-<p>背景 #eee<br>#f5f5f5<br>#f8f8f8<br>#ffffff</p>
-<p>按钮 #02b3e4<br>#148bb1<br>#2D78BA</p>
-<p>边框阴影</p>
-<pre><code class="css">.ss::before, .clss::before {
-    bottom: 0;
-    box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
-    content: &#39;&#39;;
-    display: block;
-    left: 0;
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-}</code></pre>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1996,7 +2017,8 @@ var a = str.length;
 var b = str.indexOf(&#39;花&#39;);
 // 通过索引获取字符 &#39;百花&#39;
 var c = str.slice(b - 1, b + 1);
-console.log(&quot;字符串长度：&quot; + a + &quot;\n花的索引：&quot; + b + &quot;\n获取花字符：&quot; + c);</code></pre>
+console.log(&quot;字符串长度：&quot; + a + &quot;\n花的索引：&quot; + b + &quot;\n获取花字符：&quot; + c);
+</code></pre>
 </li>
 </ul>
 <pre><code class="javascript">/* 将一个大小混写的人名，姓全部转换为大写，名除首字母外全部转换为小写。
@@ -2018,7 +2040,8 @@ function nameChanger(name) {
   finaName = names.join(&quot; &quot;);
   console.log(finaName);
 }
-nameChanger(name);</code></pre>
+nameChanger(name);
+</code></pre>
 <h4 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h4><ul>
 <li>splice(index, num, item1,…..,itemN); 用于插入、删除或替换数组的元素。<ul>
 <li>index （必须） 删除/添加元素的开始下标。</li>
@@ -2054,7 +2077,8 @@ console.log(&#39;true&#39;);
 else {
 console.log(&#39;flase&#39;);
 }
-// 输出 true</code></pre>
+// 输出 true
+</code></pre>
 </li>
 </ul>
 <h4 id="日期-Date"><a href="#日期-Date" class="headerlink" title="日期(Date)"></a>日期(Date)</h4><h4 id="方法-function"><a href="#方法-function" class="headerlink" title="方法(function)"></a>方法(function)</h4><ul>
@@ -2063,20 +2087,22 @@ console.log(&#39;flase&#39;);
 </ul>
 <h4 id="空（Null）"><a href="#空（Null）" class="headerlink" title="空（Null）"></a>空（Null）</h4><ul>
 <li>表示什么都没有，将变量赋值 null 可以清除变量的内容（不删除变量）。<pre><code class="javascript">var num = null; // 值为空 null
-typeof num; //返回值为 object</code></pre>
+typeof num; //返回值为 object
+</code></pre>
 </li>
 </ul>
 <h4 id="未定义（Undefined）"><a href="#未定义（Undefined）" class="headerlink" title="未定义（Undefined）"></a>未定义（Undefined）</h4><ul>
 <li>变量的值未定义。可以将变量与 undefined 进行比较确定变量是否存在。</li>
 <li>也可以通过将变量的类型与字符串“undefined”进行比较确定其类型是否为 undefined。<pre><code class="javascript">var num;
-typeof num; // 返回值为 undefined</code></pre>
-</li>
-<li><em>null 和 undefined 的值相等，类型不同。null 值的行为与数字 0 类似，而 undefined 的行为与特定值 NaN（非数字）类似。*</em></li>
+typeof num; // 返回值为 undefined
+</code></pre>
+<strong>null 和 undefined 的值相等，类型不同。null 值的行为与数字 0 类似，而 undefined 的行为与特定值 NaN（非数字）类似。</strong></li>
 </ul>
 <p>JavaScript 拥有动态类型，相同的变量可用作不同的类型：</p>
 <pre><code class="javascript">var x;               // 此时 x 为 undefined
 var x = 5;           // 此时 x 为数字
-var x = &#39;hello&#39;;      // 此时 x 为字符串</code></pre>
+var x = &#39;hello&#39;;      // 此时 x 为字符串
+</code></pre>
 <h4 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h4><ul>
 <li>JavaScript 是一个弱类型的语言，其变量类型由其值的类型决定。</li>
 <li>字符串、数字和布尔值的强制转换规则：<ul>
@@ -2100,7 +2126,8 @@ var b = 12;
 a ^= b;
 b ^= a;
 a ^= b;
-console.log(&#39;a is:&#39; + a + &#39;\nb is:&#39; + b); // a is:12 b is:10</code></pre>
+console.log(&#39;a is:&#39; + a + &#39;\nb is:&#39; + b); // a is:12 b is:10
+</code></pre>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><blockquote>
 <p>函数也称为’全局方法’。</p>
 </blockquote>
@@ -2137,12 +2164,14 @@ console.log(&#39;a is:&#39; + a + &#39;\nb is:&#39; + b); // a is:12 b is:10</co
 <pre><code class="javascript">//会报错误
 &quot;&quot;name&quot; + 18&quot;
 //正确的方式
-&#39;&quot;name&quot; + 18&#39;</code></pre>
+&#39;&quot;name&quot; + 18&#39;
+</code></pre>
 <h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><blockquote>
-<p>允许嵌入表达式的字符串。使用反引号（``）代替单引号或者双引号，中间包含特定语法（${表达式}）,表达式是任意 JavaScript 表达式（如变量或函数）。</p>
-</blockquote>
+<p>允许嵌入表达式的字符串。使用反引号（<code></code>）代替单引号或者双引号，中间包含特定语法（${表达式}）,表达式是任意 JavaScript 表达式（如变量或函数）。</p>
 <pre><code class="javascript">  `hello ${表达式}`;
-   `sun ${a + b}`</code></pre>
+   `sun ${a + b}`
+</code></pre>
+</blockquote>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
 <li>JavaScript 变量均为对象。当您声明一个变量时，就创建了一个新的对象。</li>
 <li>声明新变量时，可以使用关键词 “new” 来声明其类型。<code>var x = new String;</code></li>
@@ -2167,14 +2196,16 @@ function letTest() {
     let x = 2;  // 不同的变量
     console.log(x);  // 显示2
   }
-  console.log(x);  // 显示1</code></pre>
+  console.log(x);  // 显示1
+</code></pre>
 <ul>
 <li>在程序或者函数的顶层，let并不会像var一样在全局对象上创造一个属性.</li>
 </ul>
 <pre><code class="javascript">var x = &#39;global&#39;;
 let y = &#39;global&#39;;
 console.log(this.x); // &quot;global&quot;
-console.log(this.y); // undefined</code></pre>
+console.log(this.y); // undefined
+</code></pre>
 <h2 id="JS-面向对象"><a href="#JS-面向对象" class="headerlink" title="JS 面向对象"></a>JS 面向对象</h2><ul>
 <li>javascript是基于原型的面向对象的语言，没有类的概念。</li>
 </ul>
@@ -2192,7 +2223,8 @@ console.log(this.y); // undefined</code></pre>
   people.from();
   //由于对象并不和类关联， 我们可以随意地给这个对象增加属性
   people.speak = &quot;Chinese&quot;;
-  console.log(people.speak);</code></pre>
+  console.log(people.speak);
+</code></pre>
 <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
 <li>继承就是让两个对象建立关联，</li>
 <li>在 Javascript 中每个对象都有一个特殊的属性叫做<strong>proto</strong>， 你可以用这个属性去关联另外一个对象(原型)。</li>
@@ -2208,9 +2240,10 @@ console.log(this.y); // undefined</code></pre>
       _proto_:people;//指向people对象
     };
     american.from();
-    chinese.from();</code></pre>
+    chinese.from();
+</code></pre>
 <ul>
-<li>american, chinese 的原型都是 people，当 from() 方法被调用时，先在自身的方法列表中寻找，找不到时再去原型中去寻找，如果原型中找不到，就去原型的原型中寻找，直到 Object 那里，如果还找不到，那就是方法未定义。这些对象通过_proto_建立了一个原型链。</li>
+<li>american, chinese 的原型都是 people，当 from() 方法被调用时，先在自身的方法列表中寻找，找不到时再去原型中去寻找，如果原型中找不到，就去原型的原型中寻找，直到 Object 那里，如果还找不到，那就是方法未定义。这些对象通过<em>proto</em>建立了一个原型链。</li>
 </ul>
 <h3 id="构造函数-原型"><a href="#构造函数-原型" class="headerlink" title="构造函数 原型"></a>构造函数 原型</h3><ul>
 <li>将原型对象放入 Object.prototype 中，每次 new 新对象时，js会自动建立原型链。</li>
@@ -2228,7 +2261,8 @@ console.log(this.y); // undefined</code></pre>
   var laowang = new Student(&quot;laowang&quot;);
 
   xiaoming.say();
-  laowang.say();</code></pre>
+  laowang.say();
+</code></pre>
 <h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><pre><code class="javascript">  class Student{
     constructor(name){
       this.name = name;
@@ -2239,7 +2273,8 @@ console.log(this.y); // undefined</code></pre>
   }
 
   var xiaoming = new Student(&quot;xiaoming&quot;);
-  xiaoming.say();</code></pre>
+  xiaoming.say();
+</code></pre>
 <h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>  ​</p>
 <h2 id="AJAX-异步调用"><a href="#AJAX-异步调用" class="headerlink" title="AJAX 异步调用"></a>AJAX 异步调用</h2><ul>
 <li>异步的 JavaScript 和 XML</li>
@@ -2254,7 +2289,8 @@ console.log(this.y); // undefined</code></pre>
     &lt;author&gt;刘慈欣&lt;/author&gt;
    &lt;introduction&gt;中国最牛的科幻书&lt;/introduction&gt;
    &lt;price&gt;38.00&lt;/price&gt;
-&lt;/book&gt;</code></pre>
+&lt;/book&gt;
+</code></pre>
 <ul>
 <li>上面的数据中，标签占去了大部分，数据比较臃肿。</li>
 </ul>
@@ -2288,7 +2324,8 @@ var books = [
 &quot;author&quot;: &quot;刘欣&quot;,
 &quot;introduction&quot;: &quot;一个线程的自述&quot;,
 &quot;price&quot;: &quot;0.0&quot;
- }</code></pre>
+ }
+</code></pre>
 <ul>
 <li>books[0].name –&gt;返回“三体”</li>
 <li>books[1].author –&gt;返回“刘欣”</li>
@@ -2315,7 +2352,8 @@ var books = [
 </ul>
 <pre><code class="html">     &lt;p style=color:white; background-color:blue;&gt;
      Tihs is a test text.
-     &lt;/p&gt;</code></pre>
+     &lt;/p&gt;
+</code></pre>
 <ol start="2">
 <li>内嵌式</li>
 </ol>
@@ -2331,7 +2369,8 @@ var books = [
          color:red;
        }
        &lt;/style&gt;
-     &lt;/head&gt;</code></pre>
+     &lt;/head&gt;
+</code></pre>
 <ol start="3">
 <li>导入式</li>
 </ol>
@@ -2340,7 +2379,8 @@ var books = [
 </ul>
 <pre><code class="html">   &lt;style type=&quot;text/css&quot;&gt;
        @import &quot;mystyle.css&quot;
-   &lt;/style&gt;</code></pre>
+   &lt;/style&gt;
+</code></pre>
 <ol start="4">
 <li>链接式</li>
 </ol>
@@ -2349,7 +2389,8 @@ var books = [
 </ul>
 <pre><code class="html">   &lt;head&gt;
      &lt;link rel=&quot;stylesheet&quot; href=&quot;src/test.css&quot; type=&quot;text/css&quot;&gt;
-   &lt;/head&gt;</code></pre>
+   &lt;/head&gt;
+</code></pre>
 <h2 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h2><blockquote>
 <p>margin 属性为给定元素设置所有四个（上下左右）方向的外边距属性。四个外边距属性设置分别是： margin-top， margin-right， margin-bottom 和 margin-left 。指定的外边距允许为负数。</p>
 </blockquote>
@@ -2362,7 +2403,8 @@ var books = [
 <th>含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>margin: style</td>
 <td>单值语法</td>
 <td>margin: 1em;</td>
@@ -2386,7 +2428,8 @@ var books = [
 <td>margin: 2px 1em 0 auto;</td>
 <td>上为2px，右为1em，下为0，左为auto</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <h2 id="选择符"><a href="#选择符" class="headerlink" title="选择符"></a>选择符</h2><blockquote>
 <p>选择符用于定位我们想要样式化的网页 HTML 元素,可以选择一个或多个需要添加样式的元素。</p>
 </blockquote>
@@ -2398,7 +2441,8 @@ var books = [
 <th>示例</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>元素 选择符</td>
 <td>标签内所有元素</td>
 <td>p</td>
@@ -2423,7 +2467,8 @@ var books = [
 <td>指定的元素，但是需要在特殊的状态，比如悬停</td>
 <td>a:hover</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 id="简单选择器（Simple-selectors）"><a href="#简单选择器（Simple-selectors）" class="headerlink" title="简单选择器（Simple selectors）"></a>简单选择器（Simple selectors）</h3><blockquote>
 <p>通过<code>元素类型</code>、<code>class</code>或 <code>id</code> 匹配一个或多个元素。</p>
 </blockquote>
@@ -2445,19 +2490,23 @@ var books = [
 <ol>
 <li>未点击状态显示蓝色：</li>
 </ol>
-<pre><code class="css">a:link { color: blue; }</code></pre>
+<pre><code class="css">a:link { color: blue; }
+</code></pre>
 <ol start="2">
 <li>已点击状态显示紫色：</li>
 </ol>
-<pre><code class="css">a:visited { color: purple; }</code></pre>
+<pre><code class="css">a:visited { color: purple; }
+</code></pre>
 <ol start="3">
 <li>鼠标悬停状态显示红色：</li>
 </ol>
-<pre><code class="css">a:hover { color: red;  }</code></pre>
+<pre><code class="css">a:hover { color: red;  }
+</code></pre>
 <ol start="4">
 <li>鼠标点击状态显示绿色：</li>
 </ol>
 <pre><code class="css">a:active { color: green; }
+
 </code></pre>
 <p>多个状态同时设置，按照以上先后顺序排列。</p>
 <h3 id="伪元素（Pseudo-elements）"><a href="#伪元素（Pseudo-elements）" class="headerlink" title="伪元素（Pseudo-elements）"></a>伪元素（Pseudo-elements）</h3><blockquote>
@@ -2467,12 +2516,14 @@ var books = [
 <li><code>::after</code>在已选中元素尾部创建最后一个子元素，通常会配合 content 属性来为该元素添加装饰内容。</li>
 </ul>
 <pre><code class="css">/*在链接后面加上一个箭头←*/
-a::after { content: &quot;←&quot;;}</code></pre>
+a::after { content: &quot;←&quot;;}
+</code></pre>
 <ul>
 <li><code>::before</code> 在已选中元素头部创建第一个子元素。</li>
 </ul>
 <pre><code class="css">/*在链接前面加上一个箭头→*/
-a::after { content: &quot;→&quot;;}</code></pre>
+a::after { content: &quot;→&quot;;}
+</code></pre>
 <ul>
 <li><code>::first-letter</code>会选中一整块文字第一行的第一个字母，并且文字所处的行之前没有其他内容（如图片和内联的表格） 。</li>
 </ul>
@@ -2480,7 +2531,8 @@ a::after { content: &quot;→&quot;;}</code></pre>
 p::first-letter {  /* 使用:first来兼容IE8- */
   color: red;
   font-size: 130%;
-}</code></pre>
+}
+</code></pre>
 <ul>
 <li><code>::first-line</code>将样式只应用于一个元素的首行。首行文本的数量取决于元素的宽，document 的宽和文本的字号。</li>
 <li><code>::first-line</code> 伪元素<strong>只作用于块容器中</strong>,所以<code>::first-line</code>伪元素只能在一个display值为block, inline-block, table-cell 或者 table-caption中有用.。在其他的类型中<code>::first-line</code>是不起作用的。</li>
@@ -2494,7 +2546,8 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 ::selection {
   color: gold;
   background: red;
-}</code></pre>
+}
+</code></pre>
 <h3 id="组合器（Combinators）"><a href="#组合器（Combinators）" class="headerlink" title="组合器（Combinators）"></a>组合器（Combinators）</h3><blockquote>
 <p>以有效的方式组合两个或更多的选择器用于非常特定的选择的方法。例如，只选择 divs 的直系子节点的段落，或者直接跟在 headings 后面的段落。</p>
 </blockquote>
@@ -2505,7 +2558,8 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <th>选择值</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>A,B</td>
 <td>匹配同时满足A和B的任意元素</td>
 </tr>
@@ -2525,7 +2579,8 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <td>A ~ B</td>
 <td>匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 id="多用选择器（Multiple-selectors）"><a href="#多用选择器（Multiple-selectors）" class="headerlink" title="多用选择器（Multiple selectors）"></a>多用选择器（Multiple selectors）</h3><blockquote>
 <p>以逗号分隔开的多个选择器放在一个 CSS 规则下面， 以将一组声明应用于由这些选择器选择的所有元素。</p>
 </blockquote>
@@ -2533,25 +2588,18 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <p>网页上的所有的元素都包含在一个个盒子中。在 CSS 里面设置它们的尺寸，颜色，位置等等。</p>
 </blockquote>
 <ul>
-<li><p>内边距（padding）： 围绕着内容的空间（比如围绕段落的空间）</p>
-</li>
-<li><p>边框（border）：  紧接着内边距的实体线段</p>
-</li>
+<li>内边距（padding）： 围绕着内容的空间（比如围绕段落的空间）</li>
+<li>边框（border）：  紧接着内边距的实体线段</li>
 <li><p>外边距(margin) ：  围绕元素外部的空间</p>
 <p><img src="src/box-model.png" alt="box"></p>
 </li>
 <li><p>width：  属于一个元素的宽</p>
 </li>
-<li><p>background-color： 元素内容和内边距之后的颜色</p>
-</li>
-<li><p>color： 元素内容的颜色（通常是文本）</p>
-</li>
-<li><p>text-shadow： 为元素内的文本设置阴影</p>
-</li>
-<li><p>display：  设置元素的显示模式</p>
-</li>
-<li><p>position：fixed  位置保持不动</p>
-</li>
+<li>background-color： 元素内容和内边距之后的颜色</li>
+<li>color： 元素内容的颜色（通常是文本）</li>
+<li>text-shadow： 为元素内的文本设置阴影</li>
+<li>display：  设置元素的显示模式</li>
+<li>position：fixed  位置保持不动</li>
 </ul>
 <h2 id="单位长度"><a href="#单位长度" class="headerlink" title="单位长度"></a>单位长度</h2><h3 id="px-em"><a href="#px-em" class="headerlink" title="px em"></a>px em</h3><ul>
 <li>px ：像素 (px) 是一种绝对单位（ absolute units）， 因为无论其他相关的设置怎么变化，像素指定的值是不会变化的。</li>
@@ -2561,7 +2609,8 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><blockquote>
 <p>box-shadow 属性向元素添加一个或多个阴影。</p>
 </blockquote>
-<pre><code class="css">box-shadow: h-shadow v-shadow blur spread color inset;</code></pre>
+<pre><code class="css">box-shadow: h-shadow v-shadow blur spread color inset;
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -2569,7 +2618,8 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <th>含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>h-shadow</td>
 <td>必需。水平阴影。允许负值。</td>
 </tr>
@@ -2593,7 +2643,8 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <td>inset</td>
 <td>可选。将外部阴影(outset)改为内部阴影。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><blockquote>
 <p>一个好的布局，能将网页内容更完美的展示出来。</p>
 </blockquote>
@@ -2681,7 +2732,8 @@ function bar(str, b) {
     console.log(a, b); // 55 10
 }
 
-bar(&#39;var a = 55;&#39;, 10);</code></pre>
+bar(&#39;var a = 55;&#39;, 10);
+</code></pre>
 <p>使用 eval() 函数可以将代码以动态形式插入一个指定位置，如果 eval() 中所执行的代码包含一个或多个声明（函数或者变量），就会对词法作用域的环境进行修改，达到欺诈伪装的效果。</p>
 <p>在严格模式下，eval() 函数拥有这自己的词法作用域，其中的声明将无法修改作用域。</p>
 <p>这个函数的副作用是引擎无法在编译时对作用域查找进行优化，会导致代码运行变慢，不建议使用。</p>
@@ -2725,7 +2777,8 @@ bar(&#39;var a = 55;&#39;, 10);</code></pre>
     eat: (name) =&gt; {
         console.log(`${name} is eating`);
     }
-};</code></pre>
+};
+</code></pre>
 <h2 id="模块管理"><a href="#模块管理" class="headerlink" title="模块管理"></a>模块管理</h2><p>通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。</p>
 <p>用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。</p>
 ]]></content>
@@ -2744,13 +2797,16 @@ i.toString(2);  // 2 进制 1010
 i.toString(8);  // 8 进制 12
 i.toString(16);  // 16 进制 a
 i.toString(32);  // 32 进制 a
+
 </code></pre>
 <h2 id="其他进制转十进制"><a href="#其他进制转十进制" class="headerlink" title="其他进制转十进制"></a>其他进制转十进制</h2><pre><code class="javascript">parsetInt(x, 2); // 2 进制转 10进制
 parsetInt(x, 8); // 8 进制转 10 进制
 parsetInt(x, 16); // 16 进制转 10 进制
+
 </code></pre>
 <h2 id="非十进制转十进制"><a href="#非十进制转十进制" class="headerlink" title="非十进制转十进制"></a>非十进制转十进制</h2><p>先转化为10进制， 然后再利用toString(参数)， 转化成不同的进制。</p>
-<pre><code class="javascript">parsetInt(x, 2).toString(8); // 2 进制转 8进制</code></pre>
+<pre><code class="javascript">parsetInt(x, 2).toString(8); // 2 进制转 8进制
+</code></pre>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -2771,7 +2827,8 @@ parsetInt(x, 16); // 16 进制转 10 进制
     &amp;::after {
         clear: both;
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="三栏式布局"><a href="#三栏式布局" class="headerlink" title="三栏式布局"></a>三栏式布局</h2><blockquote>
 <p>两边侧栏固定宽度，中间栏宽度自适应，并且中间栏要在放在文档流前面以优先渲染。<br>其父元素的高度始终是由三栏中高度最高的元素确定。</p>
 </blockquote>
@@ -2782,7 +2839,8 @@ parsetInt(x, 16); // 16 进制转 10 进制
     &lt;div class=&quot;box mid&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;box left&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;box right&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
 <ol>
 <li>设置<code>box-mid</code> <code>box-left</code> <code>box-right</code> 三者向左浮动。</li>
 <li>设置<code>box-mid</code>宽度为 100%。</li>
@@ -2820,13 +2878,15 @@ parsetInt(x, 16); // 16 进制转 10 进制
     }
 }
 
-foo();</code></pre>
+foo();
+</code></pre>
 <p><strong>立即执行函数表达式：</strong></p>
 <pre><code class="javascript">(function foo() {
     for (let i = 0; i &lt; 10; i++) {
         console.log(i);
     }
 })();
+
 </code></pre>
 <p>区分函数声明和表达式最简单的方法是看 function 关键字出现在声明中的位置（不仅仅是一行代码，而是整个声明中的位置）。<strong>如果 function 是声明中的第一个词，那么就是一个函数声明，否则就是一个函数表达式。</strong></p>
 <p>函数声明和函数表达式之间最重要的区别是它们的名称标识符将会绑定在何处。</p>
@@ -2844,6 +2904,7 @@ foo();</code></pre>
         console.log(i);
     }
 })();
+
 </code></pre>
 <ol start="2">
 <li>另一种改进形式写法将调用的（）移到了用来包装的（）里面。</li>
@@ -2852,7 +2913,8 @@ foo();</code></pre>
     for (let i = 0; i &lt; 10; i++) {
         console.log(i);
     }
-}());</code></pre>
+}());
+</code></pre>
 <p>两种写法功能上一样，凭个人喜好。</p>
 <h4 id="IIFE-表达式的用法"><a href="#IIFE-表达式的用法" class="headerlink" title="IIFE 表达式的用法"></a>IIFE 表达式的用法</h4><ol>
 <li>匿名函数表达式</li>
@@ -2860,7 +2922,8 @@ foo();</code></pre>
 <pre><code class="javascript">(() =&gt; {
     const a = 6;
     console.log(a); // a
-})();</code></pre>
+})();
+</code></pre>
 <ol start="2">
 <li>将它当作<strong>函数调用</strong>，并传递参数进去</li>
 </ol>
@@ -2868,6 +2931,7 @@ foo();</code></pre>
 (function IIFE(name) {
     console.log(name); // haha
 })(name);
+
 </code></pre>
 <ol start="3">
 <li>倒置代码的运行顺序，将需要运行的函数放在第二位， IIFE 执行之后，放在第二位的函数被当作参数传递进去。</li>
@@ -2882,7 +2946,8 @@ foo();</code></pre>
     const name = &#39;3&#39;;
     console.log(name); // 3
     console.log(obj.name); // haha
-}));</code></pre>
+}));
+</code></pre>
 <p>第二部分为一个匿名函数，被当作一个参数 foo 传入到 IIFE 函数的第一部分。最后匿名函数调用执行，将一个全局对象 objA 传入当作 obj 的参数值。</p>
 <h2 id="块作用域"><a href="#块作用域" class="headerlink" title="块作用域"></a>块作用域</h2><p>块作用域是一个用来对之前的最小授权原则进行扩展的工具，将代码从在函数中隐藏信息扩展为在块中隐藏信息。</p>
 <p>块作用域指的是变量和函数不仅可以属于所处的作用域，也可以属于某个代码块（通常指 { .. } 内部）。</p>
@@ -2894,6 +2959,7 @@ for (var i = 0; i &lt; 10; i++) {
   };
 }
 arr[6](); // 10
+
 </code></pre>
 <p>console.log(i) 内部的 i 指向全局的的 i，最后循环完毕后在执行 arr<a href>6</a>，这时全局的 i 的值为 10.</p>
 <p>ES3 规范中规定 try/catch 的 catch 分句会创建一个块作用域，其中声明的变量仅在 catch 内部有效。</p>
@@ -2904,7 +2970,8 @@ for (let i = 0; i &lt; 10; i++) {
     console.log(i);
   };
 }
-arr[6](); // 6</code></pre>
+arr[6](); // 6
+</code></pre>
 <p>由 let 声明的 i，每次循环都在循环的内部重新生成了一次变量，</p>
 <pre><code class="javascript">var arr = [];
 for (let i = 0; i &lt; 10; i++) {
@@ -2913,7 +2980,8 @@ for (let i = 0; i &lt; 10; i++) {
     console.log(_i);
   };
 }
-arr[6](); // 6</code></pre>
+arr[6](); // 6
+</code></pre>
 <p>for 循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p>
 <p>let 声明的变量只在它所在的代码块有效。</p>
 <pre><code class="javascript">{
@@ -2922,7 +2990,8 @@ arr[6](); // 6</code></pre>
 }
 
 console.log(a); // 6
-console.log(b); // b is not defined</code></pre>
+console.log(b); // b is not defined
+</code></pre>
 <h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>在代码块内，使用 let 命令声明变量，在声明之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）.</p>
 <pre><code class="javascript">if (true) {
   // TDZ开始
@@ -2934,7 +3003,8 @@ console.log(b); // b is not defined</code></pre>
 
   tmp = 123;
   console.log(tmp); // 123
-}</code></pre>
+}
+</code></pre>
 <p>ES6 明确规定，如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。</p>
 <p>只要块级作用域内存在 let 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。</p>
 <pre><code class="javascript">var tmp = 6;
@@ -2942,7 +3012,8 @@ console.log(b); // b is not defined</code></pre>
 if(true) {
   tmp = 3; // ReferenceError
   let tmp;
-}</code></pre>
+}
+</code></pre>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -2959,10 +3030,8 @@ if(true) {
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2></li>
 <li><p>HTML MDN：<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/HTML</a></p>
 </li>
-<li><p>HTML5 MDN：<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5</a></p>
-</li>
-<li><p>HTML语义化</p>
-</li>
+<li>HTML5 MDN：<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5</a></li>
+<li>HTML语义化</li>
 </ul>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ul>
 <li>CSS MDN：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS</a><ul>
@@ -2984,28 +3053,19 @@ if(true) {
 <li>Angular 4</li>
 </ul>
 <h2 id="UI设计"><a href="#UI设计" class="headerlink" title="UI设计"></a>UI设计</h2><ul>
-<li><p>免费高清图：<a href="https://pixabay.com/" target="_blank" rel="noopener">https://pixabay.com/</a></p>
-</li>
-<li><p>网页背景抓取：<a href="http://stylifyme.com/" target="_blank" rel="noopener">http://stylifyme.com/</a></p>
-</li>
-<li><p>Material中文：<a href="https://www.mdui.org/design/#" target="_blank" rel="noopener">https://www.mdui.org/design/#</a></p>
-</li>
-<li><p>Material：<a href="https://www.materialui.co/" target="_blank" rel="noopener">https://www.materialui.co/</a></p>
-</li>
-<li><p>Flatui：<a href="https://flatuicolors.com/" target="_blank" rel="noopener">https://flatuicolors.com/</a></p>
-</li>
-<li><p>Uplabs：<a href="https://www.uplabs.com/web" target="_blank" rel="noopener">https://www.uplabs.com/web</a></p>
-</li>
-<li><p>花瓣：<a href="http://huaban.com/boards/3511269/" target="_blank" rel="noopener">http://huaban.com/boards/3511269/</a></p>
-</li>
+<li>免费高清图：<a href="https://pixabay.com/" target="_blank" rel="noopener">https://pixabay.com/</a></li>
+<li>网页背景抓取：<a href="http://stylifyme.com/" target="_blank" rel="noopener">http://stylifyme.com/</a></li>
+<li>Material中文：<a href="https://www.mdui.org/design/#" target="_blank" rel="noopener">https://www.mdui.org/design/#</a></li>
+<li>Material：<a href="https://www.materialui.co/" target="_blank" rel="noopener">https://www.materialui.co/</a></li>
+<li>Flatui：<a href="https://flatuicolors.com/" target="_blank" rel="noopener">https://flatuicolors.com/</a></li>
+<li>Uplabs：<a href="https://www.uplabs.com/web" target="_blank" rel="noopener">https://www.uplabs.com/web</a></li>
+<li>花瓣：<a href="http://huaban.com/boards/3511269/" target="_blank" rel="noopener">http://huaban.com/boards/3511269/</a></li>
 <li><p>颜色进制转换：<a href="http://www.sioe.cn/yingyong/yanse-rgb-16/" target="_blank" rel="noopener">http://www.sioe.cn/yingyong/yanse-rgb-16/</a></p>
 </li>
 <li><p>CSS 动画</p>
 </li>
-<li><p>JavaScript 动画</p>
-</li>
-<li><p>字体</p>
-<ul>
+<li>JavaScript 动画</li>
+<li>字体<ul>
 <li>汉字标准格式：<a href="https://css.hanzi.co/manual" target="_blank" rel="noopener">https://css.hanzi.co/manual</a></li>
 <li>Google Fonts：<a href="https://fonts.google.com/" target="_blank" rel="noopener">https://fonts.google.com/</a></li>
 <li>Google Fonts 中文版：<a href="http://www.googlefonts.cn/" target="_blank" rel="noopener">http://www.googlefonts.cn/</a></li>
@@ -3027,21 +3087,17 @@ if(true) {
 </li>
 <li><p>PS 切图</p>
 </li>
-<li><p>响应式设计</p>
-</li>
-<li><p>Flexbox 布局</p>
-<ul>
+<li>响应式设计</li>
+<li>Flexbox 布局<ul>
 <li>阮一峰：<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool</a></li>
 </ul>
 </li>
-<li><p>网格布局</p>
-</li>
+<li>网格布局</li>
 </ul>
 <h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><ul>
 <li>node.js 中文网：<a href="http://nodejs.cn/" target="_blank" rel="noopener">http://nodejs.cn/</a></li>
 <li>node.js 中文社区：<a href="https://cnodejs.org/" target="_blank" rel="noopener">https://cnodejs.org/</a><ul>
-<li>一起学Node.js：<a href="https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb" target="_blank" rel="noopener">https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb</a></li>
-<li>七天学会NodeJS：<a href="http://nqdeng.github.io/7-days-nodejs/" target="_blank" rel="noopener">http://nqdeng.github.io/7-days-nodejs/</a></li>
+<li>一起学Node.js：<a href="https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb" target="_blank" rel="noopener">https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb</a><br>*七天学会NodeJS：<a href="http://nqdeng.github.io/7-days-nodejs/" target="_blank" rel="noopener">http://nqdeng.github.io/7-days-nodejs/</a></li>
 </ul>
 </li>
 </ul>
@@ -3131,7 +3187,8 @@ if(true) {
   var temp = myArray[p1];
   myArray[p1] = myArray[p2];
   myArray[p2] = temp;
-}</code></pre>
+}
+</code></pre>
 <p>然后定义主函数。</p>
 <pre><code class="javascript">function bubbleSort(myArray){
   var len = myArray.length;
@@ -3148,7 +3205,8 @@ if(true) {
   }
 
   return myArray;
-}</code></pre>
+}
+</code></pre>
 <h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h3 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h3><p>选择排序（Selection Sort）与冒泡排序类似，也是依次对相邻的数进行两两比较。不同之处在于，它不是每比较一次就调换位置，而是一轮比较完毕，找到最大值（或最小值）之后，将其放在正确的位置，其他数的位置不变。</p>
 <p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p>
 <ol>
@@ -3173,6 +3231,7 @@ function swap(myArray, p1, p2){
     myArray[p1] = myArray[p2];
     myArray[p2] = temp;
 }
+
 </code></pre>
 <p>然后定义主函数。</p>
 <pre><code class="javascript">
@@ -3201,6 +3260,7 @@ function selectionSort(myArray){
 
     return myArray;
 }
+
 </code></pre>
 <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="简介-2"><a href="#简介-2" class="headerlink" title="简介"></a>简介</h3><p>插入排序（insertion sort）比前面两种排序方法都更有效率。它将数组分成“已排序”和“未排序”两部分，一开始的时候，“已排序”的部分只有一个元素，然后将它后面一个元素从“未排序”部分插入“已排序”部分，从而“已排序”部分增加一个元素，“未排序”部分减少一个元素。以此类推，完成全部排序。</p>
 <p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p>
@@ -3243,6 +3303,7 @@ function insertionSort(myArray) {
 
     return myArray;
 }
+
 </code></pre>
 <h2 id="合并排序"><a href="#合并排序" class="headerlink" title="合并排序"></a>合并排序</h2><h3 id="简介-3"><a href="#简介-3" class="headerlink" title="简介"></a>简介</h3><p>前面三种排序算法只有教学价值，因为效率低，很少实际使用。合并排序（Merge sort）则是一种被广泛使用的排序方法。</p>
 <p>它的基本思想是，将两个已经排序的数组合并，要比从头开始排序所有元素来得快。因此，可以将数组拆开，分成n个只有一个元素的数组，然后不断地两两合并，直到全部排序完成。</p>
@@ -3278,6 +3339,7 @@ function merge(left, right){
 
     return result.concat(left.slice(il)).concat(right.slice(ir));
 }
+
 </code></pre>
 <p>上面的merge函数，合并两个已经按升序排好序的数组。首先，比较两个数组的第一个元素，将其中较小的一个放入result数组；然后，将其中较大的一个与另一个数组的第二个元素进行比较，再将其中较小的一个放入result数组的第二个位置。以此类推，直到一个数组的所有元素都进入result数组为止，再将另一个数组剩下的元素接着result数组后面返回（使用concat方法）。</p>
 <p>有了merge函数，就可以对任意数组排序了。基本方法是将数组不断地拆成两半，直到每一半只包含零个元素或一个元素为止，然后就用merge函数，将拆成两半的数组不断合并，直到合并成一整个排序完成的数组。</p>
@@ -3294,6 +3356,7 @@ function mergeSort(myArray){
 
     return merge(mergeSort(left), mergeSort(right));
 }
+
 </code></pre>
 <p>上面的代码有一个问题，就是返回的是一个全新的数组，会多占用空间。因此，修改上面的函数，使之在原地排序，不多占用空间。</p>
 <pre><code class="javascript">
@@ -3320,6 +3383,7 @@ function mergeSort(myArray){
     // 返回排序后的数组
     return myArray;
 }
+
 </code></pre>
 <h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h3 id="简介-4"><a href="#简介-4" class="headerlink" title="简介"></a>简介</h3><p>快速排序（quick sort）是公认最快的排序算法之一，有着广泛的应用。</p>
 <p>它的基本思想很简单：先确定一个“支点”（pivot），将所有小于“支点”的值都放在该点的左侧，大于“支点”的值都放在该点的右侧，然后对左右两侧不断重复这个过程，直到所有排序完成。</p>
@@ -3364,6 +3428,7 @@ function swap(myArray, firstIndex, secondIndex){
     myArray[firstIndex] = myArray[secondIndex];
     myArray[secondIndex] = temp;
 }
+
 </code></pre>
 <p>然后，部署一个partition函数，用于完成一轮排序。</p>
 <pre><code class="javascript">
@@ -3393,6 +3458,7 @@ function partition(myArray, left, right) {
 
     return i;
 }
+
 </code></pre>
 <p>接下来，就是递归上面的过程，完成整个排序。</p>
 <pre><code class="javascript">
@@ -3417,6 +3483,7 @@ function quickSort(myArray, left, right) {
      return myArray;
 
 }
+
 </code></pre>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2009/05/26/computer-science-in-javascript-bubble-sort/" target="_blank" rel="noopener">Computer science in JavaScript: Bubble sort</a></li>
@@ -3450,7 +3517,8 @@ function quickSort(myArray, left, right) {
         &lt;div class=&quot;col sub&quot;&gt;我是一个子列。&lt;/div&gt;
         &lt;div class=&quot;col extra&quot;&gt;我是一个附加列。&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;</code></pre>
+    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
+</code></pre>
 <p>以上 DOM 结构中，在 main 中添加了一个子 div，用来解决中间列内容被遮挡问题。</p>
 <h3 id="CSS-样式"><a href="#CSS-样式" class="headerlink" title="CSS 样式"></a>CSS 样式</h3><p>去掉相对定位的使用，去掉了父容器的 padding，使用中间栏新增 div 的 margin 解决遮挡问题。</p>
 <pre><code class="css">        body {
@@ -3495,7 +3563,8 @@ function quickSort(myArray, left, right) {
         }
         .footr {
             clear: both;
-        }</code></pre>
+        }
+</code></pre>
 <p>为 body 加上一个最小宽度(2 * sub width + extra width),避免网页放大时中间栏被挤到消失。</p>
 ]]></content>
       <categories>
@@ -3523,7 +3592,8 @@ function quickSort(myArray, left, right) {
     &lt;div class=&quot;column left&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;column right&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;</code></pre>
+&lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
+</code></pre>
 <h3 id="第二步-构建基础布局"><a href="#第二步-构建基础布局" class="headerlink" title="第二步 构建基础布局"></a>第二步 构建基础布局</h3><p>将 <code>container</code> 的内边距设置为左右两侧边栏各自的宽度，为两侧边栏留下空间。为三栏设置合适的宽度(<code>center</code>宽度为 100%，<code>left</code>宽度为 120px，<code>right</code>宽度为240px)，并且将三者设为向左浮动，同时清除<code>footer</code>的上下环境，避免其浮动。最后将<code>body</code>的最小宽度设为 480px(2*LC width + RC width)，避免因为<code>center</code>部分的宽度小<code>left</code>和<code>right</code>的宽度导致布局乱掉。</p>
 <pre><code class="css">        body {
             padding: 0;
@@ -3563,7 +3633,8 @@ function quickSort(myArray, left, right) {
         }
         .footer {
             clear: both;
-        }</code></pre>
+        }
+</code></pre>
 <h3 id="第三步-将侧栏放到合适的位置"><a href="#第三步-将侧栏放到合适的位置" class="headerlink" title="第三步 将侧栏放到合适的位置"></a>第三步 将侧栏放到合适的位置</h3><p>设置三栏的定位属性为相对定位。设置左边栏的外边距<code>margin-left: -100%;</code>(中间栏所占据的宽度)，左边栏上移到中间栏的左边，但是与中间栏部分重叠。此时利用相对定位属性，为左边栏设置一个与其等宽的偏移量<code>left：-120px;</code>(相对于<code>container</code>的左边线向左偏移 120px)，左边栏刚好占据<code>container</code>的左内边距位置。最后设置右边栏的外边距<code>margin-right: -240px;</code>(右边栏自身宽度)，使右边栏占据<code>container</code>的右内边距位置。</p>
 <pre><code class="css">        .column {
             float: left;
@@ -3575,7 +3646,8 @@ function quickSort(myArray, left, right) {
         }
         .right {
             margin-right: -240px;
-        }</code></pre>
+        }
+</code></pre>
 ]]></content>
       <categories>
         <category>CSS</category>
@@ -3595,14 +3667,16 @@ map.set(&#39;XiaoMing&#39;, 22); // 添加键值对 key-value
 map.set(&#39;HaHa&#39;, 66);
 map.has(&#39;HaHa&#39;); // 是否存在 &#39;HaHa&#39;, 返回值为 true
 map.get(&#39;XiaoMing&#39;); // 22  获得对应的 value
-map.delete(&#39;HaHa&#39;); // 删除 key: &#39;HaHa&#39;</code></pre>
+map.delete(&#39;HaHa&#39;); // 删除 key: &#39;HaHa&#39;
+</code></pre>
 <p>一个 key 只能对应一个 value，对同一个 key，后添加的 value 会覆盖前面的 value。</p>
 <h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><blockquote>
 <p>一组 Key 值的集合，无序且不重复，不储存 Value。</p>
 </blockquote>
 <h3 id="Set-函数"><a href="#Set-函数" class="headerlink" title="Set 函数"></a>Set 函数</h3><pre><code class="javascript">var set = new Set(); // 初始化 Set
 set.add(6); // 添加 Key 6
-set.delete(6); // 删除 Key 6</code></pre>
+set.delete(6); // 删除 Key 6
+</code></pre>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -3633,21 +3707,27 @@ max_connections = 200
 # 服务端使用的字符集默认为8比特编码的latin1字符集
 character-set-server = utf8
 # 创建新表时将使用的默认存储引擎
-default-storage-engine = INNODB</code></pre>
+default-storage-engine = INNODB
+</code></pre>
 </li>
 <li><h4 id="设置环境变量："><a href="#设置环境变量：" class="headerlink" title="设置环境变量："></a>设置环境变量：</h4><p>右键桌面计算机→属性→高级系统设置→环境变量→系统变量Path→添加 MySQL 的bin目录路径，例如：C:\APPS\MySQL\mysql-5.7.18-winx64\bin 保存退出。</p>
 </li>
 <li><h4 id="安装MySQL服务："><a href="#安装MySQL服务：" class="headerlink" title="安装MySQL服务："></a>安装MySQL服务：</h4><p>a. 以管理员模式打开命令行窗口，安装MySQL服务：</p>
-<pre><code class="sql">mysqld -install</code></pre>
+<pre><code class="sql">mysqld -install
+</code></pre>
 <p>b. 初始化data目录：</p>
-<pre><code class="sql">mysqld –-initialize</code></pre>
+<pre><code class="sql">mysqld –-initialize
+</code></pre>
 <p>c. 启动MySQL服务：</p>
-<pre><code class="sql">net start MySQL</code></pre>
+<pre><code class="sql">net start MySQL
+</code></pre>
 <p>d. 用户登录：</p>
-<pre><code class="sql">mysql -u root -p</code></pre>
+<pre><code class="sql">mysql -u root -p
+</code></pre>
 <p>e. 输入密码：</p>
 <p>初始随机密码存在于data目录下.err结尾的文件中，初始随机密码为root@localhost:后面的字符，例如：rCTmkIr:K65t</p>
-<pre><code class="SQL">A temporary password is generated for root@localhost: rCTmkIr:K65t</code></pre>
+<pre><code class="SQL">A temporary password is generated for root@localhost: rCTmkIr:K65t
+</code></pre>
 <p>​</p>
 </li>
 </ol>
@@ -3718,7 +3798,8 @@ dependencies {
     compile &#39;com.alexvasilkov:foldable-layout:1.0.1&#39;
     // 编译extras目录下的ShimmerAndroid模块
     compile project(&#39;:extras:ShimmerAndroid&#39;)
-}</code></pre>
+}
+</code></pre>
 <h2 id="Roay-build-gradle"><a href="#Roay-build-gradle" class="headerlink" title="Roay/build.gradle"></a>Roay/build.gradle</h2><ul>
 <li><p>这个文件是整个项目的gradle基础配置文。</p>
 </li>
@@ -3760,7 +3841,8 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}</code></pre>
+}
+</code></pre>
 <p>​</p>
 <p>​</p>
 </li>
@@ -3905,6 +3987,7 @@ task clean(type: Delete) {
 
 
 &lt;/RelativeLayout&gt;
+
 </code></pre>
 <h3 id="三、交互"><a href="#三、交互" class="headerlink" title="三、交互"></a>三、交互</h3><ul>
 <li>通过 Button 的 android:onClick 属性指定方法。</li>
@@ -3912,13 +3995,15 @@ task clean(type: Delete) {
 <li>具体操作是在 active_main.xml 中设置 android:onClick=”buttonName” 为每个 Button 设置一个独特的名字，这个名字用于 Java 代码寻找和识别每个不同的 Button 。</li>
 </ul>
 <p>例如：</p>
-<pre><code class="xml">在 active_main.xml 中设置 Button3A 的 onClick 属性为 android:onClick=&quot;addThreeA&quot;</code></pre>
+<pre><code class="xml">在 active_main.xml 中设置 Button3A 的 onClick 属性为 android:onClick=&quot;addThreeA&quot;
+</code></pre>
 <p>在 MainActivity.java 中编写代码：</p>
 <pre><code class="java">    public void addThreeA(View view) {
 
     //所需要执行的操作，假如是 A 团队加三分
 
-    }</code></pre>
+    }
+</code></pre>
 <p>那么当你按下 Button3A 就将 A 团队的分数加上三分。</p>
 <h4 id="整个-MainActivity-java-代码"><a href="#整个-MainActivity-java-代码" class="headerlink" title="整个 MainActivity.java 代码"></a>整个 MainActivity.java 代码</h4><pre><code class="java">package com.roojay.android.courtcounter;
 
@@ -4013,6 +4098,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
 </code></pre>
 <h3 id="四、代码优化及-APP-美化"><a href="#四、代码优化及-APP-美化" class="headerlink" title="四、代码优化及 APP 美化"></a>四、代码优化及 APP 美化</h3><h4 id="style-xml-的设置"><a href="#style-xml-的设置" class="headerlink" title="style.xml 的设置"></a>style.xml 的设置</h4><ul>
 <li>当每一个 View 都有着大量相同的元素，可以将这些元素定义在<br><code>res/value/styles.xml</code> 中。</li>
@@ -4023,13 +4109,15 @@ public class MainActivity extends AppCompatActivity {
         &lt;item name=&quot;android:layout_width&quot;&gt;wrap_content&lt;/item&gt;
        ...
 
-    &lt;/style&gt;</code></pre>
+    &lt;/style&gt;
+</code></pre>
 <p>然后可以用<code>style=&quot;@style/cofe_textView&quot;</code>语句轻易地重复引用这些设置：</p>
 <p>例如：</p>
 <pre><code class="xml">&lt;TextView
               style=&quot;@style/textView&quot;
               android:id=&quot;@+id/teamb_text_view&quot;
               android:text=&quot;@string/team_b&quot; /&gt;
+
 </code></pre>
 <h4 id="整个-style-xml-代码如下"><a href="#整个-style-xml-代码如下" class="headerlink" title="整个 style.xml 代码如下"></a>整个 style.xml 代码如下</h4><pre><code class="xml">&lt;resources&gt;
 
@@ -4082,6 +4170,7 @@ public class MainActivity extends AppCompatActivity {
     &lt;/style&gt;
 
 &lt;/resources&gt;
+
 </code></pre>
 <h4 id="strings-xml"><a href="#strings-xml" class="headerlink" title="strings.xml"></a>strings.xml</h4><ul>
 <li>在 Android 中会将应用中出现的文字放入 string.xml 中，这样一个字符可以重复调用，而不用每次去编写，可以减少数据的冗余，减小 APP 应用的体积。并且当你的 APP 国际化时只需更改 strings.xml 中的文字定义，就可以实现其他语言的显示。</li>
@@ -4091,9 +4180,11 @@ public class MainActivity extends AppCompatActivity {
     &lt;string name=&quot;text_name&quot;&gt;显示的文字&lt;/string&gt;
     ...
 &lt;/resources&gt;
+
 </code></pre>
 <p>调用时：</p>
-<pre><code class="xml">android:text=&quot;@string/text_name&quot;</code></pre>
+<pre><code class="xml">android:text=&quot;@string/text_name&quot;
+</code></pre>
 <h4 id="整个-strings-xml-代码如下"><a href="#整个-strings-xml-代码如下" class="headerlink" title="整个 strings.xml 代码如下"></a>整个 strings.xml 代码如下</h4><pre><code class="xml">&lt;resources&gt;
     &lt;string name=&quot;app_name&quot;&gt;Court Counter&lt;/string&gt;
     &lt;string name=&quot;add2b&quot;&gt;+2 points&lt;/string&gt;
@@ -4108,6 +4199,7 @@ public class MainActivity extends AppCompatActivity {
     &lt;string name=&quot;add3b&quot;&gt;+3 points&lt;/string&gt;
     &lt;string name=&quot;reset_text_views&quot;&gt;reset&lt;/string&gt;
 &lt;/resources&gt;
+
 </code></pre>
 <h3 id="五、APP-强制锁定横竖屏"><a href="#五、APP-强制锁定横竖屏" class="headerlink" title="五、APP 强制锁定横竖屏"></a>五、APP 强制锁定横竖屏</h3><ul>
 <li>在最开始做出 APP 时没有考虑到 APP 横屏的问题，偶然一次横屏之后发现 APP 显示不全了，当时也没多想，既然横屏不行，那就去掉横屏显示，锁定在竖屏。上网查了下资料，锁定横竖屏有两种实现方式：XML 或 Java 方式。这个 APP 采用了 XML 锁定方式。</li>
@@ -4141,7 +4233,8 @@ public class MainActivity extends AppCompatActivity {
         &lt;/activity&gt;
     &lt;/application&gt;
 
-&lt;/manifest&gt;</code></pre>
+&lt;/manifest&gt;
+</code></pre>
 <h4 id="Java代码锁定横竖屏"><a href="#Java代码锁定横竖屏" class="headerlink" title="Java代码锁定横竖屏"></a>Java代码锁定横竖屏</h4><ul>
 <li>在onCreate()方法中加入锁定代码。</li>
 </ul>
@@ -4153,7 +4246,8 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//锁定为横屏
       //setRequestedOrientation(ActivityInfo .SCREEN_ORIENTATION_PORTRAIT);//锁定为竖屏
         setContentView(R.layout.activity_main);
-    }</code></pre>
+    }
+</code></pre>
 </li>
 </ul>
 <h3 id="六、APP-演示及源码"><a href="#六、APP-演示及源码" class="headerlink" title="六、APP 演示及源码"></a>六、APP 演示及源码</h3><ul>
@@ -4206,26 +4300,30 @@ public class MainActivity extends AppCompatActivity {
 </ol>
 <p>例如：</p>
 <pre><code class="java">int num;
-byte b =(byte)num;</code></pre>
+byte b =(byte)num;
+</code></pre>
 <h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><blockquote>
 <p>在编程语言中，<strong>常量</strong>是指在整个程序中永远不会改变的值。在 Java 中，你可以使用关键字 <code>final</code> 来强制规定某个值不得被更改。例如：</p>
-</blockquote>
-<pre><code class="java">final int POINTS_FOR_FREE_THROW = 1;</code></pre>
+<pre><code class="java">final int POINTS_FOR_FREE_THROW = 1;
+</code></pre>
 <p>Then if you wrote the following, you’d get an error:</p>
-<pre><code class="java">POINTS_FOR_FREE_THROW = 100;</code></pre>
+<pre><code class="java">POINTS_FOR_FREE_THROW = 100;
+</code></pre>
 <ul>
-<li>注意，按照惯例，常量的名称全为大写形式。此外，单词之间用下划线连接，而不用空格或用骆驼拼写法。你可以将变量声明为常量，防止自己意外地更改了变量的值。<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><blockquote>
+<li>注意，按照惯例，常量的名称全为大写形式。此外，单词之间用下划线连接，而不用空格或用骆驼拼写法。你可以将变量声明为常量，防止自己意外地更改了变量的值。</li>
+</ul>
+</blockquote>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><blockquote>
 <p>为解决代码重复编写的问题所设计的特定功能代码块。<br>方法不能嵌套。<br>main（）方法的作用：调用方法的实例化对象。</p>
 </blockquote>
-</li>
-</ul>
 <p>方法结构一般为：</p>
 <pre><code class="java">修饰符 返回值类型 方法名（参数类型 参数1，参数类型 参数2，...）{
     执行语句
     ...
     ...
     return 返回值；
-}</code></pre>
+}
+</code></pre>
 <h2 id="选择结构语句"><a href="#选择结构语句" class="headerlink" title="选择结构语句"></a>选择结构语句</h2><h3 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h3><blockquote>
 <p>当判断条件1结果为 true 时，执行语句 1，为 false 时，执行语句 2。当判断条件 1, 2 都不满足 true 时，执行语句 3。</p>
 </blockquote>
@@ -4238,30 +4336,22 @@ else if(判断条件2){
 }
 else{
   执行语句3
-}</code></pre>
+}
+</code></pre>
 <h3 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h3><blockquote>
 <p>一种类似于 if-else 语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。<br>当判断条件成立时结果为表达式1的值，否则表达式2的值。</p>
-</blockquote>
-<pre><code class="java">判断条件 ? 表达式 1 : 表达式 2</code></pre>
-<p>例如：求取两个数 x，y 中较大的值。</p>
-<pre><code class="java">//if-else 实现方法
-int x, y, max;
-if(x&gt;y){
-    max = x;
-}
-else{
-    max = y;
-}
-
-//三元运算实现
-int x, y, max;
-max = x &gt; y ? x : y;
+<pre><code class="java">判断条件 ? 表达式 1 : 表达式 2
 </code></pre>
-<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><blockquote>
-<p>在 switch 语句中使用 switch 关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，<br>当表达式的值和某个目标值匹配时，会执行对应 case 下的语句。</p>
+<p>例如：求取两个数 x，y 中较大的值。<br><code>`</code>java<br>//if-else 实现方法<br>int x, y, max;<br>if(x&gt;y){<br>    max = x;<br>}<br>else{<br>    max = y;<br>}</p>
 </blockquote>
-<p>例如：</p>
-<pre><code class="java">switch(表达式){
+<p>//三元运算实现<br>int x, y, max;<br>max = x &gt; y ? x : y;</p>
+<pre><code>### switch语句
+&gt; 在 switch 语句中使用 switch 关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，
+&gt; 当表达式的值和某个目标值匹配时，会执行对应 case 下的语句。
+
+例如：
+```java
+switch(表达式){
   case 1:
     执行语句1;
        break; //break终止case并跳出switch循环
@@ -4274,14 +4364,15 @@ max = x &gt; y ? x : y;
   default: //default处理和前面的case都不匹配的值
     执行语句4;
       break;
-}</code></pre>
-<h2 id="循环结构语句"><a href="#循环结构语句" class="headerlink" title="循环结构语句"></a>循环结构语句</h2><h3 id="while-循环语句"><a href="#while-循环语句" class="headerlink" title="while 循环语句"></a>while 循环语句</h3><blockquote>
+}
+</code></pre><h2 id="循环结构语句"><a href="#循环结构语句" class="headerlink" title="循环结构语句"></a>循环结构语句</h2><h3 id="while-循环语句"><a href="#while-循环语句" class="headerlink" title="while 循环语句"></a>while 循环语句</h3><blockquote>
 <p>循环条件判断为 true 时，执行语句循环执行，直到循环条件为 false。</p>
 </blockquote>
 <p>例如：</p>
 <pre><code class="java">while(循环条件){
     执行语句
-}</code></pre>
+}
+</code></pre>
 <h3 id="do…while循环语句"><a href="#do…while循环语句" class="headerlink" title="do…while循环语句"></a>do…while循环语句</h3><blockquote>
 <p>循环体会无条件执行一次，然后根据循环条件决定是否继续执行。</p>
 </blockquote>
@@ -4289,14 +4380,16 @@ max = x &gt; y ? x : y;
 <pre><code class="java">do{
   执行语句
 }
-while(循环条件);</code></pre>
+while(循环条件);
+</code></pre>
 <h3 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h3><blockquote>
 <p>一般用在循环次数已知的情况下，循环条件 ② 判断为 true 时，执行顺序为： ①→②→④→③，初始化表达式 ① 只在第一次循环时执行。</p>
 </blockquote>
 <p>例如：</p>
 <pre><code class="java">for(初始化表达式①;循环条件②;操作表达式③){
   执行语句④
-}</code></pre>
+}
+</code></pre>
 <pre><code class="java">/**
 * Created by Roojay on 2017/4/7.
 * 利用嵌套循环打印一个正三角形。
@@ -4316,7 +4409,8 @@ public class Test1 {
         }
 
     }
-}</code></pre>
+}
+</code></pre>
 <h3 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h3><h4 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h4><blockquote>
 <p>当它出现在 switch 条件语句中时，作用是终止某个 case 并跳出 switch 结构。<br>当它出现在循环语句中，作用是跳出循环语句，执行后面的代码。<br>当它出现在嵌套循环内层循环中时，只能跳出内层循环，如果想跳出外层循环，<br>需要对外层前面添加标记 itcast： ，在后面使用 break itcast 跳出外层循环。</p>
 </blockquote>
@@ -4324,8 +4418,7 @@ public class Test1 {
 <p>continue 语句用在循环语句中，它的作用是终止本次循环，执行下一次循环。<br>也可以使用标记结束外循环。</p>
 </blockquote>
 <h2 id="Button交互"><a href="#Button交互" class="headerlink" title="Button交互"></a>Button交互</h2><ul>
-<li><p>XML 布局文件中的 <button> 元素创建 Button，则可以使用该元素的 android:onClick 属性指定方法。这一方便的备选方案专为不改变行为的 Button 提供。</button></p>
-</li>
+<li>XML 布局文件中的 <button> 元素创建 Button，则可以使用该元素的 android:onClick 属性指定方法。这一方便的备选方案专为不改变行为的 Button 提供。</button></li>
 <li><p>android:onClick=”buttonName”</p>
 <h3 id="屏幕输出显示"><a href="#屏幕输出显示" class="headerlink" title="屏幕输出显示"></a>屏幕输出显示</h3><h4 id="MainActivity-java部分"><a href="#MainActivity-java部分" class="headerlink" title="MainActivity.java部分"></a>MainActivity.java部分</h4><pre><code class="java">  public void display(String text) {
       TextView t = (TextView) findViewById(R.id.display_text_view);
@@ -4335,10 +4428,10 @@ public class Test1 {
   public void display(int text) {
       TextView t = (TextView) findViewById(R.id.display_text_view);
       t.setText(text + &quot;&quot;);
-  }</code></pre>
+  }
+</code></pre>
 </li>
-<li><p>其中 R.id.display_text_view中的display_text_view是指具体输出显示的TextView的ID。</p>
-</li>
+<li>其中 R.id.display_text_view中的display_text_view是指具体输出显示的TextView的ID。</li>
 </ul>
 <h4 id="activity-main-xml部分"><a href="#activity-main-xml部分" class="headerlink" title="activity_main.xml部分"></a>activity_main.xml部分</h4><pre><code class="xml">    &lt;TextView
         android:id=&quot;@+id/display_text_view&quot;
@@ -4346,7 +4439,8 @@ public class Test1 {
         android:layout_height=&quot;wrap_content&quot;
         android:text=&quot;&quot;
         android:textSize=&quot;45sp&quot;
-        android:textColor=&quot;#000000&quot;/&gt;</code></pre>
+        android:textColor=&quot;#000000&quot;/&gt;
+</code></pre>
 <h3 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h3><ul>
 <li>下面两个 TextView 都设置着大量相同的元素：<pre><code class="xml">&lt;TextView
       android:id=&quot;@+id/tell&quot;
@@ -4374,7 +4468,8 @@ public class Test1 {
   android:layout_width=&quot;wrap_content&quot;
   android:layout_height=&quot;wrap_content&quot;
   android:background=&quot;#795548&quot;
-  android:layout_marginLeft=&quot;8dp&quot; /&gt;</code></pre>
+  android:layout_marginLeft=&quot;8dp&quot; /&gt;
+</code></pre>
 </li>
 <li>可以在<code>res/value/styles.xml</code>里定义个 style 来包括这些通用的元素设置：</li>
 </ul>
@@ -4384,9 +4479,11 @@ public class Test1 {
         &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;
         &lt;item name=&quot;android:background&quot;&gt;#795548&lt;/item&gt;
         &lt;item name=&quot;android:layout_marginLeft&quot;&gt;8dp&lt;/item&gt;
-    &lt;/style&gt;</code></pre>
+    &lt;/style&gt;
+</code></pre>
 <p>然后可以用以下一句语句轻易地重复引用这些设置：</p>
-<pre><code class="xml">style=&quot;@style/cofe_textView&quot;</code></pre>
+<pre><code class="xml">style=&quot;@style/cofe_textView&quot;
+</code></pre>
 <p>这一段 TextView 可以重构为以下：</p>
 <pre><code class="xml">
 &lt;TextView
@@ -4400,7 +4497,8 @@ public class Test1 {
         style=&quot;@style/cofe_textView&quot;
         android:layout_above=&quot;@id/tell&quot;
         android:text=&quot;半岛咖啡&quot;
-        android:textSize=&quot;30sp&quot; /&gt;</code></pre>
+        android:textSize=&quot;30sp&quot; /&gt;
+</code></pre>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -4436,10 +4534,8 @@ public class Test1 {
 </li>
 <li><p><strong>gravity</strong>中文意思是”重心“，就是表示view横向和纵向的停靠位置</p>
 <ul>
-<li><p><strong>android:gravity：</strong>是对view控件本身来说的，是用来设置view本身的内容应该显示在view的什么位置，默认值是左侧。也可以用来设置布局中的控件位置</p>
-</li>
-<li><p><strong>android:layout_gravity：</strong>是相对于包含该元素的父元素来说的，设置该元素在父元素的什么位置；</p>
-</li>
+<li><strong>android:gravity：</strong>是对view控件本身来说的，是用来设置view本身的内容应该显示在view的什么位置，默认值是左侧。也可以用来设置布局中的控件位置</li>
+<li><strong>android:layout_gravity：</strong>是相对于包含该元素的父元素来说的，设置该元素在父元素的什么位置；</li>
 <li><p>比如TextView: android:layout_gravity表示TextView在界面上的位置，android:gravity表示TextView文本在TextView的什么位置，默认值是左侧.</p>
 <p>​</p>
 <pre><code class="xml">&lt;TextView
@@ -4448,7 +4544,8 @@ public class Test1 {
         android:layout_width=&quot;150dp&quot;
         android:layout_height=&quot;75dp&quot; /&gt;
 
-&lt;!-- 注释内容 --&gt;</code></pre>
+&lt;!-- 注释内容 --&gt;
+</code></pre>
 </li>
 </ul>
 </li>
@@ -4462,7 +4559,8 @@ public class Test1 {
                android:src=&quot;@drawable/cake&quot;
                android:layout_width=&quot;wrap_content&quot;
                android:layout_height=&quot;wrap_content&quot;
-               android:scaleType=&quot;center&quot;  /&gt;</code></pre>
+               android:scaleType=&quot;center&quot;  /&gt;
+</code></pre>
 <h3 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h3><ul>
 <li>XML 布局文件中的 <button> 元素创建 Button，则可以使用该元素的 android:onClick 属性指定方法。这一方便的备选方案专为不改变行为的 Button 提供。</button></li>
 <li>android:onClick=”buttonname”</li>
@@ -4489,7 +4587,8 @@ android:text=&quot;2&quot;/&gt;
 android:layout_width=&quot;match_parent&quot;
 android:layout_height=&quot;wrap_content&quot;
 android:text=&quot;3&quot;/&gt;
-&lt;/LinearLayout&gt;</code></pre>
+&lt;/LinearLayout&gt;
+</code></pre>
 <p> <img src="http://i.imgur.com/dkCwMv0.png" alt></p>
 </li>
 </ul>
@@ -4566,22 +4665,18 @@ android:layout_height=&quot;wrap_content&quot;
 android:layout_alignParentBottom=&quot;true&quot;
 android:layout_alignParentRight=&quot;true&quot;
 android:text=&quot;8&quot;/&gt;
-&lt;/RelativeLayout&gt;</code></pre>
+&lt;/RelativeLayout&gt;
+</code></pre>
 <p>​</p>
 <p><img src="http://i.imgur.com/2e9IPMB.png" alt></p>
 </li>
 </ul>
 <h4 id="相对于其它视图定位"><a href="#相对于其它视图定位" class="headerlink" title="相对于其它视图定位"></a>相对于其它视图定位</h4><ul>
-<li><p>android:id=”@+id/viewname_text_view”</p>
-</li>
-<li><p>符号“@”表示Android应用中的资源。</p>
-</li>
-<li><p>位于center上边：android:layout_above=”@id/center”</p>
-</li>
-<li><p>位于center下边：android:layout_below=”@id/center”</p>
-</li>
-<li><p>位于center左边：android:layout_toLeftOf=”@id/center”</p>
-</li>
+<li>android:id=”@+id/viewname_text_view”</li>
+<li>符号“@”表示Android应用中的资源。</li>
+<li>位于center上边：android:layout_above=”@id/center”</li>
+<li>位于center下边：android:layout_below=”@id/center”</li>
+<li>位于center左边：android:layout_toLeftOf=”@id/center”</li>
 <li><p>位于center右边：android:layout_toRightOf=”@id/center”</p>
 <pre><code class="xml">&lt;RelativeLayout
 android:layout_width=&quot;match_parent&quot;
@@ -4616,7 +4711,8 @@ android:layout_height=&quot;wrap_content&quot;
 android:layout_below=&quot;@id/center&quot;
 android:layout_alignLeft=&quot;@id/center&quot;
 android:text=&quot;4&quot;/&gt;
-&lt;/RelativeLayout&gt;</code></pre>
+&lt;/RelativeLayout&gt;
+</code></pre>
 <p><img src="http://i.imgur.com/wyQuZei.png" alt></p>
 </li>
 </ul>
@@ -4644,8 +4740,7 @@ android:text=&quot;4&quot;/&gt;
 </li>
 <li><p>android:layout_marginBottom=”8dp”</p>
 </li>
-<li><p>默认值为0</p>
-</li>
+<li>默认值为0</li>
 </ul>
 </li>
 </ul>
@@ -4664,105 +4759,41 @@ android:text=&quot;4&quot;/&gt;
       </tags>
   </entry>
   <entry>
-    <title>结构语句</title>
-    <url>/pages/1c7ee7be/</url>
-    <content><![CDATA[<h2 id="选择结构语句"><a href="#选择结构语句" class="headerlink" title="选择结构语句"></a>选择结构语句</h2><h3 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h3><blockquote>
-<p>当判断条件1结果为true时，执行语句1，为false时，执行语句2。当判断条件1,2都不满足true时，执行语句3。</p>
+    <title>Java中的运算符</title>
+    <url>/pages/83e4d5ed/</url>
+    <content><![CDATA[<h2 id="Java中的运算符"><a href="#Java中的运算符" class="headerlink" title="Java中的运算符"></a>Java中的运算符</h2><blockquote>
+<p>Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。</p>
 </blockquote>
-<p>例如：</p>
-<pre><code class="java">if (判断条件1){
-  执行语句1
-}
-else if(判断条件2){
-  执行语句2
-}
-else{
-  执行语句3
-}</code></pre>
-<h3 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h3><blockquote>
-<p>一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。<br>当判断条件成立时结果为表达式1的值，否则表达式2的值。</p>
-</blockquote>
-<pre><code class="java">判断条件 ? 表达式 1 : 表达式 2</code></pre>
-<p>例如：求取两个数x，y中较大的值。</p>
-<pre><code class="java">//if-else实现方法
-int x, y, max;
-if(x&gt;y){
-    max = x;
-}
-else{
-    max = y;
-}
-
-//三元运算实现
-int x, y, max;
-max = x &gt; y ? x : y;
+<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><ol>
+<li><p>进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。<br>例如：</p>
+<pre><code class="java">6600/1000*1000
 </code></pre>
-<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><blockquote>
-<p>在switch语句中使用switch关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，<br>当表达式的值和某个目标值匹配时，会执行对应case下的语句。</p>
-</blockquote>
-<p>例如：</p>
-<pre><code class="java">switch(表达式){
-  case 1:
-    执行语句1;
-       break; //break终止case并跳出switch循环
-  case 2:
-    执行语句2;
-     break;
-  case 3:
-    执行语句3；
-      break;
-  default: //default处理和前面的case都不匹配的值
-    执行语句4;
-      break;
-}</code></pre>
-<h2 id="循环结构语句"><a href="#循环结构语句" class="headerlink" title="循环结构语句"></a>循环结构语句</h2><h3 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h3><blockquote>
-<p>循环条件判断为true时，执行语句循环执行，直到循环条件为false。</p>
-</blockquote>
-<p>例如：</p>
-<pre><code class="java">while(循环条件){
-    执行语句
-}</code></pre>
-<h3 id="do…while循环语句"><a href="#do…while循环语句" class="headerlink" title="do…while循环语句"></a>do…while循环语句</h3><blockquote>
-<p>循环体会无条件执行一次，然后根据循环条件决定是否继续执行。</p>
-</blockquote>
-<p>例如：</p>
-<pre><code class="java">do{
-  执行语句
-}
-while(循环条件);</code></pre>
-<h3 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h3><blockquote>
-<p>一般用在循环次数已知的情况下，循环条件判断为true执行顺序①→②→④→③</p>
-</blockquote>
-<p>例如：</p>
-<pre><code class="java">for(初始化表达式①;循环条件②;操作表达式③){
-  执行语句④
-}</code></pre>
-<pre><code class="java">/**
- * Created by Roojay on 2017/4/7.
- * 利用嵌套循环打印一个正三角形。
- */
-public class Test1 {
-    public static void main(String args[]){
-        int i, j, k;
-        for(i = 1; i &lt;= 5; i++){
-            for(k = 0; k &lt; 5 - i; k++){
-                System.out.print(&quot; &quot;);
-            }
-            for(j = 1; j &lt;= i; j++){
-                System.out.print(&quot;* &quot;);
-            }
-
-            System.out.println();
-        }
-
-    }
-}</code></pre>
-<h3 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h3><h4 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h4><blockquote>
-<p>当它出现在switch条件语句中时，作用是终止某个case并跳出switch结构。<br>当它出现在循环语句中，作用是跳出循环语句，执行后面的代码。<br>当它出现在嵌套循环内层循环中时，只能跳出内层循环，如果想跳出外层循环，<br>需要对外层前面添加标记 itcast： ，在后面使用 break itcast 跳出外层循环。</p>
-</blockquote>
-<h4 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a>continue语句</h4><blockquote>
-<p>continue语句用在循环语句中，它的作用是终止本次循环，执行下一次循环。<br>也可以使用标记结束外循环。</p>
-</blockquote>
+<p>最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。</p>
+</li>
+<li><p>进行除法运算时如果有小数参与，得到的结果为小数。<br>例如：</p>
+<pre><code class="java">6.6/10
+</code></pre>
+<p>结果为0.66。</p>
+</li>
+<li><p>进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。<br>例如：</p>
+<pre><code class="java">(-6)/2
+</code></pre>
+<p>结果为-3。</p>
+<pre><code class="java">6/(-3)
+</code></pre>
+<p>结果为2。</p>
+</li>
+</ol>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><ol>
+<li><p>可以通过一条赋值语句对多个变量进行赋值。<br>例如：</p>
+<pre><code class="java">int x, y, z;
+x = y = z = 5;  //为三个变量同时赋值。
+</code></pre>
+</li>
+<li><p>使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。</p>
+</li>
+</ol>
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>左移：&lt;&lt;   00000100&lt;&lt;2  00010000     10010001&lt;<2 01000100 右移：>&gt;   01100010&gt;&gt;2  00011000     11100010&gt;&gt;2 11111000<br>无符号右移：     01100010&gt;&gt;&gt;2  00011000     11100010&gt;&gt;&gt;2 00111000</2></p>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -4783,7 +4814,8 @@ public class Test1 {
     ...
     ...
     return 返回值；
-}</code></pre>
+}
+</code></pre>
 <h3 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h3><blockquote>
 <p>Java 允许在一个程序中定义多个名称相同的方法</p>
 </blockquote>
@@ -4833,7 +4865,8 @@ public class Test{
             }
         }
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="Decorator（装饰者）模式"><a href="#Decorator（装饰者）模式" class="headerlink" title="Decorator（装饰者）模式"></a>Decorator（装饰者）模式</h2><p><img src="http://i.imgur.com/arkDK8p.png" alt></p>
 <h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">interface Teacher{
     public void teaching();
@@ -4873,7 +4906,8 @@ public class Test{
         ATeacher aTeacher2 = new ATeacher(chineseTeacher);
         aTeacher2.teaching();
     }
-}</code></pre>
+}
+</code></pre>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -4935,7 +4969,8 @@ finally{
  catch(Exception e){
      System.out.println(e);
  }
-}</code></pre>
+}
+</code></pre>
 <h4 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h4><pre><code class="java">import java.io.*;
 public class Test{
  public static void main(String args[]){
@@ -4969,7 +5004,8 @@ public class Test{
              System.out.println(e);
          }
      }
-}</code></pre>
+}
+</code></pre>
 </li>
 </ol>
 <h2 id="大文件的读写"><a href="#大文件的读写" class="headerlink" title="大文件的读写"></a>大文件的读写</h2><ol>
@@ -4982,7 +5018,8 @@ public class Test{
         break;
     }
     fos.write(buffer,0,temp);
-}</code></pre>
+}
+</code></pre>
 <h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><ul>
 <li>字符流：是以对写文件时，以字符为基础</li>
 <li>字节输入流：Reader &lt;–FileReader<ul>
@@ -5024,7 +5061,8 @@ public class TestChar{
             }
         }
     }
-}</code></pre>
+}
+</code></pre>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -5034,36 +5072,113 @@ public class TestChar{
       </tags>
   </entry>
   <entry>
-    <title>Java中的运算符</title>
-    <url>/pages/83e4d5ed/</url>
-    <content><![CDATA[<h2 id="Java中的运算符"><a href="#Java中的运算符" class="headerlink" title="Java中的运算符"></a>Java中的运算符</h2><blockquote>
-<p>Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。</p>
+    <title>结构语句</title>
+    <url>/pages/1c7ee7be/</url>
+    <content><![CDATA[<h2 id="选择结构语句"><a href="#选择结构语句" class="headerlink" title="选择结构语句"></a>选择结构语句</h2><h3 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h3><blockquote>
+<p>当判断条件1结果为true时，执行语句1，为false时，执行语句2。当判断条件1,2都不满足true时，执行语句3。</p>
 </blockquote>
-<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><ol>
-<li><p>进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。<br>例如：</p>
-<pre><code class="java">6600/1000*1000</code></pre>
-<p>最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。</p>
-</li>
-<li><p>进行除法运算时如果有小数参与，得到的结果为小数。<br>例如：<br>```java</p>
-</li>
-<li><p>6/10</p>
-<pre><code>结果为0.66。</code></pre></li>
-<li><p>进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。<br>例如：</p>
-<pre><code class="java">(-6)/2</code></pre>
-<p>结果为-3。</p>
-<pre><code class="java">6/(-3)</code></pre>
-<p>结果为2。</p>
-</li>
-</ol>
-<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><ol>
-<li><p>可以通过一条赋值语句对多个变量进行赋值。<br>例如：</p>
-<pre><code class="java">int x, y, z;
-x = y = z = 5;  //为三个变量同时赋值。</code></pre>
-</li>
-<li><p>使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。</p>
-</li>
-</ol>
-<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>左移：&lt;&lt;   00000100&lt;&lt;2  00010000     10010001&lt;&lt;2 01000100<br>右移：&gt;&gt;   01100010&gt;&gt;2  00011000     11100010&gt;&gt;2 11111000<br>无符号右移：     01100010&gt;&gt;&gt;2  00011000     11100010&gt;&gt;&gt;2 00111000</p>
+<p>例如：</p>
+<pre><code class="java">if (判断条件1){
+  执行语句1
+}
+else if(判断条件2){
+  执行语句2
+}
+else{
+  执行语句3
+}
+</code></pre>
+<h3 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h3><blockquote>
+<p>一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。<br>当判断条件成立时结果为表达式1的值，否则表达式2的值。</p>
+<pre><code class="java">判断条件 ? 表达式 1 : 表达式 2
+</code></pre>
+</blockquote>
+<p>例如：求取两个数x，y中较大的值。</p>
+<pre><code class="java">//if-else实现方法
+int x, y, max;
+if(x&gt;y){
+    max = x;
+}
+else{
+    max = y;
+}
+
+//三元运算实现
+int x, y, max;
+max = x &gt; y ? x : y;
+
+</code></pre>
+<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><blockquote>
+<p>在switch语句中使用switch关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，<br>当表达式的值和某个目标值匹配时，会执行对应case下的语句。</p>
+</blockquote>
+<p>例如：</p>
+<pre><code class="java">switch(表达式){
+  case 1:
+    执行语句1;
+       break; //break终止case并跳出switch循环
+  case 2:
+    执行语句2;
+     break;
+  case 3:
+    执行语句3；
+      break;
+  default: //default处理和前面的case都不匹配的值
+    执行语句4;
+      break;
+}
+</code></pre>
+<h2 id="循环结构语句"><a href="#循环结构语句" class="headerlink" title="循环结构语句"></a>循环结构语句</h2><h3 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h3><blockquote>
+<p>循环条件判断为true时，执行语句循环执行，直到循环条件为false。</p>
+</blockquote>
+<p>例如：</p>
+<pre><code class="java">while(循环条件){
+    执行语句
+}
+</code></pre>
+<h3 id="do…while循环语句"><a href="#do…while循环语句" class="headerlink" title="do…while循环语句"></a>do…while循环语句</h3><blockquote>
+<p>循环体会无条件执行一次，然后根据循环条件决定是否继续执行。</p>
+</blockquote>
+<p>例如：</p>
+<pre><code class="java">do{
+  执行语句
+}
+while(循环条件);
+</code></pre>
+<h3 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h3><blockquote>
+<p>一般用在循环次数已知的情况下，循环条件判断为true执行顺序①→②→④→③</p>
+</blockquote>
+<p>例如：</p>
+<pre><code class="java">for(初始化表达式①;循环条件②;操作表达式③){
+  执行语句④
+}
+</code></pre>
+<pre><code class="java">/**
+ * Created by Roojay on 2017/4/7.
+ * 利用嵌套循环打印一个正三角形。
+ */
+public class Test1 {
+    public static void main(String args[]){
+        int i, j, k;
+        for(i = 1; i &lt;= 5; i++){
+            for(k = 0; k &lt; 5 - i; k++){
+                System.out.print(&quot; &quot;);
+            }
+            for(j = 1; j &lt;= i; j++){
+                System.out.print(&quot;* &quot;);
+            }
+
+            System.out.println();
+        }
+
+    }
+}
+</code></pre>
+<h3 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h3><h4 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h4><blockquote>
+<p>当它出现在switch条件语句中时，作用是终止某个case并跳出switch结构。<br>当它出现在循环语句中，作用是跳出循环语句，执行后面的代码。<br>当它出现在嵌套循环内层循环中时，只能跳出内层循环，如果想跳出外层循环，<br>需要对外层前面添加标记 itcast： ，在后面使用 break itcast 跳出外层循环。</p>
+</blockquote>
+<h4 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a>continue语句</h4><blockquote>
+<p>continue语句用在循环语句中，它的作用是终止本次循环，执行下一次循环。<br>也可以使用标记结束外循环。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -5095,7 +5210,8 @@ class Test{
       People people = new People();
       people.setAge(-20);
   }
-}</code></pre>
+}
+</code></pre>
 </li>
 </ul>
 <p>运行结果：<br><img src="http://i.imgur.com/hSqdO9z.png" alt></p>
@@ -5124,9 +5240,43 @@ class Test{
           System.out.println(e);
       }
   }
-}</code></pre>
+}
+</code></pre>
 运行结果：<br><img src="http://i.imgur.com/wJqKdCu.png" alt></li>
 </ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java中的数组</title>
+    <url>/pages/e7882660/</url>
+    <content><![CDATA[<ul>
+<li>数组是用来存储固定大小的同类型元素。</li>
+</ul>
+<h2 id="数组的定义方法"><a href="#数组的定义方法" class="headerlink" title="数组的定义方法"></a>数组的定义方法</h2><h3 id="静态定义法"><a href="#静态定义法" class="headerlink" title="静态定义法"></a>静态定义法</h3><pre><code class="java">int arr [] = {1,5,6,4,};
+</code></pre>
+<ul>
+<li>arr：整型数组。</li>
+<li>arr[n]：n为下标，从第0位开始。arr[0]=1, arr[1]=5, arr[2]=6.</li>
+<li>数组长度：arr.length.</li>
+</ul>
+<h3 id="动态定义法"><a href="#动态定义法" class="headerlink" title="动态定义法"></a>动态定义法</h3><pre><code class="java">int arr [] = new int[10];
+</code></pre>
+<ul>
+<li>数组的长度为10.</li>
+</ul>
+<h3 id="二维数组的定义方法"><a href="#二维数组的定义方法" class="headerlink" title="二维数组的定义方法"></a>二维数组的定义方法</h3><pre><code class="java">静态定义法：
+int arr[] [] = {{5,3,6},{5,8,7},{6,3,2}};
+动态定义法：
+int arr[] [] = new int[][];
+例：
+int[1][2] = 7;
+</code></pre>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -5146,7 +5296,8 @@ public static void main(String args[]){
   String s = sc.nextLine(); //接受字符和字符串类型的输入
   int age = sc.nextInt();
   float salary = sc.nextFloat();
-}</code></pre>
+}
+</code></pre>
 <h4 id="简单运行、退出方法"><a href="#简单运行、退出方法" class="headerlink" title="简单运行、退出方法"></a>简单运行、退出方法</h4><pre><code class="java">import java.util.Scanner;
 public class Test {
     public static void main(String args[]) {
@@ -5168,7 +5319,8 @@ itcast :
             }
         }
     }
-}</code></pre>
+}
+</code></pre>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -5178,27 +5330,316 @@ itcast :
       </tags>
   </entry>
   <entry>
-    <title>Java中的数组</title>
-    <url>/pages/e7882660/</url>
+    <title>Java中的异常</title>
+    <url>/pages/f029d2bb/</url>
+    <content><![CDATA[<ol>
+<li>什么是异常</li>
+<li>异常的分类</li>
+<li>try…catch…finally结构的使用方法</li>
+</ol>
+<h2 id="1-什么是异常？"><a href="#1-什么是异常？" class="headerlink" title="1. 什么是异常？"></a>1. 什么是异常？</h2><blockquote>
+</blockquote>
+<ul>
+<li>异常(Exception)：中断了正常指令流的事件。</li>
+<li>异常是一个对象；</li>
+<li>异常产生于程序运行时；</li>
+<li><p>指令流：程序执行时一系列的连续指令称为指令流。</p>
+<blockquote>
+</blockquote>
+<p>示例：</p>
+<pre><code class="java">class Test{
+  public static void main(String args[]){
+      int i = 1 / 0;
+  }
+}
+</code></pre>
+<p>抛出异常：</p>
+<blockquote>
+<p>Exception in thread “main” java.lang.ArithmeticException: / by zero<br>  at Test3.main(Test3.java:6)</p>
+</blockquote>
+</li>
+<li><p>Exception in thread “main” ：在主线程中出现异常；</p>
+</li>
+<li>ArithmeticException：异常的名称，算术异常；</li>
+<li>/ by zero：被0除；</li>
+<li>at Test.main(Test.java:3)：异常位置；</li>
+</ul>
+<h2 id="2-异常的分类"><a href="#2-异常的分类" class="headerlink" title="2. 异常的分类"></a>2. 异常的分类</h2><h3 id="JDK提供的类："><a href="#JDK提供的类：" class="headerlink" title="JDK提供的类："></a>JDK提供的类：</h3><blockquote>
+<p><img src="http://i.imgur.com/gTBhe2x.png" alt></p>
+<ol>
+<li>Throwable：所有异常的父类；</li>
+<li>Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭；</li>
+<li>Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption</li>
+</ol>
+</blockquote>
+<p>RuntimeException + Error 和其子类都是属于uncheckexception<br>Exception类中除了 RuntimeException之外的类，都是属于checkexception</p>
+<h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4><h5 id="checkException"><a href="#checkException" class="headerlink" title="checkException"></a>checkException</h5><blockquote>
+</blockquote>
+<p>checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。<br>示例：</p>
+<pre><code class="java">class TestCheck{
+    public static void main(String args[]){
+        //CheckException
+        Thread.sleep(1000); //让当前线程休眠1000ms
+    }
+}
+</code></pre>
+<p>运行结果：<br><img src="http://i.imgur.com/xMd1LOi.png" alt></p>
+<h5 id="uncheckException（-RuntimeException）"><a href="#uncheckException（-RuntimeException）" class="headerlink" title="uncheckException（ RuntimeException）"></a>uncheckException（ RuntimeException）</h5><blockquote>
+</blockquote>
+<p>运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成<br>示例：</p>
+<pre><code class="java">class Test{
+    public static void main(String args[]){
+        //UncheckException
+        int i = 1 / 0;
+    }
+}
+</code></pre>
+<p>运行结果：<br><img src="http://i.imgur.com/ll7JnfN.png" alt></p>
+<h2 id="3-try…catch…finally结构"><a href="#3-try…catch…finally结构" class="headerlink" title="3. try…catch…finally结构"></a>3. try…catch…finally结构</h2><blockquote>
+</blockquote>
+<pre><code class="java">try{
+       //代码A
+    //有可能出现异常的代码B
+    //代码C
+}
+catch(Exception e){ //虚拟机产生的异常对象e
+    e.printStackTrace(); //处理异常的代码D
+    //代码E
+}
+finally{
+    //异常的出口
+    //执行扫尾工作的代码F
+}
+</code></pre>
+<h4 id="如果try中代码B没有异常：执行代码A-B-C-F"><a href="#如果try中代码B没有异常：执行代码A-B-C-F" class="headerlink" title="如果try中代码B没有异常：执行代码A-B-C-F"></a>如果try中代码B没有异常：执行代码A-B-C-F</h4><h4 id="如果try中代码B出现异常：执行代码A-B-D-E-F"><a href="#如果try中代码B出现异常：执行代码A-B-D-E-F" class="headerlink" title="如果try中代码B出现异常：执行代码A-B-D-E-F"></a>如果try中代码B出现异常：执行代码A-B-D-E-F</h4><h3 id="uncheckException"><a href="#uncheckException" class="headerlink" title="uncheckException"></a>uncheckException</h3><blockquote>
+</blockquote>
+<pre><code class="java">//uncheckException
+class TestCheck{
+    public static void main(String args[]){
+        System.out.println(1);
+        try{
+            System.out.println(2);
+            //有可能出现异常的代码
+            int i = 1/0;
+            System.out.println(3);
+        }
+        catch(Exception e){ //虚拟机产生的异常对象e
+            e.printStackTrace(); //打印异常栈的追踪信息
+            System.out.println(4);
+        }
+        finally{
+            //异常的出口
+            System.out.println(&quot;finally&quot;);
+        }
+    }
+}
+</code></pre>
+<p>运行结果：<br><img src="http://i.imgur.com/DG4HLEn.png" alt></p>
+<h3 id="checkException-1"><a href="#checkException-1" class="headerlink" title="checkException"></a>checkException</h3><blockquote>
+</blockquote>
+<pre><code class="java">//checkException
+class TestCheck{
+    public static void main(String args[]){
+        System.out.println(1);
+        try{
+            System.out.println(2);
+            //有可能出现异常的代码
+            Thread.sleep(1000); //让当前线程休眠1000ms
+            System.out.println(3);
+        }
+        catch(Exception e){ //虚拟机产生的异常对象e
+            e.printStackTrace(); //打印异常栈的追踪信息
+            System.out.println(4);
+        }
+        finally{
+            //异常的出口
+            System.out.println(&quot;finally&quot;);
+        }
+    }
+}
+</code></pre>
+<p>运行结果：<br><img src="http://i.imgur.com/yWIuLO9.png" alt><br>屏幕首先显示1，2，然后停顿1000ms，再显示3和finally</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>进制转换</title>
+    <url>/pages/7dc91154/</url>
+    <content><![CDATA[<h3 id="十进制转换二进制"><a href="#十进制转换二进制" class="headerlink" title="十进制转换二进制"></a>十进制转换二进制</h3><blockquote>
+<p>将一个十进制数转换为二进制，就是将这个数不断取余的过程，将这个数除以 2，得到了商和余数，然后将商不断除以 2，直到商为 0，然后将余数倒过来排列，所得到的数就是转换的二进制结果。</p>
+</blockquote>
+<h3 id="二进制转八进制"><a href="#二进制转八进制" class="headerlink" title="二进制转八进制"></a>二进制转八进制</h3><blockquote>
+<p>将二进制数自右向左每三位分成一段，然后将每三位数转换为一位八进制数。</p>
+</blockquote>
+<p> 例如：111000101 = 111 000 101 = 0 7 0 5<br> 八进制以 0 开头。</p>
+<h3 id="二进制转十六进制"><a href="#二进制转十六进制" class="headerlink" title="二进制转十六进制"></a>二进制转十六进制</h3><blockquote>
+<p>将二进制数自右向左每四位分成一段，然后将每四位转换为一位十六进制数。</p>
+</blockquote>
+<p>例如：111010100110=1110 1010 0110=0x E A 6<br> 十六进制以 0x 或者 0X 开头。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>接口应用</title>
+    <url>/pages/75336bdc/</url>
+    <content><![CDATA[<blockquote>
+<p>接口定义一种标准：</p>
+</blockquote>
+<ol>
+<li>通过interface定义；</li>
+<li>函数都是抽象函数（只有函数没有函数体）；</li>
+<li>子类通过implements实现；对接口里面的抽象函数进行override；<pre><code class="java">/**
+*定义一个Printer接口，通过HPPrinter，CanonPrinter两个子类去实现
+*/
+package printer;
+//定义一个Printer接口
+interface Printer{
+ public void open();
+ public void print(String s);
+ public void close();
+}
+//定义HPPrinter去implements Printer接口
+class HPPrinter implements Printer{
+ @Override
+ public void open(){
+     System.out.println(&quot;HPPrinter open&quot;);
+ }
+ public void print(String s){
+     System.out.println(&quot;HPPrinter print:&quot; + s);
+ }
+ public void close(){
+     System.out.println(&quot;HPPrinter close&quot;);
+ }
+}
+//定义CanonPrinter去implements Printer接口
+class CanonPrinter implements Printer{
+ @Override
+ private void clean(){
+     System.out.println(&quot;clean&quot;);
+ }
+ public void open(){
+     System.out.println(&quot;CanonPrinter open&quot;);
+ }
+ public void print(String s){
+     System.out.println(&quot;CanonPrinter print:&quot; + s);
+ }
+ public void close(){
+     this.clean();
+     System.out.println(&quot;CanonPrinter close&quot;);
+ }
+}
+//静态工厂方法模式
+class PrinterFactory{
+//定义一个静态函数getPrinter(int flag)，返回值类型为Printer
+ public static Printer getPrinter(int flag){
+     Printer printer = null;
+//根据用户选择生成新的对象，并向上转型为Printer类型
+     if (flag == 0){
+         printer = new HPPrinter();
+     }
+     else if(flag == 1){
+         printer = new CanonPrinter();
+     }
+     return printer;
+ }
+}
+//定义一个主函数，对函数进行调用
+class Test{
+ public static void main(String args[]){
+     int flag = 1;
+     //工厂方法模式调用 类名+函数
+     Printer printer = PrinterFactory.getPrinter(flag);
+     printer.open();
+     printer.print(&quot;Test&quot;);
+     printer.close();
+ }
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h2><h4 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h4><blockquote>
+<p>Java 简单工厂模式（Simple Factory Pattern）又叫静态工厂方法模式（Static FactoryMethod Pattern），通过专门定义一个类来负责创建其他类的实例（将生成对象的代码封装在工厂类中），被创建的实例通常都具有共同的父类。</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/roojay520/roojaycloud/images/printer.png" alt></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>内部类</title>
+    <url>/pages/9bc01b38/</url>
     <content><![CDATA[<ul>
-<li>数组是用来存储固定大小的同类型元素。</li>
+<li>内部类：一个类定义在另一个类的里面。</li>
 </ul>
-<h2 id="数组的定义方法"><a href="#数组的定义方法" class="headerlink" title="数组的定义方法"></a>数组的定义方法</h2><h3 id="静态定义法"><a href="#静态定义法" class="headerlink" title="静态定义法"></a>静态定义法</h3><pre><code class="java">int arr [] = {1,5,6,4,};</code></pre>
-<ul>
-<li>arr：整型数组。</li>
-<li>arr[n]：n为下标，从第0位开始。arr[0]=1, arr[1]=5, arr[2]=6.</li>
-<li>数组长度：arr.length.</li>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><blockquote>
+</blockquote>
+<pre><code class="java">class A{
+    class B{
+    }
+}
+</code></pre>
+<p>B这个类被称之为A的内部类。<br>编译之后生成A.class和A$B.class。<br>内部类可以随意使用外部类的成员变量。</p>
+<h1 id="内部类的使用方法"><a href="#内部类的使用方法" class="headerlink" title="内部类的使用方法"></a>内部类的使用方法</h1><h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">class A{
+    int i;
+    class B{
+        int j;
+        int funB(){
+            int result = i + j;
+            System.out.println(result);
+            return result;
+        }
+    }
+}
+
+class Test{
+    public static void main(String args[]){
+        A a = new A();
+
+        A.B b = a.new B();
+
+        a.i = 5;
+        b.j = 6;
+        b.funB();
+    }
+}
+</code></pre>
+<h1 id="匿名内部类的使用方法"><a href="#匿名内部类的使用方法" class="headerlink" title="匿名内部类的使用方法"></a>匿名内部类的使用方法</h1><ul>
+<li>匿名内部类：没有名字的内部类。</li>
 </ul>
-<h3 id="动态定义法"><a href="#动态定义法" class="headerlink" title="动态定义法"></a>动态定义法</h3><pre><code class="java">int arr [] = new int[10];</code></pre>
-<ul>
-<li>数组的长度为10.</li>
-</ul>
-<h3 id="二维数组的定义方法"><a href="#二维数组的定义方法" class="headerlink" title="二维数组的定义方法"></a>二维数组的定义方法</h3><pre><code class="java">静态定义法：
-int arr[] [] = {{5,3,6},{5,8,7},{6,3,2}};
-动态定义法：
-int arr[] [] = new int[][];
-例：
-int[1][2] = 7;</code></pre>
+<h4 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">interface A{
+    public void doSth();
+}
+class B{
+    public void fun(A a){
+        System.out.println(&quot;B类的fun函数&quot;);
+        a.doSth();
+    }
+}
+public class Test{
+    public static void main(String args[]){
+        B b = new B();
+        b.fun(new A(){
+            public void doSth(){
+                System.out.println(&quot;匿名内部类&quot;);
+            }
+        });
+    }
+}
+</code></pre>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -5242,7 +5683,8 @@ class FirstThread extends Thread{
             System.out.println(&quot;FirstThread---&gt;:&quot; + i);
         }
     }
-}</code></pre>
+}
+</code></pre>
 <h3 id="实现Runnable接口创建多线程"><a href="#实现Runnable接口创建多线程" class="headerlink" title="实现Runnable接口创建多线程"></a>实现Runnable接口创建多线程</h3><ul>
 <li>提供一个实现接口Runnable的类作为线程的目标对象，在初始化一个Thread类或者Thread子类的线程对象时，把目标对象传递给这个线程实例，由该目标对象提供线程体。</li>
 </ul>
@@ -5275,7 +5717,8 @@ class FirstThread implements Runnable{
             System.out.println(&quot;FirstThread---&gt;:&quot; + i);
         }
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="线程的简单控制方法"><a href="#线程的简单控制方法" class="headerlink" title="线程的简单控制方法"></a>线程的简单控制方法</h2><ul>
 <li><p>中断线程</p>
 <ul>
@@ -5297,7 +5740,8 @@ class FirstThread implements Runnable{
 <h2 id="同步语法"><a href="#同步语法" class="headerlink" title="同步语法"></a>同步语法</h2><h3 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h3><pre><code class="java">synchronized(this) {   //this：同步锁
 
         代码块
-}</code></pre>
+}
+</code></pre>
 <ul>
 <li>synchronized锁住一个对象。</li>
 <li>如果线程A得到同步锁，那么他将可以执行代码块，<br> 即使线程B从线程A手中抢到了同步锁，B也不能立即执行代码块，它必须等到线程A执行完这个代码块之后才能执行。</li>
@@ -5333,271 +5777,17 @@ class MyThread implements Runnable{
             }
         }
     }
-}</code></pre>
+}
+</code></pre>
 <h3 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a>同步方法</h3><pre><code class="java">public synchronized void run(){
 
     代码块
 }
+
 </code></pre>
 <ul>
 <li>synchronized锁住this。</li>
 </ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>进制转换</title>
-    <url>/pages/7dc91154/</url>
-    <content><![CDATA[<h3 id="十进制转换二进制"><a href="#十进制转换二进制" class="headerlink" title="十进制转换二进制"></a>十进制转换二进制</h3><blockquote>
-<p>将一个十进制数转换为二进制，就是将这个数不断取余的过程，将这个数除以 2，得到了商和余数，然后将商不断除以 2，直到商为 0，然后将余数倒过来排列，所得到的数就是转换的二进制结果。</p>
-</blockquote>
-<h3 id="二进制转八进制"><a href="#二进制转八进制" class="headerlink" title="二进制转八进制"></a>二进制转八进制</h3><blockquote>
-<p>将二进制数自右向左每三位分成一段，然后将每三位数转换为一位八进制数。</p>
-</blockquote>
-<p> 例如：111000101 = 111 000 101 = 0 7 0 5<br> 八进制以 0 开头。</p>
-<h3 id="二进制转十六进制"><a href="#二进制转十六进制" class="headerlink" title="二进制转十六进制"></a>二进制转十六进制</h3><blockquote>
-<p>将二进制数自右向左每四位分成一段，然后将每四位转换为一位十六进制数。</p>
-</blockquote>
-<p>例如：111010100110=1110 1010 0110=0x E A 6<br> 十六进制以 0x 或者 0X 开头。</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>内部类</title>
-    <url>/pages/9bc01b38/</url>
-    <content><![CDATA[<ul>
-<li>内部类：一个类定义在另一个类的里面。</li>
-</ul>
-<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><blockquote>
-</blockquote>
-<pre><code class="java">class A{
-    class B{
-    }
-}</code></pre>
-<p>B这个类被称之为A的内部类。<br>编译之后生成A.class和A$B.class。<br>内部类可以随意使用外部类的成员变量。</p>
-<h1 id="内部类的使用方法"><a href="#内部类的使用方法" class="headerlink" title="内部类的使用方法"></a>内部类的使用方法</h1><h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">class A{
-    int i;
-    class B{
-        int j;
-        int funB(){
-            int result = i + j;
-            System.out.println(result);
-            return result;
-        }
-    }
-}
-
-class Test{
-    public static void main(String args[]){
-        A a = new A();
-
-        A.B b = a.new B();
-
-        a.i = 5;
-        b.j = 6;
-        b.funB();
-    }
-}</code></pre>
-<h1 id="匿名内部类的使用方法"><a href="#匿名内部类的使用方法" class="headerlink" title="匿名内部类的使用方法"></a>匿名内部类的使用方法</h1><ul>
-<li>匿名内部类：没有名字的内部类。</li>
-</ul>
-<h4 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">interface A{
-    public void doSth();
-}
-class B{
-    public void fun(A a){
-        System.out.println(&quot;B类的fun函数&quot;);
-        a.doSth();
-    }
-}
-public class Test{
-    public static void main(String args[]){
-        B b = new B();
-        b.fun(new A(){
-            public void doSth(){
-                System.out.println(&quot;匿名内部类&quot;);
-            }
-        });
-    }
-}</code></pre>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>接口应用</title>
-    <url>/pages/75336bdc/</url>
-    <content><![CDATA[<blockquote>
-<p>接口定义一种标准：</p>
-</blockquote>
-<ol>
-<li>通过interface定义；</li>
-<li>函数都是抽象函数（只有函数没有函数体）；</li>
-<li>子类通过implements实现；对接口里面的抽象函数进行override；<br>```java<br>/**</li>
-</ol>
-<p>*定义一个Printer接口，通过HPPrinter，CanonPrinter两个子类去实现<br>*/<br>package printer;<br> //定义一个Printer接口<br>interface Printer{<br>    public void open();<br>    public void print(String s);<br>    public void close();<br>}<br>//定义HPPrinter去implements Printer接口<br>class HPPrinter implements Printer{<br>    @Override<br>    public void open(){<br>        System.out.println(“HPPrinter open”);<br>    }<br>    public void print(String s){<br>        System.out.println(“HPPrinter print:” + s);<br>    }<br>    public void close(){<br>        System.out.println(“HPPrinter close”);<br>    }<br>}<br>//定义CanonPrinter去implements Printer接口<br>class CanonPrinter implements Printer{<br>    @Override<br>    private void clean(){<br>        System.out.println(“clean”);<br>    }<br>    public void open(){<br>        System.out.println(“CanonPrinter open”);<br>    }<br>    public void print(String s){<br>        System.out.println(“CanonPrinter print:” + s);<br>    }<br>    public void close(){<br>        this.clean();<br>        System.out.println(“CanonPrinter close”);<br>    }<br>}<br>//静态工厂方法模式<br>class PrinterFactory{<br>//定义一个静态函数getPrinter(int flag)，返回值类型为Printer<br>    public static Printer getPrinter(int flag){<br>        Printer printer = null;<br>//根据用户选择生成新的对象，并向上转型为Printer类型<br>        if (flag == 0){<br>            printer = new HPPrinter();<br>        }<br>        else if(flag == 1){<br>            printer = new CanonPrinter();<br>        }<br>        return printer;<br>    }<br>}<br>//定义一个主函数，对函数进行调用<br>class Test{<br>    public static void main(String args[]){<br>        int flag = 1;<br>        //工厂方法模式调用 类名+函数<br>        Printer printer = PrinterFactory.getPrinter(flag);<br>        printer.open();<br>        printer.print(“Test”);<br>        printer.close();<br>    }<br>}</p>
-<pre><code>
-
-## 工厂方法 ##
-#### 简单工厂模式 ####
-
-&gt; Java 简单工厂模式（Simple Factory Pattern）又叫静态工厂方法模式（Static FactoryMethod Pattern），通过专门定义一个类来负责创建其他类的实例（将生成对象的代码封装在工厂类中），被创建的实例通常都具有共同的父类。
-
-
-![](https://raw.githubusercontent.com/roojay520/roojaycloud/images/printer.png)
-</code></pre>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java中的异常</title>
-    <url>/pages/f029d2bb/</url>
-    <content><![CDATA[<ol>
-<li>什么是异常</li>
-<li>异常的分类</li>
-<li>try…catch…finally结构的使用方法</li>
-</ol>
-<h2 id="1-什么是异常？"><a href="#1-什么是异常？" class="headerlink" title="1. 什么是异常？"></a>1. 什么是异常？</h2><blockquote>
-</blockquote>
-<ul>
-<li><p>异常(Exception)：中断了正常指令流的事件。</p>
-</li>
-<li><p>异常是一个对象；</p>
-</li>
-<li><p>异常产生于程序运行时；</p>
-</li>
-<li><p>指令流：程序执行时一系列的连续指令称为指令流。</p>
-<blockquote>
-</blockquote>
-<p>示例：</p>
-<pre><code class="java">class Test{
-  public static void main(String args[]){
-      int i = 1 / 0;
-  }
-}</code></pre>
-<p>抛出异常：</p>
-<blockquote>
-<p>Exception in thread “main” java.lang.ArithmeticException: / by zero<br>  at Test3.main(Test3.java:6)</p>
-</blockquote>
-</li>
-<li><p>Exception in thread “main” ：在主线程中出现异常；</p>
-</li>
-<li><p>ArithmeticException：异常的名称，算术异常；</p>
-</li>
-<li><p>/ by zero：被0除；</p>
-</li>
-<li><p>at Test.main(Test.java:3)：异常位置；</p>
-</li>
-</ul>
-<h2 id="2-异常的分类"><a href="#2-异常的分类" class="headerlink" title="2. 异常的分类"></a>2. 异常的分类</h2><h3 id="JDK提供的类："><a href="#JDK提供的类：" class="headerlink" title="JDK提供的类："></a>JDK提供的类：</h3><blockquote>
-<p><img src="http://i.imgur.com/gTBhe2x.png" alt></p>
-</blockquote>
-<ol>
-<li>Throwable：所有异常的父类；</li>
-<li>Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭；</li>
-<li>Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption<blockquote>
-</blockquote>
-RuntimeException + Error 和其子类都是属于uncheckexception<br>Exception类中除了 RuntimeException之外的类，都是属于checkexception</li>
-</ol>
-<h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4><h5 id="checkException"><a href="#checkException" class="headerlink" title="checkException"></a>checkException</h5><blockquote>
-</blockquote>
-<p>checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。<br>示例：</p>
-<pre><code class="java">class TestCheck{
-    public static void main(String args[]){
-        //CheckException
-        Thread.sleep(1000); //让当前线程休眠1000ms
-    }
-}</code></pre>
-<p>运行结果：<br><img src="http://i.imgur.com/xMd1LOi.png" alt></p>
-<h5 id="uncheckException（-RuntimeException）"><a href="#uncheckException（-RuntimeException）" class="headerlink" title="uncheckException（ RuntimeException）"></a>uncheckException（ RuntimeException）</h5><blockquote>
-</blockquote>
-<p>运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成<br>示例：</p>
-<pre><code class="java">class Test{
-    public static void main(String args[]){
-        //UncheckException
-        int i = 1 / 0;
-    }
-}</code></pre>
-<p>运行结果：<br><img src="http://i.imgur.com/ll7JnfN.png" alt></p>
-<h2 id="3-try…catch…finally结构"><a href="#3-try…catch…finally结构" class="headerlink" title="3. try…catch…finally结构"></a>3. try…catch…finally结构</h2><blockquote>
-</blockquote>
-<pre><code class="java">try{
-       //代码A
-    //有可能出现异常的代码B
-    //代码C
-}
-catch(Exception e){ //虚拟机产生的异常对象e
-    e.printStackTrace(); //处理异常的代码D
-    //代码E
-}
-finally{
-    //异常的出口
-    //执行扫尾工作的代码F
-}</code></pre>
-<h4 id="如果try中代码B没有异常：执行代码A-B-C-F"><a href="#如果try中代码B没有异常：执行代码A-B-C-F" class="headerlink" title="如果try中代码B没有异常：执行代码A-B-C-F"></a>如果try中代码B没有异常：执行代码A-B-C-F</h4><h4 id="如果try中代码B出现异常：执行代码A-B-D-E-F"><a href="#如果try中代码B出现异常：执行代码A-B-D-E-F" class="headerlink" title="如果try中代码B出现异常：执行代码A-B-D-E-F"></a>如果try中代码B出现异常：执行代码A-B-D-E-F</h4><h3 id="uncheckException"><a href="#uncheckException" class="headerlink" title="uncheckException"></a>uncheckException</h3><blockquote>
-</blockquote>
-<pre><code class="java">//uncheckException
-class TestCheck{
-    public static void main(String args[]){
-        System.out.println(1);
-        try{
-            System.out.println(2);
-            //有可能出现异常的代码
-            int i = 1/0;
-            System.out.println(3);
-        }
-        catch(Exception e){ //虚拟机产生的异常对象e
-            e.printStackTrace(); //打印异常栈的追踪信息
-            System.out.println(4);
-        }
-        finally{
-            //异常的出口
-            System.out.println(&quot;finally&quot;);
-        }
-    }
-}</code></pre>
-<p>运行结果：<br><img src="http://i.imgur.com/DG4HLEn.png" alt></p>
-<h3 id="checkException-1"><a href="#checkException-1" class="headerlink" title="checkException"></a>checkException</h3><blockquote>
-</blockquote>
-<pre><code class="java">//checkException
-class TestCheck{
-    public static void main(String args[]){
-        System.out.println(1);
-        try{
-            System.out.println(2);
-            //有可能出现异常的代码
-            Thread.sleep(1000); //让当前线程休眠1000ms
-            System.out.println(3);
-        }
-        catch(Exception e){ //虚拟机产生的异常对象e
-            e.printStackTrace(); //打印异常栈的追踪信息
-            System.out.println(4);
-        }
-        finally{
-            //异常的出口
-            System.out.println(&quot;finally&quot;);
-        }
-    }
-}</code></pre>
-<p>运行结果：<br><img src="http://i.imgur.com/yWIuLO9.png" alt><br>屏幕首先显示1，2，然后停顿1000ms，再显示3和finally</p>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -5632,7 +5822,6 @@ class TestCheck{
 </blockquote>
 <h3 id="1-自动类型转换"><a href="#1-自动类型转换" class="headerlink" title="1. 自动类型转换"></a>1. 自动类型转换</h3><blockquote>
 <p>两种数据类型转换不需要显式声明，自动转换类型必须满足两个条件：两种数据类型彼此兼容和转换目标类型的取值范围必须大于原来类型的取值范围。</p>
-</blockquote>
 <ol>
 <li>byte→short，int，long</li>
 <li>short，char→int，long</li>
@@ -5641,12 +5830,14 @@ class TestCheck{
 <li>byte，char，short，int，long，float→double</li>
 <li>boolean类型无法转换为其他类型。</li>
 </ol>
+</blockquote>
 <h3 id="2-强制类型转换"><a href="#2-强制类型转换" class="headerlink" title="2. 强制类型转换"></a>2. 强制类型转换</h3><blockquote>
 <p>自动转换类型无法进行转换时，进行强制类型转换。取值范围较大的数据类型转换为取值范围较小的类型，可能会造成精度丢失。</p>
 </blockquote>
 <p>例如：</p>
 <pre><code class="java">int num;
-byte b =(byte)num;</code></pre>
+byte b =(byte)num;
+</code></pre>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -5678,7 +5869,8 @@ byte b =(byte)num;</code></pre>
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>boolean add（Object o）</td>
 <td>向集合中加入一个对象。</td>
 </tr>
@@ -5698,7 +5890,8 @@ byte b =(byte)num;</code></pre>
 <td>int size（）</td>
 <td>返回集合中元素的数目。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <h2 id="Iterator接口"><a href="#Iterator接口" class="headerlink" title="Iterator接口"></a>Iterator接口</h2><ul>
 <li>主要用于迭代访问（即遍历）整个Collection中的元素，因此Iterator对象也被称为迭代器。</li>
 </ul>
@@ -5709,7 +5902,8 @@ byte b =(byte)num;</code></pre>
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>hasNet()</td>
 <td>判断当前迭代器中是否还有下一个元素，返回值为boolean值。</td>
 </tr>
@@ -5717,7 +5911,8 @@ byte b =(byte)num;</code></pre>
 <td>next()</td>
 <td>返回当前迭代器下一个元素。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">
 import java.util.Set;
 import java.util.HashSet;
@@ -5739,7 +5934,8 @@ public class TestIterator{
             System.out.println(s);
         }
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="ListIterator接口"><a href="#ListIterator接口" class="headerlink" title="ListIterator接口"></a>ListIterator接口</h2><ul>
 <li>可以按任一方向遍历列表、迭代期间修改列表，并获得迭代器在列表中的当前位置。</li>
 </ul>
@@ -5750,7 +5946,8 @@ public class TestIterator{
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>void add(Object o)</td>
 <td>将指定的元素插入列表。</td>
 </tr>
@@ -5766,7 +5963,8 @@ public class TestIterator{
 <td>void remove()</td>
 <td>从列表中移除由next或previous返回的最后一个元素。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.*;
 public class Test{
     public static void main(String args[]) {
@@ -5785,7 +5983,8 @@ public class Test{
             System.out.println(obj);
         }
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="集合（Set）"><a href="#集合（Set）" class="headerlink" title="集合（Set）"></a>集合（Set）</h2><ul>
 <li>集合中的对象不按特定方式排序，并且没有重复对象。</li>
 </ul>
@@ -5821,7 +6020,8 @@ public class TestSet{
         int j = set.size();
         System.out.println(&quot;处理之后set集合中元素的数目&quot; + j);
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="TreeSet集合"><a href="#TreeSet集合" class="headerlink" title="TreeSet集合"></a>TreeSet集合</h2><ul>
 <li>它内部采用自平衡点排序二叉树来储存元素，这样的结构保证TreeSet集合没有重复的元素，并且可以对元素进行排序。</li>
 </ul>
@@ -5845,7 +6045,8 @@ public class Test01{
             System.out.println(it.next());
         }
     }
-}</code></pre>
+}
+</code></pre>
 <p>结果：<br><img src="http://i.imgur.com/Wl5KRxh.png" alt></p>
 <h2 id="列表（List）"><a href="#列表（List）" class="headerlink" title="列表（List）"></a>列表（List）</h2><ul>
 <li>集合中对象按照索引位置排序，即元素的存入和取出顺序一致，可以有重复对象。</li>
@@ -5873,7 +6074,8 @@ public class Test{
             System.out.println(s);
         }
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ul>
 <li>内部维护了一个双向循环链表，链表中的每一个元素都使用引用的方式来记住它的前一个元素和后一个元素，插入一个新元素，只需修改元素之间的这种引用关系即可。</li>
 </ul>
@@ -5897,30 +6099,33 @@ public class Test01{
             link.remove(2);
             System.out.println(link);
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="映射（Map）"><a href="#映射（Map）" class="headerlink" title="映射（Map）"></a>映射（Map）</h2><ul>
 <li>集合中的每一个元素包含一个键对象和一个值对象，键不可重复，值可以重复。</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th align="center">键对象</th>
-<th align="center">值对象</th>
+<th style="text-align:center">键对象</th>
+<th style="text-align:center">值对象</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">key1</td>
-<td align="center">value1</td>
+<tbody>
+<tr>
+<td style="text-align:center">key1</td>
+<td style="text-align:center">value1</td>
 </tr>
 <tr>
-<td align="center">key2</td>
-<td align="center">value2</td>
+<td style="text-align:center">key2</td>
+<td style="text-align:center">value2</td>
 </tr>
 <tr>
-<td align="center">key3</td>
-<td align="center">value3</td>
+<td style="text-align:center">key3</td>
+<td style="text-align:center">value3</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <h2 id="Map接口中的方法"><a href="#Map接口中的方法" class="headerlink" title="Map接口中的方法"></a>Map接口中的方法</h2><table>
 <thead>
 <tr>
@@ -5928,7 +6133,8 @@ public class Test01{
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>void clear()</td>
 <td>从此映射中移除所有映射关系（可选操作）。</td>
 </tr>
@@ -5960,7 +6166,8 @@ public class Test01{
 <td>int size（）</td>
 <td>返回此Map中的键值对数目。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <h2 id="Map与HashMap"><a href="#Map与HashMap" class="headerlink" title="Map与HashMap"></a>Map与HashMap</h2><h3 id="示例：-6"><a href="#示例：-6" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.Map;
 import java.util.HashMap;
 public class Test{
@@ -5976,7 +6183,8 @@ public class Test{
         String s = map.get(&quot;2&quot;);
         System.out.println(s);
     }
-}</code></pre>
+}
+</code></pre>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -5992,7 +6200,8 @@ public class Test{
   public static void main(String args[]){
     system.out.println(&quot;Hello Hexo!&quot;)
   }
-}</code></pre>
+}
+</code></pre>
 ]]></content>
       <tags>
         <tag>Test</tag>
@@ -6013,13 +6222,13 @@ public class Test{
       </tags>
   </entry>
   <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
+    <title>categories</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
+    <title>about</title>
+    <url>/about/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
