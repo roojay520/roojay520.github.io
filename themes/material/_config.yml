@@ -65,7 +65,7 @@ thumbnail:
 #        type available value: A (animal), C (culture), N (nature), S (space), T (travel)
 background:
     purecolor: "#F5F5F5"
-    #bgimg: "/img/bg.png"
+    bgimg: "/img/bg.png"
     bing:
         enable: false
         parameter:
@@ -78,9 +78,9 @@ img:
     sidebar_header: "/img/sidebar_header.png"
     random_thumbnail: "/img/random/material-"
     footer_image:
-        #upyun_logo:
-            #link: "https://www.upyun.com/"
-            #src: "/img/upyun_logo.svg"
+        github_logo:
+            link: "https://github.com/roojay520"
+            src: "/img/logo/github.svg"
 
 # Custom Fonts
 #    family: the font-family which will be used in the theme
@@ -91,7 +91,7 @@ img:
 #          to /source/data/head.yml as custom code, to load custom font files.
 fonts:
     family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
-    use: baomitu
+    use: google
     custom_font_host:
 
 # Card Elevation Level
@@ -134,7 +134,7 @@ prettify:
 #                    - If `includeDefaultColors` is false, this will instead default color pool
 hanabi:
     enable: true
-    line_number: true
+    line_number: false
     includeDefaultColors: true
     customColors:
 
@@ -143,7 +143,7 @@ hanabi:
 #   For example, you can setup a CC license as:
 #       'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
 # You can also use Front-Matter `license` to override this setting.
-license:
+license: 'The MIT License (MIT) <br> Copyright (c) 2019, Roojay.'
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -218,7 +218,7 @@ sidebar:
         divider: false
     footer:
         divider: true
-        theme: true
+        theme: false
         support: false
         feedback: false
         material: false
@@ -303,14 +303,14 @@ vendors:
 #   For example
 #       jquery: https://cdn.bootcss.com/jquery/2.2.1/jquery.js
     # jQuery 2.2.0
-    jquery: https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js
+    jquery: https://cdn.jsdelivr.net/npm/jquery@2.2.0/dist/jquery.min.js
     # nprogress 0.2.0
-    nprogress: https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js
+    nprogress: https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js
     # FontAwesome 4.5.0
-    fontawesome: https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css
+    fontawesome: https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
     # MathJax 2.7.0-2.7.1
-    mathjax: https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js
+    mathjax: https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/node-main.min.js
     # Prettify r298 (only prettify.js)
     prettify: https://cdn.bootcss.com/prettify/r298/prettify.min.js
     # Material Icons 3.0.1
-    material_icons: https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css
+    material_icons: https://cdn.jsdelivr.net/npm/material-design-icons-iconfont@3.0.3/dist/material-design-icons.css
