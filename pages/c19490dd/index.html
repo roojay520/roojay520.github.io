@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="Windows"> 
 
     
-        <meta property="article:published_time" content="Sat Jan 06 2018 12:22:35 GMT+0000">
-        <meta property="article:modified_time" content="Wed Nov 06 2019 02:25:48 GMT+0000">
+        <meta property="article:published_time" content="Sat Jan 06 2018 04:22:35 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 02:25:30 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/c19490dd/index.html",
     "headline": "给 WIN 10 增加伪 sudo 命令",
-    "datePublished": "Sat Jan 06 2018 12:22:35 GMT+0000",
-    "dateModified": "Wed Nov 06 2019 02:25:48 GMT+0000",
+    "datePublished": "Sat Jan 06 2018 04:22:35 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 02:25:30 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -541,23 +541,23 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <ol>
-<li>管理员权限打开 PowerShell</li>
-<li>更改 PowerShell 默认脚本执行策略.<ol>
+<li><p>管理员权限打开 PowerShell</p>
+</li>
+<li><p>更改 PowerShell 默认脚本执行策略.</p>
+<ol>
 <li>输入<code>get-executionpolicy</code> 查看当前脚本执行策略, 当前默认为为 <code>Restricted</code> 即不允许执行任何脚本。</li>
 <li>输入 <code>get-help set-executionpolicy</code>, 获取执行策略</li>
 <li>输入<code>set-executionpolicy remotesigned</code> 更改执行策略为 <code>remotesigned</code></li>
 </ol>
 </li>
 <li><p>输入下面脚本命令执行:</p>
-<pre><code class="bash">$script_path=&quot;$HOME\Documents\Scripts&quot;; if (!(test-path $script_path)) {New-Item -ItemType directory $script_path} if (!(test-path $profile)) { new-item -path $profile -itemtype file -force }&quot;. $script_path\sudo.ps1&quot; | Out-File $profile -append; &quot;function sudo(){if (`$args.Length -eq 1){start-process `$args[0] -verb `&quot;runAs`&quot;} if (`$args.Length -gt 1){start-process `$args[0] -ArgumentList `$args[1..`$args.Length] -verb `&quot;runAs`&quot;}}&quot; | Out-File $script_path\sudo.ps1; powershell
-</code></pre>
+<pre><code class="bash">$script_path=&quot;$HOME\Documents\Scripts&quot;; if (!(test-path $script_path)) {New-Item -ItemType directory $script_path} if (!(test-path $profile)) { new-item -path $profile -itemtype file -force }&quot;. $script_path\sudo.ps1&quot; | Out-File $profile -append; &quot;function sudo(){if (`$args.Length -eq 1){start-process `$args[0] -verb `&quot;runAs`&quot;} if (`$args.Length -gt 1){start-process `$args[0] -ArgumentList `$args[1..`$args.Length] -verb `&quot;runAs`&quot;}}&quot; | Out-File $script_path\sudo.ps1; powershell</code></pre>
 </li>
 <li><p>搜索 UAC 即更改用户账户控制设置, 设置为从不通知.</p>
 </li>
 </ol>
 <h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><pre><code class="bash">sudo powershell
-sudo cmd
-</code></pre>
+sudo cmd</code></pre>
 <p>参考链接: <a href="https://superuser.com/questions/42537/is-there-any-sudo-command-for-windows" target="_blank" rel="noopener">Is there any ‘sudo’ command for Windows?</a></p>
 
         

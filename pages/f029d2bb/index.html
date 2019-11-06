@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="Java"> 
 
     
-        <meta property="article:published_time" content="Fri Jun 16 2017 00:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Wed Nov 06 2019 02:25:48 GMT+0000">
+        <meta property="article:published_time" content="Thu Jun 15 2017 16:00:00 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/f029d2bb/index.html",
     "headline": "Java中的异常",
-    "datePublished": "Fri Jun 16 2017 00:00:00 GMT+0000",
-    "dateModified": "Wed Nov 06 2019 02:25:48 GMT+0000",
+    "datePublished": "Thu Jun 15 2017 16:00:00 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -431,7 +431,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Roojay</strong>
-        <span>6月 16, 2017</span>
+        <span>6月 15, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -548,9 +548,12 @@
 <h2 id="1-什么是异常？"><a href="#1-什么是异常？" class="headerlink" title="1. 什么是异常？"></a>1. 什么是异常？</h2><blockquote>
 </blockquote>
 <ul>
-<li>异常(Exception)：中断了正常指令流的事件。</li>
-<li>异常是一个对象；</li>
-<li>异常产生于程序运行时；</li>
+<li><p>异常(Exception)：中断了正常指令流的事件。</p>
+</li>
+<li><p>异常是一个对象；</p>
+</li>
+<li><p>异常产生于程序运行时；</p>
+</li>
 <li><p>指令流：程序执行时一系列的连续指令称为指令流。</p>
 <blockquote>
 </blockquote>
@@ -559,8 +562,7 @@
   public static void main(String args[]){
       int i = 1 / 0;
   }
-}
-</code></pre>
+}</code></pre>
 <p>抛出异常：</p>
 <blockquote>
 <p>Exception in thread “main” java.lang.ArithmeticException: / by zero<br>  at Test3.main(Test3.java:6)</p>
@@ -568,19 +570,23 @@
 </li>
 <li><p>Exception in thread “main” ：在主线程中出现异常；</p>
 </li>
-<li>ArithmeticException：异常的名称，算术异常；</li>
-<li>/ by zero：被0除；</li>
-<li>at Test.main(Test.java:3)：异常位置；</li>
+<li><p>ArithmeticException：异常的名称，算术异常；</p>
+</li>
+<li><p>/ by zero：被0除；</p>
+</li>
+<li><p>at Test.main(Test.java:3)：异常位置；</p>
+</li>
 </ul>
 <h2 id="2-异常的分类"><a href="#2-异常的分类" class="headerlink" title="2. 异常的分类"></a>2. 异常的分类</h2><h3 id="JDK提供的类："><a href="#JDK提供的类：" class="headerlink" title="JDK提供的类："></a>JDK提供的类：</h3><blockquote>
 <p><img src="http://i.imgur.com/gTBhe2x.png" alt></p>
+</blockquote>
 <ol>
 <li>Throwable：所有异常的父类；</li>
 <li>Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭；</li>
-<li>Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption</li>
-</ol>
+<li>Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption<blockquote>
 </blockquote>
-<p>RuntimeException + Error 和其子类都是属于uncheckexception<br>Exception类中除了 RuntimeException之外的类，都是属于checkexception</p>
+RuntimeException + Error 和其子类都是属于uncheckexception<br>Exception类中除了 RuntimeException之外的类，都是属于checkexception</li>
+</ol>
 <h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4><h5 id="checkException"><a href="#checkException" class="headerlink" title="checkException"></a>checkException</h5><blockquote>
 </blockquote>
 <p>checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。<br>示例：</p>
@@ -589,8 +595,7 @@
         //CheckException
         Thread.sleep(1000); //让当前线程休眠1000ms
     }
-}
-</code></pre>
+}</code></pre>
 <p>运行结果：<br><img src="http://i.imgur.com/xMd1LOi.png" alt></p>
 <h5 id="uncheckException（-RuntimeException）"><a href="#uncheckException（-RuntimeException）" class="headerlink" title="uncheckException（ RuntimeException）"></a>uncheckException（ RuntimeException）</h5><blockquote>
 </blockquote>
@@ -600,8 +605,7 @@
         //UncheckException
         int i = 1 / 0;
     }
-}
-</code></pre>
+}</code></pre>
 <p>运行结果：<br><img src="http://i.imgur.com/ll7JnfN.png" alt></p>
 <h2 id="3-try…catch…finally结构"><a href="#3-try…catch…finally结构" class="headerlink" title="3. try…catch…finally结构"></a>3. try…catch…finally结构</h2><blockquote>
 </blockquote>
@@ -617,8 +621,7 @@ catch(Exception e){ //虚拟机产生的异常对象e
 finally{
     //异常的出口
     //执行扫尾工作的代码F
-}
-</code></pre>
+}</code></pre>
 <h4 id="如果try中代码B没有异常：执行代码A-B-C-F"><a href="#如果try中代码B没有异常：执行代码A-B-C-F" class="headerlink" title="如果try中代码B没有异常：执行代码A-B-C-F"></a>如果try中代码B没有异常：执行代码A-B-C-F</h4><h4 id="如果try中代码B出现异常：执行代码A-B-D-E-F"><a href="#如果try中代码B出现异常：执行代码A-B-D-E-F" class="headerlink" title="如果try中代码B出现异常：执行代码A-B-D-E-F"></a>如果try中代码B出现异常：执行代码A-B-D-E-F</h4><h3 id="uncheckException"><a href="#uncheckException" class="headerlink" title="uncheckException"></a>uncheckException</h3><blockquote>
 </blockquote>
 <pre><code class="java">//uncheckException
@@ -640,8 +643,7 @@ class TestCheck{
             System.out.println(&quot;finally&quot;);
         }
     }
-}
-</code></pre>
+}</code></pre>
 <p>运行结果：<br><img src="http://i.imgur.com/DG4HLEn.png" alt></p>
 <h3 id="checkException-1"><a href="#checkException-1" class="headerlink" title="checkException"></a>checkException</h3><blockquote>
 </blockquote>
@@ -664,8 +666,7 @@ class TestCheck{
             System.out.println(&quot;finally&quot;);
         }
     }
-}
-</code></pre>
+}</code></pre>
 <p>运行结果：<br><img src="http://i.imgur.com/yWIuLO9.png" alt><br>屏幕首先显示1，2，然后停顿1000ms，再显示3和finally</p>
 
         
@@ -710,7 +711,7 @@ class TestCheck{
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/pages/828295ba/" id="post_nav-newer" class="prev-content">
+        <a href="/pages/83e4d5ed/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>

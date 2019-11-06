@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="YouDon&#39;tKnowJavaScript"> 
 
     
-        <meta property="article:published_time" content="Sat Sep 16 2017 00:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Wed Nov 06 2019 02:25:48 GMT+0000">
+        <meta property="article:published_time" content="Fri Sep 15 2017 16:00:00 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/b917f198/index.html",
     "headline": "作用域以及 LHS 和 RHS 查询",
-    "datePublished": "Sat Sep 16 2017 00:00:00 GMT+0000",
-    "dateModified": "Wed Nov 06 2019 02:25:48 GMT+0000",
+    "datePublished": "Fri Sep 15 2017 16:00:00 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -431,7 +431,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Roojay</strong>
-        <span>9月 16, 2017</span>
+        <span>9月 15, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -558,8 +558,7 @@ function bar(str, b) {
     console.log(a, b); // 55 10
 }
 
-bar(&#39;var a = 55;&#39;, 10);
-</code></pre>
+bar(&#39;var a = 55;&#39;, 10);</code></pre>
 <p>使用 eval() 函数可以将代码以动态形式插入一个指定位置，如果 eval() 中所执行的代码包含一个或多个声明（函数或者变量），就会对词法作用域的环境进行修改，达到欺诈伪装的效果。</p>
 <p>在严格模式下，eval() 函数拥有这自己的词法作用域，其中的声明将无法修改作用域。</p>
 <p>这个函数的副作用是引擎无法在编译时对作用域查找进行优化，会导致代码运行变慢，不建议使用。</p>
