@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="算法"> 
 
     
-        <meta property="article:published_time" content="Sat Sep 16 2017 00:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Tue Aug 20 2019 10:41:04 GMT+0000">
+        <meta property="article:published_time" content="Fri Sep 15 2017 16:00:00 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/5b90526d/index.html",
     "headline": "常用排序算法",
-    "datePublished": "Sat Sep 16 2017 00:00:00 GMT+0000",
-    "dateModified": "Tue Aug 20 2019 10:41:04 GMT+0000",
+    "datePublished": "Fri Sep 15 2017 16:00:00 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -431,7 +431,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Roojay</strong>
-        <span>9月 16, 2017</span>
+        <span>9月 15, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -570,8 +570,7 @@
   var temp = myArray[p1];
   myArray[p1] = myArray[p2];
   myArray[p2] = temp;
-}
-</code></pre>
+}</code></pre>
 <p>然后定义主函数。</p>
 <pre><code class="javascript">function bubbleSort(myArray){
   var len = myArray.length;
@@ -588,8 +587,7 @@
   }
 
   return myArray;
-}
-</code></pre>
+}</code></pre>
 <h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h3 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h3><p>选择排序（Selection Sort）与冒泡排序类似，也是依次对相邻的数进行两两比较。不同之处在于，它不是每比较一次就调换位置，而是一轮比较完毕，找到最大值（或最小值）之后，将其放在正确的位置，其他数的位置不变。</p>
 <p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p>
 <ol>
@@ -614,7 +612,6 @@ function swap(myArray, p1, p2){
     myArray[p1] = myArray[p2];
     myArray[p2] = temp;
 }
-
 </code></pre>
 <p>然后定义主函数。</p>
 <pre><code class="javascript">
@@ -643,7 +640,6 @@ function selectionSort(myArray){
 
     return myArray;
 }
-
 </code></pre>
 <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="简介-2"><a href="#简介-2" class="headerlink" title="简介"></a>简介</h3><p>插入排序（insertion sort）比前面两种排序方法都更有效率。它将数组分成“已排序”和“未排序”两部分，一开始的时候，“已排序”的部分只有一个元素，然后将它后面一个元素从“未排序”部分插入“已排序”部分，从而“已排序”部分增加一个元素，“未排序”部分减少一个元素。以此类推，完成全部排序。</p>
 <p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p>
@@ -686,7 +682,6 @@ function insertionSort(myArray) {
 
     return myArray;
 }
-
 </code></pre>
 <h2 id="合并排序"><a href="#合并排序" class="headerlink" title="合并排序"></a>合并排序</h2><h3 id="简介-3"><a href="#简介-3" class="headerlink" title="简介"></a>简介</h3><p>前面三种排序算法只有教学价值，因为效率低，很少实际使用。合并排序（Merge sort）则是一种被广泛使用的排序方法。</p>
 <p>它的基本思想是，将两个已经排序的数组合并，要比从头开始排序所有元素来得快。因此，可以将数组拆开，分成n个只有一个元素的数组，然后不断地两两合并，直到全部排序完成。</p>
@@ -722,7 +717,6 @@ function merge(left, right){
 
     return result.concat(left.slice(il)).concat(right.slice(ir));
 }
-
 </code></pre>
 <p>上面的merge函数，合并两个已经按升序排好序的数组。首先，比较两个数组的第一个元素，将其中较小的一个放入result数组；然后，将其中较大的一个与另一个数组的第二个元素进行比较，再将其中较小的一个放入result数组的第二个位置。以此类推，直到一个数组的所有元素都进入result数组为止，再将另一个数组剩下的元素接着result数组后面返回（使用concat方法）。</p>
 <p>有了merge函数，就可以对任意数组排序了。基本方法是将数组不断地拆成两半，直到每一半只包含零个元素或一个元素为止，然后就用merge函数，将拆成两半的数组不断合并，直到合并成一整个排序完成的数组。</p>
@@ -739,7 +733,6 @@ function mergeSort(myArray){
 
     return merge(mergeSort(left), mergeSort(right));
 }
-
 </code></pre>
 <p>上面的代码有一个问题，就是返回的是一个全新的数组，会多占用空间。因此，修改上面的函数，使之在原地排序，不多占用空间。</p>
 <pre><code class="javascript">
@@ -766,7 +759,6 @@ function mergeSort(myArray){
     // 返回排序后的数组
     return myArray;
 }
-
 </code></pre>
 <h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h3 id="简介-4"><a href="#简介-4" class="headerlink" title="简介"></a>简介</h3><p>快速排序（quick sort）是公认最快的排序算法之一，有着广泛的应用。</p>
 <p>它的基本思想很简单：先确定一个“支点”（pivot），将所有小于“支点”的值都放在该点的左侧，大于“支点”的值都放在该点的右侧，然后对左右两侧不断重复这个过程，直到所有排序完成。</p>
@@ -811,7 +803,6 @@ function swap(myArray, firstIndex, secondIndex){
     myArray[firstIndex] = myArray[secondIndex];
     myArray[secondIndex] = temp;
 }
-
 </code></pre>
 <p>然后，部署一个partition函数，用于完成一轮排序。</p>
 <pre><code class="javascript">
@@ -841,7 +832,6 @@ function partition(myArray, left, right) {
 
     return i;
 }
-
 </code></pre>
 <p>接下来，就是递归上面的过程，完成整个排序。</p>
 <pre><code class="javascript">
@@ -866,7 +856,6 @@ function quickSort(myArray, left, right) {
      return myArray;
 
 }
-
 </code></pre>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2009/05/26/computer-science-in-javascript-bubble-sort/" target="_blank" rel="noopener">Computer science in JavaScript: Bubble sort</a></li>

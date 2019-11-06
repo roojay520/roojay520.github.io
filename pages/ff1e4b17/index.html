@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="CSS"> 
 
     
-        <meta property="article:published_time" content="Sat Sep 16 2017 00:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Tue Aug 20 2019 10:41:04 GMT+0000">
+        <meta property="article:published_time" content="Fri Sep 15 2017 16:00:00 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/ff1e4b17/index.html",
     "headline": "淘宝双飞翼布局",
-    "datePublished": "Sat Sep 16 2017 00:00:00 GMT+0000",
-    "dateModified": "Tue Aug 20 2019 10:41:04 GMT+0000",
+    "datePublished": "Fri Sep 15 2017 16:00:00 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -431,7 +431,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Roojay</strong>
-        <span>9月 16, 2017</span>
+        <span>9月 15, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -554,8 +554,7 @@
         &lt;div class=&quot;col sub&quot;&gt;我是一个子列。&lt;/div&gt;
         &lt;div class=&quot;col extra&quot;&gt;我是一个附加列。&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
-</code></pre>
+    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;</code></pre>
 <p>以上 DOM 结构中，在 main 中添加了一个子 div，用来解决中间列内容被遮挡问题。</p>
 <h3 id="CSS-样式"><a href="#CSS-样式" class="headerlink" title="CSS 样式"></a>CSS 样式</h3><p>去掉相对定位的使用，去掉了父容器的 padding，使用中间栏新增 div 的 margin 解决遮挡问题。</p>
 <pre><code class="css">        body {
@@ -600,8 +599,7 @@
         }
         .footr {
             clear: both;
-        }
-</code></pre>
+        }</code></pre>
 <p>为 body 加上一个最小宽度(2 * sub width + extra width),避免网页放大时中间栏被挤到消失。</p>
 
         

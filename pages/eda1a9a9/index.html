@@ -264,8 +264,8 @@
     <meta property="og:article:tag" content="CSS"> 
 
     
-        <meta property="article:published_time" content="Sat Sep 16 2017 00:00:00 GMT+0000">
-        <meta property="article:modified_time" content="Tue Aug 20 2019 10:41:04 GMT+0000">
+        <meta property="article:published_time" content="Fri Sep 15 2017 16:00:00 GMT+0000">
+        <meta property="article:modified_time" content="Wed Nov 06 2019 01:36:07 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -287,8 +287,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://roojay.com/pages/eda1a9a9/index.html",
     "headline": "css基础",
-    "datePublished": "Sat Sep 16 2017 00:00:00 GMT+0000",
-    "dateModified": "Tue Aug 20 2019 10:41:04 GMT+0000",
+    "datePublished": "Fri Sep 15 2017 16:00:00 GMT+0000",
+    "dateModified": "Wed Nov 06 2019 01:36:07 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Roojay",
@@ -431,7 +431,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Roojay</strong>
-        <span>9月 16, 2017</span>
+        <span>9月 15, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -551,8 +551,7 @@
 </ul>
 <pre><code class="html">     &lt;p style=color:white; background-color:blue;&gt;
      Tihs is a test text.
-     &lt;/p&gt;
-</code></pre>
+     &lt;/p&gt;</code></pre>
 <ol start="2">
 <li>内嵌式</li>
 </ol>
@@ -568,8 +567,7 @@
          color:red;
        }
        &lt;/style&gt;
-     &lt;/head&gt;
-</code></pre>
+     &lt;/head&gt;</code></pre>
 <ol start="3">
 <li>导入式</li>
 </ol>
@@ -578,8 +576,7 @@
 </ul>
 <pre><code class="html">   &lt;style type=&quot;text/css&quot;&gt;
        @import &quot;mystyle.css&quot;
-   &lt;/style&gt;
-</code></pre>
+   &lt;/style&gt;</code></pre>
 <ol start="4">
 <li>链接式</li>
 </ol>
@@ -588,8 +585,7 @@
 </ul>
 <pre><code class="html">   &lt;head&gt;
      &lt;link rel=&quot;stylesheet&quot; href=&quot;src/test.css&quot; type=&quot;text/css&quot;&gt;
-   &lt;/head&gt;
-</code></pre>
+   &lt;/head&gt;</code></pre>
 <h2 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h2><blockquote>
 <p>margin 属性为给定元素设置所有四个（上下左右）方向的外边距属性。四个外边距属性设置分别是： margin-top， margin-right， margin-bottom 和 margin-left 。指定的外边距允许为负数。</p>
 </blockquote>
@@ -602,8 +598,7 @@
 <th>含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>margin: style</td>
 <td>单值语法</td>
 <td>margin: 1em;</td>
@@ -627,8 +622,7 @@
 <td>margin: 2px 1em 0 auto;</td>
 <td>上为2px，右为1em，下为0，左为auto</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="选择符"><a href="#选择符" class="headerlink" title="选择符"></a>选择符</h2><blockquote>
 <p>选择符用于定位我们想要样式化的网页 HTML 元素,可以选择一个或多个需要添加样式的元素。</p>
 </blockquote>
@@ -640,8 +634,7 @@
 <th>示例</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>元素 选择符</td>
 <td>标签内所有元素</td>
 <td>p</td>
@@ -666,8 +659,7 @@
 <td>指定的元素，但是需要在特殊的状态，比如悬停</td>
 <td>a:hover</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="简单选择器（Simple-selectors）"><a href="#简单选择器（Simple-selectors）" class="headerlink" title="简单选择器（Simple selectors）"></a>简单选择器（Simple selectors）</h3><blockquote>
 <p>通过<code>元素类型</code>、<code>class</code>或 <code>id</code> 匹配一个或多个元素。</p>
 </blockquote>
@@ -689,23 +681,19 @@
 <ol>
 <li>未点击状态显示蓝色：</li>
 </ol>
-<pre><code class="css">a:link { color: blue; }
-</code></pre>
+<pre><code class="css">a:link { color: blue; }</code></pre>
 <ol start="2">
 <li>已点击状态显示紫色：</li>
 </ol>
-<pre><code class="css">a:visited { color: purple; }
-</code></pre>
+<pre><code class="css">a:visited { color: purple; }</code></pre>
 <ol start="3">
 <li>鼠标悬停状态显示红色：</li>
 </ol>
-<pre><code class="css">a:hover { color: red;  }
-</code></pre>
+<pre><code class="css">a:hover { color: red;  }</code></pre>
 <ol start="4">
 <li>鼠标点击状态显示绿色：</li>
 </ol>
 <pre><code class="css">a:active { color: green; }
-
 </code></pre>
 <p>多个状态同时设置，按照以上先后顺序排列。</p>
 <h3 id="伪元素（Pseudo-elements）"><a href="#伪元素（Pseudo-elements）" class="headerlink" title="伪元素（Pseudo-elements）"></a>伪元素（Pseudo-elements）</h3><blockquote>
@@ -715,14 +703,12 @@
 <li><code>::after</code>在已选中元素尾部创建最后一个子元素，通常会配合 content 属性来为该元素添加装饰内容。</li>
 </ul>
 <pre><code class="css">/*在链接后面加上一个箭头←*/
-a::after { content: &quot;←&quot;;}
-</code></pre>
+a::after { content: &quot;←&quot;;}</code></pre>
 <ul>
 <li><code>::before</code> 在已选中元素头部创建第一个子元素。</li>
 </ul>
 <pre><code class="css">/*在链接前面加上一个箭头→*/
-a::after { content: &quot;→&quot;;}
-</code></pre>
+a::after { content: &quot;→&quot;;}</code></pre>
 <ul>
 <li><code>::first-letter</code>会选中一整块文字第一行的第一个字母，并且文字所处的行之前没有其他内容（如图片和内联的表格） 。</li>
 </ul>
@@ -730,8 +716,7 @@ a::after { content: &quot;→&quot;;}
 p::first-letter {  /* 使用:first来兼容IE8- */
   color: red;
   font-size: 130%;
-}
-</code></pre>
+}</code></pre>
 <ul>
 <li><code>::first-line</code>将样式只应用于一个元素的首行。首行文本的数量取决于元素的宽，document 的宽和文本的字号。</li>
 <li><code>::first-line</code> 伪元素<strong>只作用于块容器中</strong>,所以<code>::first-line</code>伪元素只能在一个display值为block, inline-block, table-cell 或者 table-caption中有用.。在其他的类型中<code>::first-line</code>是不起作用的。</li>
@@ -745,8 +730,7 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 ::selection {
   color: gold;
   background: red;
-}
-</code></pre>
+}</code></pre>
 <h3 id="组合器（Combinators）"><a href="#组合器（Combinators）" class="headerlink" title="组合器（Combinators）"></a>组合器（Combinators）</h3><blockquote>
 <p>以有效的方式组合两个或更多的选择器用于非常特定的选择的方法。例如，只选择 divs 的直系子节点的段落，或者直接跟在 headings 后面的段落。</p>
 </blockquote>
@@ -757,8 +741,7 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <th>选择值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>A,B</td>
 <td>匹配同时满足A和B的任意元素</td>
 </tr>
@@ -778,8 +761,7 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <td>A ~ B</td>
 <td>匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="多用选择器（Multiple-selectors）"><a href="#多用选择器（Multiple-selectors）" class="headerlink" title="多用选择器（Multiple selectors）"></a>多用选择器（Multiple selectors）</h3><blockquote>
 <p>以逗号分隔开的多个选择器放在一个 CSS 规则下面， 以将一组声明应用于由这些选择器选择的所有元素。</p>
 </blockquote>
@@ -787,18 +769,25 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <p>网页上的所有的元素都包含在一个个盒子中。在 CSS 里面设置它们的尺寸，颜色，位置等等。</p>
 </blockquote>
 <ul>
-<li>内边距（padding）： 围绕着内容的空间（比如围绕段落的空间）</li>
-<li>边框（border）：  紧接着内边距的实体线段</li>
+<li><p>内边距（padding）： 围绕着内容的空间（比如围绕段落的空间）</p>
+</li>
+<li><p>边框（border）：  紧接着内边距的实体线段</p>
+</li>
 <li><p>外边距(margin) ：  围绕元素外部的空间</p>
 <p><img src="src/box-model.png" alt="box"></p>
 </li>
 <li><p>width：  属于一个元素的宽</p>
 </li>
-<li>background-color： 元素内容和内边距之后的颜色</li>
-<li>color： 元素内容的颜色（通常是文本）</li>
-<li>text-shadow： 为元素内的文本设置阴影</li>
-<li>display：  设置元素的显示模式</li>
-<li>position：fixed  位置保持不动</li>
+<li><p>background-color： 元素内容和内边距之后的颜色</p>
+</li>
+<li><p>color： 元素内容的颜色（通常是文本）</p>
+</li>
+<li><p>text-shadow： 为元素内的文本设置阴影</p>
+</li>
+<li><p>display：  设置元素的显示模式</p>
+</li>
+<li><p>position：fixed  位置保持不动</p>
+</li>
 </ul>
 <h2 id="单位长度"><a href="#单位长度" class="headerlink" title="单位长度"></a>单位长度</h2><h3 id="px-em"><a href="#px-em" class="headerlink" title="px em"></a>px em</h3><ul>
 <li>px ：像素 (px) 是一种绝对单位（ absolute units）， 因为无论其他相关的设置怎么变化，像素指定的值是不会变化的。</li>
@@ -808,8 +797,7 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><blockquote>
 <p>box-shadow 属性向元素添加一个或多个阴影。</p>
 </blockquote>
-<pre><code class="css">box-shadow: h-shadow v-shadow blur spread color inset;
-</code></pre>
+<pre><code class="css">box-shadow: h-shadow v-shadow blur spread color inset;</code></pre>
 <table>
 <thead>
 <tr>
@@ -817,8 +805,7 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <th>含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>h-shadow</td>
 <td>必需。水平阴影。允许负值。</td>
 </tr>
@@ -842,8 +829,7 @@ p::first-letter {  /* 使用:first来兼容IE8- */
 <td>inset</td>
 <td>可选。将外部阴影(outset)改为内部阴影。</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><blockquote>
 <p>一个好的布局，能将网页内容更完美的展示出来。</p>
 </blockquote>
