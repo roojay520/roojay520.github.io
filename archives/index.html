@@ -164,12 +164,7 @@
 
     <style>
       body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
+        background-image: url(/img/bg.png);
       }
     </style>
 
@@ -198,31 +193,7 @@
 <!-- Import Font -->
 <!-- Import Roboto -->
 
-    <style>
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
-            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: regular;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
-            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 500;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
-            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
 
 <!-- Import Material Icons -->
@@ -235,7 +206,7 @@
 
     <!-- Import jQuery -->
     
-        <script>lsloader.load("jq_js","https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js", true)</script>
+        <script>lsloader.load("jq_js","https://cdn.jsdelivr.net/npm/jquery@2.2.0/dist/jquery.min.js", true)</script>
     
 
     <!-- WebAPP Icons -->
@@ -814,13 +785,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
-
 
 <!-- Help & Support -->
 <!--
@@ -841,6 +805,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <!-- Sidebar Image -->
     
+    <span id="footer-image">
+        <a href="https://github.com/roojay520" target="_blank" title="github_logo">
+            <img src="/img/logo/github.svg" alt="github_logo"><!--
+     --></a>
+    </span>
+
 
 </aside>
 
@@ -941,7 +911,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script>lsloader.load("np_js","https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js", true)</script>
+    <script>lsloader.load("np_js","https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js", true)</script>
 
 
 <script type="text/ls-javascript" id="NProgress-script">
@@ -1093,7 +1063,7 @@ It will not impact the appearance and can give developers a lot of support :)
     
         
         
-        HanabiBrowser.start('pre code',true);
+        HanabiBrowser.start('pre code',false);
     
 </script>
 

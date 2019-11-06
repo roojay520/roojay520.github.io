@@ -225,11 +225,11 @@
     
     
     <entry>
-      <title>变量提升</title>
-      <link href="/pages/3080460d/"/>
-      <url>/pages/3080460d/</url>
+      <title>变量作用域</title>
+      <link href="/pages/7395d6fb/"/>
+      <url>/pages/7395d6fb/</url>
       
-        <content type="html"><![CDATA[<h2 id="变量与函数提升"><a href="#变量与函数提升" class="headerlink" title="变量与函数提升"></a>变量与函数提升</h2><p><strong>包括变量和函数在内的所有声明都会在任何代码被执行前首先被处理。</strong></p><h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>例如一个 var = 2；声明，在 javascript 引擎中它实际上被分为 2 个部分， 定义声明var a；和赋值声明 a = 2；第一个定义声明在编译阶段进行，第二个赋值声明要等到执行阶段才会进行。</p><p><strong>例1：</strong></p><pre><code class="javascript">a = 2;var a;console.log(a); // 2</code></pre><p>上面的例子等同于：</p><pre><code class="javascript">var a;a = 2;console.log(a); // 2</code></pre><p><strong>例2：</strong></p><pre><code class="javascript">console.log(a); //undefinedvar a = 2;</code></pre><p>上面的例子等同于：</p><pre><code class="javascript">var a;console.log(a); //undefineda = 2;</code></pre><h4 id="let-与-var区别"><a href="#let-与-var区别" class="headerlink" title="let 与 var区别"></a>let 与 var区别</h4><ol><li><code>var</code>声明的变量作用域为最近的函数块，<code>let</code>声明的变量作用域为最近的闭合块，往往小于函数块。</li><li><code>var</code>声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出<code>undefined</code>。</li><li><code>let</code>声明不受变量提升的约束，这意味着<code>let</code>声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 ReferenceError（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。这个变量处于从块开始到 let 初始化处理的”暂存死区“之中。<code>let</code>声明的变量不能在实际声明之前使用，否则会抛出<code>ReferenceError</code>异常。<h3 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h3></li></ol><p><strong>函数声明和变量声明都会被提升,但是函数表达式却不会被提升。</strong></p><pre><code class="javascript">foo(); // 1var foo;function foo() {    console.log(1);}foo = function() {    console.log(2);};</code></pre><p>上面的 foo() 函数执行会输出 1，而不是 2 。<br>上面的代码等同于：</p><pre><code class="javascript">function foo() {    console.log(1);}foo(); // 1foo = function() {    console.log(2);};</code></pre><p><strong>函数会首先被提升，然后才是变量。</strong></p><p>尽管 var foo 在 function foo(){..} 函数之前，但是 function foo(){..} 函数会被优先提升到了函数顶部， var foo 作为重复的声明会被忽略，但是如果后面再次使用函数声明会覆盖前面的声明。</p><p>一个普通块内部的变量声明通常会被提升到所在作用域的顶部，例如：</p><pre><code class="javascript">var tmp = new Date();function foo() {    console.log(tmp);    if (false) {        var tmp = &quot;hello world&quot;;    }}f(); // undefined</code></pre><p>if 块作用域内部的 tmp 变量被提升到了 foo() 函数作用域的顶部，而赋值操作留在了 if 块作用域内部。上面的代码等同于：</p><pre><code class="javascript">var tmp = new Date();function foo() {    var tmp;    console.log(tmp);    if (false) {        tmp = &quot;hello world&quot;;    }}foo(); // undefined</code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><ul><li>JavaScript 的函数可以嵌套，内部函数可以访问外部函数定义的变量，反之则不行。</li><li><code>var</code>和<code>let</code>创建的变量区别在于:<ol><li><code>var</code>声明的变量作用域为最近的函数块，<code>let</code>声明的变量作用域为最近的闭合块，往往小于函数块。</li><li><code>var</code>声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出<code>undefined</code>。</li><li><code>let</code>声明不受变量提升的约束，这意味着<code>let</code>声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 ReferenceError（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。这个变量处于从块开始到 let 初始化处理的”暂存死区“之中。<code>let</code>声明的变量不能在实际声明之前使用，否则会抛出<code>ReferenceError</code>异常。</li></ol></li></ul>]]></content>
       
       
       <categories>
@@ -250,11 +250,11 @@
     
     
     <entry>
-      <title>变量作用域</title>
-      <link href="/pages/7395d6fb/"/>
-      <url>/pages/7395d6fb/</url>
+      <title>变量提升</title>
+      <link href="/pages/3080460d/"/>
+      <url>/pages/3080460d/</url>
       
-        <content type="html"><![CDATA[<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><ul><li>JavaScript 的函数可以嵌套，内部函数可以访问外部函数定义的变量，反之则不行。</li><li><code>var</code>和<code>let</code>创建的变量区别在于:<ol><li><code>var</code>声明的变量作用域为最近的函数块，<code>let</code>声明的变量作用域为最近的闭合块，往往小于函数块。</li><li><code>var</code>声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出<code>undefined</code>。</li><li><code>let</code>声明不受变量提升的约束，这意味着<code>let</code>声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 ReferenceError（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。这个变量处于从块开始到 let 初始化处理的”暂存死区“之中。<code>let</code>声明的变量不能在实际声明之前使用，否则会抛出<code>ReferenceError</code>异常。</li></ol></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="变量与函数提升"><a href="#变量与函数提升" class="headerlink" title="变量与函数提升"></a>变量与函数提升</h2><p><strong>包括变量和函数在内的所有声明都会在任何代码被执行前首先被处理。</strong></p><h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>例如一个 var = 2；声明，在 javascript 引擎中它实际上被分为 2 个部分， 定义声明var a；和赋值声明 a = 2；第一个定义声明在编译阶段进行，第二个赋值声明要等到执行阶段才会进行。</p><p><strong>例1：</strong></p><pre><code class="javascript">a = 2;var a;console.log(a); // 2</code></pre><p>上面的例子等同于：</p><pre><code class="javascript">var a;a = 2;console.log(a); // 2</code></pre><p><strong>例2：</strong></p><pre><code class="javascript">console.log(a); //undefinedvar a = 2;</code></pre><p>上面的例子等同于：</p><pre><code class="javascript">var a;console.log(a); //undefineda = 2;</code></pre><h4 id="let-与-var区别"><a href="#let-与-var区别" class="headerlink" title="let 与 var区别"></a>let 与 var区别</h4><ol><li><code>var</code>声明的变量作用域为最近的函数块，<code>let</code>声明的变量作用域为最近的闭合块，往往小于函数块。</li><li><code>var</code>声明的变量会被提升到作用域的头部，但是赋值不会被提升，在实际声明前使用会抛出<code>undefined</code>。</li><li><code>let</code>声明不受变量提升的约束，这意味着<code>let</code>声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 ReferenceError（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。这个变量处于从块开始到 let 初始化处理的”暂存死区“之中。<code>let</code>声明的变量不能在实际声明之前使用，否则会抛出<code>ReferenceError</code>异常。<h3 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h3></li></ol><p><strong>函数声明和变量声明都会被提升,但是函数表达式却不会被提升。</strong></p><pre><code class="javascript">foo(); // 1var foo;function foo() {    console.log(1);}foo = function() {    console.log(2);};</code></pre><p>上面的 foo() 函数执行会输出 1，而不是 2 。<br>上面的代码等同于：</p><pre><code class="javascript">function foo() {    console.log(1);}foo(); // 1foo = function() {    console.log(2);};</code></pre><p><strong>函数会首先被提升，然后才是变量。</strong></p><p>尽管 var foo 在 function foo(){..} 函数之前，但是 function foo(){..} 函数会被优先提升到了函数顶部， var foo 作为重复的声明会被忽略，但是如果后面再次使用函数声明会覆盖前面的声明。</p><p>一个普通块内部的变量声明通常会被提升到所在作用域的顶部，例如：</p><pre><code class="javascript">var tmp = new Date();function foo() {    console.log(tmp);    if (false) {        var tmp = &quot;hello world&quot;;    }}f(); // undefined</code></pre><p>if 块作用域内部的 tmp 变量被提升到了 foo() 函数作用域的顶部，而赋值操作留在了 if 块作用域内部。上面的代码等同于：</p><pre><code class="javascript">var tmp = new Date();function foo() {    var tmp;    console.log(tmp);    if (false) {        tmp = &quot;hello world&quot;;    }}foo(); // undefined</code></pre>]]></content>
       
       
       <categories>
@@ -344,11 +344,11 @@
     
     
     <entry>
-      <title>盒子模型</title>
-      <link href="/pages/998dffd6/"/>
-      <url>/pages/998dffd6/</url>
+      <title>Flex布局</title>
+      <link href="/pages/ab688311/"/>
+      <url>/pages/ab688311/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>浏览器中的每个视图可以看成是一个一个嵌套的盒子.</p></blockquote><h2 id="box-size"><a href="#box-size" class="headerlink" title="box-size"></a>box-size</h2><ul><li>元素大小 = boder + padding + contentwidth</li><li>box-size: boder-size;（兼容性） 它会让系统计算元素大小时会将 boder padding 包括在内。不包含外边距(margin)。</li></ul><pre><code class="css">{ -webkit-box-size: boder-size; -ms-box-size: boder-size; -moz-box-size: boder-size;}</code></pre><h2 id="浏览器前缀"><a href="#浏览器前缀" class="headerlink" title="浏览器前缀"></a>浏览器前缀</h2><ul><li>-webkit</li><li>-ms</li><li>-moz</li></ul><h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><blockquote><p>弹性布局</p></blockquote><ul><li>用于 Chrome 29+、IE 11+ 和 Mozilla 28+。要支持 Safari，必须添加 -webkit- 前缀：</li></ul><pre><code class="css">{    display: -webkit-flex;    display: flex;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="Flex-布局"><a href="#Flex-布局" class="headerlink" title="Flex 布局"></a>Flex 布局</h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" target="_blank" rel="noopener">MDN</a></p><ul><li>Flex 是 Flexible Box 的缩写，意为“弹性布局”，为盒模型提供灵活的布局方式。</li><li>盒子中的子元素可以在各个方向上进行布局，并且能以弹性尺寸来适应显示空间。</li><li>弹性容器的每个子元素都称为弹性项目。弹性容器直接包含的文本将被包覆成匿名弹性单元。</li><li>元素的显示顺序可以与它们在源代码中的顺序无关。</li></ul><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul><li>flex 布局包括一个水平 main axis 和一个垂直 cross axis</li></ul><p><img src="https://mdn.mozillademos.org/files/12998/flexbox.png" alt></p><ul><li>通过设置 display 的值启用 flex</li><li>设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。</li></ul><pre><code class="css">    .box-flex{        display： -ms-flex；        display: -webkit-flex;        display: flex;    }    .box-inline-flex{        display: -ms-inline-flex;        display: -webkit-inline-flex;        display: inline-flex;    }</code></pre><h2 id="flex-属性"><a href="#flex-属性" class="headerlink" title="flex 属性"></a>flex 属性</h2><ul><li>flex-direction：确立主轴。</li><li>justify-content：定义了在当前行上，弹性项目沿主轴如何排布。</li><li>align-items：定义了在当前行上，弹性项目沿侧轴默认如何排布。</li><li>align-self：定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。</li></ul><h3 id="flex-direction（主轴方向）"><a href="#flex-direction（主轴方向）" class="headerlink" title="flex-direction（主轴方向）"></a>flex-direction（主轴方向）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png" alt></p><blockquote><p>flex-direction 决定主轴方向（项目排列方向），包括四个值。</p></blockquote><ul><li>row（默认值）：主轴为水平方向，起点在左端。</li><li>row-reverse：主轴为水平方向，起点在右端。</li><li>column：主轴为垂直方向，起点在上沿。</li><li>column-reverse：主轴为垂直方向，起点在下沿。</li></ul><h3 id="flex-wrap（换行控制）"><a href="#flex-wrap（换行控制）" class="headerlink" title="flex-wrap（换行控制）"></a>flex-wrap（换行控制）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png" alt></p><blockquote><p>控制一条轴上放不下子项目该如何换行。</p></blockquote><ul><li>nowrap（默认值）：不换行</li><li>wrap：换行，第一行在上。</li><li>wrap-reverse：换行，第一行在下。</li></ul><h3 id="justify-content（主轴排列方式）"><a href="#justify-content（主轴排列方式）" class="headerlink" title="justify-content（主轴排列方式）"></a>justify-content（主轴排列方式）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt></p><ul><li>flex-start：从行首起始位置开始排列。</li><li>flex-end：从行尾位置开始排列。</li><li>center：居中排列。</li><li>space-between：均匀排列每个元素<br>首个元素放置于起点，末尾元素放置于终点。</li><li>space-around：均匀排列每个元素<br>每个元素周围分配相同的空间。</li></ul><h3 id="align-items-侧轴排列方式"><a href="#align-items-侧轴排列方式" class="headerlink" title="align-items(侧轴排列方式)"></a>align-items(侧轴排列方式)</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt></p><ul><li>flex-start：元素向侧轴起点对齐。</li><li>flex-end：元素向侧轴终点对齐。</li><li>center：元素在侧轴居中。如果元素在侧轴上的高度高于其容器，那么在两个方向上溢出距离相同。</li><li>baseline: 项目的第一行文字的基线对齐。</li><li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li></ul><h3 id="align-conten（多轴线对齐方式）"><a href="#align-conten（多轴线对齐方式）" class="headerlink" title="align-conten（多轴线对齐方式）"></a>align-conten（多轴线对齐方式）</h3><blockquote><p>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p></blockquote><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt></p><ul><li>flex-start：所有行从垂直轴起点开始填充。第一行的垂直轴起点边和容器的垂直轴起点边对齐。接下来的每一行紧跟前一行。</li><li>flex-end：所有行从垂直轴末尾开始填充。最后一行的垂直轴终点和容器的垂直轴终点对齐。同时所有后续行与前一个对齐。</li><li>center：所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的垂直轴起点边和第一行的距离相等于容器的垂直轴终点边和最后一行的距离。</li><li>space-between：所有行在容器中平均分布。相邻两行间距相等。容器的垂直轴起点边和终点边分别与第一行和最后一行的边对齐。</li><li>space-around：所有行在容器中平均分布，相邻两行间距相等。容器的垂直轴起点边和终点边分别与第一行和最后一行的距离是相邻两行间距的一半。</li><li>stretch：拉伸所有行来填满剩余空间。剩余空间平均的分配给每一行。</li></ul><h2 id="子项目属性"><a href="#子项目属性" class="headerlink" title="子项目属性"></a>子项目属性</h2><ul><li>order：定义项目的排列顺序。数值越小，排列越靠前，默认为 0。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png" alt></li><li>flex-grow：定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png" alt></li><li>flex-shrink：定义了项目的缩小比例，默认为 1，即如果空间不足，该项目将缩小。属性为 0，项目不缩小，负值对该属性无效。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg" alt></li><li>flex-basis：定义项目在主轴所占据的基本空间，默认值 auto，即项目本来的大小。</li><li>flex：是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</li><li>align-self：允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt></li></ul>]]></content>
       
       
       <categories>
@@ -369,11 +369,11 @@
     
     
     <entry>
-      <title>Flex布局</title>
-      <link href="/pages/ab688311/"/>
-      <url>/pages/ab688311/</url>
+      <title>盒子模型</title>
+      <link href="/pages/998dffd6/"/>
+      <url>/pages/998dffd6/</url>
       
-        <content type="html"><![CDATA[<h1 id="Flex-布局"><a href="#Flex-布局" class="headerlink" title="Flex 布局"></a>Flex 布局</h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" target="_blank" rel="noopener">MDN</a></p><ul><li>Flex 是 Flexible Box 的缩写，意为“弹性布局”，为盒模型提供灵活的布局方式。</li><li>盒子中的子元素可以在各个方向上进行布局，并且能以弹性尺寸来适应显示空间。</li><li>弹性容器的每个子元素都称为弹性项目。弹性容器直接包含的文本将被包覆成匿名弹性单元。</li><li>元素的显示顺序可以与它们在源代码中的顺序无关。</li></ul><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul><li>flex 布局包括一个水平 main axis 和一个垂直 cross axis</li></ul><p><img src="https://mdn.mozillademos.org/files/12998/flexbox.png" alt></p><ul><li>通过设置 display 的值启用 flex</li><li>设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。</li></ul><pre><code class="css">    .box-flex{        display： -ms-flex；        display: -webkit-flex;        display: flex;    }    .box-inline-flex{        display: -ms-inline-flex;        display: -webkit-inline-flex;        display: inline-flex;    }</code></pre><h2 id="flex-属性"><a href="#flex-属性" class="headerlink" title="flex 属性"></a>flex 属性</h2><ul><li>flex-direction：确立主轴。</li><li>justify-content：定义了在当前行上，弹性项目沿主轴如何排布。</li><li>align-items：定义了在当前行上，弹性项目沿侧轴默认如何排布。</li><li>align-self：定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。</li></ul><h3 id="flex-direction（主轴方向）"><a href="#flex-direction（主轴方向）" class="headerlink" title="flex-direction（主轴方向）"></a>flex-direction（主轴方向）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png" alt></p><blockquote><p>flex-direction 决定主轴方向（项目排列方向），包括四个值。</p></blockquote><ul><li>row（默认值）：主轴为水平方向，起点在左端。</li><li>row-reverse：主轴为水平方向，起点在右端。</li><li>column：主轴为垂直方向，起点在上沿。</li><li>column-reverse：主轴为垂直方向，起点在下沿。</li></ul><h3 id="flex-wrap（换行控制）"><a href="#flex-wrap（换行控制）" class="headerlink" title="flex-wrap（换行控制）"></a>flex-wrap（换行控制）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png" alt></p><blockquote><p>控制一条轴上放不下子项目该如何换行。</p></blockquote><ul><li>nowrap（默认值）：不换行</li><li>wrap：换行，第一行在上。</li><li>wrap-reverse：换行，第一行在下。</li></ul><h3 id="justify-content（主轴排列方式）"><a href="#justify-content（主轴排列方式）" class="headerlink" title="justify-content（主轴排列方式）"></a>justify-content（主轴排列方式）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt></p><ul><li>flex-start：从行首起始位置开始排列。</li><li>flex-end：从行尾位置开始排列。</li><li>center：居中排列。</li><li>space-between：均匀排列每个元素<br>首个元素放置于起点，末尾元素放置于终点。</li><li>space-around：均匀排列每个元素<br>每个元素周围分配相同的空间。</li></ul><h3 id="align-items-侧轴排列方式"><a href="#align-items-侧轴排列方式" class="headerlink" title="align-items(侧轴排列方式)"></a>align-items(侧轴排列方式)</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt></p><ul><li>flex-start：元素向侧轴起点对齐。</li><li>flex-end：元素向侧轴终点对齐。</li><li>center：元素在侧轴居中。如果元素在侧轴上的高度高于其容器，那么在两个方向上溢出距离相同。</li><li>baseline: 项目的第一行文字的基线对齐。</li><li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li></ul><h3 id="align-conten（多轴线对齐方式）"><a href="#align-conten（多轴线对齐方式）" class="headerlink" title="align-conten（多轴线对齐方式）"></a>align-conten（多轴线对齐方式）</h3><blockquote><p>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p></blockquote><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt></p><ul><li>flex-start：所有行从垂直轴起点开始填充。第一行的垂直轴起点边和容器的垂直轴起点边对齐。接下来的每一行紧跟前一行。</li><li>flex-end：所有行从垂直轴末尾开始填充。最后一行的垂直轴终点和容器的垂直轴终点对齐。同时所有后续行与前一个对齐。</li><li>center：所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的垂直轴起点边和第一行的距离相等于容器的垂直轴终点边和最后一行的距离。</li><li>space-between：所有行在容器中平均分布。相邻两行间距相等。容器的垂直轴起点边和终点边分别与第一行和最后一行的边对齐。</li><li>space-around：所有行在容器中平均分布，相邻两行间距相等。容器的垂直轴起点边和终点边分别与第一行和最后一行的距离是相邻两行间距的一半。</li><li>stretch：拉伸所有行来填满剩余空间。剩余空间平均的分配给每一行。</li></ul><h2 id="子项目属性"><a href="#子项目属性" class="headerlink" title="子项目属性"></a>子项目属性</h2><ul><li>order：定义项目的排列顺序。数值越小，排列越靠前，默认为 0。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png" alt></li><li>flex-grow：定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png" alt></li><li>flex-shrink：定义了项目的缩小比例，默认为 1，即如果空间不足，该项目将缩小。属性为 0，项目不缩小，负值对该属性无效。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg" alt></li><li>flex-basis：定义项目在主轴所占据的基本空间，默认值 auto，即项目本来的大小。</li><li>flex：是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</li><li>align-self：允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt></li></ul>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>浏览器中的每个视图可以看成是一个一个嵌套的盒子.</p></blockquote><h2 id="box-size"><a href="#box-size" class="headerlink" title="box-size"></a>box-size</h2><ul><li>元素大小 = boder + padding + contentwidth</li><li>box-size: boder-size;（兼容性） 它会让系统计算元素大小时会将 boder padding 包括在内。不包含外边距(margin)。</li></ul><pre><code class="css">{ -webkit-box-size: boder-size; -ms-box-size: boder-size; -moz-box-size: boder-size;}</code></pre><h2 id="浏览器前缀"><a href="#浏览器前缀" class="headerlink" title="浏览器前缀"></a>浏览器前缀</h2><ul><li>-webkit</li><li>-ms</li><li>-moz</li></ul><h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><blockquote><p>弹性布局</p></blockquote><ul><li>用于 Chrome 29+、IE 11+ 和 Mozilla 28+。要支持 Safari，必须添加 -webkit- 前缀：</li></ul><pre><code class="css">{    display: -webkit-flex;    display: flex;}</code></pre>]]></content>
       
       
       <categories>
@@ -419,11 +419,11 @@
     
     
     <entry>
-      <title>作用域闭包</title>
-      <link href="/pages/78f2b66e/"/>
-      <url>/pages/78f2b66e/</url>
+      <title>全局命名空间和模块</title>
+      <link href="/pages/f9a582e/"/>
+      <url>/pages/f9a582e/</url>
       
-        <content type="html"><![CDATA[<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>wiki 上对闭包的定义：<br>闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），<strong>是引用了自由变量的函数。</strong>这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为<strong>闭包是由函数和与其相关的引用环境组合而成的实体。</strong></p><p><strong>自由变量的定义</strong>：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。</p><p>当函数<strong>可以记住并访问所在的词法作用域</strong>时，就产生了<strong>闭包</strong>，即使函数是在自己定义的词法作用域以外的地方执行。</p><p>闭包使得函数在<strong>定义时的词法作用域以外</strong>的地方被调用时，函数<strong>可以继续访问定义时的词法作用域</strong>。</p><p>在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。</p><p>在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。</p><pre><code class="javascript">function foo() {    let a = 0;    return function func() {        console.log(a);        a++;    };}const bar = foo();const baz = foo();bar(); // 0bar(); // 1 闭包保存上次计算的值bar(); // 2baz(); // 0 新生成函数</code></pre><p>将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。</p><p>无论通过何种手段<strong>将内部函数传递到所在的词法作用域以外</strong>，它都会<strong>持有对原始定义作用域的引用</strong>，无论在何处<strong>执行这个函数都会使用闭包</strong>。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="全局命名空间"><a href="#全局命名空间" class="headerlink" title="全局命名空间"></a>全局命名空间</h2><p>库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。</p><p>例如：</p><pre><code class="javascript">var mylibrary = {    name: &#39;haha&#39;,    eat: (name) =&gt; {        console.log(`${name} is eating`);    }};</code></pre><h2 id="模块管理"><a href="#模块管理" class="headerlink" title="模块管理"></a>模块管理</h2><p>通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。</p><p>用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。</p>]]></content>
       
       
       <categories>
@@ -444,23 +444,23 @@
     
     
     <entry>
-      <title>arguments和rest</title>
-      <link href="/pages/e5332c52/"/>
-      <url>/pages/e5332c52/</url>
+      <title>常用正则表达式</title>
+      <link href="/pages/81d5af05/"/>
+      <url>/pages/81d5af05/</url>
       
-        <content type="html"><![CDATA[<h2 id="arguments-参数"><a href="#arguments-参数" class="headerlink" title="arguments 参数"></a>arguments 参数</h2><blockquote><p>只在函数内部起作用，指向当前函数调用者传入的所有参数。</p></blockquote><pre><code class="javascript">var bar = (x) =&gt; {    console.log(x); // a    for(let i = 0; i &lt; arguments.length; i++){        console.log(arguments[i]); // 根据参数索引打印参数    }};bar(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;);</code></pre><ul><li>利用<code>arguments</code>可以获得调用者传入的所有参数。</li><li><code>arguments</code>常用于判断传入参数个数。</li></ul><h2 id="rest-不定参数"><a href="#rest-不定参数" class="headerlink" title="rest 不定参数"></a>rest 不定参数</h2><blockquote><p>JS 允许函数接收任意个参数，当参数个数不确定的情况下可以使用不定参数。</p></blockquote><pre><code class="javascript">&quot;use strict&quot;; // 严格模式// 接受任意个参数返回它们的和function sum(...rest) { // 不定参数写在参数最后，前面使用 ... 标识  let result = 0;  for (let i of rest) { // rest 是一个数组实例      result += i;  }  console.log(result);}sum(1, 2, 3, 4); // 传入参数</code></pre><p>不定参数写在参数最后，传入参数先绑定已有的参数，多余的参数以数组形式存入不定参数。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="一、校验数字的表达式"><a href="#一、校验数字的表达式" class="headerlink" title="一、校验数字的表达式"></a>一、校验数字的表达式</h2><ol><li><p>数字：<code>^[0-9]*$</code></p></li><li><p>n位的数字：<code>^\d{n}$</code></p></li><li><p>至少n位的数字：<code>^\d{n,}$</code></p></li><li><p>m-n位的数字：<code>^\d{m,n}$</code></p></li><li><p>零和非零开头的数字：<code>^(0|[1-9][0-9]*)$</code></p></li><li><p>非零开头的最多带两位小数的数字：<code>^([1-9][0-9]*)+(.[0-9]{1,2})?$</code></p></li><li><p>带1-2位小数的正数或负数：<code>^(\-)?\d+(\.\d{1,2})?$</code></p></li><li><p>正数、负数、和小数：<code>^(\-|\+)?\d+(\.\d+)?$</code></p></li><li><p>有两位小数的正实数：<code>^[0-9]+(.[0-9]{2})?$</code></p></li><li><p>有1~3位小数的正实数：<code>^[0-9]+(.[0-9]{1,3})?$</code></p></li><li><p>非零的正整数：<code>^[1-9]\d*$ 或 ^([1-9][0-9]*){1,3}$ 或 ^\+?[1-9][0-9]*$</code></p></li><li><p>非零的负整数：<code>^\-[1-9][]0-9&quot;*$ 或 ^-[1-9]\d*$</code></p></li><li><p>非负整数：<code>^\d+$ 或 ^[1-9]\d*|0$</code></p></li><li><p>非正整数：<code>^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$</code></p></li><li><p>非负浮点数：<code>^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$</code></p></li><li><p>非正浮点数：<code>^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$</code></p></li><li><p>正浮点数：<code>^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$</code></p></li><li><p>负浮点数：<code>^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$</code></p></li><li><p>浮点数：<code>^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$</code></p></li></ol><h2 id="二、校验字符的表达式"><a href="#二、校验字符的表达式" class="headerlink" title="二、校验字符的表达式"></a>二、校验字符的表达式</h2><ol><li><p>汉字：<code>^[\u4e00-\u9fa5]{0,}$</code></p></li><li><p>英文和数字：<code>^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$</code></p></li><li><p>长度为3-20的所有字符：<code>^.{3,20}$</code></p></li><li><p>由26个英文字母组成的字符串：<code>^[A-Za-z]+$</code></p></li><li><p>由26个大写英文字母组成的字符串：<code>^[A-Z]+$</code></p></li><li><p>由26个小写英文字母组成的字符串：<code>^[a-z]+$</code></p></li><li><p>由数字和26个英文字母组成的字符串：<code>^[A-Za-z0-9]+$</code></p></li><li><p>由数字、26个英文字母或者下划线组成的字符串：<code>^\w+$ 或 ^\w{3,20}$</code></p></li><li><p>中文、英文、数字包括下划线：<code>^[\u4E00-\u9FA5A-Za-z0-9_]+$</code></p></li><li><p>中文、英文、数字但不包括下划线等符号：<code>^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$</code></p></li><li><p>可以输入含有<code>^%&amp;&#39;,;=?$\</code>“等字符：<code>[^%&amp;&#39;,;=?$\x22]+ 12 禁止输入含有~的字符：[^~\x22]+</code></p></li></ol><h2 id="三、特殊需求表达式"><a href="#三、特殊需求表达式" class="headerlink" title="三、特殊需求表达式"></a>三、特殊需求表达式</h2><ol><li><p>Email地址：<code>^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</code></p></li><li><p>域名：<code>[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?</code></p></li><li><p>InternetURL：<code>[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$</code></p></li><li><p>手机号码：    ^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$</p></li><li><p>电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：<code>^(\(\d{3,4}-)|\d{3.4}-)?\d{7,8}$</code></p></li><li><p>国内电话号码(0511-4405222、021-87888822)：<code>\d{3}-\d{8}|\d{4}-\d{7}</code></p></li><li><p>身份证号(15位、18位数字)：<code>^\d{15}|\d{18}$</code></p></li><li><p>短身份证号码(数字、字母x结尾)：<code>^([0-9]){7,18}(x|X)?$ 或 ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$</code></p></li><li><p>帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：<code>^[a-zA-Z][a-zA-Z0-9_]{4,15}$</code></p></li><li><p>密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：<code>^[a-zA-Z]\w{5,17}$</code></p></li><li><p>强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：<code>^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$</code></p></li><li><p>日期格式：<code>^\d{4}-\d{1,2}-\d{1,2}</code></p></li><li><p>一年的12个月(01～09和1～12)：<code>^(0?[1-9]|1[0-2])$</code></p></li><li><p>一个月的31天(01～09和1～31)：<code>^((0?[1-9])|((1|2)[0-9])|30|31)$</code></p></li><li><p>钱的输入格式：</p><p>a. 有四种钱的表示形式我们可以接受:”10000.00” 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：<code>^[1-9][0-9]*$</code></p><p>b. 这表示任意一个不以0开头的数字,但是,这也意味着一个字符”0”不通过,所以我们采用下面的形式：<code>^(0|[1-9][0-9]*)$</code></p><p>c. 一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：<code>^(0|-?[1-9][0-9]*)$</code></p><p>e. 这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：<code>^[0-9]+(.[0-9]+)?$</code></p><p>f. 必须说明的是,小数点后面至少应该有1位数,所以”10.”是不通过的,但是 “10” 和 “10.2” 是通过的：<code>^[0-9]+(.[0-9]{2})?$</code></p><p>g. 这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：<code>^[0-9]+(.[0-9]{1,2})?$</code></p><p>h. 这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：<code>^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$</code></p><p>i. 1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：<code>^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$</code></p></li></ol><p><strong>备注</strong>：这就是最终结果了,别忘了”+”可以用”*”替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里</p><ol start="16"><li><p>xml文件：<code>^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$</code></p></li><li><p>中文字符的正则表达式：<code>[\u4e00-\u9fa5]</code></p></li><li><p>双字节字符：<code>[^\x00-\xff]</code> (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</p></li><li><p>空白行的正则表达式：<code>\n\s*\r</code> (可以用来删除空白行)</p></li><li><p>HTML标记的正则表达式：<code>&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? /&gt;</code> (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</p></li><li><p>首尾空白字符的正则表达式：<code>^\s*|\s*$或(^\s*)|(\s*$)</code> (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</p></li><li><p>腾讯QQ号：<code>[1-9][0-9]{4,}</code> (腾讯QQ号从10000开始)</p></li><li><p>中国邮政编码：<code>[1-9]\d{5}(?!\d)</code> (中国邮政编码为6位数字)</p></li><li><p>IP地址：<code>\d+\.\d+\.\d+\.\d+</code> (提取IP地址时有用)</p></li><li><p>IP地址：<code>((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))</code></p></li></ol>]]></content>
       
       
       <categories>
           
-          <category> JavaScript </category>
+          <category> Tools </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> JavaScript </tag>
+            <tag> RegEx </tag>
             
         </tags>
       
@@ -494,23 +494,23 @@
     
     
     <entry>
-      <title>常用正则表达式</title>
-      <link href="/pages/81d5af05/"/>
-      <url>/pages/81d5af05/</url>
+      <title>arguments和rest</title>
+      <link href="/pages/e5332c52/"/>
+      <url>/pages/e5332c52/</url>
       
-        <content type="html"><![CDATA[<h2 id="一、校验数字的表达式"><a href="#一、校验数字的表达式" class="headerlink" title="一、校验数字的表达式"></a>一、校验数字的表达式</h2><ol><li><p>数字：<code>^[0-9]*$</code></p></li><li><p>n位的数字：<code>^\d{n}$</code></p></li><li><p>至少n位的数字：<code>^\d{n,}$</code></p></li><li><p>m-n位的数字：<code>^\d{m,n}$</code></p></li><li><p>零和非零开头的数字：<code>^(0|[1-9][0-9]*)$</code></p></li><li><p>非零开头的最多带两位小数的数字：<code>^([1-9][0-9]*)+(.[0-9]{1,2})?$</code></p></li><li><p>带1-2位小数的正数或负数：<code>^(\-)?\d+(\.\d{1,2})?$</code></p></li><li><p>正数、负数、和小数：<code>^(\-|\+)?\d+(\.\d+)?$</code></p></li><li><p>有两位小数的正实数：<code>^[0-9]+(.[0-9]{2})?$</code></p></li><li><p>有1~3位小数的正实数：<code>^[0-9]+(.[0-9]{1,3})?$</code></p></li><li><p>非零的正整数：<code>^[1-9]\d*$ 或 ^([1-9][0-9]*){1,3}$ 或 ^\+?[1-9][0-9]*$</code></p></li><li><p>非零的负整数：<code>^\-[1-9][]0-9&quot;*$ 或 ^-[1-9]\d*$</code></p></li><li><p>非负整数：<code>^\d+$ 或 ^[1-9]\d*|0$</code></p></li><li><p>非正整数：<code>^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$</code></p></li><li><p>非负浮点数：<code>^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$</code></p></li><li><p>非正浮点数：<code>^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$</code></p></li><li><p>正浮点数：<code>^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$</code></p></li><li><p>负浮点数：<code>^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$</code></p></li><li><p>浮点数：<code>^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$</code></p></li></ol><h2 id="二、校验字符的表达式"><a href="#二、校验字符的表达式" class="headerlink" title="二、校验字符的表达式"></a>二、校验字符的表达式</h2><ol><li><p>汉字：<code>^[\u4e00-\u9fa5]{0,}$</code></p></li><li><p>英文和数字：<code>^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$</code></p></li><li><p>长度为3-20的所有字符：<code>^.{3,20}$</code></p></li><li><p>由26个英文字母组成的字符串：<code>^[A-Za-z]+$</code></p></li><li><p>由26个大写英文字母组成的字符串：<code>^[A-Z]+$</code></p></li><li><p>由26个小写英文字母组成的字符串：<code>^[a-z]+$</code></p></li><li><p>由数字和26个英文字母组成的字符串：<code>^[A-Za-z0-9]+$</code></p></li><li><p>由数字、26个英文字母或者下划线组成的字符串：<code>^\w+$ 或 ^\w{3,20}$</code></p></li><li><p>中文、英文、数字包括下划线：<code>^[\u4E00-\u9FA5A-Za-z0-9_]+$</code></p></li><li><p>中文、英文、数字但不包括下划线等符号：<code>^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$</code></p></li><li><p>可以输入含有<code>^%&amp;&#39;,;=?$\</code>“等字符：<code>[^%&amp;&#39;,;=?$\x22]+ 12 禁止输入含有~的字符：[^~\x22]+</code></p></li></ol><h2 id="三、特殊需求表达式"><a href="#三、特殊需求表达式" class="headerlink" title="三、特殊需求表达式"></a>三、特殊需求表达式</h2><ol><li><p>Email地址：<code>^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</code></p></li><li><p>域名：<code>[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?</code></p></li><li><p>InternetURL：<code>[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$</code></p></li><li><p>手机号码：    ^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$</p></li><li><p>电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：<code>^(\(\d{3,4}-)|\d{3.4}-)?\d{7,8}$</code></p></li><li><p>国内电话号码(0511-4405222、021-87888822)：<code>\d{3}-\d{8}|\d{4}-\d{7}</code></p></li><li><p>身份证号(15位、18位数字)：<code>^\d{15}|\d{18}$</code></p></li><li><p>短身份证号码(数字、字母x结尾)：<code>^([0-9]){7,18}(x|X)?$ 或 ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$</code></p></li><li><p>帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：<code>^[a-zA-Z][a-zA-Z0-9_]{4,15}$</code></p></li><li><p>密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：<code>^[a-zA-Z]\w{5,17}$</code></p></li><li><p>强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：<code>^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$</code></p></li><li><p>日期格式：<code>^\d{4}-\d{1,2}-\d{1,2}</code></p></li><li><p>一年的12个月(01～09和1～12)：<code>^(0?[1-9]|1[0-2])$</code></p></li><li><p>一个月的31天(01～09和1～31)：<code>^((0?[1-9])|((1|2)[0-9])|30|31)$</code></p></li><li><p>钱的输入格式：</p><p>a. 有四种钱的表示形式我们可以接受:”10000.00” 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：<code>^[1-9][0-9]*$</code></p><p>b. 这表示任意一个不以0开头的数字,但是,这也意味着一个字符”0”不通过,所以我们采用下面的形式：<code>^(0|[1-9][0-9]*)$</code></p><p>c. 一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：<code>^(0|-?[1-9][0-9]*)$</code></p><p>e. 这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：<code>^[0-9]+(.[0-9]+)?$</code></p><p>f. 必须说明的是,小数点后面至少应该有1位数,所以”10.”是不通过的,但是 “10” 和 “10.2” 是通过的：<code>^[0-9]+(.[0-9]{2})?$</code></p><p>g. 这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：<code>^[0-9]+(.[0-9]{1,2})?$</code></p><p>h. 这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：<code>^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$</code></p><p>i. 1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：<code>^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$</code></p></li></ol><p><strong>备注</strong>：这就是最终结果了,别忘了”+”可以用”*”替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里</p><ol start="16"><li><p>xml文件：<code>^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$</code></p></li><li><p>中文字符的正则表达式：<code>[\u4e00-\u9fa5]</code></p></li><li><p>双字节字符：<code>[^\x00-\xff]</code> (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</p></li><li><p>空白行的正则表达式：<code>\n\s*\r</code> (可以用来删除空白行)</p></li><li><p>HTML标记的正则表达式：<code>&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? /&gt;</code> (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</p></li><li><p>首尾空白字符的正则表达式：<code>^\s*|\s*$或(^\s*)|(\s*$)</code> (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</p></li><li><p>腾讯QQ号：<code>[1-9][0-9]{4,}</code> (腾讯QQ号从10000开始)</p></li><li><p>中国邮政编码：<code>[1-9]\d{5}(?!\d)</code> (中国邮政编码为6位数字)</p></li><li><p>IP地址：<code>\d+\.\d+\.\d+\.\d+</code> (提取IP地址时有用)</p></li><li><p>IP地址：<code>((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))</code></p></li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="arguments-参数"><a href="#arguments-参数" class="headerlink" title="arguments 参数"></a>arguments 参数</h2><blockquote><p>只在函数内部起作用，指向当前函数调用者传入的所有参数。</p></blockquote><pre><code class="javascript">var bar = (x) =&gt; {    console.log(x); // a    for(let i = 0; i &lt; arguments.length; i++){        console.log(arguments[i]); // 根据参数索引打印参数    }};bar(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;);</code></pre><ul><li>利用<code>arguments</code>可以获得调用者传入的所有参数。</li><li><code>arguments</code>常用于判断传入参数个数。</li></ul><h2 id="rest-不定参数"><a href="#rest-不定参数" class="headerlink" title="rest 不定参数"></a>rest 不定参数</h2><blockquote><p>JS 允许函数接收任意个参数，当参数个数不确定的情况下可以使用不定参数。</p></blockquote><pre><code class="javascript">&quot;use strict&quot;; // 严格模式// 接受任意个参数返回它们的和function sum(...rest) { // 不定参数写在参数最后，前面使用 ... 标识  let result = 0;  for (let i of rest) { // rest 是一个数组实例      result += i;  }  console.log(result);}sum(1, 2, 3, 4); // 传入参数</code></pre><p>不定参数写在参数最后，传入参数先绑定已有的参数，多余的参数以数组形式存入不定参数。</p>]]></content>
       
       
       <categories>
           
-          <category> Tools </category>
+          <category> JavaScript </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> RegEx </tag>
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -569,11 +569,11 @@
     
     
     <entry>
-      <title>css布局</title>
-      <link href="/pages/5a252ba9/"/>
-      <url>/pages/5a252ba9/</url>
+      <title>css和响应式</title>
+      <link href="/pages/343902f6/"/>
+      <url>/pages/343902f6/</url>
       
-        <content type="html"><![CDATA[<h1 id="CSS-基础布局"><a href="#CSS-基础布局" class="headerlink" title="CSS 基础布局"></a>CSS 基础布局</h1><h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><p>简单的 Micro clearfix 方法清除浮动，原文链接:<a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank" rel="noopener">http://nicolasgallagher.com/micro-clearfix-hack/</a></p><pre><code class="scss">@mixin clearfix {    &amp;::before, &amp;::after{        content: &quot; &quot;;        display: flex;    }    &amp;::after {        clear: both;    }}</code></pre><h2 id="三栏式布局"><a href="#三栏式布局" class="headerlink" title="三栏式布局"></a>三栏式布局</h2><blockquote><p>两边侧栏固定宽度，中间栏宽度自适应，并且中间栏要在放在文档流前面以优先渲染。<br>其父元素的高度始终是由三栏中高度最高的元素确定。</p></blockquote><h3 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h3><blockquote><p>来源于 Matthew Levine 于 2006 年发表在 Alistapart 上的一篇文章。<a href="https://alistapart.com/article/holygrail" target="_blank" rel="noopener">原文链接</a></p></blockquote><pre><code class="html">&lt;div class=&quot;container&quot;&gt;    &lt;div class=&quot;box mid&quot;&gt;&lt;/div&gt;    &lt;div class=&quot;box left&quot;&gt;&lt;/div&gt;    &lt;div class=&quot;box right&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code></pre><ol><li>设置<code>box-mid</code> <code>box-left</code> <code>box-right</code> 三者向左浮动。</li><li>设置<code>box-mid</code>宽度为 100%。</li><li>设置负边距，<code>box-left</code>设置负左边距为 100%，<code>box-right</code>设置负左边距为负的自身宽度。</li><li>设置<code>container</code>的<code>padding</code>值，给<code>box-left</code>和<code>box-right</code>留出空间。</li><li>设置<code>left</code>和<code>right</code>为相对定位(position: relative).</li><li>设置<code>box-left</code>的<code>left</code>值为负的<code>box-left</code>宽度，<code>box-right</code>的<code>right</code>值为负的<code>right</code>宽度。</li></ol><p>Q:当面板的<code>mid</code>部分比两边的子面板宽度小的时候，布局会乱掉。<br>A:为<code>body</code>设置一个最小宽度。<code>body{min-width:700px;}</code></p><h3 id="淘宝双飞翼布局"><a href="#淘宝双飞翼布局" class="headerlink" title="淘宝双飞翼布局"></a>淘宝双飞翼布局</h3><blockquote><p>淘宝双飞翼布局是一个经典的三栏式布局，</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="css框架"><a href="#css框架" class="headerlink" title="css框架"></a>css框架</h1><h2 id="Bootstrap-框架"><a href="#Bootstrap-框架" class="headerlink" title="Bootstrap 框架"></a>Bootstrap 框架</h2><blockquote><p>Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。<br><a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/bootstrap/bootstrap-tutorial.html</a></p></blockquote><ul><li>在 html head 开头引入下面代码：</li></ul><pre><code class="html">&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;!--  兼容古老的 IE --&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt;    &lt;!-- CSS 样式重置 --&gt;    &lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;    &lt;!-- 引入 Bootstrap css 压缩文件--&gt;    &lt;link href=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;    &lt;!-- 引入自己 css 的文件 --&gt;    &lt;link rel=&quot;stylesheet&quot; href=&quot;../style/task_1.css&quot;&gt;    &lt;title&gt;Test&lt;/title&gt;&lt;/head&gt;</code></pre><h2 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h2><blockquote><p>根据不同像素屏幕，展示不同大小页面。</p></blockquote><p><code>!important</code> 为开发者提供了一个增加样式权重的方法。!important是对整条样式的声明，包括这个样式的属性和属性值。</p><p><strong>### 媒体查询</strong></p><pre><code class="css">@media only screen and (max-width: 300px) {    p {        background-color: red;    }}</code></pre><ul><li>only 兼容旧式浏览器。</li><li>screen 表示这个媒体查询适用于所有屏幕。</li><li>and 后面跟条件。</li><li><strong>一般个@media样式要放在css样式表的最下面，不然会被相同样式覆盖。</strong></li></ul><h3 id="CSS-样式重置"><a href="#CSS-样式重置" class="headerlink" title="CSS 样式重置"></a>CSS 样式重置</h3><ul><li>不同的浏览器在对于CSS没有定义的一些样式属性是不一样的</li><li>比如没有在自己的CSS里面规定超链接有没有下划线的时候，有些浏览器有，有些浏览器没有。</li><li>再比如有一些浏览器规定的超链接默认颜色是蓝色，有一些又是黑色。</li><li>而这个CSS的功能就是对几乎所有的默认样式进行重置，让所有的浏览器上对于未定义的样式浏览效果达到一致。</li></ul><p><strong>使用方法：</strong></p><pre><code class="html">&lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt;&lt;link href=&quot;https://lib.baomitu.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre><h3 id="网格设计"><a href="#网格设计" class="headerlink" title="网格设计"></a>网格设计</h3><ul><li>大部分网页采用 12 columns 设计，可以很好的划分为2，3，4等份。</li></ul><h2 id="文章字体"><a href="#文章字体" class="headerlink" title="文章字体"></a>文章字体</h2><ul><li>segmentfault<pre><code class="css">font-family: -apple-system,&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;WenQuanYi Micro Hei&quot;,&quot;Microsoft Yahei&quot;,sans-serif;</code></pre></li></ul><p>font-size: 14px;</p><pre><code>* 知乎```cssfont-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;font-size: 15px;</code></pre><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>导航栏 #243d4c</p><p>背景 #eee<br>#f5f5f5<br>#f8f8f8<br>#ffffff</p><p>按钮 #02b3e4<br>#148bb1<br>#2D78BA</p><p>边框阴影</p><pre><code class="css">.ss::before, .clss::before {    bottom: 0;    box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);    content: &#39;&#39;;    display: block;    left: 0;    pointer-events: none;    position: absolute;    right: 0;    top: 0;}</code></pre>]]></content>
       
       
       <categories>
@@ -611,56 +611,6 @@
         <tags>
             
             <tag> Git </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>javascript DOM</title>
-      <link href="/pages/218ff168/"/>
-      <url>/pages/218ff168/</url>
-      
-        <content type="html"><![CDATA[<h2 id="消息窗口"><a href="#消息窗口" class="headerlink" title="消息窗口"></a>消息窗口</h2><ul><li><p>document.write(字符串或者变量或者 Html 标签); 直接在向 html 的输出流中写内容，直接在网页中输出容。</p></li><li><p>alert(字符串或变量); 弹出一个包含确定的消息对话框。<br><img src="https://i.loli.net/2017/10/26/59f1ff9e6f473.png" alt="js-alert"></p></li><li><p>confirm(stri); 弹出一个包含确定和取消的消息对话框。</p><ul><li>str 消息框显示的文本。</li><li>返回值为 Boolean 类型，通过返回值判断用户点击了什么按钮，确定为 true ，取消为 false。<br><img src="https://i.loli.net/2017/10/26/59f1ffb53699b.png" alt="js-confirm"></li></ul></li><li><p>prompt(str1, str2) 弹出包含一个确定按钮、取消按钮与一个文本输入框的消息对话框。</p><ul><li>str1 消息框显示文本，不可修改。</li><li>str2 文本框中的内容，可修改。</li><li>返回值：点击确定，文本框内容作为函数返回值。点击取消，返回 null。</li></ul></li><li><p>open() 方法可以查找一个已经存在或者新建的浏览器窗口。</p><ul><li>window.open() 打开一个新窗口。<br>```javascript<br>window.open([URL], [窗口名称], [窗口参数设置])<br>/* URL(可选参数):网页网址或路径，如果它的值是空字符串，那么窗口就不显示任何文档。</li><li>窗口名称(可选参数)：被打开窗口的名称。只能由字母，数字或下划线构成。</li><li>_balnk:新窗口打开； _self:当前窗口打开； _top：框架网页中在上部窗口中显示目标网页；</li><li>相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。</li><li>/<br>```</li><li>窗口参数 ：<table><thead><tr><th>参数</th><th>值</th><th>含义</th></tr></thead><tbody><tr><td>top</td><td>Number</td><td>窗口顶部离开屏幕顶部像素</td></tr><tr><td>left</td><td>Number</td><td>窗口顶部离开屏幕顶部像素</td></tr><tr><td>width</td><td>Number</td><td>窗口宽度</td></tr><tr><td>height</td><td>Number</td><td>窗口高度</td></tr><tr><td>menubar</td><td>yes，no</td><td>窗口菜单</td></tr><tr><td>toolbar</td><td>yes，no</td><td>窗口工具栏</td></tr><tr><td>scrollbars</td><td>yes，no</td><td>窗口滚动条</td></tr><tr><td>status</td><td>yes，no</td><td>窗口状态栏</td></tr></tbody></table></li></ul></li><li><p>close() 关闭窗口</p></li></ul><pre><code class="javascript">    window.close(); // 关闭本窗口    [对象窗口].close() // 关闭对象窗口</code></pre><h2 id="JS-HTML-DOM"><a href="#JS-HTML-DOM" class="headerlink" title="JS HTML DOM"></a>JS HTML DOM</h2><blockquote><p>浏览器从服务器取到HTML网页以后， 会展示成页面让你看， 但是他的内部其实会把HTML组织成一个树给JS,这个树可以称为DOM。 例如这个页面：</p></blockquote><ul><li>浏览器从服务器取到HTML网页以后， 会展示成页面让你看， 但是他的内部其实会把HTML组织成一个树给JS,这个树可以称为DOM。 例如这个页面：</li></ul><pre><code class="html">&lt;html&gt; &lt;head&gt;   &lt;title&gt;Sample Page&lt;/title&gt; &lt;/head&gt; &lt;body&gt;   &lt;p&gt;hello world!&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</code></pre><p><img src="https://i.loli.net/2017/10/26/59f1ffc7e1cb1.png" alt="full-html-tree"></p><p>通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML:</p><ul><li>JavaScript 能够改变页面中的所有 HTML 元素</li><li>JavaScript 能够改变页面中的所有 HTML 属性</li><li>JavaScript 能够改变页面中的所有 CSS 样式</li><li>JavaScript 能够对页面中的所有事件做出反应</li></ul><h3 id="通过-JavaScript-操作作-HTML-元素"><a href="#通过-JavaScript-操作作-HTML-元素" class="headerlink" title="通过 JavaScript 操作作 HTML 元素"></a>通过 JavaScript 操作作 HTML 元素</h3><blockquote><p>JS可以定位到DOM树中任意一个节点， 然后对这个节点进行操作， 例如隐藏节点、显示节点、改变颜色、获得文本的值， 改变文本的值，添加一个响应点击事件的函数等。</p></blockquote><ol><li>查找 HTML 元素</li></ol><ul><li>通过 id 找到 HTML 元素：`var x = document.getElementById(“ID”);</li><li>通过标签名找到 HTML 元素：<code>var x = document.getElementById(&quot;ID&quot;);var y = x.getElementsByTagName(&quot;p&quot;);</code></li><li>通过类名找到 HTML 元素</li><li>stringObject.match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</li></ul><ol start="2"><li>改变元素内容</li></ol><ul><li>document.getElementById(“ID”).innerHTML=”Hello”; // 改变内容</li><li>isNaN(x); // x 是否为数字</li><li>document.write(“写入内容”), // 向文档输出写内容</li></ul><ol start="3"><li>改变元素样式</li></ol><ul><li>document.getElementById(“ID”).style.color=”#ff0000”;   // 改变样式</li><li>document.getElementById(“ID”).style.visibility=”hidden”; // 隐藏元素</li><li>document.getElementById(“ID”).style.visibility=”visible” // 显示元素</li></ul><h2 id="DOM-事件"><a href="#DOM-事件" class="headerlink" title="DOM 事件"></a>DOM 事件</h2><h3 id="HTML-常见事件"><a href="#HTML-常见事件" class="headerlink" title="HTML 常见事件"></a>HTML 常见事件</h3><ul><li>当用户点击鼠标时</li><li>当网页已加载时</li><li>当图像已加载时</li><li>当鼠标移动到元素上时</li><li>当输入字段被改变时</li><li>当提交 HTML 表单时</li><li>当用户触发按键时</li></ul><table><thead><tr><th>事件</th><th>含义</th></tr></thead><tbody><tr><td>onclick</td><td>元素被点击时，调用绑定函数</td></tr><tr><td>onload 和 onunload</td><td>在用户进入或离开页面时被触发，用于检测访问者的浏览器类型和浏览器版本，处理 cookie</td></tr><tr><td>onmouseover 和 onmouseout</td><td>将鼠标移至 HTML 元素上方或移出元素时触发</td></tr><tr><td>onchange</td><td>当域内的内容被改变时，执行绑定函数。例如：向输入框内输入小写，完成后自动转换为大写</td></tr><tr><td>onmousedown 和 onmouseup</td><td>按下和释放鼠标，触发事件</td></tr><tr><td>onfocus 和 onblur</td><td>获得焦点或者失去焦点时，触发事件。例如：向文本框输入时，改变其背景颜色</td></tr></tbody></table><h3 id="绑定方式"><a href="#绑定方式" class="headerlink" title="绑定方式"></a>绑定方式</h3><ol><li>js 中绑定<pre><code class="javascript">//  必须是一个函数的引用或函数名，而不是函数调用// 例如：foo(); 在这里将无效document.getElementById(&quot;ID&quot;).onclick = foo;</code></pre></li><li>html 中绑定<pre><code class="html">onclick=&quot;foo()&quot;</code></pre></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> JavaScript </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>html基础</title>
-      <link href="/pages/1a147173/"/>
-      <url>/pages/1a147173/</url>
-      
-        <content type="html"><![CDATA[<h2 id="完整-HTML-树"><a href="#完整-HTML-树" class="headerlink" title="完整 HTML 树"></a>完整 HTML 树</h2><p><img src="https://i.loli.net/2017/10/26/59f1ff406e5f5.png" alt="DOM"></p><ul><li>相关的 CSS 文件（针对样式）：</li></ul><pre><code class="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;</code></pre><ul><li>相关的 JavaScript 文件（更改渲染和行为的多用途脚本）：</li></ul><pre><code class="html">&lt;script src=&quot;myjavascripts.js&quot;&gt;&lt;/script&gt;</code></pre><ul><li>粗体斜体</li></ul><pre><code class="html">&lt;!-- 推荐使用&lt;strong&gt;进行加粗  --&gt; &lt;strong&gt;粗体&lt;/strong&gt;&lt;!-- 推荐使用&lt;em&gt;进行斜体显示  --&gt;&lt;em&gt;斜体&lt;/em&gt;</code></pre><ul><li><code>&lt;sup&gt;</code> 标签定义上标文本。</li><li><code>&lt;sub&gt;</code> 标签定义下标文本。</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> HTML </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> HTML </tag>
             
         </tags>
       
@@ -711,6 +661,56 @@
         <tags>
             
             <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>html基础</title>
+      <link href="/pages/1a147173/"/>
+      <url>/pages/1a147173/</url>
+      
+        <content type="html"><![CDATA[<h2 id="完整-HTML-树"><a href="#完整-HTML-树" class="headerlink" title="完整 HTML 树"></a>完整 HTML 树</h2><p><img src="https://i.loli.net/2017/10/26/59f1ff406e5f5.png" alt="DOM"></p><ul><li>相关的 CSS 文件（针对样式）：</li></ul><pre><code class="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;</code></pre><ul><li>相关的 JavaScript 文件（更改渲染和行为的多用途脚本）：</li></ul><pre><code class="html">&lt;script src=&quot;myjavascripts.js&quot;&gt;&lt;/script&gt;</code></pre><ul><li>粗体斜体</li></ul><pre><code class="html">&lt;!-- 推荐使用&lt;strong&gt;进行加粗  --&gt; &lt;strong&gt;粗体&lt;/strong&gt;&lt;!-- 推荐使用&lt;em&gt;进行斜体显示  --&gt;&lt;em&gt;斜体&lt;/em&gt;</code></pre><ul><li><code>&lt;sup&gt;</code> 标签定义上标文本。</li><li><code>&lt;sub&gt;</code> 标签定义下标文本。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>进制快速转换</title>
+      <link href="/pages/8b41c91c/"/>
+      <url>/pages/8b41c91c/</url>
+      
+        <content type="html"><![CDATA[<h2 id="十进制转其他进制"><a href="#十进制转其他进制" class="headerlink" title="十进制转其他进制"></a>十进制转其他进制</h2><pre><code class="javascript">const i = 10;i.toString(2);  // 2 进制 1010i.toString(8);  // 8 进制 12i.toString(16);  // 16 进制 ai.toString(32);  // 32 进制 a</code></pre><h2 id="其他进制转十进制"><a href="#其他进制转十进制" class="headerlink" title="其他进制转十进制"></a>其他进制转十进制</h2><pre><code class="javascript">parsetInt(x, 2); // 2 进制转 10进制parsetInt(x, 8); // 8 进制转 10 进制parsetInt(x, 16); // 16 进制转 10 进制</code></pre><h2 id="非十进制转十进制"><a href="#非十进制转十进制" class="headerlink" title="非十进制转十进制"></a>非十进制转十进制</h2><p>先转化为10进制， 然后再利用toString(参数)， 转化成不同的进制。</p><pre><code class="javascript">parsetInt(x, 2).toString(8); // 2 进制转 8进制</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -794,11 +794,11 @@
     
     
     <entry>
-      <title>全局命名空间和模块</title>
-      <link href="/pages/f9a582e/"/>
-      <url>/pages/f9a582e/</url>
+      <title>作用域闭包</title>
+      <link href="/pages/78f2b66e/"/>
+      <url>/pages/78f2b66e/</url>
       
-        <content type="html"><![CDATA[<h2 id="全局命名空间"><a href="#全局命名空间" class="headerlink" title="全局命名空间"></a>全局命名空间</h2><p>库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。</p><p>例如：</p><pre><code class="javascript">var mylibrary = {    name: &#39;haha&#39;,    eat: (name) =&gt; {        console.log(`${name} is eating`);    }};</code></pre><h2 id="模块管理"><a href="#模块管理" class="headerlink" title="模块管理"></a>模块管理</h2><p>通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。</p><p>用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>wiki 上对闭包的定义：<br>闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），<strong>是引用了自由变量的函数。</strong>这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为<strong>闭包是由函数和与其相关的引用环境组合而成的实体。</strong></p><p><strong>自由变量的定义</strong>：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。</p><p>当函数<strong>可以记住并访问所在的词法作用域</strong>时，就产生了<strong>闭包</strong>，即使函数是在自己定义的词法作用域以外的地方执行。</p><p>闭包使得函数在<strong>定义时的词法作用域以外</strong>的地方被调用时，函数<strong>可以继续访问定义时的词法作用域</strong>。</p><p>在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。</p><p>在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。</p><pre><code class="javascript">function foo() {    let a = 0;    return function func() {        console.log(a);        a++;    };}const bar = foo();const baz = foo();bar(); // 0bar(); // 1 闭包保存上次计算的值bar(); // 2baz(); // 0 新生成函数</code></pre><p>将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。</p><p>无论通过何种手段<strong>将内部函数传递到所在的词法作用域以外</strong>，它都会<strong>持有对原始定义作用域的引用</strong>，无论在何处<strong>执行这个函数都会使用闭包</strong>。</p>]]></content>
       
       
       <categories>
@@ -819,11 +819,11 @@
     
     
     <entry>
-      <title>进制快速转换</title>
-      <link href="/pages/8b41c91c/"/>
-      <url>/pages/8b41c91c/</url>
+      <title>javascript DOM</title>
+      <link href="/pages/218ff168/"/>
+      <url>/pages/218ff168/</url>
       
-        <content type="html"><![CDATA[<h2 id="十进制转其他进制"><a href="#十进制转其他进制" class="headerlink" title="十进制转其他进制"></a>十进制转其他进制</h2><pre><code class="javascript">const i = 10;i.toString(2);  // 2 进制 1010i.toString(8);  // 8 进制 12i.toString(16);  // 16 进制 ai.toString(32);  // 32 进制 a</code></pre><h2 id="其他进制转十进制"><a href="#其他进制转十进制" class="headerlink" title="其他进制转十进制"></a>其他进制转十进制</h2><pre><code class="javascript">parsetInt(x, 2); // 2 进制转 10进制parsetInt(x, 8); // 8 进制转 10 进制parsetInt(x, 16); // 16 进制转 10 进制</code></pre><h2 id="非十进制转十进制"><a href="#非十进制转十进制" class="headerlink" title="非十进制转十进制"></a>非十进制转十进制</h2><p>先转化为10进制， 然后再利用toString(参数)， 转化成不同的进制。</p><pre><code class="javascript">parsetInt(x, 2).toString(8); // 2 进制转 8进制</code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="消息窗口"><a href="#消息窗口" class="headerlink" title="消息窗口"></a>消息窗口</h2><ul><li><p>document.write(字符串或者变量或者 Html 标签); 直接在向 html 的输出流中写内容，直接在网页中输出容。</p></li><li><p>alert(字符串或变量); 弹出一个包含确定的消息对话框。<br><img src="https://i.loli.net/2017/10/26/59f1ff9e6f473.png" alt="js-alert"></p></li><li><p>confirm(stri); 弹出一个包含确定和取消的消息对话框。</p><ul><li>str 消息框显示的文本。</li><li>返回值为 Boolean 类型，通过返回值判断用户点击了什么按钮，确定为 true ，取消为 false。<br><img src="https://i.loli.net/2017/10/26/59f1ffb53699b.png" alt="js-confirm"></li></ul></li><li><p>prompt(str1, str2) 弹出包含一个确定按钮、取消按钮与一个文本输入框的消息对话框。</p><ul><li>str1 消息框显示文本，不可修改。</li><li>str2 文本框中的内容，可修改。</li><li>返回值：点击确定，文本框内容作为函数返回值。点击取消，返回 null。</li></ul></li><li><p>open() 方法可以查找一个已经存在或者新建的浏览器窗口。</p><ul><li>window.open() 打开一个新窗口。<br>```javascript<br>window.open([URL], [窗口名称], [窗口参数设置])<br>/* URL(可选参数):网页网址或路径，如果它的值是空字符串，那么窗口就不显示任何文档。</li><li>窗口名称(可选参数)：被打开窗口的名称。只能由字母，数字或下划线构成。</li><li>_balnk:新窗口打开； _self:当前窗口打开； _top：框架网页中在上部窗口中显示目标网页；</li><li>相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。</li><li>/<br>```</li><li>窗口参数 ：<table><thead><tr><th>参数</th><th>值</th><th>含义</th></tr></thead><tbody><tr><td>top</td><td>Number</td><td>窗口顶部离开屏幕顶部像素</td></tr><tr><td>left</td><td>Number</td><td>窗口顶部离开屏幕顶部像素</td></tr><tr><td>width</td><td>Number</td><td>窗口宽度</td></tr><tr><td>height</td><td>Number</td><td>窗口高度</td></tr><tr><td>menubar</td><td>yes，no</td><td>窗口菜单</td></tr><tr><td>toolbar</td><td>yes，no</td><td>窗口工具栏</td></tr><tr><td>scrollbars</td><td>yes，no</td><td>窗口滚动条</td></tr><tr><td>status</td><td>yes，no</td><td>窗口状态栏</td></tr></tbody></table></li></ul></li><li><p>close() 关闭窗口</p></li></ul><pre><code class="javascript">    window.close(); // 关闭本窗口    [对象窗口].close() // 关闭对象窗口</code></pre><h2 id="JS-HTML-DOM"><a href="#JS-HTML-DOM" class="headerlink" title="JS HTML DOM"></a>JS HTML DOM</h2><blockquote><p>浏览器从服务器取到HTML网页以后， 会展示成页面让你看， 但是他的内部其实会把HTML组织成一个树给JS,这个树可以称为DOM。 例如这个页面：</p></blockquote><ul><li>浏览器从服务器取到HTML网页以后， 会展示成页面让你看， 但是他的内部其实会把HTML组织成一个树给JS,这个树可以称为DOM。 例如这个页面：</li></ul><pre><code class="html">&lt;html&gt; &lt;head&gt;   &lt;title&gt;Sample Page&lt;/title&gt; &lt;/head&gt; &lt;body&gt;   &lt;p&gt;hello world!&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</code></pre><p><img src="https://i.loli.net/2017/10/26/59f1ffc7e1cb1.png" alt="full-html-tree"></p><p>通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML:</p><ul><li>JavaScript 能够改变页面中的所有 HTML 元素</li><li>JavaScript 能够改变页面中的所有 HTML 属性</li><li>JavaScript 能够改变页面中的所有 CSS 样式</li><li>JavaScript 能够对页面中的所有事件做出反应</li></ul><h3 id="通过-JavaScript-操作作-HTML-元素"><a href="#通过-JavaScript-操作作-HTML-元素" class="headerlink" title="通过 JavaScript 操作作 HTML 元素"></a>通过 JavaScript 操作作 HTML 元素</h3><blockquote><p>JS可以定位到DOM树中任意一个节点， 然后对这个节点进行操作， 例如隐藏节点、显示节点、改变颜色、获得文本的值， 改变文本的值，添加一个响应点击事件的函数等。</p></blockquote><ol><li>查找 HTML 元素</li></ol><ul><li>通过 id 找到 HTML 元素：`var x = document.getElementById(“ID”);</li><li>通过标签名找到 HTML 元素：<code>var x = document.getElementById(&quot;ID&quot;);var y = x.getElementsByTagName(&quot;p&quot;);</code></li><li>通过类名找到 HTML 元素</li><li>stringObject.match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</li></ul><ol start="2"><li>改变元素内容</li></ol><ul><li>document.getElementById(“ID”).innerHTML=”Hello”; // 改变内容</li><li>isNaN(x); // x 是否为数字</li><li>document.write(“写入内容”), // 向文档输出写内容</li></ul><ol start="3"><li>改变元素样式</li></ol><ul><li>document.getElementById(“ID”).style.color=”#ff0000”;   // 改变样式</li><li>document.getElementById(“ID”).style.visibility=”hidden”; // 隐藏元素</li><li>document.getElementById(“ID”).style.visibility=”visible” // 显示元素</li></ul><h2 id="DOM-事件"><a href="#DOM-事件" class="headerlink" title="DOM 事件"></a>DOM 事件</h2><h3 id="HTML-常见事件"><a href="#HTML-常见事件" class="headerlink" title="HTML 常见事件"></a>HTML 常见事件</h3><ul><li>当用户点击鼠标时</li><li>当网页已加载时</li><li>当图像已加载时</li><li>当鼠标移动到元素上时</li><li>当输入字段被改变时</li><li>当提交 HTML 表单时</li><li>当用户触发按键时</li></ul><table><thead><tr><th>事件</th><th>含义</th></tr></thead><tbody><tr><td>onclick</td><td>元素被点击时，调用绑定函数</td></tr><tr><td>onload 和 onunload</td><td>在用户进入或离开页面时被触发，用于检测访问者的浏览器类型和浏览器版本，处理 cookie</td></tr><tr><td>onmouseover 和 onmouseout</td><td>将鼠标移至 HTML 元素上方或移出元素时触发</td></tr><tr><td>onchange</td><td>当域内的内容被改变时，执行绑定函数。例如：向输入框内输入小写，完成后自动转换为大写</td></tr><tr><td>onmousedown 和 onmouseup</td><td>按下和释放鼠标，触发事件</td></tr><tr><td>onfocus 和 onblur</td><td>获得焦点或者失去焦点时，触发事件。例如：向文本框输入时，改变其背景颜色</td></tr></tbody></table><h3 id="绑定方式"><a href="#绑定方式" class="headerlink" title="绑定方式"></a>绑定方式</h3><ol><li>js 中绑定<pre><code class="javascript">//  必须是一个函数的引用或函数名，而不是函数调用// 例如：foo(); 在这里将无效document.getElementById(&quot;ID&quot;).onclick = foo;</code></pre></li><li>html 中绑定<pre><code class="html">onclick=&quot;foo()&quot;</code></pre></li></ol>]]></content>
       
       
       <categories>
@@ -844,11 +844,11 @@
     
     
     <entry>
-      <title>css和响应式</title>
-      <link href="/pages/343902f6/"/>
-      <url>/pages/343902f6/</url>
+      <title>css布局</title>
+      <link href="/pages/5a252ba9/"/>
+      <url>/pages/5a252ba9/</url>
       
-        <content type="html"><![CDATA[<h1 id="css框架"><a href="#css框架" class="headerlink" title="css框架"></a>css框架</h1><h2 id="Bootstrap-框架"><a href="#Bootstrap-框架" class="headerlink" title="Bootstrap 框架"></a>Bootstrap 框架</h2><blockquote><p>Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。<br><a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/bootstrap/bootstrap-tutorial.html</a></p></blockquote><ul><li>在 html head 开头引入下面代码：</li></ul><pre><code class="html">&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;!--  兼容古老的 IE --&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt;    &lt;!-- CSS 样式重置 --&gt;    &lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;    &lt;!-- 引入 Bootstrap css 压缩文件--&gt;    &lt;link href=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;    &lt;!-- 引入自己 css 的文件 --&gt;    &lt;link rel=&quot;stylesheet&quot; href=&quot;../style/task_1.css&quot;&gt;    &lt;title&gt;Test&lt;/title&gt;&lt;/head&gt;</code></pre><h2 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h2><blockquote><p>根据不同像素屏幕，展示不同大小页面。</p></blockquote><p><code>!important</code> 为开发者提供了一个增加样式权重的方法。!important是对整条样式的声明，包括这个样式的属性和属性值。</p><p><strong>### 媒体查询</strong></p><pre><code class="css">@media only screen and (max-width: 300px) {    p {        background-color: red;    }}</code></pre><ul><li>only 兼容旧式浏览器。</li><li>screen 表示这个媒体查询适用于所有屏幕。</li><li>and 后面跟条件。</li><li><strong>一般个@media样式要放在css样式表的最下面，不然会被相同样式覆盖。</strong></li></ul><h3 id="CSS-样式重置"><a href="#CSS-样式重置" class="headerlink" title="CSS 样式重置"></a>CSS 样式重置</h3><ul><li>不同的浏览器在对于CSS没有定义的一些样式属性是不一样的</li><li>比如没有在自己的CSS里面规定超链接有没有下划线的时候，有些浏览器有，有些浏览器没有。</li><li>再比如有一些浏览器规定的超链接默认颜色是蓝色，有一些又是黑色。</li><li>而这个CSS的功能就是对几乎所有的默认样式进行重置，让所有的浏览器上对于未定义的样式浏览效果达到一致。</li></ul><p><strong>使用方法：</strong></p><pre><code class="html">&lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt;&lt;link href=&quot;https://lib.baomitu.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre><h3 id="网格设计"><a href="#网格设计" class="headerlink" title="网格设计"></a>网格设计</h3><ul><li>大部分网页采用 12 columns 设计，可以很好的划分为2，3，4等份。</li></ul><h2 id="文章字体"><a href="#文章字体" class="headerlink" title="文章字体"></a>文章字体</h2><ul><li>segmentfault<pre><code class="css">font-family: -apple-system,&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;WenQuanYi Micro Hei&quot;,&quot;Microsoft Yahei&quot;,sans-serif;</code></pre></li></ul><p>font-size: 14px;</p><pre><code>* 知乎```cssfont-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;font-size: 15px;</code></pre><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>导航栏 #243d4c</p><p>背景 #eee<br>#f5f5f5<br>#f8f8f8<br>#ffffff</p><p>按钮 #02b3e4<br>#148bb1<br>#2D78BA</p><p>边框阴影</p><pre><code class="css">.ss::before, .clss::before {    bottom: 0;    box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);    content: &#39;&#39;;    display: block;    left: 0;    pointer-events: none;    position: absolute;    right: 0;    top: 0;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="CSS-基础布局"><a href="#CSS-基础布局" class="headerlink" title="CSS 基础布局"></a>CSS 基础布局</h1><h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><p>简单的 Micro clearfix 方法清除浮动，原文链接:<a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank" rel="noopener">http://nicolasgallagher.com/micro-clearfix-hack/</a></p><pre><code class="scss">@mixin clearfix {    &amp;::before, &amp;::after{        content: &quot; &quot;;        display: flex;    }    &amp;::after {        clear: both;    }}</code></pre><h2 id="三栏式布局"><a href="#三栏式布局" class="headerlink" title="三栏式布局"></a>三栏式布局</h2><blockquote><p>两边侧栏固定宽度，中间栏宽度自适应，并且中间栏要在放在文档流前面以优先渲染。<br>其父元素的高度始终是由三栏中高度最高的元素确定。</p></blockquote><h3 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h3><blockquote><p>来源于 Matthew Levine 于 2006 年发表在 Alistapart 上的一篇文章。<a href="https://alistapart.com/article/holygrail" target="_blank" rel="noopener">原文链接</a></p></blockquote><pre><code class="html">&lt;div class=&quot;container&quot;&gt;    &lt;div class=&quot;box mid&quot;&gt;&lt;/div&gt;    &lt;div class=&quot;box left&quot;&gt;&lt;/div&gt;    &lt;div class=&quot;box right&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code></pre><ol><li>设置<code>box-mid</code> <code>box-left</code> <code>box-right</code> 三者向左浮动。</li><li>设置<code>box-mid</code>宽度为 100%。</li><li>设置负边距，<code>box-left</code>设置负左边距为 100%，<code>box-right</code>设置负左边距为负的自身宽度。</li><li>设置<code>container</code>的<code>padding</code>值，给<code>box-left</code>和<code>box-right</code>留出空间。</li><li>设置<code>left</code>和<code>right</code>为相对定位(position: relative).</li><li>设置<code>box-left</code>的<code>left</code>值为负的<code>box-left</code>宽度，<code>box-right</code>的<code>right</code>值为负的<code>right</code>宽度。</li></ol><p>Q:当面板的<code>mid</code>部分比两边的子面板宽度小的时候，布局会乱掉。<br>A:为<code>body</code>设置一个最小宽度。<code>body{min-width:700px;}</code></p><h3 id="淘宝双飞翼布局"><a href="#淘宝双飞翼布局" class="headerlink" title="淘宝双飞翼布局"></a>淘宝双飞翼布局</h3><blockquote><p>淘宝双飞翼布局是一个经典的三栏式布局，</p></blockquote>]]></content>
       
       
       <categories>
@@ -919,31 +919,6 @@
     
     
     <entry>
-      <title>常用排序算法</title>
-      <link href="/pages/5b90526d/"/>
-      <url>/pages/5b90526d/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>转自@ruanyf大神,留作自己备用.</p></blockquote><p>排序算法是将一系列的值按照顺序进行排列的方法。</p><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>冒泡排序（Bubble Sort）是最易懂的排序算法，但是效率较低，生产环境中很少使用。</p><p>它的基本思想是：</p><ol><li><p>依次比较相邻的两个数，如果不符合排序规则，则调换两个数的位置。这样一遍比较下来，能够保证最大（或最小）的数排在最后一位。</p></li><li><p>再对最后一位以外的数组，重复前面的过程，直至全部排序完成。</p></li></ol><p>由于每进行一次这个过程，在该次比较的最后一个位置上，正确的数会自己冒出来，就好像“冒泡”一样，这种算法因此得名。</p><p>以对数组<code>[3, 2, 4, 5, 1]</code>进行从小到大排序为例，步骤如下：</p><ol><li><p>第一位的“3”与第二位的“2”进行比较，3大于2，互换位置，数组变成<code>[2, 3, 4, 5, 1]</code>。</p></li><li><p>第二位的“3”与第三位的“4”进行比较，3小于4，数组不变。</p></li><li><p>第三位的“4”与第四位的“5”进行比较，4小于5，数组不变。</p></li><li><p>第四位的“5”与第五位的“1”进行比较，5大于1，互换位置，数组变成<code>[2, 3, 4, 1, 5]</code>。</p></li></ol><p>第一轮排序完成，可以看到最后一位的5，已经是正确的数了。然后，再对剩下的数<code>[2, 3, 4, 1]</code>重复这个过程，每一轮都会在本轮最后一位上出现正确的数。直至剩下最后一个位置，所有排序结束。</p><h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><p>先定义一个交换函数，作用是交换两个位置的值。</p><pre><code class="javascript">function swap(myArray, p1, p2){  var temp = myArray[p1];  myArray[p1] = myArray[p2];  myArray[p2] = temp;}</code></pre><p>然后定义主函数。</p><pre><code class="javascript">function bubbleSort(myArray){  var len = myArray.length;  var i;  var j;  var stop;  for (i = 0; i &lt; len - 1; i++){    for (j = 0, stop = len - 1 - i; j &lt; stop; j++){      if (myArray[j] &gt; myArray[j + 1]){        swap(myArray, j, j + 1);      }    }  }  return myArray;}</code></pre><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h3 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h3><p>选择排序（Selection Sort）与冒泡排序类似，也是依次对相邻的数进行两两比较。不同之处在于，它不是每比较一次就调换位置，而是一轮比较完毕，找到最大值（或最小值）之后，将其放在正确的位置，其他数的位置不变。</p><p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p><ol><li><p>假定第一位的“3”是最小值。</p></li><li><p>最小值“3”与第二位的“2”进行比较，2小于3，所以新的最小值是第二位的“2”。</p></li><li><p>最小值“2”与第三位的“4”进行比较，2小于4，最小值不变。</p></li><li><p>最小值“2”与第四位的“5”进行比较，2小于5，最小值不变。</p></li><li><p>最小值“2”与第五位的“1”进行比较，1小于2，所以新的最小值是第五位的“1”。</p></li><li><p>第五位的“1”与第一位的“3”互换位置，数组变为[1, 2, 4, 5, 3]。</p></li></ol><p>这一轮比较结束后，最小值“1”已经排到正确的位置了，然后对剩下的[2, 4, 5, 3]重复上面的过程。每一轮排序都会将该轮的最小值排到正确的位置，直至剩下最后一个位置，所有排序结束。</p><h3 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h3><p>先定义一个交换函数。</p><pre><code class="javascript">function swap(myArray, p1, p2){    var temp = myArray[p1];    myArray[p1] = myArray[p2];    myArray[p2] = temp;}</code></pre><p>然后定义主函数。</p><pre><code class="javascript">function selectionSort(myArray){    var len = myArray.length,        min;    for (i=0; i &lt; len; i++){        // 将当前位置设为最小值        min = i;        // 检查数组其余部分是否更小        for (j=i+1; j &lt; len; j++){            if (myArray[j] &lt; myArray[min]){                min = j;            }        }        // 如果当前位置不是最小值，将其换为最小值        if (i != min){            swap(myArray, i, min);        }    }    return myArray;}</code></pre><h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="简介-2"><a href="#简介-2" class="headerlink" title="简介"></a>简介</h3><p>插入排序（insertion sort）比前面两种排序方法都更有效率。它将数组分成“已排序”和“未排序”两部分，一开始的时候，“已排序”的部分只有一个元素，然后将它后面一个元素从“未排序”部分插入“已排序”部分，从而“已排序”部分增加一个元素，“未排序”部分减少一个元素。以此类推，完成全部排序。</p><p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p><ol><li><p>将数组分成[3]和[2, 4, 5, 1]两部分，前者是已排序的，后者是未排序的。</p></li><li><p>取出未排序部分的第一个元素“2”，与已排序部分最后一个元素“3”比较，因为2小于3，所以2排在3前面，整个数组变成[2, 3]和[4, 5, 1]两部分。</p></li><li><p>取出未排序部分的第一个元素“4”，与已排序部分最后一个元素“3”比较，因为4大于3，所以4排在3后面，整个数组变成[2, 3, 4]和[5, 1]两部分。</p></li><li><p>取出未排序部分的第一个元素“5”，与已排序部分最后一个元素“4”比较，因为5大于4，所以5排在4后面，整个数组变成[2, 3, 4, 5]和[1]两部分。</p></li><li><p>取出未排序部分的第一个元素“1”，与已排序部分最后一个元素“5”比较，因为1小于5，所以再与前一个元素“4”比较；因为1小于4，再与前一个元素“3”比较；因为1小于3，再与前一个元素“2”比较；因为小于1小于2，所以“1”排在2的前面，整个数组变成[1, 2, 3, 4, 5]。</p></li></ol><h3 id="算法实现-2"><a href="#算法实现-2" class="headerlink" title="算法实现"></a>算法实现</h3><p>算法的实现如下：</p><pre><code class="javascript">function insertionSort(myArray) {    var len     = myArray.length,     // 数组的长度        value,                      // 当前比较的值        i,                          // 未排序部分的当前位置        j;                          // 已排序部分的当前位置    for (i=0; i &lt; len; i++) {        // 储存当前位置的值        value = myArray[i];        /*         * 当已排序部分的当前元素大于value，         * 就将当前元素向后移一位，再将前一位与value比较         */        for (j=i-1; j &gt; -1 &amp;&amp; myArray[j] &gt; value; j--) {            myArray[j+1] = myArray[j];        }        myArray[j+1] = value;    }    return myArray;}</code></pre><h2 id="合并排序"><a href="#合并排序" class="headerlink" title="合并排序"></a>合并排序</h2><h3 id="简介-3"><a href="#简介-3" class="headerlink" title="简介"></a>简介</h3><p>前面三种排序算法只有教学价值，因为效率低，很少实际使用。合并排序（Merge sort）则是一种被广泛使用的排序方法。</p><p>它的基本思想是，将两个已经排序的数组合并，要比从头开始排序所有元素来得快。因此，可以将数组拆开，分成n个只有一个元素的数组，然后不断地两两合并，直到全部排序完成。</p><p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p><ol><li><p>将数组分成[3, 2, 4]和[5, 1]两部分。</p></li><li><p>将[3, 2, 4]分成[3, 2]和[4]两部分。</p></li><li><p>将[3, 2]分成[3]和[2]两部分，然后合并成[2, 3]。</p></li><li><p>将[2, 3]和[4]合并成[2, 3, 4]。</p></li><li><p>将[5, 1]分成[5]和[1]两部分，然后合并成[1, 5]。</p></li><li><p>将[2, 3, 4]和[1, 5]合并成[1, 2, 3, 4, 5]。</p></li></ol><h3 id="算法实现-3"><a href="#算法实现-3" class="headerlink" title="算法实现"></a>算法实现</h3><p>这里的关键是如何合并两个已经排序的数组。具体实现请看下面的函数。</p><pre><code class="javascript">function merge(left, right){    var result  = [],        il      = 0,        ir      = 0;    while (il &lt; left.length &amp;&amp; ir &lt; right.length){        if (left[il] &lt; right[ir]){            result.push(left[il++]);        } else {            result.push(right[ir++]);        }    }    return result.concat(left.slice(il)).concat(right.slice(ir));}</code></pre><p>上面的merge函数，合并两个已经按升序排好序的数组。首先，比较两个数组的第一个元素，将其中较小的一个放入result数组；然后，将其中较大的一个与另一个数组的第二个元素进行比较，再将其中较小的一个放入result数组的第二个位置。以此类推，直到一个数组的所有元素都进入result数组为止，再将另一个数组剩下的元素接着result数组后面返回（使用concat方法）。</p><p>有了merge函数，就可以对任意数组排序了。基本方法是将数组不断地拆成两半，直到每一半只包含零个元素或一个元素为止，然后就用merge函数，将拆成两半的数组不断合并，直到合并成一整个排序完成的数组。</p><pre><code class="javascript">function mergeSort(myArray){    if (myArray.length &lt; 2) {        return myArray;    }    var middle = Math.floor(myArray.length / 2),        left    = myArray.slice(0, middle),        right   = myArray.slice(middle);    return merge(mergeSort(left), mergeSort(right));}</code></pre><p>上面的代码有一个问题，就是返回的是一个全新的数组，会多占用空间。因此，修改上面的函数，使之在原地排序，不多占用空间。</p><pre><code class="javascript">function mergeSort(myArray){    if (myArray.length &lt; 2) {        return myArray;    }    var middle = Math.floor(myArray.length / 2),        left    = myArray.slice(0, middle),        right   = myArray.slice(middle),        params = merge(mergeSort(left), mergeSort(right));    // 在返回的数组头部，添加两个元素，第一个是0，第二个是返回的数组长度    params.unshift(0, myArray.length);    // splice用来替换数组元素，它接受多个参数，    // 第一个是开始替换的位置，第二个是需要替换的个数，后面就是所有新加入的元素。    // 因为splice不接受数组作为参数，所以采用apply的写法。    // 这一句的意思就是原来的myArray数组替换成排序后的myArray    myArray.splice.apply(myArray, params);    // 返回排序后的数组    return myArray;}</code></pre><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h3 id="简介-4"><a href="#简介-4" class="headerlink" title="简介"></a>简介</h3><p>快速排序（quick sort）是公认最快的排序算法之一，有着广泛的应用。</p><p>它的基本思想很简单：先确定一个“支点”（pivot），将所有小于“支点”的值都放在该点的左侧，大于“支点”的值都放在该点的右侧，然后对左右两侧不断重复这个过程，直到所有排序完成。</p><p>具体做法是：</p><ol><li><p>确定“支点”（pivot）。虽然数组中任意一个值都能作为“支点”，但通常是取数组的中间值。</p></li><li><p>建立两端的指针。左侧的指针指向数组的第一个元素，右侧的指针指向数组的最后一个元素。</p></li><li><p>左侧指针的当前值与“支点”进行比较，如果小于“支点”则指针向后移动一位，否则指针停在原地。</p></li><li><p>右侧指针的当前值与“支点”进行比较，如果大于“支点”则指针向前移动一位，否则指针停在原地。</p></li><li><p>左侧指针的位置与右侧指针的位置进行比较，如果前者大于等于后者，则本次排序结束；否则，左侧指针的值与右侧指针的值相交换。</p></li><li><p>对左右两侧重复第2至5步。</p></li></ol><p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p><ol><li><p>选择中间值“4”作为“支点”。</p></li><li><p>第一个元素3小于4，左侧指针向后移动一位；第二个元素2小于4，左侧指针向后移动一位；第三个元素4等于4，左侧指针停在这个位置（数组的第2位）。</p></li><li><p>倒数第一个元素1小于4，右侧指针停在这个位置（数组的第4位）。</p></li><li><p>左侧指针的位置（2）小于右侧指针的位置（4），两个位置的值互换，数组变成[3, 2, 1, 5, 4]。</p></li><li><p>左侧指针向后移动一位，第四个元素5大于4，左侧指针停在这个位置（数组的第3位）。</p></li><li><p>右侧指针向前移动一位，第四个元素5大于4，右侧指针移动向前移动一位，第三个元素1小于4，右侧指针停在这个位置（数组的第3位）。</p></li><li><p>左侧指针的位置（3）大于右侧指针的位置（2），本次排序结束。</p></li><li><p>对 [3, 2, 1]和[5, 4]两部分各自不断重复上述步骤，直到排序完成。</p></li></ol><h3 id="算法实现-4"><a href="#算法实现-4" class="headerlink" title="算法实现"></a>算法实现</h3><p>首先部署一个swap函数，用于互换两个位置的值。</p><pre><code class="javascript">function swap(myArray, firstIndex, secondIndex){    var temp = myArray[firstIndex];    myArray[firstIndex] = myArray[secondIndex];    myArray[secondIndex] = temp;}</code></pre><p>然后，部署一个partition函数，用于完成一轮排序。</p><pre><code class="javascript">function partition(myArray, left, right) {    var pivot   = myArray[Math.floor((right + left) / 2)],        i       = left,        j       = right;    while (i &lt;= j) {        while (myArray[i] &lt; pivot) {            i++;        }        while (myArray[j] &gt; pivot) {            j--;        }        if (i &lt;= j) {            swap(myArray, i, j);            i++;            j--;        }    }    return i;}</code></pre><p>接下来，就是递归上面的过程，完成整个排序。</p><pre><code class="javascript">function quickSort(myArray, left, right) {    if (myArray.length &lt; 2) return myArray;    left = (typeof left !== &quot;number&quot; ? 0 : left);    right = (typeof right !== &quot;number&quot; ? myArray.length - 1 : right);    var index  = partition(myArray, left, right);     if (left &lt; index - 1) {            quickSort(myArray, left, index - 1);     }     if (index &lt; right) {            quickSort(myArray, index, right);      }     return myArray;}</code></pre><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul><li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2009/05/26/computer-science-in-javascript-bubble-sort/" target="_blank" rel="noopener">Computer science in JavaScript: Bubble sort</a></li><li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2012/09/17/computer-science-in-javascript-insertion-sort/" target="_blank" rel="noopener">Computer science in JavaScript: Selection sort</a></li><li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2012/09/17/computer-science-in-javascript-insertion-sort/" target="_blank" rel="noopener">Computer science in JavaScript: Insertion sort</a></li><li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2012/10/02/computer-science-and-javascript-merge-sort/" target="_blank" rel="noopener">Computer science in JavaScript: Merge sort</a></li><li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/" target="_blank" rel="noopener">Computer science in JavaScript: Quicksort</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 编程相关 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 算法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>淘宝双飞翼布局</title>
       <link href="/pages/ff1e4b17/"/>
       <url>/pages/ff1e4b17/</url>
@@ -961,6 +936,31 @@
         <tags>
             
             <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常用排序算法</title>
+      <link href="/pages/5b90526d/"/>
+      <url>/pages/5b90526d/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>转自@ruanyf大神,留作自己备用.</p></blockquote><p>排序算法是将一系列的值按照顺序进行排列的方法。</p><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>冒泡排序（Bubble Sort）是最易懂的排序算法，但是效率较低，生产环境中很少使用。</p><p>它的基本思想是：</p><ol><li><p>依次比较相邻的两个数，如果不符合排序规则，则调换两个数的位置。这样一遍比较下来，能够保证最大（或最小）的数排在最后一位。</p></li><li><p>再对最后一位以外的数组，重复前面的过程，直至全部排序完成。</p></li></ol><p>由于每进行一次这个过程，在该次比较的最后一个位置上，正确的数会自己冒出来，就好像“冒泡”一样，这种算法因此得名。</p><p>以对数组<code>[3, 2, 4, 5, 1]</code>进行从小到大排序为例，步骤如下：</p><ol><li><p>第一位的“3”与第二位的“2”进行比较，3大于2，互换位置，数组变成<code>[2, 3, 4, 5, 1]</code>。</p></li><li><p>第二位的“3”与第三位的“4”进行比较，3小于4，数组不变。</p></li><li><p>第三位的“4”与第四位的“5”进行比较，4小于5，数组不变。</p></li><li><p>第四位的“5”与第五位的“1”进行比较，5大于1，互换位置，数组变成<code>[2, 3, 4, 1, 5]</code>。</p></li></ol><p>第一轮排序完成，可以看到最后一位的5，已经是正确的数了。然后，再对剩下的数<code>[2, 3, 4, 1]</code>重复这个过程，每一轮都会在本轮最后一位上出现正确的数。直至剩下最后一个位置，所有排序结束。</p><h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><p>先定义一个交换函数，作用是交换两个位置的值。</p><pre><code class="javascript">function swap(myArray, p1, p2){  var temp = myArray[p1];  myArray[p1] = myArray[p2];  myArray[p2] = temp;}</code></pre><p>然后定义主函数。</p><pre><code class="javascript">function bubbleSort(myArray){  var len = myArray.length;  var i;  var j;  var stop;  for (i = 0; i &lt; len - 1; i++){    for (j = 0, stop = len - 1 - i; j &lt; stop; j++){      if (myArray[j] &gt; myArray[j + 1]){        swap(myArray, j, j + 1);      }    }  }  return myArray;}</code></pre><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h3 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h3><p>选择排序（Selection Sort）与冒泡排序类似，也是依次对相邻的数进行两两比较。不同之处在于，它不是每比较一次就调换位置，而是一轮比较完毕，找到最大值（或最小值）之后，将其放在正确的位置，其他数的位置不变。</p><p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p><ol><li><p>假定第一位的“3”是最小值。</p></li><li><p>最小值“3”与第二位的“2”进行比较，2小于3，所以新的最小值是第二位的“2”。</p></li><li><p>最小值“2”与第三位的“4”进行比较，2小于4，最小值不变。</p></li><li><p>最小值“2”与第四位的“5”进行比较，2小于5，最小值不变。</p></li><li><p>最小值“2”与第五位的“1”进行比较，1小于2，所以新的最小值是第五位的“1”。</p></li><li><p>第五位的“1”与第一位的“3”互换位置，数组变为[1, 2, 4, 5, 3]。</p></li></ol><p>这一轮比较结束后，最小值“1”已经排到正确的位置了，然后对剩下的[2, 4, 5, 3]重复上面的过程。每一轮排序都会将该轮的最小值排到正确的位置，直至剩下最后一个位置，所有排序结束。</p><h3 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h3><p>先定义一个交换函数。</p><pre><code class="javascript">function swap(myArray, p1, p2){    var temp = myArray[p1];    myArray[p1] = myArray[p2];    myArray[p2] = temp;}</code></pre><p>然后定义主函数。</p><pre><code class="javascript">function selectionSort(myArray){    var len = myArray.length,        min;    for (i=0; i &lt; len; i++){        // 将当前位置设为最小值        min = i;        // 检查数组其余部分是否更小        for (j=i+1; j &lt; len; j++){            if (myArray[j] &lt; myArray[min]){                min = j;            }        }        // 如果当前位置不是最小值，将其换为最小值        if (i != min){            swap(myArray, i, min);        }    }    return myArray;}</code></pre><h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="简介-2"><a href="#简介-2" class="headerlink" title="简介"></a>简介</h3><p>插入排序（insertion sort）比前面两种排序方法都更有效率。它将数组分成“已排序”和“未排序”两部分，一开始的时候，“已排序”的部分只有一个元素，然后将它后面一个元素从“未排序”部分插入“已排序”部分，从而“已排序”部分增加一个元素，“未排序”部分减少一个元素。以此类推，完成全部排序。</p><p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p><ol><li><p>将数组分成[3]和[2, 4, 5, 1]两部分，前者是已排序的，后者是未排序的。</p></li><li><p>取出未排序部分的第一个元素“2”，与已排序部分最后一个元素“3”比较，因为2小于3，所以2排在3前面，整个数组变成[2, 3]和[4, 5, 1]两部分。</p></li><li><p>取出未排序部分的第一个元素“4”，与已排序部分最后一个元素“3”比较，因为4大于3，所以4排在3后面，整个数组变成[2, 3, 4]和[5, 1]两部分。</p></li><li><p>取出未排序部分的第一个元素“5”，与已排序部分最后一个元素“4”比较，因为5大于4，所以5排在4后面，整个数组变成[2, 3, 4, 5]和[1]两部分。</p></li><li><p>取出未排序部分的第一个元素“1”，与已排序部分最后一个元素“5”比较，因为1小于5，所以再与前一个元素“4”比较；因为1小于4，再与前一个元素“3”比较；因为1小于3，再与前一个元素“2”比较；因为小于1小于2，所以“1”排在2的前面，整个数组变成[1, 2, 3, 4, 5]。</p></li></ol><h3 id="算法实现-2"><a href="#算法实现-2" class="headerlink" title="算法实现"></a>算法实现</h3><p>算法的实现如下：</p><pre><code class="javascript">function insertionSort(myArray) {    var len     = myArray.length,     // 数组的长度        value,                      // 当前比较的值        i,                          // 未排序部分的当前位置        j;                          // 已排序部分的当前位置    for (i=0; i &lt; len; i++) {        // 储存当前位置的值        value = myArray[i];        /*         * 当已排序部分的当前元素大于value，         * 就将当前元素向后移一位，再将前一位与value比较         */        for (j=i-1; j &gt; -1 &amp;&amp; myArray[j] &gt; value; j--) {            myArray[j+1] = myArray[j];        }        myArray[j+1] = value;    }    return myArray;}</code></pre><h2 id="合并排序"><a href="#合并排序" class="headerlink" title="合并排序"></a>合并排序</h2><h3 id="简介-3"><a href="#简介-3" class="headerlink" title="简介"></a>简介</h3><p>前面三种排序算法只有教学价值，因为效率低，很少实际使用。合并排序（Merge sort）则是一种被广泛使用的排序方法。</p><p>它的基本思想是，将两个已经排序的数组合并，要比从头开始排序所有元素来得快。因此，可以将数组拆开，分成n个只有一个元素的数组，然后不断地两两合并，直到全部排序完成。</p><p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p><ol><li><p>将数组分成[3, 2, 4]和[5, 1]两部分。</p></li><li><p>将[3, 2, 4]分成[3, 2]和[4]两部分。</p></li><li><p>将[3, 2]分成[3]和[2]两部分，然后合并成[2, 3]。</p></li><li><p>将[2, 3]和[4]合并成[2, 3, 4]。</p></li><li><p>将[5, 1]分成[5]和[1]两部分，然后合并成[1, 5]。</p></li><li><p>将[2, 3, 4]和[1, 5]合并成[1, 2, 3, 4, 5]。</p></li></ol><h3 id="算法实现-3"><a href="#算法实现-3" class="headerlink" title="算法实现"></a>算法实现</h3><p>这里的关键是如何合并两个已经排序的数组。具体实现请看下面的函数。</p><pre><code class="javascript">function merge(left, right){    var result  = [],        il      = 0,        ir      = 0;    while (il &lt; left.length &amp;&amp; ir &lt; right.length){        if (left[il] &lt; right[ir]){            result.push(left[il++]);        } else {            result.push(right[ir++]);        }    }    return result.concat(left.slice(il)).concat(right.slice(ir));}</code></pre><p>上面的merge函数，合并两个已经按升序排好序的数组。首先，比较两个数组的第一个元素，将其中较小的一个放入result数组；然后，将其中较大的一个与另一个数组的第二个元素进行比较，再将其中较小的一个放入result数组的第二个位置。以此类推，直到一个数组的所有元素都进入result数组为止，再将另一个数组剩下的元素接着result数组后面返回（使用concat方法）。</p><p>有了merge函数，就可以对任意数组排序了。基本方法是将数组不断地拆成两半，直到每一半只包含零个元素或一个元素为止，然后就用merge函数，将拆成两半的数组不断合并，直到合并成一整个排序完成的数组。</p><pre><code class="javascript">function mergeSort(myArray){    if (myArray.length &lt; 2) {        return myArray;    }    var middle = Math.floor(myArray.length / 2),        left    = myArray.slice(0, middle),        right   = myArray.slice(middle);    return merge(mergeSort(left), mergeSort(right));}</code></pre><p>上面的代码有一个问题，就是返回的是一个全新的数组，会多占用空间。因此，修改上面的函数，使之在原地排序，不多占用空间。</p><pre><code class="javascript">function mergeSort(myArray){    if (myArray.length &lt; 2) {        return myArray;    }    var middle = Math.floor(myArray.length / 2),        left    = myArray.slice(0, middle),        right   = myArray.slice(middle),        params = merge(mergeSort(left), mergeSort(right));    // 在返回的数组头部，添加两个元素，第一个是0，第二个是返回的数组长度    params.unshift(0, myArray.length);    // splice用来替换数组元素，它接受多个参数，    // 第一个是开始替换的位置，第二个是需要替换的个数，后面就是所有新加入的元素。    // 因为splice不接受数组作为参数，所以采用apply的写法。    // 这一句的意思就是原来的myArray数组替换成排序后的myArray    myArray.splice.apply(myArray, params);    // 返回排序后的数组    return myArray;}</code></pre><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h3 id="简介-4"><a href="#简介-4" class="headerlink" title="简介"></a>简介</h3><p>快速排序（quick sort）是公认最快的排序算法之一，有着广泛的应用。</p><p>它的基本思想很简单：先确定一个“支点”（pivot），将所有小于“支点”的值都放在该点的左侧，大于“支点”的值都放在该点的右侧，然后对左右两侧不断重复这个过程，直到所有排序完成。</p><p>具体做法是：</p><ol><li><p>确定“支点”（pivot）。虽然数组中任意一个值都能作为“支点”，但通常是取数组的中间值。</p></li><li><p>建立两端的指针。左侧的指针指向数组的第一个元素，右侧的指针指向数组的最后一个元素。</p></li><li><p>左侧指针的当前值与“支点”进行比较，如果小于“支点”则指针向后移动一位，否则指针停在原地。</p></li><li><p>右侧指针的当前值与“支点”进行比较，如果大于“支点”则指针向前移动一位，否则指针停在原地。</p></li><li><p>左侧指针的位置与右侧指针的位置进行比较，如果前者大于等于后者，则本次排序结束；否则，左侧指针的值与右侧指针的值相交换。</p></li><li><p>对左右两侧重复第2至5步。</p></li></ol><p>以对数组[3, 2, 4, 5, 1] 进行从小到大排序为例，步骤如下：</p><ol><li><p>选择中间值“4”作为“支点”。</p></li><li><p>第一个元素3小于4，左侧指针向后移动一位；第二个元素2小于4，左侧指针向后移动一位；第三个元素4等于4，左侧指针停在这个位置（数组的第2位）。</p></li><li><p>倒数第一个元素1小于4，右侧指针停在这个位置（数组的第4位）。</p></li><li><p>左侧指针的位置（2）小于右侧指针的位置（4），两个位置的值互换，数组变成[3, 2, 1, 5, 4]。</p></li><li><p>左侧指针向后移动一位，第四个元素5大于4，左侧指针停在这个位置（数组的第3位）。</p></li><li><p>右侧指针向前移动一位，第四个元素5大于4，右侧指针移动向前移动一位，第三个元素1小于4，右侧指针停在这个位置（数组的第3位）。</p></li><li><p>左侧指针的位置（3）大于右侧指针的位置（2），本次排序结束。</p></li><li><p>对 [3, 2, 1]和[5, 4]两部分各自不断重复上述步骤，直到排序完成。</p></li></ol><h3 id="算法实现-4"><a href="#算法实现-4" class="headerlink" title="算法实现"></a>算法实现</h3><p>首先部署一个swap函数，用于互换两个位置的值。</p><pre><code class="javascript">function swap(myArray, firstIndex, secondIndex){    var temp = myArray[firstIndex];    myArray[firstIndex] = myArray[secondIndex];    myArray[secondIndex] = temp;}</code></pre><p>然后，部署一个partition函数，用于完成一轮排序。</p><pre><code class="javascript">function partition(myArray, left, right) {    var pivot   = myArray[Math.floor((right + left) / 2)],        i       = left,        j       = right;    while (i &lt;= j) {        while (myArray[i] &lt; pivot) {            i++;        }        while (myArray[j] &gt; pivot) {            j--;        }        if (i &lt;= j) {            swap(myArray, i, j);            i++;            j--;        }    }    return i;}</code></pre><p>接下来，就是递归上面的过程，完成整个排序。</p><pre><code class="javascript">function quickSort(myArray, left, right) {    if (myArray.length &lt; 2) return myArray;    left = (typeof left !== &quot;number&quot; ? 0 : left);    right = (typeof right !== &quot;number&quot; ? myArray.length - 1 : right);    var index  = partition(myArray, left, right);     if (left &lt; index - 1) {            quickSort(myArray, left, index - 1);     }     if (index &lt; right) {            quickSort(myArray, index, right);      }     return myArray;}</code></pre><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul><li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2009/05/26/computer-science-in-javascript-bubble-sort/" target="_blank" rel="noopener">Computer science in JavaScript: Bubble sort</a></li><li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2012/09/17/computer-science-in-javascript-insertion-sort/" target="_blank" rel="noopener">Computer science in JavaScript: Selection sort</a></li><li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2012/09/17/computer-science-in-javascript-insertion-sort/" target="_blank" rel="noopener">Computer science in JavaScript: Insertion sort</a></li><li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2012/10/02/computer-science-and-javascript-merge-sort/" target="_blank" rel="noopener">Computer science in JavaScript: Merge sort</a></li><li>Nicholas C. Zakas, <a href="http://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/" target="_blank" rel="noopener">Computer science in JavaScript: Quicksort</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程相关 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -1144,111 +1144,11 @@
     
     
     <entry>
-      <title>结构语句</title>
-      <link href="/pages/1c7ee7be/"/>
-      <url>/pages/1c7ee7be/</url>
+      <title>Java中的运算符</title>
+      <link href="/pages/83e4d5ed/"/>
+      <url>/pages/83e4d5ed/</url>
       
-        <content type="html"><![CDATA[<h2 id="选择结构语句"><a href="#选择结构语句" class="headerlink" title="选择结构语句"></a>选择结构语句</h2><h3 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h3><blockquote><p>当判断条件1结果为true时，执行语句1，为false时，执行语句2。当判断条件1,2都不满足true时，执行语句3。</p></blockquote><p>例如：</p><pre><code class="java">if (判断条件1){  执行语句1}else if(判断条件2){  执行语句2}else{  执行语句3}</code></pre><h3 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h3><blockquote><p>一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。<br>当判断条件成立时结果为表达式1的值，否则表达式2的值。</p></blockquote><pre><code class="java">判断条件 ? 表达式 1 : 表达式 2</code></pre><p>例如：求取两个数x，y中较大的值。</p><pre><code class="java">//if-else实现方法int x, y, max;if(x&gt;y){    max = x;}else{    max = y;}//三元运算实现int x, y, max;max = x &gt; y ? x : y;</code></pre><h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><blockquote><p>在switch语句中使用switch关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，<br>当表达式的值和某个目标值匹配时，会执行对应case下的语句。</p></blockquote><p>例如：</p><pre><code class="java">switch(表达式){  case 1:    执行语句1;       break; //break终止case并跳出switch循环  case 2:    执行语句2;     break;  case 3:    执行语句3；      break;  default: //default处理和前面的case都不匹配的值    执行语句4;      break;}</code></pre><h2 id="循环结构语句"><a href="#循环结构语句" class="headerlink" title="循环结构语句"></a>循环结构语句</h2><h3 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h3><blockquote><p>循环条件判断为true时，执行语句循环执行，直到循环条件为false。</p></blockquote><p>例如：</p><pre><code class="java">while(循环条件){    执行语句}</code></pre><h3 id="do…while循环语句"><a href="#do…while循环语句" class="headerlink" title="do…while循环语句"></a>do…while循环语句</h3><blockquote><p>循环体会无条件执行一次，然后根据循环条件决定是否继续执行。</p></blockquote><p>例如：</p><pre><code class="java">do{  执行语句}while(循环条件);</code></pre><h3 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h3><blockquote><p>一般用在循环次数已知的情况下，循环条件判断为true执行顺序①→②→④→③</p></blockquote><p>例如：</p><pre><code class="java">for(初始化表达式①;循环条件②;操作表达式③){  执行语句④}</code></pre><pre><code class="java">/** * Created by Roojay on 2017/4/7. * 利用嵌套循环打印一个正三角形。 */public class Test1 {    public static void main(String args[]){        int i, j, k;        for(i = 1; i &lt;= 5; i++){            for(k = 0; k &lt; 5 - i; k++){                System.out.print(&quot; &quot;);            }            for(j = 1; j &lt;= i; j++){                System.out.print(&quot;* &quot;);            }            System.out.println();        }    }}</code></pre><h3 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h3><h4 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h4><blockquote><p>当它出现在switch条件语句中时，作用是终止某个case并跳出switch结构。<br>当它出现在循环语句中，作用是跳出循环语句，执行后面的代码。<br>当它出现在嵌套循环内层循环中时，只能跳出内层循环，如果想跳出外层循环，<br>需要对外层前面添加标记 itcast： ，在后面使用 break itcast 跳出外层循环。</p></blockquote><h4 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a>continue语句</h4><blockquote><p>continue语句用在循环语句中，它的作用是终止本次循环，执行下一次循环。<br>也可以使用标记结束外循环。</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>接口应用</title>
-      <link href="/pages/75336bdc/"/>
-      <url>/pages/75336bdc/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>接口定义一种标准：</p></blockquote><ol><li>通过interface定义；</li><li>函数都是抽象函数（只有函数没有函数体）；</li><li>子类通过implements实现；对接口里面的抽象函数进行override；<br>```java<br>/**</li></ol><p>*定义一个Printer接口，通过HPPrinter，CanonPrinter两个子类去实现<br>*/<br>package printer;<br> //定义一个Printer接口<br>interface Printer{<br>    public void open();<br>    public void print(String s);<br>    public void close();<br>}<br>//定义HPPrinter去implements Printer接口<br>class HPPrinter implements Printer{<br>    @Override<br>    public void open(){<br>        System.out.println(“HPPrinter open”);<br>    }<br>    public void print(String s){<br>        System.out.println(“HPPrinter print:” + s);<br>    }<br>    public void close(){<br>        System.out.println(“HPPrinter close”);<br>    }<br>}<br>//定义CanonPrinter去implements Printer接口<br>class CanonPrinter implements Printer{<br>    @Override<br>    private void clean(){<br>        System.out.println(“clean”);<br>    }<br>    public void open(){<br>        System.out.println(“CanonPrinter open”);<br>    }<br>    public void print(String s){<br>        System.out.println(“CanonPrinter print:” + s);<br>    }<br>    public void close(){<br>        this.clean();<br>        System.out.println(“CanonPrinter close”);<br>    }<br>}<br>//静态工厂方法模式<br>class PrinterFactory{<br>//定义一个静态函数getPrinter(int flag)，返回值类型为Printer<br>    public static Printer getPrinter(int flag){<br>        Printer printer = null;<br>//根据用户选择生成新的对象，并向上转型为Printer类型<br>        if (flag == 0){<br>            printer = new HPPrinter();<br>        }<br>        else if(flag == 1){<br>            printer = new CanonPrinter();<br>        }<br>        return printer;<br>    }<br>}<br>//定义一个主函数，对函数进行调用<br>class Test{<br>    public static void main(String args[]){<br>        int flag = 1;<br>        //工厂方法模式调用 类名+函数<br>        Printer printer = PrinterFactory.getPrinter(flag);<br>        printer.open();<br>        printer.print(“Test”);<br>        printer.close();<br>    }<br>}</p><pre><code>## 工厂方法 ###### 简单工厂模式 ####&gt; Java 简单工厂模式（Simple Factory Pattern）又叫静态工厂方法模式（Static FactoryMethod Pattern），通过专门定义一个类来负责创建其他类的实例（将生成对象的代码封装在工厂类中），被创建的实例通常都具有共同的父类。![](https://raw.githubusercontent.com/roojay520/roojaycloud/images/printer.png)</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>方法</title>
-      <link href="/pages/ad01bc3e/"/>
-      <url>/pages/ad01bc3e/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>为解决代码重复编写的问题所设计的特定功能代码块。<br>方法不能嵌套。<br>main（）方法的作用：调用方法的实例化对象。</p></blockquote><p>方法结构一般为：</p><pre><code class="java">修饰符 返回值类型 方法名（参数类型 参数1，参数类型 参数2，...）{    执行语句    ...    ...    return 返回值；}</code></pre><h3 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h3><blockquote><p>Java 允许在一个程序中定义多个名称相同的方法</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Java中的I/O流</title>
-      <link href="/pages/649b2029/"/>
-      <url>/pages/649b2029/</url>
-      
-        <content type="html"><![CDATA[<h2 id="流的概念和作用"><a href="#流的概念和作用" class="headerlink" title="流的概念和作用"></a>流的概念和作用</h2><blockquote><p>流是数据源到Java程序，Java程序到输出位置之间的管道。</p></blockquote><h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><blockquote></blockquote><ol><li>根据数据处理类的不同分为：字符流和字节流。</li><li>根据数据流向不同分为：输入流和输出流。</li></ol><ul><li>输入输出是以Java程序为参照物的，相对于Java程序本身</li><li>输入流：从数据源中读取数据到Java程序中，这个过程称之为输入。</li><li>输出流：Java程序将数据写入到其他地方，这个过程称之为输出。</li></ul><ol start="3"><li>节点流和处理流。</li><li>节点流：普通的管道；</li><li>处理流：功能性管道，对数据进一步加工。</li></ol><h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><h3 id="字节流中的核心类"><a href="#字节流中的核心类" class="headerlink" title="字节流中的核心类"></a>字节流中的核心类</h3><p><img src="http://i.imgur.com/zhxfDm7.png" alt></p><h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><blockquote></blockquote><h4 id="int-read-byte-b-int-off-int-len"><a href="#int-read-byte-b-int-off-int-len" class="headerlink" title="int read(byte [] b,int off,int len)"></a>int read(byte [] b,int off,int len)</h4><p>byte[] b：byte类型数组；<br>int off：偏移量；<br>int len： 读取数据的量；<br>返回值为这次调用read方法读取数据的长度。</p><h3 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h3><blockquote></blockquote><h4 id="void-write-byte-b-int-off-int-len"><a href="#void-write-byte-b-int-off-int-len" class="headerlink" title="void write(byte [] b,int off,int len)"></a>void write(byte [] b,int off,int len)</h4><p>byte[] b：byte类型数组；<br>int off：偏移量；<br>int len： 写入数据的量；</p><h3 id="程序步骤"><a href="#程序步骤" class="headerlink" title="程序步骤"></a>程序步骤</h3><ol><li>导入类 java.io.*；</li><li>定义主函数；</li><li>声明输入流的引用；</li><li>声明输出流的引用；<pre><code class="java">try{1.生成代表输入流的对象；2.生成代表输出流的对象；3. 生成一个byte字节数组；4.调用输入流的read方法读取数据；5.定义临时变量接受数据的量；6.调用输出流的write方法写入数据；}catch(Exception e){ Systen.out.println(e);}//finally进行结尾处理finally{ try{     fis.close();     fos.close(); } catch(Exception e){     System.out.println(e); }}</code></pre><h4 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h4><pre><code class="java">import java.io.*;public class Test{ public static void main(String args[]){     //声明输入流引用     FileInputStream fis = null;     //声明输出流引用     FileOutputStream fos = null;     try{         //生成代表输入流的对象         fis = new FileInputStream(&quot;D:/java/8.8/from.txt&quot;);         //生成代表输入流的对象         fos = new FileOutputStream(&quot;D:/java/8.8/to.txt&quot;);         //生成一个字节型buffer数组         byte[] buffer = new byte[100];         //定义一个临时变量，用于接受调用输入流read方法读取数据的量         int temp = fis.read(buffer,0,b.length);         //调用输出流的write方法写入数据         fos.write(buffer,0,temp);     }     catch(Exception e){         System.out.println(e);     } }     //finally进行结尾处理     finally{         try{             fis.close();             fos.close();         }         catch(Exception e){             System.out.println(e);         }     }}</code></pre></li></ol><h2 id="大文件的读写"><a href="#大文件的读写" class="headerlink" title="大文件的读写"></a>大文件的读写</h2><ol><li>调节buffer数组的大小；</li><li>对read，write方法采取while循环；</li></ol><h4 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h4><pre><code class="java">while(true){    int temp = fis.read(buffer,0,buffer.length);    if(temp == -1){        break;    }    fos.write(buffer,0,temp);}</code></pre><h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><ul><li>字符流：是以对写文件时，以字符为基础</li><li>字节输入流：Reader &lt;–FileReader<ul><li>int read(char [] c, int off, int length )</li></ul></li><li>字节输出流：Writer  &lt;–FileWriter<ul><li>void writer(char [] c, int off, int length)</li></ul></li></ul><h4 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h4><pre><code class="java">import java.io.*;public class TestChar{    public static void main(String args[]){        FileReader fr = null;        FileWriter fw = null;        try{            fr = new FileReader(&quot;d:/java/9.5/read.txt&quot;);            fw = new FileWriter(&quot;d:/java/9.5/write.txt&quot;);            char [] buffer = new char[1024];            while(true){                int temp = fr.read(buffer, 0, buffer.length);                if(temp == -1){                    break;                }                fw.write(buffer, 0, temp);            }        }        catch(Exception e){            System.out.println(e);        }        finally{            try{                fr.close();                fw.close();            }            catch(Exception e){                System.out.println(e);            }        }    }}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Java中的数组</title>
-      <link href="/pages/e7882660/"/>
-      <url>/pages/e7882660/</url>
-      
-        <content type="html"><![CDATA[<ul><li>数组是用来存储固定大小的同类型元素。</li></ul><h2 id="数组的定义方法"><a href="#数组的定义方法" class="headerlink" title="数组的定义方法"></a>数组的定义方法</h2><h3 id="静态定义法"><a href="#静态定义法" class="headerlink" title="静态定义法"></a>静态定义法</h3><pre><code class="java">int arr [] = {1,5,6,4,};</code></pre><ul><li>arr：整型数组。</li><li>arr[n]：n为下标，从第0位开始。arr[0]=1, arr[1]=5, arr[2]=6.</li><li>数组长度：arr.length.</li></ul><h3 id="动态定义法"><a href="#动态定义法" class="headerlink" title="动态定义法"></a>动态定义法</h3><pre><code class="java">int arr [] = new int[10];</code></pre><ul><li>数组的长度为10.</li></ul><h3 id="二维数组的定义方法"><a href="#二维数组的定义方法" class="headerlink" title="二维数组的定义方法"></a>二维数组的定义方法</h3><pre><code class="java">静态定义法：int arr[] [] = {{5,3,6},{5,8,7},{6,3,2}};动态定义法：int arr[] [] = new int[][];例：int[1][2] = 7;</code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="Java中的运算符"><a href="#Java中的运算符" class="headerlink" title="Java中的运算符"></a>Java中的运算符</h2><blockquote><p>Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。</p></blockquote><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><ol><li><p>进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。<br>例如：</p><pre><code class="java">6600/1000*1000</code></pre><p>最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。</p></li><li><p>进行除法运算时如果有小数参与，得到的结果为小数。<br>例如：<br>```java</p></li><li><p>6/10</p><pre><code>结果为0.66。</code></pre></li><li><p>进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。<br>例如：</p><pre><code class="java">(-6)/2</code></pre><p>结果为-3。</p><pre><code class="java">6/(-3)</code></pre><p>结果为2。</p></li></ol><h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><ol><li><p>可以通过一条赋值语句对多个变量进行赋值。<br>例如：</p><pre><code class="java">int x, y, z;x = y = z = 5;  //为三个变量同时赋值。</code></pre></li><li><p>使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。</p></li></ol><h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>左移：&lt;&lt;   00000100&lt;&lt;2  00010000     10010001&lt;&lt;2 01000100<br>右移：&gt;&gt;   01100010&gt;&gt;2  00011000     11100010&gt;&gt;2 11111000<br>无符号右移：     01100010&gt;&gt;&gt;2  00011000     11100010&gt;&gt;&gt;2 00111000</p>]]></content>
       
       
       <categories>
@@ -1294,11 +1194,11 @@
     
     
     <entry>
-      <title>获取键盘输入</title>
-      <link href="/pages/828295ba/"/>
-      <url>/pages/828295ba/</url>
+      <title>方法</title>
+      <link href="/pages/ad01bc3e/"/>
+      <url>/pages/ad01bc3e/</url>
       
-        <content type="html"><![CDATA[<pre><code class="java">/**Java获取键盘输入值*/public static void main(String args[]){  Scanner sc = new Scanner(Systen.in);  String s = sc.nextLine(); //接受字符和字符串类型的输入  int age = sc.nextInt();  float salary = sc.nextFloat();}</code></pre><h4 id="简单运行、退出方法"><a href="#简单运行、退出方法" class="headerlink" title="简单运行、退出方法"></a>简单运行、退出方法</h4><pre><code class="java">import java.util.Scanner;public class Test {    public static void main(String args[]) {        int t = 1;itcast :        while(t &gt; 0) {            System.out.println(&quot;1.运行：\n&quot; + &quot;2.退出：&quot;);            Scanner sc1 = new Scanner(System.in);            int i = sc1.nextInt();            switch(i) {            case 1:                //这里输入具体的计算程序                break;            case 2:                break itcast;            default:                System.out.println(&quot;输入有误，请重新输入&quot;);                break;            }        }    }}</code></pre>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>为解决代码重复编写的问题所设计的特定功能代码块。<br>方法不能嵌套。<br>main（）方法的作用：调用方法的实例化对象。</p></blockquote><p>方法结构一般为：</p><pre><code class="java">修饰符 返回值类型 方法名（参数类型 参数1，参数类型 参数2，...）{    执行语句    ...    ...    return 返回值；}</code></pre><h3 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h3><blockquote><p>Java 允许在一个程序中定义多个名称相同的方法</p></blockquote>]]></content>
       
       
       <categories>
@@ -1319,11 +1219,86 @@
     
     
     <entry>
-      <title>Java中的运算符</title>
-      <link href="/pages/83e4d5ed/"/>
-      <url>/pages/83e4d5ed/</url>
+      <title>结构语句</title>
+      <link href="/pages/1c7ee7be/"/>
+      <url>/pages/1c7ee7be/</url>
       
-        <content type="html"><![CDATA[<h2 id="Java中的运算符"><a href="#Java中的运算符" class="headerlink" title="Java中的运算符"></a>Java中的运算符</h2><blockquote><p>Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。</p></blockquote><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><ol><li><p>进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。<br>例如：</p><pre><code class="java">6600/1000*1000</code></pre><p>最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。</p></li><li><p>进行除法运算时如果有小数参与，得到的结果为小数。<br>例如：<br>```java</p></li><li><p>6/10</p><pre><code>结果为0.66。</code></pre></li><li><p>进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。<br>例如：</p><pre><code class="java">(-6)/2</code></pre><p>结果为-3。</p><pre><code class="java">6/(-3)</code></pre><p>结果为2。</p></li></ol><h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><ol><li><p>可以通过一条赋值语句对多个变量进行赋值。<br>例如：</p><pre><code class="java">int x, y, z;x = y = z = 5;  //为三个变量同时赋值。</code></pre></li><li><p>使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。</p></li></ol><h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>左移：&lt;&lt;   00000100&lt;&lt;2  00010000     10010001&lt;&lt;2 01000100<br>右移：&gt;&gt;   01100010&gt;&gt;2  00011000     11100010&gt;&gt;2 11111000<br>无符号右移：     01100010&gt;&gt;&gt;2  00011000     11100010&gt;&gt;&gt;2 00111000</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="选择结构语句"><a href="#选择结构语句" class="headerlink" title="选择结构语句"></a>选择结构语句</h2><h3 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h3><blockquote><p>当判断条件1结果为true时，执行语句1，为false时，执行语句2。当判断条件1,2都不满足true时，执行语句3。</p></blockquote><p>例如：</p><pre><code class="java">if (判断条件1){  执行语句1}else if(判断条件2){  执行语句2}else{  执行语句3}</code></pre><h3 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h3><blockquote><p>一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。<br>当判断条件成立时结果为表达式1的值，否则表达式2的值。</p></blockquote><pre><code class="java">判断条件 ? 表达式 1 : 表达式 2</code></pre><p>例如：求取两个数x，y中较大的值。</p><pre><code class="java">//if-else实现方法int x, y, max;if(x&gt;y){    max = x;}else{    max = y;}//三元运算实现int x, y, max;max = x &gt; y ? x : y;</code></pre><h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><blockquote><p>在switch语句中使用switch关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，<br>当表达式的值和某个目标值匹配时，会执行对应case下的语句。</p></blockquote><p>例如：</p><pre><code class="java">switch(表达式){  case 1:    执行语句1;       break; //break终止case并跳出switch循环  case 2:    执行语句2;     break;  case 3:    执行语句3；      break;  default: //default处理和前面的case都不匹配的值    执行语句4;      break;}</code></pre><h2 id="循环结构语句"><a href="#循环结构语句" class="headerlink" title="循环结构语句"></a>循环结构语句</h2><h3 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h3><blockquote><p>循环条件判断为true时，执行语句循环执行，直到循环条件为false。</p></blockquote><p>例如：</p><pre><code class="java">while(循环条件){    执行语句}</code></pre><h3 id="do…while循环语句"><a href="#do…while循环语句" class="headerlink" title="do…while循环语句"></a>do…while循环语句</h3><blockquote><p>循环体会无条件执行一次，然后根据循环条件决定是否继续执行。</p></blockquote><p>例如：</p><pre><code class="java">do{  执行语句}while(循环条件);</code></pre><h3 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h3><blockquote><p>一般用在循环次数已知的情况下，循环条件判断为true执行顺序①→②→④→③</p></blockquote><p>例如：</p><pre><code class="java">for(初始化表达式①;循环条件②;操作表达式③){  执行语句④}</code></pre><pre><code class="java">/** * Created by Roojay on 2017/4/7. * 利用嵌套循环打印一个正三角形。 */public class Test1 {    public static void main(String args[]){        int i, j, k;        for(i = 1; i &lt;= 5; i++){            for(k = 0; k &lt; 5 - i; k++){                System.out.print(&quot; &quot;);            }            for(j = 1; j &lt;= i; j++){                System.out.print(&quot;* &quot;);            }            System.out.println();        }    }}</code></pre><h3 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h3><h4 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h4><blockquote><p>当它出现在switch条件语句中时，作用是终止某个case并跳出switch结构。<br>当它出现在循环语句中，作用是跳出循环语句，执行后面的代码。<br>当它出现在嵌套循环内层循环中时，只能跳出内层循环，如果想跳出外层循环，<br>需要对外层前面添加标记 itcast： ，在后面使用 break itcast 跳出外层循环。</p></blockquote><h4 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a>continue语句</h4><blockquote><p>continue语句用在循环语句中，它的作用是终止本次循环，执行下一次循环。<br>也可以使用标记结束外循环。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java中的I/O流</title>
+      <link href="/pages/649b2029/"/>
+      <url>/pages/649b2029/</url>
+      
+        <content type="html"><![CDATA[<h2 id="流的概念和作用"><a href="#流的概念和作用" class="headerlink" title="流的概念和作用"></a>流的概念和作用</h2><blockquote><p>流是数据源到Java程序，Java程序到输出位置之间的管道。</p></blockquote><h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><blockquote></blockquote><ol><li>根据数据处理类的不同分为：字符流和字节流。</li><li>根据数据流向不同分为：输入流和输出流。</li></ol><ul><li>输入输出是以Java程序为参照物的，相对于Java程序本身</li><li>输入流：从数据源中读取数据到Java程序中，这个过程称之为输入。</li><li>输出流：Java程序将数据写入到其他地方，这个过程称之为输出。</li></ul><ol start="3"><li>节点流和处理流。</li><li>节点流：普通的管道；</li><li>处理流：功能性管道，对数据进一步加工。</li></ol><h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><h3 id="字节流中的核心类"><a href="#字节流中的核心类" class="headerlink" title="字节流中的核心类"></a>字节流中的核心类</h3><p><img src="http://i.imgur.com/zhxfDm7.png" alt></p><h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><blockquote></blockquote><h4 id="int-read-byte-b-int-off-int-len"><a href="#int-read-byte-b-int-off-int-len" class="headerlink" title="int read(byte [] b,int off,int len)"></a>int read(byte [] b,int off,int len)</h4><p>byte[] b：byte类型数组；<br>int off：偏移量；<br>int len： 读取数据的量；<br>返回值为这次调用read方法读取数据的长度。</p><h3 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h3><blockquote></blockquote><h4 id="void-write-byte-b-int-off-int-len"><a href="#void-write-byte-b-int-off-int-len" class="headerlink" title="void write(byte [] b,int off,int len)"></a>void write(byte [] b,int off,int len)</h4><p>byte[] b：byte类型数组；<br>int off：偏移量；<br>int len： 写入数据的量；</p><h3 id="程序步骤"><a href="#程序步骤" class="headerlink" title="程序步骤"></a>程序步骤</h3><ol><li>导入类 java.io.*；</li><li>定义主函数；</li><li>声明输入流的引用；</li><li>声明输出流的引用；<pre><code class="java">try{1.生成代表输入流的对象；2.生成代表输出流的对象；3. 生成一个byte字节数组；4.调用输入流的read方法读取数据；5.定义临时变量接受数据的量；6.调用输出流的write方法写入数据；}catch(Exception e){ Systen.out.println(e);}//finally进行结尾处理finally{ try{     fis.close();     fos.close(); } catch(Exception e){     System.out.println(e); }}</code></pre><h4 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h4><pre><code class="java">import java.io.*;public class Test{ public static void main(String args[]){     //声明输入流引用     FileInputStream fis = null;     //声明输出流引用     FileOutputStream fos = null;     try{         //生成代表输入流的对象         fis = new FileInputStream(&quot;D:/java/8.8/from.txt&quot;);         //生成代表输入流的对象         fos = new FileOutputStream(&quot;D:/java/8.8/to.txt&quot;);         //生成一个字节型buffer数组         byte[] buffer = new byte[100];         //定义一个临时变量，用于接受调用输入流read方法读取数据的量         int temp = fis.read(buffer,0,b.length);         //调用输出流的write方法写入数据         fos.write(buffer,0,temp);     }     catch(Exception e){         System.out.println(e);     } }     //finally进行结尾处理     finally{         try{             fis.close();             fos.close();         }         catch(Exception e){             System.out.println(e);         }     }}</code></pre></li></ol><h2 id="大文件的读写"><a href="#大文件的读写" class="headerlink" title="大文件的读写"></a>大文件的读写</h2><ol><li>调节buffer数组的大小；</li><li>对read，write方法采取while循环；</li></ol><h4 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h4><pre><code class="java">while(true){    int temp = fis.read(buffer,0,buffer.length);    if(temp == -1){        break;    }    fos.write(buffer,0,temp);}</code></pre><h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><ul><li>字符流：是以对写文件时，以字符为基础</li><li>字节输入流：Reader &lt;–FileReader<ul><li>int read(char [] c, int off, int length )</li></ul></li><li>字节输出流：Writer  &lt;–FileWriter<ul><li>void writer(char [] c, int off, int length)</li></ul></li></ul><h4 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h4><pre><code class="java">import java.io.*;public class TestChar{    public static void main(String args[]){        FileReader fr = null;        FileWriter fw = null;        try{            fr = new FileReader(&quot;d:/java/9.5/read.txt&quot;);            fw = new FileWriter(&quot;d:/java/9.5/write.txt&quot;);            char [] buffer = new char[1024];            while(true){                int temp = fr.read(buffer, 0, buffer.length);                if(temp == -1){                    break;                }                fw.write(buffer, 0, temp);            }        }        catch(Exception e){            System.out.println(e);        }        finally{            try{                fr.close();                fw.close();            }            catch(Exception e){                System.out.println(e);            }        }    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内部类</title>
+      <link href="/pages/9bc01b38/"/>
+      <url>/pages/9bc01b38/</url>
+      
+        <content type="html"><![CDATA[<ul><li>内部类：一个类定义在另一个类的里面。</li></ul><h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><blockquote></blockquote><pre><code class="java">class A{    class B{    }}</code></pre><p>B这个类被称之为A的内部类。<br>编译之后生成A.class和A$B.class。<br>内部类可以随意使用外部类的成员变量。</p><h1 id="内部类的使用方法"><a href="#内部类的使用方法" class="headerlink" title="内部类的使用方法"></a>内部类的使用方法</h1><h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">class A{    int i;    class B{        int j;        int funB(){            int result = i + j;            System.out.println(result);            return result;        }    }}class Test{    public static void main(String args[]){        A a = new A();        A.B b = a.new B();        a.i = 5;        b.j = 6;        b.funB();    }}</code></pre><h1 id="匿名内部类的使用方法"><a href="#匿名内部类的使用方法" class="headerlink" title="匿名内部类的使用方法"></a>匿名内部类的使用方法</h1><ul><li>匿名内部类：没有名字的内部类。</li></ul><h4 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">interface A{    public void doSth();}class B{    public void fun(A a){        System.out.println(&quot;B类的fun函数&quot;);        a.doSth();    }}public class Test{    public static void main(String args[]){        B b = new B();        b.fun(new A(){            public void doSth(){                System.out.println(&quot;匿名内部类&quot;);            }        });    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>获取键盘输入</title>
+      <link href="/pages/828295ba/"/>
+      <url>/pages/828295ba/</url>
+      
+        <content type="html"><![CDATA[<pre><code class="java">/**Java获取键盘输入值*/public static void main(String args[]){  Scanner sc = new Scanner(Systen.in);  String s = sc.nextLine(); //接受字符和字符串类型的输入  int age = sc.nextInt();  float salary = sc.nextFloat();}</code></pre><h4 id="简单运行、退出方法"><a href="#简单运行、退出方法" class="headerlink" title="简单运行、退出方法"></a>简单运行、退出方法</h4><pre><code class="java">import java.util.Scanner;public class Test {    public static void main(String args[]) {        int t = 1;itcast :        while(t &gt; 0) {            System.out.println(&quot;1.运行：\n&quot; + &quot;2.退出：&quot;);            Scanner sc1 = new Scanner(System.in);            int i = sc1.nextInt();            switch(i) {            case 1:                //这里输入具体的计算程序                break;            case 2:                break itcast;            default:                System.out.println(&quot;输入有误，请重新输入&quot;);                break;            }        }    }}</code></pre>]]></content>
       
       
       <categories>
@@ -1369,6 +1344,31 @@
     
     
     <entry>
+      <title>Java中的数组</title>
+      <link href="/pages/e7882660/"/>
+      <url>/pages/e7882660/</url>
+      
+        <content type="html"><![CDATA[<ul><li>数组是用来存储固定大小的同类型元素。</li></ul><h2 id="数组的定义方法"><a href="#数组的定义方法" class="headerlink" title="数组的定义方法"></a>数组的定义方法</h2><h3 id="静态定义法"><a href="#静态定义法" class="headerlink" title="静态定义法"></a>静态定义法</h3><pre><code class="java">int arr [] = {1,5,6,4,};</code></pre><ul><li>arr：整型数组。</li><li>arr[n]：n为下标，从第0位开始。arr[0]=1, arr[1]=5, arr[2]=6.</li><li>数组长度：arr.length.</li></ul><h3 id="动态定义法"><a href="#动态定义法" class="headerlink" title="动态定义法"></a>动态定义法</h3><pre><code class="java">int arr [] = new int[10];</code></pre><ul><li>数组的长度为10.</li></ul><h3 id="二维数组的定义方法"><a href="#二维数组的定义方法" class="headerlink" title="二维数组的定义方法"></a>二维数组的定义方法</h3><pre><code class="java">静态定义法：int arr[] [] = {{5,3,6},{5,8,7},{6,3,2}};动态定义法：int arr[] [] = new int[][];例：int[1][2] = 7;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>进制转换</title>
       <link href="/pages/7dc91154/"/>
       <url>/pages/7dc91154/</url>
@@ -1394,11 +1394,11 @@
     
     
     <entry>
-      <title>处理流与Decorator模式</title>
-      <link href="/pages/bbf344f6/"/>
-      <url>/pages/bbf344f6/</url>
+      <title>接口应用</title>
+      <link href="/pages/75336bdc/"/>
+      <url>/pages/75336bdc/</url>
       
-        <content type="html"><![CDATA[<h2 id="处理流"><a href="#处理流" class="headerlink" title="处理流"></a>处理流</h2><h3 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h3><p><img src="http://i.imgur.com/oGh5e2r.png" alt></p><ul><li>readeLine：每次读取一行数据<br><img src="http://i.imgur.com/DqMcSrm.png" alt></li></ul><h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">import java.io.*;public class Test{    public static void main(String args[]){        FileReader filereader = null;        BufferedReader bufferedreader = null;        try{            filereader = new FileReader(&quot;C:/Users/Jay/Desktop/9.6/src1/read.txt&quot;);            bufferedreader = new BufferedReader(filereader);            String line = null;            while(true){                line = bufferedreader.readLine();                if(line == null){                    break;                }                System.out.println(line);            }        }        catch(Exception e){            System.out.println(e);        }        finally{            try{                filereader.close();                bufferedreader.close();            }            catch(Exception e){                System.out.println(e);            }        }    }}</code></pre><h2 id="Decorator（装饰者）模式"><a href="#Decorator（装饰者）模式" class="headerlink" title="Decorator（装饰者）模式"></a>Decorator（装饰者）模式</h2><p><img src="http://i.imgur.com/arkDK8p.png" alt></p><h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">interface Teacher{    public void teaching();}class MathTeacher implements Teacher{    public void teaching(){        System.out.println(&quot;我是一名数学老师&quot;);    }}class ChineseTeacher implements Teacher{    public void teaching(){        System.out.println(&quot;我是一名语文老师&quot;);    }}class ATeacher implements Teacher{    private Teacher teacher;    public ATeacher(Teacher teacher){        this.teacher = teacher;    }    public void teaching(){        System.out.println(&quot;你好，我来自ASchool&quot;);        teacher.teaching();    }}public class Test{    public static void main(String args[]){        MathTeacher mathTeacher = new MathTeacher();        ATeacher aTeacher1 = new ATeacher(mathTeacher);        aTeacher1.teaching();        ChineseTeacher chineseTeacher = new ChineseTeacher();        ATeacher aTeacher2 = new ATeacher(chineseTeacher);        aTeacher2.teaching();    }}</code></pre>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>接口定义一种标准：</p></blockquote><ol><li>通过interface定义；</li><li>函数都是抽象函数（只有函数没有函数体）；</li><li>子类通过implements实现；对接口里面的抽象函数进行override；<br>```java<br>/**</li></ol><p>*定义一个Printer接口，通过HPPrinter，CanonPrinter两个子类去实现<br>*/<br>package printer;<br> //定义一个Printer接口<br>interface Printer{<br>    public void open();<br>    public void print(String s);<br>    public void close();<br>}<br>//定义HPPrinter去implements Printer接口<br>class HPPrinter implements Printer{<br>    @Override<br>    public void open(){<br>        System.out.println(“HPPrinter open”);<br>    }<br>    public void print(String s){<br>        System.out.println(“HPPrinter print:” + s);<br>    }<br>    public void close(){<br>        System.out.println(“HPPrinter close”);<br>    }<br>}<br>//定义CanonPrinter去implements Printer接口<br>class CanonPrinter implements Printer{<br>    @Override<br>    private void clean(){<br>        System.out.println(“clean”);<br>    }<br>    public void open(){<br>        System.out.println(“CanonPrinter open”);<br>    }<br>    public void print(String s){<br>        System.out.println(“CanonPrinter print:” + s);<br>    }<br>    public void close(){<br>        this.clean();<br>        System.out.println(“CanonPrinter close”);<br>    }<br>}<br>//静态工厂方法模式<br>class PrinterFactory{<br>//定义一个静态函数getPrinter(int flag)，返回值类型为Printer<br>    public static Printer getPrinter(int flag){<br>        Printer printer = null;<br>//根据用户选择生成新的对象，并向上转型为Printer类型<br>        if (flag == 0){<br>            printer = new HPPrinter();<br>        }<br>        else if(flag == 1){<br>            printer = new CanonPrinter();<br>        }<br>        return printer;<br>    }<br>}<br>//定义一个主函数，对函数进行调用<br>class Test{<br>    public static void main(String args[]){<br>        int flag = 1;<br>        //工厂方法模式调用 类名+函数<br>        Printer printer = PrinterFactory.getPrinter(flag);<br>        printer.open();<br>        printer.print(“Test”);<br>        printer.close();<br>    }<br>}</p><pre><code>## 工厂方法 ###### 简单工厂模式 ####&gt; Java 简单工厂模式（Simple Factory Pattern）又叫静态工厂方法模式（Static FactoryMethod Pattern），通过专门定义一个类来负责创建其他类的实例（将生成对象的代码封装在工厂类中），被创建的实例通常都具有共同的父类。![](https://raw.githubusercontent.com/roojay520/roojaycloud/images/printer.png)</code></pre>]]></content>
       
       
       <categories>
@@ -1419,11 +1419,11 @@
     
     
     <entry>
-      <title>内部类</title>
-      <link href="/pages/9bc01b38/"/>
-      <url>/pages/9bc01b38/</url>
+      <title>处理流与Decorator模式</title>
+      <link href="/pages/bbf344f6/"/>
+      <url>/pages/bbf344f6/</url>
       
-        <content type="html"><![CDATA[<ul><li>内部类：一个类定义在另一个类的里面。</li></ul><h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><blockquote></blockquote><pre><code class="java">class A{    class B{    }}</code></pre><p>B这个类被称之为A的内部类。<br>编译之后生成A.class和A$B.class。<br>内部类可以随意使用外部类的成员变量。</p><h1 id="内部类的使用方法"><a href="#内部类的使用方法" class="headerlink" title="内部类的使用方法"></a>内部类的使用方法</h1><h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">class A{    int i;    class B{        int j;        int funB(){            int result = i + j;            System.out.println(result);            return result;        }    }}class Test{    public static void main(String args[]){        A a = new A();        A.B b = a.new B();        a.i = 5;        b.j = 6;        b.funB();    }}</code></pre><h1 id="匿名内部类的使用方法"><a href="#匿名内部类的使用方法" class="headerlink" title="匿名内部类的使用方法"></a>匿名内部类的使用方法</h1><ul><li>匿名内部类：没有名字的内部类。</li></ul><h4 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">interface A{    public void doSth();}class B{    public void fun(A a){        System.out.println(&quot;B类的fun函数&quot;);        a.doSth();    }}public class Test{    public static void main(String args[]){        B b = new B();        b.fun(new A(){            public void doSth(){                System.out.println(&quot;匿名内部类&quot;);            }        });    }}</code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="处理流"><a href="#处理流" class="headerlink" title="处理流"></a>处理流</h2><h3 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h3><p><img src="http://i.imgur.com/oGh5e2r.png" alt></p><ul><li>readeLine：每次读取一行数据<br><img src="http://i.imgur.com/DqMcSrm.png" alt></li></ul><h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">import java.io.*;public class Test{    public static void main(String args[]){        FileReader filereader = null;        BufferedReader bufferedreader = null;        try{            filereader = new FileReader(&quot;C:/Users/Jay/Desktop/9.6/src1/read.txt&quot;);            bufferedreader = new BufferedReader(filereader);            String line = null;            while(true){                line = bufferedreader.readLine();                if(line == null){                    break;                }                System.out.println(line);            }        }        catch(Exception e){            System.out.println(e);        }        finally{            try{                filereader.close();                bufferedreader.close();            }            catch(Exception e){                System.out.println(e);            }        }    }}</code></pre><h2 id="Decorator（装饰者）模式"><a href="#Decorator（装饰者）模式" class="headerlink" title="Decorator（装饰者）模式"></a>Decorator（装饰者）模式</h2><p><img src="http://i.imgur.com/arkDK8p.png" alt></p><h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">interface Teacher{    public void teaching();}class MathTeacher implements Teacher{    public void teaching(){        System.out.println(&quot;我是一名数学老师&quot;);    }}class ChineseTeacher implements Teacher{    public void teaching(){        System.out.println(&quot;我是一名语文老师&quot;);    }}class ATeacher implements Teacher{    private Teacher teacher;    public ATeacher(Teacher teacher){        this.teacher = teacher;    }    public void teaching(){        System.out.println(&quot;你好，我来自ASchool&quot;);        teacher.teaching();    }}public class Test{    public static void main(String args[]){        MathTeacher mathTeacher = new MathTeacher();        ATeacher aTeacher1 = new ATeacher(mathTeacher);        aTeacher1.teaching();        ChineseTeacher chineseTeacher = new ChineseTeacher();        ATeacher aTeacher2 = new ATeacher(chineseTeacher);        aTeacher2.teaching();    }}</code></pre>]]></content>
       
       
       <categories>
@@ -1593,9 +1593,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>timeline</title>
+      <link href="/timeline/index.html"/>
+      <url>/timeline/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1604,9 +1604,9 @@
     
     
     <entry>
-      <title>timeline</title>
-      <link href="/timeline/index.html"/>
-      <url>/timeline/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
