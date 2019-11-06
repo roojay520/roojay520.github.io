@@ -1,7 +1,7 @@
 ---
 title: 给 WIN 10 增加伪 sudo 命令
 mathjax: true
-abbrlink:
+abbrlink: c19490dd
 tags: Windows
 categories: Windows
 date: 2018-01-06 12:22:35
