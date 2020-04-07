@@ -1,0 +1,32 @@
+name: Publish Hexo Web
+on:
+  push:
+    branches:
+      - source
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: source
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install dependencies
+        run: |
+          yarn install
+          yarn run build
+
+      - name: Deploy Github
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.HEXO_BLOG_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master
+          cname: roojay.com
+          user_name: "github-actions[bot]"
+          commit_message: "Deployed from ${{ github.event.head_commit.message }}"
