@@ -344,6 +344,31 @@
     
     
     <entry>
+      <title>css和响应式</title>
+      <link href="/pages/343902f6/"/>
+      <url>/pages/343902f6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="css框架"><a href="#css框架" class="headerlink" title="css框架"></a>css框架</h1><h2 id="Bootstrap-框架"><a href="#Bootstrap-框架" class="headerlink" title="Bootstrap 框架"></a>Bootstrap 框架</h2><blockquote><p>Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。<br><a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/bootstrap/bootstrap-tutorial.html</a></p></blockquote><ul><li>在 html head 开头引入下面代码：</li></ul><pre><code class="html">&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;!--  兼容古老的 IE --&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt;    &lt;!-- CSS 样式重置 --&gt;    &lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;    &lt;!-- 引入 Bootstrap css 压缩文件--&gt;    &lt;link href=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;    &lt;!-- 引入自己 css 的文件 --&gt;    &lt;link rel=&quot;stylesheet&quot; href=&quot;../style/task_1.css&quot;&gt;    &lt;title&gt;Test&lt;/title&gt;&lt;/head&gt;</code></pre><h2 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h2><blockquote><p>根据不同像素屏幕，展示不同大小页面。</p></blockquote><p><code>!important</code> 为开发者提供了一个增加样式权重的方法。!important是对整条样式的声明，包括这个样式的属性和属性值。</p><p><strong>### 媒体查询</strong></p><pre><code class="css">@media only screen and (max-width: 300px) {    p {        background-color: red;    }}</code></pre><ul><li>only 兼容旧式浏览器。</li><li>screen 表示这个媒体查询适用于所有屏幕。</li><li>and 后面跟条件。</li><li><strong>一般个@media样式要放在css样式表的最下面，不然会被相同样式覆盖。</strong></li></ul><h3 id="CSS-样式重置"><a href="#CSS-样式重置" class="headerlink" title="CSS 样式重置"></a>CSS 样式重置</h3><ul><li>不同的浏览器在对于CSS没有定义的一些样式属性是不一样的</li><li>比如没有在自己的CSS里面规定超链接有没有下划线的时候，有些浏览器有，有些浏览器没有。</li><li>再比如有一些浏览器规定的超链接默认颜色是蓝色，有一些又是黑色。</li><li>而这个CSS的功能就是对几乎所有的默认样式进行重置，让所有的浏览器上对于未定义的样式浏览效果达到一致。</li></ul><p><strong>使用方法：</strong></p><pre><code class="html">&lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt;&lt;link href=&quot;https://lib.baomitu.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre><h3 id="网格设计"><a href="#网格设计" class="headerlink" title="网格设计"></a>网格设计</h3><ul><li>大部分网页采用 12 columns 设计，可以很好的划分为2，3，4等份。</li></ul><h2 id="文章字体"><a href="#文章字体" class="headerlink" title="文章字体"></a>文章字体</h2><ul><li>segmentfault<pre><code class="css">font-family: -apple-system,&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;WenQuanYi Micro Hei&quot;,&quot;Microsoft Yahei&quot;,sans-serif;</code></pre></li></ul><p>font-size: 14px;</p><pre><code>* 知乎```cssfont-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;font-size: 15px;</code></pre><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>导航栏 #243d4c</p><p>背景 #eee<br>#f5f5f5<br>#f8f8f8<br>#ffffff</p><p>按钮 #02b3e4<br>#148bb1<br>#2D78BA</p><p>边框阴影</p><pre><code class="css">.ss::before, .clss::before {    bottom: 0;    box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);    content: &#39;&#39;;    display: block;    left: 0;    pointer-events: none;    position: absolute;    right: 0;    top: 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> CSS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>css布局</title>
       <link href="/pages/5a252ba9/"/>
       <url>/pages/5a252ba9/</url>
@@ -374,31 +399,6 @@
       <url>/pages/ab688311/</url>
       
         <content type="html"><![CDATA[<h1 id="Flex-布局"><a href="#Flex-布局" class="headerlink" title="Flex 布局"></a>Flex 布局</h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" target="_blank" rel="noopener">MDN</a></p><ul><li>Flex 是 Flexible Box 的缩写，意为“弹性布局”，为盒模型提供灵活的布局方式。</li><li>盒子中的子元素可以在各个方向上进行布局，并且能以弹性尺寸来适应显示空间。</li><li>弹性容器的每个子元素都称为弹性项目。弹性容器直接包含的文本将被包覆成匿名弹性单元。</li><li>元素的显示顺序可以与它们在源代码中的顺序无关。</li></ul><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul><li>flex 布局包括一个水平 main axis 和一个垂直 cross axis</li></ul><p><img src="https://mdn.mozillademos.org/files/12998/flexbox.png" alt></p><ul><li>通过设置 display 的值启用 flex</li><li>设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。</li></ul><pre><code class="css">    .box-flex{        display： -ms-flex；        display: -webkit-flex;        display: flex;    }    .box-inline-flex{        display: -ms-inline-flex;        display: -webkit-inline-flex;        display: inline-flex;    }</code></pre><h2 id="flex-属性"><a href="#flex-属性" class="headerlink" title="flex 属性"></a>flex 属性</h2><ul><li>flex-direction：确立主轴。</li><li>justify-content：定义了在当前行上，弹性项目沿主轴如何排布。</li><li>align-items：定义了在当前行上，弹性项目沿侧轴默认如何排布。</li><li>align-self：定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。</li></ul><h3 id="flex-direction（主轴方向）"><a href="#flex-direction（主轴方向）" class="headerlink" title="flex-direction（主轴方向）"></a>flex-direction（主轴方向）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png" alt></p><blockquote><p>flex-direction 决定主轴方向（项目排列方向），包括四个值。</p></blockquote><ul><li>row（默认值）：主轴为水平方向，起点在左端。</li><li>row-reverse：主轴为水平方向，起点在右端。</li><li>column：主轴为垂直方向，起点在上沿。</li><li>column-reverse：主轴为垂直方向，起点在下沿。</li></ul><h3 id="flex-wrap（换行控制）"><a href="#flex-wrap（换行控制）" class="headerlink" title="flex-wrap（换行控制）"></a>flex-wrap（换行控制）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png" alt></p><blockquote><p>控制一条轴上放不下子项目该如何换行。</p></blockquote><ul><li>nowrap（默认值）：不换行</li><li>wrap：换行，第一行在上。</li><li>wrap-reverse：换行，第一行在下。</li></ul><h3 id="justify-content（主轴排列方式）"><a href="#justify-content（主轴排列方式）" class="headerlink" title="justify-content（主轴排列方式）"></a>justify-content（主轴排列方式）</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt></p><ul><li>flex-start：从行首起始位置开始排列。</li><li>flex-end：从行尾位置开始排列。</li><li>center：居中排列。</li><li>space-between：均匀排列每个元素<br>首个元素放置于起点，末尾元素放置于终点。</li><li>space-around：均匀排列每个元素<br>每个元素周围分配相同的空间。</li></ul><h3 id="align-items-侧轴排列方式"><a href="#align-items-侧轴排列方式" class="headerlink" title="align-items(侧轴排列方式)"></a>align-items(侧轴排列方式)</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt></p><ul><li>flex-start：元素向侧轴起点对齐。</li><li>flex-end：元素向侧轴终点对齐。</li><li>center：元素在侧轴居中。如果元素在侧轴上的高度高于其容器，那么在两个方向上溢出距离相同。</li><li>baseline: 项目的第一行文字的基线对齐。</li><li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li></ul><h3 id="align-conten（多轴线对齐方式）"><a href="#align-conten（多轴线对齐方式）" class="headerlink" title="align-conten（多轴线对齐方式）"></a>align-conten（多轴线对齐方式）</h3><blockquote><p>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p></blockquote><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt></p><ul><li>flex-start：所有行从垂直轴起点开始填充。第一行的垂直轴起点边和容器的垂直轴起点边对齐。接下来的每一行紧跟前一行。</li><li>flex-end：所有行从垂直轴末尾开始填充。最后一行的垂直轴终点和容器的垂直轴终点对齐。同时所有后续行与前一个对齐。</li><li>center：所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的垂直轴起点边和第一行的距离相等于容器的垂直轴终点边和最后一行的距离。</li><li>space-between：所有行在容器中平均分布。相邻两行间距相等。容器的垂直轴起点边和终点边分别与第一行和最后一行的边对齐。</li><li>space-around：所有行在容器中平均分布，相邻两行间距相等。容器的垂直轴起点边和终点边分别与第一行和最后一行的距离是相邻两行间距的一半。</li><li>stretch：拉伸所有行来填满剩余空间。剩余空间平均的分配给每一行。</li></ul><h2 id="子项目属性"><a href="#子项目属性" class="headerlink" title="子项目属性"></a>子项目属性</h2><ul><li>order：定义项目的排列顺序。数值越小，排列越靠前，默认为 0。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png" alt></li><li>flex-grow：定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png" alt></li><li>flex-shrink：定义了项目的缩小比例，默认为 1，即如果空间不足，该项目将缩小。属性为 0，项目不缩小，负值对该属性无效。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg" alt></li><li>flex-basis：定义项目在主轴所占据的基本空间，默认值 auto，即项目本来的大小。</li><li>flex：是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</li><li>align-self：允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> CSS </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> CSS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>css和响应式</title>
-      <link href="/pages/343902f6/"/>
-      <url>/pages/343902f6/</url>
-      
-        <content type="html"><![CDATA[<h1 id="css框架"><a href="#css框架" class="headerlink" title="css框架"></a>css框架</h1><h2 id="Bootstrap-框架"><a href="#Bootstrap-框架" class="headerlink" title="Bootstrap 框架"></a>Bootstrap 框架</h2><blockquote><p>Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。<br><a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/bootstrap/bootstrap-tutorial.html</a></p></blockquote><ul><li>在 html head 开头引入下面代码：</li></ul><pre><code class="html">&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;!--  兼容古老的 IE --&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;!-- 响应式适应 ，width 属性控制设备的宽度显示， initial-scale=1确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放，user-scalable=no 可以禁用其缩放（zooming）功能--&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt;    &lt;!-- CSS 样式重置 --&gt;    &lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;    &lt;!-- 引入 Bootstrap css 压缩文件--&gt;    &lt;link href=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;    &lt;!-- 引入自己 css 的文件 --&gt;    &lt;link rel=&quot;stylesheet&quot; href=&quot;../style/task_1.css&quot;&gt;    &lt;title&gt;Test&lt;/title&gt;&lt;/head&gt;</code></pre><h2 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h2><blockquote><p>根据不同像素屏幕，展示不同大小页面。</p></blockquote><p><code>!important</code> 为开发者提供了一个增加样式权重的方法。!important是对整条样式的声明，包括这个样式的属性和属性值。</p><p><strong>### 媒体查询</strong></p><pre><code class="css">@media only screen and (max-width: 300px) {    p {        background-color: red;    }}</code></pre><ul><li>only 兼容旧式浏览器。</li><li>screen 表示这个媒体查询适用于所有屏幕。</li><li>and 后面跟条件。</li><li><strong>一般个@media样式要放在css样式表的最下面，不然会被相同样式覆盖。</strong></li></ul><h3 id="CSS-样式重置"><a href="#CSS-样式重置" class="headerlink" title="CSS 样式重置"></a>CSS 样式重置</h3><ul><li>不同的浏览器在对于CSS没有定义的一些样式属性是不一样的</li><li>比如没有在自己的CSS里面规定超链接有没有下划线的时候，有些浏览器有，有些浏览器没有。</li><li>再比如有一些浏览器规定的超链接默认颜色是蓝色，有一些又是黑色。</li><li>而这个CSS的功能就是对几乎所有的默认样式进行重置，让所有的浏览器上对于未定义的样式浏览效果达到一致。</li></ul><p><strong>使用方法：</strong></p><pre><code class="html">&lt;!-- 在自己的样式表前面引入以下 Normalize.css 360cdn 链接地址--&gt;&lt;link href=&quot;https://lib.baomitu.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre><h3 id="网格设计"><a href="#网格设计" class="headerlink" title="网格设计"></a>网格设计</h3><ul><li>大部分网页采用 12 columns 设计，可以很好的划分为2，3，4等份。</li></ul><h2 id="文章字体"><a href="#文章字体" class="headerlink" title="文章字体"></a>文章字体</h2><ul><li>segmentfault<pre><code class="css">font-family: -apple-system,&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;WenQuanYi Micro Hei&quot;,&quot;Microsoft Yahei&quot;,sans-serif;</code></pre></li></ul><p>font-size: 14px;</p><pre><code>* 知乎```cssfont-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;font-size: 15px;</code></pre><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>导航栏 #243d4c</p><p>背景 #eee<br>#f5f5f5<br>#f8f8f8<br>#ffffff</p><p>按钮 #02b3e4<br>#148bb1<br>#2D78BA</p><p>边框阴影</p><pre><code class="css">.ss::before, .clss::before {    bottom: 0;    box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);    content: &#39;&#39;;    display: block;    left: 0;    pointer-events: none;    position: absolute;    right: 0;    top: 0;}</code></pre>]]></content>
       
       
       <categories>
@@ -519,31 +519,6 @@
     
     
     <entry>
-      <title>for-in和for-of</title>
-      <link href="/pages/f5b5d35a/"/>
-      <url>/pages/f5b5d35a/</url>
-      
-        <content type="html"><![CDATA[<h2 id="for-in"><a href="#for-in" class="headerlink" title="for-in"></a>for-in</h2><blockquote><p><code>for-in</code>循环遍历的是对象的属性名称,可以将一个对象的属性循环遍历出来。</p></blockquote><pre><code class="javascript">var obj = {    name: &#39;XiaoMing&#39;,    age: 22,    sex: &#39;man&#39;};for(let key in obj){    console.log(key); // &#39;name&#39; &#39;age&#39; &#39;sex&#39;}</code></pre><p>数组也是对象，<code>for-in</code>可以直接循环遍历出<code>Array</code>的索引，索引类型为 String 而不是 Number。</p><pre><code class="javascript">var array = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];for(let i in array){    console.log(i); // 索引&#39;0&#39; &#39;1&#39; &#39;2&#39;}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> JavaScript </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>css基础</title>
       <link href="/pages/eda1a9a9/"/>
       <url>/pages/eda1a9a9/</url>
@@ -561,6 +536,31 @@
         <tags>
             
             <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>for-in和for-of</title>
+      <link href="/pages/f5b5d35a/"/>
+      <url>/pages/f5b5d35a/</url>
+      
+        <content type="html"><![CDATA[<h2 id="for-in"><a href="#for-in" class="headerlink" title="for-in"></a>for-in</h2><blockquote><p><code>for-in</code>循环遍历的是对象的属性名称,可以将一个对象的属性循环遍历出来。</p></blockquote><pre><code class="javascript">var obj = {    name: &#39;XiaoMing&#39;,    age: 22,    sex: &#39;man&#39;};for(let key in obj){    console.log(key); // &#39;name&#39; &#39;age&#39; &#39;sex&#39;}</code></pre><p>数组也是对象，<code>for-in</code>可以直接循环遍历出<code>Array</code>的索引，索引类型为 String 而不是 Number。</p><pre><code class="javascript">var array = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];for(let i in array){    console.log(i); // 索引&#39;0&#39; &#39;1&#39; &#39;2&#39;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -694,11 +694,11 @@
     
     
     <entry>
-      <title>作用域闭包</title>
-      <link href="/pages/78f2b66e/"/>
-      <url>/pages/78f2b66e/</url>
+      <title>全局命名空间和模块</title>
+      <link href="/pages/f9a582e/"/>
+      <url>/pages/f9a582e/</url>
       
-        <content type="html"><![CDATA[<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>wiki 上对闭包的定义：<br>闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），<strong>是引用了自由变量的函数。</strong>这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为<strong>闭包是由函数和与其相关的引用环境组合而成的实体。</strong></p><p><strong>自由变量的定义</strong>：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。</p><p>当函数<strong>可以记住并访问所在的词法作用域</strong>时，就产生了<strong>闭包</strong>，即使函数是在自己定义的词法作用域以外的地方执行。</p><p>闭包使得函数在<strong>定义时的词法作用域以外</strong>的地方被调用时，函数<strong>可以继续访问定义时的词法作用域</strong>。</p><p>在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。</p><p>在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。</p><pre><code class="javascript">function foo() {    let a = 0;    return function func() {        console.log(a);        a++;    };}const bar = foo();const baz = foo();bar(); // 0bar(); // 1 闭包保存上次计算的值bar(); // 2baz(); // 0 新生成函数</code></pre><p>将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。</p><p>无论通过何种手段<strong>将内部函数传递到所在的词法作用域以外</strong>，它都会<strong>持有对原始定义作用域的引用</strong>，无论在何处<strong>执行这个函数都会使用闭包</strong>。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="全局命名空间"><a href="#全局命名空间" class="headerlink" title="全局命名空间"></a>全局命名空间</h2><p>库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。</p><p>例如：</p><pre><code class="javascript">var mylibrary = {    name: &#39;haha&#39;,    eat: (name) =&gt; {        console.log(`${name} is eating`);    }};</code></pre><h2 id="模块管理"><a href="#模块管理" class="headerlink" title="模块管理"></a>模块管理</h2><p>通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。</p><p>用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。</p>]]></content>
       
       
       <categories>
@@ -719,11 +719,11 @@
     
     
     <entry>
-      <title>全局命名空间和模块</title>
-      <link href="/pages/f9a582e/"/>
-      <url>/pages/f9a582e/</url>
+      <title>作用域闭包</title>
+      <link href="/pages/78f2b66e/"/>
+      <url>/pages/78f2b66e/</url>
       
-        <content type="html"><![CDATA[<h2 id="全局命名空间"><a href="#全局命名空间" class="headerlink" title="全局命名空间"></a>全局命名空间</h2><p>库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。</p><p>例如：</p><pre><code class="javascript">var mylibrary = {    name: &#39;haha&#39;,    eat: (name) =&gt; {        console.log(`${name} is eating`);    }};</code></pre><h2 id="模块管理"><a href="#模块管理" class="headerlink" title="模块管理"></a>模块管理</h2><p>通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。</p><p>用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>wiki 上对闭包的定义：<br>闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），<strong>是引用了自由变量的函数。</strong>这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为<strong>闭包是由函数和与其相关的引用环境组合而成的实体。</strong></p><p><strong>自由变量的定义</strong>：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。</p><p>当函数<strong>可以记住并访问所在的词法作用域</strong>时，就产生了<strong>闭包</strong>，即使函数是在自己定义的词法作用域以外的地方执行。</p><p>闭包使得函数在<strong>定义时的词法作用域以外</strong>的地方被调用时，函数<strong>可以继续访问定义时的词法作用域</strong>。</p><p>在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。</p><p>在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。</p><pre><code class="javascript">function foo() {    let a = 0;    return function func() {        console.log(a);        a++;    };}const bar = foo();const baz = foo();bar(); // 0bar(); // 1 闭包保存上次计算的值bar(); // 2baz(); // 0 新生成函数</code></pre><p>将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。</p><p>无论通过何种手段<strong>将内部函数传递到所在的词法作用域以外</strong>，它都会<strong>持有对原始定义作用域的引用</strong>，无论在何处<strong>执行这个函数都会使用闭包</strong>。</p>]]></content>
       
       
       <categories>
@@ -769,31 +769,6 @@
     
     
     <entry>
-      <title>淘宝双飞翼布局</title>
-      <link href="/pages/ff1e4b17/"/>
-      <url>/pages/ff1e4b17/</url>
-      
-        <content type="html"><![CDATA[<h2 id="淘宝双飞翼布局"><a href="#淘宝双飞翼布局" class="headerlink" title="淘宝双飞翼布局"></a>淘宝双飞翼布局</h2><blockquote><p>淘宝双飞翼布局和圣杯布局在前半部分的思路都差不多，只是在解决中间栏内容被挡住时所采用的方法不同。双飞翼布局在 main 下多一个增加 div，不使用相对定位，只用浮动和负边距，解决三栏液态式布局。</p></blockquote><h3 id="DOM-结构"><a href="#DOM-结构" class="headerlink" title="DOM 结构"></a>DOM 结构</h3><p>在 DOM 中按照主列、子列、附加列的顺序排列，保证主列优先加载。</p><pre><code class="html">&lt;div class=&quot;header&quot;&gt;        &lt;strong&gt;三栏布局之双飞翼布局&lt;/strong&gt;    &lt;/div&gt;    &lt;div class=&quot;container&quot;&gt;        &lt;div class=&quot;col main&quot;&gt;             &lt;div class=&quot;main-wrap&quot;&gt;我是一个宽度自适应的主列。&lt;/div&gt;        &lt;/div&gt;        &lt;div class=&quot;col sub&quot;&gt;我是一个子列。&lt;/div&gt;        &lt;div class=&quot;col extra&quot;&gt;我是一个附加列。&lt;/div&gt;    &lt;/div&gt;    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;</code></pre><p>以上 DOM 结构中，在 main 中添加了一个子 div，用来解决中间列内容被遮挡问题。</p><h3 id="CSS-样式"><a href="#CSS-样式" class="headerlink" title="CSS 样式"></a>CSS 样式</h3><p>去掉相对定位的使用，去掉了父容器的 padding，使用中间栏新增 div 的 margin 解决遮挡问题。</p><pre><code class="css">        body {            padding: 0;            margin: 0;            min-width: 440px;        }        .header,        .footer {            background-color: ##1c262f;            color: white;            text-align: center;            font-size: 1.5em;        }        .container {            width: 100%;            min-height: 200px;        }        .col {            float: left;            color: white;            text-align: justify; /* 文字两端对齐 */            min-height:120px;        }        .main{            width: 100%;        }        .sub {            background-color: ##ea4335;            width: 120px;            margin-left: -100%;        }        .extra {            background-color: ##34a853;            width: 200px;            margin-left: -200px;        }        .main-wrap {            margin-left: 120px;            margin-right: 200px;            background-color: ##4285f3;        }        .footr {            clear: both;        }</code></pre><p>为 body 加上一个最小宽度(2 * sub width + extra width),避免网页放大时中间栏被挤到消失。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> CSS </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> CSS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>前端学习资源</title>
       <link href="/pages/422fbc06/"/>
       <url>/pages/422fbc06/</url>
@@ -819,23 +794,23 @@
     
     
     <entry>
-      <title>多个SSH管理</title>
-      <link href="/pages/8ee164b8/"/>
-      <url>/pages/8ee164b8/</url>
+      <title>淘宝双飞翼布局</title>
+      <link href="/pages/ff1e4b17/"/>
+      <url>/pages/ff1e4b17/</url>
       
-        <content type="html"><![CDATA[<h2 id="多个-SSH-key-管理"><a href="#多个-SSH-key-管理" class="headerlink" title="多个 SSH key 管理"></a>多个 SSH key 管理</h2><ul><li>在创建ssh key的时候，将新的密钥进行重新命名，比如id_rsa_coding，使用下面的命令：<br><code>ssh-keygen -t rsa -C &quot;roojay520@gmail.com&quot; -f ~/.ssh/id_rsa_coding</code><br>b48684451cdeae15e70966c332895a1947144e1e</li></ul><p>git config –global user.name “roojay”<br>git config –global user.email “<a href="mailto:roojay520@gmail.com" target="_blank" rel="noopener">roojay520@gmail.com</a>“</p><p>git config –global user.name “roojay”<br>git config –global user.email “<a href="mailto:roojay@126.com" target="_blank" rel="noopener">roojay@126.com</a>“</p><p>STATIC_SITE_REPO <a href="https://github.com/roojay520/roojay520.github.io" target="_blank" rel="noopener">https://github.com/roojay520/roojay520.github.io</a><br>TARGET_BRANCH master<br>GIT_USER_EMAIL <a href="mailto:roojay520@gmail.com" target="_blank" rel="noopener">roojay520@gmail.com</a><br>GIT_USER_NAME roojay</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="淘宝双飞翼布局"><a href="#淘宝双飞翼布局" class="headerlink" title="淘宝双飞翼布局"></a>淘宝双飞翼布局</h2><blockquote><p>淘宝双飞翼布局和圣杯布局在前半部分的思路都差不多，只是在解决中间栏内容被挡住时所采用的方法不同。双飞翼布局在 main 下多一个增加 div，不使用相对定位，只用浮动和负边距，解决三栏液态式布局。</p></blockquote><h3 id="DOM-结构"><a href="#DOM-结构" class="headerlink" title="DOM 结构"></a>DOM 结构</h3><p>在 DOM 中按照主列、子列、附加列的顺序排列，保证主列优先加载。</p><pre><code class="html">&lt;div class=&quot;header&quot;&gt;        &lt;strong&gt;三栏布局之双飞翼布局&lt;/strong&gt;    &lt;/div&gt;    &lt;div class=&quot;container&quot;&gt;        &lt;div class=&quot;col main&quot;&gt;             &lt;div class=&quot;main-wrap&quot;&gt;我是一个宽度自适应的主列。&lt;/div&gt;        &lt;/div&gt;        &lt;div class=&quot;col sub&quot;&gt;我是一个子列。&lt;/div&gt;        &lt;div class=&quot;col extra&quot;&gt;我是一个附加列。&lt;/div&gt;    &lt;/div&gt;    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;</code></pre><p>以上 DOM 结构中，在 main 中添加了一个子 div，用来解决中间列内容被遮挡问题。</p><h3 id="CSS-样式"><a href="#CSS-样式" class="headerlink" title="CSS 样式"></a>CSS 样式</h3><p>去掉相对定位的使用，去掉了父容器的 padding，使用中间栏新增 div 的 margin 解决遮挡问题。</p><pre><code class="css">        body {            padding: 0;            margin: 0;            min-width: 440px;        }        .header,        .footer {            background-color: ##1c262f;            color: white;            text-align: center;            font-size: 1.5em;        }        .container {            width: 100%;            min-height: 200px;        }        .col {            float: left;            color: white;            text-align: justify; /* 文字两端对齐 */            min-height:120px;        }        .main{            width: 100%;        }        .sub {            background-color: ##ea4335;            width: 120px;            margin-left: -100%;        }        .extra {            background-color: ##34a853;            width: 200px;            margin-left: -200px;        }        .main-wrap {            margin-left: 120px;            margin-right: 200px;            background-color: ##4285f3;        }        .footr {            clear: both;        }</code></pre><p>为 body 加上一个最小宽度(2 * sub width + extra width),避免网页放大时中间栏被挤到消失。</p>]]></content>
       
       
       <categories>
           
-          <category> Git </category>
+          <category> CSS </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> SSH </tag>
+            <tag> CSS </tag>
             
         </tags>
       
@@ -861,6 +836,31 @@
         <tags>
             
             <tag> RegEx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>多个SSH管理</title>
+      <link href="/pages/8ee164b8/"/>
+      <url>/pages/8ee164b8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="多个-SSH-key-管理"><a href="#多个-SSH-key-管理" class="headerlink" title="多个 SSH key 管理"></a>多个 SSH key 管理</h2><ul><li>在创建ssh key的时候，将新的密钥进行重新命名，比如id_rsa_coding，使用下面的命令：<br><code>ssh-keygen -t rsa -C &quot;roojay520@gmail.com&quot; -f ~/.ssh/id_rsa_coding</code><br>b48684451cdeae15e70966c332895a1947144e1e</li></ul><p>git config –global user.name “roojay”<br>git config –global user.email “<a href="mailto:roojay520@gmail.com" target="_blank" rel="noopener">roojay520@gmail.com</a>“</p><p>git config –global user.name “roojay”<br>git config –global user.email “<a href="mailto:roojay@126.com" target="_blank" rel="noopener">roojay@126.com</a>“</p><p>STATIC_SITE_REPO <a href="https://github.com/roojay520/roojay520.github.io" target="_blank" rel="noopener">https://github.com/roojay520/roojay520.github.io</a><br>TARGET_BRANCH master<br>GIT_USER_EMAIL <a href="mailto:roojay520@gmail.com" target="_blank" rel="noopener">roojay520@gmail.com</a><br>GIT_USER_NAME roojay</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SSH </tag>
             
         </tags>
       
@@ -919,31 +919,6 @@
     
     
     <entry>
-      <title>盒子模型</title>
-      <link href="/pages/998dffd6/"/>
-      <url>/pages/998dffd6/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>浏览器中的每个视图可以看成是一个一个嵌套的盒子.</p></blockquote><h2 id="box-size"><a href="#box-size" class="headerlink" title="box-size"></a>box-size</h2><ul><li>元素大小 = boder + padding + contentwidth</li><li>box-size: boder-size;（兼容性） 它会让系统计算元素大小时会将 boder padding 包括在内。不包含外边距(margin)。</li></ul><pre><code class="css">{ -webkit-box-size: boder-size; -ms-box-size: boder-size; -moz-box-size: boder-size;}</code></pre><h2 id="浏览器前缀"><a href="#浏览器前缀" class="headerlink" title="浏览器前缀"></a>浏览器前缀</h2><ul><li>-webkit</li><li>-ms</li><li>-moz</li></ul><h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><blockquote><p>弹性布局</p></blockquote><ul><li>用于 Chrome 29+、IE 11+ 和 Mozilla 28+。要支持 Safari，必须添加 -webkit- 前缀：</li></ul><pre><code class="css">{    display: -webkit-flex;    display: flex;}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> CSS </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> CSS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>进制快速转换</title>
       <link href="/pages/8b41c91c/"/>
       <url>/pages/8b41c91c/</url>
@@ -961,6 +936,31 @@
         <tags>
             
             <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>盒子模型</title>
+      <link href="/pages/998dffd6/"/>
+      <url>/pages/998dffd6/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>浏览器中的每个视图可以看成是一个一个嵌套的盒子.</p></blockquote><h2 id="box-size"><a href="#box-size" class="headerlink" title="box-size"></a>box-size</h2><ul><li>元素大小 = boder + padding + contentwidth</li><li>box-size: boder-size;（兼容性） 它会让系统计算元素大小时会将 boder padding 包括在内。不包含外边距(margin)。</li></ul><pre><code class="css">{ -webkit-box-size: boder-size; -ms-box-size: boder-size; -moz-box-size: boder-size;}</code></pre><h2 id="浏览器前缀"><a href="#浏览器前缀" class="headerlink" title="浏览器前缀"></a>浏览器前缀</h2><ul><li>-webkit</li><li>-ms</li><li>-moz</li></ul><h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><blockquote><p>弹性布局</p></blockquote><ul><li>用于 Chrome 29+、IE 11+ 和 Mozilla 28+。要支持 Safari，必须添加 -webkit- 前缀：</li></ul><pre><code class="css">{    display: -webkit-flex;    display: flex;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> CSS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1194,11 +1194,11 @@
     
     
     <entry>
-      <title>Java中的异常</title>
-      <link href="/pages/f029d2bb/"/>
-      <url>/pages/f029d2bb/</url>
+      <title>Java中的数组</title>
+      <link href="/pages/e7882660/"/>
+      <url>/pages/e7882660/</url>
       
-        <content type="html"><![CDATA[<ol><li>什么是异常</li><li>异常的分类</li><li>try…catch…finally结构的使用方法</li></ol><h2 id="1-什么是异常？"><a href="#1-什么是异常？" class="headerlink" title="1. 什么是异常？"></a>1. 什么是异常？</h2><blockquote></blockquote><ul><li><p>异常(Exception)：中断了正常指令流的事件。</p></li><li><p>异常是一个对象；</p></li><li><p>异常产生于程序运行时；</p></li><li><p>指令流：程序执行时一系列的连续指令称为指令流。</p><blockquote></blockquote><p>示例：</p><pre><code class="java">class Test{  public static void main(String args[]){      int i = 1 / 0;  }}</code></pre><p>抛出异常：</p><blockquote><p>Exception in thread “main” java.lang.ArithmeticException: / by zero<br>  at Test3.main(Test3.java:6)</p></blockquote></li><li><p>Exception in thread “main” ：在主线程中出现异常；</p></li><li><p>ArithmeticException：异常的名称，算术异常；</p></li><li><p>/ by zero：被0除；</p></li><li><p>at Test.main(Test.java:3)：异常位置；</p></li></ul><h2 id="2-异常的分类"><a href="#2-异常的分类" class="headerlink" title="2. 异常的分类"></a>2. 异常的分类</h2><h3 id="JDK提供的类："><a href="#JDK提供的类：" class="headerlink" title="JDK提供的类："></a>JDK提供的类：</h3><blockquote><p><img src="http://i.imgur.com/gTBhe2x.png" alt></p></blockquote><ol><li>Throwable：所有异常的父类；</li><li>Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭；</li><li>Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption<blockquote></blockquote>RuntimeException + Error 和其子类都是属于uncheckexception<br>Exception类中除了 RuntimeException之外的类，都是属于checkexception</li></ol><h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4><h5 id="checkException"><a href="#checkException" class="headerlink" title="checkException"></a>checkException</h5><blockquote></blockquote><p>checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。<br>示例：</p><pre><code class="java">class TestCheck{    public static void main(String args[]){        //CheckException        Thread.sleep(1000); //让当前线程休眠1000ms    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/xMd1LOi.png" alt></p><h5 id="uncheckException（-RuntimeException）"><a href="#uncheckException（-RuntimeException）" class="headerlink" title="uncheckException（ RuntimeException）"></a>uncheckException（ RuntimeException）</h5><blockquote></blockquote><p>运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成<br>示例：</p><pre><code class="java">class Test{    public static void main(String args[]){        //UncheckException        int i = 1 / 0;    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/ll7JnfN.png" alt></p><h2 id="3-try…catch…finally结构"><a href="#3-try…catch…finally结构" class="headerlink" title="3. try…catch…finally结构"></a>3. try…catch…finally结构</h2><blockquote></blockquote><pre><code class="java">try{       //代码A    //有可能出现异常的代码B    //代码C}catch(Exception e){ //虚拟机产生的异常对象e    e.printStackTrace(); //处理异常的代码D    //代码E}finally{    //异常的出口    //执行扫尾工作的代码F}</code></pre><h4 id="如果try中代码B没有异常：执行代码A-B-C-F"><a href="#如果try中代码B没有异常：执行代码A-B-C-F" class="headerlink" title="如果try中代码B没有异常：执行代码A-B-C-F"></a>如果try中代码B没有异常：执行代码A-B-C-F</h4><h4 id="如果try中代码B出现异常：执行代码A-B-D-E-F"><a href="#如果try中代码B出现异常：执行代码A-B-D-E-F" class="headerlink" title="如果try中代码B出现异常：执行代码A-B-D-E-F"></a>如果try中代码B出现异常：执行代码A-B-D-E-F</h4><h3 id="uncheckException"><a href="#uncheckException" class="headerlink" title="uncheckException"></a>uncheckException</h3><blockquote></blockquote><pre><code class="java">//uncheckExceptionclass TestCheck{    public static void main(String args[]){        System.out.println(1);        try{            System.out.println(2);            //有可能出现异常的代码            int i = 1/0;            System.out.println(3);        }        catch(Exception e){ //虚拟机产生的异常对象e            e.printStackTrace(); //打印异常栈的追踪信息            System.out.println(4);        }        finally{            //异常的出口            System.out.println(&quot;finally&quot;);        }    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/DG4HLEn.png" alt></p><h3 id="checkException-1"><a href="#checkException-1" class="headerlink" title="checkException"></a>checkException</h3><blockquote></blockquote><pre><code class="java">//checkExceptionclass TestCheck{    public static void main(String args[]){        System.out.println(1);        try{            System.out.println(2);            //有可能出现异常的代码            Thread.sleep(1000); //让当前线程休眠1000ms            System.out.println(3);        }        catch(Exception e){ //虚拟机产生的异常对象e            e.printStackTrace(); //打印异常栈的追踪信息            System.out.println(4);        }        finally{            //异常的出口            System.out.println(&quot;finally&quot;);        }    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/yWIuLO9.png" alt><br>屏幕首先显示1，2，然后停顿1000ms，再显示3和finally</p>]]></content>
+        <content type="html"><![CDATA[<ul><li>数组是用来存储固定大小的同类型元素。</li></ul><h2 id="数组的定义方法"><a href="#数组的定义方法" class="headerlink" title="数组的定义方法"></a>数组的定义方法</h2><h3 id="静态定义法"><a href="#静态定义法" class="headerlink" title="静态定义法"></a>静态定义法</h3><pre><code class="java">int arr [] = {1,5,6,4,};</code></pre><ul><li>arr：整型数组。</li><li>arr[n]：n为下标，从第0位开始。arr[0]=1, arr[1]=5, arr[2]=6.</li><li>数组长度：arr.length.</li></ul><h3 id="动态定义法"><a href="#动态定义法" class="headerlink" title="动态定义法"></a>动态定义法</h3><pre><code class="java">int arr [] = new int[10];</code></pre><ul><li>数组的长度为10.</li></ul><h3 id="二维数组的定义方法"><a href="#二维数组的定义方法" class="headerlink" title="二维数组的定义方法"></a>二维数组的定义方法</h3><pre><code class="java">静态定义法：int arr[] [] = {{5,3,6},{5,8,7},{6,3,2}};动态定义法：int arr[] [] = new int[][];例：int[1][2] = 7;</code></pre>]]></content>
       
       
       <categories>
@@ -1224,31 +1224,6 @@
       <url>/pages/83e4d5ed/</url>
       
         <content type="html"><![CDATA[<h2 id="Java中的运算符"><a href="#Java中的运算符" class="headerlink" title="Java中的运算符"></a>Java中的运算符</h2><blockquote><p>Java中的运算符分为算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符。</p></blockquote><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><ol><li><p>进行除法运算时，如果除数和被除数都为整得到的结果也会是整数，会忽略小数部分。<br>例如：</p><pre><code class="java">6600/1000*1000</code></pre><p>最后得到的结果为6000。表达式自左至右运算，6600/1000得到6，6*1000=6000。</p></li><li><p>进行除法运算时如果有小数参与，得到的结果为小数。<br>例如：<br>```java</p></li><li><p>6/10</p><pre><code>结果为0.66。</code></pre></li><li><p>进行取模（%）运算时，运算结果的正负取决于%左边的（被模数）符号有关，与%右边的（模数）的符号无关。<br>例如：</p><pre><code class="java">(-6)/2</code></pre><p>结果为-3。</p><pre><code class="java">6/(-3)</code></pre><p>结果为2。</p></li></ol><h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><ol><li><p>可以通过一条赋值语句对多个变量进行赋值。<br>例如：</p><pre><code class="java">int x, y, z;x = y = z = 5;  //为三个变量同时赋值。</code></pre></li><li><p>使用+=、-=、*=、/=、%=进行赋值时，强制转换类型会自动完成。</p></li></ol><h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>左移：&lt;&lt;   00000100&lt;&lt;2  00010000     10010001&lt;&lt;2 01000100<br>右移：&gt;&gt;   01100010&gt;&gt;2  00011000     11100010&gt;&gt;2 11111000<br>无符号右移：     01100010&gt;&gt;&gt;2  00011000     11100010&gt;&gt;&gt;2 00111000</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Java中的数组</title>
-      <link href="/pages/e7882660/"/>
-      <url>/pages/e7882660/</url>
-      
-        <content type="html"><![CDATA[<ul><li>数组是用来存储固定大小的同类型元素。</li></ul><h2 id="数组的定义方法"><a href="#数组的定义方法" class="headerlink" title="数组的定义方法"></a>数组的定义方法</h2><h3 id="静态定义法"><a href="#静态定义法" class="headerlink" title="静态定义法"></a>静态定义法</h3><pre><code class="java">int arr [] = {1,5,6,4,};</code></pre><ul><li>arr：整型数组。</li><li>arr[n]：n为下标，从第0位开始。arr[0]=1, arr[1]=5, arr[2]=6.</li><li>数组长度：arr.length.</li></ul><h3 id="动态定义法"><a href="#动态定义法" class="headerlink" title="动态定义法"></a>动态定义法</h3><pre><code class="java">int arr [] = new int[10];</code></pre><ul><li>数组的长度为10.</li></ul><h3 id="二维数组的定义方法"><a href="#二维数组的定义方法" class="headerlink" title="二维数组的定义方法"></a>二维数组的定义方法</h3><pre><code class="java">静态定义法：int arr[] [] = {{5,3,6},{5,8,7},{6,3,2}};动态定义法：int arr[] [] = new int[][];例：int[1][2] = 7;</code></pre>]]></content>
       
       
       <categories>
@@ -1419,11 +1394,11 @@
     
     
     <entry>
-      <title>结构语句</title>
-      <link href="/pages/1c7ee7be/"/>
-      <url>/pages/1c7ee7be/</url>
+      <title>类集框架</title>
+      <link href="/pages/85b5073b/"/>
+      <url>/pages/85b5073b/</url>
       
-        <content type="html"><![CDATA[<h2 id="选择结构语句"><a href="#选择结构语句" class="headerlink" title="选择结构语句"></a>选择结构语句</h2><h3 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h3><blockquote><p>当判断条件1结果为true时，执行语句1，为false时，执行语句2。当判断条件1,2都不满足true时，执行语句3。</p></blockquote><p>例如：</p><pre><code class="java">if (判断条件1){  执行语句1}else if(判断条件2){  执行语句2}else{  执行语句3}</code></pre><h3 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h3><blockquote><p>一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。<br>当判断条件成立时结果为表达式1的值，否则表达式2的值。</p></blockquote><pre><code class="java">判断条件 ? 表达式 1 : 表达式 2</code></pre><p>例如：求取两个数x，y中较大的值。</p><pre><code class="java">//if-else实现方法int x, y, max;if(x&gt;y){    max = x;}else{    max = y;}//三元运算实现int x, y, max;max = x &gt; y ? x : y;</code></pre><h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><blockquote><p>在switch语句中使用switch关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，<br>当表达式的值和某个目标值匹配时，会执行对应case下的语句。</p></blockquote><p>例如：</p><pre><code class="java">switch(表达式){  case 1:    执行语句1;       break; //break终止case并跳出switch循环  case 2:    执行语句2;     break;  case 3:    执行语句3；      break;  default: //default处理和前面的case都不匹配的值    执行语句4;      break;}</code></pre><h2 id="循环结构语句"><a href="#循环结构语句" class="headerlink" title="循环结构语句"></a>循环结构语句</h2><h3 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h3><blockquote><p>循环条件判断为true时，执行语句循环执行，直到循环条件为false。</p></blockquote><p>例如：</p><pre><code class="java">while(循环条件){    执行语句}</code></pre><h3 id="do…while循环语句"><a href="#do…while循环语句" class="headerlink" title="do…while循环语句"></a>do…while循环语句</h3><blockquote><p>循环体会无条件执行一次，然后根据循环条件决定是否继续执行。</p></blockquote><p>例如：</p><pre><code class="java">do{  执行语句}while(循环条件);</code></pre><h3 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h3><blockquote><p>一般用在循环次数已知的情况下，循环条件判断为true执行顺序①→②→④→③</p></blockquote><p>例如：</p><pre><code class="java">for(初始化表达式①;循环条件②;操作表达式③){  执行语句④}</code></pre><pre><code class="java">/** * Created by Roojay on 2017/4/7. * 利用嵌套循环打印一个正三角形。 */public class Test1 {    public static void main(String args[]){        int i, j, k;        for(i = 1; i &lt;= 5; i++){            for(k = 0; k &lt; 5 - i; k++){                System.out.print(&quot; &quot;);            }            for(j = 1; j &lt;= i; j++){                System.out.print(&quot;* &quot;);            }            System.out.println();        }    }}</code></pre><h3 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h3><h4 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h4><blockquote><p>当它出现在switch条件语句中时，作用是终止某个case并跳出switch结构。<br>当它出现在循环语句中，作用是跳出循环语句，执行后面的代码。<br>当它出现在嵌套循环内层循环中时，只能跳出内层循环，如果想跳出外层循环，<br>需要对外层前面添加标记 itcast： ，在后面使用 break itcast 跳出外层循环。</p></blockquote><h4 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a>continue语句</h4><blockquote><p>continue语句用在循环语句中，它的作用是终止本次循环，执行下一次循环。<br>也可以使用标记结束外循环。</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<ul><li><p>类集框架是一组类和接口；</p></li><li><p>位于java.until包当中；</p></li><li><p>主要用于存储盒管理对象；</p></li><li><p>主要分为三大类：集合(Set)、列表(List)和映射(Map)。</p><h2 id="类集框架的主体结构"><a href="#类集框架的主体结构" class="headerlink" title="类集框架的主体结构"></a>类集框架的主体结构</h2><ul><li>Collection为单列集合，Map为双列集合。</li></ul><h2 id><a href="#" class="headerlink" title></a><img src="http://i.imgur.com/wEVxtzg.png" alt></h2></li></ul><h2 id="Collection接口中的方法"><a href="#Collection接口中的方法" class="headerlink" title="Collection接口中的方法"></a>Collection接口中的方法</h2><table><thead><tr><th>方法</th><th>功能</th></tr></thead><tbody><tr><td>boolean add（Object o）</td><td>向集合中加入一个对象。</td></tr><tr><td>void clear（）</td><td>删除集合当中的所有对象。</td></tr><tr><td>boolean  isEmpty（）</td><td>判断集合是否为空，如果为空返回true。</td></tr><tr><td>remove（Object o）</td><td>从集合中删除一个对象的引用。</td></tr><tr><td>int size（）</td><td>返回集合中元素的数目。</td></tr></tbody></table><h2 id="Iterator接口"><a href="#Iterator接口" class="headerlink" title="Iterator接口"></a>Iterator接口</h2><ul><li>主要用于迭代访问（即遍历）整个Collection中的元素，因此Iterator对象也被称为迭代器。</li></ul><table><thead><tr><th>方法</th><th>作用</th></tr></thead><tbody><tr><td>hasNet()</td><td>判断当前迭代器中是否还有下一个元素，返回值为boolean值。</td></tr><tr><td>next()</td><td>返回当前迭代器下一个元素。</td></tr></tbody></table><h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.Set;import java.util.HashSet;import java.util.Iterator;public class TestIterator{    public static void main(String args[]){        Set&lt;String&gt; set = new HashSet&lt;String&gt;();        set.add(&quot;a&quot;);        set.add(&quot;b&quot;);        set.add(&quot;c&quot;);        set.add(&quot;d&quot;);        set.add(&quot;e&quot;);        //调用Set对象的Iterator方法生成一个迭代器对象，该对象遍历整个Set        Iterator&lt;String&gt; it = set.iterator();          //判断Set集合中是否存在下一个元素        while(it.hasNext()){              //取出Set集合中的元素            String s = it.next();            System.out.println(s);        }    }}</code></pre><h2 id="ListIterator接口"><a href="#ListIterator接口" class="headerlink" title="ListIterator接口"></a>ListIterator接口</h2><ul><li>可以按任一方向遍历列表、迭代期间修改列表，并获得迭代器在列表中的当前位置。</li></ul><table><thead><tr><th>方法</th><th>功能</th></tr></thead><tbody><tr><td>void add(Object o)</td><td>将指定的元素插入列表。</td></tr><tr><td>boolean hasPrevious()</td><td>如果以逆向遍历列表，列表迭代器有多个元素，则返回true。</td></tr><tr><td>Object previous()</td><td>返回列表中的前一个元素。</td></tr><tr><td>void remove()</td><td>从列表中移除由next或previous返回的最后一个元素。</td></tr></tbody></table><h3 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.*;public class Test{    public static void main(String args[]) {        ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();        list.add(&quot;Monday&quot;);        list.add(&quot;Tuesday&quot;);        list.add(&quot;Wednesday&quot;);        list.add(&quot;Thursday&quot;);        System.out.println(list);        //生成一个ListIterator对象        ListIterator it = list.listIterator(list.size());          //调用hasPrevious()方法判断是否存在元素        while(it.hasPrevious()){              //调用previous()方法返回元素            Object obj = it.previous();            System.out.println(obj);        }    }}</code></pre><h2 id="集合（Set）"><a href="#集合（Set）" class="headerlink" title="集合（Set）"></a>集合（Set）</h2><ul><li>集合中的对象不按特定方式排序，并且没有重复对象。</li></ul><h2 id="HashSet集合"><a href="#HashSet集合" class="headerlink" title="HashSet集合"></a>HashSet集合</h2><ul><li>HashSet是Set接口的一个实现类，它所储存的元素时不可重复且无序的。根据对象的哈希值来确定元素在集合中的储存位置，因此具有良好的存取和查找性能。</li></ul><h3 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.Set;import java.util.HashSet;public class TestSet{    public static void main(String args[]){        //生成HashSet对象并向上转型为Set        Set&lt;String&gt; set =new HashSet&lt;String&gt;();        //定义一个boolean型变量b1接受 isEmpty（）方法返回值        boolean b1 = set.isEmpty();        System.out.println(b1);        set.add(&quot;a&quot;);        set.add(&quot;b&quot;);        set.add(&quot;c&quot;);        set.add(&quot;d&quot;);        set.add(&quot;e&quot;);        set.add(&quot;f&quot;);        boolean b2 =set.isEmpty();        System.out.println(b2);        //调用size（）方法获取集合长度        int i =set.size();        System.out.println(&quot;初始状态set集合中元素的数目&quot; + i);        //调用remove（）方法移除对象d        set.remove(&quot;d&quot;);        int j = set.size();        System.out.println(&quot;处理之后set集合中元素的数目&quot; + j);    }}</code></pre><h2 id="TreeSet集合"><a href="#TreeSet集合" class="headerlink" title="TreeSet集合"></a>TreeSet集合</h2><ul><li>它内部采用自平衡点排序二叉树来储存元素，这样的结构保证TreeSet集合没有重复的元素，并且可以对元素进行排序。</li></ul><h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><ul><li>二叉树是指每个节点最多有两个子节点的有序树，每个节点及其子节点组成的树称为子树，通常左侧的节点称为“左子树”，右侧的的子节点称为“右子树”。</li></ul><p><img src="http://i.imgur.com/TmqrdF9.png" alt></p><h3 id="示例：-3"><a href="#示例：-3" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.*;public class Test01{    public static void main(String args[]){        //创建TreeSet集合        TreeSet&lt;String&gt; ts = new TreeSet&lt;String&gt;();        ts.add(&quot;10&quot;);        ts.add(&quot;50&quot;);        ts.add(&quot;20&quot;);        ts.add(&quot;40&quot;);        ts.add(&quot;30&quot;);        //获取Iterator对象        Iterator it = ts.iterator();        while(it.hasNext()){            System.out.println(it.next());        }    }}</code></pre><p>结果：<br><img src="http://i.imgur.com/Wl5KRxh.png" alt></p><h2 id="列表（List）"><a href="#列表（List）" class="headerlink" title="列表（List）"></a>列表（List）</h2><ul><li>集合中对象按照索引位置排序，即元素的存入和取出顺序一致，可以有重复对象。</li></ul><h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ul><li>ArrayList的底层是使用一个数组来保存元素，当增加或删除指定位置的元素时，会创建新的数组，效率较低，因此不适合做大量的增删操作。但是这种数组的结构允许程序通过索引的方式来访问元素，因此使用ArryList集合查找元素很便捷。</li></ul><h3 id="示例：-4"><a href="#示例：-4" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.List;import java.util.ArrayList;public class Test{    public static void main(String args[]){        ArrayList&lt;String&gt; arrayList = new ArrayList&lt;String&gt;();        //向ArrayList中存入数据        arrayList.add(&quot;a&quot;);        arrayList.add(&quot;b&quot;);        arrayList.add(&quot;c&quot;);        arrayList.add(&quot;d&quot;);        //移除这个对象        arrayList.remove(2);        //从ArrayList中取数据        for(int i = 0; i &lt; arrayList.size(); i++){            String s = arrayList.get(i);            System.out.println(s);        }    }}</code></pre><h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ul><li>内部维护了一个双向循环链表，链表中的每一个元素都使用引用的方式来记住它的前一个元素和后一个元素，插入一个新元素，只需修改元素之间的这种引用关系即可。</li></ul><h3 id="示例：-5"><a href="#示例：-5" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.List;import java.util.LinkedList;public class Test01{    public static void main(String args[]){        //创建LinkedList集合        LinkedList&lt;String&gt; link = new LinkedList&lt;String&gt;();            //向集合中添加元素            link.add(&quot;One&quot;);            link.add(&quot;Two&quot;);            link.add(&quot;Three&quot;);            link.add(&quot;Four&quot;);            //取出并打印该集合中的所有元素            System.out.println(link.toString());            //向指定位置插入元素            link.add(2,&quot;插个队&quot;);            System.out.println(link);            //移除指定位置的元素            link.remove(2);            System.out.println(link);    }}</code></pre><h2 id="映射（Map）"><a href="#映射（Map）" class="headerlink" title="映射（Map）"></a>映射（Map）</h2><ul><li>集合中的每一个元素包含一个键对象和一个值对象，键不可重复，值可以重复。</li></ul><table><thead><tr><th align="center">键对象</th><th align="center">值对象</th></tr></thead><tbody><tr><td align="center">key1</td><td align="center">value1</td></tr><tr><td align="center">key2</td><td align="center">value2</td></tr><tr><td align="center">key3</td><td align="center">value3</td></tr></tbody></table><h2 id="Map接口中的方法"><a href="#Map接口中的方法" class="headerlink" title="Map接口中的方法"></a>Map接口中的方法</h2><table><thead><tr><th>方法</th><th>作用</th></tr></thead><tbody><tr><td>void clear()</td><td>从此映射中移除所有映射关系（可选操作）。</td></tr><tr><td>boolean containsKey（Object Key）</td><td>如果此映射包含指定键的映射关系，则返回 true。</td></tr><tr><td>boolean equals（Object o）</td><td>比较指定的对象与此映射是否相等。</td></tr><tr><td>get（Object key）</td><td>返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回null。</td></tr><tr><td>boolean isEmpty（）</td><td>如果此映射未包含键-值映射关系，则返回 true。</td></tr><tr><td>put（）</td><td>将指定的值与此映射中的指定键关联。</td></tr><tr><td>remove（Object key）</td><td>如果存在一个键的映射关系，则将其从此映射中移除。</td></tr><tr><td>int size（）</td><td>返回此Map中的键值对数目。</td></tr></tbody></table><h2 id="Map与HashMap"><a href="#Map与HashMap" class="headerlink" title="Map与HashMap"></a>Map与HashMap</h2><h3 id="示例：-6"><a href="#示例：-6" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.Map;import java.util.HashMap;public class Test{    public static void main(String args[]){        //生成HashMap对象并向上转型为Map        Map&lt;String,String&gt; map = new HashMap&lt;String,String&gt;();        //向map中添加键值对        map.put(&quot;1&quot;,&quot;One&quot;);        map.put(&quot;2&quot;,&quot;Two&quot;);        map.put(&quot;3&quot;,&quot;Three&quot;);        //调用get（Object key）方法，返回指定键所映射的值；        //如果对于该键来说，此映射不包含任何映射关系，则返回 null。        String s = map.get(&quot;2&quot;);        System.out.println(s);    }}</code></pre>]]></content>
       
       
       <categories>
@@ -1444,11 +1419,11 @@
     
     
     <entry>
-      <title>类集框架</title>
-      <link href="/pages/85b5073b/"/>
-      <url>/pages/85b5073b/</url>
+      <title>结构语句</title>
+      <link href="/pages/1c7ee7be/"/>
+      <url>/pages/1c7ee7be/</url>
       
-        <content type="html"><![CDATA[<ul><li><p>类集框架是一组类和接口；</p></li><li><p>位于java.until包当中；</p></li><li><p>主要用于存储盒管理对象；</p></li><li><p>主要分为三大类：集合(Set)、列表(List)和映射(Map)。</p><h2 id="类集框架的主体结构"><a href="#类集框架的主体结构" class="headerlink" title="类集框架的主体结构"></a>类集框架的主体结构</h2><ul><li>Collection为单列集合，Map为双列集合。</li></ul><h2 id><a href="#" class="headerlink" title></a><img src="http://i.imgur.com/wEVxtzg.png" alt></h2></li></ul><h2 id="Collection接口中的方法"><a href="#Collection接口中的方法" class="headerlink" title="Collection接口中的方法"></a>Collection接口中的方法</h2><table><thead><tr><th>方法</th><th>功能</th></tr></thead><tbody><tr><td>boolean add（Object o）</td><td>向集合中加入一个对象。</td></tr><tr><td>void clear（）</td><td>删除集合当中的所有对象。</td></tr><tr><td>boolean  isEmpty（）</td><td>判断集合是否为空，如果为空返回true。</td></tr><tr><td>remove（Object o）</td><td>从集合中删除一个对象的引用。</td></tr><tr><td>int size（）</td><td>返回集合中元素的数目。</td></tr></tbody></table><h2 id="Iterator接口"><a href="#Iterator接口" class="headerlink" title="Iterator接口"></a>Iterator接口</h2><ul><li>主要用于迭代访问（即遍历）整个Collection中的元素，因此Iterator对象也被称为迭代器。</li></ul><table><thead><tr><th>方法</th><th>作用</th></tr></thead><tbody><tr><td>hasNet()</td><td>判断当前迭代器中是否还有下一个元素，返回值为boolean值。</td></tr><tr><td>next()</td><td>返回当前迭代器下一个元素。</td></tr></tbody></table><h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.Set;import java.util.HashSet;import java.util.Iterator;public class TestIterator{    public static void main(String args[]){        Set&lt;String&gt; set = new HashSet&lt;String&gt;();        set.add(&quot;a&quot;);        set.add(&quot;b&quot;);        set.add(&quot;c&quot;);        set.add(&quot;d&quot;);        set.add(&quot;e&quot;);        //调用Set对象的Iterator方法生成一个迭代器对象，该对象遍历整个Set        Iterator&lt;String&gt; it = set.iterator();          //判断Set集合中是否存在下一个元素        while(it.hasNext()){              //取出Set集合中的元素            String s = it.next();            System.out.println(s);        }    }}</code></pre><h2 id="ListIterator接口"><a href="#ListIterator接口" class="headerlink" title="ListIterator接口"></a>ListIterator接口</h2><ul><li>可以按任一方向遍历列表、迭代期间修改列表，并获得迭代器在列表中的当前位置。</li></ul><table><thead><tr><th>方法</th><th>功能</th></tr></thead><tbody><tr><td>void add(Object o)</td><td>将指定的元素插入列表。</td></tr><tr><td>boolean hasPrevious()</td><td>如果以逆向遍历列表，列表迭代器有多个元素，则返回true。</td></tr><tr><td>Object previous()</td><td>返回列表中的前一个元素。</td></tr><tr><td>void remove()</td><td>从列表中移除由next或previous返回的最后一个元素。</td></tr></tbody></table><h3 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.*;public class Test{    public static void main(String args[]) {        ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();        list.add(&quot;Monday&quot;);        list.add(&quot;Tuesday&quot;);        list.add(&quot;Wednesday&quot;);        list.add(&quot;Thursday&quot;);        System.out.println(list);        //生成一个ListIterator对象        ListIterator it = list.listIterator(list.size());          //调用hasPrevious()方法判断是否存在元素        while(it.hasPrevious()){              //调用previous()方法返回元素            Object obj = it.previous();            System.out.println(obj);        }    }}</code></pre><h2 id="集合（Set）"><a href="#集合（Set）" class="headerlink" title="集合（Set）"></a>集合（Set）</h2><ul><li>集合中的对象不按特定方式排序，并且没有重复对象。</li></ul><h2 id="HashSet集合"><a href="#HashSet集合" class="headerlink" title="HashSet集合"></a>HashSet集合</h2><ul><li>HashSet是Set接口的一个实现类，它所储存的元素时不可重复且无序的。根据对象的哈希值来确定元素在集合中的储存位置，因此具有良好的存取和查找性能。</li></ul><h3 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.Set;import java.util.HashSet;public class TestSet{    public static void main(String args[]){        //生成HashSet对象并向上转型为Set        Set&lt;String&gt; set =new HashSet&lt;String&gt;();        //定义一个boolean型变量b1接受 isEmpty（）方法返回值        boolean b1 = set.isEmpty();        System.out.println(b1);        set.add(&quot;a&quot;);        set.add(&quot;b&quot;);        set.add(&quot;c&quot;);        set.add(&quot;d&quot;);        set.add(&quot;e&quot;);        set.add(&quot;f&quot;);        boolean b2 =set.isEmpty();        System.out.println(b2);        //调用size（）方法获取集合长度        int i =set.size();        System.out.println(&quot;初始状态set集合中元素的数目&quot; + i);        //调用remove（）方法移除对象d        set.remove(&quot;d&quot;);        int j = set.size();        System.out.println(&quot;处理之后set集合中元素的数目&quot; + j);    }}</code></pre><h2 id="TreeSet集合"><a href="#TreeSet集合" class="headerlink" title="TreeSet集合"></a>TreeSet集合</h2><ul><li>它内部采用自平衡点排序二叉树来储存元素，这样的结构保证TreeSet集合没有重复的元素，并且可以对元素进行排序。</li></ul><h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><ul><li>二叉树是指每个节点最多有两个子节点的有序树，每个节点及其子节点组成的树称为子树，通常左侧的节点称为“左子树”，右侧的的子节点称为“右子树”。</li></ul><p><img src="http://i.imgur.com/TmqrdF9.png" alt></p><h3 id="示例：-3"><a href="#示例：-3" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.*;public class Test01{    public static void main(String args[]){        //创建TreeSet集合        TreeSet&lt;String&gt; ts = new TreeSet&lt;String&gt;();        ts.add(&quot;10&quot;);        ts.add(&quot;50&quot;);        ts.add(&quot;20&quot;);        ts.add(&quot;40&quot;);        ts.add(&quot;30&quot;);        //获取Iterator对象        Iterator it = ts.iterator();        while(it.hasNext()){            System.out.println(it.next());        }    }}</code></pre><p>结果：<br><img src="http://i.imgur.com/Wl5KRxh.png" alt></p><h2 id="列表（List）"><a href="#列表（List）" class="headerlink" title="列表（List）"></a>列表（List）</h2><ul><li>集合中对象按照索引位置排序，即元素的存入和取出顺序一致，可以有重复对象。</li></ul><h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ul><li>ArrayList的底层是使用一个数组来保存元素，当增加或删除指定位置的元素时，会创建新的数组，效率较低，因此不适合做大量的增删操作。但是这种数组的结构允许程序通过索引的方式来访问元素，因此使用ArryList集合查找元素很便捷。</li></ul><h3 id="示例：-4"><a href="#示例：-4" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.List;import java.util.ArrayList;public class Test{    public static void main(String args[]){        ArrayList&lt;String&gt; arrayList = new ArrayList&lt;String&gt;();        //向ArrayList中存入数据        arrayList.add(&quot;a&quot;);        arrayList.add(&quot;b&quot;);        arrayList.add(&quot;c&quot;);        arrayList.add(&quot;d&quot;);        //移除这个对象        arrayList.remove(2);        //从ArrayList中取数据        for(int i = 0; i &lt; arrayList.size(); i++){            String s = arrayList.get(i);            System.out.println(s);        }    }}</code></pre><h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ul><li>内部维护了一个双向循环链表，链表中的每一个元素都使用引用的方式来记住它的前一个元素和后一个元素，插入一个新元素，只需修改元素之间的这种引用关系即可。</li></ul><h3 id="示例：-5"><a href="#示例：-5" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.List;import java.util.LinkedList;public class Test01{    public static void main(String args[]){        //创建LinkedList集合        LinkedList&lt;String&gt; link = new LinkedList&lt;String&gt;();            //向集合中添加元素            link.add(&quot;One&quot;);            link.add(&quot;Two&quot;);            link.add(&quot;Three&quot;);            link.add(&quot;Four&quot;);            //取出并打印该集合中的所有元素            System.out.println(link.toString());            //向指定位置插入元素            link.add(2,&quot;插个队&quot;);            System.out.println(link);            //移除指定位置的元素            link.remove(2);            System.out.println(link);    }}</code></pre><h2 id="映射（Map）"><a href="#映射（Map）" class="headerlink" title="映射（Map）"></a>映射（Map）</h2><ul><li>集合中的每一个元素包含一个键对象和一个值对象，键不可重复，值可以重复。</li></ul><table><thead><tr><th align="center">键对象</th><th align="center">值对象</th></tr></thead><tbody><tr><td align="center">key1</td><td align="center">value1</td></tr><tr><td align="center">key2</td><td align="center">value2</td></tr><tr><td align="center">key3</td><td align="center">value3</td></tr></tbody></table><h2 id="Map接口中的方法"><a href="#Map接口中的方法" class="headerlink" title="Map接口中的方法"></a>Map接口中的方法</h2><table><thead><tr><th>方法</th><th>作用</th></tr></thead><tbody><tr><td>void clear()</td><td>从此映射中移除所有映射关系（可选操作）。</td></tr><tr><td>boolean containsKey（Object Key）</td><td>如果此映射包含指定键的映射关系，则返回 true。</td></tr><tr><td>boolean equals（Object o）</td><td>比较指定的对象与此映射是否相等。</td></tr><tr><td>get（Object key）</td><td>返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回null。</td></tr><tr><td>boolean isEmpty（）</td><td>如果此映射未包含键-值映射关系，则返回 true。</td></tr><tr><td>put（）</td><td>将指定的值与此映射中的指定键关联。</td></tr><tr><td>remove（Object key）</td><td>如果存在一个键的映射关系，则将其从此映射中移除。</td></tr><tr><td>int size（）</td><td>返回此Map中的键值对数目。</td></tr></tbody></table><h2 id="Map与HashMap"><a href="#Map与HashMap" class="headerlink" title="Map与HashMap"></a>Map与HashMap</h2><h3 id="示例：-6"><a href="#示例：-6" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">import java.util.Map;import java.util.HashMap;public class Test{    public static void main(String args[]){        //生成HashMap对象并向上转型为Map        Map&lt;String,String&gt; map = new HashMap&lt;String,String&gt;();        //向map中添加键值对        map.put(&quot;1&quot;,&quot;One&quot;);        map.put(&quot;2&quot;,&quot;Two&quot;);        map.put(&quot;3&quot;,&quot;Three&quot;);        //调用get（Object key）方法，返回指定键所映射的值；        //如果对于该键来说，此映射不包含任何映射关系，则返回 null。        String s = map.get(&quot;2&quot;);        System.out.println(s);    }}</code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="选择结构语句"><a href="#选择结构语句" class="headerlink" title="选择结构语句"></a>选择结构语句</h2><h3 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h3><blockquote><p>当判断条件1结果为true时，执行语句1，为false时，执行语句2。当判断条件1,2都不满足true时，执行语句3。</p></blockquote><p>例如：</p><pre><code class="java">if (判断条件1){  执行语句1}else if(判断条件2){  执行语句2}else{  执行语句3}</code></pre><h3 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h3><blockquote><p>一种类似于if-else语句的运算，三元运算一般会得到一个结果，一般用来对某个变量进行赋值。<br>当判断条件成立时结果为表达式1的值，否则表达式2的值。</p></blockquote><pre><code class="java">判断条件 ? 表达式 1 : 表达式 2</code></pre><p>例如：求取两个数x，y中较大的值。</p><pre><code class="java">//if-else实现方法int x, y, max;if(x&gt;y){    max = x;}else{    max = y;}//三元运算实现int x, y, max;max = x &gt; y ? x : y;</code></pre><h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><blockquote><p>在switch语句中使用switch关键字来描述一个表达式，使用case关键字来描述和表达式结果比较的目标值，<br>当表达式的值和某个目标值匹配时，会执行对应case下的语句。</p></blockquote><p>例如：</p><pre><code class="java">switch(表达式){  case 1:    执行语句1;       break; //break终止case并跳出switch循环  case 2:    执行语句2;     break;  case 3:    执行语句3；      break;  default: //default处理和前面的case都不匹配的值    执行语句4;      break;}</code></pre><h2 id="循环结构语句"><a href="#循环结构语句" class="headerlink" title="循环结构语句"></a>循环结构语句</h2><h3 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h3><blockquote><p>循环条件判断为true时，执行语句循环执行，直到循环条件为false。</p></blockquote><p>例如：</p><pre><code class="java">while(循环条件){    执行语句}</code></pre><h3 id="do…while循环语句"><a href="#do…while循环语句" class="headerlink" title="do…while循环语句"></a>do…while循环语句</h3><blockquote><p>循环体会无条件执行一次，然后根据循环条件决定是否继续执行。</p></blockquote><p>例如：</p><pre><code class="java">do{  执行语句}while(循环条件);</code></pre><h3 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h3><blockquote><p>一般用在循环次数已知的情况下，循环条件判断为true执行顺序①→②→④→③</p></blockquote><p>例如：</p><pre><code class="java">for(初始化表达式①;循环条件②;操作表达式③){  执行语句④}</code></pre><pre><code class="java">/** * Created by Roojay on 2017/4/7. * 利用嵌套循环打印一个正三角形。 */public class Test1 {    public static void main(String args[]){        int i, j, k;        for(i = 1; i &lt;= 5; i++){            for(k = 0; k &lt; 5 - i; k++){                System.out.print(&quot; &quot;);            }            for(j = 1; j &lt;= i; j++){                System.out.print(&quot;* &quot;);            }            System.out.println();        }    }}</code></pre><h3 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h3><h4 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h4><blockquote><p>当它出现在switch条件语句中时，作用是终止某个case并跳出switch结构。<br>当它出现在循环语句中，作用是跳出循环语句，执行后面的代码。<br>当它出现在嵌套循环内层循环中时，只能跳出内层循环，如果想跳出外层循环，<br>需要对外层前面添加标记 itcast： ，在后面使用 break itcast 跳出外层循环。</p></blockquote><h4 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a>continue语句</h4><blockquote><p>continue语句用在循环语句中，它的作用是终止本次循环，执行下一次循环。<br>也可以使用标记结束外循环。</p></blockquote>]]></content>
       
       
       <categories>
@@ -1499,6 +1474,31 @@
       <url>/pages/7dc91154/</url>
       
         <content type="html"><![CDATA[<h3 id="十进制转换二进制"><a href="#十进制转换二进制" class="headerlink" title="十进制转换二进制"></a>十进制转换二进制</h3><blockquote><p>将一个十进制数转换为二进制，就是将这个数不断取余的过程，将这个数除以 2，得到了商和余数，然后将商不断除以 2，直到商为 0，然后将余数倒过来排列，所得到的数就是转换的二进制结果。</p></blockquote><h3 id="二进制转八进制"><a href="#二进制转八进制" class="headerlink" title="二进制转八进制"></a>二进制转八进制</h3><blockquote><p>将二进制数自右向左每三位分成一段，然后将每三位数转换为一位八进制数。</p></blockquote><p> 例如：111000101 = 111 000 101 = 0 7 0 5<br> 八进制以 0 开头。</p><h3 id="二进制转十六进制"><a href="#二进制转十六进制" class="headerlink" title="二进制转十六进制"></a>二进制转十六进制</h3><blockquote><p>将二进制数自右向左每四位分成一段，然后将每四位转换为一位十六进制数。</p></blockquote><p>例如：111010100110=1110 1010 0110=0x E A 6<br> 十六进制以 0x 或者 0X 开头。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java中的异常</title>
+      <link href="/pages/f029d2bb/"/>
+      <url>/pages/f029d2bb/</url>
+      
+        <content type="html"><![CDATA[<ol><li>什么是异常</li><li>异常的分类</li><li>try…catch…finally结构的使用方法</li></ol><h2 id="1-什么是异常？"><a href="#1-什么是异常？" class="headerlink" title="1. 什么是异常？"></a>1. 什么是异常？</h2><blockquote></blockquote><ul><li><p>异常(Exception)：中断了正常指令流的事件。</p></li><li><p>异常是一个对象；</p></li><li><p>异常产生于程序运行时；</p></li><li><p>指令流：程序执行时一系列的连续指令称为指令流。</p><blockquote></blockquote><p>示例：</p><pre><code class="java">class Test{  public static void main(String args[]){      int i = 1 / 0;  }}</code></pre><p>抛出异常：</p><blockquote><p>Exception in thread “main” java.lang.ArithmeticException: / by zero<br>  at Test3.main(Test3.java:6)</p></blockquote></li><li><p>Exception in thread “main” ：在主线程中出现异常；</p></li><li><p>ArithmeticException：异常的名称，算术异常；</p></li><li><p>/ by zero：被0除；</p></li><li><p>at Test.main(Test.java:3)：异常位置；</p></li></ul><h2 id="2-异常的分类"><a href="#2-异常的分类" class="headerlink" title="2. 异常的分类"></a>2. 异常的分类</h2><h3 id="JDK提供的类："><a href="#JDK提供的类：" class="headerlink" title="JDK提供的类："></a>JDK提供的类：</h3><blockquote><p><img src="http://i.imgur.com/gTBhe2x.png" alt></p></blockquote><ol><li>Throwable：所有异常的父类；</li><li>Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭；</li><li>Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption<blockquote></blockquote>RuntimeException + Error 和其子类都是属于uncheckexception<br>Exception类中除了 RuntimeException之外的类，都是属于checkexception</li></ol><h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4><h5 id="checkException"><a href="#checkException" class="headerlink" title="checkException"></a>checkException</h5><blockquote></blockquote><p>checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。<br>示例：</p><pre><code class="java">class TestCheck{    public static void main(String args[]){        //CheckException        Thread.sleep(1000); //让当前线程休眠1000ms    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/xMd1LOi.png" alt></p><h5 id="uncheckException（-RuntimeException）"><a href="#uncheckException（-RuntimeException）" class="headerlink" title="uncheckException（ RuntimeException）"></a>uncheckException（ RuntimeException）</h5><blockquote></blockquote><p>运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成<br>示例：</p><pre><code class="java">class Test{    public static void main(String args[]){        //UncheckException        int i = 1 / 0;    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/ll7JnfN.png" alt></p><h2 id="3-try…catch…finally结构"><a href="#3-try…catch…finally结构" class="headerlink" title="3. try…catch…finally结构"></a>3. try…catch…finally结构</h2><blockquote></blockquote><pre><code class="java">try{       //代码A    //有可能出现异常的代码B    //代码C}catch(Exception e){ //虚拟机产生的异常对象e    e.printStackTrace(); //处理异常的代码D    //代码E}finally{    //异常的出口    //执行扫尾工作的代码F}</code></pre><h4 id="如果try中代码B没有异常：执行代码A-B-C-F"><a href="#如果try中代码B没有异常：执行代码A-B-C-F" class="headerlink" title="如果try中代码B没有异常：执行代码A-B-C-F"></a>如果try中代码B没有异常：执行代码A-B-C-F</h4><h4 id="如果try中代码B出现异常：执行代码A-B-D-E-F"><a href="#如果try中代码B出现异常：执行代码A-B-D-E-F" class="headerlink" title="如果try中代码B出现异常：执行代码A-B-D-E-F"></a>如果try中代码B出现异常：执行代码A-B-D-E-F</h4><h3 id="uncheckException"><a href="#uncheckException" class="headerlink" title="uncheckException"></a>uncheckException</h3><blockquote></blockquote><pre><code class="java">//uncheckExceptionclass TestCheck{    public static void main(String args[]){        System.out.println(1);        try{            System.out.println(2);            //有可能出现异常的代码            int i = 1/0;            System.out.println(3);        }        catch(Exception e){ //虚拟机产生的异常对象e            e.printStackTrace(); //打印异常栈的追踪信息            System.out.println(4);        }        finally{            //异常的出口            System.out.println(&quot;finally&quot;);        }    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/DG4HLEn.png" alt></p><h3 id="checkException-1"><a href="#checkException-1" class="headerlink" title="checkException"></a>checkException</h3><blockquote></blockquote><pre><code class="java">//checkExceptionclass TestCheck{    public static void main(String args[]){        System.out.println(1);        try{            System.out.println(2);            //有可能出现异常的代码            Thread.sleep(1000); //让当前线程休眠1000ms            System.out.println(3);        }        catch(Exception e){ //虚拟机产生的异常对象e            e.printStackTrace(); //打印异常栈的追踪信息            System.out.println(4);        }        finally{            //异常的出口            System.out.println(&quot;finally&quot;);        }    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/yWIuLO9.png" alt><br>屏幕首先显示1，2，然后停顿1000ms，再显示3和finally</p>]]></content>
       
       
       <categories>
