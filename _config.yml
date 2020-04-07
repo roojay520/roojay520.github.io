@@ -83,8 +83,6 @@ deploy:
   type: git
   repo:
     github: git@github.com:roojay520/roojay520.github.io.git,master
-    # coding: git@git.coding.net:roojay/roojay.coding.me.git,master
-    # coding: https://git.coding.net/roojay/roojay.coding.me.git,master
 #Hexo-all-minifier
 # #集成了对html、css、js、image的优化
 # html_minifier:
@@ -123,5 +121,5 @@ search:
   field: all
   format: html
   limit: 10000
-  # # 数学公式
+  # 数学公式
   # mathjax: true
