@@ -29,4 +29,5 @@ jobs:
           publish_branch: master
           cname: roojay.com
           user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
           commit_message: "Deployed from ${{ github.event.head_commit.message }}"
