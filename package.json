@@ -7,8 +7,7 @@
   },
   "scripts": {
     "build": "hexo clean && hexo generate",
-    "dev": "yarn build && hexo server",
-    "publish": "yarn build && hexo deploy"
+    "dev": "yarn build && hexo server"
   },
   "dependencies": {
     "hexo": "^3.9.0",
