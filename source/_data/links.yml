@@ -1,9 +1,14 @@
 Vincent'Studio:
     link: https://vincentstudio.info
     avatar: https://vincentstudio.info/images/logo.png
-    descr: "全栈技术大佬"
+    descr: "没有他不会的, 全栈技术大佬"
 
-LuckyDogg:
-    link: https://blog.hcyj.info/friends/
+LuckyDog:
+    link: https://blog.hcyj.info
     avatar: https://avatars2.githubusercontent.com/u/16526987?s=460&v=4
-    descr: "可软可硬, 别误会, 头像是他女朋友"
+    descr: "可软可硬, 后端运维大佬"
+
+hsc0der:
+    link: https://blog.hcyj.info/friends/
+    avatar: https://hscoder.xyz/images/avatar.png
+    descr: "日常秀恩爱, unity 图形大佬"
