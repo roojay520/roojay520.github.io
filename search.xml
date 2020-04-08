@@ -694,11 +694,11 @@
     
     
     <entry>
-      <title>全局命名空间和模块</title>
-      <link href="/pages/f9a582e/"/>
-      <url>/pages/f9a582e/</url>
+      <title>作用域闭包</title>
+      <link href="/pages/78f2b66e/"/>
+      <url>/pages/78f2b66e/</url>
       
-        <content type="html"><![CDATA[<h2 id="全局命名空间"><a href="#全局命名空间" class="headerlink" title="全局命名空间"></a>全局命名空间</h2><p>库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。</p><p>例如：</p><pre><code class="javascript">var mylibrary = {    name: &#39;haha&#39;,    eat: (name) =&gt; {        console.log(`${name} is eating`);    }};</code></pre><h2 id="模块管理"><a href="#模块管理" class="headerlink" title="模块管理"></a>模块管理</h2><p>通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。</p><p>用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>wiki 上对闭包的定义：<br>闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），<strong>是引用了自由变量的函数。</strong>这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为<strong>闭包是由函数和与其相关的引用环境组合而成的实体。</strong></p><p><strong>自由变量的定义</strong>：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。</p><p>当函数<strong>可以记住并访问所在的词法作用域</strong>时，就产生了<strong>闭包</strong>，即使函数是在自己定义的词法作用域以外的地方执行。</p><p>闭包使得函数在<strong>定义时的词法作用域以外</strong>的地方被调用时，函数<strong>可以继续访问定义时的词法作用域</strong>。</p><p>在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。</p><p>在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。</p><pre><code class="javascript">function foo() {    let a = 0;    return function func() {        console.log(a);        a++;    };}const bar = foo();const baz = foo();bar(); // 0bar(); // 1 闭包保存上次计算的值bar(); // 2baz(); // 0 新生成函数</code></pre><p>将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。</p><p>无论通过何种手段<strong>将内部函数传递到所在的词法作用域以外</strong>，它都会<strong>持有对原始定义作用域的引用</strong>，无论在何处<strong>执行这个函数都会使用闭包</strong>。</p>]]></content>
       
       
       <categories>
@@ -719,11 +719,11 @@
     
     
     <entry>
-      <title>作用域闭包</title>
-      <link href="/pages/78f2b66e/"/>
-      <url>/pages/78f2b66e/</url>
+      <title>全局命名空间和模块</title>
+      <link href="/pages/f9a582e/"/>
+      <url>/pages/f9a582e/</url>
       
-        <content type="html"><![CDATA[<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>wiki 上对闭包的定义：<br>闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），<strong>是引用了自由变量的函数。</strong>这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为<strong>闭包是由函数和与其相关的引用环境组合而成的实体。</strong></p><p><strong>自由变量的定义</strong>：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。</p><p>当函数<strong>可以记住并访问所在的词法作用域</strong>时，就产生了<strong>闭包</strong>，即使函数是在自己定义的词法作用域以外的地方执行。</p><p>闭包使得函数在<strong>定义时的词法作用域以外</strong>的地方被调用时，函数<strong>可以继续访问定义时的词法作用域</strong>。</p><p>在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。</p><p>在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。</p><pre><code class="javascript">function foo() {    let a = 0;    return function func() {        console.log(a);        a++;    };}const bar = foo();const baz = foo();bar(); // 0bar(); // 1 闭包保存上次计算的值bar(); // 2baz(); // 0 新生成函数</code></pre><p>将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。</p><p>无论通过何种手段<strong>将内部函数传递到所在的词法作用域以外</strong>，它都会<strong>持有对原始定义作用域的引用</strong>，无论在何处<strong>执行这个函数都会使用闭包</strong>。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="全局命名空间"><a href="#全局命名空间" class="headerlink" title="全局命名空间"></a>全局命名空间</h2><p>库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。</p><p>例如：</p><pre><code class="javascript">var mylibrary = {    name: &#39;haha&#39;,    eat: (name) =&gt; {        console.log(`${name} is eating`);    }};</code></pre><h2 id="模块管理"><a href="#模块管理" class="headerlink" title="模块管理"></a>模块管理</h2><p>通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。</p><p>用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。</p>]]></content>
       
       
       <categories>
@@ -819,31 +819,6 @@
     
     
     <entry>
-      <title>常用正则表达式</title>
-      <link href="/pages/81d5af05/"/>
-      <url>/pages/81d5af05/</url>
-      
-        <content type="html"><![CDATA[<h2 id="一、校验数字的表达式"><a href="#一、校验数字的表达式" class="headerlink" title="一、校验数字的表达式"></a>一、校验数字的表达式</h2><ol><li><p>数字：<code>^[0-9]*$</code></p></li><li><p>n位的数字：<code>^\d{n}$</code></p></li><li><p>至少n位的数字：<code>^\d{n,}$</code></p></li><li><p>m-n位的数字：<code>^\d{m,n}$</code></p></li><li><p>零和非零开头的数字：<code>^(0|[1-9][0-9]*)$</code></p></li><li><p>非零开头的最多带两位小数的数字：<code>^([1-9][0-9]*)+(.[0-9]{1,2})?$</code></p></li><li><p>带1-2位小数的正数或负数：<code>^(\-)?\d+(\.\d{1,2})?$</code></p></li><li><p>正数、负数、和小数：<code>^(\-|\+)?\d+(\.\d+)?$</code></p></li><li><p>有两位小数的正实数：<code>^[0-9]+(.[0-9]{2})?$</code></p></li><li><p>有1~3位小数的正实数：<code>^[0-9]+(.[0-9]{1,3})?$</code></p></li><li><p>非零的正整数：<code>^[1-9]\d*$ 或 ^([1-9][0-9]*){1,3}$ 或 ^\+?[1-9][0-9]*$</code></p></li><li><p>非零的负整数：<code>^\-[1-9][]0-9&quot;*$ 或 ^-[1-9]\d*$</code></p></li><li><p>非负整数：<code>^\d+$ 或 ^[1-9]\d*|0$</code></p></li><li><p>非正整数：<code>^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$</code></p></li><li><p>非负浮点数：<code>^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$</code></p></li><li><p>非正浮点数：<code>^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$</code></p></li><li><p>正浮点数：<code>^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$</code></p></li><li><p>负浮点数：<code>^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$</code></p></li><li><p>浮点数：<code>^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$</code></p></li></ol><h2 id="二、校验字符的表达式"><a href="#二、校验字符的表达式" class="headerlink" title="二、校验字符的表达式"></a>二、校验字符的表达式</h2><ol><li><p>汉字：<code>^[\u4e00-\u9fa5]{0,}$</code></p></li><li><p>英文和数字：<code>^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$</code></p></li><li><p>长度为3-20的所有字符：<code>^.{3,20}$</code></p></li><li><p>由26个英文字母组成的字符串：<code>^[A-Za-z]+$</code></p></li><li><p>由26个大写英文字母组成的字符串：<code>^[A-Z]+$</code></p></li><li><p>由26个小写英文字母组成的字符串：<code>^[a-z]+$</code></p></li><li><p>由数字和26个英文字母组成的字符串：<code>^[A-Za-z0-9]+$</code></p></li><li><p>由数字、26个英文字母或者下划线组成的字符串：<code>^\w+$ 或 ^\w{3,20}$</code></p></li><li><p>中文、英文、数字包括下划线：<code>^[\u4E00-\u9FA5A-Za-z0-9_]+$</code></p></li><li><p>中文、英文、数字但不包括下划线等符号：<code>^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$</code></p></li><li><p>可以输入含有<code>^%&amp;&#39;,;=?$\</code>“等字符：<code>[^%&amp;&#39;,;=?$\x22]+ 12 禁止输入含有~的字符：[^~\x22]+</code></p></li></ol><h2 id="三、特殊需求表达式"><a href="#三、特殊需求表达式" class="headerlink" title="三、特殊需求表达式"></a>三、特殊需求表达式</h2><ol><li><p>Email地址：<code>^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</code></p></li><li><p>域名：<code>[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?</code></p></li><li><p>InternetURL：<code>[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$</code></p></li><li><p>手机号码：    ^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$</p></li><li><p>电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：<code>^(\(\d{3,4}-)|\d{3.4}-)?\d{7,8}$</code></p></li><li><p>国内电话号码(0511-4405222、021-87888822)：<code>\d{3}-\d{8}|\d{4}-\d{7}</code></p></li><li><p>身份证号(15位、18位数字)：<code>^\d{15}|\d{18}$</code></p></li><li><p>短身份证号码(数字、字母x结尾)：<code>^([0-9]){7,18}(x|X)?$ 或 ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$</code></p></li><li><p>帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：<code>^[a-zA-Z][a-zA-Z0-9_]{4,15}$</code></p></li><li><p>密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：<code>^[a-zA-Z]\w{5,17}$</code></p></li><li><p>强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：<code>^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$</code></p></li><li><p>日期格式：<code>^\d{4}-\d{1,2}-\d{1,2}</code></p></li><li><p>一年的12个月(01～09和1～12)：<code>^(0?[1-9]|1[0-2])$</code></p></li><li><p>一个月的31天(01～09和1～31)：<code>^((0?[1-9])|((1|2)[0-9])|30|31)$</code></p></li><li><p>钱的输入格式：</p><p>a. 有四种钱的表示形式我们可以接受:”10000.00” 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：<code>^[1-9][0-9]*$</code></p><p>b. 这表示任意一个不以0开头的数字,但是,这也意味着一个字符”0”不通过,所以我们采用下面的形式：<code>^(0|[1-9][0-9]*)$</code></p><p>c. 一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：<code>^(0|-?[1-9][0-9]*)$</code></p><p>e. 这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：<code>^[0-9]+(.[0-9]+)?$</code></p><p>f. 必须说明的是,小数点后面至少应该有1位数,所以”10.”是不通过的,但是 “10” 和 “10.2” 是通过的：<code>^[0-9]+(.[0-9]{2})?$</code></p><p>g. 这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：<code>^[0-9]+(.[0-9]{1,2})?$</code></p><p>h. 这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：<code>^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$</code></p><p>i. 1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：<code>^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$</code></p></li></ol><p><strong>备注</strong>：这就是最终结果了,别忘了”+”可以用”*”替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里</p><ol start="16"><li><p>xml文件：<code>^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$</code></p></li><li><p>中文字符的正则表达式：<code>[\u4e00-\u9fa5]</code></p></li><li><p>双字节字符：<code>[^\x00-\xff]</code> (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</p></li><li><p>空白行的正则表达式：<code>\n\s*\r</code> (可以用来删除空白行)</p></li><li><p>HTML标记的正则表达式：<code>&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? /&gt;</code> (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</p></li><li><p>首尾空白字符的正则表达式：<code>^\s*|\s*$或(^\s*)|(\s*$)</code> (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</p></li><li><p>腾讯QQ号：<code>[1-9][0-9]{4,}</code> (腾讯QQ号从10000开始)</p></li><li><p>中国邮政编码：<code>[1-9]\d{5}(?!\d)</code> (中国邮政编码为6位数字)</p></li><li><p>IP地址：<code>\d+\.\d+\.\d+\.\d+</code> (提取IP地址时有用)</p></li><li><p>IP地址：<code>((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))</code></p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Tools </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> RegEx </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>多个SSH管理</title>
       <link href="/pages/8ee164b8/"/>
       <url>/pages/8ee164b8/</url>
@@ -894,23 +869,23 @@
     
     
     <entry>
-      <title>数组与字符串常用方法</title>
-      <link href="/pages/4b02d38a/"/>
-      <url>/pages/4b02d38a/</url>
+      <title>常用正则表达式</title>
+      <link href="/pages/81d5af05/"/>
+      <url>/pages/81d5af05/</url>
       
-        <content type="html"><![CDATA[<h2 id="split-将字符串分割成数组"><a href="#split-将字符串分割成数组" class="headerlink" title="split() 将字符串分割成数组"></a>split() 将字符串分割成数组</h2><p>str.split(‘分隔符’, 返回数组最大的长度)</p><p>根据分隔符(字符串或者正则表达式)将一个字符串分割成数组。</p><pre><code class="javascript">const str = &#39;wind rain fire&#39;;const arr = str.split(&#39; &#39;);console.log(arr); // arr[&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;]</code></pre><h2 id="join-数组连接成一个字符串"><a href="#join-数组连接成一个字符串" class="headerlink" title="join() 数组连接成一个字符串"></a>join() 数组连接成一个字符串</h2><p>arr.join(‘分隔符’)</p><p>分隔符默认值为<code>,</code><br>将数组（或一个类数组对象）的所有元素使用分隔符连接成一个新字符串。</p><pre><code class="javascript">const arr = [&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;];const str = arr.join(&#39;+&#39;);console.log(str); // wind+rain+fire</code></pre><h2 id="字符串快速排序"><a href="#字符串快速排序" class="headerlink" title="字符串快速排序"></a>字符串快速排序</h2><pre><code class="javascript">const strSort = str =&gt; str.split(&#39;&#39;).sort().join(&#39;&#39;);strSort(str);</code></pre><h2 id="map-创建新数组"><a href="#map-创建新数组" class="headerlink" title="map() 创建新数组"></a>map() 创建新数组</h2><p>arr.map(callback)</p><p>创建一个新数组，新数组的每个元素都是 callback 函数的结果。</p><pre><code class="javascript">const arr = [1, 2, 3];const newArr = arr.map(num =&gt; num * 2);console.log(newArr); // newArr[2, 4, 6]</code></pre><h2 id="数组取最大最小值"><a href="#数组取最大最小值" class="headerlink" title="数组取最大最小值"></a>数组取最大最小值</h2><pre><code class="javascript">Math.max.apply(null, arr);  // 取数组最大值Math.min.apply(null, arr);  // 取数组最小值</code></pre><p>ES6 扩展 rest 不定参数写法：</p><pre><code class="javascript">Math.max(...arr);  // 取数组最大值Math.min(...arr);  // 取数组最小值</code></pre><h2 id="filter-数组中取通过测试的值"><a href="#filter-数组中取通过测试的值" class="headerlink" title="filter() 数组中取通过测试的值"></a>filter() 数组中取通过测试的值</h2><p>filter(fn)</p><p>创建一个新数组, 其包含通过 fn 函数测试返回值为 true 的所有元素。</p><pre><code class="javascript">let [...arr] = [1, 2, 4, 7, 6];const isOdd = num =&gt; num % 2;let odd = arr.filter(isOdd); // odd is [1, 7]</code></pre><h2 id="slice-取一部分数组"><a href="#slice-取一部分数组" class="headerlink" title="slice() 取一部分数组"></a>slice() 取一部分数组</h2><p>slice(start, end)</p><ul><li>start, end 数组下标</li></ul><p>返回一个从 start 到 end（不包括 end）选择的数组的一部分浅拷贝到一个新数组对象。原始数组不会被修改。</p><pre><code class="javascript">let arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;];let arr13 = arr.slice(1, 3);console.log(arr); // [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]console.log(arr13); // [&#39;b&#39;, &#39;c&#39;]</code></pre><p>如果参数为负数，例如<code>start = -3, end = -1</code>，就表示倒数第三位到倒数第一位，不包括</p><h2 id="reduce-数组求和"><a href="#reduce-数组求和" class="headerlink" title="reduce() 数组求和"></a>reduce() 数组求和</h2><pre><code class="javascript">let arr = [1, 3, 5];let sumArr = arr.reduce((sum, value) =&gt; sum + value, 0);// sumArr is 9.</code></pre><p>sum 上一次调用回调返回的值，或者是提供的初始值 0;<br>num 数组中正在处理的元素;<br>0 可选项，其值用于第一次调用 callback 的第一个参数 sum。如果没有设置初始值，则将数组中的第一个元素作为初始值。空数组调用 reduce 时没有设置初始值将会报错。</p><h2 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h2><p>str.repeat(n)</p><p>创建 n 个 str 的副本，将其连接在一起返回一个新的字符串。</p><pre><code class="javascript">&#39;ha&#39;.repeat(3); // &#39;hahaha&#39;&#39;ha&#39;.repeat(2); // &#39;haha&#39;</code></pre><h2 id="match-字符串中正则取值"><a href="#match-字符串中正则取值" class="headerlink" title="match() 字符串中正则取值"></a>match() 字符串中正则取值</h2><p>str.match(regx)</p><p>方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配，返回匹配值构成的数组。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="一、校验数字的表达式"><a href="#一、校验数字的表达式" class="headerlink" title="一、校验数字的表达式"></a>一、校验数字的表达式</h2><ol><li><p>数字：<code>^[0-9]*$</code></p></li><li><p>n位的数字：<code>^\d{n}$</code></p></li><li><p>至少n位的数字：<code>^\d{n,}$</code></p></li><li><p>m-n位的数字：<code>^\d{m,n}$</code></p></li><li><p>零和非零开头的数字：<code>^(0|[1-9][0-9]*)$</code></p></li><li><p>非零开头的最多带两位小数的数字：<code>^([1-9][0-9]*)+(.[0-9]{1,2})?$</code></p></li><li><p>带1-2位小数的正数或负数：<code>^(\-)?\d+(\.\d{1,2})?$</code></p></li><li><p>正数、负数、和小数：<code>^(\-|\+)?\d+(\.\d+)?$</code></p></li><li><p>有两位小数的正实数：<code>^[0-9]+(.[0-9]{2})?$</code></p></li><li><p>有1~3位小数的正实数：<code>^[0-9]+(.[0-9]{1,3})?$</code></p></li><li><p>非零的正整数：<code>^[1-9]\d*$ 或 ^([1-9][0-9]*){1,3}$ 或 ^\+?[1-9][0-9]*$</code></p></li><li><p>非零的负整数：<code>^\-[1-9][]0-9&quot;*$ 或 ^-[1-9]\d*$</code></p></li><li><p>非负整数：<code>^\d+$ 或 ^[1-9]\d*|0$</code></p></li><li><p>非正整数：<code>^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$</code></p></li><li><p>非负浮点数：<code>^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$</code></p></li><li><p>非正浮点数：<code>^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$</code></p></li><li><p>正浮点数：<code>^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$</code></p></li><li><p>负浮点数：<code>^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$</code></p></li><li><p>浮点数：<code>^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$</code></p></li></ol><h2 id="二、校验字符的表达式"><a href="#二、校验字符的表达式" class="headerlink" title="二、校验字符的表达式"></a>二、校验字符的表达式</h2><ol><li><p>汉字：<code>^[\u4e00-\u9fa5]{0,}$</code></p></li><li><p>英文和数字：<code>^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$</code></p></li><li><p>长度为3-20的所有字符：<code>^.{3,20}$</code></p></li><li><p>由26个英文字母组成的字符串：<code>^[A-Za-z]+$</code></p></li><li><p>由26个大写英文字母组成的字符串：<code>^[A-Z]+$</code></p></li><li><p>由26个小写英文字母组成的字符串：<code>^[a-z]+$</code></p></li><li><p>由数字和26个英文字母组成的字符串：<code>^[A-Za-z0-9]+$</code></p></li><li><p>由数字、26个英文字母或者下划线组成的字符串：<code>^\w+$ 或 ^\w{3,20}$</code></p></li><li><p>中文、英文、数字包括下划线：<code>^[\u4E00-\u9FA5A-Za-z0-9_]+$</code></p></li><li><p>中文、英文、数字但不包括下划线等符号：<code>^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$</code></p></li><li><p>可以输入含有<code>^%&amp;&#39;,;=?$\</code>“等字符：<code>[^%&amp;&#39;,;=?$\x22]+ 12 禁止输入含有~的字符：[^~\x22]+</code></p></li></ol><h2 id="三、特殊需求表达式"><a href="#三、特殊需求表达式" class="headerlink" title="三、特殊需求表达式"></a>三、特殊需求表达式</h2><ol><li><p>Email地址：<code>^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</code></p></li><li><p>域名：<code>[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?</code></p></li><li><p>InternetURL：<code>[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$</code></p></li><li><p>手机号码：    ^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$</p></li><li><p>电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：<code>^(\(\d{3,4}-)|\d{3.4}-)?\d{7,8}$</code></p></li><li><p>国内电话号码(0511-4405222、021-87888822)：<code>\d{3}-\d{8}|\d{4}-\d{7}</code></p></li><li><p>身份证号(15位、18位数字)：<code>^\d{15}|\d{18}$</code></p></li><li><p>短身份证号码(数字、字母x结尾)：<code>^([0-9]){7,18}(x|X)?$ 或 ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$</code></p></li><li><p>帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：<code>^[a-zA-Z][a-zA-Z0-9_]{4,15}$</code></p></li><li><p>密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：<code>^[a-zA-Z]\w{5,17}$</code></p></li><li><p>强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：<code>^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$</code></p></li><li><p>日期格式：<code>^\d{4}-\d{1,2}-\d{1,2}</code></p></li><li><p>一年的12个月(01～09和1～12)：<code>^(0?[1-9]|1[0-2])$</code></p></li><li><p>一个月的31天(01～09和1～31)：<code>^((0?[1-9])|((1|2)[0-9])|30|31)$</code></p></li><li><p>钱的输入格式：</p><p>a. 有四种钱的表示形式我们可以接受:”10000.00” 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：<code>^[1-9][0-9]*$</code></p><p>b. 这表示任意一个不以0开头的数字,但是,这也意味着一个字符”0”不通过,所以我们采用下面的形式：<code>^(0|[1-9][0-9]*)$</code></p><p>c. 一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：<code>^(0|-?[1-9][0-9]*)$</code></p><p>e. 这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：<code>^[0-9]+(.[0-9]+)?$</code></p><p>f. 必须说明的是,小数点后面至少应该有1位数,所以”10.”是不通过的,但是 “10” 和 “10.2” 是通过的：<code>^[0-9]+(.[0-9]{2})?$</code></p><p>g. 这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：<code>^[0-9]+(.[0-9]{1,2})?$</code></p><p>h. 这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：<code>^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$</code></p><p>i. 1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：<code>^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$</code></p></li></ol><p><strong>备注</strong>：这就是最终结果了,别忘了”+”可以用”*”替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里</p><ol start="16"><li><p>xml文件：<code>^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$</code></p></li><li><p>中文字符的正则表达式：<code>[\u4e00-\u9fa5]</code></p></li><li><p>双字节字符：<code>[^\x00-\xff]</code> (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</p></li><li><p>空白行的正则表达式：<code>\n\s*\r</code> (可以用来删除空白行)</p></li><li><p>HTML标记的正则表达式：<code>&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? /&gt;</code> (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</p></li><li><p>首尾空白字符的正则表达式：<code>^\s*|\s*$或(^\s*)|(\s*$)</code> (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</p></li><li><p>腾讯QQ号：<code>[1-9][0-9]{4,}</code> (腾讯QQ号从10000开始)</p></li><li><p>中国邮政编码：<code>[1-9]\d{5}(?!\d)</code> (中国邮政编码为6位数字)</p></li><li><p>IP地址：<code>\d+\.\d+\.\d+\.\d+</code> (提取IP地址时有用)</p></li><li><p>IP地址：<code>((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))</code></p></li></ol>]]></content>
       
       
       <categories>
           
-          <category> JavaScript </category>
+          <category> Tools </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> JavaScript </tag>
+            <tag> RegEx </tag>
             
         </tags>
       
@@ -919,11 +894,11 @@
     
     
     <entry>
-      <title>进制快速转换</title>
-      <link href="/pages/8b41c91c/"/>
-      <url>/pages/8b41c91c/</url>
+      <title>数组与字符串常用方法</title>
+      <link href="/pages/4b02d38a/"/>
+      <url>/pages/4b02d38a/</url>
       
-        <content type="html"><![CDATA[<h2 id="十进制转其他进制"><a href="#十进制转其他进制" class="headerlink" title="十进制转其他进制"></a>十进制转其他进制</h2><pre><code class="javascript">const i = 10;i.toString(2);  // 2 进制 1010i.toString(8);  // 8 进制 12i.toString(16);  // 16 进制 ai.toString(32);  // 32 进制 a</code></pre><h2 id="其他进制转十进制"><a href="#其他进制转十进制" class="headerlink" title="其他进制转十进制"></a>其他进制转十进制</h2><pre><code class="javascript">parsetInt(x, 2); // 2 进制转 10进制parsetInt(x, 8); // 8 进制转 10 进制parsetInt(x, 16); // 16 进制转 10 进制</code></pre><h2 id="非十进制转十进制"><a href="#非十进制转十进制" class="headerlink" title="非十进制转十进制"></a>非十进制转十进制</h2><p>先转化为10进制， 然后再利用toString(参数)， 转化成不同的进制。</p><pre><code class="javascript">parsetInt(x, 2).toString(8); // 2 进制转 8进制</code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="split-将字符串分割成数组"><a href="#split-将字符串分割成数组" class="headerlink" title="split() 将字符串分割成数组"></a>split() 将字符串分割成数组</h2><p>str.split(‘分隔符’, 返回数组最大的长度)</p><p>根据分隔符(字符串或者正则表达式)将一个字符串分割成数组。</p><pre><code class="javascript">const str = &#39;wind rain fire&#39;;const arr = str.split(&#39; &#39;);console.log(arr); // arr[&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;]</code></pre><h2 id="join-数组连接成一个字符串"><a href="#join-数组连接成一个字符串" class="headerlink" title="join() 数组连接成一个字符串"></a>join() 数组连接成一个字符串</h2><p>arr.join(‘分隔符’)</p><p>分隔符默认值为<code>,</code><br>将数组（或一个类数组对象）的所有元素使用分隔符连接成一个新字符串。</p><pre><code class="javascript">const arr = [&#39;wind&#39;, &#39;rain&#39;, &#39;fire&#39;];const str = arr.join(&#39;+&#39;);console.log(str); // wind+rain+fire</code></pre><h2 id="字符串快速排序"><a href="#字符串快速排序" class="headerlink" title="字符串快速排序"></a>字符串快速排序</h2><pre><code class="javascript">const strSort = str =&gt; str.split(&#39;&#39;).sort().join(&#39;&#39;);strSort(str);</code></pre><h2 id="map-创建新数组"><a href="#map-创建新数组" class="headerlink" title="map() 创建新数组"></a>map() 创建新数组</h2><p>arr.map(callback)</p><p>创建一个新数组，新数组的每个元素都是 callback 函数的结果。</p><pre><code class="javascript">const arr = [1, 2, 3];const newArr = arr.map(num =&gt; num * 2);console.log(newArr); // newArr[2, 4, 6]</code></pre><h2 id="数组取最大最小值"><a href="#数组取最大最小值" class="headerlink" title="数组取最大最小值"></a>数组取最大最小值</h2><pre><code class="javascript">Math.max.apply(null, arr);  // 取数组最大值Math.min.apply(null, arr);  // 取数组最小值</code></pre><p>ES6 扩展 rest 不定参数写法：</p><pre><code class="javascript">Math.max(...arr);  // 取数组最大值Math.min(...arr);  // 取数组最小值</code></pre><h2 id="filter-数组中取通过测试的值"><a href="#filter-数组中取通过测试的值" class="headerlink" title="filter() 数组中取通过测试的值"></a>filter() 数组中取通过测试的值</h2><p>filter(fn)</p><p>创建一个新数组, 其包含通过 fn 函数测试返回值为 true 的所有元素。</p><pre><code class="javascript">let [...arr] = [1, 2, 4, 7, 6];const isOdd = num =&gt; num % 2;let odd = arr.filter(isOdd); // odd is [1, 7]</code></pre><h2 id="slice-取一部分数组"><a href="#slice-取一部分数组" class="headerlink" title="slice() 取一部分数组"></a>slice() 取一部分数组</h2><p>slice(start, end)</p><ul><li>start, end 数组下标</li></ul><p>返回一个从 start 到 end（不包括 end）选择的数组的一部分浅拷贝到一个新数组对象。原始数组不会被修改。</p><pre><code class="javascript">let arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;];let arr13 = arr.slice(1, 3);console.log(arr); // [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]console.log(arr13); // [&#39;b&#39;, &#39;c&#39;]</code></pre><p>如果参数为负数，例如<code>start = -3, end = -1</code>，就表示倒数第三位到倒数第一位，不包括</p><h2 id="reduce-数组求和"><a href="#reduce-数组求和" class="headerlink" title="reduce() 数组求和"></a>reduce() 数组求和</h2><pre><code class="javascript">let arr = [1, 3, 5];let sumArr = arr.reduce((sum, value) =&gt; sum + value, 0);// sumArr is 9.</code></pre><p>sum 上一次调用回调返回的值，或者是提供的初始值 0;<br>num 数组中正在处理的元素;<br>0 可选项，其值用于第一次调用 callback 的第一个参数 sum。如果没有设置初始值，则将数组中的第一个元素作为初始值。空数组调用 reduce 时没有设置初始值将会报错。</p><h2 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h2><p>str.repeat(n)</p><p>创建 n 个 str 的副本，将其连接在一起返回一个新的字符串。</p><pre><code class="javascript">&#39;ha&#39;.repeat(3); // &#39;hahaha&#39;&#39;ha&#39;.repeat(2); // &#39;haha&#39;</code></pre><h2 id="match-字符串中正则取值"><a href="#match-字符串中正则取值" class="headerlink" title="match() 字符串中正则取值"></a>match() 字符串中正则取值</h2><p>str.match(regx)</p><p>方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配，返回匹配值构成的数组。</p>]]></content>
       
       
       <categories>
@@ -961,6 +936,31 @@
         <tags>
             
             <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>进制快速转换</title>
+      <link href="/pages/8b41c91c/"/>
+      <url>/pages/8b41c91c/</url>
+      
+        <content type="html"><![CDATA[<h2 id="十进制转其他进制"><a href="#十进制转其他进制" class="headerlink" title="十进制转其他进制"></a>十进制转其他进制</h2><pre><code class="javascript">const i = 10;i.toString(2);  // 2 进制 1010i.toString(8);  // 8 进制 12i.toString(16);  // 16 进制 ai.toString(32);  // 32 进制 a</code></pre><h2 id="其他进制转十进制"><a href="#其他进制转十进制" class="headerlink" title="其他进制转十进制"></a>其他进制转十进制</h2><pre><code class="javascript">parsetInt(x, 2); // 2 进制转 10进制parsetInt(x, 8); // 8 进制转 10 进制parsetInt(x, 16); // 16 进制转 10 进制</code></pre><h2 id="非十进制转十进制"><a href="#非十进制转十进制" class="headerlink" title="非十进制转十进制"></a>非十进制转十进制</h2><p>先转化为10进制， 然后再利用toString(参数)， 转化成不同的进制。</p><pre><code class="javascript">parsetInt(x, 2).toString(8); // 2 进制转 8进制</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -1174,6 +1174,31 @@
       <url>/pages/265f6f6b/</url>
       
         <content type="html"><![CDATA[<h2 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h2><p>在操作系统中能（同时）运行多个任务（程序）。</p><h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>在同一应用程序中有多个顺序流（同时）执行。<br><img src="http://i.imgur.com/svr5BHK.png" alt></p><p><img src="http://i.imgur.com/Pw3R29D.png" alt></p><h2 id="线程的创建方法"><a href="#线程的创建方法" class="headerlink" title="线程的创建方法"></a>线程的创建方法</h2><h3 id="继承Thread类创建多线程"><a href="#继承Thread类创建多线程" class="headerlink" title="继承Thread类创建多线程"></a>继承Thread类创建多线程</h3><ul><li>继承Thread类，覆写Thread类的run（）方法，在run（）方法中实现运行在线程上的代码。</li></ul><ol><li>定义一个类FirstThread继承Thread类，覆写Thread类的run（）方法；</li><li>生成线程类的对象firstThread；</li><li>启动线程start（）方法。</li></ol><h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">public class Test{    public static void main(String args[]){        //生成线程类的对象        FirstThread firstThread = new FirstThread();        //启动线程start（）方法        firstThread.start();        for(int i = 1; i &lt; 50; i++){            System.out.println(&quot;Main----&gt;:&quot; + i);        }    }}//继承Thread类，覆写Thread类的run（）方法class FirstThread extends Thread{    public void run(){        for(int i = 1; i &lt; 50; i++){            System.out.println(&quot;FirstThread---&gt;:&quot; + i);        }    }}</code></pre><h3 id="实现Runnable接口创建多线程"><a href="#实现Runnable接口创建多线程" class="headerlink" title="实现Runnable接口创建多线程"></a>实现Runnable接口创建多线程</h3><ul><li>提供一个实现接口Runnable的类作为线程的目标对象，在初始化一个Thread类或者Thread子类的线程对象时，把目标对象传递给这个线程实例，由该目标对象提供线程体。</li></ul><ol><li>定义一个类FirstThread实现Runnable接口；</li><li>生成Runnable实现类FirstThread的一个对象firstThread；</li><li>生成一个Thread对象，并将firstThread作为参数传递给该Thread对象；</li><li>通知Thread对象执行start（）方法。</li></ol><h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><pre><code class="java">public class Test{    public static void main(String args[]){        //生成Runnable实现类FirstThread的一个对象firstThread        FirstThread firstThread = new FirstThread();        //生成一个Thread对象        //并将firstThread作为参数传递给该Thread对象        Thread thread = new Thread(firstThread);        //通知Thread对象执行start（）方法        thread.start();        for(int i = 1; i &lt;50; i++){            System.out.println(&quot;Main---&gt;:&quot; + i);        }    }}//实现Runnable接口的类FirstThreadclass FirstThread implements Runnable{    public void run(){        for(int i = 1; i &lt;50; i++){            System.out.println(&quot;FirstThread---&gt;:&quot; + i);        }    }}</code></pre><h2 id="线程的简单控制方法"><a href="#线程的简单控制方法" class="headerlink" title="线程的简单控制方法"></a>线程的简单控制方法</h2><ul><li><p>中断线程</p><ul><li>Thread.sleep（n毫秒）//当前线程休眠n毫秒</li><li>Thread.yield（）//当前线程自动让出CPU，AB重新线程抢占CPU</li></ul></li><li><p>设置线程的优先级</p><ul><li>getPriority（）</li><li>setPriority（）<ul><li>thread.setPriority(Thread.MAX_PRIORITY) //设置最大优先级为10</li><li>thread.setPriority(Thread.MIN_PRIORITY) //设置最小优先级为1</li></ul></li></ul></li></ul><h2 id="同步语法"><a href="#同步语法" class="headerlink" title="同步语法"></a>同步语法</h2><h3 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h3><pre><code class="java">synchronized(this) {   //this：同步锁        代码块}</code></pre><ul><li>synchronized锁住一个对象。</li><li>如果线程A得到同步锁，那么他将可以执行代码块，<br> 即使线程B从线程A手中抢到了同步锁，B也不能立即执行代码块，它必须等到线程A执行完这个代码块之后才能执行。</li></ul><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre><code class="java">public class Test{    public static void main(String args[]){        MyThread myThread = new MyThread();        //生成两个Thread对象，但是这两个Thread对象共用同一个线程体        Thread t1 = new Thread(myThread);        Thread t2 = new Thread(myThread);        //通过Thread对象的setName（）方法设置线程名字        //使用getName方法获取线程的名字        t1.setName(&quot;线程A&quot;);        t2.setName(&quot;线程B&quot;);        //分别启动两个线程        t1.start();        t2.start();    }}class MyThread implements Runnable{    int i = 100;    public void run(){        while(true){            synchronized(this){ //this：同步锁                //Thread.currentThread()获取当前这段代码运行的线程位置                System.out.println(Thread.currentThread().getName() + i);                i--;                Thread.yield();                if(i &lt; 0){                    break;                }            }        }    }}</code></pre><h3 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a>同步方法</h3><pre><code class="java">public synchronized void run(){    代码块}</code></pre><ul><li>synchronized锁住this。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java中的异常</title>
+      <link href="/pages/f029d2bb/"/>
+      <url>/pages/f029d2bb/</url>
+      
+        <content type="html"><![CDATA[<ol><li>什么是异常</li><li>异常的分类</li><li>try…catch…finally结构的使用方法</li></ol><h2 id="1-什么是异常？"><a href="#1-什么是异常？" class="headerlink" title="1. 什么是异常？"></a>1. 什么是异常？</h2><blockquote></blockquote><ul><li><p>异常(Exception)：中断了正常指令流的事件。</p></li><li><p>异常是一个对象；</p></li><li><p>异常产生于程序运行时；</p></li><li><p>指令流：程序执行时一系列的连续指令称为指令流。</p><blockquote></blockquote><p>示例：</p><pre><code class="java">class Test{  public static void main(String args[]){      int i = 1 / 0;  }}</code></pre><p>抛出异常：</p><blockquote><p>Exception in thread “main” java.lang.ArithmeticException: / by zero<br>  at Test3.main(Test3.java:6)</p></blockquote></li><li><p>Exception in thread “main” ：在主线程中出现异常；</p></li><li><p>ArithmeticException：异常的名称，算术异常；</p></li><li><p>/ by zero：被0除；</p></li><li><p>at Test.main(Test.java:3)：异常位置；</p></li></ul><h2 id="2-异常的分类"><a href="#2-异常的分类" class="headerlink" title="2. 异常的分类"></a>2. 异常的分类</h2><h3 id="JDK提供的类："><a href="#JDK提供的类：" class="headerlink" title="JDK提供的类："></a>JDK提供的类：</h3><blockquote><p><img src="http://i.imgur.com/gTBhe2x.png" alt></p></blockquote><ol><li>Throwable：所有异常的父类；</li><li>Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭；</li><li>Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption<blockquote></blockquote>RuntimeException + Error 和其子类都是属于uncheckexception<br>Exception类中除了 RuntimeException之外的类，都是属于checkexception</li></ol><h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4><h5 id="checkException"><a href="#checkException" class="headerlink" title="checkException"></a>checkException</h5><blockquote></blockquote><p>checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。<br>示例：</p><pre><code class="java">class TestCheck{    public static void main(String args[]){        //CheckException        Thread.sleep(1000); //让当前线程休眠1000ms    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/xMd1LOi.png" alt></p><h5 id="uncheckException（-RuntimeException）"><a href="#uncheckException（-RuntimeException）" class="headerlink" title="uncheckException（ RuntimeException）"></a>uncheckException（ RuntimeException）</h5><blockquote></blockquote><p>运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成<br>示例：</p><pre><code class="java">class Test{    public static void main(String args[]){        //UncheckException        int i = 1 / 0;    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/ll7JnfN.png" alt></p><h2 id="3-try…catch…finally结构"><a href="#3-try…catch…finally结构" class="headerlink" title="3. try…catch…finally结构"></a>3. try…catch…finally结构</h2><blockquote></blockquote><pre><code class="java">try{       //代码A    //有可能出现异常的代码B    //代码C}catch(Exception e){ //虚拟机产生的异常对象e    e.printStackTrace(); //处理异常的代码D    //代码E}finally{    //异常的出口    //执行扫尾工作的代码F}</code></pre><h4 id="如果try中代码B没有异常：执行代码A-B-C-F"><a href="#如果try中代码B没有异常：执行代码A-B-C-F" class="headerlink" title="如果try中代码B没有异常：执行代码A-B-C-F"></a>如果try中代码B没有异常：执行代码A-B-C-F</h4><h4 id="如果try中代码B出现异常：执行代码A-B-D-E-F"><a href="#如果try中代码B出现异常：执行代码A-B-D-E-F" class="headerlink" title="如果try中代码B出现异常：执行代码A-B-D-E-F"></a>如果try中代码B出现异常：执行代码A-B-D-E-F</h4><h3 id="uncheckException"><a href="#uncheckException" class="headerlink" title="uncheckException"></a>uncheckException</h3><blockquote></blockquote><pre><code class="java">//uncheckExceptionclass TestCheck{    public static void main(String args[]){        System.out.println(1);        try{            System.out.println(2);            //有可能出现异常的代码            int i = 1/0;            System.out.println(3);        }        catch(Exception e){ //虚拟机产生的异常对象e            e.printStackTrace(); //打印异常栈的追踪信息            System.out.println(4);        }        finally{            //异常的出口            System.out.println(&quot;finally&quot;);        }    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/DG4HLEn.png" alt></p><h3 id="checkException-1"><a href="#checkException-1" class="headerlink" title="checkException"></a>checkException</h3><blockquote></blockquote><pre><code class="java">//checkExceptionclass TestCheck{    public static void main(String args[]){        System.out.println(1);        try{            System.out.println(2);            //有可能出现异常的代码            Thread.sleep(1000); //让当前线程休眠1000ms            System.out.println(3);        }        catch(Exception e){ //虚拟机产生的异常对象e            e.printStackTrace(); //打印异常栈的追踪信息            System.out.println(4);        }        finally{            //异常的出口            System.out.println(&quot;finally&quot;);        }    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/yWIuLO9.png" alt><br>屏幕首先显示1，2，然后停顿1000ms，再显示3和finally</p>]]></content>
       
       
       <categories>
@@ -1474,31 +1499,6 @@
       <url>/pages/7dc91154/</url>
       
         <content type="html"><![CDATA[<h3 id="十进制转换二进制"><a href="#十进制转换二进制" class="headerlink" title="十进制转换二进制"></a>十进制转换二进制</h3><blockquote><p>将一个十进制数转换为二进制，就是将这个数不断取余的过程，将这个数除以 2，得到了商和余数，然后将商不断除以 2，直到商为 0，然后将余数倒过来排列，所得到的数就是转换的二进制结果。</p></blockquote><h3 id="二进制转八进制"><a href="#二进制转八进制" class="headerlink" title="二进制转八进制"></a>二进制转八进制</h3><blockquote><p>将二进制数自右向左每三位分成一段，然后将每三位数转换为一位八进制数。</p></blockquote><p> 例如：111000101 = 111 000 101 = 0 7 0 5<br> 八进制以 0 开头。</p><h3 id="二进制转十六进制"><a href="#二进制转十六进制" class="headerlink" title="二进制转十六进制"></a>二进制转十六进制</h3><blockquote><p>将二进制数自右向左每四位分成一段，然后将每四位转换为一位十六进制数。</p></blockquote><p>例如：111010100110=1110 1010 0110=0x E A 6<br> 十六进制以 0x 或者 0X 开头。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Java中的异常</title>
-      <link href="/pages/f029d2bb/"/>
-      <url>/pages/f029d2bb/</url>
-      
-        <content type="html"><![CDATA[<ol><li>什么是异常</li><li>异常的分类</li><li>try…catch…finally结构的使用方法</li></ol><h2 id="1-什么是异常？"><a href="#1-什么是异常？" class="headerlink" title="1. 什么是异常？"></a>1. 什么是异常？</h2><blockquote></blockquote><ul><li><p>异常(Exception)：中断了正常指令流的事件。</p></li><li><p>异常是一个对象；</p></li><li><p>异常产生于程序运行时；</p></li><li><p>指令流：程序执行时一系列的连续指令称为指令流。</p><blockquote></blockquote><p>示例：</p><pre><code class="java">class Test{  public static void main(String args[]){      int i = 1 / 0;  }}</code></pre><p>抛出异常：</p><blockquote><p>Exception in thread “main” java.lang.ArithmeticException: / by zero<br>  at Test3.main(Test3.java:6)</p></blockquote></li><li><p>Exception in thread “main” ：在主线程中出现异常；</p></li><li><p>ArithmeticException：异常的名称，算术异常；</p></li><li><p>/ by zero：被0除；</p></li><li><p>at Test.main(Test.java:3)：异常位置；</p></li></ul><h2 id="2-异常的分类"><a href="#2-异常的分类" class="headerlink" title="2. 异常的分类"></a>2. 异常的分类</h2><h3 id="JDK提供的类："><a href="#JDK提供的类：" class="headerlink" title="JDK提供的类："></a>JDK提供的类：</h3><blockquote><p><img src="http://i.imgur.com/gTBhe2x.png" alt></p></blockquote><ol><li>Throwable：所有异常的父类；</li><li>Error：虚拟机运行时产生的错误，产生错误，虚拟机直接关闭；</li><li>Exception： 分为UncheckExeption（RuntimeExeption）和CheckExeption<blockquote></blockquote>RuntimeException + Error 和其子类都是属于uncheckexception<br>Exception类中除了 RuntimeException之外的类，都是属于checkexception</li></ol><h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4><h5 id="checkException"><a href="#checkException" class="headerlink" title="checkException"></a>checkException</h5><blockquote></blockquote><p>checkException是必须要处理的，也就是不能抛出，必须通过try-catch来完成，不处理的话是不能进行编译的。<br>示例：</p><pre><code class="java">class TestCheck{    public static void main(String args[]){        //CheckException        Thread.sleep(1000); //让当前线程休眠1000ms    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/xMd1LOi.png" alt></p><h5 id="uncheckException（-RuntimeException）"><a href="#uncheckException（-RuntimeException）" class="headerlink" title="uncheckException（ RuntimeException）"></a>uncheckException（ RuntimeException）</h5><blockquote></blockquote><p>运行时异常包括平常遇到的各种异常，如空指针异常，数据格式异常等一系列异常，这种异常是可以不捕获的，可通过throws抛出异常，交给别的代码或者JAVA虚拟机来完成<br>示例：</p><pre><code class="java">class Test{    public static void main(String args[]){        //UncheckException        int i = 1 / 0;    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/ll7JnfN.png" alt></p><h2 id="3-try…catch…finally结构"><a href="#3-try…catch…finally结构" class="headerlink" title="3. try…catch…finally结构"></a>3. try…catch…finally结构</h2><blockquote></blockquote><pre><code class="java">try{       //代码A    //有可能出现异常的代码B    //代码C}catch(Exception e){ //虚拟机产生的异常对象e    e.printStackTrace(); //处理异常的代码D    //代码E}finally{    //异常的出口    //执行扫尾工作的代码F}</code></pre><h4 id="如果try中代码B没有异常：执行代码A-B-C-F"><a href="#如果try中代码B没有异常：执行代码A-B-C-F" class="headerlink" title="如果try中代码B没有异常：执行代码A-B-C-F"></a>如果try中代码B没有异常：执行代码A-B-C-F</h4><h4 id="如果try中代码B出现异常：执行代码A-B-D-E-F"><a href="#如果try中代码B出现异常：执行代码A-B-D-E-F" class="headerlink" title="如果try中代码B出现异常：执行代码A-B-D-E-F"></a>如果try中代码B出现异常：执行代码A-B-D-E-F</h4><h3 id="uncheckException"><a href="#uncheckException" class="headerlink" title="uncheckException"></a>uncheckException</h3><blockquote></blockquote><pre><code class="java">//uncheckExceptionclass TestCheck{    public static void main(String args[]){        System.out.println(1);        try{            System.out.println(2);            //有可能出现异常的代码            int i = 1/0;            System.out.println(3);        }        catch(Exception e){ //虚拟机产生的异常对象e            e.printStackTrace(); //打印异常栈的追踪信息            System.out.println(4);        }        finally{            //异常的出口            System.out.println(&quot;finally&quot;);        }    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/DG4HLEn.png" alt></p><h3 id="checkException-1"><a href="#checkException-1" class="headerlink" title="checkException"></a>checkException</h3><blockquote></blockquote><pre><code class="java">//checkExceptionclass TestCheck{    public static void main(String args[]){        System.out.println(1);        try{            System.out.println(2);            //有可能出现异常的代码            Thread.sleep(1000); //让当前线程休眠1000ms            System.out.println(3);        }        catch(Exception e){ //虚拟机产生的异常对象e            e.printStackTrace(); //打印异常栈的追踪信息            System.out.println(4);        }        finally{            //异常的出口            System.out.println(&quot;finally&quot;);        }    }}</code></pre><p>运行结果：<br><img src="http://i.imgur.com/yWIuLO9.png" alt><br>屏幕首先显示1，2，然后停顿1000ms，再显示3和finally</p>]]></content>
       
       
       <categories>
