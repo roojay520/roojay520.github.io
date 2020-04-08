@@ -21,6 +21,11 @@ jobs:
         env:
           TZ: Asia/Shanghai
         run: |
+          cd themes/material
+          pwd
+          yarn install
+          cd ../../
+          pwd
           yarn install
           yarn run build
 
@@ -30,7 +35,6 @@ jobs:
           github_token: ${{ secrets.HEXO_BLOG_TOKEN }}
           publish_dir: ./public
           publish_branch: master
-          cname: roojay.com
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
           commit_message: "Deployed from bot > ${{ github.event.head_commit.message }}"
