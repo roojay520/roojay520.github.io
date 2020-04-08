@@ -17,16 +17,16 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: Install dependencies
+      - name: Install dependencies & Build web
         env:
           TZ: Asia/Shanghai
         run: |
           cd themes/material
           pwd
-          yarn install
+          yarn install --production
           cd ../../
           pwd
-          yarn install
+          yarn install --production
           yarn run build
 
       - name: Deploy Github
