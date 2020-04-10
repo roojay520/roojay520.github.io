@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "hexo": {
-    "version": "3.9.0"
+    "version": "4.2.0"
   },
   "scripts": {
     "build": "hexo clean && hexo generate",
     "dev": "yarn build && hexo server"
   },
   "dependencies": {
-    "hexo": "^3.9.0",
+    "hexo": "^4.2.0",
     "hexo-abbrlink": "^2.0.5",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
