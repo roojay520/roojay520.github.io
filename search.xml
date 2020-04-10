@@ -694,11 +694,11 @@
     
     
     <entry>
-      <title>作用域闭包</title>
-      <link href="/pages/78f2b66e/"/>
-      <url>/pages/78f2b66e/</url>
+      <title>全局命名空间和模块</title>
+      <link href="/pages/f9a582e/"/>
+      <url>/pages/f9a582e/</url>
       
-        <content type="html"><![CDATA[<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>wiki 上对闭包的定义：<br>闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），<strong>是引用了自由变量的函数。</strong>这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为<strong>闭包是由函数和与其相关的引用环境组合而成的实体。</strong></p><p><strong>自由变量的定义</strong>：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。</p><p>当函数<strong>可以记住并访问所在的词法作用域</strong>时，就产生了<strong>闭包</strong>，即使函数是在自己定义的词法作用域以外的地方执行。</p><p>闭包使得函数在<strong>定义时的词法作用域以外</strong>的地方被调用时，函数<strong>可以继续访问定义时的词法作用域</strong>。</p><p>在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。</p><p>在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。</p><pre><code class="javascript">function foo() {    let a = 0;    return function func() {        console.log(a);        a++;    };}const bar = foo();const baz = foo();bar(); // 0bar(); // 1 闭包保存上次计算的值bar(); // 2baz(); // 0 新生成函数</code></pre><p>将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。</p><p>无论通过何种手段<strong>将内部函数传递到所在的词法作用域以外</strong>，它都会<strong>持有对原始定义作用域的引用</strong>，无论在何处<strong>执行这个函数都会使用闭包</strong>。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="全局命名空间"><a href="#全局命名空间" class="headerlink" title="全局命名空间"></a>全局命名空间</h2><p>库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。</p><p>例如：</p><pre><code class="javascript">var mylibrary = {    name: &#39;haha&#39;,    eat: (name) =&gt; {        console.log(`${name} is eating`);    }};</code></pre><h2 id="模块管理"><a href="#模块管理" class="headerlink" title="模块管理"></a>模块管理</h2><p>通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。</p><p>用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。</p>]]></content>
       
       
       <categories>
@@ -719,11 +719,11 @@
     
     
     <entry>
-      <title>全局命名空间和模块</title>
-      <link href="/pages/f9a582e/"/>
-      <url>/pages/f9a582e/</url>
+      <title>作用域闭包</title>
+      <link href="/pages/78f2b66e/"/>
+      <url>/pages/78f2b66e/</url>
       
-        <content type="html"><![CDATA[<h2 id="全局命名空间"><a href="#全局命名空间" class="headerlink" title="全局命名空间"></a>全局命名空间</h2><p>库通常会在全局作用域中声明一个名字独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象（命名空间）的属性，而不是将自己的标识符暴漏在顶级的词法作用域中。</p><p>例如：</p><pre><code class="javascript">var mylibrary = {    name: &#39;haha&#39;,    eat: (name) =&gt; {        console.log(`${name} is eating`);    }};</code></pre><h2 id="模块管理"><a href="#模块管理" class="headerlink" title="模块管理"></a>模块管理</h2><p>通过依赖管理器的机制将库的标识符显式地导入到另外一个特定的作用域中。</p><p>用作用域的规则，强制所有标识符都不能注入到共享作用域中，而是保持在私有、无冲突的作用域中，这样可以有效规避掉所有的意外冲突。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>wiki 上对闭包的定义：<br>闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），<strong>是引用了自由变量的函数。</strong>这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为<strong>闭包是由函数和与其相关的引用环境组合而成的实体。</strong></p><p><strong>自由变量的定义</strong>：在 fn() 作用域中使用的变量 x，却没有在 fn() 作用域中声明（即在其他作用域中声明的），对于 foo() 作用域来说，x 就是一个自由变量。</p><p>当函数<strong>可以记住并访问所在的词法作用域</strong>时，就产生了<strong>闭包</strong>，即使函数是在自己定义的词法作用域以外的地方执行。</p><p>闭包使得函数在<strong>定义时的词法作用域以外</strong>的地方被调用时，函数<strong>可以继续访问定义时的词法作用域</strong>。</p><p>在 JavaScript 中有垃圾回收器用来释放不再使用的内存空间，通过使用闭包可以阻止这件事情的发生，使得这个函数的内部作用域一直存活。</p><p>在函数 foo() 内部定义了函数 func()， func() 引用了其父函数作用域的变量，对这个内部作用域的引用就叫作闭包。</p><pre><code class="javascript">function foo() {    let a = 0;    return function func() {        console.log(a);        a++;    };}const bar = foo();const baz = foo();bar(); // 0bar(); // 1 闭包保存上次计算的值bar(); // 2baz(); // 0 新生成函数</code></pre><p>将 foo() 内部定义的func() 函数作为一个参数，传递给在全局作用域下定义的 bar() 函数，从而达到访问 func() 词法作用域的目的。</p><p>无论通过何种手段<strong>将内部函数传递到所在的词法作用域以外</strong>，它都会<strong>持有对原始定义作用域的引用</strong>，无论在何处<strong>执行这个函数都会使用闭包</strong>。</p>]]></content>
       
       
       <categories>
@@ -819,31 +819,6 @@
     
     
     <entry>
-      <title>多个SSH管理</title>
-      <link href="/pages/8ee164b8/"/>
-      <url>/pages/8ee164b8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="多个-SSH-key-管理"><a href="#多个-SSH-key-管理" class="headerlink" title="多个 SSH key 管理"></a>多个 SSH key 管理</h2><ul><li>在创建ssh key的时候，将新的密钥进行重新命名，比如id_rsa_coding，使用下面的命令：<br><code>ssh-keygen -t rsa -C &quot;roojay520@gmail.com&quot; -f ~/.ssh/id_rsa_coding</code><br>b48684451cdeae15e70966c332895a1947144e1e</li></ul><p>git config –global user.name “roojay”<br>git config –global user.email “<a href="mailto:roojay520@gmail.com">roojay520@gmail.com</a>“</p><p>git config –global user.name “roojay”<br>git config –global user.email “<a href="mailto:roojay@126.com">roojay@126.com</a>“</p><p>STATIC_SITE_REPO <a href="https://github.com/roojay520/roojay520.github.io" target="_blank" rel="noopener">https://github.com/roojay520/roojay520.github.io</a><br>TARGET_BRANCH master<br>GIT_USER_EMAIL <a href="mailto:roojay520@gmail.com">roojay520@gmail.com</a><br>GIT_USER_NAME roojay</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Git </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> SSH </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>常用正则表达式</title>
       <link href="/pages/81d5af05/"/>
       <url>/pages/81d5af05/</url>
@@ -861,6 +836,31 @@
         <tags>
             
             <tag> RegEx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>多个SSH管理</title>
+      <link href="/pages/8ee164b8/"/>
+      <url>/pages/8ee164b8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="多个-SSH-key-管理"><a href="#多个-SSH-key-管理" class="headerlink" title="多个 SSH key 管理"></a>多个 SSH key 管理</h2><ul><li>在创建ssh key的时候，将新的密钥进行重新命名，比如id_rsa_coding，使用下面的命令：<br><code>ssh-keygen -t rsa -C &quot;roojay520@gmail.com&quot; -f ~/.ssh/id_rsa_coding</code><br>b48684451cdeae15e70966c332895a1947144e1e</li></ul><p>git config –global user.name “roojay”<br>git config –global user.email “<a href="mailto:roojay520@gmail.com">roojay520@gmail.com</a>“</p><p>git config –global user.name “roojay”<br>git config –global user.email “<a href="mailto:roojay@126.com">roojay@126.com</a>“</p><p>STATIC_SITE_REPO <a href="https://github.com/roojay520/roojay520.github.io" target="_blank" rel="noopener">https://github.com/roojay520/roojay520.github.io</a><br>TARGET_BRANCH master<br>GIT_USER_EMAIL <a href="mailto:roojay520@gmail.com">roojay520@gmail.com</a><br>GIT_USER_NAME roojay</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SSH </tag>
             
         </tags>
       
